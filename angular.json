@@ -48,10 +48,7 @@
             "polyfills": "apps/russian/cabinet/src/polyfills.ts",
             "tsConfig": "apps/russian/cabinet/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/russian/cabinet/src/favicon.ico",
-              "apps/russian/cabinet/src/assets"
-            ],
+            "assets": ["apps/russian/cabinet/src/favicon.ico", "apps/russian/cabinet/src/assets"],
             "styles": ["apps/russian/cabinet/src/styles.scss"],
             "scripts": []
           },
@@ -105,10 +102,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/russian/cabinet/src/**/*.ts",
-              "apps/russian/cabinet/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/russian/cabinet/src/**/*.ts", "apps/russian/cabinet/src/**/*.html"]
           }
         },
         "test": {
@@ -143,6 +137,28 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/russian/cabinet-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "russian-ui-styles": {
+      "projectType": "library",
+      "root": "libs/russian/ui/styles",
+      "sourceRoot": "libs/russian/ui/styles/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/ui/styles/src/**/*.ts", "libs/russian/ui/styles/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/ui/styles"],
+          "options": {
+            "jestConfig": "libs/russian/ui/styles/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
