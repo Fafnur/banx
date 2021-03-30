@@ -29,7 +29,8 @@
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {
-      "style": "scss"
+      "style": "scss",
+      "changeDetection": "OnPush"
     }
   },
   "projects": {
@@ -158,6 +159,72 @@
           "outputs": ["coverage/libs/russian/ui/styles"],
           "options": {
             "jestConfig": "libs/russian/ui/styles/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "russian-ui-layout": {
+      "projectType": "library",
+      "root": "libs/russian/ui/layout",
+      "sourceRoot": "libs/russian/ui/layout/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/ui/layout/src/**/*.ts", "libs/russian/ui/layout/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/ui/layout"],
+          "options": {
+            "jestConfig": "libs/russian/ui/layout/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "russian-ui-container": {
+      "projectType": "library",
+      "root": "libs/russian/ui/container",
+      "sourceRoot": "libs/russian/ui/container/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/ui/container/src/**/*.ts", "libs/russian/ui/container/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/ui/container"],
+          "options": {
+            "jestConfig": "libs/russian/ui/container/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "russian-content-home-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/home/page",
+      "sourceRoot": "libs/russian/content/home/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/content/home/page/src/**/*.ts", "libs/russian/content/home/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/content/home/page"],
+          "options": {
+            "jestConfig": "libs/russian/content/home/page/jest.config.js",
             "passWithNoTests": true
           }
         }

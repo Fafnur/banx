@@ -1,0 +1,28 @@
+@import 'libs/russian/ui/styles/stylesheets/utils';
+
+:host {
+  display: block;
+  padding: 1rem 0;
+  box-shadow: 0 4px 56px rgb(0 0 0 / 12%);
+  flex-shrink: 0;
+}
+
+.ui-brand {
+  margin: auto;
+}
+
+.ui-spacer {
+  flex-grow: 1;
+}
+
+.ui-action {
+  &.is-mobile {
+    display: block;
+  }
+
+  @include media-breakpoint-up(md) {
+    &.is-mobile {
+      display: none;
+    }
+  }
+}
