@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { UiContainerModule } from '@banx/russian/ui/container';
 
+import { UiFooterComponent } from './components/ui-footer/ui-footer.component';
 import { UiHeaderComponent } from './components/ui-header/ui-header.component';
 import { UiLayoutComponent } from './components/ui-layout/ui-layout.component';
-import { UiFooterComponent } from './components/ui-footer/ui-footer.component';
 import { UiMainComponent } from './components/ui-main/ui-main.component';
 
 @NgModule({

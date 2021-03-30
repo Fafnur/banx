@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/russian/ui/styles',
     '<rootDir>/libs/russian/ui/layout',
     '<rootDir>/libs/russian/ui/container',
+    '<rootDir>/libs/russian/content/home/page',
   ],
 };

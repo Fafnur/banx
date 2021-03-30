@@ -207,6 +207,28 @@
           }
         }
       }
+    },
+    "russian-content-home-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/home/page",
+      "sourceRoot": "libs/russian/content/home/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/content/home/page/src/**/*.ts", "libs/russian/content/home/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/content/home/page"],
+          "options": {
+            "jestConfig": "libs/russian/content/home/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

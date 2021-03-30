@@ -7,7 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: UiLayoutComponent,
-    children: [],
+    children: [
+      {
+        path: '',
+        loadChildren: (): Promise<any> => import('./content/content.module').then((modules) => modules.ContentModule),
+      },
+    ],
   },
 ];
 
