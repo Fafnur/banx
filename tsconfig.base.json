@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@banx/russian/ui/styles": ["libs/russian/ui/styles/src/index.ts"]
+      "@banx/russian/ui/styles": ["libs/russian/ui/styles/src/index.ts"],
+      "@banx/russian/ui/layout": ["libs/russian/ui/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

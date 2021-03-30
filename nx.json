@@ -15,6 +15,7 @@
   "projects": {
     "russian-cabinet": { "tags": [] },
     "russian/cabinet-e2e": { "tags": [], "implicitDependencies": ["russian-cabinet"] },
-    "russian-ui-styles": { "tags": [] }
+    "russian-ui-styles": { "tags": [] },
+    "russian-ui-layout": { "tags": [] }
   }
 }
