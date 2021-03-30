@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { UiLayoutComponent } from '@banx/russian/ui/layout';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: UiLayoutComponent,
+    children: [],
+  },
+];
 
 @NgModule({
   imports: [
