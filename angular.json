@@ -184,6 +184,28 @@
           }
         }
       }
+    },
+    "russian-ui-container": {
+      "projectType": "library",
+      "root": "libs/russian/ui/container",
+      "sourceRoot": "libs/russian/ui/container/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/ui/container/src/**/*.ts", "libs/russian/ui/container/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/ui/container"],
+          "options": {
+            "jestConfig": "libs/russian/ui/container/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

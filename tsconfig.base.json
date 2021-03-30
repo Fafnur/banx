@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@banx/russian/ui/styles": ["libs/russian/ui/styles/src/index.ts"],
-      "@banx/russian/ui/layout": ["libs/russian/ui/layout/src/index.ts"]
+      "@banx/russian/ui/layout": ["libs/russian/ui/layout/src/index.ts"],
+      "@banx/russian/ui/container": ["libs/russian/ui/container/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
