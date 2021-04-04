@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'banx-not-found-page',
@@ -6,8 +6,4 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./not-found-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NotFoundPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class NotFoundPageComponent {}
