@@ -229,6 +229,28 @@
           }
         }
       }
+    },
+    "russian-errors-not-found-page": {
+      "projectType": "library",
+      "root": "libs/russian/errors/not-found/page",
+      "sourceRoot": "libs/russian/errors/not-found/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/errors/not-found/page/src/**/*.ts", "libs/russian/errors/not-found/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/errors/not-found/page"],
+          "options": {
+            "jestConfig": "libs/russian/errors/not-found/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

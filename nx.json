@@ -18,6 +18,7 @@
     "russian-ui-styles": { "tags": [] },
     "russian-ui-layout": { "tags": [] },
     "russian-ui-container": { "tags": [] },
-    "russian-content-home-page": { "tags": [] }
+    "russian-content-home-page": { "tags": [] },
+    "russian-errors-not-found-page": { "tags": [] }
   }
 }

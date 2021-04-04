@@ -18,7 +18,8 @@
       "@banx/russian/ui/styles": ["libs/russian/ui/styles/src/index.ts"],
       "@banx/russian/ui/layout": ["libs/russian/ui/layout/src/index.ts"],
       "@banx/russian/ui/container": ["libs/russian/ui/container/src/index.ts"],
-      "@banx/russian/content/home/page": ["libs/russian/content/home/page/src/index.ts"]
+      "@banx/russian/content/home/page": ["libs/russian/content/home/page/src/index.ts"],
+      "@banx/russian/errors/not-found/page": ["libs/russian/errors/not-found/page/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
