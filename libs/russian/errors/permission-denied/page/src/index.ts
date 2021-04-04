@@ -1,1 +1,1 @@
-export * from './lib/russian-errors-permission-denied-page.module';
+export * from './lib/errors-permission-denied-page-page.module';
