@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { UiContainerModule } from '@banx/russian/ui/container';
 
@@ -20,7 +21,7 @@ const components: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [CommonModule, UiContainerModule],
+  imports: [CommonModule, RouterModule, UiContainerModule],
   declarations: [...components],
   exports: [...components],
 })
