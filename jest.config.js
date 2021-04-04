@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/russian/content/home/page',
     '<rootDir>/libs/russian/errors/not-found/page',
     '<rootDir>/libs/russian/errors/shared',
+    '<rootDir>/libs/russian/errors/server-error/page',
   ],
 };

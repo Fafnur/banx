@@ -273,6 +273,28 @@
           }
         }
       }
+    },
+    "russian-errors-server-error-page": {
+      "projectType": "library",
+      "root": "libs/russian/errors/server-error/page",
+      "sourceRoot": "libs/russian/errors/server-error/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/errors/server-error/page/src/**/*.ts", "libs/russian/errors/server-error/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/errors/server-error/page"],
+          "options": {
+            "jestConfig": "libs/russian/errors/server-error/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
