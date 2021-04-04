@@ -1,0 +1,183 @@
+@import 'libs/russian/ui/styles/stylesheets/utils';
+
+.error-logo {
+  text-align: center;
+  margin: 1rem 0;
+
+  @include media-breakpoint-up(md) {
+    margin: 2rem 0;
+  }
+}
+
+.error-brand {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+.error-status {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  margin: 1rem 0;
+  color: $color-accent;
+  line-height: 1;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 8rem;
+  }
+
+  @include media-breakpoint-up(md) {
+    font-size: 10rem;
+    margin: 2rem 0;
+  }
+}
+
+.error-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  text-align: center;
+
+  @include media-breakpoint-up(sm) {
+    font-size: 2rem;
+  }
+}
+
+.error-hint {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.error-links {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 8rem;
+  }
+}
+
+.error-link {
+  display: block;
+  margin: 0 0.5rem;
+  color: $color-active;
+}
+
+.error-application {
+  margin: 1rem 0;
+  padding: 1rem 0;
+  background-color: $color-primary;
+  text-align: center;
+
+  & > .banx-ui-container {
+    position: relative;
+  }
+
+  @include media-breakpoint-up(md) {
+    margin: 2rem 0;
+    text-align: left;
+
+    & > .banx-ui-container {
+      width: 70rem;
+    }
+  }
+}
+
+.error-application-preview {
+  margin-top: -5rem;
+
+  @include media-breakpoint-up(md) {
+    margin-top: 0;
+    position: absolute;
+    top: -10rem;
+    right: 0;
+  }
+}
+
+.error-application-image {
+  width: 100%;
+  max-width: 20rem;
+
+  @include media-breakpoint-up(md) {
+    max-width: 30rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 100%;
+  }
+}
+
+.error-application-title {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
+    margin: 2rem 0;
+    max-width: 16rem;
+  }
+}
+
+.error-application-hint {
+  margin: 1rem 0;
+
+  @include media-breakpoint-up(md) {
+    margin: 2rem 0;
+    max-width: 16rem;
+  }
+  @include media-breakpoint-up(lg) {
+    max-width: 100%;
+  }
+}
+
+.error-application-qrcode {
+  display: none;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    max-width: 10rem;
+  }
+}
+
+.error-application-links {
+  margin: 2rem -0.5rem;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.error-application-link {
+  margin: 0 0.5rem;
+  color: $color-active;
+
+  &.is-mobile {
+    display: block;
+  }
+  &.is-desktop {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    &.is-mobile {
+      display: none;
+    }
+    &.is-desktop {
+      display: block;
+    }
+  }
+}
