@@ -9,6 +9,21 @@
   color: $color-accent;
   line-height: 1;
 
+  &.is-primary {
+    color: $color-primary;
+  }
+  &.is-accent {
+    color: $color-accent;
+  }
+
+  &.is-active {
+    color: $color-active;
+  }
+
+  &.is-danger {
+    color: $color-danger;
+  }
+
   @include media-breakpoint-up(sm) {
     font-size: 8rem;
   }
