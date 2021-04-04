@@ -21,7 +21,8 @@
       "@banx/russian/content/home/page": ["libs/russian/content/home/page/src/index.ts"],
       "@banx/russian/errors/not-found/page": ["libs/russian/errors/not-found/page/src/index.ts"],
       "@banx/russian/errors/shared": ["libs/russian/errors/shared/src/index.ts"],
-      "@banx/russian/errors/server-error/page": ["libs/russian/errors/server-error/page/src/index.ts"]
+      "@banx/russian/errors/server-error/page": ["libs/russian/errors/server-error/page/src/index.ts"],
+      "@banx/russian/errors/permission-denied/page": ["libs/russian/errors/permission-denied/page/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

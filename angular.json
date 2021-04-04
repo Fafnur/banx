@@ -295,6 +295,31 @@
           }
         }
       }
+    },
+    "russian-errors-permission-denied-page": {
+      "projectType": "library",
+      "root": "libs/russian/errors/permission-denied/page",
+      "sourceRoot": "libs/russian/errors/permission-denied/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/errors/permission-denied/page/src/**/*.ts",
+              "libs/russian/errors/permission-denied/page/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/errors/permission-denied/page"],
+          "options": {
+            "jestConfig": "libs/russian/errors/permission-denied/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -21,6 +21,7 @@
     "russian-content-home-page": { "tags": [] },
     "russian-errors-not-found-page": { "tags": [] },
     "russian-errors-shared": { "tags": [] },
-    "russian-errors-server-error-page": { "tags": [] }
+    "russian-errors-server-error-page": { "tags": [] },
+    "russian-errors-permission-denied-page": { "tags": [] }
   }
 }
