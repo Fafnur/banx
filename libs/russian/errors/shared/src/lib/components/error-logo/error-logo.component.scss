@@ -1,6 +1,7 @@
 @import 'libs/russian/ui/styles/stylesheets/utils';
 
-.error-logo {
+:host {
+  display: block;
   text-align: center;
   margin: 1rem 0;
 

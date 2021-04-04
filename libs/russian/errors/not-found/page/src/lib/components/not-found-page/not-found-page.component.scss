@@ -1,40 +1,5 @@
 @import 'libs/russian/ui/styles/stylesheets/utils';
 
-.error-logo {
-  text-align: center;
-  margin: 1rem 0;
-
-  @include media-breakpoint-up(md) {
-    margin: 2rem 0;
-  }
-}
-
-.error-brand {
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 700;
-  color: black;
-}
-
-.error-status {
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 400;
-  margin: 1rem 0;
-  color: $color-accent;
-  line-height: 1;
-
-  @include media-breakpoint-up(sm) {
-    font-size: 8rem;
-  }
-
-  @include media-breakpoint-up(md) {
-    font-size: 10rem;
-    margin: 2rem 0;
-  }
-}
-
 .error-title {
   font-size: 1.5rem;
   font-weight: 500;
