@@ -251,6 +251,28 @@
           }
         }
       }
+    },
+    "russian-errors-shared": {
+      "projectType": "library",
+      "root": "libs/russian/errors/shared",
+      "sourceRoot": "libs/russian/errors/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/errors/shared/src/**/*.ts", "libs/russian/errors/shared/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/errors/shared"],
+          "options": {
+            "jestConfig": "libs/russian/errors/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/russian/ui/container',
     '<rootDir>/libs/russian/content/home/page',
     '<rootDir>/libs/russian/errors/not-found/page',
+    '<rootDir>/libs/russian/errors/shared',
   ],
 };
