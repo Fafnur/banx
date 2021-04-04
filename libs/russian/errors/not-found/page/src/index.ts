@@ -1,1 +1,1 @@
-export * from './lib/russian-errors-not-found-page.module';
+export * from './lib/errors-not-found-page-page.module';
