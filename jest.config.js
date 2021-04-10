@@ -11,5 +11,6 @@ module.exports = {
     '<rootDir>/libs/russian/errors/permission-denied/page',
     '<rootDir>/libs/core/storage/common',
     '<rootDir>/libs/core/storage/memory',
+    '<rootDir>/libs/core/storage/local',
   ],
 };

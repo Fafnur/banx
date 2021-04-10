@@ -364,6 +364,28 @@
           }
         }
       }
+    },
+    "core-storage-local": {
+      "projectType": "library",
+      "root": "libs/core/storage/local",
+      "sourceRoot": "libs/core/storage/local/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/storage/local/src/**/*.ts", "libs/core/storage/local/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/storage/local"],
+          "options": {
+            "jestConfig": "libs/core/storage/local/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
