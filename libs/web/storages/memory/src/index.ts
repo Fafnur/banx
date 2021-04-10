@@ -1,1 +1,1 @@
-export * from './lib/web-storages-memory.module';
+export * from './lib/memory.storage';
