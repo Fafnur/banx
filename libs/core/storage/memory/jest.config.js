@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'web-storages-common',
+  displayName: 'core-storage-memory',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -11,7 +11,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/web/storages/common',
+  coverageDirectory: '../../../../coverage/libs/core/storage/memory',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

@@ -321,45 +321,45 @@
         }
       }
     },
-    "web-storages-common": {
+    "core-storage-common": {
       "projectType": "library",
-      "root": "libs/web/storages/common",
-      "sourceRoot": "libs/web/storages/common/src",
+      "root": "libs/core/storage/common",
+      "sourceRoot": "libs/core/storage/common/src",
       "prefix": "banx",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/storages/common/src/**/*.ts", "libs/web/storages/common/src/**/*.html"]
+            "lintFilePatterns": ["libs/core/storage/common/src/**/*.ts", "libs/core/storage/common/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/storages/common"],
+          "outputs": ["coverage/libs/core/storage/common"],
           "options": {
-            "jestConfig": "libs/web/storages/common/jest.config.js",
+            "jestConfig": "libs/core/storage/common/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "web-storages-memory": {
+    "core-storage-memory": {
       "projectType": "library",
-      "root": "libs/web/storages/memory",
-      "sourceRoot": "libs/web/storages/memory/src",
+      "root": "libs/core/storage/memory",
+      "sourceRoot": "libs/core/storage/memory/src",
       "prefix": "banx",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/web/storages/memory/src/**/*.ts", "libs/web/storages/memory/src/**/*.html"]
+            "lintFilePatterns": ["libs/core/storage/memory/src/**/*.ts", "libs/core/storage/memory/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/storages/memory"],
+          "outputs": ["coverage/libs/core/storage/memory"],
           "options": {
-            "jestConfig": "libs/web/storages/memory/jest.config.js",
+            "jestConfig": "libs/core/storage/memory/jest.config.js",
             "passWithNoTests": true
           }
         }
