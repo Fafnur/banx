@@ -320,6 +320,28 @@
           }
         }
       }
+    },
+    "web-storages-common": {
+      "projectType": "library",
+      "root": "libs/web/storages/common",
+      "sourceRoot": "libs/web/storages/common/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web/storages/common/src/**/*.ts", "libs/web/storages/common/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/storages/common"],
+          "options": {
+            "jestConfig": "libs/web/storages/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
