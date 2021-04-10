@@ -1,0 +1,22 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "9230001122",
+  "password":  "123456"
+}
+
+###
+
+GET http://localhost:3000/posts
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjkyMzAwMDExMjIiLCJwYXNzd29yZCI6IjEyMzQ1NiIsImlhdCI6MTYxNzk5ODU4OSwiZXhwIjoxNjE4MDAyMTg5fQ.MvBXS3ynEwctxGgiifLq7Fd4_kRrcLaTTmXAjE1BjsE
+
+###
+
+GET http://localhost:3000/users
+Content-Type: application/json
+Accept: application/json
+#Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IjkyMzAwMDExMjIiLCJwYXNzd29yZCI6IjEyMzQ1NiIsImlhdCI6MTYxNzk5ODU4OSwiZXhwIjoxNjE4MDAyMTg5fQ.MvBXS3ynEwctxGgiifLq7Fd4_kRrcLaTTmXAjE1BjsE

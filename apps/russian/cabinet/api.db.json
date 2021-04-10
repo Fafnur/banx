@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "phone": "9230001122",
+      "password": "123456"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "My best post"
+    }
+  ]
+}
