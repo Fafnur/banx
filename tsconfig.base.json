@@ -23,7 +23,8 @@
       "@banx/russian/errors/shared": ["libs/russian/errors/shared/src/index.ts"],
       "@banx/russian/errors/server-error/page": ["libs/russian/errors/server-error/page/src/index.ts"],
       "@banx/russian/errors/permission-denied/page": ["libs/russian/errors/permission-denied/page/src/index.ts"],
-      "@banx/web/storages/common": ["libs/web/storages/common/src/index.ts"]
+      "@banx/web/storages/common": ["libs/web/storages/common/src/index.ts"],
+      "@banx/web/storages/memory": ["libs/web/storages/memory/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

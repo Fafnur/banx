@@ -23,6 +23,7 @@
     "russian-errors-shared": { "tags": [] },
     "russian-errors-server-error-page": { "tags": [] },
     "russian-errors-permission-denied-page": { "tags": [] },
-    "web-storages-common": { "tags": [] }
+    "web-storages-common": { "tags": [] },
+    "web-storages-memory": { "tags": [] }
   }
 }

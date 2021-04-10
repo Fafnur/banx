@@ -342,6 +342,28 @@
           }
         }
       }
+    },
+    "web-storages-memory": {
+      "projectType": "library",
+      "root": "libs/web/storages/memory",
+      "sourceRoot": "libs/web/storages/memory/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/web/storages/memory/src/**/*.ts", "libs/web/storages/memory/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/storages/memory"],
+          "options": {
+            "jestConfig": "libs/web/storages/memory/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
