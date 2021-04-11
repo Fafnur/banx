@@ -14,7 +14,7 @@ export class MemoryStorage implements Storage {
     this.data = {};
   }
 
-  getItem(key: string): string | null {
+  getItem<T = any>(key: string): T | null {
     return key in this.data ? this.data[key] : null;
   }
 
@@ -28,7 +28,7 @@ export class MemoryStorage implements Storage {
     delete this.data[key];
   }
 
-  setItem(key: string, value: string): void {
+  setItem<T = any>(key: string, value: T): void {
     this.data[key] = value;
   }
 }
