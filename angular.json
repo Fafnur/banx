@@ -320,6 +320,116 @@
           }
         }
       }
+    },
+    "core-storage-common": {
+      "projectType": "library",
+      "root": "libs/core/storage/common",
+      "sourceRoot": "libs/core/storage/common/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/storage/common/src/**/*.ts", "libs/core/storage/common/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/storage/common"],
+          "options": {
+            "jestConfig": "libs/core/storage/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-storage-memory": {
+      "projectType": "library",
+      "root": "libs/core/storage/memory",
+      "sourceRoot": "libs/core/storage/memory/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/storage/memory/src/**/*.ts", "libs/core/storage/memory/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/storage/memory"],
+          "options": {
+            "jestConfig": "libs/core/storage/memory/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-storage-local": {
+      "projectType": "library",
+      "root": "libs/core/storage/local",
+      "sourceRoot": "libs/core/storage/local/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/storage/local/src/**/*.ts", "libs/core/storage/local/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/storage/local"],
+          "options": {
+            "jestConfig": "libs/core/storage/local/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-storage-session": {
+      "projectType": "library",
+      "root": "libs/core/storage/session",
+      "sourceRoot": "libs/core/storage/session/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/storage/session/src/**/*.ts", "libs/core/storage/session/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/storage/session"],
+          "options": {
+            "jestConfig": "libs/core/storage/session/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-cookie-service": {
+      "projectType": "library",
+      "root": "libs/core/cookie/service",
+      "sourceRoot": "libs/core/cookie/service/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/cookie/service/src/**/*.ts", "libs/core/cookie/service/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/cookie/service"],
+          "options": {
+            "jestConfig": "libs/core/cookie/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

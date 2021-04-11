@@ -22,6 +22,11 @@
     "russian-errors-not-found-page": { "tags": [] },
     "russian-errors-shared": { "tags": [] },
     "russian-errors-server-error-page": { "tags": [] },
-    "russian-errors-permission-denied-page": { "tags": [] }
+    "russian-errors-permission-denied-page": { "tags": [] },
+    "core-storage-common": { "tags": [] },
+    "core-storage-memory": { "tags": [] },
+    "core-storage-local": { "tags": [] },
+    "core-storage-session": { "tags": [] },
+    "core-cookie-service": { "tags": [] }
   }
 }

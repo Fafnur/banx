@@ -9,5 +9,10 @@ module.exports = {
     '<rootDir>/libs/russian/errors/shared',
     '<rootDir>/libs/russian/errors/server-error/page',
     '<rootDir>/libs/russian/errors/permission-denied/page',
+    '<rootDir>/libs/core/storage/common',
+    '<rootDir>/libs/core/storage/memory',
+    '<rootDir>/libs/core/storage/local',
+    '<rootDir>/libs/core/storage/session',
+    '<rootDir>/libs/core/cookie/service',
   ],
 };
