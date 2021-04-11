@@ -408,6 +408,28 @@
           }
         }
       }
+    },
+    "core-cookie-service": {
+      "projectType": "library",
+      "root": "libs/core/cookie/service",
+      "sourceRoot": "libs/core/cookie/service/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/cookie/service/src/**/*.ts", "libs/core/cookie/service/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/cookie/service"],
+          "options": {
+            "jestConfig": "libs/core/cookie/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

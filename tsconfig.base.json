@@ -26,7 +26,8 @@
       "@banx/core/storage/common": ["libs/core/storage/common/src/index.ts"],
       "@banx/core/storage/memory": ["libs/core/storage/memory/src/index.ts"],
       "@banx/core/storage/local": ["libs/core/storage/local/src/index.ts"],
-      "@banx/core/storage/session": ["libs/core/storage/session/src/index.ts"]
+      "@banx/core/storage/session": ["libs/core/storage/session/src/index.ts"],
+      "@banx/core/cookie/service": ["libs/core/cookie/service/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
