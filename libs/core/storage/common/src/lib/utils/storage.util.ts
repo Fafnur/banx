@@ -6,6 +6,11 @@
  */
 export function storageAvailable(type: string): boolean {
   let storage;
+
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
   try {
     storage = window[type];
     const x = '__storage_test__';
