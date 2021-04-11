@@ -25,6 +25,7 @@
     "russian-errors-permission-denied-page": { "tags": [] },
     "core-storage-common": { "tags": [] },
     "core-storage-memory": { "tags": [] },
-    "core-storage-local": { "tags": [] }
+    "core-storage-local": { "tags": [] },
+    "core-storage-session": { "tags": [] }
   }
 }

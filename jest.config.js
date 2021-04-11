@@ -12,5 +12,6 @@ module.exports = {
     '<rootDir>/libs/core/storage/common',
     '<rootDir>/libs/core/storage/memory',
     '<rootDir>/libs/core/storage/local',
+    '<rootDir>/libs/core/storage/session',
   ],
 };

@@ -386,6 +386,28 @@
           }
         }
       }
+    },
+    "core-storage-session": {
+      "projectType": "library",
+      "root": "libs/core/storage/session",
+      "sourceRoot": "libs/core/storage/session/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/storage/session/src/**/*.ts", "libs/core/storage/session/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/storage/session"],
+          "options": {
+            "jestConfig": "libs/core/storage/session/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
