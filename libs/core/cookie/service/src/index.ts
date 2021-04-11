@@ -1,1 +1,1 @@
-export * from './lib/core-cookie-service.module';
+export * from './lib/cookie.service';
