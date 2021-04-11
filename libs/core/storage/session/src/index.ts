@@ -1,1 +1,1 @@
-export * from './lib/core-storage-session.module';
+export * from './lib/session.storage';

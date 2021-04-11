@@ -9,14 +9,3 @@ export interface AsyncStorage {
   removeItem(key: string);
   clear(): void;
 }
-
-export interface SyncStorage {
-  readonly length: number;
-  readonly storage: Storage;
-  readonly state: Record<string, any>;
-
-  getItem<T = any>(key: string): T;
-  setItem<T>(key: string, value: T);
-  removeItem(key: string);
-  clear(): void;
-}
