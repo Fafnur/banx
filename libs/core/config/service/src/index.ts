@@ -1,1 +1,2 @@
-export * from './lib/core-config-service.module';
+export * from './lib/config.interface';
+export * from './lib/config.service';
