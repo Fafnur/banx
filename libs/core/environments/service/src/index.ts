@@ -1,1 +1,2 @@
-export * from './lib/environments-service.module';
+export * from './lib/environment.interface';
+export * from './lib/environment.service';
