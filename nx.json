@@ -27,6 +27,7 @@
     "core-storage-memory": { "tags": [] },
     "core-storage-local": { "tags": [] },
     "core-storage-session": { "tags": [] },
-    "core-cookie-service": { "tags": [] }
+    "core-cookie-service": { "tags": [] },
+    "core-environments-service": { "tags": [] }
   }
 }
