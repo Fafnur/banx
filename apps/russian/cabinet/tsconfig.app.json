@@ -4,5 +4,13 @@
     "outDir": "../../../dist/out-tsc",
     "types": []
   },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "enableResourceInlining": true,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
   "files": ["src/main.ts", "src/polyfills.ts"]
 }

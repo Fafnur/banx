@@ -12,7 +12,10 @@
   "angularCompilerOptions": {
     "skipTemplateCodegen": true,
     "strictMetadataEmit": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
   "include": ["**/*.ts"]
