@@ -5,7 +5,7 @@ export interface AsyncStorage {
   readonly state$: Observable<Record<string, any>>;
 
   getItem<T>(key: string): Observable<T>;
-  setItem<T>(key: string, value: T);
-  removeItem(key: string);
+  setItem<T>(key: string, value: T): void;
+  removeItem(key: string): void;
   clear(): void;
 }
