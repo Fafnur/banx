@@ -41,8 +41,11 @@
       "prefix": "banx",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "apps/russian/cabinet/webpack-dev.config.ts"
+            },
             "outputPath": "dist/apps/russian/cabinet",
             "index": "apps/russian/cabinet/src/index.html",
             "main": "apps/russian/cabinet/src/main.ts",
@@ -55,6 +58,9 @@
           },
           "configurations": {
             "production": {
+              "customWebpackConfig": {
+                "path": "apps/russian/cabinet/webpack-prod.config.ts"
+              },
               "fileReplacements": [
                 {
                   "replace": "apps/russian/cabinet/src/environments/environment.ts",
@@ -84,7 +90,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "russian-cabinet:build"
           },
@@ -426,6 +432,50 @@
           "outputs": ["coverage/libs/core/cookie/service"],
           "options": {
             "jestConfig": "libs/core/cookie/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-environments-service": {
+      "projectType": "library",
+      "root": "libs/core/environments/service",
+      "sourceRoot": "libs/core/environments/service/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/environments/service/src/**/*.ts", "libs/core/environments/service/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/environments/service"],
+          "options": {
+            "jestConfig": "libs/core/environments/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-config-service": {
+      "projectType": "library",
+      "root": "libs/core/config/service",
+      "sourceRoot": "libs/core/config/service/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/config/service/src/**/*.ts", "libs/core/config/service/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/config/service"],
+          "options": {
+            "jestConfig": "libs/core/config/service/jest.config.js",
             "passWithNoTests": true
           }
         }

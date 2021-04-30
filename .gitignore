@@ -41,3 +41,5 @@ Thumbs.db
 # Custom
 yarn.lock
 package-lock.json
+.env
+/apps/**/.env
