@@ -527,6 +527,31 @@
           }
         }
       }
+    },
+    "core-api-interceptors-with-credentials": {
+      "projectType": "library",
+      "root": "libs/core/api/interceptors/with-credentials",
+      "sourceRoot": "libs/core/api/interceptors/with-credentials/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/api/interceptors/with-credentials/src/**/*.ts",
+              "libs/core/api/interceptors/with-credentials/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/api/interceptors/with-credentials"],
+          "options": {
+            "jestConfig": "libs/core/api/interceptors/with-credentials/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
