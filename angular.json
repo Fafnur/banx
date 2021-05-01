@@ -480,6 +480,78 @@
           }
         }
       }
+    },
+    "core-api-service": {
+      "projectType": "library",
+      "root": "libs/core/api/service",
+      "sourceRoot": "libs/core/api/service/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/api/service/src/**/*.ts", "libs/core/api/service/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/api/service"],
+          "options": {
+            "jestConfig": "libs/core/api/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-api-interceptors-content-type": {
+      "projectType": "library",
+      "root": "libs/core/api/interceptors/content-type",
+      "sourceRoot": "libs/core/api/interceptors/content-type/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/api/interceptors/content-type/src/**/*.ts",
+              "libs/core/api/interceptors/content-type/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/api/interceptors/content-type"],
+          "options": {
+            "jestConfig": "libs/core/api/interceptors/content-type/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-api-interceptors-with-credentials": {
+      "projectType": "library",
+      "root": "libs/core/api/interceptors/with-credentials",
+      "sourceRoot": "libs/core/api/interceptors/with-credentials/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/api/interceptors/with-credentials/src/**/*.ts",
+              "libs/core/api/interceptors/with-credentials/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/api/interceptors/with-credentials"],
+          "options": {
+            "jestConfig": "libs/core/api/interceptors/with-credentials/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
