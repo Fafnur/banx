@@ -17,5 +17,6 @@ module.exports = {
     '<rootDir>/libs/core/environments/service',
     '<rootDir>/libs/core/config/service',
     '<rootDir>/libs/core/api/service',
+    '<rootDir>/libs/core/api/interceptors/content-type',
   ],
 };

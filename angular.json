@@ -502,6 +502,31 @@
           }
         }
       }
+    },
+    "core-api-interceptors-content-type": {
+      "projectType": "library",
+      "root": "libs/core/api/interceptors/content-type",
+      "sourceRoot": "libs/core/api/interceptors/content-type/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/core/api/interceptors/content-type/src/**/*.ts",
+              "libs/core/api/interceptors/content-type/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/api/interceptors/content-type"],
+          "options": {
+            "jestConfig": "libs/core/api/interceptors/content-type/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

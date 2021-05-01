@@ -30,7 +30,8 @@
       "@banx/core/cookie/service": ["libs/core/cookie/service/src/index.ts"],
       "@banx/core/environments/service": ["libs/core/environments/service/src/index.ts"],
       "@banx/core/config/service": ["libs/core/config/service/src/index.ts"],
-      "@banx/core/api/service": ["libs/core/api/service/src/index.ts"]
+      "@banx/core/api/service": ["libs/core/api/service/src/index.ts"],
+      "@banx/core/api/interceptors/content-type": ["libs/core/api/interceptors/content-type/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
