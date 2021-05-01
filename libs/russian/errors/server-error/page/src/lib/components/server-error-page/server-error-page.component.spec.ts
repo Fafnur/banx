@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockModule } from 'ng-mocks';
+
+import { ErrorsSharedModule } from '@banx/russian/errors/shared';
 
 import { ServerErrorPageComponent } from './server-error-page.component';
 
@@ -8,9 +11,9 @@ describe('ServerErrorPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ServerErrorPageComponent ]
-    })
-    .compileComponents();
+      imports: [MockModule(ErrorsSharedModule)],
+      declarations: [ServerErrorPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

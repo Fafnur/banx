@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockComponents } from 'ng-mocks';
+
+import { UiContainerComponent } from '@banx/russian/ui/container';
 
 import { ErrorApplicationComponent } from './error-application.component';
 
@@ -8,7 +11,7 @@ describe('ErrorApplicationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ErrorApplicationComponent],
+      declarations: [ErrorApplicationComponent, MockComponents(UiContainerComponent)],
     }).compileComponents();
   });
 

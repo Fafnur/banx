@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockModule } from 'ng-mocks';
+
+import { ErrorsSharedModule } from '@banx/russian/errors/shared';
 
 import { NotFoundPageComponent } from './not-found-page.component';
 
@@ -8,9 +11,9 @@ describe('NotFoundPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NotFoundPageComponent ]
-    })
-    .compileComponents();
+      imports: [MockModule(ErrorsSharedModule)],
+      declarations: [NotFoundPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
