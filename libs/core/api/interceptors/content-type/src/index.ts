@@ -1,1 +1,1 @@
-export * from './lib/core-api-interceptors-content-type.module';
+export * from './lib/api-content-type.module';

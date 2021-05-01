@@ -1,5 +1,7 @@
+import { HttpEvent, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgModule } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { ConfigService } from '@banx/core/config/service';
 
@@ -11,6 +13,12 @@ export const apiErrorStub: Record<string, any> & { message: string; error: any }
 };
 
 export const apiMockError = { status: 400, statusText: 'Bad Request' };
+
+export class HttpHandlerStub implements HttpHandler {
+  handle(req: HttpRequest<any>): Observable<HttpEvent<any>> {
+    return of(new HttpResponse({ body: req.body, status: 200, headers: req.headers }));
+  }
+}
 
 @NgModule({
   imports: [HttpClientTestingModule],
