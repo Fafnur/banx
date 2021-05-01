@@ -480,6 +480,28 @@
           }
         }
       }
+    },
+    "core-api-service": {
+      "projectType": "library",
+      "root": "libs/core/api/service",
+      "sourceRoot": "libs/core/api/service/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/api/service/src/**/*.ts", "libs/core/api/service/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/api/service"],
+          "options": {
+            "jestConfig": "libs/core/api/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

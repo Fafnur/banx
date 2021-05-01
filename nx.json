@@ -29,6 +29,7 @@
     "core-storage-session": { "tags": [] },
     "core-cookie-service": { "tags": [] },
     "core-environments-service": { "tags": [] },
-    "core-config-service": { "tags": [] }
+    "core-config-service": { "tags": [] },
+    "core-api-service": { "tags": [] }
   }
 }
