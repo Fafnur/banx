@@ -1,1 +1,1 @@
-export * from './lib/core-api-interceptors-with-credentials.module';
+export * from './lib/api-with-credentials.module';
