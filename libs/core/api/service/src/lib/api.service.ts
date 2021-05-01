@@ -1,47 +1,11 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { ConfigService } from '@banx/core/config/service';
 
-export interface ApiRequestOptions {
-  headers: Record<string, any>;
-  params: Record<string, any>;
-  reportProgress: boolean;
-  observe: any;
-  responseType: any;
-  withCredentials: boolean;
-}
-
-export function getApiRequestOptions(options?: Partial<ApiRequestOptions>): Partial<ApiRequestOptions> | undefined {
-  if (options) {
-    let params: Record<string, any> = {};
-    let headers: Record<string, any> = {};
-    if (options.headers) {
-      headers = !(options?.headers instanceof HttpHeaders) ? new HttpHeaders(options.headers) : options.headers;
-    }
-    if (options.params) {
-      params = new HttpParams();
-
-      for (const propKey of Object.keys(options.params).sort()) {
-        if (options.params[propKey] !== undefined) {
-          if (Array.isArray(options.params[propKey])) {
-            options.params[propKey].forEach((item) => {
-              params = params.append(`${propKey}[]`, item == null ? 'NULL' : item.toString());
-            });
-          } else {
-            params = params.append(propKey, options.params[propKey] == null ? 'NULL' : options.params[propKey].toString());
-          }
-        }
-      }
-    }
-
-    return { ...options, params, headers };
-  }
-
-  return;
-}
+import { ApiRequestOptions, getApiRequestOptions } from './api.util';
 
 @Injectable({
   providedIn: 'root',
@@ -50,7 +14,7 @@ export class ApiService {
   constructor(private readonly httpClient: HttpClient, private readonly configService: ConfigService) {}
 
   makeUrl(url: string): string {
-    return `${this.configService.getConfig().apiHost}${url}`;
+    return url.indexOf('http') === 0 ? url : `${this.configService.getConfig().apiHost}${url}`;
   }
 
   get<T = void>(url: string, options?: Partial<ApiRequestOptions>): Observable<T> {
