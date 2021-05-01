@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MockModule } from 'ng-mocks';
+
+import { ErrorsSharedModule } from '@banx/russian/errors/shared';
 
 import { PermissionDeniedPageComponent } from './permission-denied-page.component';
 
@@ -8,9 +11,9 @@ describe('PermissionDeniedPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PermissionDeniedPageComponent ]
-    })
-    .compileComponents();
+      imports: [MockModule(ErrorsSharedModule)],
+      declarations: [PermissionDeniedPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

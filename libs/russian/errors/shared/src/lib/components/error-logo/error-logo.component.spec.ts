@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ErrorLogoComponent } from './error-logo.component';
 
@@ -8,9 +9,9 @@ describe('ErrorLogoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ErrorLogoComponent ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [ErrorLogoComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
