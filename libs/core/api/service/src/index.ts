@@ -1,1 +1,2 @@
-export * from './lib/core-api-service.module';
+export * from './lib/api.service';
+export * from './lib/api.stub';
