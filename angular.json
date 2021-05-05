@@ -596,6 +596,28 @@
           }
         }
       }
+    },
+    "core-store-watcher": {
+      "projectType": "library",
+      "root": "libs/core/store/watcher",
+      "sourceRoot": "libs/core/store/watcher/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/store/watcher/src/**/*.ts", "libs/core/store/watcher/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/store/watcher"],
+          "options": {
+            "jestConfig": "libs/core/store/watcher/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

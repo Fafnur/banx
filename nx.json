@@ -34,6 +34,7 @@
     "core-api-interceptors-content-type": { "tags": [] },
     "core-api-interceptors-with-credentials": { "tags": [] },
     "core-store-root": { "tags": [] },
-    "core-store-utils": { "tags": [] }
+    "core-store-utils": { "tags": [] },
+    "core-store-watcher": { "tags": [] }
   }
 }
