@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class ActionWatcher {
   constructor(private readonly actions: Actions) {}
 
-  watch<T = any>(...args: string[]): Observable<T> {
-    let watch$: Observable<T>;
+  watch<T = any>(...args: string[]): Observable<{ type: string; payload: T }> {
+    let watch$: Observable<{ type: string; payload: T }>;
 
     switch (args.length) {
       case 1:
