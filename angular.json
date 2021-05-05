@@ -552,6 +552,72 @@
           }
         }
       }
+    },
+    "core-store-root": {
+      "projectType": "library",
+      "root": "libs/core/store/root",
+      "sourceRoot": "libs/core/store/root/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/store/root/src/**/*.ts", "libs/core/store/root/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/store/root"],
+          "options": {
+            "jestConfig": "libs/core/store/root/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-store-utils": {
+      "projectType": "library",
+      "root": "libs/core/store/utils",
+      "sourceRoot": "libs/core/store/utils/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/store/utils/src/**/*.ts", "libs/core/store/utils/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/store/utils"],
+          "options": {
+            "jestConfig": "libs/core/store/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-store-watcher": {
+      "projectType": "library",
+      "root": "libs/core/store/watcher",
+      "sourceRoot": "libs/core/store/watcher/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/store/watcher/src/**/*.ts", "libs/core/store/watcher/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/store/watcher"],
+          "options": {
+            "jestConfig": "libs/core/store/watcher/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
