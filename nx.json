@@ -32,6 +32,7 @@
     "core-config-service": { "tags": [] },
     "core-api-service": { "tags": [] },
     "core-api-interceptors-content-type": { "tags": [] },
-    "core-api-interceptors-with-credentials": { "tags": [] }
+    "core-api-interceptors-with-credentials": { "tags": [] },
+    "core-store-root": { "tags": [] }
   }
 }
