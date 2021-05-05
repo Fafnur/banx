@@ -1,1 +1,1 @@
-export * from './lib/core-store-watcher.module';
+export * from './lib/action.watcher';
