@@ -33,7 +33,8 @@
       "@banx/core/api/service": ["libs/core/api/service/src/index.ts"],
       "@banx/core/api/interceptors/content-type": ["libs/core/api/interceptors/content-type/src/index.ts"],
       "@banx/core/api/interceptors/with-credentials": ["libs/core/api/interceptors/with-credentials/src/index.ts"],
-      "@banx/core/store/root": ["libs/core/store/root/src/index.ts"]
+      "@banx/core/store/root": ["libs/core/store/root/src/index.ts"],
+      "@banx/core/store/utils": ["libs/core/store/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
