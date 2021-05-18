@@ -1,4 +1,4 @@
-@import 'libs/russian/ui/styles/stylesheets/utils';
+@use 'libs/russian/ui/styles/stylesheets/utils' as utils;
 
 :host {
   display: block;

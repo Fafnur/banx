@@ -1,40 +1,97 @@
 {
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
     "nx.json": "*"
   },
-  "affected": { "defaultBase": "master" },
+  "affected": {
+    "defaultBase": "master"
+  },
   "npmScope": "banx",
   "tasksRunnerOptions": {
-    "default": { "runner": "@nrwl/workspace/tasks-runners/default", "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] } }
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
   },
   "projects": {
-    "russian-cabinet": { "tags": [] },
-    "russian/cabinet-e2e": { "tags": [], "implicitDependencies": ["russian-cabinet"] },
-    "russian-ui-styles": { "tags": [] },
-    "russian-ui-layout": { "tags": [] },
-    "russian-ui-container": { "tags": [] },
-    "russian-content-home-page": { "tags": [] },
-    "russian-errors-not-found-page": { "tags": [] },
-    "russian-errors-shared": { "tags": [] },
-    "russian-errors-server-error-page": { "tags": [] },
-    "russian-errors-permission-denied-page": { "tags": [] },
-    "core-storage-common": { "tags": [] },
-    "core-storage-memory": { "tags": [] },
-    "core-storage-local": { "tags": [] },
-    "core-storage-session": { "tags": [] },
-    "core-cookie-service": { "tags": [] },
-    "core-environments-service": { "tags": [] },
-    "core-config-service": { "tags": [] },
-    "core-api-service": { "tags": [] },
-    "core-api-interceptors-content-type": { "tags": [] },
-    "core-api-interceptors-with-credentials": { "tags": [] },
-    "core-store-root": { "tags": [] },
-    "core-store-utils": { "tags": [] },
-    "core-store-watcher": { "tags": [] }
+    "russian-cabinet": {
+      "tags": []
+    },
+    "russian/cabinet-e2e": {
+      "tags": [],
+      "implicitDependencies": ["russian-cabinet"]
+    },
+    "russian-ui-styles": {
+      "tags": []
+    },
+    "russian-ui-layout": {
+      "tags": []
+    },
+    "russian-ui-container": {
+      "tags": []
+    },
+    "russian-content-home-page": {
+      "tags": []
+    },
+    "russian-errors-not-found-page": {
+      "tags": []
+    },
+    "russian-errors-shared": {
+      "tags": []
+    },
+    "russian-errors-server-error-page": {
+      "tags": []
+    },
+    "russian-errors-permission-denied-page": {
+      "tags": []
+    },
+    "core-storage-common": {
+      "tags": []
+    },
+    "core-storage-memory": {
+      "tags": []
+    },
+    "core-storage-local": {
+      "tags": []
+    },
+    "core-storage-session": {
+      "tags": []
+    },
+    "core-cookie-service": {
+      "tags": []
+    },
+    "core-environments-service": {
+      "tags": []
+    },
+    "core-config-service": {
+      "tags": []
+    },
+    "core-api-service": {
+      "tags": []
+    },
+    "core-api-interceptors-content-type": {
+      "tags": []
+    },
+    "core-api-interceptors-with-credentials": {
+      "tags": []
+    },
+    "core-store-root": {
+      "tags": []
+    },
+    "core-store-utils": {
+      "tags": []
+    },
+    "core-store-watcher": {
+      "tags": []
+    }
   }
 }

@@ -1,4 +1,4 @@
-@import 'libs/russian/ui/styles/stylesheets/utils';
+@use 'libs/russian/ui/styles/stylesheets/utils' as utils;
 
 :host {
   display: block;
@@ -7,7 +7,7 @@
   margin: 0 0 1rem 0;
   text-align: center;
 
-  @include media-breakpoint-up(sm) {
+  @include utils.media-breakpoint-up(sm) {
     font-size: 2rem;
   }
 }

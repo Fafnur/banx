@@ -20,7 +20,12 @@
           {
             "enforceBuildableLibDependency": true,
             "allow": [],
-            "depConstraints": [{ "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }]
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
           }
         ]
       }
@@ -55,7 +60,12 @@
           }
         ],
         "complexity": "error",
-        "max-len": ["error", { "code": 140 }],
+        "max-len": [
+          "error",
+          {
+            "code": 140
+          }
+        ],
         "no-new-wrappers": "error",
         "no-throw-literal": "error",
         "import/no-unresolved": "off",
@@ -97,7 +107,12 @@
       "files": ["*.html"],
       "extends": ["plugin:@nrwl/nx/angular-template"],
       "rules": {
-        "max-len": ["error", { "code": 140 }]
+        "max-len": [
+          "error",
+          {
+            "code": 140
+          }
+        ]
       }
     },
     {

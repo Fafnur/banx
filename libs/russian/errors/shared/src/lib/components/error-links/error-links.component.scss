@@ -1,4 +1,4 @@
-@import 'libs/russian/ui/styles/stylesheets/utils';
+@use 'libs/russian/ui/styles/stylesheets/utils' as utils;
 
 .error-links {
   text-align: center;
@@ -8,7 +8,8 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 5rem;
-  @include media-breakpoint-up(md) {
+
+  @include utils.media-breakpoint-up(md) {
     margin-bottom: 8rem;
   }
 }
@@ -16,5 +17,5 @@
 .error-link {
   display: block;
   margin: 0 0.5rem;
-  color: $color-active;
+  color: utils.$color-active;
 }
