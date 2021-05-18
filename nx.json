@@ -92,6 +92,9 @@
     },
     "core-store-watcher": {
       "tags": []
+    },
+    "russian-ui-grid": {
+      "tags": []
     }
   }
 }
