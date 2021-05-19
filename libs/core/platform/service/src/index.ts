@@ -1,1 +1,1 @@
-export * from './lib/core-platform-service.module';
+export * from './lib/platform.service';
