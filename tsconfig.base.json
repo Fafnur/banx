@@ -36,7 +36,8 @@
       "@banx/core/store/root": ["libs/core/store/root/src/index.ts"],
       "@banx/core/store/utils": ["libs/core/store/utils/src/index.ts"],
       "@banx/core/store/watcher": ["libs/core/store/watcher/src/index.ts"],
-      "@banx/russian/ui/grid": ["libs/russian/ui/grid/src/index.ts"]
+      "@banx/russian/ui/grid": ["libs/russian/ui/grid/src/index.ts"],
+      "@banx/core/platform/service": ["libs/core/platform/service/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

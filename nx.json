@@ -95,6 +95,9 @@
     },
     "russian-ui-grid": {
       "tags": []
+    },
+    "core-platform-service": {
+      "tags": []
     }
   }
 }
