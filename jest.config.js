@@ -22,5 +22,6 @@ module.exports = {
     '<rootDir>/libs/core/store/root',
     '<rootDir>/libs/core/store/utils',
     '<rootDir>/libs/core/store/watcher',
+    '<rootDir>/libs/russian/ui/grid',
   ],
 };

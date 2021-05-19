@@ -618,6 +618,28 @@
           }
         }
       }
+    },
+    "russian-ui-grid": {
+      "projectType": "library",
+      "root": "libs/russian/ui/grid",
+      "sourceRoot": "libs/russian/ui/grid/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/ui/grid"],
+          "options": {
+            "jestConfig": "libs/russian/ui/grid/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/ui/grid/src/**/*.ts", "libs/russian/ui/grid/src/**/*.html"]
+          }
+        }
+      }
     }
   }
 }

@@ -1,1 +1,1 @@
-export * from './lib/russian-ui-styles.module';
+export * from './lib/utils/grid-breakpoints.util';
