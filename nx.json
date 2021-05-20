@@ -98,6 +98,9 @@
     },
     "core-platform-service": {
       "tags": []
+    },
+    "russian-numerals-common": {
+      "tags": []
     }
   }
 }
