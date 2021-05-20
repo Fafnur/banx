@@ -1,1 +1,2 @@
-export * from './lib/russian-numerals-common.module';
+export * from './lib/interfaces/numeral.interface';
+export * from './lib/utils/numeral.util';
