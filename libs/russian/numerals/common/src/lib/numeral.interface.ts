@@ -11,3 +11,8 @@ export const PHRASE_NUMERAL_FORMS: Record<PhraseNumeralType, [string, string, st
   [PhraseNumeralType.Currency]: ['рубль', 'рубля', 'рублей'],
   [PhraseNumeralType.Loan]: ['займ', 'займа', 'займов'],
 };
+
+export enum PhraseNumeralMode {
+  Full = 'full',
+  Single = 'single',
+}

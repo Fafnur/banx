@@ -25,5 +25,6 @@ module.exports = {
     '<rootDir>/libs/russian/ui/grid',
     '<rootDir>/libs/core/platform/service',
     '<rootDir>/libs/russian/numerals/common',
+    '<rootDir>/libs/russian/numerals/shared',
   ],
 };

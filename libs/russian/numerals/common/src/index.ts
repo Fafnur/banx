@@ -1,2 +1,2 @@
-export * from './lib/interfaces/numeral.interface';
-export * from './lib/utils/numeral.util';
+export * from './lib/numeral.interface';
+export * from './lib/numeral.util';

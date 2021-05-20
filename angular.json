@@ -684,6 +684,28 @@
           }
         }
       }
+    },
+    "russian-numerals-shared": {
+      "projectType": "library",
+      "root": "libs/russian/numerals/shared",
+      "sourceRoot": "libs/russian/numerals/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/numerals/shared"],
+          "options": {
+            "jestConfig": "libs/russian/numerals/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/numerals/shared/src/**/*.ts", "libs/russian/numerals/shared/src/**/*.html"]
+          }
+        }
+      }
     }
   }
 }

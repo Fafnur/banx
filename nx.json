@@ -101,6 +101,9 @@
     },
     "russian-numerals-common": {
       "tags": []
+    },
+    "russian-numerals-shared": {
+      "tags": []
     }
   }
 }
