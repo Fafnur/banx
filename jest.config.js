@@ -24,5 +24,9 @@ module.exports = {
     '<rootDir>/libs/core/store/watcher',
     '<rootDir>/libs/russian/ui/grid',
     '<rootDir>/libs/core/platform/service',
+    '<rootDir>/libs/russian/numerals/common',
+    '<rootDir>/libs/russian/numerals/shared',
+    '<rootDir>/libs/numbers-to-words/common',
+    '<rootDir>/libs/numbers-to-words/shared',
   ],
 };

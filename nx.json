@@ -98,6 +98,18 @@
     },
     "core-platform-service": {
       "tags": []
+    },
+    "russian-numerals-common": {
+      "tags": []
+    },
+    "russian-numerals-shared": {
+      "tags": []
+    },
+    "numbers-to-words-common": {
+      "tags": []
+    },
+    "numbers-to-words-shared": {
+      "tags": []
     }
   }
 }
