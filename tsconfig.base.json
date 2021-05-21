@@ -40,7 +40,8 @@
       "@banx/core/platform/service": ["libs/core/platform/service/src/index.ts"],
       "@banx/russian/numerals/common": ["libs/russian/numerals/common/src/index.ts"],
       "@banx/russian/numerals/shared": ["libs/russian/numerals/shared/src/index.ts"],
-      "@banx/numbers-to-words/common": ["libs/numbers-to-words/common/src/index.ts"]
+      "@banx/numbers-to-words/common": ["libs/numbers-to-words/common/src/index.ts"],
+      "@banx/numbers-to-words/shared": ["libs/numbers-to-words/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

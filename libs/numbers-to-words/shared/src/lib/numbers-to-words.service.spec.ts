@@ -1,24 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NUMBER_LOCALE } from '@banx/russian/numerals/common';
+import { NUMBER_LOCALE, RU_LOCALE } from '@banx/numbers-to-words/common';
 
-import { RU_LOCALE } from './locales/ru.locale';
-import { WrittenNumberService } from './written-number.service';
+import { NumbersToWordsService } from './numbers-to-words.service';
 
 describe('WrittenNumberService', () => {
-  let service: WrittenNumberService;
+  let service: NumbersToWordsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        WrittenNumberService,
+        NumbersToWordsService,
         {
           provide: NUMBER_LOCALE,
           useValue: RU_LOCALE,
         },
       ],
     });
-    service = TestBed.inject(WrittenNumberService);
+    service = TestBed.inject(NumbersToWordsService);
   });
 
   it('should be created', () => {

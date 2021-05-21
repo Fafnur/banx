@@ -1,4 +1,4 @@
-import { WrittenNumberLocale } from '@banx/russian/numerals/common';
+import { WrittenNumberLocale } from '../number-to-wrods.interface';
 
 export const FR_LOCALE: WrittenNumberLocale = {
   useLongScale: false,

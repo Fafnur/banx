@@ -107,6 +107,9 @@
     },
     "numbers-to-words-common": {
       "tags": []
+    },
+    "numbers-to-words-shared": {
+      "tags": []
     }
   }
 }

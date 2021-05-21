@@ -1,6 +1,6 @@
-import { WrittenNumberLocale } from '@banx/russian/numerals/common';
+import { WrittenNumberLocale } from '../number-to-wrods.interface';
 
-export const EN_LOCALE: WrittenNumberLocale = {
+export const EN_IN_LOCALE: WrittenNumberLocale = {
   useLongScale: false,
   baseSeparator: '-',
   unitSeparator: 'and ',
@@ -34,24 +34,11 @@ export const EN_LOCALE: WrittenNumberLocale = {
     '80': 'eighty',
     '90': 'ninety',
   },
-  units: [
-    'hundred',
-    'thousand',
-    'million',
-    'billion',
-    'trillion',
-    'quadrillion',
-    'quintillion',
-    'sextillion',
-    'septillion',
-    'octillion',
-    'nonillion',
-    'decillion',
-    'undecillion',
-    'duodecillion',
-    'tredecillion',
-    'quattuordecillion',
-    'quindecillion',
-  ],
+  units: {
+    '2': 'hundred',
+    '3': 'thousand',
+    '5': 'lakh',
+    '7': 'crore',
+  } as any,
   unitExceptions: {},
 };

@@ -1,6 +1,6 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 
-import { NUMBER_LOCALE, WrittenNumberLocale, WrittenNumberOptions } from '@banx/russian/numerals/common';
+import { NUMBER_LOCALE, WrittenNumberLocale, WrittenNumberOptions } from '@banx/numbers-to-words/common';
 
 const shortScale = [100];
 for (let i = 1; i <= 16; i++) {
@@ -21,12 +21,10 @@ const DEFAULTS: WrittenNumberOptions = {
  * @see https://github.com/yamadapc/js-written-number
  */
 @Injectable()
-export class WrittenNumberService {
+export class NumbersToWordsService {
   constructor(@Optional() @Inject(NUMBER_LOCALE) private readonly numberLocale: WrittenNumberLocale) {}
 
-  /**
-   * Converts numbers to their written form.
-   */
+  // eslint-disable-next-line complexity
   get(n: number, options: Partial<WrittenNumberOptions> = {}): string {
     options = { ...DEFAULTS, ...options };
 

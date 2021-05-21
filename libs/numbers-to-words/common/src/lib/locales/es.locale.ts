@@ -1,4 +1,4 @@
-import { WrittenNumberLocale } from '@banx/russian/numerals/common';
+import { WrittenNumberLocale } from '../number-to-wrods.interface';
 
 export const ES_LOCALE: WrittenNumberLocale = {
   useLongScale: true,
@@ -75,6 +75,7 @@ export const ES_LOCALE: WrittenNumberLocale = {
       singular: 'ciento',
       useBaseInstead: true,
       useBaseException: [1],
+      useBaseExceptionWhenNoTrailingNumbers: true,
     },
     {
       singular: 'mil',

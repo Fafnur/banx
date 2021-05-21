@@ -1,12 +1,13 @@
-import { RU_LOCALE } from './locales/ru.locale';
-import { WrittenNumberPipe } from './written-number.pipe';
-import { WrittenNumberService } from './written-number.service';
+import { RU_LOCALE } from '@banx/numbers-to-words/common';
 
-describe('WrittenNumberPipe', () => {
-  let pipe: WrittenNumberPipe;
+import { NumbersToWordsPipe } from './numbers-to-words.pipe';
+import { NumbersToWordsService } from './numbers-to-words.service';
+
+describe('NumbersToWordsPipe', () => {
+  let pipe: NumbersToWordsPipe;
 
   beforeEach(() => {
-    pipe = new WrittenNumberPipe(new WrittenNumberService(RU_LOCALE));
+    pipe = new NumbersToWordsPipe(new NumbersToWordsService(RU_LOCALE));
   });
 
   it('create an instance', () => {
