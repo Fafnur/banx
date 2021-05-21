@@ -1,4 +1,4 @@
-import { WrittenNumberLocale } from '../written-number.interface';
+import { WrittenNumberLocale } from '@banx/russian/numerals/common';
 
 export const UK_LOCALE: WrittenNumberLocale = {
   useLongScale: false,

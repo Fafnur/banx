@@ -1,7 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
+import { NUMBER_LOCALE } from '@banx/russian/numerals/common';
+
 import { RU_LOCALE } from './locales/ru.locale';
-import { NUMBER_LOCALE } from './written-number.interface';
 import { WrittenNumberService } from './written-number.service';
 
 describe('WrittenNumberService', () => {

@@ -1,6 +1,6 @@
 import { Inject, Injectable, Optional } from '@angular/core';
 
-import { NUMBER_LOCALE, WrittenNumberLocale, WrittenNumberOptions } from './written-number.interface';
+import { NUMBER_LOCALE, WrittenNumberLocale, WrittenNumberOptions } from '@banx/russian/numerals/common';
 
 const shortScale = [100];
 for (let i = 1; i <= 16; i++) {
