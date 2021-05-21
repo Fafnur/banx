@@ -706,6 +706,28 @@
           }
         }
       }
+    },
+    "numbers-to-words-common": {
+      "projectType": "library",
+      "root": "libs/numbers-to-words/common",
+      "sourceRoot": "libs/numbers-to-words/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/numbers-to-words/common"],
+          "options": {
+            "jestConfig": "libs/numbers-to-words/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/numbers-to-words/common/src/**/*.ts", "libs/numbers-to-words/common/src/**/*.html"]
+          }
+        }
+      }
     }
   }
 }

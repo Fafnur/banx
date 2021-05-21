@@ -26,5 +26,6 @@ module.exports = {
     '<rootDir>/libs/core/platform/service',
     '<rootDir>/libs/russian/numerals/common',
     '<rootDir>/libs/russian/numerals/shared',
+    '<rootDir>/libs/numbers-to-words/common',
   ],
 };

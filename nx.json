@@ -104,6 +104,9 @@
     },
     "russian-numerals-shared": {
       "tags": []
+    },
+    "numbers-to-words-common": {
+      "tags": []
     }
   }
 }
