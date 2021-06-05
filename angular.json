@@ -62,7 +62,10 @@
           "configurations": {
             "production": {
               "customWebpackConfig": {
-                "path": "apps/russian/cabinet/webpack-prod.config.ts"
+                "path": "apps/russian/cabinet/webpack-prod.config.ts",
+                "mergeStrategies": {
+                  "module.rules": "prepend"
+                }
               },
               "fileReplacements": [
                 {
