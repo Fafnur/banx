@@ -31,6 +31,10 @@
     "@nrwl/angular:component": {
       "style": "scss",
       "changeDetection": "OnPush"
+    },
+    "@schematics/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush"
     }
   },
   "projects": {
@@ -114,7 +118,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/russian/cabinet"],
           "options": {
             "jestConfig": "apps/russian/cabinet/jest.config.js",
             "passWithNoTests": true
@@ -162,7 +165,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/ui/styles"],
           "options": {
             "jestConfig": "libs/russian/ui/styles/jest.config.js",
             "passWithNoTests": true
@@ -184,7 +186,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/ui/layout"],
           "options": {
             "jestConfig": "libs/russian/ui/layout/jest.config.js",
             "passWithNoTests": true
@@ -206,7 +207,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/ui/container"],
           "options": {
             "jestConfig": "libs/russian/ui/container/jest.config.js",
             "passWithNoTests": true
@@ -228,7 +228,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/content/home/page"],
           "options": {
             "jestConfig": "libs/russian/content/home/page/jest.config.js",
             "passWithNoTests": true
@@ -250,7 +249,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/errors/not-found/page"],
           "options": {
             "jestConfig": "libs/russian/errors/not-found/page/jest.config.js",
             "passWithNoTests": true
@@ -272,7 +270,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/errors/shared"],
           "options": {
             "jestConfig": "libs/russian/errors/shared/jest.config.js",
             "passWithNoTests": true
@@ -294,7 +291,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/errors/server-error/page"],
           "options": {
             "jestConfig": "libs/russian/errors/server-error/page/jest.config.js",
             "passWithNoTests": true
@@ -319,7 +315,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/errors/permission-denied/page"],
           "options": {
             "jestConfig": "libs/russian/errors/permission-denied/page/jest.config.js",
             "passWithNoTests": true
@@ -341,7 +336,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/storage/common"],
           "options": {
             "jestConfig": "libs/core/storage/common/jest.config.js",
             "passWithNoTests": true
@@ -363,7 +357,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/storage/memory"],
           "options": {
             "jestConfig": "libs/core/storage/memory/jest.config.js",
             "passWithNoTests": true
@@ -385,7 +378,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/storage/local"],
           "options": {
             "jestConfig": "libs/core/storage/local/jest.config.js",
             "passWithNoTests": true
@@ -407,7 +399,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/storage/session"],
           "options": {
             "jestConfig": "libs/core/storage/session/jest.config.js",
             "passWithNoTests": true
@@ -429,7 +420,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/cookie/service"],
           "options": {
             "jestConfig": "libs/core/cookie/service/jest.config.js",
             "passWithNoTests": true
@@ -451,7 +441,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/environments/service"],
           "options": {
             "jestConfig": "libs/core/environments/service/jest.config.js",
             "passWithNoTests": true
@@ -473,7 +462,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/config/service"],
           "options": {
             "jestConfig": "libs/core/config/service/jest.config.js",
             "passWithNoTests": true
@@ -495,7 +483,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/api/service"],
           "options": {
             "jestConfig": "libs/core/api/service/jest.config.js",
             "passWithNoTests": true
@@ -520,7 +507,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/api/interceptors/content-type"],
           "options": {
             "jestConfig": "libs/core/api/interceptors/content-type/jest.config.js",
             "passWithNoTests": true
@@ -545,7 +531,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/api/interceptors/with-credentials"],
           "options": {
             "jestConfig": "libs/core/api/interceptors/with-credentials/jest.config.js",
             "passWithNoTests": true
@@ -567,7 +552,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/store/root"],
           "options": {
             "jestConfig": "libs/core/store/root/jest.config.js",
             "passWithNoTests": true
@@ -589,7 +573,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/store/utils"],
           "options": {
             "jestConfig": "libs/core/store/utils/jest.config.js",
             "passWithNoTests": true
@@ -611,7 +594,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/store/watcher"],
           "options": {
             "jestConfig": "libs/core/store/watcher/jest.config.js",
             "passWithNoTests": true
@@ -627,7 +609,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/ui/grid"],
           "options": {
             "jestConfig": "libs/russian/ui/grid/jest.config.js",
             "passWithNoTests": true
@@ -649,7 +630,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/platform/service"],
           "options": {
             "jestConfig": "libs/core/platform/service/jest.config.js",
             "passWithNoTests": true
@@ -671,7 +651,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/numerals/common"],
           "options": {
             "jestConfig": "libs/russian/numerals/common/jest.config.js",
             "passWithNoTests": true
@@ -693,7 +672,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/numerals/shared"],
           "options": {
             "jestConfig": "libs/russian/numerals/shared/jest.config.js",
             "passWithNoTests": true
@@ -715,7 +693,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/numbers-to-words/common"],
           "options": {
             "jestConfig": "libs/numbers-to-words/common/jest.config.js",
             "passWithNoTests": true
@@ -737,7 +714,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/numbers-to-words/shared"],
           "options": {
             "jestConfig": "libs/numbers-to-words/shared/jest.config.js",
             "passWithNoTests": true

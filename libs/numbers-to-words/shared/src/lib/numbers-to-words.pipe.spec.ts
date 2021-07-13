@@ -16,7 +16,7 @@ describe('NumbersToWordsPipe', () => {
 
   it('should return correct form', () => {
     expect(pipe.transform(1)).toBe('один');
-    expect(pipe.transform(11)).toBe('одинадцать');
+    expect(pipe.transform(11)).toBe('одиннадцать');
     expect(pipe.transform(123)).toBe('сто двадцать три');
   });
 });

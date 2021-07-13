@@ -6,9 +6,6 @@ module.exports = {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',
       stringifyContentPathRegex: '\\.(html|svg)$',
-      astTransformers: {
-        before: ['jest-preset-angular/build/InlineFilesTransformer', 'jest-preset-angular/build/StripStylesTransformer'],
-      },
     },
   },
   coverageDirectory: '../../../../coverage/libs/core/cookie/service',
@@ -17,4 +14,8 @@ module.exports = {
     'jest-preset-angular/build/serializers/ng-snapshot',
     'jest-preset-angular/build/serializers/html-comment',
   ],
+  testRunner: 'jest-jasmine2',
+  transform: {
+    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
+  },
 };
