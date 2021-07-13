@@ -27,47 +27,16 @@
     ]
   },
   "projects": {
-    "russian-cabinet": {
+    "core-api-interceptors-content-type": {
       "tags": []
     },
-    "russian/cabinet-e2e": {
-      "tags": [],
-      "implicitDependencies": ["russian-cabinet"]
-    },
-    "russian-ui-styles": {
+    "core-api-interceptors-with-credentials": {
       "tags": []
     },
-    "russian-ui-layout": {
+    "core-api-service": {
       "tags": []
     },
-    "russian-ui-container": {
-      "tags": []
-    },
-    "russian-content-home-page": {
-      "tags": []
-    },
-    "russian-errors-not-found-page": {
-      "tags": []
-    },
-    "russian-errors-shared": {
-      "tags": []
-    },
-    "russian-errors-server-error-page": {
-      "tags": []
-    },
-    "russian-errors-permission-denied-page": {
-      "tags": []
-    },
-    "core-storage-common": {
-      "tags": []
-    },
-    "core-storage-memory": {
-      "tags": []
-    },
-    "core-storage-local": {
-      "tags": []
-    },
-    "core-storage-session": {
+    "core-config-service": {
       "tags": []
     },
     "core-cookie-service": {
@@ -76,16 +45,19 @@
     "core-environments-service": {
       "tags": []
     },
-    "core-config-service": {
+    "core-platform-service": {
       "tags": []
     },
-    "core-api-service": {
+    "core-storage-common": {
       "tags": []
     },
-    "core-api-interceptors-content-type": {
+    "core-storage-local": {
       "tags": []
     },
-    "core-api-interceptors-with-credentials": {
+    "core-storage-memory": {
+      "tags": []
+    },
+    "core-storage-session": {
       "tags": []
     },
     "core-store-root": {
@@ -97,10 +69,31 @@
     "core-store-watcher": {
       "tags": []
     },
-    "russian-ui-grid": {
+    "core-testing": {
       "tags": []
     },
-    "core-platform-service": {
+    "numbers-to-words-common": {
+      "tags": []
+    },
+    "numbers-to-words-shared": {
+      "tags": []
+    },
+    "russian-cabinet": {
+      "tags": []
+    },
+    "russian-content-home-page": {
+      "tags": []
+    },
+    "russian-errors-not-found-page": {
+      "tags": []
+    },
+    "russian-errors-permission-denied-page": {
+      "tags": []
+    },
+    "russian-errors-server-error-page": {
+      "tags": []
+    },
+    "russian-errors-shared": {
       "tags": []
     },
     "russian-numerals-common": {
@@ -109,11 +102,21 @@
     "russian-numerals-shared": {
       "tags": []
     },
-    "numbers-to-words-common": {
+    "russian-ui-container": {
       "tags": []
     },
-    "numbers-to-words-shared": {
+    "russian-ui-grid": {
       "tags": []
+    },
+    "russian-ui-layout": {
+      "tags": []
+    },
+    "russian-ui-styles": {
+      "tags": []
+    },
+    "russian/cabinet-e2e": {
+      "tags": [],
+      "implicitDependencies": ["russian-cabinet"]
     }
   }
 }
