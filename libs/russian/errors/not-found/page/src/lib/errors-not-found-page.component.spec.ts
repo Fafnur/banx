@@ -3,21 +3,21 @@ import { MockModule } from 'ng-mocks';
 
 import { ErrorsSharedModule } from '@banx/russian/errors/shared';
 
-import { NotFoundPageComponent } from './not-found-page.component';
+import { ErrorsNotFoundPageComponent } from './errors-not-found-page.component';
 
 describe('NotFoundPageComponent', () => {
-  let component: NotFoundPageComponent;
-  let fixture: ComponentFixture<NotFoundPageComponent>;
+  let component: ErrorsNotFoundPageComponent;
+  let fixture: ComponentFixture<ErrorsNotFoundPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MockModule(ErrorsSharedModule)],
-      declarations: [NotFoundPageComponent],
+      declarations: [ErrorsNotFoundPageComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotFoundPageComponent);
+    fixture = TestBed.createComponent(ErrorsNotFoundPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
