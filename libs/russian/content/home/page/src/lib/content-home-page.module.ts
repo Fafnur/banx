@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
-import { GridModule } from '@banx/russian/ui/grid';
 import { ContainerModule } from '@banx/ui/container';
+import { GridModule } from '@banx/ui/grid';
 
 import { ContentHomePageComponent } from './content-home-page.component';
 import { ContentHomePageRoutingModule } from './content-home-page-routing.module';

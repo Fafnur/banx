@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockModule } from 'ng-mocks';
 
-import { GridModule } from '@banx/russian/ui/grid';
 import { ContainerModule } from '@banx/ui/container';
+import { GridModule } from '@banx/ui/grid';
 
 import { ContentHomePageComponent } from './content-home-page.component';
 

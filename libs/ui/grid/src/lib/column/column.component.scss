@@ -1,0 +1,31 @@
+@use 'sass:math';
+@use 'libs/ui/stylesheets/utils';
+
+@mixin make-columns($columnName: 'column', $gutter: 1rem, $columnsCount: 12) {
+  @each $breakpoint, $width in $grid-breakpoints {
+    @media (min-width: $width) {
+      &.#{$columnName}-#{$breakpoint} {
+        flex: 1 0 0;
+        padding: 0 $gutter;
+      }
+
+      &[class*='#{$columnName}-#{$breakpoint}'] {
+        padding: 0 $gutter;
+      }
+
+      &[class*='#{$columnName}-#{$breakpoint}-'] {
+        flex: 0 0 auto;
+      }
+
+      @for $column from 1 through $columnsCount {
+        &.#{$columnName}-#{$breakpoint}-#{$column} {
+          width: math.percentage($column / $columnsCount);
+        }
+      }
+    }
+  }
+}
+
+:host {
+  @include make-columns();
+}

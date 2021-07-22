@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'russian-ui-grid',
-  preset: '../../../../jest.preset.js',
+  displayName: 'ui-grid',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/russian/ui/grid',
+  coverageDirectory: '../../../coverage/libs/ui/grid',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',
