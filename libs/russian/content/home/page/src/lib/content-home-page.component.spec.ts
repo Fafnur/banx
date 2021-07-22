@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MockModule } from 'ng-mocks';
 
-import { UiContainerModule } from '@banx/russian/ui/container';
 import { GridModule } from '@banx/russian/ui/grid';
+import { ContainerModule } from '@banx/ui/container';
 
 import { ContentHomePageComponent } from './content-home-page.component';
 
@@ -12,7 +12,7 @@ describe('ContentHomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MockModule(UiContainerModule), MockModule(GridModule)],
+      imports: [MockModule(ContainerModule), MockModule(GridModule)],
       declarations: [ContentHomePageComponent],
     }).compileComponents();
   });

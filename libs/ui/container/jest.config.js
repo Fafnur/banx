@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'russian-ui-container',
-  preset: '../../../../jest.preset.js',
+  displayName: 'ui-container',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/russian/ui/container',
+  coverageDirectory: '../../../coverage/libs/ui/container',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',
     'jest-preset-angular/build/serializers/ng-snapshot',

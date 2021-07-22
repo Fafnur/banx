@@ -638,27 +638,6 @@
         }
       }
     },
-    "russian-ui-container": {
-      "projectType": "library",
-      "root": "libs/russian/ui/container",
-      "sourceRoot": "libs/russian/ui/container/src",
-      "prefix": "banx",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/ui/container/src/**/*.ts", "libs/russian/ui/container/src/**/*.html"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/ui/container/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "russian-ui-grid": {
       "projectType": "library",
       "root": "libs/russian/ui/grid",
@@ -744,6 +723,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/russian/cabinet-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui-container": {
+      "projectType": "library",
+      "root": "libs/ui/container",
+      "sourceRoot": "libs/ui/container/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/container/src/**/*.ts", "libs/ui/container/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/container/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

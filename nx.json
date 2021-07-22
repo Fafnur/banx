@@ -102,9 +102,6 @@
     "russian-numerals-shared": {
       "tags": []
     },
-    "russian-ui-container": {
-      "tags": []
-    },
     "russian-ui-grid": {
       "tags": []
     },
@@ -117,6 +114,9 @@
     "russian/cabinet-e2e": {
       "tags": [],
       "implicitDependencies": ["russian-cabinet"]
+    },
+    "ui-container": {
+      "tags": []
     }
   }
 }

@@ -3,7 +3,7 @@ import { MatButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MockComponents } from 'ng-mocks';
 
-import { UiContainerComponent } from '@banx/russian/ui/container';
+import { ContainerComponent } from '@banx/ui/container';
 
 import { UiHeaderComponent } from './ui-header.component';
 
@@ -13,7 +13,7 @@ describe('UiHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UiHeaderComponent, MockComponents(UiContainerComponent, MatIcon, MatButton)],
+      declarations: [UiHeaderComponent, MockComponents(ContainerComponent, MatIcon, MatButton)],
     }).compileComponents();
   });
 

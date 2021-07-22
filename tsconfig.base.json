@@ -14,6 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "paths": {
       "@banx/core/api/interceptors/content-type": ["libs/core/api/interceptors/content-type/src/index.ts"],
       "@banx/core/api/interceptors/with-credentials": ["libs/core/api/interceptors/with-credentials/src/index.ts"],
@@ -39,11 +43,17 @@
       "@banx/russian/errors/shared": ["libs/russian/errors/shared/src/index.ts"],
       "@banx/russian/numerals/common": ["libs/russian/numerals/common/src/index.ts"],
       "@banx/russian/numerals/shared": ["libs/russian/numerals/shared/src/index.ts"],
-      "@banx/russian/ui/container": ["libs/russian/ui/container/src/index.ts"],
       "@banx/russian/ui/grid": ["libs/russian/ui/grid/src/index.ts"],
       "@banx/russian/ui/layout": ["libs/russian/ui/layout/src/index.ts"],
-      "@banx/russian/ui/styles": ["libs/russian/ui/styles/src/index.ts"]
+      "@banx/russian/ui/styles": ["libs/russian/ui/styles/src/index.ts"],
+      "@banx/ui/container": ["libs/ui/container/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }

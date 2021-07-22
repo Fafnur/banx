@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { UiContainerModule } from '@banx/russian/ui/container';
+import { ContainerModule } from '@banx/ui/container';
 
 import { ErrorApplicationComponent } from './components/error-application/error-application.component';
 import { ErrorHintComponent } from './components/error-hint/error-hint.component';
@@ -21,7 +21,7 @@ const components: Type<any>[] = [
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule, UiContainerModule],
+  imports: [CommonModule, RouterModule, ContainerModule],
   declarations: [...components],
   exports: [...components],
 })
