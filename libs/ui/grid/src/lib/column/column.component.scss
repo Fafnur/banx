@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use 'libs/ui/stylesheets/utils';
+@import 'libs/ui/stylesheets/utils';
 
 @mixin make-columns($columnName: 'column', $gutter: 1rem, $columnsCount: 12) {
   @each $breakpoint, $width in $grid-breakpoints {
@@ -19,7 +19,7 @@
 
       @for $column from 1 through $columnsCount {
         &.#{$columnName}-#{$breakpoint}-#{$column} {
-          width: math.percentage($column / $columnsCount);
+          width: math.div($column, $columnsCount);
         }
       }
     }
