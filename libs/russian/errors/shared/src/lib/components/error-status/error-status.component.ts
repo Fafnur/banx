@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErrorStatusComponent {
-  @Input() color: 'primary' | 'accent' | 'active' | 'danger';
+  @Input() color!: 'primary' | 'accent' | 'active' | 'danger';
 
   @HostBinding('class.is-primary') get isPrimary(): boolean {
     return this.color === 'primary';
