@@ -3,20 +3,20 @@ import { MockComponents } from 'ng-mocks';
 
 import { ContainerComponent } from '@banx/ui/container';
 
-import { UiFooterComponent } from './ui-footer.component';
+import { FooterComponent } from './footer.component';
 
 describe('UiFooterComponent', () => {
-  let component: UiFooterComponent;
-  let fixture: ComponentFixture<UiFooterComponent>;
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UiFooterComponent, MockComponents(ContainerComponent)],
+      declarations: [FooterComponent, MockComponents(ContainerComponent)],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UiFooterComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
