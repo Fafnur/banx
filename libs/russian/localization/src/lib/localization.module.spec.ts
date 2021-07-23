@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AppLocaleModule } from './app-locale.module';
+import { LocalizationModule } from './localization.module';
 
-describe('AppLocaleModule', () => {
+describe('LocalizationModule', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppLocaleModule],
+      imports: [LocalizationModule],
     }).compileComponents();
   });
 
   it('should create', () => {
-    expect(AppLocaleModule).toBeTruthy();
+    expect(LocalizationModule).toBeTruthy();
   });
 });

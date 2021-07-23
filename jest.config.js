@@ -28,5 +28,6 @@ module.exports = {
     '<rootDir>/libs/numbers-to-words/common',
     '<rootDir>/libs/numbers-to-words/shared',
     '<rootDir>/libs/core/testing',
+    '<rootDir>/libs/russian/localization',
   ],
 };

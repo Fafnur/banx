@@ -406,6 +406,15 @@
       "root": "apps/russian/cabinet",
       "sourceRoot": "apps/russian/cabinet/src",
       "prefix": "banx",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru-RU": {
+            "translation": "libs/russian/localization/src/lib/messages.xlf",
+            "baseHref": ""
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -418,6 +427,7 @@
             "main": "apps/russian/cabinet/src/main.ts",
             "polyfills": "apps/russian/cabinet/src/polyfills.ts",
             "tsConfig": "apps/russian/cabinet/tsconfig.app.json",
+            "localize": ["ru-RU"],
             "aot": true,
             "assets": ["apps/russian/cabinet/src/favicon.ico", "apps/russian/cabinet/src/assets"],
             "styles": ["apps/russian/cabinet/src/styles.scss"],
@@ -592,6 +602,27 @@
           "options": {
             "jestConfig": "libs/russian/errors/shared/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "russian-localization": {
+      "projectType": "library",
+      "root": "libs/russian/localization",
+      "sourceRoot": "libs/russian/localization/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/localization/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/localization/src/**/*.ts", "libs/russian/localization/src/**/*.html"]
           }
         }
       }
