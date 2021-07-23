@@ -105,9 +105,6 @@
     "russian-ui-layout": {
       "tags": []
     },
-    "russian-ui-styles": {
-      "tags": []
-    },
     "russian/cabinet-e2e": {
       "tags": [],
       "implicitDependencies": ["russian-cabinet"]

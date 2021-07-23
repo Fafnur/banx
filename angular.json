@@ -659,27 +659,6 @@
         }
       }
     },
-    "russian-ui-styles": {
-      "projectType": "library",
-      "root": "libs/russian/ui/styles",
-      "sourceRoot": "libs/russian/ui/styles/src",
-      "prefix": "banx",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/ui/styles/src/**/*.ts", "libs/russian/ui/styles/src/**/*.html"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/ui/styles/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "russian/cabinet-e2e": {
       "root": "apps/russian/cabinet-e2e",
       "sourceRoot": "apps/russian/cabinet-e2e/src",
