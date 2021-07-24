@@ -1,0 +1,17 @@
+@import 'libs/ui/stylesheets/utils';
+
+.toolbar-spacer {
+  flex-grow: 1;
+}
+
+.toolbar-action {
+  &.is-mobile {
+    display: block;
+  }
+
+  @include media-breakpoint-up(md) {
+    &.is-mobile {
+      display: none;
+    }
+  }
+}

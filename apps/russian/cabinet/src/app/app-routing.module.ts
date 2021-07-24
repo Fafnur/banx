@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { UiLayoutComponent } from '@banx/russian/ui/layout';
+import { CopyrightComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
 
 const routes: Routes = [
   {
     path: '',
-    component: UiLayoutComponent,
+    component: LayoutComponent,
     children: [
+      {
+        path: '',
+        component: ToolbarComponent,
+        outlet: 'header',
+      },
+      {
+        path: '',
+        component: CopyrightComponent,
+        outlet: 'footer',
+      },
       {
         path: '',
         loadChildren: (): Promise<any> => import('./content/content.module').then((modules) => modules.ContentModule),

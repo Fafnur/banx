@@ -32,7 +32,7 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript", "plugin:@nrwl/nx/angular"],
+      "extends": ["plugin:@nrwl/nx/typescript", "plugin:@nrwl/nx/angular", "plugin:import/recommended"],
       "rules": {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/dot-notation": "off",

@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ng serve",
     "start:api": "ts-node apps/russian/cabinet/api.server.ts",
+    "extract-i18n:russian-cabinet": "ng extract-i18n russian-cabinet --out-file=libs/russian/localization/src/lib/source.xlf",
     "build": "ng build",
     "test": "ng test",
     "test:all": "nx run-many --target=test --all",

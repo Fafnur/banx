@@ -29,9 +29,9 @@ export class CookieService {
       name = encodeURIComponent(name);
 
       const regExp: RegExp = this.getCookieRegExp(name);
-      const result: RegExpExecArray = regExp.exec(this.document.cookie);
+      const result: RegExpExecArray | null = regExp.exec(this.document.cookie);
 
-      return this.safeDecodeURIComponent(result[1]);
+      return result?.length ? this.safeDecodeURIComponent(result[1]) : '';
     } else {
       return '';
     }
@@ -46,7 +46,7 @@ export class CookieService {
     const document: any = this.document;
 
     if (document.cookie && document.cookie !== '') {
-      document.cookie.split(';').forEach((currentCookie) => {
+      document.cookie.split(';').forEach((currentCookie: any) => {
         const [cookieName, cookieValue] = currentCookie.split('=');
         cookies[this.safeDecodeURIComponent(cookieName.replace(/^ /, ''))] = this.safeDecodeURIComponent(cookieValue);
       });

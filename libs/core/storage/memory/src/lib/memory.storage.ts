@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 
+import { SyncStorage } from '@banx/core/storage/common';
+
 @Injectable({
   providedIn: 'root',
 })
-export class MemoryStorage implements Storage {
+export class MemoryStorage implements SyncStorage {
   private data: Record<string, any> = {};
 
   get length(): number {

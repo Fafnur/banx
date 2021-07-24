@@ -43,3 +43,4 @@ yarn.lock
 package-lock.json
 .env
 /apps/**/.env
+/libs/**/source.xlf

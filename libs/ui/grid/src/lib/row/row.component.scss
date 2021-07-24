@@ -1,0 +1,26 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+
+  @each $breakpoint, $width in $grid-breakpoints {
+    @include media-breakpoint-up($breakpoint) {
+      &.row-#{$breakpoint} {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+        margin: 0 -1rem;
+      }
+
+      &.row-#{$breakpoint}.no-padding {
+        margin: 0;
+      }
+
+      &.row-#{$breakpoint}.no-padding ::ng-deep > [class^='column-#{$breakpoint}'] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+}

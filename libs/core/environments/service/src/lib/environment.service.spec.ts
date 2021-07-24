@@ -1,15 +1,10 @@
-import { Environments } from './environment.interface';
-import { EnvironmentService } from './environment.service';
+import { ENVIRONMENTS_DEFAULT, EnvironmentService } from './environment.service';
 
 describe('EnvironmentService', () => {
   let service: EnvironmentService;
 
-  const environmentsStub: Environments = {
-    production: true,
-  };
-
   beforeEach(() => {
-    service = new EnvironmentService(environmentsStub);
+    service = new EnvironmentService(null);
   });
 
   it('should create', () => {
@@ -17,6 +12,6 @@ describe('EnvironmentService', () => {
   });
 
   it('should return getEnvironments', () => {
-    expect(service.getEnvironments()).toEqual(environmentsStub);
+    expect(service.environments).toEqual(ENVIRONMENTS_DEFAULT);
   });
 });
