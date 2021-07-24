@@ -9,8 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'server-error',
-    loadChildren: (): Promise<any> =>
-      import('@banx/russian/errors/server-error/page').then((modules) => modules.ErrorsServerErrorPagePageModule),
+    loadChildren: (): Promise<any> => import('@banx/russian/errors/server-error/page').then((modules) => modules.ServerErrorPagePageModule),
   },
   {
     path: '**',

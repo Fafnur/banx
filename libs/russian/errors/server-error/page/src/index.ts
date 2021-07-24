@@ -1,1 +1,1 @@
-export * from './lib/errors-server-error-page-page.module';
+export * from './lib/server-error-page-page.module';
