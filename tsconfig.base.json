@@ -44,9 +44,9 @@
       "@banx/russian/localization": ["libs/russian/localization/src/index.ts"],
       "@banx/russian/numerals/common": ["libs/russian/numerals/common/src/index.ts"],
       "@banx/russian/numerals/shared": ["libs/russian/numerals/shared/src/index.ts"],
-      "@banx/russian/ui/layout": ["libs/russian/ui/layout/src/index.ts"],
       "@banx/ui/container": ["libs/ui/container/src/index.ts"],
-      "@banx/ui/grid": ["libs/ui/grid/src/index.ts"]
+      "@banx/ui/grid": ["libs/ui/grid/src/index.ts"],
+      "@banx/ui/layout": ["libs/ui/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

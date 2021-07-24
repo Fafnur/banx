@@ -1,12 +1,12 @@
 {
-  "extends": ["../../../../.eslintrc.json"],
+  "extends": "../../../.eslintrc.json",
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts"],
       "extends": ["plugin:@nrwl/nx/angular", "plugin:@angular-eslint/template/process-inline-templates"],
       "parserOptions": {
-        "project": ["libs/russian/ui/layout/tsconfig.*?.json"]
+        "project": ["libs/ui/layout/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

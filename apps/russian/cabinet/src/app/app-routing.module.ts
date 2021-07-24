@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CopyrightComponent, LayoutComponent, ToolbarComponent } from '@banx/russian/ui/layout';
+import { CopyrightComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
 
 const routes: Routes = [
   {
