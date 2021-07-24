@@ -359,6 +359,90 @@
         }
       }
     },
+    "errors-not-found-page": {
+      "projectType": "library",
+      "root": "libs/errors/not-found/page",
+      "sourceRoot": "libs/errors/not-found/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/errors/not-found/page/src/**/*.ts", "libs/errors/not-found/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/errors/not-found/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "errors-permission-denied-page": {
+      "projectType": "library",
+      "root": "libs/errors/permission-denied/page",
+      "sourceRoot": "libs/errors/permission-denied/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/errors/permission-denied/page/src/**/*.ts", "libs/errors/permission-denied/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/errors/permission-denied/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "errors-server-error-page": {
+      "projectType": "library",
+      "root": "libs/errors/server-error/page",
+      "sourceRoot": "libs/errors/server-error/page/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/errors/server-error/page/src/**/*.ts", "libs/errors/server-error/page/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/errors/server-error/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "errors-shared": {
+      "projectType": "library",
+      "root": "libs/errors/shared",
+      "sourceRoot": "libs/errors/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/errors/shared/src/**/*.ts", "libs/errors/shared/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/errors/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "numbers-to-words-common": {
       "projectType": "library",
       "root": "libs/numbers-to-words/common",
@@ -514,93 +598,6 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/russian/content/home/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "russian-errors-not-found-page": {
-      "projectType": "library",
-      "root": "libs/russian/errors/not-found/page",
-      "sourceRoot": "libs/russian/errors/not-found/page/src",
-      "prefix": "banx",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/errors/not-found/page/src/**/*.ts", "libs/russian/errors/not-found/page/src/**/*.html"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/errors/not-found/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "russian-errors-permission-denied-page": {
-      "projectType": "library",
-      "root": "libs/russian/errors/permission-denied/page",
-      "sourceRoot": "libs/russian/errors/permission-denied/page/src",
-      "prefix": "banx",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/russian/errors/permission-denied/page/src/**/*.ts",
-              "libs/russian/errors/permission-denied/page/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/errors/permission-denied/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "russian-errors-server-error-page": {
-      "projectType": "library",
-      "root": "libs/russian/errors/server-error/page",
-      "sourceRoot": "libs/russian/errors/server-error/page/src",
-      "prefix": "banx",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/errors/server-error/page/src/**/*.ts", "libs/russian/errors/server-error/page/src/**/*.html"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/errors/server-error/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "russian-errors-shared": {
-      "projectType": "library",
-      "root": "libs/russian/errors/shared",
-      "sourceRoot": "libs/russian/errors/shared/src",
-      "prefix": "banx",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/errors/shared/src/**/*.ts", "libs/russian/errors/shared/src/**/*.html"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/errors/shared/jest.config.js",
             "passWithNoTests": true
           }
         }

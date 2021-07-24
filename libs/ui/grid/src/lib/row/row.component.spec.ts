@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { GridBreakpointName } from '../grid.util';
 import { RowComponent } from './row.component';
-import { RowComponentPo } from './row.po';
+import { RowComponentPo } from './row.component.po';
 
 @Component({
   template: `<banx-ui-row automation-id="row" [mode]="mode"></banx-ui-row>`,

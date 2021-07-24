@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": ["jest"],
+    "types": [],
     "lib": ["dom", "es2020"]
   },
   "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
