@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    loadChildren: (): Promise<any> => import('@banx/russian/errors/not-found/page').then((modules) => modules.ErrorsNotFoundPagePageModule),
+    loadChildren: (): Promise<any> => import('@banx/russian/errors/not-found/page').then((modules) => modules.NotFoundPagePageModule),
   },
 ];
 

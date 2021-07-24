@@ -1,1 +1,1 @@
-export * from './lib/errors-not-found-page-page.module';
+export * from './lib/not-found-page-page.module';

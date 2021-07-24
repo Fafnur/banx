@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ErrorsNotFoundPagePageModule } from './errors-not-found-page-page.module';
+import { NotFoundPagePageModule } from './not-found-page-page.module';
 
 describe('ErrorsNotFoundPagePageModule', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ErrorsNotFoundPagePageModule],
+      imports: [NotFoundPagePageModule],
     }).compileComponents();
   });
 
   it('should create', () => {
-    expect(ErrorsNotFoundPagePageModule).toBeTruthy();
+    expect(NotFoundPagePageModule).toBeTruthy();
   });
 });
