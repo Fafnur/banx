@@ -9,7 +9,7 @@ enum ErrorLinksAutomation {
   CreditCard = 'credit-card',
   DebitCard = 'debit-card',
   Deposit = 'deposit',
-  Brand = 'brand',
+  Home = 'home',
 }
 
 export class ErrorLinksComponentPo extends PageObject<ErrorLinksComponent> {
@@ -37,6 +37,10 @@ export class ErrorLinksComponentPo extends PageObject<ErrorLinksComponent> {
     return this.text(ErrorLinksAutomation.DebitCard);
   }
 
+  get debitCardLink(): string | null {
+    return this.debitCard?.attributes['href'] ?? '';
+  }
+
   get deposit(): DebugElement | null {
     return this.getByAutomationId(ErrorLinksAutomation.Deposit);
   }
@@ -45,11 +49,11 @@ export class ErrorLinksComponentPo extends PageObject<ErrorLinksComponent> {
     return this.text(ErrorLinksAutomation.Deposit);
   }
 
-  get brand(): DebugElement | null {
-    return this.getByAutomationId(ErrorLinksAutomation.Brand);
+  get depositLink(): string | null {
+    return this.deposit?.attributes['href'] ?? '';
   }
 
-  get brandText(): string | null {
-    return this.text(ErrorLinksAutomation.Brand);
+  get home(): DebugElement | null {
+    return this.getByAutomationId(ErrorLinksAutomation.Home);
   }
 }

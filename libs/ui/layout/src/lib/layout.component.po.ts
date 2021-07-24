@@ -1,7 +1,8 @@
 import { DebugElement } from '@angular/core';
 
 import { PageObject } from '@banx/core/testing';
-import { LayoutComponent } from '@banx/russian/ui/layout';
+
+import { LayoutComponent } from './layout.component';
 
 enum HeaderAutomation {
   Header = 'header',

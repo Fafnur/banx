@@ -30,8 +30,12 @@ describe('ErrorLinksComponent', () => {
     fixture.detectChanges();
 
     expect(pageObject.links).toBeTruthy();
-    expect(pageObject.creditCard).toBeTruthy();
+    expect(pageObject.home).toBeTruthy();
     expect(pageObject.creditCardText).toBe('Credit cards');
     expect(pageObject.creditCardLink).toBe('/services/credit-card');
+    expect(pageObject.debitCardText).toBe('Debit cards');
+    expect(pageObject.debitCardLink).toBe('/services/debit-card');
+    expect(pageObject.depositText).toBe('Deposits');
+    expect(pageObject.depositLink).toBe('/services/deposits');
   });
 });
