@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
+export type ErrorStatusColor = 'primary' | 'accent' | 'active' | 'danger';
+
 @Component({
   selector: 'banx-error-status',
   templateUrl: './error-status.component.html',
@@ -7,7 +9,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErrorStatusComponent {
-  @Input() color!: 'primary' | 'accent' | 'active' | 'danger';
+  @Input() color!: ErrorStatusColor;
 
   @HostBinding('class.is-primary') get isPrimary(): boolean {
     return this.color === 'primary';

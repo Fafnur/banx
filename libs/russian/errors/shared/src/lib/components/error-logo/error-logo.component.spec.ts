@@ -1,26 +1,40 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { ENVIRONMENTS_DEFAULT } from '@banx/core/environments/service';
+
 import { ErrorLogoComponent } from './error-logo.component';
+import { ErrorLogoComponentPo } from './error-logo.component.po';
 
 describe('ErrorLogoComponent', () => {
-  let component: ErrorLogoComponent;
+  let pageObject: ErrorLogoComponentPo;
   let fixture: ComponentFixture<ErrorLogoComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [ErrorLogoComponent],
-    }).compileComponents();
-  });
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        imports: [RouterTestingModule],
+        declarations: [ErrorLogoComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ErrorLogoComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new ErrorLogoComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show link', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.link).toBeTruthy();
+    expect(pageObject.linkText).toBe(ENVIRONMENTS_DEFAULT.brand);
+    expect(pageObject.linkHref).toBe('/');
   });
 });

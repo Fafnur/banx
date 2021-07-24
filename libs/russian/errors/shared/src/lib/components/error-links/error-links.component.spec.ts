@@ -2,9 +2,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { ErrorLinksComponent } from './error-links.component';
+import { ErrorLinksComponentPo } from './error-links.component.po';
 
 describe('ErrorLinksComponent', () => {
-  let component: ErrorLinksComponent;
+  let pageObject: ErrorLinksComponentPo;
   let fixture: ComponentFixture<ErrorLinksComponent>;
 
   beforeEach(async () => {
@@ -16,11 +17,21 @@ describe('ErrorLinksComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ErrorLinksComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new ErrorLinksComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show links', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.links).toBeTruthy();
+    expect(pageObject.creditCard).toBeTruthy();
+    expect(pageObject.creditCardText).toBe('Credit cards');
+    expect(pageObject.creditCardLink).toBe('/services/credit-card');
   });
 });

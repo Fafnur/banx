@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+import { EnvironmentService } from '@banx/core/environments/service';
 
 @Component({
   selector: 'banx-error-application',
@@ -6,4 +8,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./error-application.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ErrorApplicationComponent {}
+export class ErrorApplicationComponent implements OnInit {
+  brand!: string;
+
+  constructor(private readonly environmentService: EnvironmentService) {}
+
+  ngOnInit(): void {
+    this.brand = this.environmentService.environments.brand;
+  }
+}

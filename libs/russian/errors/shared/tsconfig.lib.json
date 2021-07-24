@@ -6,7 +6,7 @@
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
-    "types": [],
+    "types": ["jest"],
     "lib": ["dom", "es2020"]
   },
   "angularCompilerOptions": {
