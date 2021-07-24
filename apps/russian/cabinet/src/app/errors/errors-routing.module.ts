@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'permission-denied',
     loadChildren: (): Promise<any> =>
-      import('@banx/russian/errors/permission-denied/page').then((modules) => modules.ErrorsPermissionDeniedPagePageModule),
+      import('@banx/russian/errors/permission-denied/page').then((modules) => modules.PermissionDeniedPageModule),
   },
   {
     path: 'server-error',

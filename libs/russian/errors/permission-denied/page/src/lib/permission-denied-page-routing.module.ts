@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PermissionDeniedPageComponent } from './components/permission-denied-page/permission-denied-page.component';
+import { PermissionDeniedPageComponent } from './permission-denied-page.component';
 
 const routes: Routes = [
   {
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ErrorsPermissionDeniedPageRoutingModule {}
+export class PermissionDeniedPageRoutingModule {}
