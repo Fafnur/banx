@@ -4,16 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'permission-denied',
-    loadChildren: (): Promise<any> =>
-      import('@banx/russian/errors/permission-denied/page').then((modules) => modules.PermissionDeniedPageModule),
+    loadChildren: (): Promise<any> => import('@banx/errors/permission-denied/page').then((modules) => modules.PermissionDeniedPageModule),
   },
   {
     path: 'server-error',
-    loadChildren: (): Promise<any> => import('@banx/russian/errors/server-error/page').then((modules) => modules.ServerErrorPagePageModule),
+    loadChildren: (): Promise<any> => import('@banx/errors/server-error/page').then((modules) => modules.ServerErrorPagePageModule),
   },
   {
     path: '**',
-    loadChildren: (): Promise<any> => import('@banx/russian/errors/not-found/page').then((modules) => modules.NotFoundPagePageModule),
+    loadChildren: (): Promise<any> => import('@banx/errors/not-found/page').then((modules) => modules.NotFoundPagePageModule),
   },
 ];
 
