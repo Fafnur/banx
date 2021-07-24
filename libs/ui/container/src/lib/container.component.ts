@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
 
 @Component({
   selector: 'banx-ui-container',
@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, HostBinding, Input, OnInit } from '
   styleUrls: ['./container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent {
   @Input() mode!: 'flex' | 'flex-row' | 'fluid' | null;
   @Input() height!: 'max-height' | null;
 
@@ -24,9 +24,5 @@ export class ContainerComponent implements OnInit {
 
   @HostBinding('class.is-max-height') get isMaxHeight(): boolean {
     return this.height === 'max-height';
-  }
-
-  ngOnInit(): void {
-    console.log(this.height);
   }
 }

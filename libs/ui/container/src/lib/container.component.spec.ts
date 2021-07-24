@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContainerComponent } from './container.component';
-import { ContainerComponentPo } from './container.po';
+import { ContainerComponentPo } from './container.component.po';
 
 @Component({
   template: `<banx-ui-container automation-id="container" [mode]="mode" [height]="height"></banx-ui-container>`,

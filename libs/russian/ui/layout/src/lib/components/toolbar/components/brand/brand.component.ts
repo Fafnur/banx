@@ -3,19 +3,17 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { EnvironmentService } from '@banx/core/environments/service';
 
 @Component({
-  selector: 'banx-ui-footer',
-  templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss'],
+  selector: 'banx-ui-brand',
+  templateUrl: './brand.component.html',
+  styleUrls: ['./brand.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent implements OnInit {
+export class BrandComponent implements OnInit {
   brand!: string;
-  year!: number;
 
   constructor(private readonly environmentService: EnvironmentService) {}
 
   ngOnInit(): void {
     this.brand = this.environmentService.environments.brand;
-    this.year = new Date().getFullYear();
   }
 }

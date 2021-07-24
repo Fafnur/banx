@@ -1,0 +1,8 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  padding: 1rem 0;
+  box-shadow: 0 4px 56px rgb(0 0 0 / 12%);
+  flex-shrink: 0;
+}

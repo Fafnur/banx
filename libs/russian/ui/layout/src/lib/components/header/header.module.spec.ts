@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UiLayoutModule } from './ui-layout.module';
+import { HeaderModule } from './header.module';
 
-describe('UiLayoutModule', () => {
+describe('HeaderModule', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UiLayoutModule],
+      imports: [HeaderModule],
     }).compileComponents();
   });
 
   it('should create', () => {
-    expect(UiLayoutModule).toBeTruthy();
+    expect(HeaderModule).toBeTruthy();
   });
 });
