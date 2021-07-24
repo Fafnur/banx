@@ -22,7 +22,7 @@ export function getApiRequestOptions(options?: Partial<ApiRequestOptions>): Part
       for (const propKey of Object.keys(options.params).sort()) {
         if (options.params[propKey] !== undefined) {
           if (Array.isArray(options.params[propKey])) {
-            options.params[propKey].forEach((item) => {
+            options.params[propKey].forEach((item: any) => {
               params = params.append(`${propKey}[]`, item == null ? 'NULL' : item.toString());
             });
           } else {
