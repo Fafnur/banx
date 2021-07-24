@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { LocalStorage } from './local.storage';
+import { LocalSyncStorage } from './local-sync.storage';
 
-describe('LocalStorage', () => {
-  let service: LocalStorage;
+describe('LocalSyncStorage', () => {
+  let service: LocalSyncStorage;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [LocalStorage],
+      providers: [LocalSyncStorage],
     }).compileComponents();
 
-    service = TestBed.inject(LocalStorage);
+    service = TestBed.inject(LocalSyncStorage);
   });
 
   it('should create', () => {

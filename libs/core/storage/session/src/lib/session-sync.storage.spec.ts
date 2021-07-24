@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SessionStorage } from './session.storage';
+import { SessionSyncStorage } from './session-sync.storage';
 
-describe('SessionStorage', () => {
-  let service: SessionStorage;
+describe('SessionSyncStorage', () => {
+  let service: SessionSyncStorage;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [SessionStorage],
+      providers: [SessionSyncStorage],
     }).compileComponents();
 
-    service = TestBed.inject(SessionStorage);
+    service = TestBed.inject(SessionSyncStorage);
   });
 
   it('should create', () => {

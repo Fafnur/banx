@@ -12,7 +12,7 @@ export function storageAvailable(type: string): boolean {
   }
 
   try {
-    storage = window[type];
+    storage = (window as any)[type];
     const x = '__storage_test__';
     storage.setItem(x, x);
     storage.removeItem(x);
