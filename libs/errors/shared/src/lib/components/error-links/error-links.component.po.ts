@@ -26,7 +26,7 @@ export class ErrorLinksComponentPo extends PageObject<ErrorLinksComponent> {
   }
 
   get creditCardLink(): string | null {
-    return this.creditCard?.attributes['href'] ?? '';
+    return this.creditCard?.properties['href'] ?? '';
   }
 
   get debitCard(): DebugElement | null {
@@ -38,7 +38,7 @@ export class ErrorLinksComponentPo extends PageObject<ErrorLinksComponent> {
   }
 
   get debitCardLink(): string | null {
-    return this.debitCard?.attributes['href'] ?? '';
+    return this.debitCard?.properties['href'] ?? '';
   }
 
   get deposit(): DebugElement | null {
@@ -50,7 +50,7 @@ export class ErrorLinksComponentPo extends PageObject<ErrorLinksComponent> {
   }
 
   get depositLink(): string | null {
-    return this.deposit?.attributes['href'] ?? '';
+    return this.deposit?.properties['href'] ?? '';
   }
 
   get home(): DebugElement | null {

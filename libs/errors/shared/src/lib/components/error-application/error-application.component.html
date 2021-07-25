@@ -8,8 +8,35 @@
     <img class="error-application-qrcode" src="/assets/images/errors/code.png" alt="front bank qr" />
   </div>
   <nav class="error-application-links" automation-id="links">
-    <a class="error-application-link is-desktop" automation-id="app-store" routerLink="/" i18n="Link to App Store">App Store</a>
-    <a class="error-application-link is-desktop" automation-id="google-play" routerLink="/" i18n="Link to Google Play">Google Play</a>
-    <a class="error-application-link is-mobile" automation-id="download" routerLink="/" i18n="Link to download app">Download</a>
+    <a
+      class="error-application-link is-desktop"
+      automation-id="app-store"
+      href="https://www.apple.com/app-store/"
+      target="_blank"
+      rel="nofollow"
+      i18n="Link to App Store"
+    >
+      App Store
+    </a>
+    <a
+      class="error-application-link is-desktop"
+      automation-id="google-play"
+      href="https://play.google.com/store"
+      target="_blank"
+      rel="nofollow"
+      i18n="Link to Google Play"
+    >
+      Google Play
+    </a>
+    <a
+      class="error-application-link is-mobile"
+      automation-id="download"
+      [href]="paths.application | externalPath"
+      target="_blank"
+      rel="nofollow"
+      i18n="Link to download app"
+    >
+      Download
+    </a>
   </nav>
 </banx-ui-container>

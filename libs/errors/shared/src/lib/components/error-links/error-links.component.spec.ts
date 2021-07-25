@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
+import { PATHS_STUB } from '@banx/core/navigation/common';
+import { NavigationSharedModule } from '@banx/core/navigation/shared';
+
 import { ErrorLinksComponent } from './error-links.component';
 import { ErrorLinksComponentPo } from './error-links.component.po';
 
@@ -10,8 +13,9 @@ describe('ErrorLinksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, NavigationSharedModule],
       declarations: [ErrorLinksComponent],
+      providers: [PATHS_STUB],
     }).compileComponents();
   });
 
@@ -32,9 +36,9 @@ describe('ErrorLinksComponent', () => {
     expect(pageObject.links).toBeTruthy();
     expect(pageObject.home).toBeTruthy();
     expect(pageObject.creditCardText).toBe('Credit cards');
-    expect(pageObject.creditCardLink).toBe('/services/credit-card');
+    expect(pageObject.creditCardLink).toBe('/services/credit-cards');
     expect(pageObject.debitCardText).toBe('Debit cards');
-    expect(pageObject.debitCardLink).toBe('/services/debit-card');
+    expect(pageObject.debitCardLink).toBe('/services/debit-cards');
     expect(pageObject.depositText).toBe('Deposits');
     expect(pageObject.depositLink).toBe('/services/deposits');
   });

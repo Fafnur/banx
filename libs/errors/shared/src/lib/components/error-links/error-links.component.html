@@ -1,6 +1,10 @@
 <nav class="error-links" automation-id="links">
-  <a class="error-link" automation-id="credit-card" routerLink="/services/credit-card" i18n="Link label to credit card">Credit cards</a>
-  <a class="error-link" automation-id="debit-card" routerLink="/services/debit-card" i18n="Link label to debit card">Debit cards</a>
-  <a class="error-link" automation-id="deposit" routerLink="/services/deposits" i18n="Link label to deposits">Deposits</a>
-  <a class="error-link" automation-id="home" routerLink="/" i18n="Home page">Home page</a>
+  <a class="error-link" automation-id="credit-card" [routerLink]="paths.serviceCreditCards | path" i18n="Link label to credit card">
+    Credit cards
+  </a>
+  <a class="error-link" automation-id="debit-card" [routerLink]="paths.serviceDebitCards | path" i18n="Link label to debit card">
+    Debit cards
+  </a>
+  <a class="error-link" automation-id="deposit" [routerLink]="paths.serviceDeposits | path" i18n="Link label to deposits">Deposits</a>
+  <a class="error-link" automation-id="home" [routerLink]="paths.home | path" i18n="Home page">Home page</a>
 </nav>
