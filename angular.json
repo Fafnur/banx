@@ -212,6 +212,27 @@
         }
       }
     },
+    "core-forms-utils": {
+      "projectType": "library",
+      "root": "libs/core/forms/utils",
+      "sourceRoot": "libs/core/forms/utils/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/forms/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/forms/utils/src/**/*.ts", "libs/core/forms/utils/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-platform-service": {
       "projectType": "library",
       "root": "libs/core/platform/service",

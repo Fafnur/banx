@@ -51,6 +51,9 @@
     "core-forms-shared": {
       "tags": []
     },
+    "core-forms-utils": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },
