@@ -3,20 +3,20 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 
-import { CoreNavigationService } from './navigation.service';
+import { NavigationService } from './navigation.service';
 
 describe('CoreNavigationService', () => {
-  let service: CoreNavigationService;
+  let service: NavigationService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      providers: [CoreNavigationService],
+      providers: [NavigationService],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    service = TestBed.inject(CoreNavigationService);
+    service = TestBed.inject(NavigationService);
   });
 
   it('should return service path', () => {

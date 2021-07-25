@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { FormsSharedModule } from './forms-shared.module';
 
-describe('ContainerModule', () => {
+describe('FormsSharedModule', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormsSharedModule],

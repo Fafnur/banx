@@ -60,6 +60,9 @@
     "core-navigation-service": {
       "tags": []
     },
+    "core-navigation-shared": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },

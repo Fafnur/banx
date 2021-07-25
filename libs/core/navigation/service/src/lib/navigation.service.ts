@@ -4,7 +4,7 @@ import { NavigationExtras, Router, UrlCreationOptions, UrlTree } from '@angular/
 @Injectable({
   providedIn: 'root',
 })
-export class CoreNavigationService {
+export class NavigationService {
   constructor(private readonly router: Router) {}
 
   createUrlTree(path: string | (string | number)[], navigationExtras?: UrlCreationOptions): UrlTree {
