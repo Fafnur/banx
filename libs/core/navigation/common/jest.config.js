@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'navigation-common',
-  preset: '../../../jest.preset.js',
+  displayName: 'core-navigation-common',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../coverage/libs/navigation/common',
+  coverageDirectory: '../../../../coverage/libs/core/navigation/common',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

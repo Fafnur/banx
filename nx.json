@@ -54,6 +54,12 @@
     "core-forms-utils": {
       "tags": []
     },
+    "core-navigation-common": {
+      "tags": []
+    },
+    "core-navigation-service": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },
@@ -91,9 +97,6 @@
       "tags": []
     },
     "errors-shared": {
-      "tags": []
-    },
-    "navigation-common": {
       "tags": []
     },
     "numbers-to-words-common": {
