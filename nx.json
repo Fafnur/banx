@@ -48,6 +48,9 @@
     "core-forms-errors": {
       "tags": []
     },
+    "core-forms-shared": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },

@@ -178,7 +178,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/forms/errors"],
           "options": {
             "jestConfig": "libs/core/forms/errors/jest.config.js",
             "passWithNoTests": true
@@ -188,6 +187,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/core/forms/errors/src/**/*.ts", "libs/core/forms/errors/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-forms-shared": {
+      "projectType": "library",
+      "root": "libs/core/forms/shared",
+      "sourceRoot": "libs/core/forms/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/forms/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/forms/shared/src/**/*.ts", "libs/core/forms/shared/src/**/*.html"]
           }
         }
       }
