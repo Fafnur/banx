@@ -45,6 +45,9 @@
     "core-environments-service": {
       "tags": []
     },
+    "core-forms-errors": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },

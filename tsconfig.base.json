@@ -25,6 +25,7 @@
       "@banx/core/config/service": ["libs/core/config/service/src/index.ts"],
       "@banx/core/cookie/service": ["libs/core/cookie/service/src/index.ts"],
       "@banx/core/environments/service": ["libs/core/environments/service/src/index.ts"],
+      "@banx/core/forms/errors": ["libs/core/forms/errors/src/index.ts"],
       "@banx/core/platform/service": ["libs/core/platform/service/src/index.ts"],
       "@banx/core/storage/common": ["libs/core/storage/common/src/index.ts"],
       "@banx/core/storage/local": ["libs/core/storage/local/src/index.ts"],
