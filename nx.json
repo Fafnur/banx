@@ -45,6 +45,15 @@
     "core-environments-service": {
       "tags": []
     },
+    "core-forms-errors": {
+      "tags": []
+    },
+    "core-forms-shared": {
+      "tags": []
+    },
+    "core-forms-utils": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },
