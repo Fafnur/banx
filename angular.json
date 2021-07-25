@@ -506,6 +506,27 @@
         }
       }
     },
+    "navigation-common": {
+      "projectType": "library",
+      "root": "libs/navigation/common",
+      "sourceRoot": "libs/navigation/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/navigation/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/navigation/common/src/**/*.ts", "libs/navigation/common/src/**/*.html"]
+          }
+        }
+      }
+    },
     "numbers-to-words-common": {
       "projectType": "library",
       "root": "libs/numbers-to-words/common",
