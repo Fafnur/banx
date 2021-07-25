@@ -233,6 +233,69 @@
         }
       }
     },
+    "core-navigation-common": {
+      "projectType": "library",
+      "root": "libs/core/navigation/common",
+      "sourceRoot": "libs/core/navigation/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/navigation/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/navigation/common/src/**/*.ts", "libs/core/navigation/common/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-navigation-service": {
+      "projectType": "library",
+      "root": "libs/core/navigation/service",
+      "sourceRoot": "libs/core/navigation/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/navigation/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/navigation/service/src/**/*.ts", "libs/core/navigation/service/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-navigation-shared": {
+      "projectType": "library",
+      "root": "libs/core/navigation/shared",
+      "sourceRoot": "libs/core/navigation/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/navigation/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/navigation/shared/src/**/*.ts", "libs/core/navigation/shared/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-platform-service": {
       "projectType": "library",
       "root": "libs/core/platform/service",

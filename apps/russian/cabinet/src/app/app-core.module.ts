@@ -1,14 +1,19 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ENVIRONMENTS } from '@banx/core/environments/service';
+import { NAVIGATION_PATHS, PATHS } from '@banx/core/navigation/common';
 import { RootStoreModule } from '@banx/core/store/root';
 import { LocalizationModule } from '@banx/russian/localization';
+import { LayoutModule } from '@banx/ui/layout';
 
 import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
+    HttpClientModule,
+    LayoutModule,
     LocalizationModule,
     RootStoreModule,
     !environment.production ? StoreDevtoolsModule.instrument({ logOnly: environment.production }) : [],
@@ -17,6 +22,10 @@ import { environment } from '../environments/environment';
     {
       provide: ENVIRONMENTS,
       useValue: environment,
+    },
+    {
+      provide: PATHS,
+      useValue: NAVIGATION_PATHS,
     },
   ],
 })

@@ -54,6 +54,15 @@
     "core-forms-utils": {
       "tags": []
     },
+    "core-navigation-common": {
+      "tags": []
+    },
+    "core-navigation-service": {
+      "tags": []
+    },
+    "core-navigation-shared": {
+      "tags": []
+    },
     "core-platform-service": {
       "tags": []
     },

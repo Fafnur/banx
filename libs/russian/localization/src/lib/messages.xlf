@@ -66,43 +66,43 @@
         </context-group>
         <note priority="1" from="description">Errors application hint</note>
       </trans-unit>
-      <trans-unit id="7951308268481687377" datatype="html">
+      <trans-unit id="6931779696965192570" datatype="html">
         <source>Подробнее в App Store</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">19,20</context>
         </context-group>
         <note priority="1" from="description">Link to App Store</note>
       </trans-unit>
-      <trans-unit id="4764767270165536588" datatype="html">
-        <source>Подробнее в Google Play</source>
+      <trans-unit id="6316059824251130600" datatype="html">
+        <source> Подробнее в Google Play </source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">29,30</context>
         </context-group>
         <note priority="1" from="description">Link to Google Play</note>
       </trans-unit>
-      <trans-unit id="3099741642167775297" datatype="html">
+      <trans-unit id="2256581797902573217" datatype="html">
         <source>Скачать</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">39,40</context>
         </context-group>
         <note priority="1" from="description">Link to download app</note>
       </trans-unit>
-      <trans-unit id="7747177929522910694" datatype="html">
+      <trans-unit id="7598979906711848586" datatype="html">
         <source>Кредитные карты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">3,4</context>
         </context-group>
         <note priority="1" from="description">Link label to credit card</note>
       </trans-unit>
-      <trans-unit id="1505036979677844545" datatype="html">
+      <trans-unit id="5176072888126126102" datatype="html">
         <source>Дебетовые карты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">6,7</context>
         </context-group>
         <note priority="1" from="description">Link label to debit card</note>
       </trans-unit>
@@ -110,7 +110,7 @@
         <source>Вклады</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">Link label to deposits</note>
       </trans-unit>
@@ -118,7 +118,7 @@
         <source>Главная</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <note priority="1" from="description">Home page</note>
       </trans-unit>

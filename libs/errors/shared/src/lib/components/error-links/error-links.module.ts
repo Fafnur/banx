@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { NavigationSharedModule } from '@banx/core/navigation/shared';
+
 import { ErrorLinksComponent } from './error-links.component';
 
 @NgModule({
-  imports: [RouterModule],
+  imports: [RouterModule, NavigationSharedModule],
   declarations: [ErrorLinksComponent],
   exports: [ErrorLinksComponent],
 })

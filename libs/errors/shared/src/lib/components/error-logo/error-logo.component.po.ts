@@ -18,6 +18,6 @@ export class ErrorLogoComponentPo extends PageObject<ErrorLogoComponent> {
   }
 
   get linkHref(): string | null {
-    return this.link?.attributes['href'] ?? '';
+    return this.link?.properties['href'] ?? '';
   }
 }
