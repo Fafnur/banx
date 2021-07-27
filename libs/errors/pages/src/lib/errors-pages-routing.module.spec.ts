@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ErrorsRoutingModule } from './errors-routing.module';
+import { ErrorsPagesRoutingModule } from './errors-pages-routing.module';
 
 describe('ErrorsRoutingModule', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ErrorsRoutingModule],
+      imports: [ErrorsPagesRoutingModule],
     }).compileComponents();
   });
 
   it('should create', () => {
-    expect(ErrorsRoutingModule).toBeTruthy();
+    expect(ErrorsPagesRoutingModule).toBeTruthy();
   });
 });

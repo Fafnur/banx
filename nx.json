@@ -90,6 +90,9 @@
     "errors-not-found-page": {
       "tags": []
     },
+    "errors-pages": {
+      "tags": []
+    },
     "errors-permission-denied-page": {
       "tags": []
     },

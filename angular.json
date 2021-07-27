@@ -485,6 +485,28 @@
         }
       }
     },
+    "errors-pages": {
+      "projectType": "library",
+      "root": "libs/errors/pages",
+      "sourceRoot": "libs/errors/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/errors/pages"],
+          "options": {
+            "jestConfig": "libs/errors/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/errors/pages/src/**/*.ts", "libs/errors/pages/src/**/*.html"]
+          }
+        }
+      }
+    },
     "errors-permission-denied-page": {
       "projectType": "library",
       "root": "libs/errors/permission-denied/page",
