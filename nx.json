@@ -84,9 +84,6 @@
     "core-store-utils": {
       "tags": []
     },
-    "core-store-watcher": {
-      "tags": []
-    },
     "core-testing": {
       "tags": []
     },
