@@ -1,0 +1,13 @@
+{
+  "type": "mariadb",
+  "host": "localhost",
+  "port": 3306,
+  "username": "banx",
+  "password": "123456",
+  "database": "banx",
+  "entities": ["apps/backend/api/src/**/*.entity.ts"],
+  "migrations": ["apps/backend/api/migrations/*.migration.ts"],
+  "cli": {
+    "migrationsDir": "apps/backend/api/migrations"
+  }
+}
