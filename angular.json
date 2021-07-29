@@ -80,7 +80,6 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/backend/api"],
           "options": {
             "jestConfig": "apps/backend/api/jest.config.js",
             "passWithNoTests": true
@@ -543,7 +542,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/errors/pages"],
           "options": {
             "jestConfig": "libs/errors/pages/jest.config.js",
             "passWithNoTests": true

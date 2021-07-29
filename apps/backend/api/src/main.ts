@@ -4,17 +4,20 @@
  */
 
 import { Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 
 async function bootstrap(): Promise<void> {
   const app = await NestFactory.create(AppModule);
-  const globalPrefix = process.env.PREFIX || '';
+  const configService = app.get(ConfigService);
+
+  const globalPrefix = configService.get('prefix');
   app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3333;
+  const port = configService.get('port');
   await app.listen(port, () => {
-    Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
+    Logger.log(`'Listening at http://localhost:${port}${globalPrefix ? '/' + globalPrefix : ''}`);
   });
 }
 
