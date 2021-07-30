@@ -52,7 +52,8 @@
       "@banx/russian/numerals/shared": ["libs/russian/numerals/shared/src/index.ts"],
       "@banx/ui/container": ["libs/ui/container/src/index.ts"],
       "@banx/ui/grid": ["libs/ui/grid/src/index.ts"],
-      "@banx/ui/layout": ["libs/ui/layout/src/index.ts"]
+      "@banx/ui/layout": ["libs/ui/layout/src/index.ts"],
+      "@banx/users/common": ["libs/users/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],
