@@ -38,6 +38,55 @@
     }
   },
   "projects": {
+    "backend-api": {
+      "root": "apps/backend/api",
+      "sourceRoot": "apps/backend/api/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/backend/api",
+            "main": "apps/backend/api/src/main.ts",
+            "tsConfig": "apps/backend/api/tsconfig.app.json",
+            "assets": ["apps/backend/api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/backend/api/src/environments/environment.ts",
+                  "with": "apps/backend/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "backend-api:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/backend/api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/backend/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "core-api-interceptors-content-type": {
       "projectType": "library",
       "root": "libs/core/api/interceptors/content-type",
@@ -493,7 +542,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/errors/pages"],
           "options": {
             "jestConfig": "libs/errors/pages/jest.config.js",
             "passWithNoTests": true
@@ -878,6 +926,27 @@
           "options": {
             "jestConfig": "libs/ui/layout/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "users-common": {
+      "projectType": "library",
+      "root": "libs/users/common",
+      "sourceRoot": "libs/users/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/users/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/users/common/src/**/*.ts", "libs/users/common/src/**/*.html"]
           }
         }
       }

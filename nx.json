@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "backend-api": {
+      "tags": []
+    },
     "core-api-interceptors-content-type": {
       "tags": []
     },
@@ -134,6 +137,9 @@
       "tags": []
     },
     "ui-layout": {
+      "tags": []
+    },
+    "users-common": {
       "tags": []
     }
   }
