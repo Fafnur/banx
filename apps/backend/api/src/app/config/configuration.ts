@@ -1,6 +1,5 @@
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { join } from 'path';
 
 export interface Configuration {
   port: number;
@@ -21,7 +20,7 @@ export function configurationFactory(): Configuration {
       database: process.env.DATABASE_NAME ?? 'banx',
       synchronize: process.env?.DATABASE_SYNCHRONIZE ? process.env?.DATABASE_SYNCHRONIZE === 'true' : false,
       autoLoadEntities: process.env?.DATABASE_AUTO_LOAD_ENTITIES ? process.env?.DATABASE_AUTO_LOAD_ENTITIES === 'true' : true,
-      entities: [`${join(__dirname, '../../../../')}libs/**/*.entity.{ts,js}`, `$${__dirname}src/**/*.entity.{ts,js}`],
+      entities: [`${__dirname}/**/*.entity.{ts,js}`],
     },
   };
 }

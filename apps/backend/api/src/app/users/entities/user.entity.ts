@@ -20,8 +20,8 @@ export class UserEntity {
   username!: string;
 
   @CreateDateColumn()
-  created!: string;
+  createdAt!: string;
 
   @UpdateDateColumn({ nullable: true })
-  updated!: string;
+  updatedAt!: string;
 }
