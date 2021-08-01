@@ -9,52 +9,35 @@ export interface Configuration<T extends TypeOrmModuleOptions = any> {
   cors: CorsOptions;
 }
 
-export const CONFIGURATION_DEFAULT: Configuration = {
-  port: 3000,
-  prefix: '',
-  typeOrm: {
-    type: 'mariadb',
-    host: 'localhost',
-    port: 3306,
-    username: 'banx',
-    password: '123456',
-    database: 'banx',
-    synchronize: false,
-    autoLoadEntities: true,
-  },
-  cors: {
-    origin: ['localhost:4200', 'localhost:4000'],
-    credentials: true,
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    allowedHeaders: ['Content-Type', 'Authorization', 'User-Agent', 'Enctype', 'Cache-Control'],
-  },
-};
+export function getTypeOrmConfig(): TypeOrmModuleOptions {
+  return {
+    type: (process.env.DATABASE_TYPE as any) ?? 'mariadb',
+    host: process.env.DATABASE_HOST ?? 'localhost',
+    port: process.env.DATABASE_PORT ? parseInt(process.env.DATABASE_PORT, 10) : 3306,
+    username: process.env.DATABASE_USER ?? 'banx',
+    password: process.env.DATABASE_PASSWORD ?? '123456',
+    database: process.env.DATABASE_NAME ?? 'banx',
+    synchronize: process.env.DATABASE_SYNCHRONIZE ? process.env.DATABASE_SYNCHRONIZE === 'true' : false,
+    autoLoadEntities: process.env.DATABASE_AUTO_LOAD_ENTITIES ? process.env.DATABASE_AUTO_LOAD_ENTITIES === 'true' : true,
+    entities: [`${__dirname}/**/*.entity.{ts,js}`],
+  };
+}
+
+export function getCorsConfig(): CorsOptions {
+  return {
+    origin: process.env.CORS_ORIGIN ?? ['localhost:4200', 'localhost:4000'],
+    credentials: process.env.CORS_CREDENTIALS ? process.env?.CORS_CREDENTIALS === 'true' : true,
+    allowedHeaders: process.env.CORS_ALLOWED_HEADERS ?? ['Content-Type', 'Authorization', 'User-Agent', 'Enctype', 'Cache-Control'],
+    methods: process.env.CORS_METHODS ?? 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  };
+}
 
 export function configurationFactory(): Configuration {
-  const ENV = process.env;
-
   return {
-    port: ENV.PORT ? parseInt(ENV.PORT, 10) : CONFIGURATION_DEFAULT.port,
-    prefix: ENV.PREFIX ?? CONFIGURATION_DEFAULT.prefix,
-    typeOrm: {
-      type: (ENV.DATABASE_TYPE as any) ?? CONFIGURATION_DEFAULT.typeOrm.type,
-      host: ENV.DATABASE_HOST ?? CONFIGURATION_DEFAULT.typeOrm.host,
-      port: ENV.DATABASE_PORT ? parseInt(ENV.DATABASE_PORT, 10) : CONFIGURATION_DEFAULT.typeOrm.port,
-      username: ENV.DATABASE_USER ?? CONFIGURATION_DEFAULT.typeOrm.username,
-      password: ENV.DATABASE_PASSWORD ?? CONFIGURATION_DEFAULT.typeOrm.password,
-      database: ENV.DATABASE_NAME ?? CONFIGURATION_DEFAULT.typeOrm.database,
-      synchronize: ENV.DATABASE_SYNCHRONIZE ? ENV.DATABASE_SYNCHRONIZE === 'true' : CONFIGURATION_DEFAULT.typeOrm.synchronize,
-      autoLoadEntities: ENV.DATABASE_AUTO_LOAD_ENTITIES
-        ? ENV.DATABASE_AUTO_LOAD_ENTITIES === 'true'
-        : CONFIGURATION_DEFAULT.typeOrm.autoLoadEntities,
-      entities: [`${__dirname}/**/*.entity.{ts,js}`],
-    },
-    cors: {
-      origin: ENV.CORS_ORIGIN ?? CONFIGURATION_DEFAULT.cors.origin,
-      credentials: ENV.CORS_CREDENTIALS ? process.env?.CORS_CREDENTIALS === 'true' : CONFIGURATION_DEFAULT.cors.credentials,
-      allowedHeaders: ENV.CORS_ALLOWED_HEADERS ?? CONFIGURATION_DEFAULT.cors.allowedHeaders,
-      methods: ENV.CORS_METHODS ?? CONFIGURATION_DEFAULT.cors.methods,
-    },
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3000,
+    prefix: process.env.PREFIX ?? '',
+    typeOrm: getTypeOrmConfig(),
+    cors: getCorsConfig(),
   };
 }
 
