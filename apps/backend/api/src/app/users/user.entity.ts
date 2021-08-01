@@ -1,9 +1,11 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
+import { User } from '@banx/users/common';
+
 @Entity({
   name: 'users',
 })
-export class UserEntity {
+export class UserEntity implements User {
   @PrimaryGeneratedColumn()
   id!: number;
 
