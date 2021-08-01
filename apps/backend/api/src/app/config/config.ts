@@ -2,7 +2,7 @@ import { CorsOptions } from '@nestjs/common/interfaces/external/cors-options.int
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
-export interface Configuration<T extends TypeOrmModuleOptions = any> {
+export interface Config<T extends TypeOrmModuleOptions = any> {
   port: number;
   prefix: string;
   typeOrm: T;
@@ -17,7 +17,7 @@ export function getTypeOrmConfig(): TypeOrmModuleOptions {
     username: process.env.DATABASE_USER ?? 'banx',
     password: process.env.DATABASE_PASSWORD ?? '123456',
     database: process.env.DATABASE_NAME ?? 'banx',
-    synchronize: process.env.DATABASE_SYNCHRONIZE ? process.env.DATABASE_SYNCHRONIZE === 'true' : false,
+    synchronize: process.env.DATABASE_SYNCHRONIZE ? process.env.DATABASE_SYNCHRONIZE === 'true' : true,
     autoLoadEntities: process.env.DATABASE_AUTO_LOAD_ENTITIES ? process.env.DATABASE_AUTO_LOAD_ENTITIES === 'true' : true,
     entities: [`${__dirname}/**/*.entity.{ts,js}`],
   };
@@ -32,7 +32,7 @@ export function getCorsConfig(): CorsOptions {
   };
 }
 
-export function configurationFactory(): Configuration {
+export function configurationFactory(): Config {
   return {
     port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3000,
     prefix: process.env.PREFIX ?? '',

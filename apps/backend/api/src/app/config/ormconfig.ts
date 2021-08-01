@@ -1,6 +1,6 @@
 import { join } from 'path';
 
-import { getTypeOrmConfig } from './configuration';
+import { getTypeOrmConfig } from './config';
 
 // Note: Config for migrations
 export = {
