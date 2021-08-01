@@ -14,8 +14,6 @@ export class Users1576124847819 implements MigrationInterface {
   }
 
   async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.query(`
-      DELETE FROM users WHERE username = 'admin';
-    `);
+    await queryRunner.query(`DELETE FROM users WHERE username = 'admin';`);
   }
 }

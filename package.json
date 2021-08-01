@@ -32,6 +32,7 @@
     "nx": "nx",
     "typeorm": "ts-node -P apps/backend/api/tsconfig.app.json  -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config apps/backend/api/src/app/config/ormconfig.ts",
     "typeorm:migrate": "yarn run typeorm migration:generate -n",
+    "typeorm:create": "yarn run typeorm migration:create -n",
     "typeorm:run": "yarn run typeorm migration:run",
     "typeorm:revert": "yarn run typeorm migration:revert"
   },
