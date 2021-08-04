@@ -1,1 +1,1 @@
-export * from './lib/core-menu-common.module';
+export * from './lib/menu.interface';
