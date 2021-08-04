@@ -709,6 +709,8 @@
             "tsConfig": "apps/russian/cabinet/tsconfig.app.json",
             "localize": ["ru-RU"],
             "aot": true,
+            "optimization": false,
+            "buildOptimizer": false,
             "assets": ["apps/russian/cabinet/src/favicon.ico", "apps/russian/cabinet/src/assets"],
             "styles": ["apps/russian/cabinet/src/styles.scss"],
             "scripts": []
