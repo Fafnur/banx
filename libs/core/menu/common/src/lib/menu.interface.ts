@@ -7,9 +7,7 @@ export interface MenuLink extends NavigationLink {
   children?: MenuLink[];
 }
 
-export type Menu = MenuLink[];
-
-export const MENU_DEFAULT: Menu = [
+export const MENU_DEFAULT: MenuLink[] = [
   {
     route: NAVIGATION_PATHS.home,
     label: $localize`:Menu bank|:Bank`,
@@ -263,4 +261,4 @@ export const MENU_DEFAULT: Menu = [
   },
 ];
 
-export const MENU = new InjectionToken<Menu>('Menu');
+export const MENU = new InjectionToken<MenuLink[]>('MenuLinks');

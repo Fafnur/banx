@@ -9,6 +9,7 @@ import { ContainerModule } from '@banx/ui/container';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 import { CopyrightModule } from './components/copyright/copyright.module';
 import { FooterModule } from './components/footer/footer.module';
+import { FooterMenuModule } from './components/footer-menu/footer-menu.module';
 import { HeaderModule } from './components/header/header.module';
 import { MainModule } from './components/main/main.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -26,6 +27,7 @@ import { LayoutComponent } from './layout.component';
     HeaderModule,
     MainModule,
     CopyrightModule,
+    FooterMenuModule,
     ToolbarModule,
   ],
   declarations: [LayoutComponent],
