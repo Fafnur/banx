@@ -57,6 +57,9 @@
     "core-forms-utils": {
       "tags": []
     },
+    "core-menu-common": {
+      "tags": []
+    },
     "core-navigation-common": {
       "tags": []
     },
