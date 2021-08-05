@@ -3,14 +3,16 @@ import { InjectionToken } from '@angular/core';
 export interface NavigationPaths {
   // Bank
   home: string;
-  serviceCreditCards: string;
-  serviceDebitCards: string;
-  serviceDeposits: string;
-  servicePremium: string;
-  serviceCashLoan: string;
-  serviceRefinance: string;
-  serviceCarLoan: string;
-  servicePayments: string;
+
+  bank: string;
+  bankCreditCards: string;
+  bankDebitCards: string;
+  bankDeposits: string;
+  bankPremium: string;
+  bankCashLoan: string;
+  bankRefinance: string;
+  bankCarLoan: string;
+  bankPayments: string;
 
   // Business
   business: string;
@@ -71,14 +73,16 @@ export interface NavigationPaths {
 
 export const NAVIGATION_PATHS: NavigationPaths = {
   home: '',
-  serviceCreditCards: 'services/credit-cards',
-  serviceDebitCards: 'services/debit-cards',
-  serviceDeposits: 'services/deposits',
-  servicePremium: 'services/premium',
-  serviceCashLoan: 'services/cash-loan',
-  serviceRefinance: 'services/refinance',
-  serviceCarLoan: 'services/car-loan',
-  servicePayments: 'services/payments',
+
+  bank: 'bank',
+  bankCreditCards: 'bank/credit-cards',
+  bankDebitCards: 'bank/debit-cards',
+  bankDeposits: 'bank/deposits',
+  bankPremium: 'bank/premium',
+  bankCashLoan: 'bank/cash-loan',
+  bankRefinance: 'bank/refinance',
+  bankCarLoan: 'bank/car-loan',
+  bankPayments: 'bank/payments',
 
   business: 'business',
   businessAccount: 'business/account',

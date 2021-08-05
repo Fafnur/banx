@@ -780,23 +780,68 @@
         }
       }
     },
-    "russian-content-home-page": {
+    "russian-content-bank-credit-card-page": {
       "projectType": "library",
-      "root": "libs/russian/content/home/page",
-      "sourceRoot": "libs/russian/content/home/page/src",
+      "root": "libs/russian/content/bank/credit-card/page",
+      "sourceRoot": "libs/russian/content/bank/credit-card/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/content/bank/credit-card/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/content/bank/credit-card/page/src/**/*.ts",
+              "libs/russian/content/bank/credit-card/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "russian-content-bank-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/bank/page",
+      "sourceRoot": "libs/russian/content/bank/page/src",
       "prefix": "banx",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/russian/content/home/page/src/**/*.ts", "libs/russian/content/home/page/src/**/*.html"]
+            "lintFilePatterns": ["libs/russian/content/bank/page/src/**/*.ts", "libs/russian/content/bank/page/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/home/page/jest.config.js",
+            "jestConfig": "libs/russian/content/bank/page/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "russian-content-pages": {
+      "projectType": "library",
+      "root": "libs/russian/content/pages",
+      "sourceRoot": "libs/russian/content/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/content/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/content/pages/src/**/*.ts", "libs/russian/content/pages/src/**/*.html"]
           }
         }
       }

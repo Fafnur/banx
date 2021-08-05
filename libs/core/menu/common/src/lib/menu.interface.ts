@@ -13,42 +13,42 @@ export const MENU_DEFAULT: MenuLink[] = [
     label: $localize`:Menu bank|:Bank`,
     children: [
       {
-        route: NAVIGATION_PATHS.serviceCreditCards,
+        route: NAVIGATION_PATHS.bankCreditCards,
         label: $localize`:Menu bank|:Credit cards`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.serviceDebitCards,
+        route: NAVIGATION_PATHS.bankDebitCards,
         label: $localize`:Menu bank|:Debit cards`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.servicePremium,
+        route: NAVIGATION_PATHS.bankPremium,
         label: $localize`:Menu bank|:Premium`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.serviceCashLoan,
+        route: NAVIGATION_PATHS.bankCashLoan,
         label: $localize`:Menu bank|:Cash loan`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.serviceRefinance,
+        route: NAVIGATION_PATHS.bankRefinance,
         label: $localize`:Menu bank|:Refinance`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.serviceCarLoan,
+        route: NAVIGATION_PATHS.bankCarLoan,
         label: $localize`:Menu bank|:Car loan`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.serviceDeposits,
+        route: NAVIGATION_PATHS.bankDeposits,
         label: $localize`:Menu bank|:Deposits`,
         parent: NAVIGATION_PATHS.home,
       },
       {
-        route: NAVIGATION_PATHS.servicePayments,
+        route: NAVIGATION_PATHS.bankPayments,
         label: $localize`:Menu bank|:Payments`,
         parent: NAVIGATION_PATHS.home,
       },
