@@ -1,9 +1,22 @@
 import { InjectionToken } from '@angular/core';
 
 export interface NavigationPaths {
-  // Bank
   home: string;
 
+  // Company
+  company: string;
+  companyAbout: string;
+  companyNews: string;
+  companyCareer: string;
+  companyPoints: string;
+  companyAtms: string;
+  companyExchange: string;
+  companyContacts: string;
+  companyHelp: string;
+  companySecure: string;
+  companyInvestors: string;
+
+  // Bank
   bank: string;
   bankCreditCards: string;
   bankDebitCards: string;
@@ -73,6 +86,18 @@ export interface NavigationPaths {
 
 export const NAVIGATION_PATHS: NavigationPaths = {
   home: '',
+
+  company: 'company',
+  companyAbout: 'company/about',
+  companyNews: 'company/news',
+  companyCareer: 'company/career',
+  companyPoints: 'company/points',
+  companyAtms: 'company/atms',
+  companyExchange: 'company/exchange',
+  companyContacts: 'company/contacts',
+  companyHelp: 'company/help',
+  companySecure: 'company/secure',
+  companyInvestors: 'company/investors',
 
   bank: 'bank',
   bankCreditCards: 'bank/credit-cards',

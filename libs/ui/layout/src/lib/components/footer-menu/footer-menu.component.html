@@ -1,4 +1,8 @@
 <banx-ui-container *ngIf="links?.length">
+  <ng-container *ngIf="isDesktopScreen; then desktopTpl; else mobileTpl"></ng-container>
+</banx-ui-container>
+
+<ng-template #desktopTpl>
   <banx-ui-row>
     <banx-ui-column *ngFor="let link of links">
       <div>
@@ -11,4 +15,37 @@
       </div>
     </banx-ui-column>
   </banx-ui-row>
-</banx-ui-container>
+</ng-template>
+
+<ng-template #mobileTpl>
+  <cdk-accordion class="example-accordion">
+    <cdk-accordion-item
+      *ngFor="let link of links; let index = index"
+      #accordionItem="cdkAccordionItem"
+      class="example-accordion-item"
+      role="button"
+      tabindex="0"
+      [attr.id]="'accordion-header-' + index"
+      [attr.aria-expanded]="accordionItem.expanded"
+      [attr.aria-controls]="'accordion-body-' + index"
+    >
+      <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+        {{ link.label }}
+        <span class="example-accordion-item-description"> Click to {{ accordionItem.expanded ? 'close' : 'open' }} </span>
+      </div>
+      <div
+        class="example-accordion-item-body"
+        role="region"
+        [style.display]="accordionItem.expanded ? '' : 'none'"
+        [attr.id]="'accordion-body-' + index"
+        [attr.aria-labelledby]="'accordion-header-' + index"
+      >
+        <ul *ngIf="link.children?.length">
+          <li *ngFor="let subLink of link.children">
+            <a [routerLink]="subLink.route | path">{{ subLink.label }}</a>
+          </li>
+        </ul>
+      </div>
+    </cdk-accordion-item>
+  </cdk-accordion>
+</ng-template>

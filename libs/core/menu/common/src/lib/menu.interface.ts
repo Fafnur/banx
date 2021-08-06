@@ -3,54 +3,115 @@ import { InjectionToken } from '@angular/core';
 import { NAVIGATION_PATHS, NavigationLink } from '@banx/core/navigation/common';
 
 export interface MenuLink extends NavigationLink {
+  hide?: boolean;
   parent?: string;
   children?: MenuLink[];
 }
 
+export const MENU = new InjectionToken<MenuLink[]>('MenuLinks');
+
 export const MENU_DEFAULT: MenuLink[] = [
   {
-    route: NAVIGATION_PATHS.home,
+    hide: true,
+    route: NAVIGATION_PATHS.company,
+    label: $localize`:Menu company|:Company`,
+    children: [
+      {
+        route: NAVIGATION_PATHS.companyAbout,
+        label: $localize`:Menu company|:About`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyNews,
+        label: $localize`:Menu company|:News`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyCareer,
+        label: $localize`:Menu company|:Career`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyPoints,
+        label: $localize`:Menu company|:Points`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyAtms,
+        label: $localize`:Menu company|:ATMs`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyExchange,
+        label: $localize`:Menu company|:Exchange`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyContacts,
+        label: $localize`:Menu company|:Contacts`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyHelp,
+        label: $localize`:Menu company|:Help`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companySecure,
+        label: $localize`:Menu company|:Secure`,
+        parent: NAVIGATION_PATHS.company,
+      },
+      {
+        route: NAVIGATION_PATHS.companyInvestors,
+        label: $localize`:Menu company|:For investors`,
+        parent: NAVIGATION_PATHS.company,
+      },
+    ],
+  },
+
+  {
+    route: NAVIGATION_PATHS.bank,
     label: $localize`:Menu bank|:Bank`,
     children: [
       {
         route: NAVIGATION_PATHS.bankCreditCards,
         label: $localize`:Menu bank|:Credit cards`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankDebitCards,
         label: $localize`:Menu bank|:Debit cards`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankPremium,
         label: $localize`:Menu bank|:Premium`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankCashLoan,
         label: $localize`:Menu bank|:Cash loan`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankRefinance,
         label: $localize`:Menu bank|:Refinance`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankCarLoan,
         label: $localize`:Menu bank|:Car loan`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankDeposits,
         label: $localize`:Menu bank|:Deposits`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
       {
         route: NAVIGATION_PATHS.bankPayments,
         label: $localize`:Menu bank|:Payments`,
-        parent: NAVIGATION_PATHS.home,
+        parent: NAVIGATION_PATHS.bank,
       },
     ],
   },
@@ -260,5 +321,3 @@ export const MENU_DEFAULT: MenuLink[] = [
     ],
   },
 ];
-
-export const MENU = new InjectionToken<MenuLink[]>('MenuLinks');

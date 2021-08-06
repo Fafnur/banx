@@ -1,6 +1,10 @@
-import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil, tap } from 'rxjs/operators';
 
 import { MENU, MenuLink } from '@banx/core/menu/common';
+import { GridBreakpointType, mediaBreakpointUp } from '@banx/ui/grid';
 
 @Component({
   selector: 'banx-ui-copyright',
@@ -8,12 +12,36 @@ import { MENU, MenuLink } from '@banx/core/menu/common';
   styleUrls: ['./footer-menu.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterMenuComponent implements OnInit {
+export class FooterMenuComponent implements OnInit, OnDestroy {
   links!: MenuLink[];
+  isDesktopScreen = false;
 
-  constructor(@Inject(MENU) private readonly menu: MenuLink[]) {}
+  private readonly destroy$ = new Subject<void>();
+
+  constructor(
+    private readonly changeDetectorRef: ChangeDetectorRef,
+    private readonly breakpointObserver: BreakpointObserver,
+    @Inject(MENU) private readonly menuLinks: MenuLink[]
+  ) {}
 
   ngOnInit(): void {
-    this.links = this.menu;
+    this.links = this.menuLinks;
+
+    this.breakpointObserver
+      .observe(mediaBreakpointUp(GridBreakpointType.Md))
+      .pipe(
+        tap((breakpoints) => {
+          this.isDesktopScreen = breakpoints.matches;
+          this.links = this.isDesktopScreen ? this.menuLinks.filter((link) => !link.hide) : this.menuLinks;
+          this.changeDetectorRef.markForCheck();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

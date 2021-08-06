@@ -1,3 +1,4 @@
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -9,7 +10,7 @@ import { GridModule } from '@banx/ui/grid';
 import { FooterMenuComponent } from './footer-menu.component';
 
 @NgModule({
-  imports: [CommonModule, ContainerModule, GridModule, RouterModule, NavigationSharedModule],
+  imports: [CommonModule, ContainerModule, GridModule, RouterModule, NavigationSharedModule, CdkAccordionModule],
   declarations: [FooterMenuComponent],
   exports: [FooterMenuComponent],
 })
