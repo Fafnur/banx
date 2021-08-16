@@ -1,0 +1,70 @@
+@use '~@angular/material' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  user-select: none;
+}
+
+.footer-accordion {
+  display: block;
+}
+
+.footer-accordion-item {
+  display: block;
+  border-bottom: solid 1px mat.get-color-from-palette(mat.$gray-palette, 300);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.footer-accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  color: mat.get-color-from-palette(mat.$gray-palette, 600);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.footer-accordion-item-description {
+  font-size: 1rem;
+  color: mat.get-color-from-palette(mat.$gray-palette, 600);
+}
+
+.footer-accordion-item-header {
+  padding: 1rem 0;
+
+  .footer-accordion-item.is-active & {
+    color: $color-active;
+  }
+}
+
+.footer-accordion-item-body {
+}
+
+.footer-accordion-item-expander {
+  color: mat.get-color-from-palette(mat.$gray-palette, 400);
+  height: 1rem;
+  margin-top: -0.25rem;
+}
+
+.footer-accordion-links {
+  margin-bottom: 1rem;
+}
+
+.footer-accordion-link {
+  display: block;
+  color: mat.get-color-from-palette(mat.$gray-palette, 600);
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-active;
+  }
+}

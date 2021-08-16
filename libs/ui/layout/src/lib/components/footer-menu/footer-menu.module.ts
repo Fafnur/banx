@@ -7,10 +7,21 @@ import { NavigationSharedModule } from '@banx/core/navigation/shared';
 import { ContainerModule } from '@banx/ui/container';
 import { GridModule } from '@banx/ui/grid';
 
+import { FooterMenuAccordionModule } from './components/footer-menu-accordion/footer-menu-accordion.module';
+import { FooterMenuListModule } from './components/footer-menu-list/footer-menu-list.module';
 import { FooterMenuComponent } from './footer-menu.component';
 
 @NgModule({
-  imports: [CommonModule, ContainerModule, GridModule, RouterModule, NavigationSharedModule, CdkAccordionModule],
+  imports: [
+    CommonModule,
+    ContainerModule,
+    GridModule,
+    RouterModule,
+    NavigationSharedModule,
+    CdkAccordionModule,
+    FooterMenuListModule,
+    FooterMenuAccordionModule,
+  ],
   declarations: [FooterMenuComponent],
   exports: [FooterMenuComponent],
 })

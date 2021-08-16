@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CopyrightComponent, FooterMenuComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
+import { CopyrightComponent, FooterMenuComponent, FooterTopComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
 
 const routes: Routes = [
   {
@@ -12,6 +12,11 @@ const routes: Routes = [
         path: '',
         component: ToolbarComponent,
         outlet: 'header',
+      },
+      {
+        path: '',
+        component: FooterTopComponent,
+        outlet: 'footer-top',
       },
       {
         path: '',

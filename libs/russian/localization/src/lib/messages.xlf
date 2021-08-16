@@ -2,11 +2,99 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="2923976555062420056" datatype="html">
+        <source>Компания</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="2724272094526549776" datatype="html">
+        <source>О банке</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="955414801540379183" datatype="html">
+        <source>Новости</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="5437278480830902346" datatype="html">
+        <source>Работа</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="557418663199398510" datatype="html">
+        <source>Точки пополнения</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="7317752612221673981" datatype="html">
+        <source>Банкоматы</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="9169311896373756090" datatype="html">
+        <source>Курсы валют</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="1940146070781501631" datatype="html">
+        <source>Контакты</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="5871005704213341462" datatype="html">
+        <source>Помощь</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="3685325565189915726" datatype="html">
+        <source>Безопасность</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
+      <trans-unit id="7297673800152654942" datatype="html">
+        <source>For investors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+        <note priority="1" from="meaning">Menu company</note>
+      </trans-unit>
       <trans-unit id="4414890725114043493" datatype="html">
         <source>Банк</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -14,7 +102,7 @@
         <source>Кредитные карты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">78</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -22,7 +110,7 @@
         <source>Дебетовые карты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">83</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -30,7 +118,7 @@
         <source>Премиум</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">88</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -38,7 +126,7 @@
         <source>Кредит наличными</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -46,7 +134,7 @@
         <source>Рефинансирование</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">98</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -54,7 +142,7 @@
         <source>Автокредит</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">103</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -62,7 +150,7 @@
         <source>Вклады</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">108</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -70,7 +158,7 @@
         <source>Платежи</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">113</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
@@ -78,7 +166,7 @@
         <source>Бизнес</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">121</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -86,7 +174,7 @@
         <source>Расчетный счет</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">125</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -94,7 +182,7 @@
         <source>Регистрация бизнеса</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">130</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -102,7 +190,7 @@
         <source>Крупный бизнес</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">135</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -110,7 +198,7 @@
         <source>Эквайринг</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">81</context>
+          <context context-type="linenumber">140</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -118,7 +206,7 @@
         <source>Кредиты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">86</context>
+          <context context-type="linenumber">145</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -126,7 +214,7 @@
         <source>Госзакупки</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">150</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -134,7 +222,7 @@
         <source>Продажи</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">96</context>
+          <context context-type="linenumber">155</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -142,7 +230,7 @@
         <source>Бухгалтерия</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">101</context>
+          <context context-type="linenumber">160</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
@@ -150,7 +238,7 @@
         <source>Инвестиции</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">109</context>
+          <context context-type="linenumber">168</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -158,7 +246,7 @@
         <source>Лента</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">172</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -166,7 +254,7 @@
         <source>Каталог</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">118</context>
+          <context context-type="linenumber">177</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -174,7 +262,7 @@
         <source>Что купить</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">123</context>
+          <context context-type="linenumber">182</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -182,7 +270,7 @@
         <source>Премиум</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">128</context>
+          <context context-type="linenumber">187</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -190,7 +278,7 @@
         <source>Брокерский счёт</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">133</context>
+          <context context-type="linenumber">192</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -198,7 +286,7 @@
         <source>ИИС</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">138</context>
+          <context context-type="linenumber">197</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -206,7 +294,7 @@
         <source>Тарифы</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">143</context>
+          <context context-type="linenumber">202</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -214,7 +302,7 @@
         <source>Партнерам</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">148</context>
+          <context context-type="linenumber">207</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
@@ -222,7 +310,7 @@
         <source>Страхование</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">156</context>
+          <context context-type="linenumber">215</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -230,7 +318,7 @@
         <source>Автомобили</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">219</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -238,7 +326,7 @@
         <source>Путешествия</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">165</context>
+          <context context-type="linenumber">224</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -246,7 +334,7 @@
         <source>Квартира и дом</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">170</context>
+          <context context-type="linenumber">229</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -254,7 +342,7 @@
         <source>Здоровье</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">234</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -262,7 +350,7 @@
         <source>Личный кабинет</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">180</context>
+          <context context-type="linenumber">239</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -270,7 +358,7 @@
         <source>Партнерам</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">185</context>
+          <context context-type="linenumber">244</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
@@ -278,7 +366,7 @@
         <source>Путешествия</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">193</context>
+          <context context-type="linenumber">252</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -286,7 +374,7 @@
         <source>Авиабилеты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">197</context>
+          <context context-type="linenumber">256</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -294,7 +382,7 @@
         <source>Отели</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">202</context>
+          <context context-type="linenumber">261</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -302,7 +390,7 @@
         <source>Туры</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">207</context>
+          <context context-type="linenumber">266</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -310,7 +398,7 @@
         <source>Ж/д билеты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">212</context>
+          <context context-type="linenumber">271</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -318,7 +406,7 @@
         <source>Аренда авто</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">217</context>
+          <context context-type="linenumber">276</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -326,7 +414,7 @@
         <source>Куда лететь?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">222</context>
+          <context context-type="linenumber">281</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
@@ -334,7 +422,7 @@
         <source>Развлечения</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">230</context>
+          <context context-type="linenumber">289</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -342,7 +430,7 @@
         <source>Кино</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">234</context>
+          <context context-type="linenumber">293</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -350,7 +438,7 @@
         <source>Рестораны</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">239</context>
+          <context context-type="linenumber">298</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -358,7 +446,7 @@
         <source>Концерты</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">244</context>
+          <context context-type="linenumber">303</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -366,7 +454,7 @@
         <source>Театр</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">249</context>
+          <context context-type="linenumber">308</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -374,7 +462,7 @@
         <source>Спорт</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">254</context>
+          <context context-type="linenumber">313</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -382,7 +470,7 @@
         <source>Мои заказы</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">259</context>
+          <context context-type="linenumber">318</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
@@ -512,6 +600,24 @@
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/copyright/copyright.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="2373475951066023503" datatype="html">
+        <source>8 800 555-77-78</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer-top/components/footer-phone/footer-phone.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Phone</note>
+        <note priority="1" from="meaning">Footer brand</note>
+      </trans-unit>
+      <trans-unit id="2582125887723382367" datatype="html">
+        <source>Для звонков по России</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer-top/components/footer-phone/footer-phone.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Phone hint</note>
+        <note priority="1" from="meaning">Footer brand</note>
       </trans-unit>
     </body>
   </file>

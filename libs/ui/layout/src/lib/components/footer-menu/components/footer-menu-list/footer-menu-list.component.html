@@ -1,0 +1,12 @@
+<banx-ui-row>
+  <banx-ui-column *ngFor="let link of links">
+    <div>
+      <h5>{{ link.label }}</h5>
+      <ul *ngIf="link.children?.length">
+        <li *ngFor="let subLink of link.children">
+          <a [routerLink]="subLink.route | path">{{ subLink.label }}</a>
+        </li>
+      </ul>
+    </div>
+  </banx-ui-column>
+</banx-ui-row>

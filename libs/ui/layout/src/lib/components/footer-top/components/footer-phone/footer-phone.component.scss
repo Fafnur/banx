@@ -1,0 +1,17 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
+}
+
+.footer-phone {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}

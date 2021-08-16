@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
 import { MENU, MenuLink } from '@banx/core/menu/common';
+import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 import { GridBreakpointType, mediaBreakpointUp } from '@banx/ui/grid';
 
 @Component({
@@ -14,6 +15,7 @@ import { GridBreakpointType, mediaBreakpointUp } from '@banx/ui/grid';
 })
 export class FooterMenuComponent implements OnInit, OnDestroy {
   links!: MenuLink[];
+  companyLinks!: MenuLink | null;
   isDesktopScreen = false;
 
   private readonly destroy$ = new Subject<void>();
@@ -26,6 +28,7 @@ export class FooterMenuComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.links = this.menuLinks;
+    this.companyLinks = this.menuLinks.find((link) => link.route === NAVIGATION_PATHS.company) ?? null;
 
     this.breakpointObserver
       .observe(mediaBreakpointUp(GridBreakpointType.Md))
@@ -33,6 +36,7 @@ export class FooterMenuComponent implements OnInit, OnDestroy {
         tap((breakpoints) => {
           this.isDesktopScreen = breakpoints.matches;
           this.links = this.isDesktopScreen ? this.menuLinks.filter((link) => !link.hide) : this.menuLinks;
+
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)

@@ -3,9 +3,12 @@
 </banx-ui-container>
 
 <ng-template #desktopTpl>
-  <banx-footer-menu-list [links]="links"></banx-footer-menu-list>
+  <banx-footer-brand>
+    <banx-footer-company></banx-footer-company>
+    <banx-footer-phone></banx-footer-phone>
+  </banx-footer-brand>
 </ng-template>
 
 <ng-template #mobileTpl>
-  <banx-footer-menu-accordion [links]="links"></banx-footer-menu-accordion>
+  <banx-footer-phone></banx-footer-phone>
 </ng-template>
