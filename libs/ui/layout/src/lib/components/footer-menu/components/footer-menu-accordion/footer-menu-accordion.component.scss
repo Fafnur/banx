@@ -22,7 +22,7 @@
   display: flex;
   align-content: center;
   justify-content: space-between;
-  color: mat.get-color-from-palette(mat.$gray-palette, 600);
+  color: $color-dark-lite;
   text-transform: uppercase;
   font-size: 0.9rem;
 
@@ -33,7 +33,7 @@
 
 .footer-accordion-item-description {
   font-size: 1rem;
-  color: mat.get-color-from-palette(mat.$gray-palette, 600);
+  color: $color-dark-lite;
 }
 
 .footer-accordion-item-header {
@@ -48,7 +48,7 @@
 }
 
 .footer-accordion-item-expander {
-  color: mat.get-color-from-palette(mat.$gray-palette, 400);
+  color: $color-dark-extra-lite;
   height: 1rem;
   margin-top: -0.25rem;
 }
@@ -59,7 +59,7 @@
 
 .footer-accordion-link {
   display: block;
-  color: mat.get-color-from-palette(mat.$gray-palette, 600);
+  color: $color-dark-lite;
   padding: 0.5rem 0 0.5rem 0.5rem;
   font-size: 0.9rem;
   text-decoration: none;

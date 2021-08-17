@@ -19,7 +19,7 @@
 
       @for $column from 1 through $columnsCount {
         &.#{$columnName}-#{$breakpoint}-#{$column} {
-          width: math.div($column, $columnsCount);
+          width: math.percentage(math.div($column, $columnsCount));
         }
       }
     }

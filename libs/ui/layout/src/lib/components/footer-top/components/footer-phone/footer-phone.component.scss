@@ -4,6 +4,10 @@
   display: block;
   text-align: center;
 
+  @include media-breakpoint-up(sm) {
+    min-width: 12rem;
+  }
+
   @include media-breakpoint-up(md) {
     text-align: left;
   }

@@ -19,6 +19,7 @@
 .footer-company-links {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0 -0.25rem;
 }
 
@@ -26,4 +27,10 @@
   display: block;
   color: $color-active;
   padding: 0 0.25rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color-active, 10%);
+  }
 }

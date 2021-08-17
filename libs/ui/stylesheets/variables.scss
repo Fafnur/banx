@@ -27,3 +27,6 @@ $color-primary: mat.get-color-from-palette(mat.$gray-palette, 200);
 $color-active: mat.get-color-from-palette(mat.$blue-palette, 700);
 $color-accent: mat.get-color-from-palette(mat.$amber-palette, A200);
 $color-danger: mat.get-color-from-palette(mat.$red-palette, 500);
+
+$color-dark-extra-lite: mat.get-color-from-palette(mat.$gray-palette, 400);
+$color-dark-lite: mat.get-color-from-palette(mat.$gray-palette, 600);

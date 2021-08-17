@@ -3,11 +3,11 @@
 
 :host {
   display: block;
-  background-color: white;
+  background-color: transparent;
   border-top: solid 1px mat.get-color-from-palette(mat.$gray-palette, 300);
 
   @include media-breakpoint-up(md) {
-    background-color: $color-primary;
+    background-color: rgba(0, 0, 0, 0.05);
     border-top: none;
   }
 }

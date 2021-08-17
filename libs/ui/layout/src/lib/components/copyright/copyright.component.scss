@@ -1,4 +1,16 @@
+@use '~@angular/material' as mat;
+@import 'libs/ui/stylesheets/utils';
+
 :host {
   display: block;
   padding-bottom: 1rem;
+  color: $color-dark-lite;
+  font-size: 0.85rem;
+
+  banx-ui-container:before {
+    display: block;
+    content: '';
+    border-top: 1px solid mat.get-color-from-palette(mat.$gray-palette, 300);
+    padding-top: 1rem;
+  }
 }

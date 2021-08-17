@@ -1,12 +1,8 @@
 <banx-ui-row>
-  <banx-ui-column *ngFor="let link of links">
-    <div>
-      <h5>{{ link.label }}</h5>
-      <ul *ngIf="link.children?.length">
-        <li *ngFor="let subLink of link.children">
-          <a [routerLink]="subLink.route | path">{{ subLink.label }}</a>
-        </li>
-      </ul>
-    </div>
+  <banx-ui-column [modes]="{ md: 4, lg: 2 }" *ngFor="let link of links">
+    <div class="footer-menu-title">{{ link.label }}</div>
+    <nav class="footer-menu-links" *ngIf="link.children?.length">
+      <a class="footer-menu-link" [routerLink]="subLink.route | path" *ngFor="let subLink of link.children">{{ subLink.label }}</a>
+    </nav>
   </banx-ui-column>
 </banx-ui-row>

@@ -594,15 +594,17 @@
         </context-group>
         <note priority="1" from="description">Home page</note>
       </trans-unit>
-      <trans-unit id="277920320947488876" datatype="html">
-        <source> ©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. Все права защищены. </source>
+      <trans-unit id="4030347628819272688" datatype="html">
+        <source>©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. Все права защищены.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/copyright/copyright.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
+        <note priority="1" from="description">All rights reserved</note>
+        <note priority="1" from="meaning">Footer copyright</note>
       </trans-unit>
       <trans-unit id="2373475951066023503" datatype="html">
-        <source>8 800 555-77-78</source>
+        <source>8 812 576-41-11</source>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer-top/components/footer-phone/footer-phone.component.html</context>
           <context context-type="linenumber">1</context>
