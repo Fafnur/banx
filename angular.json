@@ -867,6 +867,28 @@
         }
       }
     },
+    "russian-navigation-common": {
+      "projectType": "library",
+      "root": "libs/russian/navigation/common",
+      "sourceRoot": "libs/russian/navigation/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/navigation/common"],
+          "options": {
+            "jestConfig": "libs/russian/navigation/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/navigation/common/src/**/*.ts", "libs/russian/navigation/common/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian-numerals-common": {
       "projectType": "library",
       "root": "libs/russian/numerals/common",
