@@ -8,7 +8,7 @@ import { NavigationService } from '@banx/core/navigation/service';
 export class NavigationPathPipe implements PipeTransform {
   constructor(private readonly navigationService: NavigationService) {}
 
-  transform(path: string, params?: Record<string, string | number | undefined>): (string | number)[] {
-    return this.navigationService.getRoute(path, params);
+  transform(path: string, params?: Record<string, string | number | undefined>): string {
+    return this.navigationService.getRoute(path, params).join('/');
   }
 }

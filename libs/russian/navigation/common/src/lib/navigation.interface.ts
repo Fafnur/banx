@@ -2,7 +2,7 @@ import { NAVIGATION_PATHS, NavigationPaths } from '@banx/core/navigation/common'
 
 export interface RussianNavigationPaths extends NavigationPaths {
   owners: string;
-  edisclosure: string;
+  eDisclosure: string;
   documents: string;
   disclosure: string;
   largestDigitalBank: string;
@@ -15,7 +15,7 @@ export interface RussianNavigationPaths extends NavigationPaths {
 export const RUSSIAN_NAVIGATION_PATHS: RussianNavigationPaths = {
   ...NAVIGATION_PATHS,
   owners: '/assets/documents/owners.pdf',
-  edisclosure: 'https://e-disclosure.ru/',
+  eDisclosure: 'https://e-disclosure.ru/',
   documents: 'documents',
   disclosure: 'documents/disclosure',
   largestDigitalBank: '/company/news/largest-digital-bank',
