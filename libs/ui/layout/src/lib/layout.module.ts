@@ -6,9 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { ContainerModule } from '@banx/ui/container';
 
-import { CopyrightComponent } from './components/copyright/copyright.component';
-import { CopyrightModule } from './components/copyright/copyright.module';
 import { FooterModule } from './components/footer/footer.module';
+import { FooterBottomComponent } from './components/footer-bottom/footer-bottom.component';
+import { FooterBottomModule } from './components/footer-bottom/footer-bottom.module';
 import { FooterMenuModule } from './components/footer-menu/footer-menu.module';
 import { FooterTopModule } from './components/footer-top/footer-top.module';
 import { HeaderModule } from './components/header/header.module';
@@ -27,12 +27,12 @@ import { LayoutComponent } from './layout.component';
     FooterModule,
     HeaderModule,
     MainModule,
-    CopyrightModule,
     FooterTopModule,
     FooterMenuModule,
+    FooterBottomModule,
     ToolbarModule,
   ],
   declarations: [LayoutComponent],
-  exports: [LayoutComponent, CopyrightComponent, ToolbarComponent],
+  exports: [LayoutComponent, FooterBottomComponent, ToolbarComponent],
 })
 export class LayoutModule {}

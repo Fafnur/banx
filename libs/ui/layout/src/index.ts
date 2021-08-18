@@ -1,5 +1,5 @@
-export * from './lib/components/copyright/copyright.component';
-export * from './lib/components/copyright/copyright.module';
+export * from './lib/components/footer-bottom/footer-bottom.component';
+export * from './lib/components/footer-bottom/footer-bottom.module';
 export * from './lib/components/footer-menu/footer-menu.component';
 export * from './lib/components/footer-menu/footer-menu.module';
 export * from './lib/components/footer-top/footer-top.component';

@@ -1,11 +1,18 @@
 @import 'libs/ui/stylesheets/utils';
 
 :host {
+  display: block;
   color: $color-dark-lite;
   font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-bottom: 1rem;
 
   p {
     line-height: 1.5;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 

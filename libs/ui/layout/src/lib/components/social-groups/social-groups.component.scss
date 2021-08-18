@@ -1,0 +1,7 @@
+@import 'libs/ui/stylesheets/utils';
+
+.social-group {
+  &:hover {
+    color: $color-active;
+  }
+}

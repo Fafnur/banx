@@ -1,7 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MockModule } from 'ng-mocks';
-
-import { ContainerModule } from '@banx/ui/container';
 
 import { CopyrightComponent } from './copyright.component';
 
@@ -11,7 +8,6 @@ describe('CopyrightComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MockModule(ContainerModule)],
       declarations: [CopyrightComponent],
     }).compileComponents();
   });

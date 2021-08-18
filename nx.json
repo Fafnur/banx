@@ -72,6 +72,12 @@
     "core-platform-service": {
       "tags": []
     },
+    "core-social-common": {
+      "tags": []
+    },
+    "core-social-shared": {
+      "tags": []
+    },
     "core-storage-common": {
       "tags": []
     },
@@ -146,6 +152,9 @@
       "tags": []
     },
     "ui-grid": {
+      "tags": []
+    },
+    "ui-icons": {
       "tags": []
     },
     "ui-layout": {

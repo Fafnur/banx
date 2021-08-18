@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CopyrightComponent, FooterMenuComponent, FooterTopComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
+import { FooterBottomComponent, FooterMenuComponent, FooterTopComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
 
 const routes: Routes = [
   {
@@ -25,8 +25,8 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: CopyrightComponent,
-        outlet: 'footer-copyright',
+        component: FooterBottomComponent,
+        outlet: 'footer-bottom',
       },
       {
         path: '',

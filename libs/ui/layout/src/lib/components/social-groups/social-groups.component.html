@@ -1,0 +1,5 @@
+<div *ngIf="socialGroups">
+  <a class="social-group" mat-icon-button [href]="socialGroup.link" target="_blank" *ngFor="let socialGroup of socialGroups">
+    <mat-icon [svgIcon]="socialGroup.type | socialIcon"></mat-icon>
+  </a>
+</div>

@@ -33,6 +33,8 @@
       "@banx/core/navigation/service": ["libs/core/navigation/service/src/index.ts"],
       "@banx/core/navigation/shared": ["libs/core/navigation/shared/src/index.ts"],
       "@banx/core/platform/service": ["libs/core/platform/service/src/index.ts"],
+      "@banx/core/social/common": ["libs/core/social/common/src/index.ts"],
+      "@banx/core/social/shared": ["libs/core/social/shared/src/index.ts"],
       "@banx/core/storage/common": ["libs/core/storage/common/src/index.ts"],
       "@banx/core/storage/local": ["libs/core/storage/local/src/index.ts"],
       "@banx/core/storage/memory": ["libs/core/storage/memory/src/index.ts"],
@@ -56,6 +58,7 @@
       "@banx/russian/numerals/shared": ["libs/russian/numerals/shared/src/index.ts"],
       "@banx/ui/container": ["libs/ui/container/src/index.ts"],
       "@banx/ui/grid": ["libs/ui/grid/src/index.ts"],
+      "@banx/ui/icons": ["libs/ui/icons/src/index.ts"],
       "@banx/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@banx/users/common": ["libs/users/common/src/index.ts"]
     }
