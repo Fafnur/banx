@@ -84,6 +84,18 @@ const icons: IconConfig[] = [
     name: 'banxDiscord',
     path: 'assets/images/socials/discord.svg',
   },
+  {
+    name: 'banxLocaleRU',
+    path: 'assets/images/locales/ru.svg',
+  },
+  {
+    name: 'banxLocaleEN',
+    path: 'assets/images/locales/en.svg',
+  },
+  {
+    name: 'banxLocaleFR',
+    path: 'assets/images/locales/fr.svg',
+  },
 ];
 
 @NgModule({

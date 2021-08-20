@@ -5,10 +5,11 @@ import { ContainerModule } from '@banx/ui/container';
 
 import { SocialGroupsModule } from '../social-groups/social-groups.module';
 import { CopyrightModule } from './components/copyright/copyright.module';
+import { LocaleSwitcherModule } from './components/locale-switcher/locale-switcher.module';
 import { FooterBottomComponent } from './footer-bottom.component';
 
 @NgModule({
-  imports: [CommonModule, ContainerModule, CopyrightModule, SocialGroupsModule],
+  imports: [CommonModule, ContainerModule, CopyrightModule, SocialGroupsModule, LocaleSwitcherModule],
   declarations: [FooterBottomComponent],
   exports: [FooterBottomComponent],
 })

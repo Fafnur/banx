@@ -1,0 +1,11 @@
+@use '~@angular/material/index' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
