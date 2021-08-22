@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterMenuAccordionComponent } from './footer-menu-accordion.component';
+import { AccordionComponent } from './accordion.component';
 
 describe('FooterMenuAccordionComponent', () => {
-  let component: FooterMenuAccordionComponent;
-  let fixture: ComponentFixture<FooterMenuAccordionComponent>;
+  let component: AccordionComponent;
+  let fixture: ComponentFixture<AccordionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FooterMenuAccordionComponent ]
-    })
-    .compileComponents();
+      declarations: [AccordionComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterMenuAccordionComponent);
+    fixture = TestBed.createComponent(AccordionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

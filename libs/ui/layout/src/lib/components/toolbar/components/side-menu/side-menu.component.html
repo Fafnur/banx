@@ -1,0 +1,13 @@
+<button mat-icon-button class="toolbar-action" (click)="onToggle()">
+  <mat-icon>menu</mat-icon>
+</button>
+
+<div class="sidenav">
+  <button class="sidenav-close" mat-icon-button (click)="onToggle()">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <banx-accordion [links]="menuLinks"></banx-accordion>
+</div>
+
+<div class="sidenav-backdrop" (click)="onToggle()"></div>

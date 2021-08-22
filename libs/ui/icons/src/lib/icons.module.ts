@@ -9,6 +9,10 @@ export interface IconConfig {
 
 const icons: IconConfig[] = [
   {
+    name: 'banxLogo',
+    path: 'assets/images/logo.svg',
+  },
+  {
     name: 'banxVkontakte',
     path: 'assets/images/socials/vkontakte.svg',
   },

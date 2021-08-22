@@ -129,6 +129,9 @@
     "russian-content-bank-page": {
       "tags": []
     },
+    "russian-content-business-page": {
+      "tags": []
+    },
     "russian-content-pages": {
       "tags": []
     },
@@ -147,6 +150,9 @@
     "russian/cabinet-e2e": {
       "tags": [],
       "implicitDependencies": ["russian-cabinet"]
+    },
+    "ui-accordion": {
+      "tags": []
     },
     "ui-container": {
       "tags": []

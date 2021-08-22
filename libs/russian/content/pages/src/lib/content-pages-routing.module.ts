@@ -12,6 +12,10 @@ const routes: Routes = [
     path: NAVIGATION_PATHS.bankCreditCards,
     loadChildren: (): Promise<any> => import('@banx/russian/content/bank/credit-card/page').then((modules) => modules.CreditCardPageModule),
   },
+  {
+    path: NAVIGATION_PATHS.business,
+    loadChildren: (): Promise<any> => import('@banx/russian/content/business/page').then((modules) => modules.BusinessPageModule),
+  },
 ];
 
 @NgModule({

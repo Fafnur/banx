@@ -1,0 +1,29 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  margin: -1rem 0;
+}
+
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.main-menu-link {
+  display: flex;
+  text-decoration: none;
+  height: 100%;
+  margin: auto 0.5rem;
+  border-bottom: 2px solid transparent;
+  font-size: 0.9rem;
+
+  //height: 100%;
+  &.is-active {
+    border-bottom-color: red;
+  }
+}
+
+.main-menu-label {
+  margin: auto;
+}

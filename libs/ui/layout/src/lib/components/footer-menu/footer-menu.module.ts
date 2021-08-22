@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
+import { AccordionModule } from '@banx/ui/accordion';
 import { ContainerModule } from '@banx/ui/container';
 import { GridModule } from '@banx/ui/grid';
 
-import { FooterMenuAccordionModule } from './components/footer-menu-accordion/footer-menu-accordion.module';
 import { FooterMenuListModule } from './components/footer-menu-list/footer-menu-list.module';
 import { FooterMenuComponent } from './footer-menu.component';
 
@@ -20,7 +20,7 @@ import { FooterMenuComponent } from './footer-menu.component';
     NavigationSharedModule,
     CdkAccordionModule,
     FooterMenuListModule,
-    FooterMenuAccordionModule,
+    AccordionModule,
   ],
   declarations: [FooterMenuComponent],
   exports: [FooterMenuComponent],

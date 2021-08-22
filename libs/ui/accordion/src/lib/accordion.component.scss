@@ -1,15 +1,15 @@
-@use '~@angular/material' as mat;
+@use '~@angular/material/index' as mat;
 @import 'libs/ui/stylesheets/utils';
 
 :host {
   user-select: none;
 }
 
-.footer-accordion {
+.accordion {
   display: block;
 }
 
-.footer-accordion-item {
+.accordion-item {
   display: block;
   border-bottom: solid 1px mat.get-color-from-palette(mat.$gray-palette, 300);
 
@@ -18,7 +18,7 @@
   }
 }
 
-.footer-accordion-item-header {
+.accordion-item-header {
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -31,33 +31,33 @@
   }
 }
 
-.footer-accordion-item-description {
+.accordion-item-description {
   font-size: 1rem;
   color: $color-dark-lite;
 }
 
-.footer-accordion-item-header {
+.accordion-item-header {
   padding: 1rem 0;
 
-  .footer-accordion-item.is-active & {
+  .accordion-item.is-active & {
     color: $color-active;
   }
 }
 
-.footer-accordion-item-body {
+.accordion-item-body {
 }
 
-.footer-accordion-item-expander {
+.accordion-item-expander {
   color: $color-dark-extra-lite;
   height: 1rem;
   margin-top: -0.25rem;
 }
 
-.footer-accordion-links {
+.accordion-links {
   margin-bottom: 1rem;
 }
 
-.footer-accordion-link {
+.accordion-link {
   display: block;
   color: $color-dark-lite;
   padding: 0.5rem 0 0.5rem 0.5rem;

@@ -6,6 +6,7 @@ export interface MenuLink extends NavigationLink {
   hide?: boolean;
   parent?: string;
   children?: MenuLink[];
+  routerLinkActiveOptions?: boolean;
 }
 
 export const MENU = new InjectionToken<MenuLink[]>('MenuLinks');
@@ -72,6 +73,7 @@ export const MENU_DEFAULT: MenuLink[] = [
   {
     route: NAVIGATION_PATHS.bank,
     label: $localize`:Menu bank|:Bank`,
+    routerLinkActiveOptions: true,
     children: [
       {
         route: NAVIGATION_PATHS.bankCreditCards,

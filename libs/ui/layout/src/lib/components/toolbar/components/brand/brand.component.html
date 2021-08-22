@@ -1,1 +1,3 @@
-<a [routerLink]="paths.home | path">{{ brand }}</a>
+<a [routerLink]="paths.home | path" queryParamsHandling="merge">
+  <mat-icon class="logo" svgIcon="banxLogo"></mat-icon>
+</a>

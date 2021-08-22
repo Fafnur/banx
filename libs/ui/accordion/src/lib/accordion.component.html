@@ -1,8 +1,8 @@
-<cdk-accordion class="footer-accordion">
+<cdk-accordion class="accordion">
   <cdk-accordion-item
     *ngFor="let link of links; let index = index"
     #accordionItem="cdkAccordionItem"
-    class="footer-accordion-item"
+    class="accordion-item"
     role="button"
     tabindex="0"
     [attr.id]="'accordion-header-' + index"
@@ -10,23 +10,23 @@
     [attr.aria-controls]="'accordion-body-' + index"
     [class.is-active]="accordionItem.expanded"
   >
-    <div class="footer-accordion-item-header" (click)="accordionItem.toggle()">
+    <div class="accordion-item-header" (click)="accordionItem.toggle()">
       {{ link.label }}
-      <mat-icon class="footer-accordion-item-expander">
+      <mat-icon class="accordion-item-expander">
         <ng-container *ngIf="accordionItem.expanded">expand_less</ng-container>
         <ng-container *ngIf="!accordionItem.expanded">expand_more</ng-container>
       </mat-icon>
     </div>
     <div
-      class="footer-accordion-item-body"
+      class="accordion-item-body"
       role="region"
       [style.display]="accordionItem.expanded ? '' : 'none'"
       [attr.id]="'accordion-body-' + index"
       [attr.aria-labelledby]="'accordion-header-' + index"
     >
-      <nav class="footer-accordion-links" *ngIf="link.children?.length">
+      <nav class="accordion-links" *ngIf="link.children?.length">
         <ng-container *ngFor="let subLink of link.children">
-          <a class="footer-accordion-link" [routerLink]="subLink.route | path">{{ subLink.label }}</a>
+          <a class="accordion-link" [routerLink]="subLink.route | path">{{ subLink.label }}</a>
         </ng-container>
       </nav>
     </div>

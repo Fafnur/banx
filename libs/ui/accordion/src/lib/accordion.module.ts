@@ -6,11 +6,11 @@ import { RouterModule } from '@angular/router';
 
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
 
-import { FooterMenuAccordionComponent } from './footer-menu-accordion.component';
+import { AccordionComponent } from './accordion.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, NavigationSharedModule, CdkAccordionModule, MatIconModule],
-  declarations: [FooterMenuAccordionComponent],
-  exports: [FooterMenuAccordionComponent],
+  declarations: [AccordionComponent],
+  exports: [AccordionComponent],
 })
-export class FooterMenuAccordionModule {}
+export class AccordionModule {}

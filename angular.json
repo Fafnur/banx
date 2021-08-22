@@ -45,7 +45,6 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/backend/api",
             "main": "apps/backend/api/src/main.ts",
@@ -395,7 +394,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/social/common"],
           "options": {
             "jestConfig": "libs/core/social/common/jest.config.js",
             "passWithNoTests": true
@@ -417,7 +415,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/social/shared"],
           "options": {
             "jestConfig": "libs/core/social/shared/jest.config.js",
             "passWithNoTests": true
@@ -869,6 +866,27 @@
         }
       }
     },
+    "russian-content-business-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/business/page",
+      "sourceRoot": "libs/russian/content/business/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/content/business/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/content/business/page/src/**/*.ts", "libs/russian/content/business/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian-content-pages": {
       "projectType": "library",
       "root": "libs/russian/content/pages",
@@ -919,7 +937,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/navigation/common"],
           "options": {
             "jestConfig": "libs/russian/navigation/common/jest.config.js",
             "passWithNoTests": true
@@ -1001,6 +1018,27 @@
         }
       }
     },
+    "ui-accordion": {
+      "projectType": "library",
+      "root": "libs/ui/accordion",
+      "sourceRoot": "libs/ui/accordion/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/accordion/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/accordion/src/**/*.ts", "libs/ui/accordion/src/**/*.html"]
+          }
+        }
+      }
+    },
     "ui-container": {
       "projectType": "library",
       "root": "libs/ui/container",
@@ -1051,7 +1089,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/icons"],
           "options": {
             "jestConfig": "libs/ui/icons/jest.config.js",
             "passWithNoTests": true

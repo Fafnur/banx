@@ -76,6 +76,11 @@ export interface NavigationPaths {
   entertainmentSports: string;
   entertainmentAccount: string;
 
+  // Auth
+  auth: string;
+  authLogin: string;
+  authRecovery: string;
+
   // Apps
   application: string;
 
@@ -99,7 +104,10 @@ export const NAVIGATION_PATHS: NavigationPaths = {
   companySecure: 'company/secure',
   companyInvestors: 'company/investors',
 
-  bank: 'bank',
+  /**
+   * Alias for home
+   */
+  bank: '',
   bankCreditCards: 'bank/credit-cards',
   bankDebitCards: 'bank/debit-cards',
   bankDeposits: 'bank/deposits',
@@ -153,7 +161,11 @@ export const NAVIGATION_PATHS: NavigationPaths = {
   entertainmentSports: 'entertainment/sports',
   entertainmentAccount: 'entertainment/account',
 
-  application: '/download/latest',
+  auth: 'auth',
+  authLogin: 'auth/login',
+  authRecovery: 'auth/recovery',
+
+  application: 'download/latest',
 
   serverError: 'server-error',
   permissionDenied: 'permission-denied',
