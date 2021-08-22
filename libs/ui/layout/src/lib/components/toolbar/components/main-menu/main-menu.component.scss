@@ -1,7 +1,7 @@
 @import 'libs/ui/stylesheets/utils';
 
 :host {
-  margin: -1rem 0;
+  margin: -1rem 0.5rem -1rem 0;
 }
 
 .main-menu {
@@ -14,13 +14,23 @@
   display: flex;
   text-decoration: none;
   height: 100%;
-  margin: auto 0.5rem;
+  margin: auto 0.25rem;
+
   border-bottom: 2px solid transparent;
   font-size: 0.9rem;
+  color: $color-default;
 
-  //height: 100%;
+  &:hover {
+    color: black;
+    border-bottom-color: $color-primary;
+  }
+
   &.is-active {
-    border-bottom-color: red;
+    border-bottom-color: $color-active;
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: auto 1rem;
   }
 }
 

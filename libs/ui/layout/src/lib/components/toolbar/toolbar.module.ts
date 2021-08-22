@@ -6,8 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { ContainerModule } from '@banx/ui/container';
 
+import { AuthModule } from './components/auth/auth.module';
 import { BrandModule } from './components/brand/brand.module';
-import { LoginModule } from './components/login/login.module';
 import { MainMenuModule } from './components/main-menu/main-menu.module';
 import { SideMenuModule } from './components/side-menu/side-menu.module';
 import { ToolbarComponent } from './toolbar.component';
@@ -21,8 +21,8 @@ import { ToolbarComponent } from './toolbar.component';
     ContainerModule,
     BrandModule,
     MainMenuModule,
-    LoginModule,
     SideMenuModule,
+    AuthModule,
   ],
   declarations: [ToolbarComponent],
   exports: [ToolbarComponent],

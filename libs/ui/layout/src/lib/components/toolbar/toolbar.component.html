@@ -1,7 +1,7 @@
 <banx-ui-container mode="flex-row">
   <banx-side-menu *ngIf="!isDesktopScreen"></banx-side-menu>
   <banx-ui-brand automation-id="header-brand"></banx-ui-brand>
-  <span class="toolbar-spacer"></span>
   <banx-main-menu *ngIf="isDesktopScreen"></banx-main-menu>
-  <banx-login></banx-login>
+  <span class="toolbar-spacer"></span>
+  <banx-auth></banx-auth>
 </banx-ui-container>
