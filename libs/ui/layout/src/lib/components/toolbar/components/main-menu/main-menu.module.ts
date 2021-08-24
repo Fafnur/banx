@@ -7,10 +7,11 @@ import { RouterModule } from '@angular/router';
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
 
 import { MainMenuComponent } from './main-menu.component';
+import { MainMenuLinkActivePipe } from './main-menu-link-active.pipe';
 
 @NgModule({
   imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule, NavigationSharedModule],
-  declarations: [MainMenuComponent],
+  declarations: [MainMenuComponent, MainMenuLinkActivePipe],
   exports: [MainMenuComponent],
 })
 export class MainMenuModule {}

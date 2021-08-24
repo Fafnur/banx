@@ -1,10 +1,19 @@
 <nav class="main-menu">
   <a
     class="main-menu-link"
+    #rlaHome="routerLinkActive"
+    routerLinkActive
+    [routerLinkActiveOptions]="{ exact: !!home?.routerLinkActiveOptions }"
+    [class.is-active]="rlaHome.isActive || (home | mainMenuLinkActive | async)"
+    [routerLink]="home.route | path"
+  >
+    <span class="main-menu-label">{{ home.label }}</span>
+  </a>
+  <a
+    class="main-menu-link"
     *ngFor="let link of links"
     #rla="routerLinkActive"
     routerLinkActive
-    [routerLinkActiveOptions]="{ exact: !!link?.routerLinkActiveOptions }"
     [class.is-active]="rla.isActive"
     [routerLink]="link.route | path"
   >
