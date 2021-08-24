@@ -51,6 +51,7 @@
       "@banx/numbers-to-words/shared": ["libs/numbers-to-words/shared/src/index.ts"],
       "@banx/russian/content/bank/credit-card/page": ["libs/russian/content/bank/credit-card/page/src/index.ts"],
       "@banx/russian/content/bank/page": ["libs/russian/content/bank/page/src/index.ts"],
+      "@banx/russian/content/business/account/page": ["libs/russian/content/business/account/page/src/index.ts"],
       "@banx/russian/content/business/page": ["libs/russian/content/business/page/src/index.ts"],
       "@banx/russian/content/pages": ["libs/russian/content/pages/src/index.ts"],
       "@banx/russian/localization": ["libs/russian/localization/src/index.ts"],

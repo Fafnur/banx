@@ -16,6 +16,11 @@ const routes: Routes = [
     path: NAVIGATION_PATHS.business,
     loadChildren: (): Promise<any> => import('@banx/russian/content/business/page').then((modules) => modules.BusinessPageModule),
   },
+  {
+    path: NAVIGATION_PATHS.businessAccount,
+    loadChildren: (): Promise<any> =>
+      import('@banx/russian/content/business/account/page').then((modules) => modules.BusinessAccountPageModule),
+  },
 ];
 
 @NgModule({

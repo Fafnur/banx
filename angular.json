@@ -866,6 +866,31 @@
         }
       }
     },
+    "russian-content-business-account-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/business/account/page",
+      "sourceRoot": "libs/russian/content/business/account/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/content/business/account/page"],
+          "options": {
+            "jestConfig": "libs/russian/content/business/account/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/content/business/account/page/src/**/*.ts",
+              "libs/russian/content/business/account/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "russian-content-business-page": {
       "projectType": "library",
       "root": "libs/russian/content/business/page",
