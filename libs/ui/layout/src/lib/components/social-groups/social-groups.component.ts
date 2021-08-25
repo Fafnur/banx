@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Inject, Optional } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, Input, Optional } from '@angular/core';
 
 import { SOCIAL_GROUPS, SocialGroup } from '@banx/core/social/common';
 
@@ -9,5 +9,7 @@ import { SOCIAL_GROUPS, SocialGroup } from '@banx/core/social/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SocialGroupsComponent {
+  @Input() mode!: 'circle';
+
   constructor(@Optional() @Inject(SOCIAL_GROUPS) public readonly socialGroups: SocialGroup[] | null) {}
 }

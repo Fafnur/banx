@@ -4,4 +4,15 @@
   &:hover {
     color: $color-active;
   }
+
+  &_cirle {
+    background-color: $color-dark-extra-lite;
+    color: white;
+    margin: 0.25rem 0.25rem 0 0.25rem;
+  }
+
+  &_cirle:hover {
+    background-color: $color-dark-lite;
+    color: white;
+  }
 }

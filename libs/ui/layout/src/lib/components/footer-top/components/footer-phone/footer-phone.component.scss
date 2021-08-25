@@ -19,3 +19,11 @@
   margin: 0 0 0.5rem 0;
   line-height: 1;
 }
+
+.footer-phone-hint {
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+}
