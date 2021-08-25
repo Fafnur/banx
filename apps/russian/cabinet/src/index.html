@@ -13,14 +13,18 @@
     <!-- prettier-ignore -->
     <style type="text/css">
       *,::after,::before{box-sizing:border-box}html{line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent}body,html{height:100%;font-family:Roboto,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;font-size:1rem;margin:0;color:#212121}
-      @-webkit-keyframes preload-animation{0%,100%{box-shadow:0 0;height:4em}50%{box-shadow:0 -2em;height:5em}}@keyframes preload-animation{0%,100%{box-shadow:0 0;height:4em}50%{box-shadow:0 -2em;height:5em}}.preload-container{display:block;height:100%;width:100%;position:fixed;z-index:1000;background:#fff;top:0;left:0}.preload{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;display:block;background:#00e676;-webkit-animation:preload-animation 1s infinite ease-in-out;animation:preload-animation 1s infinite ease-in-out;width:1em;height:4em;color:#00e676;text-indent:-9999em;font-size:11px;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-animation-delay:-.16s;animation-delay:-.16s}.preload:before,.preload:after{position:absolute;top:0;content:"";display:block;background:#00e676;-webkit-animation:preload-animation 1s infinite ease-in-out;animation:preload-animation 1s infinite ease-in-out;width:1em;height:4em}.preload:before{left:-1.5em;-webkit-animation-delay:-.32s;animation-delay:-.32s}.preload:after{left:1.5em}
+      .preloader-container{height:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center}.preloader{-webkit-animation:rotator 1.4s linear infinite;animation:rotator 1.4s linear infinite}.preloader-path{stroke-dasharray:187;stroke-dashoffset:0;-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center;-webkit-animation:dash 1.4s ease-in-out infinite;animation:dash 1.4s ease-in-out infinite;stroke:#00c853}@-webkit-keyframes rotator{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}}@keyframes rotator{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(270deg);transform:rotate(270deg)}}@-webkit-keyframes dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;-webkit-transform:rotate(135deg);transform:rotate(135deg)}100%{stroke-dashoffset:187;-webkit-transform:rotate(450deg);transform:rotate(450deg)}}@keyframes dash{0%{stroke-dashoffset:187}50%{stroke-dashoffset:46.75;-webkit-transform:rotate(135deg);transform:rotate(135deg)}100%{stroke-dashoffset:187;-webkit-transform:rotate(450deg);transform:rotate(450deg)}}
       .noscript{margin:0;padding:15px;background-color:#f44336;color:#fff;font-size:18px;text-align:center;position:fixed;top:0;left:0;width:100%;z-index:10000}.noscript a{color:#fff;text-decoration:underline}.noscript a:hover{color:#ddd}
     </style>
   </head>
   <body>
     <banx-root>
       <noscript class="noscript">Для работы данного сервиса, необходимо включение поддержки javascript в вашем браузере!</noscript>
-      <div class="preload-container" id="preload"><div class="preload"></div></div>
+      <div class="preloader-container">
+        <svg class="preloader" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="preloader-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
     </banx-root>
   </body>
   <!-- eslint-enable max-len -->
