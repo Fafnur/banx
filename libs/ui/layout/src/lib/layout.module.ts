@@ -15,6 +15,7 @@ import { HeaderModule } from './components/header/header.module';
 import { MainModule } from './components/main/main.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { TopMenuModule } from './components/top-menu/top-menu.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { LayoutComponent } from './layout.component';
     FooterMenuModule,
     FooterBottomModule,
     ToolbarModule,
+    TopMenuModule,
   ],
   declarations: [LayoutComponent],
   exports: [LayoutComponent, FooterBottomComponent, ToolbarComponent],
