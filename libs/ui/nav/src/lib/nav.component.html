@@ -1,0 +1,13 @@
+<nav class="nav">
+  <ng-content></ng-content>
+  <a
+    class="nav-link"
+    *ngFor="let link of links"
+    #rla="routerLinkActive"
+    routerLinkActive
+    [class.is-active]="rla.isActive"
+    [routerLink]="link.route | path"
+  >
+    <span class="nav-label">{{ link.label }}</span>
+  </a>
+</nav>

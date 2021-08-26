@@ -1148,6 +1148,28 @@
         }
       }
     },
+    "ui-nav": {
+      "projectType": "library",
+      "root": "libs/ui/nav",
+      "sourceRoot": "libs/ui/nav/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/nav"],
+          "options": {
+            "jestConfig": "libs/ui/nav/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/nav/src/**/*.ts", "libs/ui/nav/src/**/*.html"]
+          }
+        }
+      }
+    },
     "users-common": {
       "projectType": "library",
       "root": "libs/users/common",

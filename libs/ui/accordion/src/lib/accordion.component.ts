@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { MenuLink } from '@banx/core/menu/common';
 
@@ -10,4 +10,9 @@ import { MenuLink } from '@banx/core/menu/common';
 })
 export class AccordionComponent {
   @Input() links!: MenuLink[];
+  @Output() clicked = new EventEmitter<MenuLink>();
+
+  onClick(link: MenuLink): void {
+    this.clicked.emit(link);
+  }
 }

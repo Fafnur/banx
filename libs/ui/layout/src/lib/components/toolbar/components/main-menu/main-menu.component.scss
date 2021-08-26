@@ -1,39 +1,7 @@
 @import 'libs/ui/stylesheets/utils';
+@import 'libs/ui/nav/src/lib/nav.component';
 
 :host {
-  margin: -1rem 0.5rem -1rem 0;
-}
-
-.main-menu {
   display: flex;
-  flex-direction: row;
-  height: 100%;
-}
-
-.main-menu-link {
-  display: flex;
-  text-decoration: none;
-  height: 100%;
-  margin: auto 0.25rem;
-
-  border-bottom: 2px solid transparent;
-  font-size: 0.9rem;
-  color: $color-default;
-
-  &:hover {
-    color: black;
-    border-bottom-color: $color-primary;
-  }
-
-  &.is-active {
-    border-bottom-color: $color-active;
-  }
-
-  @include media-breakpoint-up(lg) {
-    margin: auto 1rem;
-  }
-}
-
-.main-menu-label {
-  margin: auto;
+  margin: -1rem 1rem -1rem 0;
 }

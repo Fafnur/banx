@@ -1,22 +1,12 @@
-<nav class="main-menu">
+<banx-nav [links]="links">
   <a
-    class="main-menu-link"
+    class="nav-link"
     #rlaHome="routerLinkActive"
     routerLinkActive
     [routerLinkActiveOptions]="{ exact: !!home?.routerLinkActiveOptions }"
     [class.is-active]="rlaHome.isActive || (home | mainMenuLinkActive | async)"
     [routerLink]="home.route | path"
   >
-    <span class="main-menu-label">{{ home.label }}</span>
+    <span class="nav-label">{{ home.label }}</span>
   </a>
-  <a
-    class="main-menu-link"
-    *ngFor="let link of links"
-    #rla="routerLinkActive"
-    routerLinkActive
-    [class.is-active]="rla.isActive"
-    [routerLink]="link.route | path"
-  >
-    <span class="main-menu-label">{{ link.label }}</span>
-  </a>
-</nav>
+</banx-nav>

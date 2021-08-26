@@ -2,5 +2,43 @@
 
 :host {
   display: flex;
-  //background-color: white;
+  margin-top: 1rem;
+  margin-bottom: -0.5rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: -1rem;
+  }
+}
+
+.ui-container {
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    box-shadow: inset 0 1px 0 0 #eaecee;
+    height: 1px;
+  }
+
+  ::ng-deep .nav {
+    margin-left: -0.5rem;
+    overflow-x: auto;
+  }
+  ::ng-deep .nav::-webkit-scrollbar {
+    opacity: 0;
+    position: absolute;
+    height: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    ::ng-deep .nav {
+      margin-left: -1rem;
+      overflow-x: hidden;
+    }
+
+    ::ng-deep .nav-link {
+      margin: auto 1rem;
+    }
+  }
 }

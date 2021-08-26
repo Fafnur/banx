@@ -169,6 +169,9 @@
     "ui-layout": {
       "tags": []
     },
+    "ui-nav": {
+      "tags": []
+    },
     "users-common": {
       "tags": []
     }

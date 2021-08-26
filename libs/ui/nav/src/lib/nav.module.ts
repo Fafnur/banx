@@ -1,0 +1,16 @@
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+
+import { NavigationSharedModule } from '@banx/core/navigation/shared';
+
+import { NavComponent } from './nav.component';
+
+@NgModule({
+  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule, NavigationSharedModule],
+  declarations: [NavComponent],
+  exports: [NavComponent],
+})
+export class NavModule {}

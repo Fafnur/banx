@@ -7,7 +7,7 @@
     <mat-icon>close</mat-icon>
   </button>
 
-  <banx-accordion [links]="menuLinks"></banx-accordion>
+  <banx-accordion class="sidenav-accordionsidenav-accordion" [links]="menuLinks" (clicked)="onToggle()"></banx-accordion>
 </div>
 
 <div class="sidenav-backdrop" (click)="onToggle()"></div>
