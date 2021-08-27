@@ -22,6 +22,6 @@ export class TopMenuComponent implements OnInit {
   ngOnInit(): void {
     const parent = this.route.snapshot.data?.parent ?? null;
 
-    this.links = parent ? this.menuLinks.find((link) => link.route === parent)?.children ?? [] : [];
+    this.links = parent !== null ? this.menuLinks.find((link) => link.route === parent)?.children ?? [] : [];
   }
 }

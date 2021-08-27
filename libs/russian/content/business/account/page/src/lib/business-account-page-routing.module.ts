@@ -17,6 +17,7 @@ const routes: Routes = [
     outlet: 'top',
     data: {
       parent: NAVIGATION_PATHS.business,
+      active: NAVIGATION_PATHS.businessAccount,
     },
   },
 ];

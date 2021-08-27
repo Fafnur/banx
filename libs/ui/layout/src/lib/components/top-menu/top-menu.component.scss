@@ -19,6 +19,8 @@
     display: block;
     box-shadow: inset 0 1px 0 0 #eaecee;
     height: 1px;
+    position: absolute;
+    width: 100%;
   }
 
   ::ng-deep .nav {
@@ -35,10 +37,6 @@
     ::ng-deep .nav {
       margin-left: -1rem;
       overflow-x: hidden;
-    }
-
-    ::ng-deep .nav-link {
-      margin: auto 1rem;
     }
   }
 }
