@@ -1,24 +1,34 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CopyrightComponent } from './copyright.component';
+import { CopyrightComponentPo } from './copyright.component.po';
 
 describe('CopyrightComponent', () => {
-  let component: CopyrightComponent;
+  let pageObject: CopyrightComponentPo;
   let fixture: ComponentFixture<CopyrightComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [CopyrightComponent],
-    }).compileComponents();
-  });
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        declarations: [CopyrightComponent],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(CopyrightComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new CopyrightComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.copyright).toBe(`©${new Date().getFullYear()}. Banx. All rights reserved.`);
   });
 });
