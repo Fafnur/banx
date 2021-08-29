@@ -11,7 +11,7 @@ const routes: Routes = [
       {
         path: '',
         component: ToolbarComponent,
-        outlet: 'header',
+        outlet: 'header-toolbar',
       },
       {
         path: '',

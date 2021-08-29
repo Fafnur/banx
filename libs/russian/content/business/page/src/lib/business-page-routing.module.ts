@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: '',
     component: TopMenuComponent,
-    outlet: 'top',
+    outlet: 'header-top',
     data: {
       parent: NAVIGATION_PATHS.business,
     },
