@@ -26,7 +26,7 @@
     >
       <nav class="accordion-links" *ngIf="link.children?.length">
         <ng-container *ngFor="let subLink of link.children">
-          <a class="accordion-link" [routerLink]="subLink.route | path" (click)="onClick(subLink)">{{ subLink.label }}</a>
+          <a class="accordion-link" [routerLink]="subLink.route | path" (click)="onClick(subLink, accordionItem)">{{ subLink.label }}</a>
         </ng-container>
       </nav>
     </div>

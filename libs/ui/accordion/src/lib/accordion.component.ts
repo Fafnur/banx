@@ -1,3 +1,4 @@
+import { CdkAccordionItem } from '@angular/cdk/accordion';
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { MenuLink } from '@banx/core/menu/common';
@@ -12,7 +13,8 @@ export class AccordionComponent {
   @Input() links!: MenuLink[];
   @Output() clicked = new EventEmitter<MenuLink>();
 
-  onClick(link: MenuLink): void {
+  onClick(link: MenuLink, cdkAccordionItem: CdkAccordionItem): void {
     this.clicked.emit(link);
+    cdkAccordionItem.close();
   }
 }
