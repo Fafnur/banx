@@ -15,7 +15,6 @@ export class MainMenuLinkActivePipe implements PipeTransform {
   constructor(private readonly actions$: Actions) {}
 
   transform(link: MenuLink): Observable<boolean> {
-    console.log(link);
     return link.route === NAVIGATION_PATHS.home
       ? this.actions$.pipe(
           ofType(ROUTER_NAVIGATED),

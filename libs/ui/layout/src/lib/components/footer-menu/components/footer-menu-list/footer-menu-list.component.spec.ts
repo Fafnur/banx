@@ -1,25 +1,53 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MockModule } from 'ng-mocks';
+
+import { MENU_DEFAULT } from '@banx/core/menu/common';
+import { NavigationSharedModule } from '@banx/core/navigation/shared';
+import { GridModule } from '@banx/ui/grid';
 
 import { FooterMenuListComponent } from './footer-menu-list.component';
+import { FooterMenuListComponentPo } from './footer-menu-list.component.po';
+
+@Component({
+  template: `<banx-footer-menu-list automation-id="menu-list" [links]="links"></banx-footer-menu-list>`,
+})
+export class WrapperComponent {
+  links = MENU_DEFAULT;
+}
 
 describe('FooterMenuListComponent', () => {
-  let component: FooterMenuListComponent;
-  let fixture: ComponentFixture<FooterMenuListComponent>;
+  let pageObject: FooterMenuListComponentPo;
+  let fixture: ComponentFixture<WrapperComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FooterMenuListComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        imports: [RouterTestingModule, MockModule(GridModule), MockModule(NavigationSharedModule)],
+        declarations: [FooterMenuListComponent, WrapperComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  });
+  );
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FooterMenuListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture = TestBed.createComponent(WrapperComponent);
+    pageObject = new FooterMenuListComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.row).toBeTruthy();
+    expect(pageObject.title.length).toBe(7);
+    expect(pageObject.column.length).toBe(7);
+    expect(pageObject.nav.length).toBe(7);
+    expect(pageObject.link.length).toBe(52);
   });
 });
