@@ -1,0 +1,13 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.25rem 0;
+  }
+}

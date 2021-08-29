@@ -1,0 +1,36 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 0;
+  }
+}
+
+.footer-company {
+  display: block;
+  margin: 0 0 1rem 0;
+  text-decoration: none;
+  color: $color-default;
+}
+
+.footer-company-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -0.25rem;
+}
+
+.footer-company-link {
+  display: block;
+  color: $color-active;
+  padding: 0 0.25rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color-active, 10%);
+  }
+}

@@ -1,0 +1,26 @@
+<cdk-accordion automation-id="accordion" class="accordion">
+  <cdk-accordion-item
+    automation-id="item"
+    *ngFor="let link of links"
+    #accordionItem="cdkAccordionItem"
+    class="accordion-item"
+    role="button"
+    tabindex="0"
+    [class.is-active]="accordionItem.expanded"
+  >
+    <div class="accordion-item-header" (click)="accordionItem.toggle()">
+      {{ link.label }}
+      <mat-icon class="accordion-item-expander">
+        <ng-container *ngIf="accordionItem.expanded">expand_less</ng-container>
+        <ng-container *ngIf="!accordionItem.expanded">expand_more</ng-container>
+      </mat-icon>
+    </div>
+    <div class="accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'">
+      <nav class="accordion-links" *ngIf="link.children?.length">
+        <ng-container *ngFor="let subLink of link.children">
+          <a class="accordion-link" [routerLink]="subLink.route | path" (click)="onClick(subLink, accordionItem)">{{ subLink.label }}</a>
+        </ng-container>
+      </nav>
+    </div>
+  </cdk-accordion-item>
+</cdk-accordion>

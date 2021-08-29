@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 
-import { EnvironmentService } from '@banx/core/environments/service';
+import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 
 @Component({
   selector: 'banx-ui-brand',
@@ -8,12 +8,6 @@ import { EnvironmentService } from '@banx/core/environments/service';
   styleUrls: ['./brand.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BrandComponent implements OnInit {
-  brand!: string;
-
-  constructor(private readonly environmentService: EnvironmentService) {}
-
-  ngOnInit(): void {
-    this.brand = this.environmentService.environments.brand;
-  }
+export class BrandComponent {
+  constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
 }

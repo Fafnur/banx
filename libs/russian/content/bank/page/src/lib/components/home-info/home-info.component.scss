@@ -1,0 +1,40 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  color: $color-dark-lite;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding-bottom: 1rem;
+
+  p {
+    line-height: 1.5;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.info-title {
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.info-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.info-link {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: $color-dark-lite;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
+}

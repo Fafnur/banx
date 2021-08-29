@@ -1,0 +1,19 @@
+@use '~@angular/material/index' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  @include media-breakpoint-up(md) {
+    margin-left: 2rem;
+  }
+}
+
+.locale-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  color: $color-dark-lite;
+}
+
+.locale-name {
+  margin: auto 0.5rem auto 0;
+}

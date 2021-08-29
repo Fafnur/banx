@@ -1,13 +1,7 @@
-<banx-ui-container mode="flex-row">
-  <button mat-icon-button class="toolbar-action is-mobile">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <banx-ui-brand automation-id="header-brand"></banx-ui-brand>
+<banx-ui-container automation-id="container" mode="flex-row">
+  <banx-side-menu automation-id="side-menu" *ngIf="!isDesktopScreen"></banx-side-menu>
+  <banx-ui-brand automation-id="brand"></banx-ui-brand>
+  <banx-main-menu automation-id="main-menu" *ngIf="isDesktopScreen"></banx-main-menu>
   <span class="toolbar-spacer"></span>
-  <button class="toolbar-action" mat-icon-button>
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button>
-    <mat-icon>share</mat-icon>
-  </button>
+  <banx-auth automation-id="auth"></banx-auth>
 </banx-ui-container>

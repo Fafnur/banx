@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 /**
  * Page object
  */
-export class PageObject<T> {
+export class PageObject<T = any> {
   protected readonly fixture: ComponentFixture<T>;
 
   constructor(fixture: ComponentFixture<T>) {

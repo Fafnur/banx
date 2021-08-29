@@ -1,0 +1,14 @@
+<nav automation-id="nav" class="nav">
+  <ng-content></ng-content>
+  <a
+    automation-id="link"
+    class="nav-link"
+    *ngFor="let link of links"
+    #rla="routerLinkActive"
+    routerLinkActive
+    [class.is-active]="rla.isActive"
+    [routerLink]="link.route | path"
+  >
+    <span automation-id="label" class="nav-label">{{ link.label }}</span>
+  </a>
+</nav>

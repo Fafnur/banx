@@ -1,0 +1,13 @@
+<banx-nav automation-id="nav" [links]="links">
+  <a
+    automation-id="home"
+    class="nav-link"
+    #rlaHome="routerLinkActive"
+    routerLinkActive
+    [routerLinkActiveOptions]="{ exact: !!home?.routerLinkActiveOptions }"
+    [class.is-active]="rlaHome.isActive || (home | mainMenuLinkActive | async)"
+    [routerLink]="home.route | path"
+  >
+    <span class="nav-label">{{ home.label }}</span>
+  </a>
+</banx-nav>

@@ -6,13 +6,16 @@ import { RouterModule } from '@angular/router';
 
 import { ContainerModule } from '@banx/ui/container';
 
-import { CopyrightComponent } from './components/copyright/copyright.component';
-import { CopyrightModule } from './components/copyright/copyright.module';
 import { FooterModule } from './components/footer/footer.module';
+import { FooterBottomComponent } from './components/footer-bottom/footer-bottom.component';
+import { FooterBottomModule } from './components/footer-bottom/footer-bottom.module';
+import { FooterMenuModule } from './components/footer-menu/footer-menu.module';
+import { FooterTopModule } from './components/footer-top/footer-top.module';
 import { HeaderModule } from './components/header/header.module';
 import { MainModule } from './components/main/main.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { TopMenuModule } from './components/top-menu/top-menu.module';
 import { LayoutComponent } from './layout.component';
 
 @NgModule({
@@ -25,10 +28,13 @@ import { LayoutComponent } from './layout.component';
     FooterModule,
     HeaderModule,
     MainModule,
-    CopyrightModule,
+    FooterTopModule,
+    FooterMenuModule,
+    FooterBottomModule,
     ToolbarModule,
+    TopMenuModule,
   ],
   declarations: [LayoutComponent],
-  exports: [LayoutComponent, CopyrightComponent, ToolbarComponent],
+  exports: [LayoutComponent, FooterBottomComponent, ToolbarComponent],
 })
 export class LayoutModule {}

@@ -2,13 +2,11 @@ import { DebugElement } from '@angular/core';
 
 import { PageObject } from '@banx/core/testing';
 
-import { WrapperComponent } from './container.component.spec';
-
 enum ContainerAutomation {
   Container = 'container',
 }
 
-export class ContainerComponentPo extends PageObject<WrapperComponent> {
+export class ContainerComponentPo extends PageObject {
   get container(): DebugElement | null {
     return this.getByAutomationId(ContainerAutomation.Container);
   }

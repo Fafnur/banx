@@ -2,24 +2,173 @@ import { InjectionToken } from '@angular/core';
 
 export interface NavigationPaths {
   home: string;
-  services: string;
-  serviceCreditCards: string;
-  serviceDebitCards: string;
-  serviceDeposits: string;
+
+  // Company
+  company: string;
+  companyAbout: string;
+  companyNews: string;
+  companyCareer: string;
+  companyPoints: string;
+  companyAtms: string;
+  companyExchange: string;
+  companyContacts: string;
+  companyHelp: string;
+  companySecure: string;
+  companyInvestors: string;
+
+  // Bank
+  bank: string;
+  bankCreditCards: string;
+  bankDebitCards: string;
+  bankDeposits: string;
+  bankPremium: string;
+  bankCashLoan: string;
+  bankRefinance: string;
+  bankCarLoan: string;
+  bankPayments: string;
+
+  // Business
+  business: string;
+  businessAccount: string;
+  businessRegistration: string;
+  businessPremium: string;
+  businessPayments: string;
+  businessLoans: string;
+  businessProcurement: string;
+  businessSales: string;
+  businessAccounting: string;
+
+  // Invest
+  invest: string;
+  investFeed: string;
+  investCatalog: string;
+  investRecommendations: string;
+  investPremium: string;
+  investAccount: string;
+  investPrograms: string;
+  investTariffs: string;
+  investAgentInvite: string;
+
+  // Insurance
+  insurance: string;
+  insuranceCar: string;
+  insuranceTravel: string;
+  insuranceRealEstate: string;
+  insuranceHealth: string;
+  insuranceAccount: string;
+  insuranceAgentInvite: string;
+
+  // Travel
+  travel: string;
+  travelFlights: string;
+  travelHotels: string;
+  travelTours: string;
+  travelTrains: string;
+  travelCarRental: string;
+  travelMap: string;
+
+  // Entertainment
+  entertainment: string;
+  entertainmentMovies: string;
+  entertainmentRestaurants: string;
+  entertainmentConcerts: string;
+  entertainmentSpectacles: string;
+  entertainmentSports: string;
+  entertainmentAccount: string;
+
+  // Auth
+  auth: string;
+  authLogin: string;
+  authRecovery: string;
+
+  // Apps
+  application: string;
+
+  // Errors
   serverError: string;
   permissionDenied: string;
-  application: string;
 }
 
 export const NAVIGATION_PATHS: NavigationPaths = {
   home: '',
-  services: 'services',
-  serviceCreditCards: 'services/credit-cards',
-  serviceDebitCards: 'services/debit-cards',
-  serviceDeposits: 'services/deposits',
+
+  company: 'company',
+  companyAbout: 'company/about',
+  companyNews: 'company/news',
+  companyCareer: 'company/career',
+  companyPoints: 'company/points',
+  companyAtms: 'company/atms',
+  companyExchange: 'company/exchange',
+  companyContacts: 'company/contacts',
+  companyHelp: 'company/help',
+  companySecure: 'company/secure',
+  companyInvestors: 'company/investors',
+
+  /**
+   * Alias for home
+   */
+  bank: '',
+  bankCreditCards: 'bank/credit-cards',
+  bankDebitCards: 'bank/debit-cards',
+  bankDeposits: 'bank/deposits',
+  bankPremium: 'bank/premium',
+  bankCashLoan: 'bank/cash-loan',
+  bankRefinance: 'bank/refinance',
+  bankCarLoan: 'bank/car-loan',
+  bankPayments: 'bank/payments',
+
+  business: 'business',
+  businessAccount: 'business/account',
+  businessRegistration: 'business/registration',
+  businessPremium: 'business/premium',
+  businessPayments: 'business/payments',
+  businessLoans: 'business/loans',
+  businessProcurement: 'business/procurement',
+  businessSales: 'business/sales',
+  businessAccounting: 'business/accounting',
+
+  invest: 'invest',
+  investFeed: 'invest/feed',
+  investCatalog: 'invest/catalog',
+  investRecommendations: 'invest/recommendations',
+  investPremium: 'invest/premium',
+  investAccount: 'invest/account',
+  investPrograms: 'invest/programs',
+  investTariffs: 'invest/tariffs',
+  investAgentInvite: 'invest/agent-invite',
+
+  insurance: 'insurance',
+  insuranceCar: 'insurance/car',
+  insuranceTravel: 'insurance/travel',
+  insuranceRealEstate: 'insurance/real-estate',
+  insuranceHealth: 'insurance/health',
+  insuranceAccount: 'insurance/account',
+  insuranceAgentInvite: 'insurance/agent-invite',
+
+  travel: 'travel',
+  travelFlights: 'travel/flights',
+  travelHotels: 'travel/hotels',
+  travelTours: 'travel/tours',
+  travelTrains: 'travel/trains',
+  travelCarRental: 'travel/car-rental',
+  travelMap: 'travel/map',
+
+  entertainment: 'entertainment',
+  entertainmentMovies: 'entertainment/movies',
+  entertainmentRestaurants: 'entertainment/restaurants',
+  entertainmentConcerts: 'entertainment/concerts',
+  entertainmentSpectacles: 'entertainment/spectacles',
+  entertainmentSports: 'entertainment/sports',
+  entertainmentAccount: 'entertainment/account',
+
+  auth: 'auth',
+  authLogin: 'auth/login',
+  authRecovery: 'auth/recovery',
+
+  application: 'download/latest',
+
   serverError: 'server-error',
   permissionDenied: 'permission-denied',
-  application: '/download/latest',
 };
 
 export interface NavigationLink {

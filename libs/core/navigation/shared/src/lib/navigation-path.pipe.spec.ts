@@ -9,7 +9,6 @@ import { NavigationPathPipe } from './navigation-path.pipe';
 
 describe('NavigationPathPipe', () => {
   let pipe: NavigationPathPipe;
-  let navigationService: NavigationService;
 
   beforeEach(
     waitForAsync(() => {
@@ -20,15 +19,16 @@ describe('NavigationPathPipe', () => {
   );
 
   beforeEach(() => {
-    navigationService = TestBed.inject(NavigationService);
-    pipe = new NavigationPathPipe(navigationService);
+    pipe = new NavigationPathPipe(TestBed.inject(NavigationService));
   });
 
   it('create an instance', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('should return external path', () => {
-    expect(pipe.transform(NAVIGATION_PATHS.services)).toEqual(['/', NAVIGATION_PATHS.services]);
+  it('should return path', () => {
+    expect(pipe.transform(NAVIGATION_PATHS.business)).toEqual('/business');
+    expect(pipe.transform(NAVIGATION_PATHS.businessSales)).toEqual('/business/sales');
+    expect(pipe.transform(NAVIGATION_PATHS.home)).toEqual('/');
   });
 });

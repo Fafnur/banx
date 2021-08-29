@@ -4,7 +4,7 @@ import { PageObject } from '@banx/core/testing';
 
 import { LayoutComponent } from './layout.component';
 
-enum HeaderAutomation {
+enum Automation {
   Header = 'header',
   Main = 'main',
   Footer = 'footer',
@@ -12,14 +12,14 @@ enum HeaderAutomation {
 
 export class LayoutComponentPo extends PageObject<LayoutComponent> {
   get header(): DebugElement | null {
-    return this.getByAutomationId(HeaderAutomation.Header);
+    return this.getByAutomationId(Automation.Header);
   }
 
   get main(): DebugElement | null {
-    return this.getByAutomationId(HeaderAutomation.Main);
+    return this.getByAutomationId(Automation.Main);
   }
 
   get footer(): DebugElement | null {
-    return this.getByAutomationId(HeaderAutomation.Footer);
+    return this.getByAutomationId(Automation.Footer);
   }
 }

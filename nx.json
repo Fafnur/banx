@@ -57,6 +57,9 @@
     "core-forms-utils": {
       "tags": []
     },
+    "core-menu-common": {
+      "tags": []
+    },
     "core-navigation-common": {
       "tags": []
     },
@@ -67,6 +70,12 @@
       "tags": []
     },
     "core-platform-service": {
+      "tags": []
+    },
+    "core-social-common": {
+      "tags": []
+    },
+    "core-social-shared": {
       "tags": []
     },
     "core-storage-common": {
@@ -88,6 +97,9 @@
       "tags": []
     },
     "core-testing": {
+      "tags": []
+    },
+    "core-utils": {
       "tags": []
     },
     "errors-not-found-page": {
@@ -114,10 +126,25 @@
     "russian-cabinet": {
       "tags": []
     },
-    "russian-content-home-page": {
+    "russian-content-bank-credit-card-page": {
+      "tags": []
+    },
+    "russian-content-bank-page": {
+      "tags": []
+    },
+    "russian-content-business-account-page": {
+      "tags": []
+    },
+    "russian-content-business-page": {
+      "tags": []
+    },
+    "russian-content-pages": {
       "tags": []
     },
     "russian-localization": {
+      "tags": []
+    },
+    "russian-navigation-common": {
       "tags": []
     },
     "russian-numerals-common": {
@@ -130,13 +157,22 @@
       "tags": [],
       "implicitDependencies": ["russian-cabinet"]
     },
+    "ui-accordion": {
+      "tags": []
+    },
     "ui-container": {
       "tags": []
     },
     "ui-grid": {
       "tags": []
     },
+    "ui-icons": {
+      "tags": []
+    },
     "ui-layout": {
+      "tags": []
+    },
+    "ui-nav": {
       "tags": []
     },
     "users-common": {

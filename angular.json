@@ -45,7 +45,6 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/backend/api",
             "main": "apps/backend/api/src/main.ts",
@@ -282,6 +281,27 @@
         }
       }
     },
+    "core-menu-common": {
+      "projectType": "library",
+      "root": "libs/core/menu/common",
+      "sourceRoot": "libs/core/menu/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/menu/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/menu/common/src/**/*.ts", "libs/core/menu/common/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-navigation-common": {
       "projectType": "library",
       "root": "libs/core/navigation/common",
@@ -362,6 +382,48 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/core/platform/service/src/**/*.ts", "libs/core/platform/service/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-social-common": {
+      "projectType": "library",
+      "root": "libs/core/social/common",
+      "sourceRoot": "libs/core/social/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/social/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/social/common/src/**/*.ts", "libs/core/social/common/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-social-shared": {
+      "projectType": "library",
+      "root": "libs/core/social/shared",
+      "sourceRoot": "libs/core/social/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/social/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/social/shared/src/**/*.ts", "libs/core/social/shared/src/**/*.html"]
           }
         }
       }
@@ -509,6 +571,28 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/core/testing/src/**/*.ts", "libs/core/testing/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-utils": {
+      "projectType": "library",
+      "root": "libs/core/utils",
+      "sourceRoot": "libs/core/utils/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/utils"],
+          "options": {
+            "jestConfig": "libs/core/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/utils/src/**/*.ts", "libs/core/utils/src/**/*.html"]
           }
         }
       }
@@ -688,6 +772,8 @@
             "tsConfig": "apps/russian/cabinet/tsconfig.app.json",
             "localize": ["ru-RU"],
             "aot": true,
+            "optimization": false,
+            "buildOptimizer": false,
             "assets": ["apps/russian/cabinet/src/favicon.ico", "apps/russian/cabinet/src/assets"],
             "styles": ["apps/russian/cabinet/src/styles.scss"],
             "scripts": []
@@ -757,23 +843,114 @@
         }
       }
     },
-    "russian-content-home-page": {
+    "russian-content-bank-credit-card-page": {
       "projectType": "library",
-      "root": "libs/russian/content/home/page",
-      "sourceRoot": "libs/russian/content/home/page/src",
+      "root": "libs/russian/content/bank/credit-card/page",
+      "sourceRoot": "libs/russian/content/bank/credit-card/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/content/bank/credit-card/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/content/bank/credit-card/page/src/**/*.ts",
+              "libs/russian/content/bank/credit-card/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "russian-content-bank-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/bank/page",
+      "sourceRoot": "libs/russian/content/bank/page/src",
       "prefix": "banx",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/russian/content/home/page/src/**/*.ts", "libs/russian/content/home/page/src/**/*.html"]
+            "lintFilePatterns": ["libs/russian/content/bank/page/src/**/*.ts", "libs/russian/content/bank/page/src/**/*.html"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/home/page/jest.config.js",
+            "jestConfig": "libs/russian/content/bank/page/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "russian-content-business-account-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/business/account/page",
+      "sourceRoot": "libs/russian/content/business/account/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/content/business/account/page"],
+          "options": {
+            "jestConfig": "libs/russian/content/business/account/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/content/business/account/page/src/**/*.ts",
+              "libs/russian/content/business/account/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "russian-content-business-page": {
+      "projectType": "library",
+      "root": "libs/russian/content/business/page",
+      "sourceRoot": "libs/russian/content/business/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/content/business/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/content/business/page/src/**/*.ts", "libs/russian/content/business/page/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "russian-content-pages": {
+      "projectType": "library",
+      "root": "libs/russian/content/pages",
+      "sourceRoot": "libs/russian/content/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/content/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/content/pages/src/**/*.ts", "libs/russian/content/pages/src/**/*.html"]
           }
         }
       }
@@ -795,6 +972,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/localization/src/**/*.ts", "libs/russian/localization/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "russian-navigation-common": {
+      "projectType": "library",
+      "root": "libs/russian/navigation/common",
+      "sourceRoot": "libs/russian/navigation/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/navigation/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/navigation/common/src/**/*.ts", "libs/russian/navigation/common/src/**/*.html"]
           }
         }
       }
@@ -867,6 +1065,27 @@
         }
       }
     },
+    "ui-accordion": {
+      "projectType": "library",
+      "root": "libs/ui/accordion",
+      "sourceRoot": "libs/ui/accordion/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/accordion/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/accordion/src/**/*.ts", "libs/ui/accordion/src/**/*.html"]
+          }
+        }
+      }
+    },
     "ui-container": {
       "projectType": "library",
       "root": "libs/ui/container",
@@ -909,6 +1128,27 @@
         }
       }
     },
+    "ui-icons": {
+      "projectType": "library",
+      "root": "libs/ui/icons",
+      "sourceRoot": "libs/ui/icons/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/icons/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/icons/src/**/*.ts", "libs/ui/icons/src/**/*.html"]
+          }
+        }
+      }
+    },
     "ui-layout": {
       "projectType": "library",
       "root": "libs/ui/layout",
@@ -926,6 +1166,28 @@
           "options": {
             "jestConfig": "libs/ui/layout/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-nav": {
+      "projectType": "library",
+      "root": "libs/ui/nav",
+      "sourceRoot": "libs/ui/nav/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui/nav"],
+          "options": {
+            "jestConfig": "libs/ui/nav/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/nav/src/**/*.ts", "libs/ui/nav/src/**/*.html"]
           }
         }
       }

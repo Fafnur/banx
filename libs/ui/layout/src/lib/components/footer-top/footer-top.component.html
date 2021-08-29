@@ -1,0 +1,15 @@
+<banx-ui-container automation-id="container">
+  <ng-container *ngIf="isDesktopScreen; then desktopTpl; else mobileTpl"></ng-container>
+</banx-ui-container>
+
+<ng-template #desktopTpl>
+  <banx-footer-brand automation-id="brand">
+    <banx-footer-company automation-id="company"></banx-footer-company>
+    <banx-footer-phone automation-id="phone"></banx-footer-phone>
+  </banx-footer-brand>
+</ng-template>
+
+<ng-template #mobileTpl>
+  <banx-footer-phone automation-id="mobile-phone"></banx-footer-phone>
+  <banx-social-groups automation-id="social-groups" mode="circle" align="center"></banx-social-groups>
+</ng-template>

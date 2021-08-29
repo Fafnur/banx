@@ -1,0 +1,70 @@
+@use '~@angular/material/index' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  user-select: none;
+}
+
+.accordion {
+  display: block;
+}
+
+.accordion-item {
+  display: block;
+  border-bottom: solid 1px mat.get-color-from-palette(mat.$gray-palette, 300);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  color: $color-dark-lite;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.accordion-item-description {
+  font-size: 1rem;
+  color: $color-dark-lite;
+}
+
+.accordion-item-header {
+  padding: 1rem 0;
+
+  .accordion-item.is-active & {
+    color: $color-active;
+  }
+}
+
+.accordion-item-body {
+}
+
+.accordion-item-expander {
+  color: $color-dark-extra-lite;
+  height: 1rem;
+  margin-top: -0.25rem;
+}
+
+.accordion-links {
+  margin-bottom: 1rem;
+}
+
+.accordion-link {
+  display: block;
+  color: $color-dark-lite;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-active;
+  }
+}

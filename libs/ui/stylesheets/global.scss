@@ -1,0 +1,13 @@
+@import './mixins/brackpoints';
+
+body {
+  &.is-disable {
+    overflow: hidden;
+  }
+  // For desktop
+  //@include media-breakpoint-up(md) {
+  //  &.is-disable {
+  //    padding-right: 14px;
+  //  }
+  //}
+}

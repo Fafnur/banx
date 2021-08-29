@@ -1,0 +1,10 @@
+<banx-ui-row automation-id="row">
+  <banx-ui-column automation-id="column" [modes]="{ md: 4, lg: 2 }" *ngFor="let link of links">
+    <div automation-id="title" class="footer-menu-title">{{ link.label }}</div>
+    <nav automation-id="nav" class="footer-menu-links" *ngIf="link.children?.length">
+      <a automation-id="link" class="footer-menu-link" [routerLink]="subLink.route | path" *ngFor="let subLink of link.children">
+        {{ subLink.label }}
+      </a>
+    </nav>
+  </banx-ui-column>
+</banx-ui-row>

@@ -33,6 +33,6 @@ describe('NavigationExternalPathPipe', () => {
   });
 
   it('should return external path', () => {
-    expect(pipe.transform(NAVIGATION_PATHS.services)).toBe(`${CONFIG_DEFAULT.apiHost}/${NAVIGATION_PATHS.services}`);
+    expect(pipe.transform(NAVIGATION_PATHS.business)).toBe(`${CONFIG_DEFAULT.apiHost}/${NAVIGATION_PATHS.business}`);
   });
 });

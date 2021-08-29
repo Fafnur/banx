@@ -1,0 +1,28 @@
+@import 'libs/ui/stylesheets/utils';
+
+.login {
+  display: flex;
+  text-decoration: none;
+  color: $color-active;
+
+  &:hover {
+    color: $color-default;
+  }
+}
+
+.login-label {
+  font-size: 0.9rem;
+  margin: auto 0;
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 0.5rem;
+  }
+}
+
+.login-icon {
+  display: none;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+  }
+}

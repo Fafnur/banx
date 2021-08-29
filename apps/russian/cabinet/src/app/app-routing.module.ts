@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CopyrightComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
+import { FooterBottomComponent, FooterMenuComponent, FooterTopComponent, LayoutComponent, ToolbarComponent } from '@banx/ui/layout';
 
 const routes: Routes = [
   {
@@ -11,16 +11,26 @@ const routes: Routes = [
       {
         path: '',
         component: ToolbarComponent,
-        outlet: 'header',
+        outlet: 'header-toolbar',
       },
       {
         path: '',
-        component: CopyrightComponent,
-        outlet: 'footer',
+        component: FooterTopComponent,
+        outlet: 'footer-top',
       },
       {
         path: '',
-        loadChildren: (): Promise<any> => import('./content/content.module').then((modules) => modules.ContentModule),
+        component: FooterMenuComponent,
+        outlet: 'footer-menu',
+      },
+      {
+        path: '',
+        component: FooterBottomComponent,
+        outlet: 'footer-bottom',
+      },
+      {
+        path: '',
+        loadChildren: (): Promise<any> => import('@banx/russian/content/pages').then((modules) => modules.ContentPagesModule),
       },
     ],
   },

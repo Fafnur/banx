@@ -1,0 +1,39 @@
+@use '~@angular/material/index' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  color: $color-dark-lite;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.05);
+
+  .is-desktop {
+    display: none;
+  }
+  @include media-breakpoint-up(md) {
+    .is-desktop {
+      display: block;
+    }
+  }
+}
+
+.footer-bottom {
+  display: block;
+  border-top: 1px solid mat.get-color-from-palette(mat.$gray-palette, 300);
+  padding: 1rem 0;
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-bottom-group {
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

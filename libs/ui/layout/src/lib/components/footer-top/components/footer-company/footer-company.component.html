@@ -1,0 +1,6 @@
+<a automation-id="brand" [routerLink]="paths.home | path" class="footer-company">{{ brand }}</a>
+<nav class="footer-company-links" *ngIf="links">
+  <a automation-id="link" class="footer-company-link" [routerLink]="subLink.route | path" *ngFor="let subLink of links.children">
+    {{ subLink.label }}
+  </a>
+</nav>
