@@ -42,6 +42,7 @@
       "@banx/core/store/root": ["libs/core/store/root/src/index.ts"],
       "@banx/core/store/utils": ["libs/core/store/utils/src/index.ts"],
       "@banx/core/testing": ["libs/core/testing/src/index.ts"],
+      "@banx/core/utils": ["libs/core/utils/src/index.ts"],
       "@banx/errors/not-found/page": ["libs/errors/not-found/page/src/index.ts"],
       "@banx/errors/pages": ["libs/errors/pages/src/index.ts"],
       "@banx/errors/permission-denied/page": ["libs/errors/permission-denied/page/src/index.ts"],

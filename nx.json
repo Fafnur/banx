@@ -99,6 +99,9 @@
     "core-testing": {
       "tags": []
     },
+    "core-utils": {
+      "tags": []
+    },
     "errors-not-found-page": {
       "tags": []
     },

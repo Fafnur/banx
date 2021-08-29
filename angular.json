@@ -575,6 +575,28 @@
         }
       }
     },
+    "core-utils": {
+      "projectType": "library",
+      "root": "libs/core/utils",
+      "sourceRoot": "libs/core/utils/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/utils"],
+          "options": {
+            "jestConfig": "libs/core/utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/utils/src/**/*.ts", "libs/core/utils/src/**/*.html"]
+          }
+        }
+      }
+    },
     "errors-not-found-page": {
       "projectType": "library",
       "root": "libs/errors/not-found/page",
