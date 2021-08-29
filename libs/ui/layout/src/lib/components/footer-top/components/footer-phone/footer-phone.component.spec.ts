@@ -1,25 +1,35 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { FooterPhoneComponent } from './footer-phone.component';
+import { FooterPhoneComponentPo } from './footer-phone.component.po';
 
 describe('FooterPhoneComponent', () => {
-  let component: FooterPhoneComponent;
+  let pageObject: FooterPhoneComponentPo;
   let fixture: ComponentFixture<FooterPhoneComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FooterPhoneComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        declarations: [FooterPhoneComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  });
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FooterPhoneComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new FooterPhoneComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.phone).toBeTruthy();
+    expect(pageObject.hint).toBeTruthy();
   });
 });

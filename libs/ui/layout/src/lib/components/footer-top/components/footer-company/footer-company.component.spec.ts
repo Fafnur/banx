@@ -1,25 +1,43 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MockModule } from 'ng-mocks';
+
+import { MENU_STUB } from '@banx/core/menu/common';
+import { PATHS_STUB } from '@banx/core/navigation/common';
+import { NavigationSharedModule } from '@banx/core/navigation/shared';
 
 import { FooterCompanyComponent } from './footer-company.component';
+import { FooterCompanyComponentPo } from './footer-company.component.po';
 
 describe('FooterCompanyComponent', () => {
-  let component: FooterCompanyComponent;
+  let pageObject: FooterCompanyComponentPo;
   let fixture: ComponentFixture<FooterCompanyComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ FooterCompanyComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        imports: [RouterTestingModule, MockModule(NavigationSharedModule)],
+        declarations: [FooterCompanyComponent],
+        providers: [PATHS_STUB, MENU_STUB],
+      }).compileComponents();
     })
-    .compileComponents();
-  });
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FooterCompanyComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new FooterCompanyComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.brand).toBeTruthy();
+    expect(pageObject.link.length).toBe(10);
   });
 });
