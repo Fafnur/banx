@@ -1,25 +1,45 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MockModule } from 'ng-mocks';
+
+import { MENU_STUB } from '@banx/core/menu/common';
+import { AccordionModule } from '@banx/ui/accordion';
 
 import { SideMenuComponent } from './side-menu.component';
+import { SideMenuComponentPo } from './side-menu.component.po';
 
 describe('SideMenuComponent', () => {
-  let component: SideMenuComponent;
+  let pageObject: SideMenuComponentPo;
   let fixture: ComponentFixture<SideMenuComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SideMenuComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        imports: [MockModule(MatButtonModule), MockModule(MatIconModule), MockModule(AccordionModule)],
+        declarations: [SideMenuComponent],
+        providers: [MENU_STUB],
+      }).compileComponents();
     })
-    .compileComponents();
-  });
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SideMenuComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new SideMenuComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.toggle).toBeTruthy();
+    expect(pageObject.sidenav).toBeTruthy();
+    expect(pageObject.close).toBeTruthy();
+    expect(pageObject.sidenavBackdrop).toBeTruthy();
   });
 });

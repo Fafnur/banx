@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
 
 import { MENU, MENU_DEFAULT, MenuLink } from '@banx/core/menu/common';
-import { NAVIGATION_PATHS, NavigationPaths, PATHS } from '@banx/core/navigation/common';
+import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 
 @Component({
   selector: 'banx-main-menu',
@@ -13,7 +13,7 @@ export class MainMenuComponent implements OnInit {
   links!: MenuLink[];
   home!: MenuLink;
 
-  constructor(@Inject(MENU) private readonly menuLinks: MenuLink[], @Inject(PATHS) public readonly paths: NavigationPaths) {}
+  constructor(@Inject(MENU) private readonly menuLinks: MenuLink[]) {}
 
   ngOnInit(): void {
     const links = this.menuLinks.filter((link) => link.route !== NAVIGATION_PATHS.company);

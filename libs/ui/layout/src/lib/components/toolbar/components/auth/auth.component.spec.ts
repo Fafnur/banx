@@ -1,25 +1,41 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MockModule } from 'ng-mocks';
 
 import { AuthComponent } from './auth.component';
+import { AuthComponentPo } from './auth.component.po';
+import { LoginModule } from './components/login/login.module';
+import { UserModule } from './components/user/user.module';
 
 describe('AuthComponent', () => {
-  let component: AuthComponent;
+  let pageObject: AuthComponentPo;
   let fixture: ComponentFixture<AuthComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ AuthComponent ]
+  beforeEach(
+    waitForAsync(() => {
+      void TestBed.configureTestingModule({
+        imports: [MockModule(LoginModule), MockModule(UserModule)],
+        declarations: [AuthComponent],
+      }).compileComponents();
     })
-    .compileComponents();
-  });
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AuthComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    pageObject = new AuthComponentPo(fixture);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture.detectChanges();
+
+    expect(fixture.componentInstance).toBeTruthy();
   });
+
+  it('should show', () => {
+    fixture.detectChanges();
+
+    expect(pageObject.login).toBeTruthy();
+    expect(pageObject.user).toBeFalsy();
+  });
+
+  // TODO: After integrate with user, add tests
 });

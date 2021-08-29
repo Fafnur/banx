@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/cor
 import { ActivatedRoute } from '@angular/router';
 
 import { MENU, MenuLink } from '@banx/core/menu/common';
-import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 
 @Component({
   selector: 'banx-top-menu',
@@ -13,11 +12,7 @@ import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 export class TopMenuComponent implements OnInit {
   links!: MenuLink[];
 
-  constructor(
-    private readonly route: ActivatedRoute,
-    @Inject(MENU) private readonly menuLinks: MenuLink[],
-    @Inject(PATHS) public readonly paths: NavigationPaths
-  ) {}
+  constructor(private readonly route: ActivatedRoute, @Inject(MENU) private readonly menuLinks: MenuLink[]) {}
 
   ngOnInit(): void {
     const parent = this.route.snapshot.data?.parent ?? null;

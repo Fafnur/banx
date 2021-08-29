@@ -1,13 +1,10 @@
-<button mat-icon-button class="toolbar-action" (click)="onToggle()">
+<button automation-id="toggle" mat-icon-button class="toolbar-action" (click)="onToggle()">
   <mat-icon>menu</mat-icon>
 </button>
-
-<div class="sidenav">
-  <button class="sidenav-close" mat-icon-button (click)="onToggle()">
+<div automation-id="sidenav" class="sidenav">
+  <button automation-id="close" class="sidenav-close" mat-icon-button (click)="onToggle()">
     <mat-icon>close</mat-icon>
   </button>
-
-  <banx-accordion class="sidenav-accordionsidenav-accordion" [links]="menuLinks" (clicked)="onToggle()"></banx-accordion>
+  <banx-accordion automation-id="accordion" [links]="menuLinks" (clicked)="onToggle()"></banx-accordion>
 </div>
-
-<div class="sidenav-backdrop" (click)="onToggle()"></div>
+<div automation-id="sidenav-backdrop" class="sidenav-backdrop" (click)="onToggle()"></div>
