@@ -38,5 +38,14 @@
       margin-left: -1rem;
       overflow-x: hidden;
     }
+    ::ng-deep .nav-link {
+      font-size: 0.8rem;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    ::ng-deep .nav-link {
+      font-size: 0.9rem;
+    }
   }
 }

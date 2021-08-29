@@ -3,6 +3,13 @@
 :host {
   display: block;
   margin: auto 1rem auto auto;
+
+  @include media-breakpoint-up(md) {
+    margin: auto 0.5rem auto auto;
+  }
+  @include media-breakpoint-up(md) {
+    margin: auto 1rem auto auto;
+  }
 }
 
 .logo {
@@ -11,6 +18,7 @@
   height: 2rem;
   color: black;
   transition: color 0.5s linear;
+  min-width: 8rem;
 
   &:hover {
     color: $color-active;
