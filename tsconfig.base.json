@@ -19,6 +19,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
+      "@banx/auth/api": ["libs/auth/api/src/index.ts"],
       "@banx/core/api/interceptors/content-type": ["libs/core/api/interceptors/content-type/src/index.ts"],
       "@banx/core/api/interceptors/with-credentials": ["libs/core/api/interceptors/with-credentials/src/index.ts"],
       "@banx/core/api/service": ["libs/core/api/service/src/index.ts"],

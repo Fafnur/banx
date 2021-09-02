@@ -33,11 +33,33 @@
       "changeDetection": "OnPush"
     },
     "@schematics/angular:component": {
+      "name": "",
       "style": "scss",
       "changeDetection": "OnPush"
     }
   },
   "projects": {
+    "auth-api": {
+      "projectType": "library",
+      "root": "libs/auth/api",
+      "sourceRoot": "libs/auth/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/api/src/**/*.ts", "libs/auth/api/src/**/*.html"]
+          }
+        }
+      }
+    },
     "backend-api": {
       "root": "apps/backend/api",
       "sourceRoot": "apps/backend/api/src",
@@ -583,7 +605,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/utils"],
           "options": {
             "jestConfig": "libs/core/utils/jest.config.js",
             "passWithNoTests": true
@@ -896,7 +917,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/content/business/account/page"],
           "options": {
             "jestConfig": "libs/russian/content/business/account/page/jest.config.js",
             "passWithNoTests": true
@@ -1178,7 +1198,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/nav"],
           "options": {
             "jestConfig": "libs/ui/nav/jest.config.js",
             "passWithNoTests": true
