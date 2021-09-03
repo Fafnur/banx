@@ -27,3 +27,5 @@ export interface UserJwtCredentials {
   userId: number;
   username: string;
 }
+
+export const AUTH_TOKEN = 'authToken';
