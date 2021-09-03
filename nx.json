@@ -30,6 +30,9 @@
     "auth-api": {
       "tags": []
     },
+    "auth-state": {
+      "tags": []
+    },
     "backend-api": {
       "tags": []
     },

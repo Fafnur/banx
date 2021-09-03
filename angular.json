@@ -60,6 +60,27 @@
         }
       }
     },
+    "auth-state": {
+      "projectType": "library",
+      "root": "libs/auth/state",
+      "sourceRoot": "libs/auth/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/state/src/**/*.ts", "libs/auth/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "backend-api": {
       "root": "apps/backend/api",
       "sourceRoot": "apps/backend/api/src",
