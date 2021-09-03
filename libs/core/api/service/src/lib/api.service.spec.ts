@@ -2,7 +2,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { TestBed } from '@angular/core/testing';
 
 import { ApiService } from './api.service';
-import { apiErrorStub, apiMockError } from './api.stub';
+import { API_ERROR_RESPONSE_STUB, API_ERROR_STUB } from './api.stub';
 
 describe('ApiService', () => {
   let httpTestingController: HttpTestingController;
@@ -33,17 +33,14 @@ describe('ApiService', () => {
     });
 
     it('should return get error', () => {
-      service.get(path).subscribe(
-        () => {
-          /**/
+      service.get(path).subscribe({
+        error: (data) => {
+          expect(data.error).toEqual(API_ERROR_STUB);
         },
-        (data) => {
-          expect(data.error).toEqual(apiErrorStub);
-        }
-      );
+      });
 
       const req = httpTestingController.expectOne(path);
-      req.flush(apiErrorStub, apiMockError);
+      req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });
 
@@ -57,17 +54,14 @@ describe('ApiService', () => {
     });
 
     it('should return post error', () => {
-      service.post(path).subscribe(
-        () => {
-          /**/
+      service.post(path).subscribe({
+        error: (data) => {
+          expect(data.error).toEqual(API_ERROR_STUB);
         },
-        (data) => {
-          expect(data.error).toEqual(apiErrorStub);
-        }
-      );
+      });
 
       const req = httpTestingController.expectOne(path);
-      req.flush(apiErrorStub, apiMockError);
+      req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });
 
@@ -81,17 +75,14 @@ describe('ApiService', () => {
     });
 
     it('should return put error', () => {
-      service.put(path, {}).subscribe(
-        () => {
-          /**/
+      service.put(path, {}).subscribe({
+        error: (data) => {
+          expect(data.error).toEqual(API_ERROR_STUB);
         },
-        (data) => {
-          expect(data.error).toEqual(apiErrorStub);
-        }
-      );
+      });
 
       const req = httpTestingController.expectOne(path);
-      req.flush(apiErrorStub, apiMockError);
+      req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });
 
@@ -105,17 +96,14 @@ describe('ApiService', () => {
     });
 
     it('should return patch error', () => {
-      service.patch(path, {}).subscribe(
-        () => {
-          /**/
+      service.patch(path, {}).subscribe({
+        error: (data) => {
+          expect(data.error).toEqual(API_ERROR_STUB);
         },
-        (data) => {
-          expect(data.error).toEqual(apiErrorStub);
-        }
-      );
+      });
 
       const req = httpTestingController.expectOne(path);
-      req.flush(apiErrorStub, apiMockError);
+      req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });
 
@@ -129,17 +117,14 @@ describe('ApiService', () => {
     });
 
     it('should return delete error', () => {
-      service.patch(path, {}).subscribe(
-        () => {
-          /**/
+      service.patch(path, {}).subscribe({
+        error: (data) => {
+          expect(data.error).toEqual(API_ERROR_STUB);
         },
-        (data) => {
-          expect(data.error).toEqual(apiErrorStub);
-        }
-      );
+      });
 
       const req = httpTestingController.expectOne(path);
-      req.flush(apiErrorStub, apiMockError);
+      req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });
 });

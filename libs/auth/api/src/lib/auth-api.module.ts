@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { AuthApiService } from './auth-api.service';
+
 @NgModule({
-  imports: [CommonModule],
+  providers: [AuthApiService],
 })
 export class AuthApiModule {}
