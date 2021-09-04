@@ -12,8 +12,24 @@ describe('Auth Reducer', () => {
 
   describe('valid Auth actions', () => {
     it('loginSuccess() should return userAuth', () => {
+      state = getState({ logged: true });
+      const action = AuthActions.init();
+      const result = reducer(state, action);
+
+      expect(result.logged).toBeFalsy();
+    });
+
+    it('loginSuccess() should return userAuth', () => {
       state = getState();
       const action = AuthActions.loginSuccess({ payload: USER_AUTH_STUB });
+      const result = reducer(state, action);
+
+      expect(result.logged).toBeTruthy();
+    });
+
+    it('restore() should set logged', () => {
+      state = getState();
+      const action = AuthActions.restore({ payload: { logged: true } });
       const result = reducer(state, action);
 
       expect(result.logged).toBeTruthy();
