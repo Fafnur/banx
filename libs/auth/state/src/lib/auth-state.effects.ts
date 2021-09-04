@@ -4,6 +4,7 @@ import { Action } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
 import { take, withLatestFrom } from 'rxjs/operators';
 
+import { LoggerService } from '@banx/core/logger/service';
 import { SessionAsyncStorage } from '@banx/core/storage/session';
 import { AUTH_TOKEN } from '@banx/users/common';
 
@@ -17,9 +18,7 @@ export class AuthStateEffects implements OnInitEffects {
       withLatestFrom(this.sessionAsyncStorage.getItem(AUTH_TOKEN).pipe(take(1))),
       fetch({
         run: (action, authToken) => AuthActions.restore({ payload: { logged: !!authToken } }),
-        onError: (action, error) => {
-          console.log(error);
-        },
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )
   );
@@ -38,7 +37,11 @@ export class AuthStateEffects implements OnInitEffects {
   //   )
   // );
 
-  constructor(private readonly actions$: Actions, private readonly sessionAsyncStorage: SessionAsyncStorage) {}
+  constructor(
+    private readonly actions$: Actions,
+    private readonly sessionAsyncStorage: SessionAsyncStorage,
+    private readonly loggerService: LoggerService
+  ) {}
 
   ngrxOnInitEffects(): Action {
     return AuthActions.init();

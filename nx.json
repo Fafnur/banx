@@ -63,6 +63,9 @@
     "core-forms-utils": {
       "tags": []
     },
+    "core-logger-service": {
+      "tags": []
+    },
     "core-menu-common": {
       "tags": []
     },

@@ -30,6 +30,7 @@
       "@banx/core/forms/errors": ["libs/core/forms/errors/src/index.ts"],
       "@banx/core/forms/shared": ["libs/core/forms/shared/src/index.ts"],
       "@banx/core/forms/utils": ["libs/core/forms/utils/src/index.ts"],
+      "@banx/core/logger/service": ["libs/core/logger/service/src/index.ts"],
       "@banx/core/menu/common": ["libs/core/menu/common/src/index.ts"],
       "@banx/core/navigation/common": ["libs/core/navigation/common/src/index.ts"],
       "@banx/core/navigation/service": ["libs/core/navigation/service/src/index.ts"],

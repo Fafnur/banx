@@ -6,6 +6,7 @@ describe('ConfigService', () => {
 
   const configStub: Config = {
     apiHost: '',
+    version: '',
   };
 
   beforeEach(() => {
@@ -17,6 +18,6 @@ describe('ConfigService', () => {
   });
 
   it('should return config', () => {
-    expect(service.getConfig()).toEqual(configStub);
+    expect(service.config).toEqual(configStub);
   });
 });

@@ -324,6 +324,28 @@
         }
       }
     },
+    "core-logger-service": {
+      "projectType": "library",
+      "root": "libs/core/logger/service",
+      "sourceRoot": "libs/core/logger/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/logger/service"],
+          "options": {
+            "jestConfig": "libs/core/logger/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/logger/service/src/**/*.ts", "libs/core/logger/service/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-menu-common": {
       "projectType": "library",
       "root": "libs/core/menu/common",
