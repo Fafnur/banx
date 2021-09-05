@@ -332,7 +332,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/logger/service"],
           "options": {
             "jestConfig": "libs/core/logger/service/jest.config.js",
             "passWithNoTests": true

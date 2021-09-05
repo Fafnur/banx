@@ -13,6 +13,8 @@ export const loginSuccess = createAction('[Auth/API] Load Auth Success', payload
 
 export const loginFailure = createAction('[Auth/API] Load Auth Failure', payload<Record<string, any>>());
 
+export const logout = createAction('[Auth] Logout');
+
 export const recovery = createAction('[Auth] Recovery', payload<UserSecrets>());
 
 export const recoverySuccess = createAction('[Auth/API] Recovery Success');

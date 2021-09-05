@@ -11,9 +11,17 @@ describe('Auth Reducer', () => {
   let state: AuthState;
 
   describe('valid Auth actions', () => {
-    it('loginSuccess() should return userAuth', () => {
+    it('loginSuccess() should set logged false', () => {
       state = getState({ logged: true });
       const action = AuthActions.init();
+      const result = reducer(state, action);
+
+      expect(result.logged).toBeFalsy();
+    });
+
+    it('loginSuccess() should set logged false', () => {
+      state = getState({ logged: true });
+      const action = AuthActions.logout();
       const result = reducer(state, action);
 
       expect(result.logged).toBeFalsy();

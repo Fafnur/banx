@@ -18,7 +18,7 @@ export const authInitialState: AuthState = {
 
 const authReducer = createReducer(
   authInitialState,
-  on(AuthActions.init, (state) => ({
+  on(AuthActions.init, AuthActions.logout, (state) => ({
     ...state,
     logged: false,
   })),

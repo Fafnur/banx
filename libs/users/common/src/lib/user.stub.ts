@@ -23,4 +23,5 @@ export const USER_SECRETS_STUB: UserSecrets = {
 export const USER_AUTH_STUB: UserAuth = {
   accessToken: 'sxxxs21',
   id: USER_STUB.id,
+  username: 'Adam',
 };

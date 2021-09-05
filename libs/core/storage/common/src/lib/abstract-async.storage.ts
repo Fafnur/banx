@@ -1,4 +1,4 @@
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AsyncStorage } from './async-storage.interface';
@@ -25,8 +25,12 @@ export abstract class AbstractAsyncStorage implements AsyncStorage {
     this.setState({});
   }
 
-  getItem<T = any>(key: string): Observable<T> {
+  getItem<T = any>(key: string): Observable<T | null> {
     return this.state$.pipe(map((state) => state[key] ?? null));
+  }
+
+  getItems<T = any>(keys: string[]): Observable<T> {
+    return combineLatest(keys.map((key) => this.getItem(key))) as any;
   }
 
   removeItem(key: string): void {
@@ -38,8 +42,24 @@ export abstract class AbstractAsyncStorage implements AsyncStorage {
     }
   }
 
+  removeItems(keys: string[]): void {
+    const state = { ...this.state };
+
+    for (const key of keys) {
+      if (key in state) {
+        delete state[key];
+      }
+    }
+
+    this.setState(state);
+  }
+
   setItem<T = any>(key: string, value: T): void {
     this.setState({ ...this.state$.getValue(), [key]: value });
+  }
+
+  setItems<T extends Record<string, any> = Record<string, any>>(state: T): void {
+    this.setState({ ...this.state$.getValue(), ...state });
   }
 
   protected setState(state: Record<string, any>): void {

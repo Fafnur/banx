@@ -21,6 +21,7 @@ export interface UserSecrets {
 export interface UserAuth {
   accessToken: string;
   id: number;
+  username: string;
 }
 
 export interface UserJwtCredentials {
@@ -28,4 +29,8 @@ export interface UserJwtCredentials {
   username: string;
 }
 
-export const AUTH_TOKEN = 'authToken';
+export enum UserStorageKeys {
+  AuthToken = 'authToken',
+  Id = 'userId',
+  Username = 'username',
+}
