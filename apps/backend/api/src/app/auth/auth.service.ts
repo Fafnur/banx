@@ -1,8 +1,8 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
-import { User, UserAuth, UserCredentials } from '@banx/users/common';
+import { User, UserAuth, UserCredentials, UserSecrets } from '@banx/users/common';
 
 import { UserService } from '../users/user.service';
 import { PasswordService } from './password.service';
@@ -31,6 +31,12 @@ export class AuthService {
     return null;
   }
 
+  async validateUserSecrets(secrets: UserSecrets): Promise<User | null> {
+    const user = await this.userService.findOneByPhoneAndBirthdate(secrets.phone, secrets.birthdate);
+
+    return user ?? null;
+  }
+
   async login(credentials: UserCredentials): Promise<UserAuth> {
     const user = await this.validateUser(credentials);
 
@@ -43,5 +49,19 @@ export class AuthService {
       id: user.id,
       username: user.username,
     };
+  }
+
+  async recovery(secrets: UserSecrets): Promise<void> {
+    const user = await this.validateUserSecrets(secrets);
+
+    if (!user) {
+      throw new BadRequestException();
+    }
+    const password = (Math.random() + 1).toString(36).substring(4);
+    // NOTE: DON'T USE IT ON PRODUCTION.
+    console.log(password);
+    const hash = await this.passwordService.getHash(password);
+
+    return await this.userService.updatePassword(user, hash).then(() => undefined);
   }
 }

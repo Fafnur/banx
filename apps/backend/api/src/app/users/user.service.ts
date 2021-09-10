@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { UpdateResult } from 'typeorm/query-builder/result/UpdateResult';
 
 import { UserEntity } from './user.entity';
 
@@ -12,10 +13,20 @@ export class UserService {
     return await this.userRepository.find();
   }
 
+  async findOne(id: number): Promise<UserEntity | null> {
+    return (await this.userRepository.findOne(id)) ?? null;
+  }
+
   async findOneByUsername(username: string): Promise<UserEntity | null> {
     const users = await this.userRepository.find({ username });
 
     return users.length === 1 ? users[0] : null;
+  }
+
+  async findOneByPhoneAndBirthdate(phone: string, birthdate: string): Promise<UserEntity | null> {
+    const user = await this.userRepository.findOne({ phone, birthdate });
+
+    return user ?? null;
   }
 
   async createUser(user: Partial<UserEntity>): Promise<UserEntity> {
@@ -24,7 +35,7 @@ export class UserService {
     return this.userRepository.save(newUser);
   }
 
-  async findOne(id: number): Promise<UserEntity | null> {
-    return (await this.userRepository.findOne(id)) ?? null;
+  async updatePassword(user: Partial<UserEntity>, password: string): Promise<UpdateResult> {
+    return await this.userRepository.update({ id: user.id }, { password });
   }
 }
