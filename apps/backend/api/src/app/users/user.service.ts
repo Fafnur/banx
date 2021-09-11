@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UpdateResult } from 'typeorm/query-builder/result/UpdateResult';
 
 import { UserEntity } from './user.entity';
 
@@ -35,7 +34,7 @@ export class UserService {
     return this.userRepository.save(newUser);
   }
 
-  async updatePassword(user: Partial<UserEntity>, password: string): Promise<UpdateResult> {
-    return await this.userRepository.update({ id: user.id }, { password });
+  async updatePassword(user: Partial<UserEntity>, password: string): Promise<void> {
+    return await this.userRepository.update({ id: user.id }, { password }).then();
   }
 }
