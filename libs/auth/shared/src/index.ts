@@ -1,1 +1,1 @@
-export * from './lib/auth-shared.module';
+export * from './lib/auth-card/auth-card.module';
