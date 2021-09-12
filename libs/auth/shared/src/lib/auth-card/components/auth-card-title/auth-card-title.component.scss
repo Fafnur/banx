@@ -1,0 +1,12 @@
+@import 'libs/ui/stylesheets/utils';
+
+.auth-title {
+  display: block;
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2rem;
+  }
+}

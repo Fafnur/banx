@@ -1,0 +1,12 @@
+@import 'libs/ui/stylesheets/utils';
+@import './auth-card-link.component';
+
+:host {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(mkm) {
+    margin-top: 0;
+  }
+}

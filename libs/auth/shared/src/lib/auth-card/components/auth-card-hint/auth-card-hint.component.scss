@@ -1,0 +1,12 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  font-size: 0.85rem;
+  margin: 2rem 0;
+  color: $color-dark-lite;
+
+  @include media-breakpoint-up(xl) {
+    margin: 4rem 0;
+  }
+}

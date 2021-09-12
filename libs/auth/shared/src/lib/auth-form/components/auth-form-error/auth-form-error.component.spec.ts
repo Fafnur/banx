@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthCardSubtitleComponent } from './auth-card-subtitle.component';
+import { AuthFormErrorComponent } from './auth-form-error.component';
 
-describe('AuthCardSubtitleComponent', () => {
-  let component: AuthCardSubtitleComponent;
-  let fixture: ComponentFixture<AuthCardSubtitleComponent>;
+describe('AuthFormErrorComponent', () => {
+  let component: AuthFormErrorComponent;
+  let fixture: ComponentFixture<AuthFormErrorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthCardSubtitleComponent],
+      declarations: [AuthFormErrorComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthCardSubtitleComponent);
+    fixture = TestBed.createComponent(AuthFormErrorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

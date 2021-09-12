@@ -1,0 +1,15 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  margin-bottom: 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 2rem;
+  }
+
+  ::ng-deep [mat-raised-button] {
+    padding: 0.5rem 2rem;
+    font-size: 1.1rem;
+  }
+}

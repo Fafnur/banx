@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AuthCardSubtitleComponent } from './auth-card-subtitle.component';
+import { AuthCardLinksComponent } from './auth-card-links.component';
 
-describe('AuthCardSubtitleComponent', () => {
-  let component: AuthCardSubtitleComponent;
-  let fixture: ComponentFixture<AuthCardSubtitleComponent>;
+describe('AuthCardLinksComponent', () => {
+  let component: AuthCardLinksComponent;
+  let fixture: ComponentFixture<AuthCardLinksComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AuthCardSubtitleComponent],
+      declarations: [AuthCardLinksComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AuthCardSubtitleComponent);
+    fixture = TestBed.createComponent(AuthCardLinksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
