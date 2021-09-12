@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AuthLoginPageModule } from './auth-login-page.module';
+import { LoginFormModule } from './login-form.module';
 
-describe('AuthLoginPageModule', () => {
+describe('LoginFormModule', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AuthLoginPageModule],
+      imports: [LoginFormModule],
     }).compileComponents();
   });
 
   it('should create', () => {
-    expect(AuthLoginPageModule).toBeTruthy();
+    expect(LoginFormModule).toBeTruthy();
   });
 });

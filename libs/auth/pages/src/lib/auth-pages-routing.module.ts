@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: NAVIGATION_PATHS.authLogin,
-    loadChildren: (): Promise<any> => import('@banx/auth/login/page').then((modules) => modules.AuthLoginPageModule),
+    loadChildren: (): Promise<any> => import('@banx/auth/login/page').then((modules) => modules.LoginPageModule),
   },
   {
     path: NAVIGATION_PATHS.authRecovery,
