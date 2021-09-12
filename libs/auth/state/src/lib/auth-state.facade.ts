@@ -11,7 +11,7 @@ import { AuthPartialState } from './auth-state.reducer';
 import * as AuthSelectors from './auth-state.selectors';
 
 @Injectable()
-export class AuthStateFacade {
+export class AuthFacade {
   logged$ = this.store.pipe(select(AuthSelectors.selectLogged));
 
   loginSuccess$: Observable<UserAuth> = this.actions$.pipe(

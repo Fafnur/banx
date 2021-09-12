@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { AuthPagesRoutingModule } from './auth-pages-routing.module';
+
 @NgModule({
-  imports: [CommonModule],
+  imports: [AuthPagesRoutingModule],
 })
 export class AuthPagesModule {}

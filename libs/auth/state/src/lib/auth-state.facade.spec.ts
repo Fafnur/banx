@@ -14,11 +14,11 @@ import { USER_AUTH_STUB, USER_CREDENTIALS_STUB, USER_SECRETS_STUB, UserStorageKe
 
 import * as AuthActions from './auth-state.actions';
 import { AuthStateEffects } from './auth-state.effects';
-import { AuthStateFacade } from './auth-state.facade';
+import { AuthFacade } from './auth-state.facade';
 import { AUTH_FEATURE_KEY, AuthPartialState, reducer } from './auth-state.reducer';
 
 describe('AuthFacade', () => {
-  let facade: AuthStateFacade;
+  let facade: AuthFacade;
   let authApiServiceMock: AuthApiService;
   let loggerServiceMock: LoggerService;
   let sessionAsyncStorageMock: SessionAsyncStorage;
@@ -37,7 +37,7 @@ describe('AuthFacade', () => {
       @NgModule({
         imports: [StoreModule.forFeature(AUTH_FEATURE_KEY, reducer), EffectsModule.forFeature([AuthStateEffects])],
         providers: [
-          AuthStateFacade,
+          AuthFacade,
           providerOf(AuthApiService, authApiServiceMock),
           providerOf(LoggerService, loggerServiceMock),
           providerOf(SessionAsyncStorage, sessionAsyncStorageMock),
@@ -51,7 +51,7 @@ describe('AuthFacade', () => {
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
 
-      facade = TestBed.inject(AuthStateFacade);
+      facade = TestBed.inject(AuthFacade);
       store = TestBed.inject(Store);
     });
 

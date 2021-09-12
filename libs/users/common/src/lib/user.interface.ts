@@ -8,6 +8,13 @@ export interface User {
   updatedAt: string;
 }
 
+export enum UserField {
+  Username = 'username',
+  Password = 'password',
+  Phone = 'phone',
+  Birthdate = 'birthdate',
+}
+
 export interface UserCredentials {
   username: string;
   password: string;
