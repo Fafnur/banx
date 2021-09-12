@@ -5,8 +5,8 @@ import { ApiService } from '@banx/core/api/service';
 import { UserAuth, UserCredentials, UserSecrets } from '@banx/users/common';
 
 export const AUTH_API_ROUTES = {
-  login: '/login',
-  recovery: '/recovery',
+  login: '/auth/login',
+  recovery: '/auth/recovery',
 };
 
 @Injectable()
