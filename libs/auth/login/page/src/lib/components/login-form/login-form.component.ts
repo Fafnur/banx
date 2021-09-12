@@ -1,9 +1,11 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
 import { AuthFacade } from '@banx/auth/state';
+import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
+import { NavigationService } from '@banx/core/navigation/service';
 import { UserField } from '@banx/users/common';
 
 @Component({
@@ -19,7 +21,12 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
 
-  constructor(private readonly changeDetectorRef: ChangeDetectorRef, private readonly authFacade: AuthFacade) {}
+  constructor(
+    private readonly changeDetectorRef: ChangeDetectorRef,
+    private readonly authFacade: AuthFacade,
+    private readonly navigationService: NavigationService,
+    @Inject(PATHS) private readonly paths: NavigationPaths
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -30,8 +37,10 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.form.valueChanges
       .pipe(
         tap(() => {
-          this.loginError = null;
-          this.changeDetectorRef.markForCheck();
+          if (this.loginError) {
+            this.loginError = null;
+            this.changeDetectorRef.markForCheck();
+          }
         }),
         takeUntil(this.destroy$)
       )
@@ -43,6 +52,13 @@ export class LoginFormComponent implements OnInit, OnDestroy {
           this.loginError = loginError;
           this.changeDetectorRef.markForCheck();
         }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.authFacade.loginSuccess$
+      .pipe(
+        tap(() => void this.navigationService.navigateByUrl(this.paths.home)),
         takeUntil(this.destroy$)
       )
       .subscribe();

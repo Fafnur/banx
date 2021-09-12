@@ -1,17 +1,15 @@
-<banx-ui-container>
-  <banx-auth-card automation-id="card">
-    <banx-auth-card-title automation-id="title" i18n="Auth Login|Title">Login in {{ brand }}</banx-auth-card-title>
-    <banx-auth-card-subtitle automation-id="subtitle" i18n="Auth Login|Subtitle">
-      Enter your mobile phone number and password
-    </banx-auth-card-subtitle>
-    <banx-auth-login-form automation-id="form" automation-id="form"></banx-auth-login-form>
-    <banx-auth-card-links automation-id="links">
-      <!-- <a class="auth-link" automation-id="signup" i18n="Auth links|Sign up" [routerLink]="paths.registration | path">Sign up</a>-->
-      <a class="auth-link" automation-id="recovery" i18n="Auth links|Recovery" [routerLink]="paths.authRecovery | path">Forgot password?</a>
-    </banx-auth-card-links>
-    <banx-auth-card-hint automation-id="hint" i18n="Auth Login|Hint">
-      Do not provide your login, password and confirmation code, so that scammers do not take advantage of it. The bank employee will never
-      ask them. Check the {{ brand }}'s website in the address bar: banx.dev
-    </banx-auth-card-hint>
-  </banx-auth-card>
-</banx-ui-container>
+<banx-auth-card automation-id="card">
+  <banx-auth-card-title automation-id="title" i18n="Auth Login|Title">Log in {{ brand }}</banx-auth-card-title>
+  <banx-auth-card-subtitle automation-id="subtitle" i18n="Auth Login|Subtitle">
+    Enter your mobile phone number and password
+  </banx-auth-card-subtitle>
+  <banx-auth-login-form automation-id="form" automation-id="form"></banx-auth-login-form>
+  <banx-auth-card-links automation-id="links">
+    <!--<a class="auth-link" automation-id="signup" i18n="Auth links|Sign up" [routerLink]="paths.registration | path">Registration</a>-->
+    <a class="auth-link" automation-id="recovery" i18n="Auth links|Recovery" [routerLink]="paths.authRecovery | path">Forgot password?</a>
+  </banx-auth-card-links>
+  <banx-auth-card-hint automation-id="hint" i18n="Auth Login|Hint">
+    Do not provide your login, password and confirmation code, so that scammers do not take advantage of it. The bank employee will never
+    ask them. Check the {{ brand }}'s website in the address bar: banx.dev
+  </banx-auth-card-hint>
+</banx-auth-card>

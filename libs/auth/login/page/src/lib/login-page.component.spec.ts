@@ -43,8 +43,8 @@ describe('LoginPageComponent', () => {
     expect(pageObject.subtitleText).toEqual('Enter your mobile phone number and password');
     expect(pageObject.form).toBeTruthy();
     expect(pageObject.links).toBeTruthy();
-    expect(pageObject.description).toBeTruthy();
+    expect(pageObject.hint).toBeTruthy();
     expect(pageObject.recovery).toBe('Forgot password?');
-    expect(pageObject.signUp).toBe('Sign up');
+    // expect(pageObject.signUp).toBe('Sign up');
   });
 });

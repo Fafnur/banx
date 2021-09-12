@@ -9,8 +9,10 @@ import { deepEqual, mock, verify, when } from 'ts-mockito';
 import { AuthFormModule } from '@banx/auth/shared';
 import { AuthFacade } from '@banx/auth/state';
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
+import { NavigationService } from '@banx/core/navigation/service';
 import { providerOf } from '@banx/core/testing';
-import { UserField } from '@banx/users/common';
+import { USER_AUTH_STUB, UserAuth, UserField } from '@banx/users/common';
 
 import { LoginFormPasswordModule } from './components/login-form-password/login-form-password.module';
 import { LoginFormUsernameModule } from './components/login-form-username/login-form-username.module';
@@ -21,11 +23,15 @@ describe('LoginFormComponent', () => {
   let pageObject: LoginFormComponentPo;
   let fixture: ComponentFixture<LoginFormComponent>;
   let authFacadeMock: AuthFacade;
+  let navigationServiceMock: NavigationService;
   let loginFailure$: ReplaySubject<Record<string, any>>;
+  let loginSuccess$: ReplaySubject<UserAuth>;
 
   beforeEach(() => {
     authFacadeMock = mock(AuthFacade);
+    navigationServiceMock = mock(NavigationService);
     loginFailure$ = new ReplaySubject<Record<string, any>>(1);
+    loginSuccess$ = new ReplaySubject<UserAuth>(1);
   });
 
   beforeEach(
@@ -41,13 +47,14 @@ describe('LoginFormComponent', () => {
           MockModule(AuthFormModule),
         ],
         declarations: [LoginFormComponent],
-        providers: [providerOf(AuthFacade, authFacadeMock)],
+        providers: [PATHS_STUB, providerOf(AuthFacade, authFacadeMock), providerOf(NavigationService, navigationServiceMock)],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
     when(authFacadeMock.loginFailure$).thenReturn(loginFailure$);
+    when(authFacadeMock.loginSuccess$).thenReturn(loginSuccess$);
 
     fixture = TestBed.createComponent(LoginFormComponent);
     pageObject = new LoginFormComponentPo(fixture);
@@ -69,7 +76,7 @@ describe('LoginFormComponent', () => {
     expect(pageObject.loginText).toBe('Log in');
   });
 
-  it('should be call reset', () => {
+  it('should be call login', () => {
     fixture.detectChanges();
     pageObject.setForm({
       [UserField.Username]: '9231009988',
@@ -87,5 +94,14 @@ describe('LoginFormComponent', () => {
         })
       )
     ).once();
+  });
+
+  it('should be redirected to home', () => {
+    fixture.detectChanges();
+
+    loginSuccess$.next(USER_AUTH_STUB);
+    fixture.detectChanges();
+
+    verify(navigationServiceMock.navigateByUrl(NAVIGATION_PATHS.home)).once();
   });
 });

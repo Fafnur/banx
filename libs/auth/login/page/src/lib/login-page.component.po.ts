@@ -8,7 +8,7 @@ enum Automation {
   Subtitle = 'subtitle',
   Form = 'form',
   Links = 'links',
-  Description = 'description',
+  Hint = 'hint',
   Social = 'social',
   Recovery = 'recovery',
   SignUp = 'signup',
@@ -35,8 +35,8 @@ export class LoginPageComponentPo extends PageObject {
     return this.getByAutomationId(Automation.Links);
   }
 
-  get description(): DebugElement | null {
-    return this.getByAutomationId(Automation.Description);
+  get hint(): DebugElement | null {
+    return this.getByAutomationId(Automation.Hint);
   }
 
   get social(): DebugElement | null {
