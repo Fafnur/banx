@@ -1,1 +1,1 @@
-export * from './lib/auth-recovery-page.module';
+export * from './lib/recovery-page.module';

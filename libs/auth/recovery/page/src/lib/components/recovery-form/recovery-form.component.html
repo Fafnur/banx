@@ -1,0 +1,21 @@
+<banx-auth-form automation-id="form">
+  <banx-auth-recovery-form-phone automation-id="phone" [control]="form | extractFormControl: fields.Phone"></banx-auth-recovery-form-phone>
+  <banx-auth-recovery-form-birthdate
+    automation-id="birthdate"
+    [control]="form | extractFormControl: fields.Birthdate"
+  ></banx-auth-recovery-form-birthdate>
+  <banx-auth-form-error automation-id="error" i18n="Recovery form|Error message" *ngIf="recoveryError">
+    Bad credentials.
+  </banx-auth-form-error>
+  <button
+    automation-id="reset"
+    mat-raised-button
+    color="accent"
+    type="button"
+    id="RecoveryButton"
+    i18n="Recovery form|Reset password"
+    (click)="onReset()"
+  >
+    Reset password
+  </button>
+</banx-auth-form>

@@ -1,0 +1,18 @@
+<mat-form-field appearance="fill" fullWidth>
+  <mat-label automation-id="label" i18n="Recovery form|Phone label">Mobile phone</mat-label>
+  <div>
+    <input
+      automation-id="control"
+      matInput
+      type="tel"
+      i18n-placeholder="Recovery form|Mobile phone"
+      placeholder="Mobile phone"
+      name="phone"
+      autocomplete="phone"
+      id="AuthRecoveryPhone"
+      [formControl]="control"
+      [imask]="{ mask: '+{7} 000 000-00-00' }"
+      [unmask]="true"
+    />
+  </div>
+</mat-form-field>
