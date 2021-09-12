@@ -60,6 +60,90 @@
         }
       }
     },
+    "auth-login-page": {
+      "projectType": "library",
+      "root": "libs/auth/login/page",
+      "sourceRoot": "libs/auth/login/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/login/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/login/page/src/**/*.ts", "libs/auth/login/page/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-pages": {
+      "projectType": "library",
+      "root": "libs/auth/pages",
+      "sourceRoot": "libs/auth/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/pages/src/**/*.ts", "libs/auth/pages/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-recovery-page": {
+      "projectType": "library",
+      "root": "libs/auth/recovery/page",
+      "sourceRoot": "libs/auth/recovery/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/recovery/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/recovery/page/src/**/*.ts", "libs/auth/recovery/page/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-shared": {
+      "projectType": "library",
+      "root": "libs/auth/shared",
+      "sourceRoot": "libs/auth/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/shared/src/**/*.ts", "libs/auth/shared/src/**/*.html"]
+          }
+        }
+      }
+    },
     "auth-state": {
       "projectType": "library",
       "root": "libs/auth/state",

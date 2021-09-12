@@ -30,6 +30,18 @@
     "auth-api": {
       "tags": []
     },
+    "auth-login-page": {
+      "tags": []
+    },
+    "auth-pages": {
+      "tags": []
+    },
+    "auth-recovery-page": {
+      "tags": []
+    },
+    "auth-shared": {
+      "tags": []
+    },
     "auth-state": {
       "tags": []
     },
