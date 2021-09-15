@@ -1,0 +1,25 @@
+@import 'libs/ui/stylesheets/utils';
+@import 'libs/ui/nav/src/lib/nav.component';
+
+:host {
+  display: flex;
+  height: 100%;
+}
+
+.nav-link {
+  &_account {
+    max-width: 4.5rem;
+    line-height: 1;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (min-width: 400px) {
+    max-width: 100%;
+    line-height: inherit;
+    text-align: left;
+    padding: 1rem 0;
+    margin: auto 0.5rem;
+  }
+}

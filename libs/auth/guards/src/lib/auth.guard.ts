@@ -21,6 +21,6 @@ export class AuthGuard implements CanActivate {
   canActivate(): Observable<boolean | UrlTree> {
     return this.sessionAsyncStorage
       .getItem(UserStorageKeys.AuthToken)
-      .pipe(map((authToken) => authToken !== null || this.navigationService.createUrlTree(this.paths.user)));
+      .pipe(map((authToken) => authToken === null || this.navigationService.createUrlTree(this.paths.user)));
   }
 }

@@ -1,1 +1,34 @@
-<p>user works!</p>
+<banx-nav automation-id="nav">
+  <a
+    automation-id="account-link"
+    class="nav-link nav-link_top nav-link_account"
+    #rla="routerLinkActive"
+    routerLinkActive
+    [class.is-active]="rla.isActive"
+    [routerLink]="paths.user | path"
+  >
+    <span automation-id="account-label" class="nav-label" i18n="User card|Account link">Account</span>
+  </a>
+  <button
+    automation-id="account-menu"
+    class="nav-menu"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    i18n-aria-label="User card|User menu"
+    aria-label="User menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</banx-nav>
+
+<mat-menu #menu="matMenu">
+  <a [routerLink]="paths.userProfile | path" mat-menu-item>
+    <mat-icon>face</mat-icon>
+    <span i18n="User card|User profile">Profile</span>
+  </a>
+
+  <button automation-id="logout" mat-menu-item (click)="onLogout()">
+    <mat-icon>logout</mat-icon>
+    <span i18n="User card|Logout">Logout</span>
+  </button>
+</mat-menu>

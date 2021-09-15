@@ -963,6 +963,46 @@
         <note priority="1" from="description">Label</note>
         <note priority="1" from="meaning">Toolbar login</note>
       </trans-unit>
+      <trans-unit id="1881186468817805639" datatype="html">
+        <source>Account</source>
+        <target state="translated">Личный кабинет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Account link</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
+      <trans-unit id="8164245929047081353" datatype="html">
+        <source>User menu</source>
+        <target state="translated">Меню пользователя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">User menu</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
+      <trans-unit id="3538835956763898384" datatype="html">
+        <source>Profile</source>
+        <target state="translated">Профиль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">User profile</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
+      <trans-unit id="1303531529522727486" datatype="html">
+        <source>Logout</source>
+        <target state="translated">Выйти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">Logout</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
     </body>
   </file>
 </xliff>

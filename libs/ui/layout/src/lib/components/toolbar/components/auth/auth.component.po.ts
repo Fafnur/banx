@@ -15,4 +15,8 @@ export class AuthComponentPo extends PageObject {
   get user(): DebugElement | null {
     return this.getByAutomationId(Automation.User);
   }
+
+  triggerLogout(): void {
+    this.triggerEventHandler(this.user, 'logout');
+  }
 }

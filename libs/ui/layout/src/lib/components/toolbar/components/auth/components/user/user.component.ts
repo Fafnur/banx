@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Output } from '@angular/core';
+
+import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 
 @Component({
   selector: 'banx-user',
@@ -6,4 +8,12 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./user.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UserComponent {}
+export class UserComponent {
+  @Output() logout = new EventEmitter<void>();
+
+  constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
+
+  onLogout(): void {
+    this.logout.emit();
+  }
+}
