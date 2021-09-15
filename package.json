@@ -92,7 +92,7 @@
     "@nrwl/node": "^12.8.0",
     "@types/bcrypt": "^5.0.0",
     "@types/dotenv-webpack": "^7.0.3",
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.7.10",
     "@types/passport-jwt": "^3.0.6",
     "@typescript-eslint/eslint-plugin": "^4.30.0",

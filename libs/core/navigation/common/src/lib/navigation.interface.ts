@@ -87,6 +87,11 @@ export interface NavigationPaths {
   // Errors
   serverError: string;
   permissionDenied: string;
+
+  // User
+
+  user: string;
+  userProfile: string;
 }
 
 export const NAVIGATION_PATHS: NavigationPaths = {
@@ -169,6 +174,9 @@ export const NAVIGATION_PATHS: NavigationPaths = {
 
   serverError: 'server-error',
   permissionDenied: 'permission-denied',
+
+  user: '/user',
+  userProfile: '/user/profile',
 };
 
 export interface NavigationLink {
