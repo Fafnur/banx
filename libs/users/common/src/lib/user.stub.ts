@@ -11,7 +11,7 @@ export const USER_STUB: User = {
 };
 
 export const USER_CREDENTIALS_STUB: UserCredentials = {
-  username: USER_STUB.username,
+  phone: USER_STUB.phone,
   password: 'MySecretPassword2020',
 };
 
@@ -21,7 +21,7 @@ export const USER_SECRETS_STUB: UserSecrets = {
 };
 
 export const USER_AUTH_STUB: UserAuth = {
-  accessToken: 'sxxxs21',
+  accessToken: 'accessTokenRand1',
   id: USER_STUB.id,
-  username: 'Adam',
+  username: USER_STUB.username,
 };

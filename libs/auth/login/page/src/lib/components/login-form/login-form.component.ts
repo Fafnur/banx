@@ -30,7 +30,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      [UserField.Username]: new FormControl(null, [Validators.required]),
+      [UserField.Phone]: new FormControl(null, [Validators.required]),
       [UserField.Password]: new FormControl(null, [Validators.required]),
     });
 
@@ -73,7 +73,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.form.markAllAsTouched();
 
     if (this.form.valid) {
-      this.authFacade.login(this.form.value);
+      // NOTE: Russian only
+      this.authFacade.login({ ...this.form.value, phone: this.form.value[UserField.Phone].slice(1) });
     }
 
     this.changeDetectorRef.markForCheck();

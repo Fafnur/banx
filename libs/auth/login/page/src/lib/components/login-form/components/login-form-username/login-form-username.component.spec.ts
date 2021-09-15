@@ -4,6 +4,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
@@ -31,6 +32,7 @@ describe('LoginFormUsernameComponent', () => {
           MockModule(MatFormFieldModule),
           MockModule(MatInputModule),
           MockModule(FormsSharedModule),
+          MockModule(IMaskModule),
         ],
         declarations: [LoginFormUsernameComponent, WrapperComponent],
       }).compileComponents();

@@ -22,6 +22,12 @@ export class UserService {
     return users.length === 1 ? users[0] : null;
   }
 
+  async findOneByPhone(phone: string): Promise<UserEntity | null> {
+    const users = await this.userRepository.find({ phone });
+
+    return users.length === 1 ? users[0] : null;
+  }
+
   async findOneByPhoneAndBirthdate(phone: string, birthdate: string): Promise<UserEntity | null> {
     const user = await this.userRepository.findOne({ phone, birthdate });
 

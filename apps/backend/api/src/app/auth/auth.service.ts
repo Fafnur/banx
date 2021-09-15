@@ -17,7 +17,7 @@ export class AuthService {
   ) {}
 
   async validateUser(credentials: UserCredentials): Promise<Omit<User, 'password'> | null> {
-    const user = await this.userService.findOneByUsername(credentials.username);
+    const user = await this.userService.findOneByPhone(credentials.phone);
 
     const valid = user ? await this.passwordService.compareHash(credentials.password, user.password) : false;
 

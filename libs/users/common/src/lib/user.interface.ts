@@ -16,7 +16,7 @@ export enum UserField {
 }
 
 export interface UserCredentials {
-  username: string;
+  phone: string;
   password: string;
 }
 
