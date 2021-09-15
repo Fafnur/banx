@@ -30,6 +30,9 @@
     "auth-api": {
       "tags": []
     },
+    "auth-guards": {
+      "tags": []
+    },
     "auth-login-page": {
       "tags": []
     },

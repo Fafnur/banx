@@ -20,6 +20,7 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "@banx/auth/api": ["libs/auth/api/src/index.ts"],
+      "@banx/auth/guards": ["libs/auth/guards/src/index.ts"],
       "@banx/auth/login/page": ["libs/auth/login/page/src/index.ts"],
       "@banx/auth/pages": ["libs/auth/pages/src/index.ts"],
       "@banx/auth/recovery/page": ["libs/auth/recovery/page/src/index.ts"],
