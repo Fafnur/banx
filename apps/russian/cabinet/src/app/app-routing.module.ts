@@ -32,6 +32,10 @@ const routes: Routes = [
         path: '',
         loadChildren: (): Promise<any> => import('@banx/russian/content/pages').then((modules) => modules.ContentPagesModule),
       },
+      {
+        path: '',
+        loadChildren: (): Promise<any> => import('@banx/auth/pages').then((modules) => modules.AuthPagesModule),
+      },
     ],
   },
   {

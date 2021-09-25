@@ -1,0 +1,23 @@
+<banx-auth-form automation-id="form">
+  <banx-auth-login-form-username
+    automation-id="username"
+    [control]="form | extractFormControl: fields.Phone"
+  ></banx-auth-login-form-username>
+  <banx-auth-login-form-password
+    automation-id="password"
+    [control]="form | extractFormControl: fields.Password"
+  ></banx-auth-login-form-password>
+  <banx-auth-form-error automation-id="error" i18n="Login form|Error message" *ngIf="loginError">Bad credentials.</banx-auth-form-error>
+  <button
+    automation-id="login"
+    class="login-submit"
+    type="button"
+    id="LoginButton"
+    i18n="Login form|Log in"
+    mat-raised-button
+    color="accent"
+    (click)="onLogin()"
+  >
+    Log in
+  </button>
+</banx-auth-form>

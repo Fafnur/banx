@@ -2,480 +2,796 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en-US" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="2041285643909372017" datatype="html">
+        <source>Password</source>
+        <target state="translated">Пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/components/login-form-password/login-form-password.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/components/login-form-password/login-form-password.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Password label</note>
+        <note priority="1" from="meaning">Login form</note>
+      </trans-unit>
+      <trans-unit id="6509547856083328253" datatype="html">
+        <source>Mobile phone</source>
+        <target state="translated">Телефон</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/components/login-form-username/login-form-username.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/components/login-form-username/login-form-username.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Mobile phone</note>
+        <note priority="1" from="meaning">Login form</note>
+      </trans-unit>
+      <trans-unit id="1581161766113245896" datatype="html">
+        <source>Bad credentials.</source>
+        <target state="translated">Неверные данные.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Error message</note>
+        <note priority="1" from="meaning">Login form</note>
+      </trans-unit>
+      <trans-unit id="4608823297980165772" datatype="html">
+        <source> Log in </source>
+        <target state="translated"> Войти </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/login-form.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+        <note priority="1" from="description">Log in</note>
+        <note priority="1" from="meaning">Login form</note>
+      </trans-unit>
+      <trans-unit id="7310791452422294426" datatype="html">
+        <source>Log in - Banx</source>
+        <target state="translated"> Авторизация в Banx </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page-routing.module.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Login page meta</note>
+      </trans-unit>
+      <trans-unit id="8667186715175148594" datatype="html">
+        <source>In order to enter on Banx, enter your mobile phone number and password</source>
+        <target state="translated">Чтобы войти в Banx, введите номер своего мобильного телефона и пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page-routing.module.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="meaning">Login page meta</note>
+      </trans-unit>
+      <trans-unit id="4343809909222790299" datatype="html">
+        <source>sign in, login, banx</source>
+        <target state="translated">логин, вход, авторизация, вход в личный кабинет, banx</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page-routing.module.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="meaning">Login page meta</note>
+      </trans-unit>
+      <trans-unit id="6654864299886617288" datatype="html">
+        <source>Log in <x id="INTERPOLATION" equiv-text="{{ brand }}"/></source>
+        <target state="translated">Войти в <x id="INTERPOLATION" equiv-text="{{ brand }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Title</note>
+        <note priority="1" from="meaning">Auth Login</note>
+      </trans-unit>
+      <trans-unit id="2470947808430002762" datatype="html">
+        <source> Enter your mobile phone number and password </source>
+        <target state="translated">Введите номер своего мобильного телефона и пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <note priority="1" from="description">Subtitle</note>
+        <note priority="1" from="meaning">Auth Login</note>
+      </trans-unit>
+      <trans-unit id="8987698945634192171" datatype="html">
+        <source>Forgot password?</source>
+        <target state="translated">Забыли пароль?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Recovery</note>
+        <note priority="1" from="meaning">Auth links</note>
+      </trans-unit>
+      <trans-unit id="1134358167715053074" datatype="html">
+        <source> Do not provide your login, password and confirmation code, so that scammers do not take advantage of it. The bank employee will never ask them. Check the <x id="INTERPOLATION" equiv-text="{{ brand }}"/> </source>
+        <target state="translated">Не сообщайте логин, пароль и код подтверждения, чтобы этим не воспользовались мошенники. Сотрудник банка никогда их не спросит. Проверяйте сайт банка в адресной строке: <x id="INTERPOLATION" equiv-text="{{ brand }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page.component.html</context>
+          <context context-type="linenumber">11,14</context>
+        </context-group>
+        <note priority="1" from="description">Hint</note>
+        <note priority="1" from="meaning">Auth Login</note>
+      </trans-unit>
+      <trans-unit id="8057620683113224626" datatype="html">
+        <source>Date of birth</source>
+        <target state="translated">Дата рождения</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-form-birthdate/recovery-form-birthdate.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Date of birth label</note>
+        <note priority="1" from="meaning">Recovery form</note>
+      </trans-unit>
+      <trans-unit id="9030419297678313440" datatype="html">
+        <source>Mobile phone</source>
+        <target state="translated">Телефон</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-form-phone/recovery-form-phone.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-form-phone/recovery-form-phone.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">Phone label</note>
+        <note priority="1" from="meaning">Recovery form</note>
+      </trans-unit>
+      <trans-unit id="5871144420091326109" datatype="html">
+        <source>The password was reset</source>
+        <target state="translated">Пароль был сброшен</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-success-dialog/recovery-success-dialog.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Title</note>
+        <note priority="1" from="meaning">Recovery success dialog</note>
+      </trans-unit>
+      <trans-unit id="1977977632946408141" datatype="html">
+        <source>We sent an SMS with a new password on <x id="INTERPOLATION" equiv-text="{{ phone }}"/>.</source>
+        <target state="translated">Мы отправили новый пароль в СМС на телефон <x id="INTERPOLATION" equiv-text="{{ phone }}"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-success-dialog/recovery-success-dialog.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Content</note>
+        <note priority="1" from="meaning">Recovery success dialog</note>
+      </trans-unit>
+      <trans-unit id="23197073046985981" datatype="html">
+        <source>Close</source>
+        <target state="translated">Закрыть</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-success-dialog/recovery-success-dialog.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Close</note>
+        <note priority="1" from="meaning">Recovery success dialog</note>
+      </trans-unit>
+      <trans-unit id="4085398710880171107" datatype="html">
+        <source> Bad credentials. </source>
+        <target state="translated">Неверные данные</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/recovery-form.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <note priority="1" from="description">Error message</note>
+        <note priority="1" from="meaning">Recovery form</note>
+      </trans-unit>
+      <trans-unit id="3525637861730228734" datatype="html">
+        <source> Reset password </source>
+        <target state="translated">Сбросить пароль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/recovery-form.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <note priority="1" from="description">Reset password</note>
+        <note priority="1" from="meaning">Recovery form</note>
+      </trans-unit>
+      <trans-unit id="876426915390548730" datatype="html">
+        <source>Recovery - Banx</source>
+        <target state="translated">Восстановление доступа - Banx</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page-routing.module.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="meaning">Recovery page meta</note>
+      </trans-unit>
+      <trans-unit id="7603493481547580187" datatype="html">
+        <source>Password Recovery - Banx</source>
+        <target state="translated">Восстановление доступа - Banx</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page-routing.module.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="meaning">Recovery page meta</note>
+      </trans-unit>
+      <trans-unit id="7531026908921354598" datatype="html">
+        <source>recovery, reset password, forgot password, banx</source>
+        <target state="translated">восстановление доступа, сброс пароля, banx</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page-routing.module.ts</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="meaning">Recovery page meta</note>
+      </trans-unit>
+      <trans-unit id="5108140837508519593" datatype="html">
+        <source>Password Recovery</source>
+        <target state="translated">Восстановление доступа</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Password recovery</note>
+        <note priority="1" from="meaning">Recovery page</note>
+      </trans-unit>
+      <trans-unit id="5984844143862532209" datatype="html">
+        <source> Enter your mobile phone number and your birthdate </source>
+        <target state="translated">Введите номер своего мобильного телефона и дату своего рождения</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <note priority="1" from="description">Hint</note>
+        <note priority="1" from="meaning">Recovery page</note>
+      </trans-unit>
+      <trans-unit id="8205805076238125358" datatype="html">
+        <source>Log in</source>
+        <target state="translated">Войти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">Log in</note>
+        <note priority="1" from="meaning">Auth links</note>
+      </trans-unit>
+      <trans-unit id="5158411662411311251" datatype="html">
+        <source> Do not provide your login, password and confirmation code, so that scammers do not take advantage of it. The bank employee will never ask them. Check the <x id="INTERPOLATION" equiv-text="{{ brand }}"/>&apos;s website in the address bar: banx.dev </source>
+        <target state="translated">Не сообщайте логин, пароль и код подтверждения, чтобы этим не воспользовались мошенники. Сотрудник банка никогда их не спросит. Проверяйте сайт банка в адресной строке: <x id="INTERPOLATION" equiv-text="{{ brand }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page.component.html</context>
+          <context context-type="linenumber">11,14</context>
+        </context-group>
+        <note priority="1" from="description">Hint</note>
+        <note priority="1" from="meaning">Recovery page</note>
+      </trans-unit>
       <trans-unit id="2923976555062420056" datatype="html">
-        <source>Компания</source>
+        <source>Company</source>
+        <target state="translated">Компания</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="2724272094526549776" datatype="html">
-        <source>О банке</source>
+        <source>About</source>
+        <target state="translated">О банке</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="955414801540379183" datatype="html">
-        <source>Новости</source>
+        <source>News</source>
+        <target state="translated">Новости</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="5437278480830902346" datatype="html">
-        <source>Работа</source>
+        <source>Career</source>
+        <target state="translated">Работа</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="557418663199398510" datatype="html">
-        <source>Точки пополнения</source>
+        <source>Points</source>
+        <target state="translated">Точки пополнения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="7317752612221673981" datatype="html">
-        <source>Банкоматы</source>
+        <source>ATMs</source>
+        <target state="translated">Банкоматы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">42</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="9169311896373756090" datatype="html">
-        <source>Курсы валют</source>
+        <source>Exchange</source>
+        <target state="translated">Курсы валют</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">47</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="1940146070781501631" datatype="html">
-        <source>Контакты</source>
+        <source>Contacts</source>
+        <target state="translated">Контакты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">51</context>
+          <context context-type="linenumber">52</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="5871005704213341462" datatype="html">
-        <source>Помощь</source>
+        <source>Help</source>
+        <target state="translated">Помощь</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">57</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="3685325565189915726" datatype="html">
-        <source>Безопасность</source>
+        <source>Secure</source>
+        <target state="translated">Безопасность</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">62</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="7297673800152654942" datatype="html">
         <source>For investors</source>
+        <target state="translated">For investors</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">67</context>
         </context-group>
         <note priority="1" from="meaning">Menu company</note>
       </trans-unit>
       <trans-unit id="4414890725114043493" datatype="html">
-        <source>Банк</source>
+        <source>Bank</source>
+        <target state="translated">Банк</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">75</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="8511670896020919735" datatype="html">
-        <source>Кредитные карты</source>
+        <source>Credit cards</source>
+        <target state="translated">Кредитные карты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">78</context>
+          <context context-type="linenumber">80</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="5250761033185563246" datatype="html">
-        <source>Дебетовые карты</source>
+        <source>Debit cards</source>
+        <target state="translated">Дебетовые карты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">85</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="1711005156862475707" datatype="html">
-        <source>Премиум</source>
+        <source>Premium</source>
+        <target state="translated">Премиум</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">90</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="4099732366421980840" datatype="html">
-        <source>Кредит наличными</source>
+        <source>Cash loan</source>
+        <target state="translated">Кредит наличными</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">93</context>
+          <context context-type="linenumber">95</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="5978980452135457647" datatype="html">
-        <source>Рефинансирование</source>
+        <source>Refinance</source>
+        <target state="translated">Рефинансирование</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">98</context>
+          <context context-type="linenumber">100</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="8290119551592604322" datatype="html">
-        <source>Автокредит</source>
+        <source>Car loan</source>
+        <target state="translated">Автокредит</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">103</context>
+          <context context-type="linenumber">105</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="6496308796450686580" datatype="html">
-        <source>Вклады</source>
+        <source>Deposits</source>
+        <target state="translated">Вклады</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">108</context>
+          <context context-type="linenumber">110</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="4503215819342429863" datatype="html">
-        <source>Платежи</source>
+        <source>Payments</source>
+        <target state="translated">Платежи</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">115</context>
         </context-group>
         <note priority="1" from="meaning">Menu bank</note>
       </trans-unit>
       <trans-unit id="3289268130386273919" datatype="html">
-        <source>Бизнес</source>
+        <source>Business</source>
+        <target state="translated">Бизнес</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">121</context>
+          <context context-type="linenumber">123</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="2247317978400583671" datatype="html">
-        <source>Расчетный счет</source>
+        <source>Account</source>
+        <target state="translated">Расчетный счет</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">125</context>
+          <context context-type="linenumber">127</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="1447399530260883654" datatype="html">
-        <source>Регистрация бизнеса</source>
+        <source>Registration</source>
+        <target state="translated">Регистрация бизнеса</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">130</context>
+          <context context-type="linenumber">132</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="2767795318894083167" datatype="html">
-        <source>Крупный бизнес</source>
+        <source>Premium</source>
+        <target state="translated">Крупный бизнес</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">135</context>
+          <context context-type="linenumber">137</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="5560005981374037323" datatype="html">
-        <source>Эквайринг</source>
+        <source>Payments</source>
+        <target state="translated">Эквайринг</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">140</context>
+          <context context-type="linenumber">142</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="5332239945375545092" datatype="html">
-        <source>Кредиты</source>
+        <source>Loans</source>
+        <target state="translated">Кредиты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">145</context>
+          <context context-type="linenumber">147</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="879017719667006318" datatype="html">
-        <source>Госзакупки</source>
+        <source>Procurement</source>
+        <target state="translated">Госзакупки</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">150</context>
+          <context context-type="linenumber">152</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="8469846359287824384" datatype="html">
-        <source>Продажи</source>
+        <source>Sales</source>
+        <target state="translated">Продажи</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">155</context>
+          <context context-type="linenumber">157</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="8293045754613620038" datatype="html">
-        <source>Бухгалтерия</source>
+        <source>Accounting</source>
+        <target state="translated">Бухгалтерия</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">160</context>
+          <context context-type="linenumber">162</context>
         </context-group>
         <note priority="1" from="meaning">Menu business</note>
       </trans-unit>
       <trans-unit id="6435390427556743764" datatype="html">
-        <source>Инвестиции</source>
+        <source>Investments</source>
+        <target state="translated">Инвестиции</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">168</context>
+          <context context-type="linenumber">170</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="4258466801398454984" datatype="html">
-        <source>Лента</source>
+        <source>Feed</source>
+        <target state="translated">Лента</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">172</context>
+          <context context-type="linenumber">174</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="2927263262442580999" datatype="html">
-        <source>Каталог</source>
+        <source>Catalog</source>
+        <target state="translated">Каталог</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">177</context>
+          <context context-type="linenumber">179</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="3289551957201828044" datatype="html">
-        <source>Что купить</source>
+        <source>Recommendations</source>
+        <target state="translated">Что купить</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">182</context>
+          <context context-type="linenumber">184</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="2443715695718175851" datatype="html">
-        <source>Премиум</source>
+        <source>Premium</source>
+        <target state="translated">Премиум</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">187</context>
+          <context context-type="linenumber">189</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="1923238355224676355" datatype="html">
-        <source>Брокерский счёт</source>
+        <source>Account</source>
+        <target state="translated">Брокерский счёт</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">192</context>
+          <context context-type="linenumber">194</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="7144679384880667870" datatype="html">
-        <source>ИИС</source>
+        <source>Programs</source>
+        <target state="translated">ИИС</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">197</context>
+          <context context-type="linenumber">199</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="3625860966242181929" datatype="html">
-        <source>Тарифы</source>
+        <source>Tariffs</source>
+        <target state="translated">Тарифы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">202</context>
+          <context context-type="linenumber">204</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="1707538405913919840" datatype="html">
-        <source>Партнерам</source>
+        <source>Become an agent</source>
+        <target state="translated">Партнерам</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">207</context>
+          <context context-type="linenumber">209</context>
         </context-group>
         <note priority="1" from="meaning">Menu invest</note>
       </trans-unit>
       <trans-unit id="4758307738162908758" datatype="html">
-        <source>Страхование</source>
+        <source>Insurance</source>
+        <target state="translated">Страхование</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">215</context>
+          <context context-type="linenumber">217</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="4002108228747529256" datatype="html">
-        <source>Автомобили</source>
+        <source>Cars</source>
+        <target state="translated">Автомобили</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">219</context>
+          <context context-type="linenumber">221</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="7169975693484285269" datatype="html">
-        <source>Путешествия</source>
+        <source>Travel</source>
+        <target state="translated">Путешествия</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">224</context>
+          <context context-type="linenumber">226</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="510012692503474367" datatype="html">
-        <source>Квартира и дом</source>
+        <source>Real Estate</source>
+        <target state="translated">Квартира и дом</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">229</context>
+          <context context-type="linenumber">231</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="6176053049388228636" datatype="html">
-        <source>Здоровье</source>
+        <source>Health</source>
+        <target state="translated">Здоровье</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">234</context>
+          <context context-type="linenumber">236</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="1042543010064559015" datatype="html">
-        <source>Личный кабинет</source>
+        <source>Account</source>
+        <target state="translated">Личный кабинет</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">239</context>
+          <context context-type="linenumber">241</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="826843060753802500" datatype="html">
-        <source>Партнерам</source>
+        <source>Become an agent</source>
+        <target state="translated">Партнерам</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">244</context>
+          <context context-type="linenumber">246</context>
         </context-group>
         <note priority="1" from="meaning">Menu insurance</note>
       </trans-unit>
       <trans-unit id="1595953722653788675" datatype="html">
-        <source>Путешествия</source>
+        <source>Travel</source>
+        <target state="translated">Путешествия</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">252</context>
+          <context context-type="linenumber">254</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="5891866618900001573" datatype="html">
-        <source>Авиабилеты</source>
+        <source>Flights</source>
+        <target state="translated">Авиабилеты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">256</context>
+          <context context-type="linenumber">258</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="8936993805840375625" datatype="html">
-        <source>Отели</source>
+        <source>Hotels</source>
+        <target state="translated">Отели</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">261</context>
+          <context context-type="linenumber">263</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="7560356061877143566" datatype="html">
-        <source>Туры</source>
+        <source>Tours</source>
+        <target state="translated">Туры</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">266</context>
+          <context context-type="linenumber">268</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="3782737710136442624" datatype="html">
-        <source>Ж/д билеты</source>
+        <source>Trains</source>
+        <target state="translated">Ж/д билеты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">271</context>
+          <context context-type="linenumber">273</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="1696536162253376252" datatype="html">
-        <source>Аренда авто</source>
+        <source>Car rental</source>
+        <target state="translated">Аренда авто</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">276</context>
+          <context context-type="linenumber">278</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="8146416147689708468" datatype="html">
-        <source>Куда лететь?</source>
+        <source>Map</source>
+        <target state="translated">Куда лететь?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">281</context>
+          <context context-type="linenumber">283</context>
         </context-group>
         <note priority="1" from="meaning">Menu travel</note>
       </trans-unit>
       <trans-unit id="795532995455209661" datatype="html">
-        <source>Развлечения</source>
+        <source>Entertainment</source>
+        <target state="translated">Развлечения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">289</context>
+          <context context-type="linenumber">291</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="6616507839432449185" datatype="html">
-        <source>Кино</source>
+        <source>Movies</source>
+        <target state="translated">Кино</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">293</context>
+          <context context-type="linenumber">295</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="8384273533245251552" datatype="html">
-        <source>Рестораны</source>
+        <source>Restaurants</source>
+        <target state="translated">Рестораны</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">298</context>
+          <context context-type="linenumber">300</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="6576967634154235265" datatype="html">
-        <source>Концерты</source>
+        <source>Concerts</source>
+        <target state="translated">Концерты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">303</context>
+          <context context-type="linenumber">305</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="2667631164483552819" datatype="html">
-        <source>Театр</source>
+        <source>Spectacles</source>
+        <target state="translated">Театр</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">308</context>
+          <context context-type="linenumber">310</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="9218166120147475813" datatype="html">
-        <source>Спорт</source>
+        <source>Sports</source>
+        <target state="translated">Спорт</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">313</context>
+          <context context-type="linenumber">315</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="7140320787126298997" datatype="html">
-        <source>Мои заказы</source>
+        <source>Account</source>
+        <target state="translated">Мои заказы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/core/menu/common/src/lib/menu.interface.ts</context>
-          <context context-type="linenumber">318</context>
+          <context context-type="linenumber">320</context>
         </context-group>
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="2275328567992347600" datatype="html">
         <source>Такой страницы нет</source>
+        <target state="translated">Возможно вы искали страницы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/not-found/page/src/lib/not-found-page.component.html</context>
           <context context-type="linenumber">3</context>
@@ -483,7 +799,8 @@
         <note priority="1" from="description">Page not found</note>
       </trans-unit>
       <trans-unit id="2565331129624741616" datatype="html">
-        <source>Возможно вы искали страницы</source>
+        <source>Perhaps you were looking for pages</source>
+        <target state="translated">Возможно вы искали страницы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/not-found/page/src/lib/not-found-page.component.html</context>
           <context context-type="linenumber">4</context>
@@ -499,7 +816,8 @@
         <note priority="1" from="description">Perhaps you were looking for pages</note>
       </trans-unit>
       <trans-unit id="8457650534173453049" datatype="html">
-        <source>Доступ к странице запрещен</source>
+        <source>Access is denied</source>
+        <target state="translated">Доступ к странице запрещен</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/permission-denied/page/src/lib/permission-denied-page.component.html</context>
           <context context-type="linenumber">3</context>
@@ -508,6 +826,7 @@
       </trans-unit>
       <trans-unit id="5779341115787231384" datatype="html">
         <source>Внутренняя ошибка сервера</source>
+        <target state="translated">Извините, что-то пошло не так. Обратитесь в службу поддержки.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/server-error/page/src/lib/server-error-page.component.html</context>
           <context context-type="linenumber">3</context>
@@ -515,7 +834,8 @@
         <note priority="1" from="description">Internal server error</note>
       </trans-unit>
       <trans-unit id="885366350771351429" datatype="html">
-        <source>Извините, что-то пошло не так. Обратитесь в службу поддержки.</source>
+        <source>Sorry, something went wrong. Contact Support.</source>
+        <target state="translated">Извините, что-то пошло не так. Обратитесь в службу поддержки.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/server-error/page/src/lib/server-error-page.component.html</context>
           <context context-type="linenumber">4</context>
@@ -523,7 +843,8 @@
         <note priority="1" from="description">Something went wrong</note>
       </trans-unit>
       <trans-unit id="1542838410907889299" datatype="html">
-        <source>Скачайте приложение <x id="INTERPOLATION" equiv-text="{{ brand }}"/></source>
+        <source>Get a <x id="INTERPOLATION" equiv-text="{{ brand }}"/> application</source>
+        <target state="translated">Скачайте приложение <x id="INTERPOLATION" equiv-text="{{ brand }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
           <context context-type="linenumber">5</context>
@@ -531,7 +852,8 @@
         <note priority="1" from="description">Errors application title</note>
       </trans-unit>
       <trans-unit id="8042066093588283929" datatype="html">
-        <source>Быстрый доступ к экосистеме <x id="INTERPOLATION" equiv-text="{{ brand }}"/></source>
+        <source>Quick access to the <x id="INTERPOLATION" equiv-text="{{ brand }}"/> ecosystem</source>
+        <target state="translated">Быстрый доступ к экосистеме <x id="INTERPOLATION" equiv-text="{{ brand }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
           <context context-type="linenumber">6</context>
@@ -539,7 +861,8 @@
         <note priority="1" from="description">Errors application hint</note>
       </trans-unit>
       <trans-unit id="6931779696965192570" datatype="html">
-        <source>Подробнее в App Store</source>
+        <source> App Store </source>
+        <target state="translated">Подробнее в App Store</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
           <context context-type="linenumber">19,20</context>
@@ -547,7 +870,8 @@
         <note priority="1" from="description">Link to App Store</note>
       </trans-unit>
       <trans-unit id="6316059824251130600" datatype="html">
-        <source> Подробнее в Google Play </source>
+        <source> Google Play </source>
+        <target state="translated">Подробнее в Google Play</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
           <context context-type="linenumber">29,30</context>
@@ -555,7 +879,8 @@
         <note priority="1" from="description">Link to Google Play</note>
       </trans-unit>
       <trans-unit id="2256581797902573217" datatype="html">
-        <source>Скачать</source>
+        <source> Download </source>
+        <target state="translated">Скачать</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
           <context context-type="linenumber">39,40</context>
@@ -563,7 +888,8 @@
         <note priority="1" from="description">Link to download app</note>
       </trans-unit>
       <trans-unit id="7598979906711848586" datatype="html">
-        <source>Кредитные карты</source>
+        <source> Credit cards </source>
+        <target state="translated">Кредитные карты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
           <context context-type="linenumber">3,4</context>
@@ -571,7 +897,8 @@
         <note priority="1" from="description">Link label to credit card</note>
       </trans-unit>
       <trans-unit id="5176072888126126102" datatype="html">
-        <source>Дебетовые карты</source>
+        <source> Debit cards </source>
+        <target state="translated">Дебетовые карты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
           <context context-type="linenumber">6,7</context>
@@ -579,7 +906,8 @@
         <note priority="1" from="description">Link label to debit card</note>
       </trans-unit>
       <trans-unit id="2127810861310406212" datatype="html">
-        <source>Вклады</source>
+        <source>Deposits</source>
+        <target state="translated">Вклады</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
           <context context-type="linenumber">8</context>
@@ -587,7 +915,8 @@
         <note priority="1" from="description">Link label to deposits</note>
       </trans-unit>
       <trans-unit id="4830487269617493033" datatype="html">
-        <source>Главная</source>
+        <source>Home page</source>
+        <target state="translated">Главная</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
           <context context-type="linenumber">9</context>
@@ -595,7 +924,8 @@
         <note priority="1" from="description">Home page</note>
       </trans-unit>
       <trans-unit id="4030347628819272688" datatype="html">
-        <source>©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. Все права защищены.</source>
+        <source>©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. All rights reserved.</source>
+        <target state="translated">©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. Все права защищены.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer-bottom/components/copyright/copyright.component.html</context>
           <context context-type="linenumber">1</context>
@@ -604,7 +934,8 @@
         <note priority="1" from="meaning">Footer copyright</note>
       </trans-unit>
       <trans-unit id="2373475951066023503" datatype="html">
-        <source>8 812 576-41-11</source>
+        <source>1-844-872-4681</source>
+        <target state="translated">8 812 576-41-11</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer-top/components/footer-phone/footer-phone.component.html</context>
           <context context-type="linenumber">1</context>
@@ -613,7 +944,8 @@
         <note priority="1" from="meaning">Footer brand</note>
       </trans-unit>
       <trans-unit id="2582125887723382367" datatype="html">
-        <source>Для звонков по России</source>
+        <source>For calls to the USA</source>
+        <target state="translated">Для звонков по России</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/footer-top/components/footer-phone/footer-phone.component.html</context>
           <context context-type="linenumber">2</context>
@@ -622,13 +954,54 @@
         <note priority="1" from="meaning">Footer brand</note>
       </trans-unit>
       <trans-unit id="8376377964020781600" datatype="html">
-        <source>Войти</source>
+        <source>Sign in</source>
+        <target state="translated">Войти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/login/login.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
         <note priority="1" from="description">Label</note>
         <note priority="1" from="meaning">Toolbar login</note>
+      </trans-unit>
+      <trans-unit id="1881186468817805639" datatype="html">
+        <source>Account</source>
+        <target state="translated">Личный кабинет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Account link</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
+      <trans-unit id="8164245929047081353" datatype="html">
+        <source>User menu</source>
+        <target state="translated">Меню пользователя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">User menu</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
+      <trans-unit id="3538835956763898384" datatype="html">
+        <source>Profile</source>
+        <target state="translated">Профиль</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <note priority="1" from="description">User profile</note>
+        <note priority="1" from="meaning">User card</note>
+      </trans-unit>
+      <trans-unit id="1303531529522727486" datatype="html">
+        <source>Logout</source>
+        <target state="translated">Выйти</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/user/user.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">Logout</note>
+        <note priority="1" from="meaning">User card</note>
       </trans-unit>
     </body>
   </file>

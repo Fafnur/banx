@@ -1,0 +1,15 @@
+@import 'libs/ui/stylesheets/utils';
+
+.auth-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-active;
+
+  @include media-breakpoint-up(mkm) {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+}

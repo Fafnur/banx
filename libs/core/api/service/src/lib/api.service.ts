@@ -14,7 +14,7 @@ export class ApiService {
   constructor(private readonly httpClient: HttpClient, private readonly configService: ConfigService) {}
 
   makeUrl(url: string): string {
-    return url.indexOf('http') === 0 ? url : `${this.configService.getConfig().apiHost}${url}`;
+    return url.indexOf('http') === 0 ? url : `${this.configService.config.apiHost}${url}`;
   }
 
   get<T = void>(url: string, options?: Partial<ApiRequestOptions>): Observable<T> {

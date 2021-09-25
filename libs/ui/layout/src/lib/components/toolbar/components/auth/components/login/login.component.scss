@@ -1,9 +1,15 @@
 @import 'libs/ui/stylesheets/utils';
 
+:host {
+  display: flex;
+  height: 100%;
+}
+
 .login {
   display: flex;
   text-decoration: none;
   color: $color-active;
+  margin: auto;
 
   &:hover {
     color: $color-default;

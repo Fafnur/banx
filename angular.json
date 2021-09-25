@@ -33,11 +33,159 @@
       "changeDetection": "OnPush"
     },
     "@schematics/angular:component": {
+      "name": "",
       "style": "scss",
       "changeDetection": "OnPush"
     }
   },
   "projects": {
+    "auth-api": {
+      "projectType": "library",
+      "root": "libs/auth/api",
+      "sourceRoot": "libs/auth/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/api/src/**/*.ts", "libs/auth/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-guards": {
+      "projectType": "library",
+      "root": "libs/auth/guards",
+      "sourceRoot": "libs/auth/guards/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/guards/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/guards/src/**/*.ts", "libs/auth/guards/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-login-page": {
+      "projectType": "library",
+      "root": "libs/auth/login/page",
+      "sourceRoot": "libs/auth/login/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/login/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/login/page/src/**/*.ts", "libs/auth/login/page/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-pages": {
+      "projectType": "library",
+      "root": "libs/auth/pages",
+      "sourceRoot": "libs/auth/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/pages/src/**/*.ts", "libs/auth/pages/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-recovery-page": {
+      "projectType": "library",
+      "root": "libs/auth/recovery/page",
+      "sourceRoot": "libs/auth/recovery/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/recovery/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/recovery/page/src/**/*.ts", "libs/auth/recovery/page/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-shared": {
+      "projectType": "library",
+      "root": "libs/auth/shared",
+      "sourceRoot": "libs/auth/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/shared/src/**/*.ts", "libs/auth/shared/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "auth-state": {
+      "projectType": "library",
+      "root": "libs/auth/state",
+      "sourceRoot": "libs/auth/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/auth/state/src/**/*.ts", "libs/auth/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "backend-api": {
       "root": "apps/backend/api",
       "sourceRoot": "apps/backend/api/src",
@@ -277,6 +425,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/core/forms/utils/src/**/*.ts", "libs/core/forms/utils/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-logger-service": {
+      "projectType": "library",
+      "root": "libs/core/logger/service",
+      "sourceRoot": "libs/core/logger/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/logger/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/logger/service/src/**/*.ts", "libs/core/logger/service/src/**/*.html"]
           }
         }
       }
@@ -583,7 +752,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/utils"],
           "options": {
             "jestConfig": "libs/core/utils/jest.config.js",
             "passWithNoTests": true
@@ -896,7 +1064,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/content/business/account/page"],
           "options": {
             "jestConfig": "libs/russian/content/business/account/page/jest.config.js",
             "passWithNoTests": true
@@ -1178,7 +1345,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui/nav"],
           "options": {
             "jestConfig": "libs/ui/nav/jest.config.js",
             "passWithNoTests": true

@@ -1,0 +1,18 @@
+<mat-form-field appearance="fill" fullWidth>
+  <mat-label automation-id="label" i18n="Login form|Mobile phone">Mobile phone</mat-label>
+  <div>
+    <input
+      automation-id="control"
+      matInput
+      type="tel"
+      i18n-placeholder="Login form|Mobile phone"
+      placeholder="Mobile phone"
+      id="AuthUsername"
+      name="username"
+      autocomplete="username"
+      [formControl]="control"
+      [imask]="{ mask: '+{7} 000 000-00-00' }"
+      [unmask]="true"
+    />
+  </div>
+</mat-form-field>

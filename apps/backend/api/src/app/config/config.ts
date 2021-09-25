@@ -25,7 +25,7 @@ export function getTypeOrmConfig(): TypeOrmModuleOptions {
 
 export function getCorsConfig(): CorsOptions {
   return {
-    origin: process.env.CORS_ORIGIN ?? ['localhost:4200', 'localhost:4000'],
+    origin: process.env.CORS_ORIGIN ?? ['http://localhost:4200', 'http://localhost:4000'],
     credentials: process.env.CORS_CREDENTIALS ? process.env?.CORS_CREDENTIALS === 'true' : true,
     allowedHeaders: process.env.CORS_ALLOWED_HEADERS ?? ['Content-Type', 'Authorization', 'User-Agent', 'Enctype', 'Cache-Control'],
     methods: process.env.CORS_METHODS ?? 'GET,HEAD,PUT,PATCH,POST,DELETE',

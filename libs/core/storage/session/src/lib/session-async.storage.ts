@@ -8,8 +8,6 @@ import { SessionSyncStorage } from './session-sync.storage';
   providedIn: 'root',
 })
 export class SessionAsyncStorage extends AbstractAsyncStorage {
-  protected key = '_eklst_';
-
   constructor(private readonly localSyncStorage: SessionSyncStorage) {
     super(localSyncStorage);
   }

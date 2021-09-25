@@ -2,6 +2,9 @@
 
 :host {
   display: block;
-  border-bottom: 2px solid transparent;
-  margin: auto 0;
+  margin: -0.5rem 0;
+
+  @include media-breakpoint-up(md) {
+    margin: -1rem 0;
+  }
 }

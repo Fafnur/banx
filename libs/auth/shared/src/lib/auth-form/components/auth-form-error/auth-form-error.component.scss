@@ -1,0 +1,8 @@
+@use '~@angular/material' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  color: mat.get-color-from-palette(mat.$red-palette, 500);
+  margin-bottom: 1rem;
+}

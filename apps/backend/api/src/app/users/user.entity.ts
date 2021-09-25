@@ -15,6 +15,9 @@ export class UserEntity implements User {
   @Column()
   phone!: string;
 
+  @Column({ type: 'date' })
+  birthdate!: string;
+
   @Column()
   password!: string;
 

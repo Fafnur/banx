@@ -7,16 +7,9 @@
 
   @include media-breakpoint-up(md) {
     margin-right: 0.5rem;
-    ::ng-deep .nav-link {
-      margin: auto 0.5rem;
-      font-size: 0.8rem;
-    }
   }
+
   @include media-breakpoint-up(lg) {
     margin-right: 1rem;
-    ::ng-deep .nav-link {
-      margin: auto 1rem;
-      font-size: 0.9rem;
-    }
   }
 }

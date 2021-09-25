@@ -20,7 +20,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.breakpointObserver
-      .observe(mediaBreakpointUp(GridBreakpointType.Md))
+      .observe(mediaBreakpointUp(GridBreakpointType.Lg))
       .pipe(
         tap((breakpoints) => {
           this.isDesktopScreen = breakpoints.matches;

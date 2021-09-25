@@ -4,17 +4,19 @@ import { Config } from './config.interface';
 
 export const CONFIG_DEFAULT: Config = {
   apiHost: '',
+  version: 'local',
 };
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConfigService {
-  private readonly config: Config;
+  readonly config: Config;
 
   constructor() {
     this.config = {
       apiHost: process.env.API_HOST ?? CONFIG_DEFAULT.apiHost,
+      version: process.env.VERSION ?? CONFIG_DEFAULT.version,
     };
   }
 

@@ -6,6 +6,10 @@
   //height: 100%;
 }
 
+//.nav::-webkit-scrollbar {
+//  display: none;
+//}
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -15,9 +19,6 @@
   @include media-breakpoint-up(md) {
   }
 }
-//.nav::-webkit-scrollbar {
-//  display: none;
-//}
 
 .nav-link {
   display: flex;
@@ -42,6 +43,11 @@
   @include media-breakpoint-up(md) {
     margin: auto 1rem;
   }
+}
+
+.nav-menu {
+  margin: auto 0;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-label {

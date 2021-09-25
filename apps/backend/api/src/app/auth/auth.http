@@ -17,3 +17,13 @@ Accept: application/json
   "username": "guest",
   "password": "123456"
 }
+
+### Recovery
+POST http://localhost:3000/auth/recovery
+Content-Type: application/json
+Accept: application/json
+
+{
+  "phone": "9231002233",
+  "birthdate": "1992-02-02"
+}

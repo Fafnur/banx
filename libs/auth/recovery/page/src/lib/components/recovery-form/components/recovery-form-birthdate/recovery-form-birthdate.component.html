@@ -1,0 +1,23 @@
+<mat-form-field color="primary" appearance="fill" fullWidth>
+  <mat-label automation-id="label" i18n="Recovery form|Date of birth label">Date of birth</mat-label>
+  <input
+    automation-id="control"
+    matInput
+    name="data[customer][birthdate]"
+    id="AuthRecoveryBirthdate"
+    [min]="minDate"
+    [max]="maxDate"
+    [formControl]="maskControl"
+    [imask]="maskOptions"
+  />
+  <input
+    type="hidden"
+    [formControl]="control"
+    [matDatepicker]="birthdatePicker"
+    [min]="minDate"
+    [max]="maxDate"
+    (dateChange)="onSelected($event)"
+  />
+  <mat-datepicker-toggle matSuffix [for]="birthdatePicker"></mat-datepicker-toggle>
+  <mat-datepicker #birthdatePicker [touchUi]="!isDesktopScreen"></mat-datepicker>
+</mat-form-field>

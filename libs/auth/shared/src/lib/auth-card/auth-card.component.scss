@@ -1,0 +1,13 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  max-width: 30rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include media-breakpoint-up(md) {
+    margin: 5rem auto 0 auto;
+  }
+}

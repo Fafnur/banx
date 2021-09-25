@@ -27,6 +27,27 @@
     ]
   },
   "projects": {
+    "auth-api": {
+      "tags": []
+    },
+    "auth-guards": {
+      "tags": []
+    },
+    "auth-login-page": {
+      "tags": []
+    },
+    "auth-pages": {
+      "tags": []
+    },
+    "auth-recovery-page": {
+      "tags": []
+    },
+    "auth-shared": {
+      "tags": []
+    },
+    "auth-state": {
+      "tags": []
+    },
     "backend-api": {
       "tags": []
     },
@@ -55,6 +76,9 @@
       "tags": []
     },
     "core-forms-utils": {
+      "tags": []
+    },
+    "core-logger-service": {
       "tags": []
     },
     "core-menu-common": {
