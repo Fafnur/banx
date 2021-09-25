@@ -96,7 +96,7 @@ export class RecoveryFormComponent implements OnInit, OnDestroy {
     };
     const secret = `${res.year}-${res.month.toString().padStart(2, '0')}-${res.day.toString().padStart(2, '0')}`;
 
-    // NOTE: Russian only
+    // TODO: Russian only
     return {
       [UserField.Phone]: data[UserField.Phone].slice(1),
       [UserField.Birthdate]: secret,

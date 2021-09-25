@@ -18,7 +18,7 @@ export class RecoveryFormBirthdateComponent implements OnInit, OnDestroy {
 
   maxDate!: Date;
   minDate!: Date;
-  maskOptions!: any;
+  maskOptions!: { mask: typeof Date; min: Date; max: Date };
 
   isDesktopScreen = false;
   maskControl = new FormControl(null, [Validators.required]);

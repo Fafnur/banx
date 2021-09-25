@@ -18,6 +18,6 @@ export class AuthApiService {
   }
 
   recovery(payload: UserSecrets): Observable<void> {
-    return this.apiService.post<void>(AUTH_API_ROUTES.recovery, payload);
+    return this.apiService.post(AUTH_API_ROUTES.recovery, payload);
   }
 }

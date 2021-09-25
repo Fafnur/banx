@@ -58,6 +58,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
     this.authFacade.loginSuccess$
       .pipe(
+        // TODO: After created customer space need to add redirect to profile
         tap(() => void this.navigationService.navigateByUrl(this.paths.home)),
         takeUntil(this.destroy$)
       )
@@ -73,7 +74,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.form.markAllAsTouched();
 
     if (this.form.valid) {
-      // NOTE: Russian only
+      // TODO: Russian only. Need to use phone prefix.
       this.authFacade.login({ ...this.form.value, phone: this.form.value[UserField.Phone].slice(1) });
     }
 
