@@ -181,6 +181,18 @@
       "tags": [],
       "implicitDependencies": ["russian-cabinet"]
     },
+    "trackers-api": {
+      "tags": []
+    },
+    "trackers-common": {
+      "tags": []
+    },
+    "trackers-service": {
+      "tags": []
+    },
+    "trackers-state": {
+      "tags": []
+    },
     "ui-accordion": {
       "tags": []
     },
