@@ -1,1 +1,1 @@
-export * from './lib/trackers-common.module';
+export * from './lib/tracker.interface';
