@@ -71,6 +71,7 @@
       "@banx/trackers/api": ["libs/trackers/api/src/index.ts"],
       "@banx/trackers/common": ["libs/trackers/common/src/index.ts"],
       "@banx/trackers/service": ["libs/trackers/service/src/index.ts"],
+      "@banx/trackers/shared": ["libs/trackers/shared/src/index.ts"],
       "@banx/trackers/state": ["libs/trackers/state/src/index.ts"],
       "@banx/ui/accordion": ["libs/ui/accordion/src/index.ts"],
       "@banx/ui/container": ["libs/ui/container/src/index.ts"],

@@ -193,6 +193,9 @@
     "trackers-service": {
       "tags": []
     },
+    "trackers-shared": {
+      "tags": []
+    },
     "trackers-state": {
       "tags": []
     },

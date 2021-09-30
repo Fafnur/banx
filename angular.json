@@ -1316,6 +1316,27 @@
         }
       }
     },
+    "trackers-shared": {
+      "projectType": "library",
+      "root": "libs/trackers/shared",
+      "sourceRoot": "libs/trackers/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/trackers/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/trackers/shared/src/**/*.ts", "libs/trackers/shared/src/**/*.html"]
+          }
+        }
+      }
+    },
     "trackers-state": {
       "projectType": "library",
       "root": "libs/trackers/state",
