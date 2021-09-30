@@ -126,6 +126,9 @@
     "core-utils": {
       "tags": []
     },
+    "core-visitor-service": {
+      "tags": []
+    },
     "errors-not-found-page": {
       "tags": []
     },

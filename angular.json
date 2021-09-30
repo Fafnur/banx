@@ -765,6 +765,27 @@
         }
       }
     },
+    "core-visitor-service": {
+      "projectType": "library",
+      "root": "libs/core/visitor/service",
+      "sourceRoot": "libs/core/visitor/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/visitor/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/visitor/service/src/**/*.ts", "libs/core/visitor/service/src/**/*.html"]
+          }
+        }
+      }
+    },
     "errors-not-found-page": {
       "projectType": "library",
       "root": "libs/errors/not-found/page",
