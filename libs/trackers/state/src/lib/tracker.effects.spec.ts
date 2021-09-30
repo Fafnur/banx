@@ -118,4 +118,18 @@ describe('TrackerEffects', () => {
       verify(trackerServiceMock.add(deepEqual(TRACKER_EVENT_STUB))).once();
     });
   });
+
+  // describe('routerNavigated$', () => {
+  //   it('should return call tracker add', () => {
+  //     const action = { type: '@ngrx/router-store/navigated', payload: { event: { url: '/site' } } };
+  //     const payload = { element: 'router', type: TrackerEventType.Navigate, value: '/site' };
+  //
+  //     actions$ = hot('-a-|', { a: action });
+  //     const expected = hot('---|');
+  //
+  //     expect(effects.addRecord$).toBeObservable(expected);
+  //
+  //     verify(trackerServiceMock.add(anything())).once();
+  //   });
+  // });
 });
