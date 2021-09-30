@@ -1,6 +1,0 @@
-### Login
-POST http://localhost:3000/records
-Content-Type: application/json
-Accept: application/json
-
-[]

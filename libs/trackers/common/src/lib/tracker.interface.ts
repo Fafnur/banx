@@ -22,23 +22,23 @@ export enum TrackerEventType {
 export interface TrackerEvent<T extends Record<string, any> = Record<string, any>> {
   type: TrackerEventType;
   element: string;
-  value?: unknown;
+  value?: string;
   time?: number;
   url?: string;
   user?: number;
-  keys?: string[];
+  keys?: string;
   data?: T;
 }
 
 export interface TrackerRecord<T extends Record<string, any> = Record<string, any>> {
-  id: string;
+  uid: string;
   type: TrackerEventType;
   element: string;
-  value: unknown;
+  value: string;
   time: number;
   url: string;
-  user: number | null;
-  keys: string[];
+  user?: number;
+  keys: string;
   data?: T;
 }
 

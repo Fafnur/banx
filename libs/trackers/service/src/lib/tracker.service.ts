@@ -98,40 +98,40 @@ export class TrackerService {
   }
 
   getRecords(): TrackerRecord[] {
-    return this.sending.length ? this.records.filter((record) => !this.sending.includes(record.id)) : this.records;
+    return this.sending.length ? this.records.filter((record) => !this.sending.includes(record.uid)) : this.records;
   }
 
   removeRecords(records: TrackerRecord[]): void {
     this.unmarkRecords(records);
 
-    const ids = records.map((record) => record.id);
-    this.records = this.records.filter((record) => !ids.includes(record.id));
+    const ids = records.map((record) => record.uid);
+    this.records = this.records.filter((record) => !ids.includes(record.uid));
 
     this.localAsyncStorage.setItem(TrackerKeys.Records, this.records);
   }
 
   markRecords(records: TrackerRecord[]): void {
-    records.forEach((record) => this.sending.push(record.id));
+    records.forEach((record) => this.sending.push(record.uid));
   }
 
   unmarkRecords(records: TrackerRecord[]): void {
-    const ids = records.map((record) => record.id);
+    const ids = records.map((record) => record.uid);
 
     this.sending = this.sending.filter((recordId) => !ids.includes(recordId));
   }
 
   private createRecord(payload: TrackerEvent): TrackerRecord {
-    const id = uuidv4();
+    const uid = uuidv4();
     const time = payload.time ? payload.time : new Date().getTime();
     let value = payload.value;
     if (value == null || value === 'null') {
       value = '';
     }
-    const keys = payload.keys ?? [];
+    const keys = payload.keys ?? '';
     const url = this.router.url;
     const user = this.localAsyncStorage.state[UserStorageKeys.Id] ?? null;
     const data = { version: this.configService.config.version };
 
-    return { id, type: payload.type, element: payload.element, url, time, value, keys, user, data };
+    return { uid, type: payload.type, element: payload.element, url, time, value, keys, user, data };
   }
 }

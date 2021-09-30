@@ -5,7 +5,7 @@ import { ApiService } from '@banx/core/api/service';
 import { TrackerRecordsDto } from '@banx/trackers/common';
 
 export const TRACKER_API_ROUTES = {
-  save: '/records',
+  save: '/trackers/records',
 };
 
 @Injectable()
@@ -13,6 +13,6 @@ export class TrackerApiService {
   constructor(private readonly apiService: ApiService) {}
 
   save(payload: TrackerRecordsDto): Observable<void> {
-    return this.apiService.post<void>(TRACKER_API_ROUTES.save, payload);
+    return this.apiService.post(TRACKER_API_ROUTES.save, payload);
   }
 }

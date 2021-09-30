@@ -8,13 +8,12 @@ export const TRACKER_EVENT_STUB: TrackerEvent = {
 export const TRACKER_RECORD_STUB: TrackerRecord = {
   type: TRACKER_EVENT_STUB.type,
   element: TRACKER_EVENT_STUB.element,
-  id: '1234',
+  uid: '1234',
   time: 12345,
   data: {},
   url: '/',
-  keys: [],
+  keys: '',
   value: '',
-  user: null,
 };
 
 export const TRACKER_RECORDS_STUB: TrackerRecord[] = [TRACKER_RECORD_STUB];
