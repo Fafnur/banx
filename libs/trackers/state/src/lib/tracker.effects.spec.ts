@@ -11,6 +11,7 @@ import { API_ERROR_RESPONSE_STUB } from '@banx/core/api/service';
 import { LoggerService } from '@banx/core/logger/service';
 import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { providerOf } from '@banx/core/testing';
+import { VisitorService } from '@banx/core/visitor/service';
 import { TrackerApiService } from '@banx/trackers/api';
 import { TRACKER_EVENT_STUB, TRACKER_RECORDS_DTO_STUB, TRACKER_RECORDS_STUB } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';
@@ -25,12 +26,14 @@ describe('TrackerEffects', () => {
   let trackerServiceMock: TrackerService;
   let loggerServiceMock: LoggerService;
   let localAsyncStorageMock: LocalAsyncStorage;
+  let visitorServiceMock: VisitorService;
 
   beforeEach(() => {
     trackerApiServiceMock = mock(TrackerApiService);
     loggerServiceMock = mock(LoggerService);
     trackerServiceMock = mock(TrackerService);
     localAsyncStorageMock = mock(LocalAsyncStorage);
+    visitorServiceMock = mock(VisitorService);
   });
 
   beforeEach(
@@ -45,12 +48,15 @@ describe('TrackerEffects', () => {
           providerOf(TrackerService, trackerServiceMock),
           providerOf(LoggerService, loggerServiceMock),
           providerOf(LocalAsyncStorage, localAsyncStorageMock),
+          providerOf(VisitorService, visitorServiceMock),
         ],
       });
     })
   );
 
   beforeEach(() => {
+    when(visitorServiceMock.getUuid()).thenReturn('');
+
     effects = TestBed.inject(TrackerEffects);
   });
 

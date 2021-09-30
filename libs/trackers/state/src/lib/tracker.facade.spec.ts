@@ -7,6 +7,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 import { LoggerService } from '@banx/core/logger/service';
 import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { providerOf } from '@banx/core/testing';
+import { VisitorService } from '@banx/core/visitor/service';
 import { TrackerApiService } from '@banx/trackers/api';
 import { TRACKER_EVENT_STUB } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';
@@ -21,12 +22,14 @@ describe('TrackerFacade', () => {
   let trackerServiceMock: TrackerService;
   let loggerServiceMock: LoggerService;
   let localAsyncStorageMock: LocalAsyncStorage;
+  let visitorServiceMock: VisitorService;
 
   beforeEach(() => {
     trackerApiServiceMock = mock(TrackerApiService);
     loggerServiceMock = mock(LoggerService);
     trackerServiceMock = mock(TrackerService);
     localAsyncStorageMock = mock(LocalAsyncStorage);
+    visitorServiceMock = mock(VisitorService);
   });
 
   describe('used in NgModule', () => {
@@ -39,6 +42,7 @@ describe('TrackerFacade', () => {
           providerOf(TrackerService, trackerServiceMock),
           providerOf(LoggerService, loggerServiceMock),
           providerOf(LocalAsyncStorage, localAsyncStorageMock),
+          providerOf(VisitorService, visitorServiceMock),
         ],
       })
       class CustomFeatureModule {}

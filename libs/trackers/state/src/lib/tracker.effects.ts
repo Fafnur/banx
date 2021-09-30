@@ -6,6 +6,7 @@ import { throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
 import { LoggerService } from '@banx/core/logger/service';
+import { VisitorService } from '@banx/core/visitor/service';
 import { TrackerApiService } from '@banx/trackers/api';
 import { TrackerService } from '@banx/trackers/service';
 
@@ -35,7 +36,7 @@ export class TrackerEffects implements OnInitEffects {
             ? this.trackerApiService
                 .save({
                   records,
-                  visitor: '',
+                  visitor: this.visitorService.getUuid(),
                 })
                 .pipe(
                   map<void, Action>(() => {
@@ -72,6 +73,7 @@ export class TrackerEffects implements OnInitEffects {
     private readonly actions$: Actions,
     private readonly loggerService: LoggerService,
     private readonly trackerService: TrackerService,
+    private readonly visitorService: VisitorService,
     private readonly trackerApiService: TrackerApiService
   ) {}
 
