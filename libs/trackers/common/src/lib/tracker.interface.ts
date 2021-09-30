@@ -41,3 +41,8 @@ export interface TrackerRecord<T extends Record<string, any> = Record<string, an
   keys: string[];
   data?: T;
 }
+
+export interface TrackerRecordsDto {
+  visitor: string;
+  records: TrackerRecord[];
+}

@@ -1,1 +1,2 @@
-export * from './lib/trackers-state.module';
+export * from './lib/tracker.facade';
+export * from './lib/tracker-state.module';
