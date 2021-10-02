@@ -12,6 +12,7 @@ import { SOCIAL_GROUPS, SOCIALS, SocialType } from '@banx/core/social/common';
 import { RootStoreModule } from '@banx/core/store/root';
 import { LocalizationModule } from '@banx/russian/localization';
 import { RUSSIAN_NAVIGATION_PATHS } from '@banx/russian/navigation/common';
+import { TrackerStateModule } from '@banx/trackers/state';
 import { LayoutModule } from '@banx/ui/layout';
 
 import { environment } from '../environments/environment';
@@ -25,6 +26,7 @@ import { environment } from '../environments/environment';
     ApiContentTypeModule,
     ApiWithCredentialsModule,
     RootStoreModule,
+    TrackerStateModule,
     !environment.production ? StoreDevtoolsModule.instrument({ logOnly: environment.production }) : [],
   ],
   providers: [

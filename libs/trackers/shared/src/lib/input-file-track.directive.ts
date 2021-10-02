@@ -21,7 +21,7 @@ export class InputFileTrackDirective {
     this.trackerFacade?.add({
       type,
       value: this.trackValue ?? 'attach',
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
     });
   }

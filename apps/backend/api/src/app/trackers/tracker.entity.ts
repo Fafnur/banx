@@ -24,8 +24,8 @@ export class TrackerEntity implements TrackerRecord {
   @Column({ type: 'text' })
   value!: string;
 
-  @Column()
-  time!: number;
+  @Column({ type: 'datetime' })
+  time!: string;
 
   @Column({ type: 'tinytext' })
   url!: string;

@@ -20,7 +20,7 @@ export class ButtonTrackDirective {
   onClick(): void {
     this.trackerLiteFacade?.add({
       type: TrackerEventType.Click,
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
       value: this.trackValue ?? this.routerLink.toString() ?? this.href.toString() ?? '',
     });

@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
@@ -19,39 +18,16 @@ export class TrackerService {
 
   private sending: string[] = [];
 
-  private readonly added$ = new Subject<void>();
+  private readonly added$ = new Subject<TrackerRecord>();
 
   constructor(
     private readonly router: Router,
     private readonly localAsyncStorage: LocalAsyncStorage,
-    private readonly configService: ConfigService,
-    @Inject(DOCUMENT) private readonly document: Document
+    private readonly configService: ConfigService
   ) {}
 
-  get recordAdded$(): Observable<void> {
+  get recordAdded$(): Observable<TrackerRecord> {
     return this.added$.asObservable();
-  }
-
-  init(): void {
-    this.document.addEventListener(TrackerEventType.Focus, () =>
-      this.add({
-        element: 'window',
-        type: TrackerEventType.Focus,
-      })
-    );
-    this.document.addEventListener(TrackerEventType.Blur, () =>
-      this.add({
-        element: 'window',
-        type: TrackerEventType.Blur,
-      })
-    );
-    this.document.addEventListener(TrackerEventType.VisibilityChange, () => {
-      this.add({
-        element: 'window',
-        type: TrackerEventType.VisibilityChange,
-        value: this.document.hidden ? 'invisible' : 'visible',
-      });
-    });
   }
 
   private get isStickyKeys(): boolean {
@@ -75,7 +51,7 @@ export class TrackerService {
           element: payload.element,
           type: TrackerEventType.StickyKeyEnd,
           value: this.repeats.toString(),
-          time: payload.time ? payload.time - 1 : Date.now(),
+          time: payload.time ?? new Date().toISOString(),
         });
       }
       this.repeats = 0;
@@ -90,7 +66,7 @@ export class TrackerService {
       this.localAsyncStorage.setItem(TrackerKeys.Records, this.records);
     }
     this.lastRecord = record;
-    this.added$.next();
+    this.added$.next(record);
   }
 
   clear(): void {
@@ -122,7 +98,7 @@ export class TrackerService {
 
   private createRecord(payload: TrackerEvent): TrackerRecord {
     const uid = uuidv4();
-    const time = payload.time ? payload.time : new Date().getTime();
+    const time = payload.time ?? new Date().toISOString();
     let value = payload.value;
     if (value == null || value === 'null') {
       value = '';

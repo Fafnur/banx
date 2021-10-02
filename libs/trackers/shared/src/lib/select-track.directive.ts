@@ -41,7 +41,7 @@ export class SelectTrackDirective {
     this.trackerFacade?.add({
       type,
       value: this.ngControl?.value ?? '',
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
     });
   }

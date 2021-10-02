@@ -44,7 +44,7 @@ export class AutocompleteTrackDirective {
     this.trackerFacade?.add({
       type,
       value: this.trackValue ?? this.ngControl?.value ?? '',
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
     });
   }

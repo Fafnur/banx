@@ -32,7 +32,7 @@ export class CheckboxTrackDirective {
     this.trackerFacade?.add({
       type,
       value: value ?? (this.ngControl?.value ? '1' : '0') ?? '',
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
     });
   }

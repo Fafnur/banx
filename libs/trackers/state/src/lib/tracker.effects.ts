@@ -1,21 +1,25 @@
-import { Injectable } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable, OnDestroy } from '@angular/core';
+import { EventManager } from '@angular/platform-browser';
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 import { ROUTER_NAVIGATED } from '@ngrx/router-store';
-import { Action } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
-import { throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { Subscription, throwError, timer } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 
 import { LoggerService } from '@banx/core/logger/service';
+import { PlatformService } from '@banx/core/platform/service';
 import { VisitorService } from '@banx/core/visitor/service';
 import { TrackerApiService } from '@banx/trackers/api';
 import { TrackerEventType } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';
 
 import * as TrackerActions from './tracker.actions';
+import { TrackerPartialState } from './tracker.reducer';
 
 @Injectable()
-export class TrackerEffects implements OnInitEffects {
+export class TrackerEffects implements OnInitEffects, OnDestroy {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(TrackerActions.init),
@@ -34,8 +38,9 @@ export class TrackerEffects implements OnInitEffects {
         run: () => {
           // TODO: Add logic for fake login
           const records = this.trackerService.getRecords();
+          this.trackerService.markRecords(records);
 
-          return records && records.length
+          return records && records.length > 0
             ? this.trackerApiService
                 .save({
                   records,
@@ -87,13 +92,57 @@ export class TrackerEffects implements OnInitEffects {
     )
   );
 
+  private readonly subscription = new Subscription();
+
   constructor(
+    private readonly eventManager: EventManager,
     private readonly actions$: Actions,
+    private readonly store: Store<TrackerPartialState>,
     private readonly loggerService: LoggerService,
     private readonly trackerService: TrackerService,
     private readonly visitorService: VisitorService,
-    private readonly trackerApiService: TrackerApiService
-  ) {}
+    private readonly trackerApiService: TrackerApiService,
+    private readonly platformService: PlatformService,
+    @Inject(DOCUMENT) private readonly document: Document
+  ) {
+    if (this.platformService.isBrowser) {
+      this.trackerService.add({
+        element: 'window',
+        type: TrackerEventType.Focus,
+      });
+
+      window.addEventListener('focus', () => {
+        this.trackerService.add({
+          element: 'window',
+          type: TrackerEventType.Focus,
+        });
+      });
+      window.addEventListener('blur', () => {
+        this.trackerService.add({
+          element: 'window',
+          type: TrackerEventType.Blur,
+        });
+      });
+
+      this.document.addEventListener('visibilitychange', () => {
+        this.trackerService.add({
+          element: 'window',
+          type: TrackerEventType.VisibilityChange,
+          value: this.document.hidden ? 'invisible' : 'visible',
+        });
+      });
+    }
+
+    this.subscription.add(
+      this.trackerService.recordAdded$
+        .pipe(switchMap(() => timer(5000).pipe(tap(() => this.store.dispatch(TrackerActions.saveRecords())))))
+        .subscribe()
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngrxOnInitEffects(): Action {
     return TrackerActions.init();

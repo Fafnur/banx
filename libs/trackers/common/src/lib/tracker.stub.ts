@@ -9,7 +9,7 @@ export const TRACKER_RECORD_STUB: TrackerRecord = {
   type: TRACKER_EVENT_STUB.type,
   element: TRACKER_EVENT_STUB.element,
   uid: '1234',
-  time: 12345,
+  time: '2017-12-01T11:40:39.639Z',
   data: {},
   url: '/',
   keys: '',

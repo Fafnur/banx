@@ -32,7 +32,7 @@ export class RadioTrackDirective {
     this.trackerFacade?.add({
       type,
       value: value ?? this.trackValue ?? '',
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
     });
   }

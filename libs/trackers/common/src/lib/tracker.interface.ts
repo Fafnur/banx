@@ -25,7 +25,7 @@ export interface TrackerEvent<T extends Record<string, any> = Record<string, any
   type: TrackerEventType;
   element: string;
   value?: string;
-  time?: number;
+  time?: string;
   url?: string;
   user?: number;
   keys?: string;
@@ -37,7 +37,7 @@ export interface TrackerRecord<T extends Record<string, any> = Record<string, an
   type: TrackerEventType;
   element: string;
   value: string;
-  time: number;
+  time: string;
   url: string;
   user?: number;
   keys: string;

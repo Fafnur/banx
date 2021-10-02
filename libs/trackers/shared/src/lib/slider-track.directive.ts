@@ -31,7 +31,7 @@ export class SliderTrackDirective {
     this.trackerFacade?.add({
       type,
       value: value ?? this.ngControl?.value?.toString() ?? '',
-      time: Date.now(),
+      time: new Date().toISOString(),
       element: this.trackId,
     });
   }
