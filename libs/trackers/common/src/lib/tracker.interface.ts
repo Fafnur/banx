@@ -7,6 +7,8 @@ export enum TrackerEventType {
   Blur = 'blur',
   Focus = 'focus',
   Change = 'change',
+  Open = 'open',
+  Close = 'close',
   VisibilityChange = 'visibilitychange',
   Custom = 'custom',
   Keydown = 'keydown',
