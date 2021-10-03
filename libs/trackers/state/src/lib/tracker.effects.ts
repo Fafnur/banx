@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable, OnDestroy } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { EventManager } from '@angular/platform-browser';
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 import { ROUTER_NAVIGATED } from '@ngrx/router-store';
@@ -11,6 +10,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { VisitorService } from '@banx/core/visitor/service';
+import { WindowService } from '@banx/core/windiw/service';
 import { TrackerApiService } from '@banx/trackers/api';
 import { TrackerEventType } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';
@@ -40,7 +40,7 @@ export class TrackerEffects implements OnInitEffects, OnDestroy {
           const records = this.trackerService.getRecords();
           this.trackerService.markRecords(records);
 
-          return records && records.length > 0
+          return records && records.length > 0 && this.platformService.isBrowser
             ? this.trackerApiService
                 .save({
                   records,
@@ -103,34 +103,34 @@ export class TrackerEffects implements OnInitEffects, OnDestroy {
     private readonly visitorService: VisitorService,
     private readonly trackerApiService: TrackerApiService,
     private readonly platformService: PlatformService,
-    @Inject(DOCUMENT) private readonly document: Document
+    private readonly windowService: WindowService
   ) {
-    if (this.platformService.isBrowser) {
+    if (this.windowService.window) {
       this.trackerService.add({
         element: 'window',
         type: TrackerEventType.Focus,
       });
 
-      window.addEventListener('focus', () => {
+      this.windowService.window.addEventListener('focus', () =>
         this.trackerService.add({
           element: 'window',
           type: TrackerEventType.Focus,
-        });
-      });
-      window.addEventListener('blur', () => {
+        })
+      );
+      this.windowService.window.addEventListener('blur', () =>
         this.trackerService.add({
           element: 'window',
           type: TrackerEventType.Blur,
-        });
-      });
+        })
+      );
 
-      this.document.addEventListener('visibilitychange', () => {
+      this.windowService.document.addEventListener('visibilitychange', () =>
         this.trackerService.add({
           element: 'window',
           type: TrackerEventType.VisibilityChange,
-          value: this.document.hidden ? 'invisible' : 'visible',
-        });
-      });
+          value: this.windowService.document.hidden ? 'invisible' : 'visible',
+        })
+      );
     }
 
     this.subscription.add(
