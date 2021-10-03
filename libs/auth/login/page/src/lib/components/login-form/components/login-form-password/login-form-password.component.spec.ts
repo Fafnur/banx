@@ -7,6 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { LoginFormPasswordComponent } from './login-form-password.component';
 import { LoginFormPasswordComponentPo } from './login-form-password.component.po';
@@ -31,6 +32,7 @@ describe('LoginFormPasswordComponent', () => {
           MockModule(MatFormFieldModule),
           MockModule(MatInputModule),
           MockModule(FormsSharedModule),
+          MockModule(TrackersSharedModule),
         ],
         declarations: [LoginFormPasswordComponent, WrapperComponent],
       }).compileComponents();

@@ -6,11 +6,12 @@ import { MatInputModule } from '@angular/material/input';
 import { IMaskModule } from 'angular-imask';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoveryFormPhoneComponent } from './recovery-form-phone.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, FormsSharedModule, IMaskModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, FormsSharedModule, IMaskModule, TrackersSharedModule],
   declarations: [RecoveryFormPhoneComponent],
   exports: [RecoveryFormPhoneComponent],
 })

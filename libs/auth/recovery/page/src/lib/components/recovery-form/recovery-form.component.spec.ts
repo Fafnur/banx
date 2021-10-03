@@ -11,6 +11,7 @@ import { AuthFormModule } from '@banx/auth/shared';
 import { AuthFacade } from '@banx/auth/state';
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import { providerOf } from '@banx/core/testing';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 import { UserField } from '@banx/users/common';
 
 import { RecoveryFormBirthdateModule } from './components/recovery-form-birthdate/recovery-form-birthdate.module';
@@ -47,6 +48,7 @@ describe('RecoveryFormComponent', () => {
           MockModule(RecoveryFormBirthdateModule),
           MockModule(AuthFormModule),
           MockModule(RecoverySuccessDialogModule),
+          MockModule(TrackersSharedModule),
         ],
         declarations: [RecoveryFormComponent],
         providers: [providerOf(AuthFacade, authFacadeMock), providerOf(MatDialog, matDialogMock)],

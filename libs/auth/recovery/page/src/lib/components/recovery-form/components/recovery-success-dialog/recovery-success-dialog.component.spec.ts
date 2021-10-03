@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { MockModule } from 'ng-mocks';
+
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoverySuccessDialogComponent } from './recovery-success-dialog.component';
 import { RecoverySuccessDialogComponentPo } from './recovery-success-dialog.component.po';
@@ -11,7 +14,7 @@ describe('RecoverySuccessDialogComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [MatDialogModule],
+        imports: [MatDialogModule, MockModule(TrackersSharedModule)],
         declarations: [RecoverySuccessDialogComponent],
         providers: [
           {

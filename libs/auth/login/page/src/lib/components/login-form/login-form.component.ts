@@ -75,7 +75,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
     if (this.form.valid) {
       // TODO: Russian only. Need to use phone prefix.
-      this.authFacade.login({ ...this.form.value, phone: this.form.value[UserField.Phone].slice(1) });
+      this.authFacade.login({ ...this.form.value, phone: this.form.value[UserField.Phone].slice(-10) });
     }
 
     this.changeDetectorRef.markForCheck();

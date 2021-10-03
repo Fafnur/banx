@@ -161,12 +161,12 @@
         <note priority="1" from="description">Content</note>
         <note priority="1" from="meaning">Recovery success dialog</note>
       </trans-unit>
-      <trans-unit id="23197073046985981" datatype="html">
-        <source>Close</source>
+      <trans-unit id="4703904143798752284" datatype="html">
+        <source> Close </source>
         <target state="translated">Закрыть</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-success-dialog/recovery-success-dialog.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
         <note priority="1" from="description">Close</note>
         <note priority="1" from="meaning">Recovery success dialog</note>

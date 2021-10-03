@@ -8,6 +8,7 @@ import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoveryFormPhoneComponent } from './recovery-form-phone.component';
 import { RecoveryFormPhoneComponentPo } from './recovery-form-phone.component.po';
@@ -33,6 +34,7 @@ describe('RecoveryFormPhoneComponent', () => {
           MockModule(MatInputModule),
           MockModule(FormsSharedModule),
           MockModule(IMaskModule),
+          MockModule(TrackersSharedModule),
         ],
         declarations: [RecoveryFormPhoneComponent, WrapperComponent],
       }).compileComponents();

@@ -30,7 +30,7 @@ export function isSpecialKeys(event: KeyboardEvent): boolean {
   return event != null && !!event.key && SPECIAL_CODES.includes(event.key);
 }
 
-export function extractKeysFromKeyboardEvent(event: KeyboardEvent): string {
+export function extractKeysFromKeyboardEvent(event: KeyboardEvent, password?: boolean): string {
   if (SHIFT_CTRL_ALT_CODES.includes(event?.key)) {
     return '';
   }
@@ -39,7 +39,9 @@ export function extractKeysFromKeyboardEvent(event: KeyboardEvent): string {
   if (event.altKey || event.ctrlKey || event.shiftKey) {
     keys.push(event.key);
   }
-  keys.push(event.key);
+  if (!password) {
+    keys.push(event.key);
+  }
 
   return keys.join(',');
 }
@@ -49,6 +51,8 @@ export function extractKeysFromKeyboardEvent(event: KeyboardEvent): string {
 })
 export class InputTrackDirective {
   @Input() trackId!: string;
+  @Input() trackValue!: string;
+  @Input() password?: boolean;
 
   constructor(@Optional() private readonly trackerLiteFacade: TrackerFacade, @Optional() @Self() public ngControl: NgControl) {}
 
@@ -65,9 +69,9 @@ export class InputTrackDirective {
   @HostListener('keydown', ['$event'])
   onInput(event: KeyboardEvent): void {
     if (isSpecialKeys(event)) {
-      this.track(TrackerEventType.Press, extractKeysFromKeyboardEvent(event));
+      this.track(TrackerEventType.Press, extractKeysFromKeyboardEvent(event, this.password));
     } else {
-      this.track(TrackerEventType.Change, extractKeysFromKeyboardEvent(event));
+      this.track(TrackerEventType.Change, extractKeysFromKeyboardEvent(event, this.password));
     }
   }
 
@@ -75,7 +79,7 @@ export class InputTrackDirective {
     this.trackerLiteFacade?.add({
       type,
       keys,
-      value: this.ngControl?.value ?? '',
+      value: this.password ? '' : this.trackValue ?? this.ngControl?.value ?? '',
       time: new Date().toISOString(),
       element: this.trackId,
     });

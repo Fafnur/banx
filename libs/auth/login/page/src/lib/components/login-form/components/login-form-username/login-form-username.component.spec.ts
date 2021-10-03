@@ -8,6 +8,7 @@ import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { LoginFormUsernameComponent } from './login-form-username.component';
 import { LoginFormUsernameComponentPo } from './login-form-username.component.po';
@@ -33,6 +34,7 @@ describe('LoginFormUsernameComponent', () => {
           MockModule(MatInputModule),
           MockModule(FormsSharedModule),
           MockModule(IMaskModule),
+          MockModule(TrackersSharedModule),
         ],
         declarations: [LoginFormUsernameComponent, WrapperComponent],
       }).compileComponents();
