@@ -786,6 +786,28 @@
         }
       }
     },
+    "core-windiw-service": {
+      "projectType": "library",
+      "root": "libs/core/windiw/service",
+      "sourceRoot": "libs/core/windiw/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/windiw/service"],
+          "options": {
+            "jestConfig": "libs/core/windiw/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/windiw/service/src/**/*.ts", "libs/core/windiw/service/src/**/*.html"]
+          }
+        }
+      }
+    },
     "errors-not-found-page": {
       "projectType": "library",
       "root": "libs/errors/not-found/page",

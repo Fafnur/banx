@@ -129,6 +129,9 @@
     "core-visitor-service": {
       "tags": []
     },
+    "core-windiw-service": {
+      "tags": []
+    },
     "errors-not-found-page": {
       "tags": []
     },
