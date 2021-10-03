@@ -62,11 +62,12 @@ export class TrackerService {
         this.records.push(stickyKeysFinish);
       }
       this.records.push(record);
+      this.added$.next(record);
+
       // Save snapshot on storage
       this.localAsyncStorage.setItem(TrackerKeys.Records, this.records);
     }
     this.lastRecord = record;
-    this.added$.next(record);
   }
 
   clear(): void {
