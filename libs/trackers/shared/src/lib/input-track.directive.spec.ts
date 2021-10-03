@@ -23,7 +23,13 @@ class WrapperComponent {
 }
 
 describe('InputTrackDirective', () => {
-  const getRecord = (type: TrackerEventType): TrackerEvent => ({ type, value: 'test', time: 123456, element: 'Test id', keys: undefined });
+  const getRecord = (type: TrackerEventType): TrackerEvent => ({
+    type,
+    value: 'test',
+    time: '2021-10-03T07:05:59.814Z',
+    element: 'Test id',
+    keys: undefined,
+  });
 
   let pageObject: InputTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
@@ -47,8 +53,8 @@ describe('InputTrackDirective', () => {
     fixture = TestBed.createComponent(WrapperComponent);
     pageObject = new InputTrackDirectivePo(fixture);
 
-    const mockDateNow = 123456;
-    jest.spyOn<any, any>(Date, 'now').mockImplementation(() => mockDateNow);
+    const mockDateNow = new Date(1633244759814);
+    jest.spyOn<any, any>(global, 'Date').mockImplementation(() => mockDateNow);
   });
 
   it('should track focus', () => {
@@ -78,7 +84,7 @@ describe('InputTrackDirective', () => {
           type: TrackerEventType.Press,
           keys: 'Delete',
           value: 'test',
-          time: 123456,
+          time: '2021-10-03T07:05:59.814Z',
           element: 'Test id',
         })
       )
@@ -96,7 +102,7 @@ describe('InputTrackDirective', () => {
           type: TrackerEventType.Change,
           keys: 'a',
           value: 'test',
-          time: 123456,
+          time: '2021-10-03T07:05:59.814Z',
           element: 'Test id',
         })
       )

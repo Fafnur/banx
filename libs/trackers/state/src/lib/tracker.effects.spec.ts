@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { NxModule } from '@nrwl/angular';
 import { cold, hot } from '@nrwl/angular/testing';
-import { Observable, of } from 'rxjs';
+import { Observable, of, ReplaySubject } from 'rxjs';
 import { anything, deepEqual, mock, verify, when } from 'ts-mockito';
 
 import { API_ERROR_RESPONSE_STUB } from '@banx/core/api/service';
@@ -13,7 +13,7 @@ import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { providerOf } from '@banx/core/testing';
 import { VisitorService } from '@banx/core/visitor/service';
 import { TrackerApiService } from '@banx/trackers/api';
-import { TRACKER_EVENT_STUB, TRACKER_RECORDS_DTO_STUB, TRACKER_RECORDS_STUB } from '@banx/trackers/common';
+import { TRACKER_EVENT_STUB, TRACKER_RECORDS_DTO_STUB, TRACKER_RECORDS_STUB, TrackerRecord } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';
 
 import * as TrackerActions from './tracker.actions';
@@ -27,6 +27,7 @@ describe('TrackerEffects', () => {
   let loggerServiceMock: LoggerService;
   let localAsyncStorageMock: LocalAsyncStorage;
   let visitorServiceMock: VisitorService;
+  let recordAdded$: ReplaySubject<TrackerRecord>;
 
   beforeEach(() => {
     trackerApiServiceMock = mock(TrackerApiService);
@@ -34,6 +35,8 @@ describe('TrackerEffects', () => {
     trackerServiceMock = mock(TrackerService);
     localAsyncStorageMock = mock(LocalAsyncStorage);
     visitorServiceMock = mock(VisitorService);
+
+    recordAdded$ = new ReplaySubject<TrackerRecord>(1);
   });
 
   beforeEach(
@@ -56,6 +59,7 @@ describe('TrackerEffects', () => {
 
   beforeEach(() => {
     when(visitorServiceMock.getUuid()).thenReturn('');
+    when(trackerServiceMock.recordAdded$).thenReturn(recordAdded$);
 
     effects = TestBed.inject(TrackerEffects);
   });

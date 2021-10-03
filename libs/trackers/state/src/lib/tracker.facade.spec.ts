@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { deepEqual, mock, verify } from 'ts-mockito';
+import { ReplaySubject } from 'rxjs';
+import { deepEqual, mock, verify, when } from 'ts-mockito';
 
 import { LoggerService } from '@banx/core/logger/service';
 import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { providerOf } from '@banx/core/testing';
 import { VisitorService } from '@banx/core/visitor/service';
 import { TrackerApiService } from '@banx/trackers/api';
-import { TRACKER_EVENT_STUB } from '@banx/trackers/common';
+import { TRACKER_EVENT_STUB, TrackerRecord } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';
 
 import { TrackerEffects } from './tracker.effects';
@@ -23,16 +24,19 @@ describe('TrackerFacade', () => {
   let loggerServiceMock: LoggerService;
   let localAsyncStorageMock: LocalAsyncStorage;
   let visitorServiceMock: VisitorService;
-
-  beforeEach(() => {
-    trackerApiServiceMock = mock(TrackerApiService);
-    loggerServiceMock = mock(LoggerService);
-    trackerServiceMock = mock(TrackerService);
-    localAsyncStorageMock = mock(LocalAsyncStorage);
-    visitorServiceMock = mock(VisitorService);
-  });
+  let recordAdded$: ReplaySubject<TrackerRecord>;
 
   describe('used in NgModule', () => {
+    beforeEach(() => {
+      trackerApiServiceMock = mock(TrackerApiService);
+      loggerServiceMock = mock(LoggerService);
+      trackerServiceMock = mock(TrackerService);
+      localAsyncStorageMock = mock(LocalAsyncStorage);
+      visitorServiceMock = mock(VisitorService);
+
+      recordAdded$ = new ReplaySubject<TrackerRecord>(1);
+    });
+
     beforeEach(() => {
       @NgModule({
         imports: [StoreModule.forFeature(TRACKER_FEATURE_KEY, reducer), EffectsModule.forFeature([TrackerEffects])],
@@ -52,6 +56,8 @@ describe('TrackerFacade', () => {
       })
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
+
+      when(trackerServiceMock.recordAdded$).thenReturn(recordAdded$);
 
       facade = TestBed.inject(TrackerFacade);
     });

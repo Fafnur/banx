@@ -10,6 +10,8 @@ import { anything, deepEqual, mock, verify, when } from 'ts-mockito';
 import { AuthFormModule } from '@banx/auth/shared';
 import { AuthFacade } from '@banx/auth/state';
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { PATHS_STUB } from '@banx/core/navigation/common';
+import { NavigationService } from '@banx/core/navigation/service';
 import { providerOf } from '@banx/core/testing';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 import { UserField } from '@banx/users/common';
@@ -25,11 +27,15 @@ describe('RecoveryFormComponent', () => {
   let fixture: ComponentFixture<RecoveryFormComponent>;
   let authFacadeMock: AuthFacade;
   let matDialogMock: MatDialog;
+  let recoverySuccess$: ReplaySubject<void>;
   let recoveryFailure$: ReplaySubject<Record<string, any>>;
   let afterClosed$: ReplaySubject<boolean>;
+  let navigationServiceMock: NavigationService;
 
   beforeEach(() => {
+    navigationServiceMock = mock(NavigationService);
     authFacadeMock = mock(AuthFacade);
+    recoverySuccess$ = new ReplaySubject<void>(1);
     recoveryFailure$ = new ReplaySubject<Record<string, any>>(1);
 
     matDialogMock = mock(MatDialog);
@@ -51,12 +57,18 @@ describe('RecoveryFormComponent', () => {
           MockModule(TrackersSharedModule),
         ],
         declarations: [RecoveryFormComponent],
-        providers: [providerOf(AuthFacade, authFacadeMock), providerOf(MatDialog, matDialogMock)],
+        providers: [
+          providerOf(AuthFacade, authFacadeMock),
+          providerOf(MatDialog, matDialogMock),
+          providerOf(NavigationService, navigationServiceMock),
+          PATHS_STUB,
+        ],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
+    when(authFacadeMock.recoverySuccess$).thenReturn(recoverySuccess$);
     when(authFacadeMock.recoveryFailure$).thenReturn(recoveryFailure$);
     when(matDialogMock.open(anything(), anything())).thenReturn({ afterClosed: () => afterClosed$ } as any);
 

@@ -25,7 +25,12 @@ class WrapperComponent {
 }
 
 describe('RadioTrackDirective', () => {
-  const getRecord = (type: TrackerEventType, value: string = ''): TrackerEvent => ({ type, value, time: 123456, element: 'yes' });
+  const getRecord = (type: TrackerEventType, value: string = ''): TrackerEvent => ({
+    type,
+    value,
+    time: '2021-10-03T07:05:59.814Z',
+    element: 'yes',
+  });
 
   let pageObject: RadioTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
@@ -49,8 +54,8 @@ describe('RadioTrackDirective', () => {
     fixture = TestBed.createComponent(WrapperComponent);
     pageObject = new RadioTrackDirectivePo(fixture);
 
-    const mockDateNow = 123456;
-    jest.spyOn<any, any>(Date, 'now').mockImplementation(() => mockDateNow);
+    const mockDateNow = new Date(1633244759814);
+    jest.spyOn<any, any>(global, 'Date').mockImplementation(() => mockDateNow);
   });
 
   it('should track focus', () => {

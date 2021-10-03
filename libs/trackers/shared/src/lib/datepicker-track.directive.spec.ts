@@ -38,7 +38,7 @@ describe('DatepickerTrackDirective', () => {
   const getRecord = (type: TrackerEventType, value: string = '1990-01-01'): TrackerEvent => ({
     type,
     value,
-    time: 123456,
+    time: '2021-10-03T07:05:59.814Z',
     element: 'Test id',
   });
 
@@ -73,8 +73,8 @@ describe('DatepickerTrackDirective', () => {
     fixture = TestBed.createComponent(WrapperComponent);
     pageObject = new DatepickerTrackDirectivePo(fixture);
 
-    const mockDateNow = 123456;
-    jest.spyOn<any, any>(Date, 'now').mockImplementation(() => mockDateNow);
+    const mockDateNow = new Date(1633244759814);
+    jest.spyOn<any, any>(global, 'Date').mockImplementation(() => mockDateNow);
   });
 
   it('should track opened', () => {

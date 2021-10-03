@@ -57,13 +57,13 @@ describe('AuthGuard', () => {
     authToken$.next('absrds');
     const result = await readFirst(guard.canActivate());
 
-    expect(result).toBeTruthy();
+    expect(result).toEqual(URL_TREE_STUB);
   });
 
   it('canActivate() should redirect to home page', async () => {
     authToken$.next(null);
     const result = await readFirst(guard.canActivate());
 
-    expect(result).toEqual(URL_TREE_STUB);
+    expect(result).toBeTruthy();
   });
 });

@@ -29,58 +29,34 @@ describe('ApiContentTypeInterceptor', () => {
     expect(interceptor).toBeTruthy();
   });
 
-  it('intercept() should set headers application/json', async (done) => {
-    try {
-      const result$ = interceptor.intercept(new HttpRequest<any>(method, url), httpHandler);
-      const response = (await readFirst(result$)) as HttpResponse<any>;
+  it('intercept() should set headers application/json', async () => {
+    const result$ = interceptor.intercept(new HttpRequest<any>(method, url), httpHandler);
+    const response = (await readFirst(result$)) as HttpResponse<any>;
 
-      expect(response.headers.get(contentType)).toBe('application/json');
-
-      done();
-    } catch (err) {
-      done.fail(err);
-    }
+    expect(response.headers.get(contentType)).toBe('application/json');
   });
 
-  it('intercept() should set headers html/text', async (done) => {
-    try {
-      const params = { headers: new HttpHeaders({ [contentType]: 'html/text' }) };
-      const result$ = interceptor.intercept(new HttpRequest<any>(method, url, params), httpHandler);
-      const response = (await readFirst(result$)) as HttpResponse<any>;
+  it('intercept() should set headers html/text', async () => {
+    const params = { headers: new HttpHeaders({ [contentType]: 'html/text' }) };
+    const result$ = interceptor.intercept(new HttpRequest<any>(method, url, params), httpHandler);
+    const response = (await readFirst(result$)) as HttpResponse<any>;
 
-      expect(response.headers.get(contentType)).toBe('html/text');
-
-      done();
-    } catch (err) {
-      done.fail(err);
-    }
+    expect(response.headers.get(contentType)).toBe('html/text');
   });
 
-  it('intercept() should not set content type', async (done) => {
-    try {
-      const params = { headers: new HttpHeaders({ enctype: 'multipart/form-data' }) };
-      const result$ = interceptor.intercept(new HttpRequest<any>(method, url, params), httpHandler);
-      const response = (await readFirst(result$)) as HttpResponse<any>;
+  it('intercept() should not set content type', async () => {
+    const params = { headers: new HttpHeaders({ enctype: 'multipart/form-data' }) };
+    const result$ = interceptor.intercept(new HttpRequest<any>(method, url, params), httpHandler);
+    const response = (await readFirst(result$)) as HttpResponse<any>;
 
-      expect(response.headers.get(contentType)).toBeNull();
-
-      done();
-    } catch (err) {
-      done.fail(err);
-    }
+    expect(response.headers.get(contentType)).toBeNull();
   });
 
-  it('intercept() should  set content type for unknown enctype', async (done) => {
-    try {
-      const params = { headers: new HttpHeaders({ enctype: 'magic' }) };
-      const result$ = interceptor.intercept(new HttpRequest<any>(method, url, params), httpHandler);
-      const response = (await readFirst(result$)) as HttpResponse<any>;
+  it('intercept() should  set content type for unknown enctype', async () => {
+    const params = { headers: new HttpHeaders({ enctype: 'magic' }) };
+    const result$ = interceptor.intercept(new HttpRequest<any>(method, url, params), httpHandler);
+    const response = (await readFirst(result$)) as HttpResponse<any>;
 
-      expect(response.headers.get(contentType)).toBe('application/json');
-
-      done();
-    } catch (err) {
-      done.fail(err);
-    }
+    expect(response.headers.get(contentType)).toBe('application/json');
   });
 });

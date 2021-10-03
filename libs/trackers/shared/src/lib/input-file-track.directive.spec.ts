@@ -22,7 +22,12 @@ class WrapperComponent {
 }
 
 describe('InputFileTrackDirective', () => {
-  const getRecord = (type: TrackerEventType): TrackerEvent => ({ type, value: 'attach', time: 123456, element: 'Test id' });
+  const getRecord = (type: TrackerEventType): TrackerEvent => ({
+    type,
+    value: 'attach',
+    time: '2021-10-03T07:05:59.814Z',
+    element: 'Test id',
+  });
 
   let pageObject: InputFileTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
@@ -46,8 +51,8 @@ describe('InputFileTrackDirective', () => {
     fixture = TestBed.createComponent(WrapperComponent);
     pageObject = new InputFileTrackDirectivePo(fixture);
 
-    const mockDateNow = 123456;
-    jest.spyOn<any, any>(Date, 'now').mockImplementation(() => mockDateNow);
+    const mockDateNow = new Date(1633244759814);
+    jest.spyOn<any, any>(global, 'Date').mockImplementation(() => mockDateNow);
   });
 
   it('should track click', () => {
