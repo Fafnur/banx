@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AuthFormModule } from '@banx/auth/shared';
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { LoginFormPasswordModule } from './components/login-form-password/login-form-password.module';
 import { LoginFormUsernameModule } from './components/login-form-username/login-form-username.module';
@@ -19,6 +20,7 @@ import { LoginFormComponent } from './login-form.component';
     LoginFormUsernameModule,
     LoginFormPasswordModule,
     AuthFormModule,
+    TrackersSharedModule,
   ],
   declarations: [LoginFormComponent],
   exports: [LoginFormComponent],

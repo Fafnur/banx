@@ -765,6 +765,49 @@
         }
       }
     },
+    "core-visitor-service": {
+      "projectType": "library",
+      "root": "libs/core/visitor/service",
+      "sourceRoot": "libs/core/visitor/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/visitor/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/visitor/service/src/**/*.ts", "libs/core/visitor/service/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "core-windiw-service": {
+      "projectType": "library",
+      "root": "libs/core/windiw/service",
+      "sourceRoot": "libs/core/windiw/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/core/windiw/service"],
+          "options": {
+            "jestConfig": "libs/core/windiw/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/windiw/service/src/**/*.ts", "libs/core/windiw/service/src/**/*.html"]
+          }
+        }
+      }
+    },
     "errors-not-found-page": {
       "projectType": "library",
       "root": "libs/errors/not-found/page",
@@ -1228,6 +1271,111 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/russian/cabinet-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "trackers-api": {
+      "projectType": "library",
+      "root": "libs/trackers/api",
+      "sourceRoot": "libs/trackers/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/trackers/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/trackers/api/src/**/*.ts", "libs/trackers/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "trackers-common": {
+      "projectType": "library",
+      "root": "libs/trackers/common",
+      "sourceRoot": "libs/trackers/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/trackers/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/trackers/common/src/**/*.ts", "libs/trackers/common/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "trackers-service": {
+      "projectType": "library",
+      "root": "libs/trackers/service",
+      "sourceRoot": "libs/trackers/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/trackers/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/trackers/service/src/**/*.ts", "libs/trackers/service/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "trackers-shared": {
+      "projectType": "library",
+      "root": "libs/trackers/shared",
+      "sourceRoot": "libs/trackers/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/trackers/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/trackers/shared/src/**/*.ts", "libs/trackers/shared/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "trackers-state": {
+      "projectType": "library",
+      "root": "libs/trackers/state",
+      "sourceRoot": "libs/trackers/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/trackers/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/trackers/state/src/**/*.ts", "libs/trackers/state/src/**/*.html"]
           }
         }
       }

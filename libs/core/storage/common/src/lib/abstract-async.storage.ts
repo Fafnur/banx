@@ -13,7 +13,7 @@ export abstract class AbstractAsyncStorage implements AsyncStorage {
     this.state$ = new BehaviorSubject<Record<string, any>>(this.getLocalState());
   }
 
-  private get state(): Record<string, any> {
+  get state(): Record<string, any> {
     return this.state$.getValue();
   }
 

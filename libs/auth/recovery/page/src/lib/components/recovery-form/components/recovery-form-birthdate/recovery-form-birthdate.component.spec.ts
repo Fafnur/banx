@@ -10,6 +10,7 @@ import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoveryFormBirthdateComponent } from './recovery-form-birthdate.component';
 import { RecoveryFormBirthdateComponentPo } from './recovery-form-birthdate.component.po';
@@ -37,6 +38,7 @@ describe('RecoveryFormBirthdateComponent', () => {
           MockModule(MatNativeDateModule),
           MockModule(FormsSharedModule),
           MockModule(IMaskModule),
+          MockModule(TrackersSharedModule),
         ],
         declarations: [RecoveryFormBirthdateComponent, WrapperComponent],
         providers: [],

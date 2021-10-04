@@ -3,5 +3,15 @@
   <p i18n="Recovery success dialog|Content">We sent an SMS with a new password on {{ phone }}.</p>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button automation-id="close" mat-button mat-dialog-close i18n="Recovery success dialog|Close">Close</button>
+  <button
+    automation-id="close"
+    mat-button
+    mat-dialog-close
+    i18n="Recovery success dialog|Close"
+    banxButtonTrack
+    trackId="AuthRecoveryDialogClose"
+    trackValue="close"
+  >
+    Close
+  </button>
 </mat-dialog-actions>

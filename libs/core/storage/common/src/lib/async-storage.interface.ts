@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 
 export interface AsyncStorage {
   readonly storage: Storage;
+  readonly state: Record<string, any>;
 
   getItem<T>(key: string): Observable<T | null>;
   getItems<T>(keys: string[]): Observable<T>;

@@ -98,7 +98,7 @@ export class RecoveryFormComponent implements OnInit, OnDestroy {
 
     // TODO: Russian only
     return {
-      [UserField.Phone]: data[UserField.Phone].slice(1),
+      [UserField.Phone]: data[UserField.Phone].slice(-10),
       [UserField.Birthdate]: secret,
     };
   }

@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { IMaskModule } from 'angular-imask';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoveryFormBirthdateComponent } from './recovery-form-birthdate.component';
 
@@ -21,6 +22,7 @@ import { RecoveryFormBirthdateComponent } from './recovery-form-birthdate.compon
     MatNativeDateModule,
     FormsSharedModule,
     IMaskModule,
+    TrackersSharedModule,
   ],
   declarations: [RecoveryFormBirthdateComponent],
   exports: [RecoveryFormBirthdateComponent],

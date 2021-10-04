@@ -1,5 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MockModule } from 'ng-mocks';
+
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoverySuccessDialogComponent } from './recovery-success-dialog.component';
 import { RecoverySuccessDialogComponentPo } from './recovery-success-dialog.component.po';
@@ -11,12 +17,16 @@ describe('RecoverySuccessDialogComponent', () => {
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        imports: [MatDialogModule],
+        imports: [CommonModule, NoopAnimationsModule, MatDialogModule, MockModule(TrackersSharedModule)],
         declarations: [RecoverySuccessDialogComponent],
         providers: [
           {
             provide: MAT_DIALOG_DATA,
             useValue: '123456789',
+          },
+          {
+            provide: MATERIAL_SANITY_CHECKS,
+            useValue: false,
           },
         ],
       }).compileComponents();

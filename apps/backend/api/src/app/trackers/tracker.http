@@ -1,0 +1,30 @@
+### Save empty
+POST http://localhost:3000/trackers/records
+Content-Type: application/json
+Accept: application/json
+
+{
+  "records": [],
+  "visitor": "12345678"
+}
+
+### Save records
+POST http://localhost:3000/trackers/records
+Content-Type: application/json
+Accept: application/json
+
+{
+  "records": [
+    {
+      "type": "focus",
+      "element": "window",
+      "uid": "1234",
+      "time": "2021-10-04T18:55:49.614Z",
+      "data": {},
+      "url": "/",
+      "keys": "ctrl,1",
+      "value": ""
+    }
+  ],
+  "visitor": "12345678"
+}

@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AuthFormModule } from '@banx/auth/shared';
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RecoveryFormBirthdateModule } from './components/recovery-form-birthdate/recovery-form-birthdate.module';
 import { RecoveryFormPhoneModule } from './components/recovery-form-phone/recovery-form-phone.module';
@@ -21,6 +22,7 @@ import { RecoveryFormComponent } from './recovery-form.component';
     RecoveryFormBirthdateModule,
     AuthFormModule,
     RecoverySuccessDialogModule,
+    TrackersSharedModule,
   ],
   declarations: [RecoveryFormComponent],
   exports: [RecoveryFormComponent],

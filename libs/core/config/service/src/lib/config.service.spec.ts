@@ -6,7 +6,7 @@ describe('ConfigService', () => {
 
   const configStub: Config = {
     apiHost: '',
-    version: '',
+    version: 'local',
   };
 
   beforeEach(() => {

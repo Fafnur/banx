@@ -5,6 +5,8 @@
     matInput
     name="data[customer][birthdate]"
     id="AuthRecoveryBirthdate"
+    banxInputTrack
+    trackId="AuthRecoveryBirthdate"
     [min]="minDate"
     [max]="maxDate"
     [formControl]="maskControl"
@@ -19,5 +21,11 @@
     (dateChange)="onSelected($event)"
   />
   <mat-datepicker-toggle matSuffix [for]="birthdatePicker"></mat-datepicker-toggle>
-  <mat-datepicker #birthdatePicker [touchUi]="!isDesktopScreen"></mat-datepicker>
+  <mat-datepicker
+    #birthdatePicker
+    [touchUi]="!isDesktopScreen"
+    banxDatepickerTrack
+    trackId="AuthRecoveryBirthdate"
+    [trackValue]="control?.value"
+  ></mat-datepicker>
 </mat-form-field>

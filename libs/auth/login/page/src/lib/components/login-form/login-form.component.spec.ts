@@ -12,6 +12,7 @@ import { FormsSharedModule } from '@banx/core/forms/shared';
 import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
 import { providerOf } from '@banx/core/testing';
+import { TrackersSharedModule } from '@banx/trackers/shared';
 import { USER_AUTH_STUB, UserAuth, UserField } from '@banx/users/common';
 
 import { LoginFormPasswordModule } from './components/login-form-password/login-form-password.module';
@@ -45,6 +46,7 @@ describe('LoginFormComponent', () => {
           MockModule(LoginFormPasswordModule),
           MockModule(LoginFormUsernameModule),
           MockModule(AuthFormModule),
+          MockModule(TrackersSharedModule),
         ],
         declarations: [LoginFormComponent],
         providers: [PATHS_STUB, providerOf(AuthFacade, authFacadeMock), providerOf(NavigationService, navigationServiceMock)],
@@ -79,7 +81,7 @@ describe('LoginFormComponent', () => {
   it('should be call login', () => {
     fixture.detectChanges();
     pageObject.setForm({
-      [UserField.Username]: '9231009988',
+      [UserField.Phone]: '9231009988',
       [UserField.Password]: '123456',
     });
 
@@ -89,7 +91,7 @@ describe('LoginFormComponent', () => {
     verify(
       authFacadeMock.login(
         deepEqual({
-          [UserField.Username]: '9231009988',
+          [UserField.Phone]: '9231009988',
           [UserField.Password]: '123456',
         })
       )
