@@ -11,7 +11,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { SliderTrackDirective } from './slider-track.directive';
 import { SliderTrackDirectivePo } from './slider-track.directive.po';
@@ -34,10 +34,10 @@ describe('SliderTrackDirective', () => {
 
   let pageObject: SliderTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -53,7 +53,7 @@ describe('SliderTrackDirective', () => {
           MockModule(MatSliderModule),
         ],
         declarations: [SliderTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -71,7 +71,7 @@ describe('SliderTrackDirective', () => {
 
     pageObject.onFocus();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
   });
 
   it('should track blur', () => {
@@ -79,7 +79,7 @@ describe('SliderTrackDirective', () => {
 
     pageObject.onBlur();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
   });
 
   it('should track opened', () => {
@@ -87,6 +87,6 @@ describe('SliderTrackDirective', () => {
 
     pageObject.onInput();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
   });
 });

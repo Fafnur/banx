@@ -1,6 +1,6 @@
 export enum TrackerKeys {
-  Ping = 'trackerLitePing',
-  Records = 'trackerLiteRecords',
+  Ping = 'trackerPing',
+  Records = 'trackerRecords',
 }
 
 export enum TrackerEventType {

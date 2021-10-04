@@ -5,7 +5,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { ButtonTrackDirective } from './button-track.directive';
 import { ButtonTrackDirectivePo } from './button-track.directive.po';
@@ -28,10 +28,10 @@ describe('ButtonTrackDirective', () => {
 
   let pageObject: ButtonTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -39,7 +39,7 @@ describe('ButtonTrackDirective', () => {
       TestBed.configureTestingModule({
         imports: [CommonModule],
         declarations: [ButtonTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -57,6 +57,6 @@ describe('ButtonTrackDirective', () => {
 
     pageObject.onClick();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Click)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Click)))).once();
   });
 });

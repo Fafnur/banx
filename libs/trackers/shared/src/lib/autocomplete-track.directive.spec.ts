@@ -11,7 +11,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { AutocompleteTrackDirective } from './autocomplete-track.directive';
 import { AutocompleteTrackDirectivePo } from './autocomplete-track.directive.po';
@@ -64,10 +64,10 @@ describe('AutocompleteTrackDirective', () => {
 
   let pageObject: AutocompleteTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -83,7 +83,7 @@ describe('AutocompleteTrackDirective', () => {
           MockModule(MatAutocompleteModule),
         ],
         declarations: [AutocompleteTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -101,7 +101,7 @@ describe('AutocompleteTrackDirective', () => {
 
     pageObject.onFocus();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
   });
 
   it('should track blur', () => {
@@ -109,7 +109,7 @@ describe('AutocompleteTrackDirective', () => {
 
     pageObject.onBlur();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
   });
 
   it('should track opened', () => {
@@ -117,7 +117,7 @@ describe('AutocompleteTrackDirective', () => {
 
     pageObject.onOpen();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Open)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Open)))).once();
   });
 
   it('should track close', () => {
@@ -125,7 +125,7 @@ describe('AutocompleteTrackDirective', () => {
 
     pageObject.onClosed();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Close)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Close)))).once();
   });
 
   it('should track change', () => {
@@ -133,6 +133,6 @@ describe('AutocompleteTrackDirective', () => {
 
     pageObject.onOptionSelected();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
   });
 });

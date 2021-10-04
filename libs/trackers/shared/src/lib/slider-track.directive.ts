@@ -2,7 +2,7 @@ import { Directive, HostListener, Input, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 import { TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 @Directive({
   selector: '[banxSliderTrack][trackId][formControlName],[banxSliderTrack][trackId][formControl]',
@@ -10,7 +10,7 @@ import { TrackerFacade } from '@banx/trackers/state';
 export class SliderTrackDirective {
   @Input() trackId!: string;
 
-  constructor(@Optional() private readonly trackerFacade: TrackerFacade, @Optional() @Self() public ngControl: NgControl) {}
+  constructor(@Optional() private readonly trackerService: TrackerService, @Optional() @Self() public ngControl: NgControl) {}
 
   @HostListener('input')
   onInput(): void {
@@ -28,7 +28,7 @@ export class SliderTrackDirective {
   }
 
   private track(type: TrackerEventType, value?: string): void {
-    this.trackerFacade?.add({
+    this.trackerService.add({
       type,
       value: value ?? this.ngControl?.value?.toString() ?? '',
       time: new Date().toISOString(),

@@ -1,7 +1,7 @@
 import { Directive, HostListener, Input, Optional } from '@angular/core';
 
 import { TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 @Directive({
   selector:
@@ -14,11 +14,11 @@ export class ButtonTrackDirective {
   @Input() routerLink!: (string | number) | (string | number)[];
   @Input() trackValue!: string;
 
-  constructor(@Optional() private readonly trackerLiteFacade: TrackerFacade) {}
+  constructor(@Optional() private readonly trackerService: TrackerService) {}
 
   @HostListener('click')
   onClick(): void {
-    this.trackerLiteFacade?.add({
+    this.trackerService.add({
       type: TrackerEventType.Click,
       time: new Date().toISOString(),
       element: this.trackId,

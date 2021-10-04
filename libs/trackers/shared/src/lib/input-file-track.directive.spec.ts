@@ -9,7 +9,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { InputFileTrackDirective } from './input-file-track.directive';
 import { InputFileTrackDirectivePo } from './input-file-track.directive.po';
@@ -31,10 +31,10 @@ describe('InputFileTrackDirective', () => {
 
   let pageObject: InputFileTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -42,7 +42,7 @@ describe('InputFileTrackDirective', () => {
       TestBed.configureTestingModule({
         imports: [CommonModule, NoopAnimationsModule, ReactiveFormsModule, MockModule(MatInputModule)],
         declarations: [InputFileTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -60,6 +60,6 @@ describe('InputFileTrackDirective', () => {
 
     pageObject.onChange();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Click)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Click)))).once();
   });
 });

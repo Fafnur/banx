@@ -52,6 +52,9 @@ export class TrackerService {
           type: TrackerEventType.StickyKeyEnd,
           value: this.repeats.toString(),
           time: payload.time ?? new Date().toISOString(),
+          data: {
+            repeats: this.repeats,
+          },
         });
       }
       this.repeats = 0;
@@ -72,6 +75,7 @@ export class TrackerService {
 
   clear(): void {
     this.records = [];
+    this.localAsyncStorage.setItem(TrackerKeys.Records, []);
   }
 
   getRecords(): TrackerRecord[] {
@@ -107,7 +111,7 @@ export class TrackerService {
     const keys = payload.keys ?? '';
     const url = this.router.url;
     const user = this.localAsyncStorage.state[UserStorageKeys.Id] ?? null;
-    const data = { version: this.configService.config.version };
+    const data = { ...payload.data, version: this.configService.config.version };
 
     return { uid, type: payload.type, element: payload.element, url, time, value, keys, user, data };
   }

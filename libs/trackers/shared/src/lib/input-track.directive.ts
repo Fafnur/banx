@@ -2,7 +2,7 @@ import { Directive, HostListener, Input, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 import { TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 const SHIFT_CTRL_ALT_CODES: string[] = ['Control', 'Shift', 'Alt'];
 const SPECIAL_CODES: string[] = [
@@ -54,7 +54,7 @@ export class InputTrackDirective {
   @Input() trackValue!: string;
   @Input() password?: boolean;
 
-  constructor(@Optional() private readonly trackerLiteFacade: TrackerFacade, @Optional() @Self() public ngControl: NgControl) {}
+  constructor(@Optional() private readonly trackerService: TrackerService, @Optional() @Self() public ngControl: NgControl) {}
 
   @HostListener('focusout')
   onBlur(): void {
@@ -76,7 +76,7 @@ export class InputTrackDirective {
   }
 
   private track(type: TrackerEventType, keys?: string): void {
-    this.trackerLiteFacade?.add({
+    this.trackerService.add({
       type,
       keys,
       value: this.password ? '' : this.trackValue ?? this.ngControl?.value ?? '',

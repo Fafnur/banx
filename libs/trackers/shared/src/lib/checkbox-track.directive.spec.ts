@@ -9,7 +9,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { CheckboxTrackDirective } from './checkbox-track.directive';
 import { CheckboxTrackDirectivePo } from './checkbox-track.directive.po';
@@ -27,10 +27,10 @@ describe('CheckboxTrackDirective', () => {
 
   let pageObject: CheckboxTrackDirectivePo;
   let fixtureWrapper: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -38,7 +38,7 @@ describe('CheckboxTrackDirective', () => {
       TestBed.configureTestingModule({
         imports: [CommonModule, NoopAnimationsModule, ReactiveFormsModule, MockModule(MatCheckboxModule)],
         declarations: [CheckboxTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -56,7 +56,7 @@ describe('CheckboxTrackDirective', () => {
 
     pageObject.onFocus();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
   });
 
   it('should track blur', () => {
@@ -64,7 +64,7 @@ describe('CheckboxTrackDirective', () => {
 
     pageObject.onBlur();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
   });
 
   it('should track change', () => {
@@ -72,6 +72,6 @@ describe('CheckboxTrackDirective', () => {
 
     pageObject.onChange();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
   });
 });

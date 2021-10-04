@@ -9,7 +9,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { InputTrackDirective } from './input-track.directive';
 import { InputTrackDirectivePo } from './input-track.directive.po';
@@ -33,10 +33,10 @@ describe('InputTrackDirective', () => {
 
   let pageObject: InputTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -44,7 +44,7 @@ describe('InputTrackDirective', () => {
       TestBed.configureTestingModule({
         imports: [CommonModule, NoopAnimationsModule, ReactiveFormsModule, MockModule(MatInputModule)],
         declarations: [InputTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -62,7 +62,7 @@ describe('InputTrackDirective', () => {
 
     pageObject.onFocus();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
   });
 
   it('should track blur', () => {
@@ -70,7 +70,7 @@ describe('InputTrackDirective', () => {
 
     pageObject.onBlur();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
   });
 
   it('should track press', () => {
@@ -79,7 +79,7 @@ describe('InputTrackDirective', () => {
     pageObject.onInput({ key: 'Delete' });
 
     verify(
-      trackerFacadeMock.add(
+      trackerServiceMock.add(
         deepEqual({
           type: TrackerEventType.Press,
           keys: 'Delete',
@@ -97,7 +97,7 @@ describe('InputTrackDirective', () => {
     pageObject.onInput({ key: 'a' });
 
     verify(
-      trackerFacadeMock.add(
+      trackerServiceMock.add(
         deepEqual({
           type: TrackerEventType.Change,
           keys: 'a',

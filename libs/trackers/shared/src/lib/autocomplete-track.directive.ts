@@ -2,7 +2,7 @@ import { Directive, HostListener, Input, Optional, Self } from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 import { TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 @Directive({
   selector:
@@ -13,7 +13,7 @@ export class AutocompleteTrackDirective {
   @Input() trackId!: string;
   @Input() trackValue?: string;
 
-  constructor(@Optional() private readonly trackerFacade: TrackerFacade, @Optional() @Self() public ngControl: NgControl) {}
+  constructor(@Optional() private readonly trackerService: TrackerService, @Optional() @Self() public ngControl: NgControl) {}
 
   @HostListener('focusout')
   onBlur(): void {
@@ -41,7 +41,7 @@ export class AutocompleteTrackDirective {
   }
 
   private track(type: TrackerEventType): void {
-    this.trackerFacade?.add({
+    this.trackerService.add({
       type,
       value: this.trackValue ?? this.ngControl?.value ?? '',
       time: new Date().toISOString(),

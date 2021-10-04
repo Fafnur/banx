@@ -9,7 +9,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { RadioTrackDirective } from './radio-track.directive';
 import { RadioTrackDirectivePo } from './radio-track.directive.po';
@@ -34,10 +34,10 @@ describe('RadioTrackDirective', () => {
 
   let pageObject: RadioTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -45,7 +45,7 @@ describe('RadioTrackDirective', () => {
       TestBed.configureTestingModule({
         imports: [CommonModule, NoopAnimationsModule, ReactiveFormsModule, MockModule(MatRadioModule)],
         declarations: [RadioTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -63,7 +63,7 @@ describe('RadioTrackDirective', () => {
 
     pageObject.onFocus();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
   });
 
   it('should track blur', () => {
@@ -71,7 +71,7 @@ describe('RadioTrackDirective', () => {
 
     pageObject.onBlur();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
   });
 
   it('should track change', () => {
@@ -79,6 +79,6 @@ describe('RadioTrackDirective', () => {
 
     pageObject.onChange();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Change, '1')))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Change, '1')))).once();
   });
 });

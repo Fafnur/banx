@@ -10,7 +10,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { SelectTrackDirective } from './select-track.directive';
 import { SelectTrackDirectivePo } from './select-track.directive.po';
@@ -42,10 +42,10 @@ describe('SelectTrackDirective', () => {
 
   let pageObject: SelectTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -53,7 +53,7 @@ describe('SelectTrackDirective', () => {
       TestBed.configureTestingModule({
         imports: [CommonModule, NoopAnimationsModule, ReactiveFormsModule, MockModule(MatSelectModule), MockModule(MatFormFieldModule)],
         declarations: [SelectTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -71,7 +71,7 @@ describe('SelectTrackDirective', () => {
 
     pageObject.onFocus();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Focus)))).once();
   });
 
   it('should track blur', () => {
@@ -79,7 +79,7 @@ describe('SelectTrackDirective', () => {
 
     pageObject.onBlur();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Blur)))).once();
   });
 
   it('should track opened', () => {
@@ -87,7 +87,7 @@ describe('SelectTrackDirective', () => {
 
     pageObject.onOpened();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Open)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Open)))).once();
   });
 
   it('should track closed', () => {
@@ -95,7 +95,7 @@ describe('SelectTrackDirective', () => {
 
     pageObject.onClosed();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Close)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Close)))).once();
   });
 
   it('should track selection', () => {
@@ -103,6 +103,6 @@ describe('SelectTrackDirective', () => {
 
     pageObject.onSelectionChange();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
   });
 });

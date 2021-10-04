@@ -11,6 +11,8 @@ export class TrackerService {
   constructor(@InjectRepository(TrackerEntity) private readonly trackerEntityRepository: Repository<TrackerEntity>) {}
 
   async add(records: TrackerRecord[]): Promise<TrackerEntity[]> {
+    // NOTE: Don't use it on production. Use clickhouse.
+    // TODO: You must exclude records that have already been saved.
     return this.trackerEntityRepository.save(this.trackerEntityRepository.create(records));
   }
 }

@@ -3,7 +3,7 @@ import { NgControl } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 
 import { TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 @Directive({
   selector: '[banxCheckboxTrack][trackId][formControlName],[banxCheckboxTrack][trackId][formControl]',
@@ -11,7 +11,7 @@ import { TrackerFacade } from '@banx/trackers/state';
 export class CheckboxTrackDirective {
   @Input() trackId!: string;
 
-  constructor(@Optional() private readonly trackerFacade: TrackerFacade, @Optional() @Self() public ngControl: NgControl) {}
+  constructor(@Optional() private readonly trackerService: TrackerService, @Optional() @Self() public ngControl: NgControl) {}
 
   @HostListener('focusout')
   onBlur(): void {
@@ -29,7 +29,7 @@ export class CheckboxTrackDirective {
   }
 
   private track(type: TrackerEventType, value?: string): void {
-    this.trackerFacade?.add({
+    this.trackerService.add({
       type,
       value: value ?? (this.ngControl?.value ? '1' : '0') ?? '',
       time: new Date().toISOString(),

@@ -12,7 +12,7 @@ import { deepEqual, mock, verify } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { TrackerEvent, TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 import { DatepickerTrackDirective } from './datepicker-track.directive';
 import { DatepickerTrackDirectivePo } from './datepicker-track.directive.po';
@@ -44,10 +44,10 @@ describe('DatepickerTrackDirective', () => {
 
   let pageObject: DatepickerTrackDirectivePo;
   let fixture: ComponentFixture<WrapperComponent>;
-  let trackerFacadeMock: TrackerFacade;
+  let trackerServiceMock: TrackerService;
 
   beforeEach(() => {
-    trackerFacadeMock = mock(TrackerFacade);
+    trackerServiceMock = mock(TrackerService);
   });
 
   beforeEach(
@@ -64,7 +64,7 @@ describe('DatepickerTrackDirective', () => {
           MockModule(MatNativeDateModule),
         ],
         declarations: [DatepickerTrackDirective, WrapperComponent],
-        providers: [providerOf(TrackerFacade, trackerFacadeMock)],
+        providers: [providerOf(TrackerService, trackerServiceMock)],
       }).compileComponents();
     })
   );
@@ -82,7 +82,7 @@ describe('DatepickerTrackDirective', () => {
 
     pageObject.onOpened();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Open)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Open)))).once();
   });
 
   it('should track closed', () => {
@@ -90,7 +90,7 @@ describe('DatepickerTrackDirective', () => {
 
     pageObject.onClosed();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Close)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Close)))).once();
   });
 
   it('should track opened', () => {
@@ -98,6 +98,6 @@ describe('DatepickerTrackDirective', () => {
 
     pageObject.onDateChange();
 
-    verify(trackerFacadeMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
+    verify(trackerServiceMock.add(deepEqual(getRecord(TrackerEventType.Change)))).once();
   });
 });

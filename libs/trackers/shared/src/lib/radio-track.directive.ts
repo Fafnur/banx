@@ -2,7 +2,7 @@ import { Directive, HostListener, Input, Optional } from '@angular/core';
 import { MatRadioChange } from '@angular/material/radio';
 
 import { TrackerEventType } from '@banx/trackers/common';
-import { TrackerFacade } from '@banx/trackers/state';
+import { TrackerService } from '@banx/trackers/service';
 
 @Directive({
   selector: '[banxRadioTrack][trackId][trackValue]',
@@ -11,7 +11,7 @@ export class RadioTrackDirective {
   @Input() trackId!: string;
   @Input() trackValue!: string;
 
-  constructor(@Optional() private readonly trackerFacade: TrackerFacade) {}
+  constructor(@Optional() private readonly trackerService: TrackerService) {}
 
   @HostListener('change', ['$event'])
   onChange(event: MatRadioChange): void {
@@ -29,7 +29,7 @@ export class RadioTrackDirective {
   }
 
   private track(type: TrackerEventType, value?: string): void {
-    this.trackerFacade?.add({
+    this.trackerService.add({
       type,
       value: value ?? this.trackValue ?? '',
       time: new Date().toISOString(),

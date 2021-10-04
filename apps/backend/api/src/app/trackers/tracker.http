@@ -19,10 +19,10 @@ Accept: application/json
       "type": "focus",
       "element": "window",
       "uid": "1234",
-      "time": 12345,
+      "time": "2021-10-04T18:55:49.614Z",
       "data": {},
       "url": "/",
-      "keys": "",
+      "keys": "ctrl,1",
       "value": ""
     }
   ],
