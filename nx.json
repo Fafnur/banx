@@ -129,7 +129,7 @@
     "core-visitor-service": {
       "tags": []
     },
-    "core-windiw-service": {
+    "core-window-service": {
       "tags": []
     },
     "errors-not-found-page": {

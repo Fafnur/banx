@@ -786,23 +786,23 @@
         }
       }
     },
-    "core-windiw-service": {
+    "core-window-service": {
       "projectType": "library",
-      "root": "libs/core/windiw/service",
-      "sourceRoot": "libs/core/windiw/service/src",
+      "root": "libs/core/window/service",
+      "sourceRoot": "libs/core/window/service/src",
       "prefix": "banx",
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/windiw/service/jest.config.js",
+            "jestConfig": "libs/core/window/service/jest.config.js",
             "passWithNoTests": true
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/core/windiw/service/src/**/*.ts", "libs/core/windiw/service/src/**/*.html"]
+            "lintFilePatterns": ["libs/core/window/service/src/**/*.ts", "libs/core/window/service/src/**/*.html"]
           }
         }
       }
