@@ -794,7 +794,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/core/windiw/service"],
           "options": {
             "jestConfig": "libs/core/windiw/service/jest.config.js",
             "passWithNoTests": true
@@ -909,6 +908,90 @@
           "options": {
             "jestConfig": "libs/errors/shared/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "fingerprints-api": {
+      "projectType": "library",
+      "root": "libs/fingerprints/api",
+      "sourceRoot": "libs/fingerprints/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/fingerprints/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/fingerprints/api/src/**/*.ts", "libs/fingerprints/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "fingerprints-common": {
+      "projectType": "library",
+      "root": "libs/fingerprints/common",
+      "sourceRoot": "libs/fingerprints/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/fingerprints/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/fingerprints/common/src/**/*.ts", "libs/fingerprints/common/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "fingerprints-service": {
+      "projectType": "library",
+      "root": "libs/fingerprints/service",
+      "sourceRoot": "libs/fingerprints/service/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/fingerprints/service/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/fingerprints/service/src/**/*.ts", "libs/fingerprints/service/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "fingerprints-state": {
+      "projectType": "library",
+      "root": "libs/fingerprints/state",
+      "sourceRoot": "libs/fingerprints/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/fingerprints/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/fingerprints/state/src/**/*.ts", "libs/fingerprints/state/src/**/*.html"]
           }
         }
       }

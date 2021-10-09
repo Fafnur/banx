@@ -147,6 +147,18 @@
     "errors-shared": {
       "tags": []
     },
+    "fingerprints-api": {
+      "tags": []
+    },
+    "fingerprints-common": {
+      "tags": []
+    },
+    "fingerprints-service": {
+      "tags": []
+    },
+    "fingerprints-state": {
+      "tags": []
+    },
     "numbers-to-words-common": {
       "tags": []
     },
