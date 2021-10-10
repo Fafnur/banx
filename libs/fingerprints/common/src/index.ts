@@ -1,1 +1,2 @@
-export * from './lib/fingerprints-common.module';
+export * from './lib/fingerprint.interface';
+export * from './lib/fingerprint.stub';
