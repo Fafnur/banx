@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { FontDetectorService } from './font-detector.service';
+
 @NgModule({
-  imports: [CommonModule],
+  providers: [FontDetectorService],
 })
 export class FingerprintsServiceModule {}
