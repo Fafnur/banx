@@ -27,10 +27,12 @@ export class FontDetectorService {
   private getDataFromStorage(): Observable<Record<string, boolean>> {
     const data: Record<string, boolean> = {};
 
-    return this.sessionAsyncStorage.getItems<boolean[]>(FONTS_NAMES).pipe(
-      map((response) => {
+    return this.sessionAsyncStorage.getItems<(boolean | null)[]>(FONTS_NAMES).pipe(
+      map((fonts) => {
         FONTS_NAMES.forEach((fontName, index) => {
-          data[fontName] = response[index];
+          if (typeof fonts[index] === 'boolean') {
+            data[fontName] = !!fonts[index];
+          }
         });
 
         return data;
