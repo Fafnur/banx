@@ -3,4 +3,6 @@ export interface FingerprintDto<T> {
   data: T;
 }
 
-export type FingerprintFontsDto = FingerprintDto<Record<string, boolean>>;
+export type FingerprintFontsDetected = Record<string, boolean>;
+
+export type FingerprintFontsDto = FingerprintDto<FingerprintFontsDetected>;

@@ -4,6 +4,7 @@ import { interval, Observable } from 'rxjs';
 import { last, map, switchMap, take, tap } from 'rxjs/operators';
 
 import { SessionAsyncStorage } from '@banx/core/storage/session';
+import { FingerprintFontsDetected } from '@banx/fingerprints/common';
 
 import { FONTS_NAMES } from './fonts';
 
@@ -17,14 +18,14 @@ export const TEST_STRING =
 export class FontDetectorService {
   constructor(private readonly sessionAsyncStorage: SessionAsyncStorage, @Inject(DOCUMENT) private readonly document: Document) {}
 
-  detect(): Observable<Record<string, boolean>> {
+  detect(): Observable<FingerprintFontsDetected> {
     return this.sessionAsyncStorage.getItem<boolean | null>(FONTS_DETECTED).pipe(
       take(1),
       switchMap((fontsDetected) => (fontsDetected ? this.getDataFromStorage() : this.getData()))
     );
   }
 
-  private getDataFromStorage(): Observable<Record<string, boolean>> {
+  private getDataFromStorage(): Observable<FingerprintFontsDetected> {
     const data: Record<string, boolean> = {};
 
     return this.sessionAsyncStorage.getItems<(boolean | null)[]>(FONTS_NAMES).pipe(
@@ -40,7 +41,7 @@ export class FontDetectorService {
     );
   }
 
-  private getData(): Observable<Record<string, boolean>> {
+  private getData(): Observable<FingerprintFontsDetected> {
     const data: Record<string, boolean> = {};
 
     // Create node
