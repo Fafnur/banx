@@ -1,0 +1,24 @@
+### Save empty fonts
+POST http://localhost:3000/data/fonts
+Content-Type: application/json
+Accept: application/json
+
+{
+  "data": {},
+  "visitor": "12345678"
+}
+
+### Save detected fonts
+POST http://localhost:3000/data/fonts
+Content-Type: application/json
+Accept: application/json
+
+{
+  "data": [
+    {
+      "Arial": true,
+      "Roboto": false
+    }
+  ],
+  "visitor": "12345678"
+}
