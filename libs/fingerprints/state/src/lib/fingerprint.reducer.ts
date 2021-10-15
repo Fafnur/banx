@@ -7,6 +7,8 @@ export const FINGERPRINT_FEATURE_KEY = 'fingerprint';
 export interface FingerprintState {
   fontsDetecting: boolean;
   fontsSaving: boolean;
+  canvasDetecting: boolean;
+  canvasSaving: boolean;
 }
 
 export interface FingerprintPartialState {
@@ -16,6 +18,8 @@ export interface FingerprintPartialState {
 export const fingerprintInitialState: FingerprintState = {
   fontsDetecting: false,
   fontsSaving: false,
+  canvasDetecting: false,
+  canvasSaving: false,
 };
 
 const fingerprintReducer = createReducer(
@@ -43,6 +47,30 @@ const fingerprintReducer = createReducer(
   on(FingerprintActions.saveFontsFailure, (state) => ({
     ...state,
     fontsSaving: false,
+  })),
+  on(FingerprintActions.detectCanvas, (state) => ({
+    ...state,
+    canvasDetecting: true,
+  })),
+  on(FingerprintActions.detectCanvasSuccess, (state) => ({
+    ...state,
+    canvasDetecting: false,
+  })),
+  on(FingerprintActions.detectCanvasFailure, (state) => ({
+    ...state,
+    canvasDetecting: false,
+  })),
+  on(FingerprintActions.saveCanvas, (state) => ({
+    ...state,
+    canvasSaving: true,
+  })),
+  on(FingerprintActions.saveCanvasSuccess, (state) => ({
+    ...state,
+    canvasSaving: false,
+  })),
+  on(FingerprintActions.saveCanvasFailure, (state) => ({
+    ...state,
+    canvasSaving: false,
   }))
 );
 

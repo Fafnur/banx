@@ -2,7 +2,7 @@ import { HttpTestingController } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { API_ERROR_RESPONSE_STUB, API_ERROR_STUB, CoreApiTestingModule } from '@banx/core/api/service';
-import { FINGERPRINT_DTO_STUB } from '@banx/fingerprints/common';
+import { CANVAS_FINGERPRINT_DTO_STUB, FONTS_FINGERPRINT_DTO_STUB } from '@banx/fingerprints/common';
 
 import { FINGERPRINT_API_ROUTES, FingerprintApiService } from './fingerprint-api.service';
 
@@ -29,8 +29,8 @@ describe('FingerprintApiService', () => {
   });
 
   describe('saveFonts()', () => {
-    it('should return tracker save success', () => {
-      service.saveFonts(FINGERPRINT_DTO_STUB).subscribe((data) => {
+    it('should return fonts save success', () => {
+      service.saveFonts(FONTS_FINGERPRINT_DTO_STUB).subscribe((data) => {
         expect(data).toBeNull();
       });
       const req = httpTestingController.expectOne(FINGERPRINT_API_ROUTES.saveFonts);
@@ -39,13 +39,35 @@ describe('FingerprintApiService', () => {
       req.flush(null);
     });
 
-    it('should return tracker save error', () => {
-      service.saveFonts(FINGERPRINT_DTO_STUB).subscribe({
+    it('should return fonts save error', () => {
+      service.saveFonts(FONTS_FINGERPRINT_DTO_STUB).subscribe({
         error: (data) => {
           expect(data.error).toEqual(API_ERROR_STUB);
         },
       });
       const req = httpTestingController.expectOne(FINGERPRINT_API_ROUTES.saveFonts);
+      req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
+    });
+  });
+
+  describe('saveCanvas()', () => {
+    it('should return canvas save success', () => {
+      service.saveCanvas(CANVAS_FINGERPRINT_DTO_STUB).subscribe((data) => {
+        expect(data).toBeNull();
+      });
+      const req = httpTestingController.expectOne(FINGERPRINT_API_ROUTES.saveCanvas);
+      expect(req.request.method).toEqual('POST');
+
+      req.flush(null);
+    });
+
+    it('should return canvas save error', () => {
+      service.saveCanvas(CANVAS_FINGERPRINT_DTO_STUB).subscribe({
+        error: (data) => {
+          expect(data.error).toEqual(API_ERROR_STUB);
+        },
+      });
+      const req = httpTestingController.expectOne(FINGERPRINT_API_ROUTES.saveCanvas);
       req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });

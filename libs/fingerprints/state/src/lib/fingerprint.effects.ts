@@ -7,7 +7,8 @@ import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { VisitorService } from '@banx/core/visitor/service';
 import { FingerprintApiService } from '@banx/fingerprints/api';
-import { FontDetectorService } from '@banx/fingerprints/service';
+import { CanvasFingerprint } from '@banx/fingerprints/common';
+import { CanvasDetectorService, FontDetectorService } from '@banx/fingerprints/service';
 
 import * as FingerprintActions from './fingerprint.actions';
 
@@ -59,11 +60,61 @@ export class FingerprintEffects {
     )
   );
 
+  detectCanvas$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FingerprintActions.detectCanvas),
+      fetch({
+        id: () => 'fingerprint-detect-canvas',
+        run: () =>
+          this.platformService.isBrowser
+            ? FingerprintActions.detectCanvasSuccess({ payload: this.canvasDetectorService.detect() })
+            : FingerprintActions.detectCanvasSuccess({ payload: { winding: false, geometry: '', text: '' } }),
+        onError: (action, error) =>
+          this.loggerService.logEffect({ context: { action, error } }, FingerprintActions.detectCanvasFailure({ payload: error })),
+      })
+    )
+  );
+
+  detectCanvasSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FingerprintActions.detectCanvasSuccess, FingerprintActions.detectCanvasFailure),
+      fetch({
+        id: () => 'fingerprint-detect-canvas-success-or-failure',
+        run: (action) =>
+          FingerprintActions.saveCanvas({
+            payload: 'winding' in action.payload ? (action.payload as CanvasFingerprint) : { winding: false, geometry: '', text: '' },
+          }),
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
+      })
+    )
+  );
+
+  saveCanvas$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FingerprintActions.saveCanvas),
+      fetch({
+        id: () => 'fingerprint-save-canvas',
+        run: (action) =>
+          this.platformService.isBrowser
+            ? this.fingerprintApiService
+                .saveCanvas({
+                  visitor: this.visitorService.getUuid(),
+                  data: action.payload,
+                })
+                .pipe(map(() => FingerprintActions.saveCanvasSuccess()))
+            : FingerprintActions.saveCanvasSuccess(),
+        onError: (action, error) =>
+          this.loggerService.logEffect({ context: { action, error } }, FingerprintActions.saveCanvasFailure({ payload: error })),
+      })
+    )
+  );
+
   constructor(
     private readonly actions$: Actions,
     private readonly platformService: PlatformService,
     private readonly loggerService: LoggerService,
     private readonly fontDetectorService: FontDetectorService,
+    private readonly canvasDetectorService: CanvasDetectorService,
     private readonly fingerprintApiService: FingerprintApiService,
     private readonly visitorService: VisitorService
   ) {}

@@ -3,6 +3,10 @@ export interface FingerprintDto<T> {
   data: T;
 }
 
-export type FingerprintFontsDetected = Record<string, boolean>;
+export type FontsFingerprint = Record<string, boolean>;
 
-export type FingerprintFontsDto = FingerprintDto<FingerprintFontsDetected>;
+export interface CanvasFingerprint {
+  winding: boolean;
+  geometry: string;
+  text: string;
+}

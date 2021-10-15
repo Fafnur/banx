@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 import { API_ERROR_STUB } from '@banx/core/api/service';
 import { createStateMock } from '@banx/core/store/utils';
-import { FINGERPRINT_FONTS_DETECTED_STUB } from '@banx/fingerprints/common';
+import { CANVAS_FINGERPRINT_STUB, FONTS_FINGERPRINT_STUB } from '@banx/fingerprints/common';
 
 import * as FingerprintActions from './fingerprint.actions';
 import { fingerprintInitialState, FingerprintState, reducer } from './fingerprint.reducer';
@@ -25,7 +25,7 @@ describe('Fingerprint Reducer', () => {
   it('detectFontsSuccess() should set fontsDetecting false', () => {
     state = getState({ fontsDetecting: true });
 
-    const action = FingerprintActions.detectFontsSuccess({ payload: FINGERPRINT_FONTS_DETECTED_STUB });
+    const action = FingerprintActions.detectFontsSuccess({ payload: FONTS_FINGERPRINT_STUB });
 
     const result = reducer(state, action);
 
@@ -45,7 +45,7 @@ describe('Fingerprint Reducer', () => {
   it('saveFonts() should set fontsSaving true', () => {
     state = getState();
 
-    const action = FingerprintActions.saveFonts({ payload: FINGERPRINT_FONTS_DETECTED_STUB });
+    const action = FingerprintActions.saveFonts({ payload: FONTS_FINGERPRINT_STUB });
 
     const result = reducer(state, action);
 
@@ -70,6 +70,66 @@ describe('Fingerprint Reducer', () => {
     const result = reducer(state, action);
 
     expect(result.fontsSaving).toBeFalsy();
+  });
+
+  it('detectCanvas() should set canvasDetecting true', () => {
+    state = getState();
+
+    const action = FingerprintActions.detectCanvas();
+
+    const result = reducer(state, action);
+
+    expect(result.canvasDetecting).toBeTruthy();
+  });
+
+  it('detectCanvasSuccess() should set canvasDetecting false', () => {
+    state = getState({ canvasDetecting: true });
+
+    const action = FingerprintActions.detectCanvasSuccess({ payload: CANVAS_FINGERPRINT_STUB });
+
+    const result = reducer(state, action);
+
+    expect(result.canvasDetecting).toBeFalsy();
+  });
+
+  it('detectCanvasFailure() should set canvasDetecting false', () => {
+    state = getState({ canvasDetecting: true });
+
+    const action = FingerprintActions.detectCanvasFailure({ payload: API_ERROR_STUB });
+
+    const result = reducer(state, action);
+
+    expect(result.canvasDetecting).toBeFalsy();
+  });
+
+  it('saveCanvas() should set canvasSaving true', () => {
+    state = getState();
+
+    const action = FingerprintActions.saveCanvas({ payload: CANVAS_FINGERPRINT_STUB });
+
+    const result = reducer(state, action);
+
+    expect(result.canvasSaving).toBeTruthy();
+  });
+
+  it('saveCanvasSuccess() should set canvasSaving false', () => {
+    state = getState({ canvasSaving: true });
+
+    const action = FingerprintActions.saveCanvasSuccess();
+
+    const result = reducer(state, action);
+
+    expect(result.canvasSaving).toBeFalsy();
+  });
+
+  it('saveCanvasFailure() should set canvasSaving false', () => {
+    state = getState({ canvasSaving: true });
+
+    const action = FingerprintActions.saveCanvasFailure({ payload: API_ERROR_STUB });
+
+    const result = reducer(state, action);
+
+    expect(result.canvasSaving).toBeFalsy();
   });
 
   it('should return the previous state', () => {

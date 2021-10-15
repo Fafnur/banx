@@ -8,7 +8,7 @@ import { LoggerService } from '@banx/core/logger/service';
 import { providerOf } from '@banx/core/testing';
 import { VisitorService } from '@banx/core/visitor/service';
 import { FingerprintApiService } from '@banx/fingerprints/api';
-import { FontDetectorService } from '@banx/fingerprints/service';
+import { CanvasDetectorService, FontDetectorService } from '@banx/fingerprints/service';
 
 import { FingerprintEffects } from './fingerprint.effects';
 import { FingerprintFacade } from './fingerprint.facade';
@@ -20,12 +20,14 @@ describe('FingerprintFacade', () => {
   let fontDetectorServiceMock: FontDetectorService;
   let loggerServiceMock: LoggerService;
   let visitorServiceMock: VisitorService;
+  let canvasDetectorServiceMock: CanvasDetectorService;
 
   beforeEach(() => {
     fingerprintApiServiceMock = mock(FingerprintApiService);
     loggerServiceMock = mock(LoggerService);
     fontDetectorServiceMock = mock(FontDetectorService);
     visitorServiceMock = mock(VisitorService);
+    canvasDetectorServiceMock = mock(CanvasDetectorService);
   });
 
   describe('used in NgModule', () => {
@@ -38,6 +40,7 @@ describe('FingerprintFacade', () => {
           providerOf(FontDetectorService, fontDetectorServiceMock),
           providerOf(LoggerService, loggerServiceMock),
           providerOf(VisitorService, visitorServiceMock),
+          providerOf(CanvasDetectorService, canvasDetectorServiceMock),
         ],
       })
       class CustomFeatureModule {}

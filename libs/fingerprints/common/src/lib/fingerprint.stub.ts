@@ -1,10 +1,21 @@
-import { FingerprintDto, FingerprintFontsDetected } from './fingerprint.interface';
+import { CanvasFingerprint, FingerprintDto, FontsFingerprint } from './fingerprint.interface';
 
-export const FINGERPRINT_FONTS_DETECTED_STUB: FingerprintFontsDetected = {
+export const FONTS_FINGERPRINT_STUB: FontsFingerprint = {
   arial: true,
 };
 
-export const FINGERPRINT_DTO_STUB: FingerprintDto<any> = {
+export const FONTS_FINGERPRINT_DTO_STUB: FingerprintDto<any> = {
   visitor: '123456',
-  data: FINGERPRINT_FONTS_DETECTED_STUB,
+  data: FONTS_FINGERPRINT_STUB,
+};
+
+export const CANVAS_FINGERPRINT_STUB: CanvasFingerprint = {
+  text: '1234',
+  geometry: '1234',
+  winding: true,
+};
+
+export const CANVAS_FINGERPRINT_DTO_STUB: FingerprintDto<CanvasFingerprint> = {
+  visitor: '123456',
+  data: CANVAS_FINGERPRINT_STUB,
 };

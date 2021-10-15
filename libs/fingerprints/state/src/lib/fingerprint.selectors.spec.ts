@@ -7,21 +7,35 @@ describe('Fingerprint Selectors', () => {
   const getStore = createStoreMock<FingerprintState, FingerprintPartialState>(FINGERPRINT_FEATURE_KEY, fingerprintInitialState);
   let store: FingerprintPartialState;
 
-  describe('Fingerprint Selectors', () => {
-    it('selectFontsDetecting() should return fontsDetecting true', () => {
-      store = getStore({ fontsDetecting: true });
+  it('selectFontsDetecting() should return fontsDetecting true', () => {
+    store = getStore({ fontsDetecting: true });
 
-      const results = FingerprintSelectors.selectFontsDetecting(store);
+    const results = FingerprintSelectors.selectFontsDetecting(store);
 
-      expect(results).toBeTruthy();
-    });
+    expect(results).toBeTruthy();
+  });
 
-    it('selectFontsSaving() should return fontsSaving true', () => {
-      store = getStore({ fontsSaving: true });
+  it('selectFontsSaving() should return fontsSaving true', () => {
+    store = getStore({ fontsSaving: true });
 
-      const results = FingerprintSelectors.selectFontsSaving(store);
+    const results = FingerprintSelectors.selectFontsSaving(store);
 
-      expect(results).toBeTruthy();
-    });
+    expect(results).toBeTruthy();
+  });
+
+  it('selectCanvasDetecting() should return canvasDetecting true', () => {
+    store = getStore({ canvasDetecting: true });
+
+    const results = FingerprintSelectors.selectCanvasDetecting(store);
+
+    expect(results).toBeTruthy();
+  });
+
+  it('selectCanvasSaving() should return canvasSaving true', () => {
+    store = getStore({ canvasSaving: true });
+
+    const results = FingerprintSelectors.selectCanvasSaving(store);
+
+    expect(results).toBeTruthy();
   });
 });

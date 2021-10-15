@@ -12,7 +12,10 @@ export class FingerprintFacade {
   fontsDetecting$ = this.store.pipe(select(FingerprintSelectors.selectFontsDetecting));
   fontsSaving$ = this.store.pipe(select(FingerprintSelectors.selectFontsSaving));
 
-  finished$ = combineLatest([this.actions$.pipe(ofType(FingerprintActions.detectFontsSuccess))]);
+  finished$ = combineLatest([
+    this.actions$.pipe(ofType(FingerprintActions.detectFontsSuccess)),
+    this.actions$.pipe(ofType(FingerprintActions.detectCanvasSuccess)),
+  ]);
 
   constructor(private readonly actions$: Actions, private readonly store: Store<FingerprintPartialState>) {}
 
@@ -21,6 +24,7 @@ export class FingerprintFacade {
    */
   run(): void {
     this.dispatch(FingerprintActions.detectFonts());
+    this.dispatch(FingerprintActions.detectCanvas());
   }
 
   private dispatch(action: Action): void {
