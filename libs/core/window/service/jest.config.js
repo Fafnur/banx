@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'core-windiw-service',
+  displayName: 'core-window-service',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/core/windiw/service',
+  coverageDirectory: '../../../../coverage/libs/core/window/service',
   transform: {
     '^.+\\.(ts|js|html)$': 'jest-preset-angular',
   },

@@ -129,7 +129,7 @@
     "core-visitor-service": {
       "tags": []
     },
-    "core-windiw-service": {
+    "core-window-service": {
       "tags": []
     },
     "errors-not-found-page": {
@@ -145,6 +145,18 @@
       "tags": []
     },
     "errors-shared": {
+      "tags": []
+    },
+    "fingerprints-api": {
+      "tags": []
+    },
+    "fingerprints-common": {
+      "tags": []
+    },
+    "fingerprints-service": {
+      "tags": []
+    },
+    "fingerprints-state": {
       "tags": []
     },
     "numbers-to-words-common": {

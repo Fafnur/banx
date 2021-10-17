@@ -10,7 +10,7 @@ import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { VisitorService } from '@banx/core/visitor/service';
-import { WindowService } from '@banx/core/windiw/service';
+import { WindowService } from '@banx/core/window/service';
 import { TrackerApiService } from '@banx/trackers/api';
 import { TrackerEventType } from '@banx/trackers/common';
 import { TrackerService } from '@banx/trackers/service';

@@ -6,6 +6,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { configurationFactory, typeOrmFactory } from './config/config';
+import { FingerprintsModule } from './fingerprints/fingerprints.module';
 import { TrackersModule } from './trackers/trackers.module';
 import { UsersModule } from './users/users.module';
 
@@ -23,6 +24,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     AuthModule,
     TrackersModule,
+    FingerprintsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

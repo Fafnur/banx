@@ -10,7 +10,7 @@ export class TrackerController {
 
   @Post('trackers/records')
   @HttpCode(204)
-  async getProfile(@Body() recordsDto: TrackerRecordsDto): Promise<void> {
+  async postRecords(@Body() recordsDto: TrackerRecordsDto): Promise<void> {
     if (!recordsDto || !recordsDto?.visitor) {
       throw new BadRequestException();
     } else if (!recordsDto.records.length) {
