@@ -4,10 +4,15 @@ import { CanvasFingerprint, FingerprintDto, FontsFingerprint } from '@banx/finge
 
 import { FingerprintCanvasService } from './fingerprint-canvas.service';
 import { FingerprintFontService } from './fingerprint-font.service';
+import { FingerprintGeolocationService } from './fingerprint-geolocation.service';
 
 @Controller()
 export class FingerprintController {
-  constructor(private readonly fontService: FingerprintFontService, private readonly canvasService: FingerprintCanvasService) {}
+  constructor(
+    private readonly fontService: FingerprintFontService,
+    private readonly canvasService: FingerprintCanvasService,
+    private readonly geolocationService: FingerprintGeolocationService
+  ) {}
 
   @Post('data/fonts')
   @HttpCode(204)
@@ -33,5 +38,15 @@ export class FingerprintController {
     }
 
     return this.canvasService.save(payload).then();
+  }
+
+  @Post('data/geolocation')
+  @HttpCode(204)
+  async postGeolocation(@Body() payload: FingerprintDto<GeolocationCoordinates | null>): Promise<void> {
+    if (!payload || !payload?.visitor) {
+      throw new BadRequestException();
+    }
+
+    return this.geolocationService.save(payload).then();
   }
 }

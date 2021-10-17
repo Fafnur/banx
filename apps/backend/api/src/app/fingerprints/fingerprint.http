@@ -22,3 +22,36 @@ Accept: application/json
   ],
   "visitor": "12345678"
 }
+
+### Save detected canvas
+POST http://localhost:3000/data/canvas
+Content-Type: application/json
+Accept: application/json
+
+{
+  "data": {
+    "winding": true,
+    "geometry": "string",
+    "text": "string"
+  },
+  "visitor": "12345678"
+}
+
+
+### Save detected geolocation
+POST http://localhost:3000/data/geolocation
+Content-Type: application/json
+Accept: application/json
+
+{
+  "data": {
+    "accuracy": 1,
+    "altitude": null,
+    "altitudeAccuracy": null,
+    "heading": null,
+    "latitude": 20.2,
+    "longitude": 20.2,
+    "speed": null
+  },
+  "visitor": "12345678"
+}
