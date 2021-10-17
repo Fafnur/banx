@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { interval, Observable } from 'rxjs';
+import { interval, Observable, of } from 'rxjs';
 import { last, map, switchMap, take, tap } from 'rxjs/operators';
 
 import { SessionAsyncStorage } from '@banx/core/storage/session';
@@ -2394,18 +2394,15 @@ export class FontDetectorService {
 
   private getDataFromStorage(): Observable<FontsFingerprint> {
     const data: Record<string, boolean> = {};
+    const state = this.sessionAsyncStorage.state;
 
-    return this.sessionAsyncStorage.getItems<(boolean | null)[]>(FONTS_NAMES).pipe(
-      map((fonts) => {
-        FONTS_NAMES.forEach((fontName, index) => {
-          if (typeof fonts[index] === 'boolean') {
-            data[fontName] = !!fonts[index];
-          }
-        });
+    FONTS_NAMES.forEach((fontName, index) => {
+      if (typeof state[index] === 'boolean') {
+        data[fontName] = !!state[index];
+      }
+    });
 
-        return data;
-      })
-    );
+    return of(data);
   }
 
   private getData(): Observable<FontsFingerprint> {
