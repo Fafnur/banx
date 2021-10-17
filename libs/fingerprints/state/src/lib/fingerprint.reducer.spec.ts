@@ -132,6 +132,66 @@ describe('Fingerprint Reducer', () => {
     expect(result.canvasSaving).toBeFalsy();
   });
 
+  it('detectGeolocation() should set geolocationDetecting true', () => {
+    state = getState();
+
+    const action = FingerprintActions.detectGeolocation();
+
+    const result = reducer(state, action);
+
+    expect(result.geolocationDetecting).toBeTruthy();
+  });
+
+  it('detectGeolocationSuccess() should set geolocationDetecting false', () => {
+    state = getState({ geolocationDetecting: true });
+
+    const action = FingerprintActions.detectGeolocationSuccess({ payload: null });
+
+    const result = reducer(state, action);
+
+    expect(result.geolocationDetecting).toBeFalsy();
+  });
+
+  it('detectGeolocationFailure() should set geolocationDetecting false', () => {
+    state = getState({ geolocationDetecting: true });
+
+    const action = FingerprintActions.detectGeolocationFailure({ payload: API_ERROR_STUB });
+
+    const result = reducer(state, action);
+
+    expect(result.geolocationDetecting).toBeFalsy();
+  });
+
+  it('saveGeolocation() should set geolocationSaving true', () => {
+    state = getState();
+
+    const action = FingerprintActions.saveGeolocation({ payload: null });
+
+    const result = reducer(state, action);
+
+    expect(result.geolocationSaving).toBeTruthy();
+  });
+
+  it('saveGeolocationSuccess() should set geolocationSaving false', () => {
+    state = getState({ geolocationSaving: true });
+
+    const action = FingerprintActions.saveGeolocationSuccess();
+
+    const result = reducer(state, action);
+
+    expect(result.geolocationSaving).toBeFalsy();
+  });
+
+  it('saveGeolocationFailure() should set geolocationSaving false', () => {
+    state = getState({ geolocationSaving: true });
+
+    const action = FingerprintActions.saveGeolocationFailure({ payload: API_ERROR_STUB });
+
+    const result = reducer(state, action);
+
+    expect(result.geolocationSaving).toBeFalsy();
+  });
+
   it('should return the previous state', () => {
     const action = {} as Action;
 

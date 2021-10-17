@@ -8,7 +8,7 @@ import { PlatformService } from '@banx/core/platform/service';
 import { VisitorService } from '@banx/core/visitor/service';
 import { FingerprintApiService } from '@banx/fingerprints/api';
 import { CanvasFingerprint } from '@banx/fingerprints/common';
-import { CanvasDetectorService, FontDetectorService } from '@banx/fingerprints/service';
+import { CanvasDetectorService, FontDetectorService, GeolocationDetectorService } from '@banx/fingerprints/service';
 
 import * as FingerprintActions from './fingerprint.actions';
 
@@ -109,12 +109,62 @@ export class FingerprintEffects {
     )
   );
 
+  detectGeolocation$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FingerprintActions.detectGeolocation),
+      fetch({
+        id: () => 'fingerprint-detect-geolocation',
+        run: () =>
+          this.platformService.isBrowser
+            ? this.geolocationDetectorService.detect().pipe(map((payload) => FingerprintActions.detectGeolocationSuccess({ payload })))
+            : FingerprintActions.detectGeolocationSuccess({ payload: null }),
+        onError: (action, error) =>
+          this.loggerService.logEffect({ context: { action, error } }, FingerprintActions.detectGeolocationFailure({ payload: error })),
+      })
+    )
+  );
+
+  detectGeolocationSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FingerprintActions.detectGeolocationSuccess, FingerprintActions.detectGeolocationFailure),
+      fetch({
+        id: () => 'fingerprint-detect-geolocation-success-or-failure',
+        run: (action) =>
+          FingerprintActions.saveGeolocation({
+            payload: action.payload?.latitude && action.payload?.longitude ? (action.payload as GeolocationCoordinates) : null,
+          }),
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
+      })
+    )
+  );
+
+  saveGeolocation$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(FingerprintActions.saveGeolocation),
+      fetch({
+        id: () => 'fingerprint-save-geolocation',
+        run: (action) =>
+          this.platformService.isBrowser
+            ? this.fingerprintApiService
+                .saveGeolocation({
+                  visitor: this.visitorService.getUuid(),
+                  data: action.payload,
+                })
+                .pipe(map(() => FingerprintActions.saveGeolocationSuccess()))
+            : FingerprintActions.saveGeolocationSuccess(),
+        onError: (action, error) =>
+          this.loggerService.logEffect({ context: { action, error } }, FingerprintActions.saveGeolocationFailure({ payload: error })),
+      })
+    )
+  );
+
   constructor(
     private readonly actions$: Actions,
     private readonly platformService: PlatformService,
     private readonly loggerService: LoggerService,
     private readonly fontDetectorService: FontDetectorService,
     private readonly canvasDetectorService: CanvasDetectorService,
+    private readonly geolocationDetectorService: GeolocationDetectorService,
     private readonly fingerprintApiService: FingerprintApiService,
     private readonly visitorService: VisitorService
   ) {}

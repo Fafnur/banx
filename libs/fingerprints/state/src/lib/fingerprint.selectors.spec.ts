@@ -7,6 +7,22 @@ describe('Fingerprint Selectors', () => {
   const getStore = createStoreMock<FingerprintState, FingerprintPartialState>(FINGERPRINT_FEATURE_KEY, fingerprintInitialState);
   let store: FingerprintPartialState;
 
+  it('selectCanvasDetecting() should return canvasDetecting true', () => {
+    store = getStore({ canvasDetecting: true });
+
+    const results = FingerprintSelectors.selectCanvasDetecting(store);
+
+    expect(results).toBeTruthy();
+  });
+
+  it('selectCanvasSaving() should return canvasSaving true', () => {
+    store = getStore({ canvasSaving: true });
+
+    const results = FingerprintSelectors.selectCanvasSaving(store);
+
+    expect(results).toBeTruthy();
+  });
+
   it('selectFontsDetecting() should return fontsDetecting true', () => {
     store = getStore({ fontsDetecting: true });
 
@@ -23,18 +39,18 @@ describe('Fingerprint Selectors', () => {
     expect(results).toBeTruthy();
   });
 
-  it('selectCanvasDetecting() should return canvasDetecting true', () => {
-    store = getStore({ canvasDetecting: true });
+  it('selectGeolocationDetecting() should return geolocationDetecting true', () => {
+    store = getStore({ geolocationDetecting: true });
 
-    const results = FingerprintSelectors.selectCanvasDetecting(store);
+    const results = FingerprintSelectors.selectGeolocationDetecting(store);
 
     expect(results).toBeTruthy();
   });
 
-  it('selectCanvasSaving() should return canvasSaving true', () => {
-    store = getStore({ canvasSaving: true });
+  it('selectGeolocationSaving() should return geolocationSaving true', () => {
+    store = getStore({ geolocationSaving: true });
 
-    const results = FingerprintSelectors.selectCanvasSaving(store);
+    const results = FingerprintSelectors.selectGeolocationSaving(store);
 
     expect(results).toBeTruthy();
   });

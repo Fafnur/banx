@@ -7,6 +7,7 @@ import { CanvasFingerprint, FingerprintDto, FontsFingerprint } from '@banx/finge
 export const FINGERPRINT_API_ROUTES = {
   saveFonts: '/data/fonts',
   saveCanvas: '/data/canvas',
+  saveGeolocation: '/data/geolocation',
 };
 
 @Injectable()
@@ -19,5 +20,9 @@ export class FingerprintApiService {
 
   saveCanvas(payload: FingerprintDto<CanvasFingerprint>): Observable<void> {
     return this.apiService.post(FINGERPRINT_API_ROUTES.saveCanvas, payload);
+  }
+
+  saveGeolocation(payload: FingerprintDto<GeolocationCoordinates | null>): Observable<void> {
+    return this.apiService.post(FINGERPRINT_API_ROUTES.saveGeolocation, payload);
   }
 }

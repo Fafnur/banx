@@ -5,10 +5,12 @@ import * as FingerprintActions from './fingerprint.actions';
 export const FINGERPRINT_FEATURE_KEY = 'fingerprint';
 
 export interface FingerprintState {
-  fontsDetecting: boolean;
-  fontsSaving: boolean;
   canvasDetecting: boolean;
   canvasSaving: boolean;
+  fontsDetecting: boolean;
+  fontsSaving: boolean;
+  geolocationDetecting: boolean;
+  geolocationSaving: boolean;
 }
 
 export interface FingerprintPartialState {
@@ -16,10 +18,12 @@ export interface FingerprintPartialState {
 }
 
 export const fingerprintInitialState: FingerprintState = {
-  fontsDetecting: false,
-  fontsSaving: false,
   canvasDetecting: false,
   canvasSaving: false,
+  fontsDetecting: false,
+  fontsSaving: false,
+  geolocationDetecting: false,
+  geolocationSaving: false,
 };
 
 const fingerprintReducer = createReducer(
@@ -71,6 +75,30 @@ const fingerprintReducer = createReducer(
   on(FingerprintActions.saveCanvasFailure, (state) => ({
     ...state,
     canvasSaving: false,
+  })),
+  on(FingerprintActions.detectGeolocation, (state) => ({
+    ...state,
+    geolocationDetecting: true,
+  })),
+  on(FingerprintActions.detectGeolocationSuccess, (state) => ({
+    ...state,
+    geolocationDetecting: false,
+  })),
+  on(FingerprintActions.detectGeolocationFailure, (state) => ({
+    ...state,
+    geolocationDetecting: false,
+  })),
+  on(FingerprintActions.saveGeolocation, (state) => ({
+    ...state,
+    geolocationSaving: true,
+  })),
+  on(FingerprintActions.saveGeolocationSuccess, (state) => ({
+    ...state,
+    geolocationSaving: false,
+  })),
+  on(FingerprintActions.saveGeolocationFailure, (state) => ({
+    ...state,
+    geolocationSaving: false,
   }))
 );
 

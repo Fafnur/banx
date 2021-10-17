@@ -28,3 +28,15 @@ export const saveCanvas = createAction('[Fingerprint] Save Canvas', payload<Canv
 export const saveCanvasSuccess = createAction('[Fingerprint] Save Canvas Success');
 
 export const saveCanvasFailure = createAction('[Fingerprint] Save Canvas Failure', payload<Record<string, any>>());
+
+export const detectGeolocation = createAction('[Fingerprint] Detect Geolocation');
+
+export const detectGeolocationSuccess = createAction('[Fingerprint] Detect Geolocation Success', payload<GeolocationCoordinates | null>());
+
+export const detectGeolocationFailure = createAction('[Fingerprint] Detect Geolocation Failure', payload<Record<string, any>>());
+
+export const saveGeolocation = createAction('[Fingerprint] Save Geolocation', payload<GeolocationCoordinates | null>());
+
+export const saveGeolocationSuccess = createAction('[Fingerprint] Save Geolocation Success');
+
+export const saveGeolocationFailure = createAction('[Fingerprint] Save Geolocation Failure', payload<Record<string, any>>());

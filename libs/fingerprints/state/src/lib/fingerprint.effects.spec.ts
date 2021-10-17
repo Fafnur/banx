@@ -17,8 +17,10 @@ import {
   CANVAS_FINGERPRINT_STUB,
   FONTS_FINGERPRINT_DTO_STUB,
   FONTS_FINGERPRINT_STUB,
+  GEOLOCATION_COORDINATES_STUB,
+  GEOLOCATION_FINGERPRINT_DTO_STUB,
 } from '@banx/fingerprints/common';
-import { CanvasDetectorService, FontDetectorService } from '@banx/fingerprints/service';
+import { CanvasDetectorService, FontDetectorService, GeolocationDetectorService } from '@banx/fingerprints/service';
 
 import * as FingerprintActions from './fingerprint.actions';
 import { FingerprintEffects } from './fingerprint.effects';
@@ -31,6 +33,7 @@ describe('FingerprintEffects', () => {
   let canvasDetectorServiceMock: CanvasDetectorService;
   let loggerServiceMock: LoggerService;
   let visitorServiceMock: VisitorService;
+  let geolocationDetectorServiceMock: GeolocationDetectorService;
 
   beforeEach(() => {
     fingerprintApiServiceMock = mock(FingerprintApiService);
@@ -38,6 +41,7 @@ describe('FingerprintEffects', () => {
     fontDetectorServiceMock = mock(FontDetectorService);
     visitorServiceMock = mock(VisitorService);
     canvasDetectorServiceMock = mock(CanvasDetectorService);
+    geolocationDetectorServiceMock = mock(GeolocationDetectorService);
   });
 
   beforeEach(
@@ -53,6 +57,7 @@ describe('FingerprintEffects', () => {
           providerOf(LoggerService, loggerServiceMock),
           providerOf(VisitorService, visitorServiceMock),
           providerOf(CanvasDetectorService, canvasDetectorServiceMock),
+          providerOf(GeolocationDetectorService, geolocationDetectorServiceMock),
         ],
       });
     })
@@ -184,6 +189,75 @@ describe('FingerprintEffects', () => {
       when(fingerprintApiServiceMock.saveCanvas(deepEqual(CANVAS_FINGERPRINT_DTO_STUB))).thenReturn(response);
 
       expect(effects.saveCanvas$).toBeObservable(expected);
+    });
+  });
+
+  describe('detectGeolocation$', () => {
+    it('should return detectGeolocationSuccess', () => {
+      const action = FingerprintActions.detectGeolocation();
+      const completion = FingerprintActions.detectGeolocationSuccess({ payload: GEOLOCATION_COORDINATES_STUB });
+
+      actions$ = hot('-a-|', { a: action });
+      const response = cold('-a-|', { a: GEOLOCATION_COORDINATES_STUB });
+      const expected = cold('--a-|', { a: completion });
+
+      when(geolocationDetectorServiceMock.detect()).thenReturn(response);
+
+      expect(effects.detectGeolocation$).toBeObservable(expected);
+    });
+
+    it('should return detectGeolocationFailure', () => {
+      const action = FingerprintActions.detectGeolocation();
+      const completion = FingerprintActions.detectGeolocationFailure({ payload: API_ERROR_RESPONSE_STUB });
+
+      actions$ = hot('-a-|', { a: action });
+      const response = cold('-#|', {}, API_ERROR_RESPONSE_STUB);
+      const expected = cold('--a|', { a: completion });
+
+      when(loggerServiceMock.logEffect(anything(), deepEqual(completion))).thenReturn(of(completion));
+      when(geolocationDetectorServiceMock.detect()).thenReturn(response);
+
+      expect(effects.detectGeolocation$).toBeObservable(expected);
+    });
+  });
+
+  describe('detectGeolocationSuccess$', () => {
+    it('should return saveGeolocation', () => {
+      const payload = { payload: GEOLOCATION_COORDINATES_STUB };
+
+      actions$ = hot('-a-|', { a: FingerprintActions.detectGeolocationSuccess(payload) });
+      const expected = hot('-a-|', { a: FingerprintActions.saveGeolocation(payload) });
+
+      expect(effects.detectGeolocationSuccess$).toBeObservable(expected);
+    });
+  });
+
+  describe('saveGeolocation$', () => {
+    it('should return saveGeolocationSuccess', () => {
+      const action = FingerprintActions.saveGeolocation({ payload: GEOLOCATION_COORDINATES_STUB });
+      const completion = FingerprintActions.saveGeolocationSuccess();
+
+      actions$ = hot('-a-|', { a: action });
+      const response = cold('-a-|', { a: null });
+      const expected = cold('--a-|', { a: completion });
+
+      when(fingerprintApiServiceMock.saveGeolocation(deepEqual(GEOLOCATION_FINGERPRINT_DTO_STUB))).thenReturn(response);
+
+      expect(effects.saveGeolocation$).toBeObservable(expected);
+    });
+
+    it('should return saveGeolocationFailure', () => {
+      const action = FingerprintActions.saveGeolocation({ payload: GEOLOCATION_COORDINATES_STUB });
+      const completion = FingerprintActions.saveGeolocationFailure({ payload: API_ERROR_RESPONSE_STUB });
+
+      actions$ = hot('-a-|', { a: action });
+      const response = cold('-#|', {}, API_ERROR_RESPONSE_STUB);
+      const expected = cold('--a|', { a: completion });
+
+      when(loggerServiceMock.logEffect(anything(), deepEqual(completion))).thenReturn(of(completion));
+      when(fingerprintApiServiceMock.saveGeolocation(deepEqual(GEOLOCATION_FINGERPRINT_DTO_STUB))).thenReturn(response);
+
+      expect(effects.saveGeolocation$).toBeObservable(expected);
     });
   });
 });
