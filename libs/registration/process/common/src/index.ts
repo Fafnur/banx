@@ -1,1 +1,1 @@
-export * from './lib/registration-process-common.module';
+export * from './lib/registration-process.interface';
