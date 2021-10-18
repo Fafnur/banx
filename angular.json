@@ -1038,6 +1038,69 @@
         }
       }
     },
+    "registration-process-api": {
+      "projectType": "library",
+      "root": "libs/registration/process/api",
+      "sourceRoot": "libs/registration/process/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/process/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/process/api/src/**/*.ts", "libs/registration/process/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-process-common": {
+      "projectType": "library",
+      "root": "libs/registration/process/common",
+      "sourceRoot": "libs/registration/process/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/process/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/process/common/src/**/*.ts", "libs/registration/process/common/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-process-state": {
+      "projectType": "library",
+      "root": "libs/registration/process/state",
+      "sourceRoot": "libs/registration/process/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/process/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/process/state/src/**/*.ts", "libs/registration/process/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian-cabinet": {
       "projectType": "application",
       "root": "apps/russian/cabinet",
