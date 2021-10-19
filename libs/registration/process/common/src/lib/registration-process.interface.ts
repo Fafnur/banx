@@ -1,5 +1,5 @@
 // RegistrationStepGlobal
-export enum RegistrationProcessType {
+export enum RegistrationStepType {
   Form = 'form',
   Data = 'data',
   Social = 'social',
@@ -24,13 +24,13 @@ export interface RegistrationStepEntity<T = string, S = string> {
 export interface RegistrationStep<T = string, S = string> extends RegistrationStepEntity<T, S> {}
 
 export interface RegistrationProcessDto<T extends string = string> {
-  readonly processId: number;
+  readonly processId: string;
   readonly finished: boolean;
   readonly steps: Record<T, RegistrationStepDto>;
 }
 
 export interface RegistrationProcess<T = string, S = string> {
-  processId: number;
+  processId: string;
   finished: boolean;
   steps: RegistrationStepEntity<T, S>[];
 }
