@@ -29,11 +29,8 @@ export interface RegistrationProcessDto<T extends string = string> {
   readonly steps: Record<T, RegistrationStepDto>;
 }
 
-export interface RegistrationProcessEntity<T = string, S = string> {
+export interface RegistrationProcess<T = string, S = string> {
   processId: number;
   finished: boolean;
   steps: RegistrationStepEntity<T, S>[];
 }
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface RegistrationProcess<T = string, S = string> extends RegistrationProcessEntity<T, S> {}
