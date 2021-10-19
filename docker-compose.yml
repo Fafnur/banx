@@ -10,4 +10,4 @@ services:
       - MARIADB_USER=banx
       - MARIADB_PASSWORD=123456
     ports:
-      - "3306:3306"
+      - 23306:3306
