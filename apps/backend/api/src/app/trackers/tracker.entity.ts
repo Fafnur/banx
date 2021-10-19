@@ -39,6 +39,6 @@ export class TrackerEntity implements TrackerRecord {
   @Column({ type: 'json', nullable: true })
   data!: Record<string, any>;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: string;
 }

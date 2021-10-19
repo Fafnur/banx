@@ -24,9 +24,9 @@ export class UserEntity implements User {
   @Column({ length: 50, unique: true })
   username!: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: string;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn({ nullable: true, name: 'updated_at' })
   updatedAt!: string;
 }

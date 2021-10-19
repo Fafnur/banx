@@ -16,6 +16,6 @@ export class FingerprintCanvasEntity {
   @Column({ type: 'json', nullable: true })
   data!: Record<string, any>;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: string;
 }
