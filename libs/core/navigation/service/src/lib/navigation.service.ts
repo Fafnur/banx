@@ -1,11 +1,17 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { NavigationExtras, Router, UrlCreationOptions, UrlTree } from '@angular/router';
+
+import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NavigationService {
-  constructor(private readonly router: Router) {}
+  constructor(private readonly router: Router, @Inject(PATHS) private readonly paths: NavigationPaths) {}
+
+  getPaths(): NavigationPaths {
+    return this.paths;
+  }
 
   createUrlTree(path: string | (string | number)[], navigationExtras?: UrlCreationOptions): UrlTree {
     return this.router.createUrlTree(typeof path === 'string' ? this.getRoute(path) : path, navigationExtras);

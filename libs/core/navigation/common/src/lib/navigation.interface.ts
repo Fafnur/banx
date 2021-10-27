@@ -89,9 +89,22 @@ export interface NavigationPaths {
   permissionDenied: string;
 
   // User
-
   user: string;
   userProfile: string;
+
+  // Registration
+  registration: string;
+  registrationForm: string;
+  registrationFormPersonal: string;
+  registrationFormFamily: string;
+  registrationFormEmployment: string;
+  registrationFormAdditional: string;
+  registrationData: string;
+  registrationSocial: string;
+  registrationDecision: string;
+  registrationUser: string;
+  registrationConversion: string;
+  registrationFinish: string;
 }
 
 export const NAVIGATION_PATHS: NavigationPaths = {
@@ -177,6 +190,19 @@ export const NAVIGATION_PATHS: NavigationPaths = {
 
   user: '/user',
   userProfile: '/user/profile',
+
+  registration: '/registration',
+  registrationForm: '/registration/form',
+  registrationFormFamily: '/registration/form/family',
+  registrationFormPersonal: '/registration/form/personal',
+  registrationFormEmployment: '/registration/form/employment',
+  registrationFormAdditional: '/registration/form/additional',
+  registrationData: '/registration/data',
+  registrationSocial: '/registration/social',
+  registrationDecision: '/registration/decision',
+  registrationUser: '/registration/user',
+  registrationConversion: '/registration/conversion',
+  registrationFinish: '/registration/finish',
 };
 
 export interface NavigationLink {
