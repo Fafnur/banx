@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { uuidv4 } from '@banx/core/utils';
-import { RegistrationProcessDto, RegistrationStepDto, RegistrationStepType } from '@banx/registration/process/common';
+import { REGISTRATION_STEPS, RegistrationProcessDto, RegistrationStepDto } from '@banx/registration/process/common';
 
 import { RegistrationProcessEntity } from './registration-process.entity';
 
@@ -30,26 +30,11 @@ export class RegistrationProcessService {
     };
   }
 
-  private getSteps(process: RegistrationProcessEntity): Record<string, RegistrationStepDto> {
-    // TODO: Move to envs or config
-    const stepsNames: RegistrationStepType[] = [
-      RegistrationStepType.Form,
-      RegistrationStepType.Data,
-      RegistrationStepType.Social,
-      RegistrationStepType.User,
-      RegistrationStepType.Decision,
-      RegistrationStepType.Conversion,
-      RegistrationStepType.Finish,
-    ];
-    const steps: Record<string, RegistrationStepDto> = {};
-
-    stepsNames.forEach((stepName) => {
-      steps[stepName] = {
-        name: stepName,
-        finishedAt: process?.finishedSteps && process?.finishedSteps[stepName] ? process?.finishedSteps[stepName].finishedAt : null,
-      };
-    });
-
-    return steps;
+  private getSteps(process: RegistrationProcessEntity): RegistrationStepDto[] {
+    return REGISTRATION_STEPS.map((stepName, index) => ({
+      id: index + 1,
+      name: stepName,
+      finishedAt: process?.finishedSteps && process?.finishedSteps[stepName] ? process?.finishedSteps[stepName].finishedAt : null,
+    }));
   }
 }

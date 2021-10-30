@@ -27,25 +27,23 @@ describe('RegistrationProcessApiService', () => {
   });
 
   describe('steps()', () => {
-    const path = REGISTRATION_PROCESS_API_ROUTES.steps;
-
     it('should return steps', () => {
-      service.steps().subscribe({
+      service.load().subscribe({
         next: (data) => {
           expect(data).toEqual(castRegistrationProcess(REGISTRATION_PROCESS_DTO_STUB));
         },
       });
-      const req = httpTestingController.expectOne(path);
+      const req = httpTestingController.expectOne(REGISTRATION_PROCESS_API_ROUTES.load());
       expect(req.request.method).toEqual('GET');
 
       req.flush(REGISTRATION_PROCESS_STUB);
     });
 
     it('should return registration process error', () => {
-      service.steps().subscribe({
+      service.load().subscribe({
         error: (data) => expect(data.error.error).toEqual(API_ERROR_STUB),
       });
-      const req = httpTestingController.expectOne(path);
+      const req = httpTestingController.expectOne(REGISTRATION_PROCESS_API_ROUTES.load());
       req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });
