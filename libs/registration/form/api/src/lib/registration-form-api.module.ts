@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { RegistrationFormApiService } from './registration-form-api.service';
+
 @NgModule({
-  imports: [CommonModule],
+  providers: [RegistrationFormApiService],
 })
 export class RegistrationFormApiModule {}

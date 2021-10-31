@@ -1,1 +1,2 @@
-export * from './lib/registration-form-common.module';
+export * from './lib/registration-form.interface';
+export * from './lib/registration-form.stub';
