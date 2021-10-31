@@ -165,6 +165,15 @@
     "numbers-to-words-shared": {
       "tags": []
     },
+    "registration-form-api": {
+      "tags": []
+    },
+    "registration-form-common": {
+      "tags": []
+    },
+    "registration-form-state": {
+      "tags": []
+    },
     "registration-process-api": {
       "tags": []
     },
