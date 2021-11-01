@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { ApiService } from '@banx/core/api/service';
-import { RegistrationForm, RegistrationFormFieldValidate, RegistrationFormValidate } from '@banx/registration/form/common';
+import {
+  RegistrationForm,
+  RegistrationFormCreate,
+  RegistrationFormFieldValidate,
+  RegistrationFormValidate,
+} from '@banx/registration/form/common';
 
 export const REGISTRATION_FORM_API_ROUTES = {
   create: (processId: string): string => `/registration/${processId}/form`,
@@ -19,8 +24,8 @@ export class RegistrationFormApiService {
     return this.apiService.get<RegistrationForm>(REGISTRATION_FORM_API_ROUTES.load(processId));
   }
 
-  create(processId: string, data: RegistrationForm): Observable<void> {
-    return this.apiService.post(REGISTRATION_FORM_API_ROUTES.create(processId), data);
+  create(processId: string, payload: RegistrationFormCreate): Observable<void> {
+    return this.apiService.post(REGISTRATION_FORM_API_ROUTES.create(processId), payload);
   }
 
   validate(processId: string, data: RegistrationFormValidate): Observable<void> {

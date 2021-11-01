@@ -1,4 +1,9 @@
-import { RegistrationForm, RegistrationFormFieldValidate, RegistrationFormValidate } from '@banx/registration/form/common';
+import {
+  RegistrationForm,
+  RegistrationFormCreate,
+  RegistrationFormFieldValidate,
+  RegistrationFormValidate,
+} from '@banx/registration/form/common';
 
 export const REGISTRATION_FORM_STUB: RegistrationForm = {
   firstName: 'Ivan',
@@ -15,4 +20,11 @@ export const REGISTRATION_FORM_FIELD_VALIDATE_STUB: RegistrationFormFieldValidat
   field: 'lastName',
   value: 'Ivanov',
   subStep: 'personal',
+};
+
+export const REGISTRATION_FORM_CREATE_STUB: RegistrationFormCreate & { additional: { visitor: string } } = {
+  form: REGISTRATION_FORM_STUB,
+  additional: {
+    visitor: '123456',
+  },
 };

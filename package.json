@@ -82,6 +82,7 @@
     "@nestjs/testing": "^7.6.18",
     "@nestjs/typeorm": "^7.1.5",
     "@ngrx/schematics": "^12.5.0",
+    "@ngrx/store-devtools": "^12.5.0",
     "@nrwl/cli": "^12.10.0",
     "@nrwl/cypress": "^12.10.0",
     "@nrwl/eslint-plugin-nx": "^12.10.0",

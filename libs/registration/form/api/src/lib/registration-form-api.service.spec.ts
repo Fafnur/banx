@@ -3,6 +3,7 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { API_ERROR_RESPONSE_STUB, API_ERROR_STUB, CoreApiTestingModule } from '@banx/core/api/service';
 import {
+  REGISTRATION_FORM_CREATE_STUB,
   REGISTRATION_FORM_FIELD_VALIDATE_STUB,
   REGISTRATION_FORM_STUB,
   REGISTRATION_FORM_VALIDATE_STUB,
@@ -57,7 +58,7 @@ describe('RegistrationFormApiService', () => {
 
   describe('create()', () => {
     it('should create registrationForm', () => {
-      service.create(PROCESS_ID_STUB, REGISTRATION_FORM_STUB).subscribe({
+      service.create(PROCESS_ID_STUB, REGISTRATION_FORM_CREATE_STUB).subscribe({
         next: (data) => {
           expect(data).toBeNull();
         },
@@ -69,7 +70,7 @@ describe('RegistrationFormApiService', () => {
     });
 
     it('should create registrationForm error', () => {
-      service.create(PROCESS_ID_STUB, REGISTRATION_FORM_STUB).subscribe({
+      service.create(PROCESS_ID_STUB, REGISTRATION_FORM_CREATE_STUB).subscribe({
         error: (data) => expect(data.error).toEqual(API_ERROR_STUB),
       });
       const req = httpTestingController.expectOne(REGISTRATION_FORM_API_ROUTES.create(PROCESS_ID_STUB));
