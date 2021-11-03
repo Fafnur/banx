@@ -1458,6 +1458,28 @@
         }
       }
     },
+    "russian-registration-form-common": {
+      "projectType": "library",
+      "root": "libs/russian/registration/form/common",
+      "sourceRoot": "libs/russian/registration/form/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/registration/form/common"],
+          "options": {
+            "jestConfig": "libs/russian/registration/form/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/registration/form/common/src/**/*.ts", "libs/russian/registration/form/common/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian/cabinet-e2e": {
       "root": "apps/russian/cabinet-e2e",
       "sourceRoot": "apps/russian/cabinet-e2e/src",

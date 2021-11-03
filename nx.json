@@ -213,6 +213,9 @@
     "russian-numerals-shared": {
       "tags": []
     },
+    "russian-registration-form-common": {
+      "tags": []
+    },
     "russian/cabinet-e2e": {
       "tags": [],
       "implicitDependencies": ["russian-cabinet"]
