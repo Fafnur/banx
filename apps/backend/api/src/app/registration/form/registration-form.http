@@ -1,0 +1,25 @@
+### Get process
+GET http://localhost:3000/registration/process/f46a708b-6953-4272-bc3c-eb4001dc82d0
+Content-Type: application/json
+Accept: application/json
+
+### Get process with process
+POST http://localhost:3000/registration/form/f46a708b-6953-4272-bc3c-eb4001dc82d0/validate/personal
+Content-Type: application/json
+Accept: application/json
+
+{
+  "lastName": "Ivanov",
+  "firstName": "Ivan",
+  "middleName": "Ivanovich",
+  "birthdate": "2021-11-04T08:14:38.000Z",
+  "passportSeriesNumber": "5010 0001002",
+  "passportIssueCode": "540-009",
+  "passportIssueName": "Novosibirsk",
+  "passportIssueDate": "2021-11-04T08:14:38.000Z",
+  "passportBirthplace": "Novosibirsk",
+  "gender": "male",
+  "mobilePhone": "9231002233",
+  "agreement": true,
+  "email": "foo2@bar.com"
+}

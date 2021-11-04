@@ -27,6 +27,6 @@ export class RegistrationProcessEntity {
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: string;
 
-  @UpdateDateColumn({ name: 'created_at', nullable: true })
+  @UpdateDateColumn({ name: 'updated_at', nullable: true })
   updatedAt!: string;
 }

@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 
 import { Nullable } from '@banx/core/utils';
 import {
@@ -17,7 +17,9 @@ import { RussianRegistrationForm } from '@banx/russian/registration/form/common'
   name: 'registration_form',
 })
 export class RegistrationFormEntity implements Nullable<Omit<RussianRegistrationForm, 'smsCode'>> {
-  @Column({ type: 'tinytext', unique: true, primary: true })
+  @PrimaryColumn({
+    length: 36,
+  })
   process!: string;
 
   @Column({

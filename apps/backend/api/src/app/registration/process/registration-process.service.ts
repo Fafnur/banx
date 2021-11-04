@@ -30,6 +30,17 @@ export class RegistrationProcessService {
     };
   }
 
+  async finishStep(process: string, step: string): Promise<void> {
+    const processEntity = await this.registrationProcessEntityRepository.findOne({ process });
+    if (processEntity) {
+      processEntity.finishedSteps[step] = {
+        name: step,
+        finishedAt: new Date().toISOString(),
+      };
+      await this.registrationProcessEntityRepository.save(processEntity);
+    }
+  }
+
   private getSteps(process: RegistrationProcessEntity): RegistrationStepDto[] {
     return REGISTRATION_STEPS.map((stepName, index) => ({
       id: index + 1,
