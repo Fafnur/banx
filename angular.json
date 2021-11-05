@@ -1080,6 +1080,28 @@
         }
       }
     },
+    "registration-form-shared": {
+      "projectType": "library",
+      "root": "libs/registration/form/shared",
+      "sourceRoot": "libs/registration/form/shared/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/registration/form/shared"],
+          "options": {
+            "jestConfig": "libs/registration/form/shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/form/shared/src/**/*.ts", "libs/registration/form/shared/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-form-state": {
       "projectType": "library",
       "root": "libs/registration/form/state",

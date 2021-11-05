@@ -171,6 +171,9 @@
     "registration-form-common": {
       "tags": []
     },
+    "registration-form-shared": {
+      "tags": []
+    },
     "registration-form-state": {
       "tags": []
     },
