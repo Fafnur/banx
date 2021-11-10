@@ -1,43 +1,5 @@
 {
   "version": 1,
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "packageManager": "yarn"
-  },
-  "defaultProject": "russian-cabinet",
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
-    },
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss",
-      "changeDetection": "OnPush"
-    },
-    "@schematics/angular:component": {
-      "name": "",
-      "style": "scss",
-      "changeDetection": "OnPush"
-    }
-  },
   "projects": {
     "auth-api": {
       "projectType": "library",
@@ -1088,7 +1050,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/registration/form/shared"],
           "options": {
             "jestConfig": "libs/registration/form/shared/jest.config.js",
             "passWithNoTests": true
@@ -1488,7 +1449,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/registration/form/common"],
           "options": {
             "jestConfig": "libs/russian/registration/form/common/jest.config.js",
             "passWithNoTests": true
@@ -1526,7 +1486,8 @@
             "lintFilePatterns": ["apps/russian/cabinet-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "implicitDependencies": ["russian-cabinet"]
     },
     "trackers-api": {
       "projectType": "library",

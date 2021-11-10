@@ -1,9 +1,9 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Action } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
 import { NxModule } from '@nrwl/angular';
-import { cold, hot } from '@nrwl/angular/testing';
+import { cold, hot } from 'jasmine-marbles';
 import { Observable, of, ReplaySubject } from 'rxjs';
 import { anything, deepEqual, mock, verify, when } from 'ts-mockito';
 
@@ -28,6 +28,7 @@ describe('TrackerEffects', () => {
   let localAsyncStorageMock: LocalAsyncStorage;
   let visitorServiceMock: VisitorService;
   let recordAdded$: ReplaySubject<TrackerRecord>;
+  let storeMock: Store;
 
   beforeEach(() => {
     trackerApiServiceMock = mock(TrackerApiService);
@@ -35,6 +36,7 @@ describe('TrackerEffects', () => {
     trackerServiceMock = mock(TrackerService);
     localAsyncStorageMock = mock(LocalAsyncStorage);
     visitorServiceMock = mock(VisitorService);
+    storeMock = mock(Store);
 
     recordAdded$ = new ReplaySubject<TrackerRecord>(1);
   });
@@ -46,7 +48,7 @@ describe('TrackerEffects', () => {
         providers: [
           TrackerEffects,
           provideMockActions(() => actions$),
-          provideMockStore(),
+          providerOf(Store, storeMock),
           providerOf(TrackerApiService, trackerApiServiceMock),
           providerOf(TrackerService, trackerServiceMock),
           providerOf(LoggerService, loggerServiceMock),

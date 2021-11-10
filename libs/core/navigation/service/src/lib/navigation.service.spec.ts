@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
+import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
 
 import { NavigationService } from './navigation.service';
 
@@ -11,7 +11,7 @@ describe('CoreNavigationService', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      providers: [NavigationService],
+      providers: [NavigationService, PATHS_STUB],
     }).compileComponents();
   });
 

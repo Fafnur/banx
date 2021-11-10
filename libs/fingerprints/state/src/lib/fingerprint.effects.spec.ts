@@ -1,9 +1,8 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
-import { provideMockStore } from '@ngrx/store/testing';
 import { NxModule } from '@nrwl/angular';
-import { cold, hot } from '@nrwl/angular/testing';
+import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 import { anything, deepEqual, mock, when } from 'ts-mockito';
 
@@ -51,7 +50,6 @@ describe('FingerprintEffects', () => {
         providers: [
           FingerprintEffects,
           provideMockActions(() => actions$),
-          provideMockStore(),
           providerOf(FingerprintApiService, fingerprintApiServiceMock),
           providerOf(FontDetectorService, fontDetectorServiceMock),
           providerOf(LoggerService, loggerServiceMock),

@@ -16,6 +16,7 @@ module.exports = {
   ],
   testRunner: 'jest-jasmine2',
   transform: {
-    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
+    '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
+  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
 };

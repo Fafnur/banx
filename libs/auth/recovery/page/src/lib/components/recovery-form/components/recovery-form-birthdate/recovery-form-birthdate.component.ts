@@ -23,7 +23,7 @@ export class RecoveryFormBirthdateComponent implements OnInit, OnDestroy {
   isDesktopScreen = false;
   maskControl = new FormControl(null, [Validators.required]);
 
-  private readonly destroy$ = new Subject();
+  private readonly destroy$ = new Subject<void>();
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef, private readonly breakpointObserver: BreakpointObserver) {
     this.minDate = new Date();

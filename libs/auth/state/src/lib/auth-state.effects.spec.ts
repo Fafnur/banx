@@ -1,8 +1,8 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { Action, Store } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 import { provideMockStore } from '@ngrx/store/testing';
-import { cold, hot } from '@nrwl/angular/testing';
+import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 import { anything, deepEqual, mock, verify, when } from 'ts-mockito';
 
@@ -35,7 +35,6 @@ describe('AuthEffects', () => {
         providers: [
           AuthStateEffects,
           provideMockActions(() => actions$),
-          provideMockStore(),
           providerOf(AuthApiService, authApiServiceMock),
           providerOf(LoggerService, loggerServiceMock),
           providerOf(SessionAsyncStorage, sessionAsyncStorageMock),

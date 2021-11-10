@@ -1,4 +1,4 @@
-  import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
 import { RegistrationMaritalStatusModule } from './registration-marital-status.module';
 
