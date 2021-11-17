@@ -517,6 +517,27 @@
         }
       }
     },
+    "core-services": {
+      "projectType": "library",
+      "root": "libs/core/services",
+      "sourceRoot": "libs/core/services/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/services/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/services/src/**/*.ts", "libs/core/services/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-social-common": {
       "projectType": "library",
       "root": "libs/core/social/common",
