@@ -1,1 +1,2 @@
-export * from './lib/registration-ui-layout.module';
+export * from './lib/registration-layout.component';
+export * from './lib/registration-layout.module';
