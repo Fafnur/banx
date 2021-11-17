@@ -1147,6 +1147,27 @@
         }
       }
     },
+    "registration-ui-layout": {
+      "projectType": "library",
+      "root": "libs/registration/ui/layout",
+      "sourceRoot": "libs/registration/ui/layout/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/ui/layout/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/ui/layout/src/**/*.ts", "libs/registration/ui/layout/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian-cabinet": {
       "projectType": "application",
       "root": "apps/russian/cabinet",
