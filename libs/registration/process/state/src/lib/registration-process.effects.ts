@@ -107,16 +107,12 @@ export class RegistrationProcessEffects implements OnInitEffects {
       fetch({
         id: () => 'registration-process-select-step-success',
         run: (action) => {
-          try {
-            this.localAsyncStorage.setItems({
-              [RegistrationProcessKeys.SelectedStepId]: action.payload.step.id,
-              [RegistrationProcessKeys.SelectedSubStep]: action.payload.subStep,
-            });
-            const path = getRegistrationPath(action.payload, this.navigationService.getPaths());
-            void this.navigationService.navigateByUrl(path);
-          } catch (e) {
-            console.log(e);
-          }
+          this.localAsyncStorage.setItems({
+            [RegistrationProcessKeys.SelectedStepId]: action.payload.step.id,
+            [RegistrationProcessKeys.SelectedSubStep]: action.payload.subStep,
+          });
+          const path = getRegistrationPath(action.payload, this.navigationService.getPaths());
+          void this.navigationService.navigateByUrl(path);
         },
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
