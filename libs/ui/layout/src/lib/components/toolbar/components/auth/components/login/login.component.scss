@@ -3,20 +3,34 @@
 :host {
   display: flex;
   height: 100%;
+  margin-right: -1rem;
+
+  @include media-breakpoint-up(im) {
+    margin-right: 0;
+  }
 }
 
-.login {
+.sign {
   display: flex;
   text-decoration: none;
   color: $color-active;
   margin: auto;
+  padding: 1rem 0.25rem;
 
   &:hover {
     color: $color-default;
   }
+
+  @include media-breakpoint-up(im) {
+    padding: 1rem 0.5rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 1rem;
+  }
 }
 
-.login-label {
+.sign-label {
   font-size: 0.9rem;
   margin: auto 0;
 
@@ -25,7 +39,7 @@
   }
 }
 
-.login-icon {
+.sign-icon {
   display: none;
 
   @include media-breakpoint-up(lg) {

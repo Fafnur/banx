@@ -3,7 +3,6 @@
 :host {
   display: block;
   margin-left: -0.7rem;
-  margin-right: 0.5rem;
 
   &.is-open .sidenav {
     width: 20rem;
@@ -12,6 +11,10 @@
   &.is-open .sidenav-backdrop {
     width: 100%;
     opacity: 1;
+  }
+
+  @include media-breakpoint-up(im) {
+    margin-right: 0.5rem;
   }
 }
 

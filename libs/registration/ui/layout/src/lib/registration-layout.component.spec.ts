@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { anything, mock, when } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
+import { ContainerModule } from '@banx/ui/container';
 import { GridModule, GridService } from '@banx/ui/grid';
 
 import { RegistrationLayoutComponent } from './registration-layout.component';
@@ -26,7 +27,7 @@ describe('RegistrationLayoutComponent', () => {
   beforeEach(
     waitForAsync(() => {
       void TestBed.configureTestingModule({
-        imports: [CommonModule, RouterTestingModule, MockModule(GridModule)],
+        imports: [CommonModule, RouterTestingModule, MockModule(GridModule), MockModule(ContainerModule)],
         declarations: [RegistrationLayoutComponent],
         providers: [providerOf(GridService, gridServiceMock)],
       }).compileComponents();

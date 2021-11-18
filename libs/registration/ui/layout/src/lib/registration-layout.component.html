@@ -1,12 +1,14 @@
-<ng-container *ngIf="isDesktopScreen$ | async; then desktopTpl; else mobileTpl"></ng-container>
+<banx-ui-container>
+  <ng-container *ngIf="isDesktopScreen$ | async; then desktopTpl; else mobileTpl"></ng-container>
+</banx-ui-container>
 
 <ng-template #desktopTpl>
   <banx-ui-row mode="md" automation-id="desktop">
     <banx-ui-column [modes]="{ md: 8, lg: 9 }">
       <router-outlet></router-outlet>
     </banx-ui-column>
-    <banx-ui-column [modes]="{ md: 4, lg: 2 }">
-      <router-outlet name="aside"></router-outlet>
+    <banx-ui-column [modes]="{ md: 4, lg: 3 }">
+      <router-outlet name="registration-aside"></router-outlet>
     </banx-ui-column>
   </banx-ui-row>
 </ng-template>
