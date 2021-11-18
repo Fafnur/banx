@@ -1504,6 +1504,29 @@
         }
       }
     },
+    "russian-registration-form-pages": {
+      "projectType": "library",
+      "root": "libs/russian/registration/form/pages",
+      "sourceRoot": "libs/russian/registration/form/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/registration/form/pages"],
+          "options": {
+            "jestConfig": "libs/russian/registration/form/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/registration/form/pages/src/**/*.ts", "libs/russian/registration/form/pages/src/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
     "russian-registration-form-personal-page": {
       "projectType": "library",
       "root": "libs/russian/registration/form/personal/page",
@@ -1525,6 +1548,29 @@
               "libs/russian/registration/form/personal/page/src/**/*.ts",
               "libs/russian/registration/form/personal/page/src/**/*.html"
             ]
+          }
+        }
+      },
+      "tags": []
+    },
+    "russian-registration-pages": {
+      "projectType": "library",
+      "root": "libs/russian/registration/pages",
+      "sourceRoot": "libs/russian/registration/pages/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/registration/pages"],
+          "options": {
+            "jestConfig": "libs/russian/registration/pages/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/registration/pages/src/**/*.ts", "libs/russian/registration/pages/src/**/*.html"]
           }
         }
       },

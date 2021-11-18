@@ -30,17 +30,21 @@ const routes: Routes = [
       },
       {
         path: '',
-        loadChildren: (): Promise<any> => import('@banx/russian/content/pages').then((modules) => modules.ContentPagesModule),
+        loadChildren: () => import('@banx/russian/content/pages').then((modules) => modules.ContentPagesModule),
       },
       {
         path: '',
-        loadChildren: (): Promise<any> => import('@banx/auth/pages').then((modules) => modules.AuthPagesModule),
+        loadChildren: () => import('@banx/auth/pages').then((modules) => modules.AuthPagesModule),
+      },
+      {
+        path: '',
+        loadChildren: () => import('@banx/russian/registration/pages').then((modules) => modules.RegistrationPagesModule),
       },
     ],
   },
   {
     path: '',
-    loadChildren: (): Promise<any> => import('@banx/errors/pages').then((modules) => modules.ErrorsPagesModule),
+    loadChildren: () => import('@banx/errors/pages').then((modules) => modules.ErrorsPagesModule),
   },
 ];
 

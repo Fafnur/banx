@@ -6,7 +6,7 @@ import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 
 const routes: Routes = [
   {
-    path: '',
+    path: NAVIGATION_PATHS.auth,
     redirectTo: NAVIGATION_PATHS.authLogin,
     pathMatch: 'full',
   },

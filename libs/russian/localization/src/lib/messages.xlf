@@ -45,7 +45,7 @@
         <target state="translated"> Войти </target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/login/page/src/lib/components/login-form/login-form.component.html</context>
-          <context context-type="linenumber">21,22</context>
+          <context context-type="linenumber">23,25</context>
         </context-group>
         <note priority="1" from="description">Log in</note>
         <note priority="1" from="meaning">Login form</note>
@@ -92,7 +92,7 @@
         <target state="translated">Введите номер своего мобильного телефона и пароль</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page.component.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="linenumber">3,5</context>
         </context-group>
         <note priority="1" from="description">Subtitle</note>
         <note priority="1" from="meaning">Auth Login</note>
@@ -108,7 +108,7 @@
         <note priority="1" from="meaning">Auth links</note>
       </trans-unit>
       <trans-unit id="1134358167715053074" datatype="html">
-        <source> Do not provide your login, password and confirmation code, so that scammers do not take advantage of it. The bank employee will never ask them. Check the <x id="INTERPOLATION" equiv-text="{{ brand }}"/> </source>
+        <source> Do not provide your login, password and confirmation code, so that scammers do not take advantage of it. The bank employee will never ask them. Check the <x id="INTERPOLATION" equiv-text="{{ brand }}"/>&apos;s website in the address bar: banx.dev </source>
         <target state="translated">Не сообщайте логин, пароль и код подтверждения, чтобы этим не воспользовались мошенники. Сотрудник банка никогда их не спросит. Проверяйте сайт банка в адресной строке: <x id="INTERPOLATION" equiv-text="{{ brand }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/login/page/src/lib/login-page.component.html</context>
@@ -176,7 +176,7 @@
         <target state="translated">Неверные данные</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/recovery-form.component.html</context>
-          <context context-type="linenumber">8,9</context>
+          <context context-type="linenumber">7,9</context>
         </context-group>
         <note priority="1" from="description">Error message</note>
         <note priority="1" from="meaning">Recovery form</note>
@@ -186,7 +186,7 @@
         <target state="translated">Сбросить пароль</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/recovery-form.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">21,23</context>
         </context-group>
         <note priority="1" from="description">Reset password</note>
         <note priority="1" from="meaning">Recovery form</note>
@@ -233,7 +233,7 @@
         <target state="translated">Введите номер своего мобильного телефона и дату своего рождения</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/recovery/page/src/lib/recovery-page.component.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="linenumber">3,5</context>
         </context-group>
         <note priority="1" from="description">Hint</note>
         <note priority="1" from="meaning">Recovery page</note>
@@ -790,7 +790,7 @@
         <note priority="1" from="meaning">Menu entertainment</note>
       </trans-unit>
       <trans-unit id="2275328567992347600" datatype="html">
-        <source>Такой страницы нет</source>
+        <source>Page not found</source>
         <target state="translated">Возможно вы искали страницы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/not-found/page/src/lib/not-found-page.component.html</context>
@@ -825,7 +825,7 @@
         <note priority="1" from="description">Access is denied</note>
       </trans-unit>
       <trans-unit id="5779341115787231384" datatype="html">
-        <source>Внутренняя ошибка сервера</source>
+        <source>Internal server error</source>
         <target state="translated">Извините, что-то пошло не так. Обратитесь в службу поддержки.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/server-error/page/src/lib/server-error-page.component.html</context>
@@ -865,7 +865,7 @@
         <target state="translated">Подробнее в App Store</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">18,20</context>
         </context-group>
         <note priority="1" from="description">Link to App Store</note>
       </trans-unit>
@@ -874,7 +874,7 @@
         <target state="translated">Подробнее в Google Play</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
-          <context context-type="linenumber">29,30</context>
+          <context context-type="linenumber">28,30</context>
         </context-group>
         <note priority="1" from="description">Link to Google Play</note>
       </trans-unit>
@@ -883,7 +883,7 @@
         <target state="translated">Скачать</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-application/error-application.component.html</context>
-          <context context-type="linenumber">39,40</context>
+          <context context-type="linenumber">38,40</context>
         </context-group>
         <note priority="1" from="description">Link to download app</note>
       </trans-unit>
@@ -892,7 +892,7 @@
         <target state="translated">Кредитные карты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
-          <context context-type="linenumber">3,4</context>
+          <context context-type="linenumber">2,4</context>
         </context-group>
         <note priority="1" from="description">Link label to credit card</note>
       </trans-unit>
@@ -901,7 +901,7 @@
         <target state="translated">Дебетовые карты</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/errors/shared/src/lib/components/error-links/error-links.component.html</context>
-          <context context-type="linenumber">6,7</context>
+          <context context-type="linenumber">5,7</context>
         </context-group>
         <note priority="1" from="description">Link label to debit card</note>
       </trans-unit>
@@ -953,14 +953,24 @@
         <note priority="1" from="description">Phone hint</note>
         <note priority="1" from="meaning">Footer brand</note>
       </trans-unit>
+      <trans-unit id="2794144407085826949" datatype="html">
+        <source>Sign up</source>
+        <target state="translated">Регистрация</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/login/login.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Sign up</note>
+        <note priority="1" from="meaning">Toolbar login</note>
+      </trans-unit>
       <trans-unit id="8376377964020781600" datatype="html">
         <source>Sign in</source>
         <target state="translated">Войти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/login/login.component.html</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">7</context>
         </context-group>
-        <note priority="1" from="description">Label</note>
+        <note priority="1" from="description">Sign in</note>
         <note priority="1" from="meaning">Toolbar login</note>
       </trans-unit>
       <trans-unit id="1881186468817805639" datatype="html">
