@@ -89,6 +89,7 @@
       "@banx/trackers/shared": ["libs/trackers/shared/src/index.ts"],
       "@banx/trackers/state": ["libs/trackers/state/src/index.ts"],
       "@banx/ui/accordion": ["libs/ui/accordion/src/index.ts"],
+      "@banx/ui/card": ["libs/ui/card/src/index.ts"],
       "@banx/ui/container": ["libs/ui/container/src/index.ts"],
       "@banx/ui/grid": ["libs/ui/grid/src/index.ts"],
       "@banx/ui/icons": ["libs/ui/icons/src/index.ts"],
