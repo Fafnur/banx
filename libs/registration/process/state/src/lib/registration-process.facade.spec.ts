@@ -16,7 +16,7 @@ import { REGISTRATION_PROCESS_STUB } from '@banx/registration/process/common';
 
 import { RegistrationProcessEffects } from './registration-process.effects';
 import { RegistrationProcessFacade } from './registration-process.facade';
-import { REGISTRATION_PROCESS_FEATURE_KEY, registrationProcessReducer } from './registration-process.reducer';
+import { reducer, REGISTRATION_PROCESS_FEATURE_KEY } from './registration-process.reducer';
 
 describe('RegistrationProcessFacade', () => {
   let facade: RegistrationProcessFacade;
@@ -36,7 +36,7 @@ describe('RegistrationProcessFacade', () => {
     beforeEach(() => {
       @NgModule({
         imports: [
-          StoreModule.forFeature(REGISTRATION_PROCESS_FEATURE_KEY, registrationProcessReducer),
+          StoreModule.forFeature(REGISTRATION_PROCESS_FEATURE_KEY, reducer),
           EffectsModule.forFeature([RegistrationProcessEffects]),
         ],
         providers: [

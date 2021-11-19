@@ -29,7 +29,7 @@ export const registrationProcessInitialState: RegistrationProcessState = registr
   processId: null,
 });
 
-const reducer = createReducer(
+const registrationProcessReducer = createReducer(
   registrationProcessInitialState,
   on(RegistrationProcessActions.restore, (state, { payload }) => ({
     ...state,
@@ -58,6 +58,6 @@ const reducer = createReducer(
   }))
 );
 
-export function registrationProcessReducer(state: RegistrationProcessState, action: Action): RegistrationProcessState {
-  return reducer(state, action);
+export function reducer(state: RegistrationProcessState | undefined, action: Action): RegistrationProcessState {
+  return registrationProcessReducer(state, action);
 }
