@@ -1,4 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+
+import { RegistrationFormField } from '@banx/registration/form/common';
+import { RegistrationFormFacade } from '@banx/registration/form/state';
+
+import { createForm } from './registration-form-personal-page.form';
 
 @Component({
   selector: 'banx-registration-form-personal-page',
@@ -7,7 +13,21 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationFormPersonalPageComponent implements OnInit {
-  constructor() {}
+  readonly fields = RegistrationFormField;
 
-  ngOnInit(): void {}
+  form!: FormGroup;
+
+  constructor(private readonly registrationFormFacade: RegistrationFormFacade) {}
+
+  ngOnInit(): void {
+    this.form = createForm();
+  }
+
+  onSubmit(): void {
+    this.form.markAllAsTouched();
+
+    if (this.form.valid) {
+      console.log('submit');
+    }
+  }
 }
