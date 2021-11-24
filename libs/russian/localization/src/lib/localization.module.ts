@@ -1,13 +1,14 @@
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
-import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
 import { RussianMatDataAdapter } from './mat-data-adapter';
 
 registerLocaleData(localeRu);
 
 @NgModule({
+  imports: [MatNativeDateModule],
   providers: [
     {
       provide: LOCALE_ID,
