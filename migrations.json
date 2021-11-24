@@ -1,36 +1,3 @@
 {
-  "migrations": [
-    {
-      "version": "13-2-0",
-      "cli": "nx",
-      "description": "Uses `getJestProjects()` to populate projects array in root level `jest.config.js` file.",
-      "factory": "./src/migrations/update-13-2-0/update-angular-config",
-      "package": "@nrwl/angular",
-      "name": "update-angular-config"
-    },
-    {
-      "version": "13-2-0",
-      "cli": "nx",
-      "description": "Uses `getJestProjects()` to populate projects array in root level `jest.config.js` file.",
-      "factory": "./src/migrations/update-13-2-0/update-angular-jest-config",
-      "package": "@nrwl/angular",
-      "name": "update-angular-jest-config"
-    },
-    {
-      "version": "13-2-0",
-      "cli": "nx",
-      "description": "Uses `getJestProjects()` to populate projects array in root level `jest.config.js` file.",
-      "factory": "./src/migrations/update-13-2-0/update-libraries",
-      "package": "@nrwl/angular",
-      "name": "update-libraries"
-    },
-    {
-      "version": "13-2-0",
-      "cli": "nx",
-      "description": "Uses `getJestProjects()` to populate projects array in root level `jest.config.js` file.",
-      "factory": "./src/migrations/update-13-2-0/update-testing-imports",
-      "package": "@nrwl/angular",
-      "name": "update-testing-imports"
-    }
-  ]
+  "migrations": []
 }
