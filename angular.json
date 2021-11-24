@@ -349,6 +349,27 @@
         }
       }
     },
+    "core-forms-mask": {
+      "projectType": "library",
+      "root": "libs/core/forms/mask",
+      "sourceRoot": "libs/core/forms/mask/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/forms/mask/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/forms/mask/src/**/*.ts", "libs/core/forms/mask/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-forms-shared": {
       "projectType": "library",
       "root": "libs/core/forms/shared",
@@ -1512,7 +1533,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/registration/form/pages"],
           "options": {
             "jestConfig": "libs/russian/registration/form/pages/jest.config.js",
             "passWithNoTests": true
@@ -1524,8 +1544,7 @@
             "lintFilePatterns": ["libs/russian/registration/form/pages/src/**/*.ts", "libs/russian/registration/form/pages/src/**/*.html"]
           }
         }
-      },
-      "tags": []
+      }
     },
     "russian-registration-form-personal-page": {
       "projectType": "library",
@@ -1535,7 +1554,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/registration/form/personal/page"],
           "options": {
             "jestConfig": "libs/russian/registration/form/personal/page/jest.config.js",
             "passWithNoTests": true
@@ -1550,8 +1568,7 @@
             ]
           }
         }
-      },
-      "tags": []
+      }
     },
     "russian-registration-pages": {
       "projectType": "library",
@@ -1561,7 +1578,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/registration/pages"],
           "options": {
             "jestConfig": "libs/russian/registration/pages/jest.config.js",
             "passWithNoTests": true
@@ -1573,8 +1589,7 @@
             "lintFilePatterns": ["libs/russian/registration/pages/src/**/*.ts", "libs/russian/registration/pages/src/**/*.html"]
           }
         }
-      },
-      "tags": []
+      }
     },
     "russian/cabinet-e2e": {
       "root": "apps/russian/cabinet-e2e",
