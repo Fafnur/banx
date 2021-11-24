@@ -105,6 +105,9 @@ export interface NavigationPaths {
   registrationUser: string;
   registrationConversion: string;
   registrationFinish: string;
+
+  // Other
+  terms: string;
 }
 
 export const NAVIGATION_PATHS: NavigationPaths = {
@@ -203,6 +206,8 @@ export const NAVIGATION_PATHS: NavigationPaths = {
   registrationUser: 'registration/user',
   registrationConversion: 'registration/conversion',
   registrationFinish: 'registration/finish',
+
+  terms: 'terms',
 };
 
 export interface NavigationLink {
