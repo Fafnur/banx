@@ -1,9 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
-import { RegistrationFirstNameModule, RegistrationLastNameModule, RegistrationMiddleNameModule } from '@banx/registration/form/shared';
+import {
+  RegistrationBirthdateModule,
+  RegistrationFirstNameModule,
+  RegistrationLastNameModule,
+  RegistrationMiddleNameModule,
+} from '@banx/registration/form/shared';
 
 import { RegistrationFormPersonalPageComponent } from './registration-form-personal-page.component';
 import { RegistrationFormPersonalRoutingModule } from './registration-form-personal-routing.module';
@@ -17,6 +23,8 @@ import { RegistrationFormPersonalRoutingModule } from './registration-form-perso
     RegistrationLastNameModule,
     RegistrationFirstNameModule,
     RegistrationMiddleNameModule,
+    RegistrationBirthdateModule,
+    MatButtonModule,
   ],
   declarations: [RegistrationFormPersonalPageComponent],
 })

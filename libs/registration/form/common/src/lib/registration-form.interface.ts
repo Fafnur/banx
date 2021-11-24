@@ -64,6 +64,13 @@ export enum RegistrationAdditionalContactType {
   Friend = 'friend',
   Spouse = 'spouse',
 }
+export const REGISTRATION_ADDITIONAL_CONTACT_TYPES: RegistrationAdditionalContactType[] = [
+  RegistrationAdditionalContactType.Spouse,
+  RegistrationAdditionalContactType.Sibling,
+  RegistrationAdditionalContactType.Friend,
+  RegistrationAdditionalContactType.Colleague,
+  RegistrationAdditionalContactType.Parent,
+];
 
 export enum RegistrationEmploymentType {
   FullTime = 'full_time',

@@ -1,1 +1,33 @@
-<p>registration-birthdate works!</p>
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">Date of birth</mat-label>
+  <input
+    matInput
+    name="data[customer][birthdate]"
+    automation-id="input"
+    placeholder="00.00.0000"
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="maskControl"
+    [imask]="mask"
+    [unmask]="true"
+  />
+  <input
+    type="hidden"
+    automation-id="input-hidden"
+    banxDatepickerTrack
+    [trackId]="id"
+    [matDatepicker]="picker"
+    [formControl]="control"
+    [min]="minDate"
+    [max]="maxDate"
+  />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker
+    #picker
+    automation-id="datepicker"
+    banxDatepickerTrack
+    [trackId]="id"
+    [trackValue]="control?.value"
+    [touchUi]="(isDesktopScreen$ | async) === false"
+  ></mat-datepicker>
+</mat-form-field>

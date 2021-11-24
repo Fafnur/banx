@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/registration/form/common';
 
 @Component({
   selector: 'banx-registration-additional-income-amount',
@@ -6,4 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./registration-additional-income-amount.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationAdditionalIncomeAmountComponent {}
+export class RegistrationAdditionalIncomeAmountComponent {
+  @Input() control!: FormControl;
+
+  readonly type = RegistrationFormField.AdditionalIncomeAmount;
+  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+}

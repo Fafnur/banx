@@ -1,1 +1,15 @@
-<p>registration-additional-contact-phone-number works!</p>
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label" i18n="Registration form field|Name of additional contact">Phone of additional contact</mat-label>
+  <input
+    automation-id="input"
+    i18n-placeholder="Registration form field|Name of additional contact placeholder"
+    placeholder="+XX XXXX XXXXXX"
+    name="data[customer][additionalContact]"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+    [imask]="mask"
+    [unmask]="true"
+  />
+</mat-form-field>

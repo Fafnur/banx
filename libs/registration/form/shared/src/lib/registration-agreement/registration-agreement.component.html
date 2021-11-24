@@ -1,1 +1,11 @@
-<p>registration-agreement works!</p>
+<mat-checkbox
+  automation-id="checkbox"
+  color="primary"
+  banxCheckboxTrack
+  [trackId]="id"
+  [formControl]="control"
+  extractTouched
+  [control]="control"
+>
+  I agree with <a [routerLink]="paths.terms | path">terms and conditions</a>
+</mat-checkbox>

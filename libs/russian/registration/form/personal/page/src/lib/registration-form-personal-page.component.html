@@ -1,4 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <banx-registration-first-name [control]="form | extractFormControl: fields.FirstName"></banx-registration-first-name>
   <banx-registration-last-name [control]="form | extractFormControl: fields.LastName"></banx-registration-last-name>
+  <banx-registration-first-name [control]="form | extractFormControl: fields.FirstName"></banx-registration-first-name>
+  <banx-registration-middle-name [control]="form | extractFormControl: fields.MiddleName"></banx-registration-middle-name>
+  <banx-registration-birthdate [control]="form | extractFormControl: fields.Birthdate"></banx-registration-birthdate>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
 </form>

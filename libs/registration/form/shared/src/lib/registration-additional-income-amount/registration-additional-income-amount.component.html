@@ -1,1 +1,14 @@
-<p>registration-additional-income-amount works!</p>
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">Additional income</mat-label>
+  <input
+    automation-id="input"
+    matInput
+    i18n-placeholder="Registration form field|Additional income placeholder"
+    placeholder="Additional income"
+    name="data[customer][additionalIncomeAmount]"
+    banxInputTrack
+    type="number"
+    [trackId]="id"
+    [formControl]="control"
+  />
+</mat-form-field>

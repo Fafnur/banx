@@ -7,5 +7,6 @@ export function createForm(): FormGroup {
     [RegistrationFormField.FirstName]: new FormControl(null, [Validators.required]),
     [RegistrationFormField.MiddleName]: new FormControl(null, []),
     [RegistrationFormField.LastName]: new FormControl(null, [Validators.required]),
+    [RegistrationFormField.Birthdate]: new FormControl(null, [Validators.required]),
   });
 }

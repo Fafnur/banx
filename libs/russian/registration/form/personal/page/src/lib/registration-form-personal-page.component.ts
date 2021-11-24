@@ -26,6 +26,8 @@ export class RegistrationFormPersonalPageComponent implements OnInit {
   onSubmit(): void {
     this.form.markAllAsTouched();
 
+    console.log(this.form.value);
+
     if (this.form.valid) {
       console.log('submit');
     }
