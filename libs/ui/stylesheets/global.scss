@@ -1,3 +1,4 @@
+@use '@angular/material' as mat;
 @import './mixins/brackpoints';
 
 body {
@@ -15,4 +16,46 @@ body {
 [fullWidth],
 [full-width] {
   width: 100%;
+}
+
+.mat-radios {
+  padding-bottom: 1.34375em;
+
+  &.inline > label {
+    white-space: nowrap;
+    margin: auto 1rem auto 0;
+  }
+
+  label.is-invalid,
+  .mat-radio-group.is-invalid {
+    color: $color-danger;
+  }
+
+  .mat-radio-group.is-invalid .mat-radio-outer-circle {
+    border-color: $color-danger;
+  }
+
+  &.inline .mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+
+    .mat-radio-button {
+      margin: 5px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    &.inline {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    &.inline .mat-radio-group {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+  }
 }
