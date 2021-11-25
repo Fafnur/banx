@@ -14,11 +14,11 @@ export const REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS: Record<RegistrationAdd
   name: 'registrationAdditionalContactTypeLabel',
 })
 export class RegistrationAdditionalContactTypeLabelPipe implements PipeTransform {
-  transform(additionalContactType: RegistrationAdditionalContactType): string {
-    if (!REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS[additionalContactType]) {
-      console.warn(`Unknown RegistrationAdditionalContactType: ${additionalContactType}`);
+  transform(type: RegistrationAdditionalContactType | null, empty: string = ''): string {
+    if (type && !REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS[type]) {
+      console.warn(`Unknown RegistrationAdditionalContactType: ${type}`);
     }
 
-    return REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS[additionalContactType];
+    return type ? REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS[type] ?? type : empty;
   }
 }

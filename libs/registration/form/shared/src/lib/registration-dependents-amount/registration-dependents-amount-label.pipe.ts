@@ -14,11 +14,11 @@ export const REGISTRATION_DEPENDENTS_AMOUNT_LABELS: Record<RegistrationDependent
   name: 'registrationDependentsAmountLabel',
 })
 export class RegistrationDependentsAmountLabelPipe implements PipeTransform {
-  transform(amount: RegistrationDependentsAmount): string {
-    if (!REGISTRATION_DEPENDENTS_AMOUNT_LABELS[amount]) {
+  transform(amount: RegistrationDependentsAmount | null, empty: string = ''): string {
+    if (amount && !REGISTRATION_DEPENDENTS_AMOUNT_LABELS[amount]) {
       console.warn(`Unknown RegistrationDependentsAmount: ${amount}`);
     }
 
-    return REGISTRATION_DEPENDENTS_AMOUNT_LABELS[amount] ?? amount;
+    return amount ? REGISTRATION_DEPENDENTS_AMOUNT_LABELS[amount] ?? amount : empty;
   }
 }

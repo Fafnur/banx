@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+import { REGISTRATION_EMPLOYMENT_TYPES, REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/registration/form/common';
 
 @Component({
   selector: 'banx-registration-employment-type',
@@ -6,4 +9,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./registration-employment-type.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationEmploymentTypeComponent {}
+export class RegistrationEmploymentTypeComponent {
+  @Input() control!: FormControl;
+
+  readonly type = RegistrationFormField.EmploymentType;
+  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly options = REGISTRATION_EMPLOYMENT_TYPES;
+}

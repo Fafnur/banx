@@ -33,6 +33,11 @@ export enum RegistrationGender {
   Female = 'female',
   Transgender = 'transgender',
 }
+export const REGISTRATION_GENDERS: RegistrationGender[] = [
+  RegistrationGender.Male,
+  RegistrationGender.Female,
+  RegistrationGender.Transgender,
+];
 
 export enum RegistrationMaritalStatus {
   Married = 'married',
@@ -41,6 +46,13 @@ export enum RegistrationMaritalStatus {
   Widower = 'widow_widower',
 }
 
+export const REGISTRATION_MARITAL_STATUSES: RegistrationMaritalStatus[] = [
+  RegistrationMaritalStatus.Married,
+  RegistrationMaritalStatus.Divorced,
+  RegistrationMaritalStatus.Single,
+  RegistrationMaritalStatus.Widower,
+];
+
 export enum RegistrationKidsAmount {
   None = 'none',
   One = 'one',
@@ -48,6 +60,14 @@ export enum RegistrationKidsAmount {
   Three = 'three',
   FourAndMore = 'four_and_more',
 }
+
+export const REGISTRATION_KIDS_AMOUNTS: RegistrationKidsAmount[] = [
+  RegistrationKidsAmount.None,
+  RegistrationKidsAmount.One,
+  RegistrationKidsAmount.Two,
+  RegistrationKidsAmount.Three,
+  RegistrationKidsAmount.FourAndMore,
+];
 
 export enum RegistrationDependentsAmount {
   None = 'none',
@@ -91,12 +111,29 @@ export enum RegistrationEmploymentType {
   Other = 'other',
 }
 
+export const REGISTRATION_EMPLOYMENT_TYPES: RegistrationEmploymentType[] = [
+  RegistrationEmploymentType.FullTime,
+  RegistrationEmploymentType.PartTime,
+  RegistrationEmploymentType.Retired,
+  RegistrationEmploymentType.Unemployed,
+  RegistrationEmploymentType.Student,
+  RegistrationEmploymentType.SelfEmployed,
+  RegistrationEmploymentType.Other,
+];
+
 export enum RegistrationPeriodOfEmployment {
   LessThanMonth = 'less_than_month',
   OneThreeMonths = 'one_three_months',
   ThreeTwelveMonths = 'three_twelve_months',
   MoreThanTwelveMonths = 'more_than_twelve_months',
 }
+
+export const REGISTRATION_PERIOD_OF_EMPLOYMENTS: RegistrationPeriodOfEmployment[] = [
+  RegistrationPeriodOfEmployment.LessThanMonth,
+  RegistrationPeriodOfEmployment.OneThreeMonths,
+  RegistrationPeriodOfEmployment.ThreeTwelveMonths,
+  RegistrationPeriodOfEmployment.MoreThanTwelveMonths,
+];
 
 export enum RegistrationHomeType {
   WithFamily = 'with_family',
@@ -105,6 +142,14 @@ export enum RegistrationHomeType {
   PayingGuest = 'paying_guest',
   WithFriend = 'with_friend',
 }
+
+export const REGISTRATION_HOME_TYPES: RegistrationHomeType[] = [
+  RegistrationHomeType.WithFamily,
+  RegistrationHomeType.Rent,
+  RegistrationHomeType.OwnProperty,
+  RegistrationHomeType.PayingGuest,
+  RegistrationHomeType.WithFriend,
+];
 
 export enum RegistrationFormField {
   Gender = 'gender',

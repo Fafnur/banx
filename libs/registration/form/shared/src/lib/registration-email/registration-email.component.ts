@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/registration/form/common';
 
 @Component({
   selector: 'banx-registration-email',
@@ -6,4 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./registration-email.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationEmailComponent {}
+export class RegistrationEmailComponent {
+  @Input() control!: FormControl;
+
+  readonly type = RegistrationFormField.Email;
+  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+}

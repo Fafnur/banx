@@ -1,1 +1,13 @@
-<p>registration-employer-name works!</p>
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">{{ employmentType | registrationEmployerNameLabel }}?</mat-label>
+  <input
+    automation-id="input"
+    i18n-placeholder="Registration form field|Employer name placeholder"
+    placeholder="Employer name"
+    name="data[customer][employerName]"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+  />
+</mat-form-field>

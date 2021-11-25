@@ -1,1 +1,13 @@
-<p>registration-job-description works!</p>
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">{{ employmentType | registrationJobDescriptionLabel }}?</mat-label>
+  <input
+    automation-id="input"
+    i18n-placeholder="Registration form field|Job description placeholder"
+    placeholder="Job title"
+    name="data[customer][jobDescription]"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+  />
+</mat-form-field>

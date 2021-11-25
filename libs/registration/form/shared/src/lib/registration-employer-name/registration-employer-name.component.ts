@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+import { REGISTRATION_FORM_FIELD_IDS, RegistrationEmploymentType, RegistrationFormField } from '@banx/registration/form/common';
 
 @Component({
   selector: 'banx-registration-employer-name',
@@ -6,4 +9,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./registration-employer-name.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationEmployerNameComponent {}
+export class RegistrationEmployerNameComponent {
+  @Input() control!: FormControl;
+
+  readonly type = RegistrationFormField.EmployerName;
+  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+
+  get employmentType(): RegistrationEmploymentType | null {
+    return this.control?.parent?.get(RegistrationFormField.EmploymentType)?.value ?? null;
+  }
+}
