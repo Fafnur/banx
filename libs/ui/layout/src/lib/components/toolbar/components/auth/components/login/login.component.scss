@@ -33,10 +33,6 @@
 .sign-label {
   font-size: 0.9rem;
   margin: auto 0;
-
-  @include media-breakpoint-up(lg) {
-    margin-right: 0.5rem;
-  }
 }
 
 .sign-icon {
