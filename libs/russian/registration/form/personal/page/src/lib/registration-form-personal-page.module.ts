@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import {
   RegistrationBirthdateModule,
+  RegistrationDriverLicenseModule,
   RegistrationFirstNameModule,
   RegistrationLastNameModule,
   RegistrationMiddleNameModule,
@@ -25,6 +26,7 @@ import { RegistrationFormPersonalRoutingModule } from './registration-form-perso
     RegistrationMiddleNameModule,
     RegistrationBirthdateModule,
     MatButtonModule,
+    RegistrationDriverLicenseModule,
   ],
   declarations: [RegistrationFormPersonalPageComponent],
 })

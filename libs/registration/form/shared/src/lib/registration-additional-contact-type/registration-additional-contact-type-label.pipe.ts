@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import { RegistrationAdditionalContactType } from '@banx/registration/form/common';
 
-export const ADDITIONAL_CONTACT_TYPE_LABELS: Record<RegistrationAdditionalContactType, string> = {
+export const REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS: Record<RegistrationAdditionalContactType, string> = {
   [RegistrationAdditionalContactType.Spouse]: $localize`:Registration Additional Contact Type|:Spouse`,
   [RegistrationAdditionalContactType.Sibling]: $localize`:Registration Additional Contact Type|:Sister/Brother`,
   [RegistrationAdditionalContactType.Parent]: $localize`:Registration Additional Contact Type|:Mother/Father`,
@@ -15,6 +15,10 @@ export const ADDITIONAL_CONTACT_TYPE_LABELS: Record<RegistrationAdditionalContac
 })
 export class RegistrationAdditionalContactTypeLabelPipe implements PipeTransform {
   transform(additionalContactType: RegistrationAdditionalContactType): string {
-    return ADDITIONAL_CONTACT_TYPE_LABELS[additionalContactType];
+    if (!REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS[additionalContactType]) {
+      console.warn(`Unknown RegistrationAdditionalContactType: ${additionalContactType}`);
+    }
+
+    return REGISTRATION_ADDITIONAL_CONTACT_TYPE_LABELS[additionalContactType];
   }
 }

@@ -57,6 +57,14 @@ export enum RegistrationDependentsAmount {
   FourAndMore = 'four_and_more',
 }
 
+export const REGISTRATION_DEPENDENTS_AMOUNTS: RegistrationDependentsAmount[] = [
+  RegistrationDependentsAmount.None,
+  RegistrationDependentsAmount.One,
+  RegistrationDependentsAmount.Two,
+  RegistrationDependentsAmount.Three,
+  RegistrationDependentsAmount.FourAndMore,
+];
+
 export enum RegistrationAdditionalContactType {
   Sibling = 'sister_brother',
   Colleague = 'coworker',
@@ -64,6 +72,7 @@ export enum RegistrationAdditionalContactType {
   Friend = 'friend',
   Spouse = 'spouse',
 }
+
 export const REGISTRATION_ADDITIONAL_CONTACT_TYPES: RegistrationAdditionalContactType[] = [
   RegistrationAdditionalContactType.Spouse,
   RegistrationAdditionalContactType.Sibling,

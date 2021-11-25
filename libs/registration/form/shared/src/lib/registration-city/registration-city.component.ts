@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/registration/form/common';
 
 @Component({
   selector: 'banx-registration-city',
@@ -6,4 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./registration-city.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationCityComponent {}
+export class RegistrationCityComponent {
+  @Input() control!: FormControl;
+
+  readonly type = RegistrationFormField.City;
+  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+}
