@@ -412,6 +412,27 @@
         }
       }
     },
+    "core-forms-validators": {
+      "projectType": "library",
+      "root": "libs/core/forms/validators",
+      "sourceRoot": "libs/core/forms/validators/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/forms/validators/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/core/forms/validators/src/**/*.ts", "libs/core/forms/validators/src/**/*.html"]
+          }
+        }
+      }
+    },
     "core-logger-service": {
       "projectType": "library",
       "root": "libs/core/logger/service",
@@ -1416,6 +1437,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/content/pages/src/**/*.ts", "libs/russian/content/pages/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "russian-forms-validators": {
+      "projectType": "library",
+      "root": "libs/russian/forms/validators",
+      "sourceRoot": "libs/russian/forms/validators/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/forms/validators/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/forms/validators/src/**/*.ts", "libs/russian/forms/validators/src/**/*.html"]
           }
         }
       }
