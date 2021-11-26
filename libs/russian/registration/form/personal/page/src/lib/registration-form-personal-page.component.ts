@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormFacade } from '@banx/registration/form/state';
+import { RussianRegistrationFormField } from '@banx/russian/registration/form/common';
 
 import { createForm } from './registration-form-personal-page.form';
 
@@ -14,6 +15,7 @@ import { createForm } from './registration-form-personal-page.form';
 })
 export class RegistrationFormPersonalPageComponent implements OnInit {
   readonly fields = RegistrationFormField;
+  readonly russianFields = RussianRegistrationFormField;
 
   form!: FormGroup;
 

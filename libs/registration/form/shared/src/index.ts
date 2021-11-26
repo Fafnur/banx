@@ -24,7 +24,7 @@ export * from './lib/registration-minimal-desired-amount/registration-minimal-de
 export * from './lib/registration-mobile-phone/registration-mobile-phone.module';
 export * from './lib/registration-monthly-income/registration-monthly-income.module';
 export * from './lib/registration-own-car/registration-own-car.module';
-export * from './lib/registration-period-of-employment/registration-period-of-employment.component';
+export * from './lib/registration-period-of-employment/registration-period-of-employment.module';
 export * from './lib/registration-period-of-unemployment/registration-period-of-unemployment.module';
 export * from './lib/registration-postcode/registration-postcode.module';
 export * from './lib/registration-sms-code/registration-sms-code.module';

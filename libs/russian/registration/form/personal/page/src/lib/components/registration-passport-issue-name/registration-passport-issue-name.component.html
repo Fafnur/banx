@@ -1,6 +1,6 @@
 <mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
   <mat-label automation-id="label">Кем выдан</mat-label>
-  <input
+  <textarea
     automation-id="input"
     placeholder="Кем выдан"
     name="data[customer][passportIssueName]"
@@ -8,5 +8,5 @@
     banxInputTrack
     [trackId]="id"
     [formControl]="control"
-  />
+  ></textarea>
 </mat-form-field>
