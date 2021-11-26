@@ -1,4 +1,4 @@
-import { RegistrationFormBase } from '@banx/registration/form/common';
+import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormBase, RegistrationFormField } from '@banx/registration/form/common';
 
 export enum RussianRegistrationFormField {
   PassportSeriesNumber = 'passportSeriesNumber',
@@ -15,3 +15,12 @@ export interface RussianRegistrationForm extends RegistrationFormBase {
   [RussianRegistrationFormField.PassportIssueDate]: string;
   [RussianRegistrationFormField.PassportBirthplace]: string;
 }
+
+export const RUSSIAN_REGISTRATION_FORM_FIELD_IDS: Record<RegistrationFormField | RussianRegistrationFormField, string> = {
+  ...REGISTRATION_FORM_FIELD_IDS,
+  [RussianRegistrationFormField.PassportSeriesNumber]: 'PassportSeriesNumber',
+  [RussianRegistrationFormField.PassportIssueCode]: 'PassportIssueCode',
+  [RussianRegistrationFormField.PassportIssueName]: 'PassportIssueName',
+  [RussianRegistrationFormField.PassportIssueDate]: 'PassportIssueDate',
+  [RussianRegistrationFormField.PassportBirthplace]: 'PassportBirthplace',
+};

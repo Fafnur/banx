@@ -1,1 +1,13 @@
-<p>registration-passport-series-number works!</p>
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">Серия и номер паспорта</mat-label>
+  <input
+    automation-id="input"
+    placeholder="0000 000000"
+    name="data[customer][passportSeriesNumber]"
+    matInput
+    banxInputTrack
+    [imask]="{ mask: '0000 000000' }"
+    [trackId]="id"
+    [formControl]="control"
+  />
+</mat-form-field>

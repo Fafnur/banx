@@ -1,4 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+
+import { RUSSIAN_REGISTRATION_FORM_FIELD_IDS, RussianRegistrationFormField } from '@banx/russian/registration/form/common';
 
 @Component({
   selector: 'banx-registration-passport-birthplace',
@@ -6,4 +9,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./registration-passport-birthplace.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationPassportBirthplaceComponent {}
+export class RegistrationPassportBirthplaceComponent {
+  @Input() control!: FormControl;
+
+  readonly type = RussianRegistrationFormField.PassportBirthplace;
+  readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[this.type];
+}

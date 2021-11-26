@@ -11,7 +11,6 @@ import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
-import { PATHS_STUB } from '@banx/core/navigation/common';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationBirthdateComponent } from './registration-birthdate.component';
@@ -43,7 +42,6 @@ describe('RegistrationBirthdateComponent', () => {
         MockModule(IMaskModule),
       ],
       declarations: [RegistrationBirthdateComponent, WrapperComponent],
-      providers: [PATHS_STUB],
     }).compileComponents();
   });
 
