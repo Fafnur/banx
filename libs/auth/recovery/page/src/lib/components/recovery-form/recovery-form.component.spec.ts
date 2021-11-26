@@ -10,7 +10,7 @@ import { anything, deepEqual, mock, verify, when } from 'ts-mockito';
 import { AuthFormModule } from '@banx/auth/shared';
 import { AuthFacade } from '@banx/auth/state';
 import { FormsSharedModule } from '@banx/core/forms/shared';
-import { PATHS_STUB } from '@banx/core/navigation/common';
+import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
 import { providerOf } from '@banx/core/testing';
 import { TrackersSharedModule } from '@banx/trackers/shared';
@@ -61,13 +61,13 @@ describe('RecoveryFormComponent', () => {
           providerOf(AuthFacade, authFacadeMock),
           providerOf(MatDialog, matDialogMock),
           providerOf(NavigationService, navigationServiceMock),
-          PATHS_STUB,
         ],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
+    when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
     when(authFacadeMock.recoverySuccess$).thenReturn(recoverySuccess$);
     when(authFacadeMock.recoveryFailure$).thenReturn(recoveryFailure$);
     when(matDialogMock.open(anything(), anything())).thenReturn({ afterClosed: () => afterClosed$ } as any);

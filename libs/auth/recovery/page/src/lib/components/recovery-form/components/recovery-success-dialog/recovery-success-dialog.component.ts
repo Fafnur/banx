@@ -8,5 +8,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecoverySuccessDialogComponent {
+  readonly id = 'AuthRecoveryDialogClose';
+
   constructor(@Inject(MAT_DIALOG_DATA) public readonly phone: string) {}
 }

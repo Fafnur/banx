@@ -9,11 +9,11 @@
       placeholder="Mobile phone"
       name="phone"
       autocomplete="phone"
-      id="AuthRecoveryPhone"
+      [id]="id"
       banxInputTrack
-      trackId="AuthRecoveryPhone"
+      [trackId]="id"
       [formControl]="control"
-      [imask]="{ mask: '+{7} 000 000-00-00' }"
+      [imask]="mask"
       [unmask]="true"
     />
   </div>

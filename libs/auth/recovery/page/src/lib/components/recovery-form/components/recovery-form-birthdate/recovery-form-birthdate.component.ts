@@ -1,25 +1,27 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { AnyMaskedOptions } from 'imask';
-import { Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { filter, take, takeUntil, tap } from 'rxjs/operators';
 
-import { extractTouchedChanges } from '@banx/core/forms/utils';
+import { DestroyService } from '@banx/core/services';
 import { getMaskDate, getMaxDate, getMinDate } from '@banx/core/utils';
-import { GridBreakpointsUp } from '@banx/ui/grid';
+import { GridBreakpointType, GridService } from '@banx/ui/grid';
 
 @Component({
   selector: 'banx-auth-recovery-form-birthdate',
   templateUrl: './recovery-form-birthdate.component.html',
   styleUrls: ['./recovery-form-birthdate.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DestroyService],
 })
-export class RecoveryFormBirthdateComponent implements OnInit, OnDestroy {
+export class RecoveryFormBirthdateComponent implements OnInit {
   @Input() control!: FormControl;
 
   readonly maxDate = getMaxDate();
   readonly minDate = getMinDate();
+
+  readonly id = 'AuthRecoveryBirthdate';
 
   readonly mask: AnyMaskedOptions = {
     mask: Date,
@@ -27,34 +29,18 @@ export class RecoveryFormBirthdateComponent implements OnInit, OnDestroy {
     max: this.maxDate,
   };
 
-  isDesktopScreen = false;
-  maskControl = new FormControl(null, [Validators.required]);
+  isDesktopScreen$!: Observable<boolean>;
 
-  private readonly destroy$ = new Subject<void>();
+  readonly maskControl = new FormControl(null, [Validators.required]);
 
-  constructor(private readonly changeDetectorRef: ChangeDetectorRef, private readonly breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private readonly changeDetectorRef: ChangeDetectorRef,
+    private readonly gridService: GridService,
+    private readonly destroy$: DestroyService
+  ) {}
 
   ngOnInit(): void {
-    extractTouchedChanges(this.control)
-      .pipe(
-        tap(() => {
-          this.maskControl.markAsTouched();
-          this.changeDetectorRef.markForCheck();
-        }),
-        takeUntil(this.destroy$)
-      )
-      .subscribe();
-
-    this.breakpointObserver
-      .observe(GridBreakpointsUp.Md)
-      .pipe(
-        tap((breakpoints) => {
-          this.isDesktopScreen = breakpoints.matches;
-          this.changeDetectorRef.markForCheck();
-        }),
-        takeUntil(this.destroy$)
-      )
-      .subscribe();
+    this.isDesktopScreen$ = this.gridService.up(GridBreakpointType.Md);
 
     if (this.control.value) {
       this.maskControl.patchValue(getMaskDate(this.control.value), { emitEvent: false });
@@ -66,6 +52,7 @@ export class RecoveryFormBirthdateComponent implements OnInit, OnDestroy {
         take(1),
         tap((value) => {
           this.maskControl.patchValue(getMaskDate(value), { emitEvent: false });
+
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)
@@ -103,11 +90,6 @@ export class RecoveryFormBirthdateComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$)
       )
       .subscribe();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   onSelected(event: any): void {
