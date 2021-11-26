@@ -166,7 +166,7 @@
         <target state="translated">Закрыть</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/auth/recovery/page/src/lib/components/recovery-form/components/recovery-success-dialog/recovery-success-dialog.component.html</context>
-          <context context-type="linenumber">14,16</context>
+          <context context-type="linenumber">15,17</context>
         </context-group>
         <note priority="1" from="description">Close</note>
         <note priority="1" from="meaning">Recovery success dialog</note>
@@ -923,6 +923,871 @@
         </context-group>
         <note priority="1" from="description">Home page</note>
       </trans-unit>
+      <trans-unit id="470445423222745044" datatype="html">
+        <source>Name of additional contact</source>
+        <target state="translated">Имя контактного лица</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-name/registration-additional-contact-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Name of additional contact</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="6927083524963824966" datatype="html">
+        <source>Jim</source>
+        <target state="translated">Иван</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-name/registration-additional-contact-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Name of additional contact placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="3635425732897837764" datatype="html">
+        <source>Phone of additional contact</source>
+        <target state="translated">Номер телефона</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-phone-number/registration-additional-contact-phone-number.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Name of additional contact</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="161047723452396387" datatype="html">
+        <source>+XX XXXX XXXXXX</source>
+        <target state="translated">+X XXX XXX XXXX</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-phone-number/registration-additional-contact-phone-number.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-mobile-phone/registration-mobile-phone.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Name of additional contact placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="4924391863984683198" datatype="html">
+        <source>Spouse</source>
+        <target state="translated">Супруг(а)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-type/registration-additional-contact-type-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="924836040714808841" datatype="html">
+        <source>Sister/Brother</source>
+        <target state="translated">Брат/Сестра</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-type/registration-additional-contact-type-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="7395997995163588047" datatype="html">
+        <source>Mother/Father</source>
+        <target state="translated">Отец/Мать</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-type/registration-additional-contact-type-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="3746412140942310436" datatype="html">
+        <source>Friend</source>
+        <target state="translated">Друг/Подруга</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-type/registration-additional-contact-type-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="661013783518193593" datatype="html">
+        <source>Colleague</source>
+        <target state="translated">Коллега</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-type/registration-additional-contact-type-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="4392950059352869507" datatype="html">
+        <source>Who is this person</source>
+        <target state="translated">Владелец номера</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-contact-type/registration-additional-contact-type.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Type of additional contact</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="162064066210999317" datatype="html">
+        <source>Additional income</source>
+        <target state="translated">Дополнительный доход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-income-amount/registration-additional-income-amount.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-additional-income-amount/registration-additional-income-amount.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="description">Additional income</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="3034977824593468082" datatype="html">
+        <source> I agree with <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.terms | path&quot;&gt;"/>terms and conditions<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target state="translated"> Я принимаю <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.terms | path&quot;&gt;"/>условия и положения<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-agreement/registration-agreement.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+        <note priority="1" from="description">Agreement</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="4090699702715692059" datatype="html">
+        <source>Date of birth</source>
+        <target state="translated">Дата рождения</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-birthdate/registration-birthdate.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Date of birth</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="2360554055388878220" datatype="html">
+        <source>City</source>
+        <target state="translated">Город</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-city/registration-city.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-city/registration-city.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">City</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="8157738261433351579" datatype="html">
+        <source>None</source>
+        <target state="translated">Нет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-dependents-amount/registration-dependents-amount-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="397258169471434939" datatype="html">
+        <source>One</source>
+        <target state="translated">Один</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-dependents-amount/registration-dependents-amount-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="2841817591980210205" datatype="html">
+        <source>Two</source>
+        <target state="translated">Два</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-dependents-amount/registration-dependents-amount-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="5759817635784541076" datatype="html">
+        <source>Three</source>
+        <target state="translated">Три</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-dependents-amount/registration-dependents-amount-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="2413297666419965140" datatype="html">
+        <source>Four and more</source>
+        <target state="translated">Четыре и более</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-dependents-amount/registration-dependents-amount-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Additional Contact Type</note>
+      </trans-unit>
+      <trans-unit id="2851726429236196921" datatype="html">
+        <source>Dependents</source>
+        <target state="translated">Иждивенцы</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-dependents-amount/registration-dependents-amount.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Dependents</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="2294523092935766160" datatype="html">
+        <source> Do you have a driver’s license? </source>
+        <target state="translated">Водительские права?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-driver-license/registration-driver-license.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">Do you have a driver license</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="7456256126659710264" datatype="html">
+        <source> Yes </source>
+        <target state="translated"> Да </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-driver-license/registration-driver-license.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-own-car/registration-own-car.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
+        <note priority="1" from="description">Yes</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="4939843765370242740" datatype="html">
+        <source> No </source>
+        <target state="translated"> Нет </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-driver-license/registration-driver-license.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-own-car/registration-own-car.component.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+        <note priority="1" from="description">No</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="7269901759984897107" datatype="html">
+        <source>Email</source>
+        <target state="translated">Электронная почта</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-email/registration-email.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Email</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="2923752564111026718" datatype="html">
+        <source>john@doe.com</source>
+        <target state="translated">example@mail.ru</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-email/registration-email.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Email placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="1793063187104027624" datatype="html">
+        <source>Where do you work</source>
+        <target state="translated">Где вы работаете</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Name By Type</note>
+      </trans-unit>
+      <trans-unit id="2517583913454762029" datatype="html">
+        <source>Where did you worked before</source>
+        <target state="translated">Где вы работали раньше</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Name By Type</note>
+      </trans-unit>
+      <trans-unit id="4560305508372271818" datatype="html">
+        <source>Where do you study</source>
+        <target state="translated">Где вы учитесь</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Name By Type</note>
+      </trans-unit>
+      <trans-unit id="5765564500733095389" datatype="html">
+        <source>Employer name</source>
+        <target state="translated">Наименование работодателя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employer-name/registration-employer-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Employer name placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="3320396622616358933" datatype="html">
+        <source>Full-time</source>
+        <target state="translated">Полная занятость</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="5476004793937331090" datatype="html">
+        <source>Part-time</source>
+        <target state="translated">Частичная занятость</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="7565701781672414094" datatype="html">
+        <source>Retired</source>
+        <target state="translated">Пенсионер</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="2789427647789611647" datatype="html">
+        <source>Unemployed</source>
+        <target state="translated">Безработный</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="4457578667319896539" datatype="html">
+        <source>Student</source>
+        <target state="translated">Студент</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="3566479564198549875" datatype="html">
+        <source>Self employed</source>
+        <target state="translated">Самозанятый</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="8719233575741077304" datatype="html">
+        <source>Other</source>
+        <target state="translated">Другое</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type-label.pipe.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Employment Type</note>
+      </trans-unit>
+      <trans-unit id="7130552935676481099" datatype="html">
+        <source>Type of Employment</source>
+        <target state="translated">Тип занятости</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-employment-type/registration-employment-type.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Type of Employment</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="8417266929896737965" datatype="html">
+        <source>First name</source>
+        <target state="translated">Имя</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-first-name/registration-first-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">First name</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="2483807541150985149" datatype="html">
+        <source>John</source>
+        <target state="translated">Иван</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-first-name/registration-first-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">First name placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="5629280604795199956" datatype="html">
+        <source>Gender</source>
+        <target state="translated">Пол</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-gender/registration-gender.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Gender</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="6440288613360870600" datatype="html">
+        <source>Own property</source>
+        <target state="translated">Собственное жильё</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-home-type/registration-home-type-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Home Type</note>
+      </trans-unit>
+      <trans-unit id="3968342724848767813" datatype="html">
+        <source>Rent</source>
+        <target state="translated">Съёмное жильё</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-home-type/registration-home-type-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Home Type</note>
+      </trans-unit>
+      <trans-unit id="9000837258667792770" datatype="html">
+        <source>With Family</source>
+        <target state="translated">С родителями</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-home-type/registration-home-type-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Home Type</note>
+      </trans-unit>
+      <trans-unit id="1492800901933262614" datatype="html">
+        <source>With Friends</source>
+        <target state="translated">С друзьями</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-home-type/registration-home-type-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Home Type</note>
+      </trans-unit>
+      <trans-unit id="1743063463059300073" datatype="html">
+        <source>Paying Guest</source>
+        <target state="translated">Оплачивается спонсором</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-home-type/registration-home-type-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Home Type</note>
+      </trans-unit>
+      <trans-unit id="5665963694294899402" datatype="html">
+        <source>Home type</source>
+        <target state="translated">Условия проживания</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-home-type/registration-home-type.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Home type</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="4184049239284957457" datatype="html">
+        <source>What’s your major?</source>
+        <target state="translated">Специальность</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-institution-department-name/registration-institution-department-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Institution department name</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="3464901683007034931" datatype="html">
+        <source>Major</source>
+        <target state="translated">Факультет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-institution-department-name/registration-institution-department-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-institution-name/registration-institution-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Institution department name placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="7193092932965111257" datatype="html">
+        <source>Where do you study?</source>
+        <target state="translated">ВУЗ/СУЗ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-institution-name/registration-institution-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Institution name</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="4704772694056362717" datatype="html">
+        <source>What do you do</source>
+        <target state="translated">Тип занятости</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Job Description By Type</note>
+      </trans-unit>
+      <trans-unit id="61222704780238502" datatype="html">
+        <source>What did you do</source>
+        <target state="translated">Тип занятости</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Job Description By Type</note>
+      </trans-unit>
+      <trans-unit id="6895057568460001922" datatype="html">
+        <source>What’s your major</source>
+        <target state="translated">Должность</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Job Description By Type</note>
+      </trans-unit>
+      <trans-unit id="5531611828906259379" datatype="html">
+        <source>Job title</source>
+        <target state="translated">Должность</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-job-description/registration-job-description.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Job description placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="3068425563941166669" datatype="html">
+        <source>None</source>
+        <target state="translated">Нет</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-kids-amount/registration-kids-amount-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Kids Amount</note>
+      </trans-unit>
+      <trans-unit id="4531317508834025837" datatype="html">
+        <source>One</source>
+        <target state="translated">Один</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-kids-amount/registration-kids-amount-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Kids Amount</note>
+      </trans-unit>
+      <trans-unit id="6975876931342801103" datatype="html">
+        <source>Two</source>
+        <target state="translated">Два</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-kids-amount/registration-kids-amount-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Kids Amount</note>
+      </trans-unit>
+      <trans-unit id="670504938292356166" datatype="html">
+        <source>Three</source>
+        <target state="translated">Три</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-kids-amount/registration-kids-amount-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Kids Amount</note>
+      </trans-unit>
+      <trans-unit id="6547357005782556038" datatype="html">
+        <source>Four and more</source>
+        <target state="translated">Четыре и более</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-kids-amount/registration-kids-amount-label.pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Kids Amount</note>
+      </trans-unit>
+      <trans-unit id="3326763023102443974" datatype="html">
+        <source>Kids</source>
+        <target state="translated">Дети</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-kids-amount/registration-kids-amount.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Kids</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="4905751403354966176" datatype="html">
+        <source>Last name</source>
+        <target state="translated">Фамилия</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-last-name/registration-last-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Last name</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="2533085243228545984" datatype="html">
+        <source>Doe</source>
+        <target state="translated">Иванов</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-last-name/registration-last-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Last name placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="1012282301573441011" datatype="html">
+        <source>Single</source>
+        <target state="translated">Не женат/Не замужем</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-marital-status/registration-marital-status-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Marital Status</note>
+      </trans-unit>
+      <trans-unit id="147089740515104833" datatype="html">
+        <source>Widower</source>
+        <target state="translated">Вдовец/Вдова</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-marital-status/registration-marital-status-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Marital Status</note>
+      </trans-unit>
+      <trans-unit id="7352533882360975047" datatype="html">
+        <source>Divorced</source>
+        <target state="translated">Разведен/Разведена</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-marital-status/registration-marital-status-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Marital Status</note>
+      </trans-unit>
+      <trans-unit id="7075264899251070572" datatype="html">
+        <source>Married</source>
+        <target state="translated">Женат/Замужем</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-marital-status/registration-marital-status-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Marital Status</note>
+      </trans-unit>
+      <trans-unit id="8626560496947298340" datatype="html">
+        <source>Marital status</source>
+        <target state="translated">Семейное положение</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-marital-status/registration-marital-status.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Marital status</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="1206180051320978167" datatype="html">
+        <source>Middle name</source>
+        <target state="translated">Отчество</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-middle-name/registration-middle-name.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Middle name</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="7534089031650634568" datatype="html">
+        <source>Gray</source>
+        <target state="translated">Иванович</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-middle-name/registration-middle-name.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Middle name placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="491235917336086696" datatype="html">
+        <source>Minimum desired amount of loans</source>
+        <target state="translated">Минимальная желаемая сумма</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-minimal-desired-amount/registration-minimal-desired-amount.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Minimal desired amount</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="6988983545091922743" datatype="html">
+        <source>100000</source>
+        <target state="translated">100000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-minimal-desired-amount/registration-minimal-desired-amount.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-monthly-income/registration-monthly-income.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Minimal desired amount placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="5063498317280780873" datatype="html">
+        <source>Mobile phone</source>
+        <target state="translated">Мобильный телефон</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-mobile-phone/registration-mobile-phone.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Mobile phone</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="1719816137446707237" datatype="html">
+        <source>Monthly income</source>
+        <target state="translated">Доход</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-monthly-income/registration-monthly-income.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Monthly income</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="385307793094296666" datatype="html">
+        <source> Do you have your own car? </source>
+        <target state="translated">Автомобиль в собственности?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-own-car/registration-own-car.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">Do you have your own car</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="6476563410780614369" datatype="html">
+        <source>Less than a month</source>
+        <target state="translated">Меньше месяца</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-employment/registration-period-of-employment-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-unemployment/registration-period-of-unemployment-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Period Of Employment</note>
+      </trans-unit>
+      <trans-unit id="1673101308888887798" datatype="html">
+        <source>1-3 months</source>
+        <target state="translated">1-3 месяца</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-employment/registration-period-of-employment-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-unemployment/registration-period-of-unemployment-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Period Of Employment</note>
+      </trans-unit>
+      <trans-unit id="6479595218531022250" datatype="html">
+        <source>3-12 months</source>
+        <target state="translated">1-3 месяцев</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-employment/registration-period-of-employment-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-unemployment/registration-period-of-unemployment-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Period Of Employment</note>
+      </trans-unit>
+      <trans-unit id="1110090292397905406" datatype="html">
+        <source>More than 12 months</source>
+        <target state="translated">Более 12 месяцев</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-employment/registration-period-of-employment-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-unemployment/registration-period-of-unemployment-label.pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Period Of Employment</note>
+      </trans-unit>
+      <trans-unit id="1765358670790401136" datatype="html">
+        <source>How long you have been working here?</source>
+        <target state="translated">На этом месте</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-employment/registration-period-of-employment.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Period of employment</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="7562027537544958476" datatype="html">
+        <source>For how long?</source>
+        <target state="translated">На этом месте отработали</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-period-of-unemployment/registration-period-of-unemployment.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Period of unemployment</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="1614159471079561704" datatype="html">
+        <source>Postcode</source>
+        <target state="translated">Почтовый индекс</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-postcode/registration-postcode.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Postcode</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="3541888936569017363" datatype="html">
+        <source>000000</source>
+        <target state="translated">000000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-postcode/registration-postcode.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Post code placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="8733347781878798046" datatype="html">
+        <source>SMS Code</source>
+        <target state="translated">SMS код</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-sms-code/registration-sms-code.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Sms code</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="1034393007979505334" datatype="html">
+        <source>0000</source>
+        <target state="translated">0000</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-sms-code/registration-sms-code.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">Sms code placeholder</note>
+        <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
       <trans-unit id="4030347628819272688" datatype="html">
         <source>©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. All rights reserved.</source>
         <target state="translated">©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. Все права защищены.</target>
@@ -968,7 +1833,7 @@
         <target state="translated">Войти</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/ui/layout/src/lib/components/toolbar/components/auth/components/login/login.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">6</context>
         </context-group>
         <note priority="1" from="description">Sign in</note>
         <note priority="1" from="meaning">Toolbar login</note>
