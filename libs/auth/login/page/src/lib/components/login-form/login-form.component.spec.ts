@@ -9,7 +9,7 @@ import { deepEqual, mock, verify, when } from 'ts-mockito';
 import { AuthFormModule } from '@banx/auth/shared';
 import { AuthFacade } from '@banx/auth/state';
 import { FormsSharedModule } from '@banx/core/forms/shared';
-import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
+import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
 import { providerOf } from '@banx/core/testing';
 import { TrackersSharedModule } from '@banx/trackers/shared';
@@ -49,12 +49,13 @@ describe('LoginFormComponent', () => {
           MockModule(TrackersSharedModule),
         ],
         declarations: [LoginFormComponent],
-        providers: [PATHS_STUB, providerOf(AuthFacade, authFacadeMock), providerOf(NavigationService, navigationServiceMock)],
+        providers: [providerOf(AuthFacade, authFacadeMock), providerOf(NavigationService, navigationServiceMock)],
       }).compileComponents();
     })
   );
 
   beforeEach(() => {
+    when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
     when(authFacadeMock.loginFailure$).thenReturn(loginFailure$);
     when(authFacadeMock.loginSuccess$).thenReturn(loginSuccess$);
 
