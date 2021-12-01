@@ -1147,6 +1147,27 @@
         }
       }
     },
+    "registration-form-ui-card": {
+      "projectType": "library",
+      "root": "libs/registration/form/ui/card",
+      "sourceRoot": "libs/registration/form/ui/card/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/ui/card/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/form/ui/card/src/**/*.ts", "libs/registration/form/ui/card/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-process-api": {
       "projectType": "library",
       "root": "libs/registration/process/api",
