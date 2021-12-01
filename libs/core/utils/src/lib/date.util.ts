@@ -5,7 +5,7 @@ export function getMinDate(age: number = 100): Date {
   return minDate;
 }
 
-export function getMaxDate(age: number = 18): Date {
+export function getMaxDate(age: number = 0): Date {
   const maxDate = new Date();
   maxDate.setFullYear(maxDate.getFullYear() - age);
 
