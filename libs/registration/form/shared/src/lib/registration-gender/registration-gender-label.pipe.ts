@@ -3,9 +3,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { RegistrationGender } from '@banx/registration/form/common';
 
 export const REGISTRATION_GENDER_LABELS = {
-  [RegistrationGender.Male]: 'Male',
-  [RegistrationGender.Female]: 'Female',
-  [RegistrationGender.Transgender]: 'Transgender',
+  [RegistrationGender.Male]: $localize`:Registration Gender|:Male`,
+  [RegistrationGender.Female]: $localize`:Registration Gender|:Female`,
+  [RegistrationGender.Transgender]: $localize`:Registration Gender|:Transgender`,
 };
 
 @Pipe({

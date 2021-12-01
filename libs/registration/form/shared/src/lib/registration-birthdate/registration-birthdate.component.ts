@@ -22,7 +22,7 @@ export class RegistrationBirthdateComponent implements OnInit {
 
   readonly type = RegistrationFormField.Birthdate;
   readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
-  readonly maxDate = getMaxDate();
+  readonly maxDate = getMaxDate(18);
   readonly minDate = getMinDate();
 
   readonly mask: AnyMaskedOptions = {

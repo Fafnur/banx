@@ -1,4 +1,4 @@
-import { RegistrationForm } from '@banx/registration/form/common';
+import { RegistrationForm } from './registration-form.interface';
 
 export function castRegistrationForm(lastForm: RegistrationForm | null, form: RegistrationForm | null): RegistrationForm {
   const registrationForm: RegistrationForm = {};
