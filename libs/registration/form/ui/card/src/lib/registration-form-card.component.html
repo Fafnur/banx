@@ -1,1 +1,9 @@
-<p>registration-form-card works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ng-content></ng-content>
+
+  <div>
+    <button type="button" mat-raised-button [disabled]="submitted" (click)="onPrev()" *ngIf="!first">Back</button>
+    <button type="submit" mat-raised-button color="primary" [disabled]="submitted" *ngIf="!last">Next</button>
+    <button type="submit" mat-raised-button color="primary" [disabled]="submitted" *ngIf="last">Finish</button>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<banx-registration-form-card [first]="true" [form]="form">
   <banx-registration-last-name [control]="form | extractFormControl: fields.LastName"></banx-registration-last-name>
   <banx-registration-first-name [control]="form | extractFormControl: fields.FirstName"></banx-registration-first-name>
   <banx-registration-middle-name [control]="form | extractFormControl: fields.MiddleName"></banx-registration-middle-name>
@@ -42,5 +42,14 @@
     [control]="form | extractFormControl: russianFields.PassportIssueName"
   ></banx-registration-passport-issue-name>
 
-  <button mat-raised-button color="primary" type="submit">Submit</button>
-</form>
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-email [control]="form | extractFormControl: fields.Email"></banx-registration-email>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-mobile-phone [control]="form | extractFormControl: fields.MobilePhone"></banx-registration-mobile-phone>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-registration-agreement [control]="form | extractFormControl: fields.Agreement"></banx-registration-agreement>
+</banx-registration-form-card>

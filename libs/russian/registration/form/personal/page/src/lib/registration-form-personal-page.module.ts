@@ -5,12 +5,16 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import {
+  RegistrationAgreementModule,
   RegistrationBirthdateModule,
+  RegistrationEmailModule,
   RegistrationFirstNameModule,
   RegistrationGenderModule,
   RegistrationLastNameModule,
   RegistrationMiddleNameModule,
+  RegistrationMobilePhoneModule,
 } from '@banx/registration/form/shared';
+import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
 import { GridModule } from '@banx/ui/grid';
 
 /* eslint-disable max-len */
@@ -40,6 +44,10 @@ import { RegistrationFormPersonalRoutingModule } from './registration-form-perso
     RegistrationPassportIssueDateModule,
     RegistrationPassportIssueCodeModule,
     RegistrationPassportBirthplaceModule,
+    RegistrationFormCardModule,
+    RegistrationAgreementModule,
+    RegistrationMobilePhoneModule,
+    RegistrationEmailModule,
     GridModule,
   ],
   declarations: [RegistrationFormPersonalPageComponent],

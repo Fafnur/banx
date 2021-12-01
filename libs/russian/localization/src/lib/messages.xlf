@@ -1329,6 +1329,33 @@
         <note priority="1" from="description">First name placeholder</note>
         <note priority="1" from="meaning">Registration form field</note>
       </trans-unit>
+      <trans-unit id="2273178966364100329" datatype="html">
+        <source>Male</source>
+        <target state="translated">Мужской</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-gender/registration-gender-label.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Gender</note>
+      </trans-unit>
+      <trans-unit id="6807542984674952553" datatype="html">
+        <source>Female</source>
+        <target state="translated">Женский</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-gender/registration-gender-label.pipe.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Gender</note>
+      </trans-unit>
+      <trans-unit id="6313935673810518367" datatype="html">
+        <source>Transgender</source>
+        <target state="translated">Трансгендерный</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-gender/registration-gender-label.pipe.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Gender</note>
+      </trans-unit>
       <trans-unit id="5629280604795199956" datatype="html">
         <source>Gender</source>
         <target state="translated">Пол</target>
