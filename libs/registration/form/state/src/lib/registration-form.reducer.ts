@@ -8,6 +8,7 @@ export const REGISTRATION_FORM_FEATURE_KEY = 'registrationForm';
 
 export interface RegistrationFormState {
   form: RegistrationForm | null;
+  formFull: RegistrationForm | null;
   formLoading: boolean;
   formLoaded: boolean;
   formCreating: boolean;
@@ -20,6 +21,7 @@ export interface RegistrationFormPartialState {
 
 export const registrationFormInitialState: RegistrationFormState = {
   form: null,
+  formFull: null,
   formLoading: false,
   formLoaded: false,
   formCreating: false,
@@ -74,6 +76,9 @@ const registrationFormReducer = createReducer(
   on(RegistrationFormActions.updateForm, (state, { payload }) => ({
     ...state,
     form: castRegistrationForm(payload, state.form),
+    formFull: state.formFull
+      ? { ...state.formFull, ...castRegistrationForm(payload, state.form) }
+      : castRegistrationForm(payload, state.form),
   }))
 );
 

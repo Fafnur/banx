@@ -13,7 +13,7 @@ export const loadFormSuccess = createAction('[RegistrationForm] Load Form Succes
 
 export const loadFormFailure = createAction('[RegistrationForm] Load Form Failure', payload<Record<string, any>>());
 
-export const createForm = createAction('[RegistrationForm] Create Form', payload<RegistrationForm>());
+export const createForm = createAction('[RegistrationForm] Create Form');
 
 export const createFormSuccess = createAction('[RegistrationForm] Create Form Success');
 

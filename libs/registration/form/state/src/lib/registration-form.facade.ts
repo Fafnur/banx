@@ -68,8 +68,8 @@ export class RegistrationFormFacade {
     this.dispatch(RegistrationFormActions.loadForm());
   }
 
-  create(payload: RegistrationForm): void {
-    this.dispatch(RegistrationFormActions.createForm({ payload }));
+  create(): void {
+    this.dispatch(RegistrationFormActions.createForm());
   }
 
   validate(payload: RegistrationForm): void {

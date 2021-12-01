@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
+import { combineLatest } from 'rxjs';
 import { map, take, withLatestFrom } from 'rxjs/operators';
 
 import { LoggerService } from '@banx/core/logger/service';
@@ -15,7 +16,7 @@ import { selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { RegistrationFormPartialState } from './registration-form.reducer';
-import { selectForm } from './registration-form.selectors';
+import { selectForm, selectFormFull } from './registration-form.selectors';
 
 @Injectable()
 export class RegistrationFormEffects implements OnInitEffects {
@@ -50,14 +51,19 @@ export class RegistrationFormEffects implements OnInitEffects {
   createForm$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RegistrationFormActions.createForm),
-      withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
+      withLatestFrom(
+        combineLatest([
+          this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1)),
+          this.store.pipe(select(selectFormFull), isNotNullOrUndefined(), take(1)),
+        ])
+      ),
       fetch({
         id: () => 'registration-create-form',
-        run: (action, processId: string) =>
+        run: (action, [processId, form]: [string, RegistrationForm]) =>
           this.platformService.isBrowser
             ? this.registrationFormApiService
                 .create(processId, {
-                  form: action.payload,
+                  form,
                   additional: {
                     visitor: this.visitorService.getUuid(),
                   },

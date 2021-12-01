@@ -23,6 +23,13 @@ describe('RegistrationForm Selectors', () => {
     expect(results).toEqual(REGISTRATION_FORM_STUB);
   });
 
+  it('selectFormFull() should return form', () => {
+    store = getStore({ formFull: REGISTRATION_FORM_STUB });
+    const results = RegistrationFormSelectors.selectFormFull(store);
+
+    expect(results).toEqual(REGISTRATION_FORM_STUB);
+  });
+
   it('selectFormLoaded() should return formLoaded', () => {
     store = getStore({ formLoaded: true });
     const result = RegistrationFormSelectors.selectFormLoaded(store);

@@ -6,6 +6,8 @@ export const selectRegistrationFormState = createFeatureSelector<RegistrationFor
 
 export const selectForm = createSelector(selectRegistrationFormState, (state) => state.form);
 
+export const selectFormFull = createSelector(selectRegistrationFormState, (state) => state.formFull);
+
 export const selectFormLoaded = createSelector(selectRegistrationFormState, (state) => state.formLoaded);
 
 export const selectFormLoading = createSelector(selectRegistrationFormState, (state) => state.formLoading);
