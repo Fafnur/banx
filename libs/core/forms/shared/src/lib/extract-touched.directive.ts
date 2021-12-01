@@ -12,6 +12,7 @@ import { DestroyService } from '@banx/core/services';
 })
 export class ExtractTouchedDirective implements OnInit {
   @Input() control?: FormControl;
+  @Input() children?: FormControl | FormControl[];
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef, private readonly destroy$: DestroyService) {}
 
@@ -19,7 +20,16 @@ export class ExtractTouchedDirective implements OnInit {
     if (this.control) {
       extractTouchedChanges(this.control)
         .pipe(
-          tap(() => this.changeDetectorRef.markForCheck()),
+          tap(() => {
+            this.changeDetectorRef.markForCheck();
+            if (this.children) {
+              if (Array.isArray(this.children)) {
+                this.children.forEach((control) => control.markAsTouched());
+              } else {
+                this.children.markAsTouched();
+              }
+            }
+          }),
           takeUntil(this.destroy$)
         )
         .subscribe();
