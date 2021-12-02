@@ -1,7 +1,12 @@
 import { createAction } from '@ngrx/store';
 
 import { payload } from '@banx/core/store/utils';
-import { RegistrationForm, RegistrationFormFieldValidate, RegistrationFormRestore } from '@banx/registration/form/common';
+import {
+  RegistrationForm,
+  RegistrationFormFieldValidate,
+  RegistrationFormRestore,
+  RegistrationFormValidate,
+} from '@banx/registration/form/common';
 
 export const init = createAction('[RegistrationForm] Init');
 
@@ -19,7 +24,7 @@ export const createFormSuccess = createAction('[RegistrationForm] Create Form Su
 
 export const createFormFailure = createAction('[RegistrationForm] Create Form Failure', payload<Record<string, any>>());
 
-export const validateForm = createAction('[RegistrationForm] Validate Form', payload<RegistrationForm>());
+export const validateForm = createAction('[RegistrationForm] Validate Form', payload<RegistrationFormValidate>());
 
 export const validateFormSuccess = createAction('[RegistrationForm] Validate Form Success');
 

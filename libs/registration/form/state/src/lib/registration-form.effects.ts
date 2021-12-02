@@ -85,7 +85,7 @@ export class RegistrationFormEffects implements OnInitEffects {
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationFormApiService
-                .validate(processId, { form: action.payload })
+                .validate(processId, action.payload)
                 .pipe(map(() => RegistrationFormActions.validateFormSuccess()))
             : undefined,
         onError: (action, error) =>

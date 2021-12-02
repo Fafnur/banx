@@ -32,7 +32,7 @@ const registrationFormReducer = createReducer(
   registrationFormInitialState,
   on(RegistrationFormActions.restore, (state, { payload }) => ({
     ...state,
-    form: payload.form,
+    formFull: payload.form,
   })),
   on(RegistrationFormActions.loadForm, (state) => ({
     ...state,
@@ -40,7 +40,7 @@ const registrationFormReducer = createReducer(
   })),
   on(RegistrationFormActions.loadFormSuccess, (state, { payload }) => ({
     ...state,
-    form: castRegistrationForm(state.form, payload),
+    formFull: castRegistrationForm(state.form, payload),
     formLoaded: true,
     formLoading: false,
   })),

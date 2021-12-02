@@ -1,6 +1,6 @@
-import { RegistrationForm } from './registration-form.interface';
+import { RegistrationForm, RegistrationFormField } from './registration-form.interface';
 
-export function castRegistrationForm(lastForm: RegistrationForm | null, form: RegistrationForm | null): RegistrationForm {
+export function castRegistrationForm(lastForm: RegistrationForm | null, form?: RegistrationForm | null): RegistrationForm {
   const registrationForm: RegistrationForm = {};
 
   if (form) {
@@ -17,6 +17,11 @@ export function castRegistrationForm(lastForm: RegistrationForm | null, form: Re
         registrationForm[key] = lastForm[key];
       }
     }
+  }
+
+  const phone = registrationForm[RegistrationFormField.MobilePhone];
+  if (phone) {
+    registrationForm[RegistrationFormField.MobilePhone] = phone.length > 10 ? phone.slice(-10) : phone;
   }
 
   return registrationForm;

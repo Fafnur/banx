@@ -4,7 +4,12 @@ import { Action, select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
-import { RegistrationForm, RegistrationFormFieldValidate, RegistrationFormValidateErrors } from '@banx/registration/form/common';
+import {
+  RegistrationForm,
+  RegistrationFormFieldValidate,
+  RegistrationFormValidate,
+  RegistrationFormValidateErrors,
+} from '@banx/registration/form/common';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { RegistrationFormPartialState } from './registration-form.reducer';
@@ -13,6 +18,7 @@ import * as RegistrationFormSelectors from './registration-form.selectors';
 @Injectable()
 export class RegistrationFormFacade {
   form$ = this.store.pipe(select(RegistrationFormSelectors.selectForm));
+  formFull$ = this.store.pipe(select(RegistrationFormSelectors.selectFormFull));
   formLoaded$ = this.store.pipe(select(RegistrationFormSelectors.selectFormLoaded));
   formLoading$ = this.store.pipe(select(RegistrationFormSelectors.selectFormLoading));
   formCreating$ = this.store.pipe(select(RegistrationFormSelectors.selectFormCreating));
@@ -72,7 +78,7 @@ export class RegistrationFormFacade {
     this.dispatch(RegistrationFormActions.createForm());
   }
 
-  validate(payload: RegistrationForm): void {
+  validate(payload: RegistrationFormValidate): void {
     this.dispatch(RegistrationFormActions.validateForm({ payload }));
   }
 

@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import { ApiService } from '@banx/core/api/service';
 import {
+  castRegistrationForm,
   RegistrationForm,
   RegistrationFormCreate,
   RegistrationFormFieldValidate,
@@ -12,7 +13,7 @@ import {
 export const REGISTRATION_FORM_API_ROUTES = {
   create: (processId: string): string => `/registration/form/${processId}`,
   load: (processId: string): string => `/registration/form/${processId}`,
-  validate: (processId: string): string => `/registration/form/${processId}/validate`,
+  validate: (processId: string, step?: string): string => `/registration/form/${processId}/validate${step ? '/' + step : ''}`,
   validateUnique: (processId: string): string => `/registration/form/${processId}/validate-unique`,
 };
 
@@ -29,7 +30,7 @@ export class RegistrationFormApiService {
   }
 
   validate(processId: string, data: RegistrationFormValidate): Observable<void> {
-    return this.apiService.post(REGISTRATION_FORM_API_ROUTES.validate(processId), data);
+    return this.apiService.post(REGISTRATION_FORM_API_ROUTES.validate(processId, data.subStep), castRegistrationForm(data.form));
   }
 
   validateUnique(processId: string, data: RegistrationFormFieldValidate): Observable<void> {

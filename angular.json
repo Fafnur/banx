@@ -1609,6 +1609,30 @@
         }
       }
     },
+    "russian-registration-form-family-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/form/family/page",
+      "sourceRoot": "libs/russian/registration/form/family/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/form/family/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/registration/form/family/page/src/**/*.ts",
+              "libs/russian/registration/form/family/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "russian-registration-form-pages": {
       "projectType": "library",
       "root": "libs/russian/registration/form/pages",

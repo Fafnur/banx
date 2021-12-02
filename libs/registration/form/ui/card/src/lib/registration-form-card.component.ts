@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { takeUntil, tap } from 'rxjs';
+import { take, takeUntil, tap } from 'rxjs';
 
 import { DestroyService } from '@banx/core/services';
+import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationFormFacade } from '@banx/registration/form/state';
+import { RegistrationFormSubSteps } from '@banx/registration/process/common';
 import { RegistrationProcessFacade } from '@banx/registration/process/state';
 
 @Component({
@@ -15,6 +17,7 @@ import { RegistrationProcessFacade } from '@banx/registration/process/state';
 })
 export class RegistrationFormCardComponent implements OnInit {
   @Input() form!: FormGroup;
+  @Input() step?: RegistrationFormSubSteps;
   @Input() first = false;
   @Input() last = false;
 
@@ -28,6 +31,18 @@ export class RegistrationFormCardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.registrationFormFacade.formFull$
+      .pipe(
+        isNotNullOrUndefined(),
+        take(1),
+        tap((form) => {
+          this.form.patchValue(form);
+          this.changeDetectorRef.markForCheck();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
     this.registrationFormFacade.validateFormSuccess$
       .pipe(
         tap(() => {
@@ -67,10 +82,9 @@ export class RegistrationFormCardComponent implements OnInit {
   onSubmit(): void {
     this.form.markAllAsTouched();
 
-    console.log(this.form.valid);
     if (this.form.valid) {
       this.submitted = true;
-      this.registrationFormFacade.validate(this.form.value);
+      this.registrationFormFacade.validate({ form: this.form.value, subStep: this.step });
     }
     this.changeDetectorRef.markForCheck();
   }
