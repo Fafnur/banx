@@ -104,6 +104,9 @@ export function getRegistrationPath(payload: RegistrationStepSelected, paths: Na
           case RegistrationFormSubSteps.Personal:
             path = paths.registrationFormPersonal;
             break;
+          case RegistrationFormSubSteps.Sms:
+            path = paths.registrationFormSms;
+            break;
           case RegistrationFormSubSteps.Family:
             path = paths.registrationFormFamily;
             break;

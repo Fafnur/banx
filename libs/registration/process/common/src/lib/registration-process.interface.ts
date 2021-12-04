@@ -65,6 +65,7 @@ export const REGISTRATION_STEPS: RegistrationStepType[] = [
 // RegistrationStepGlobal
 export enum RegistrationFormSubSteps {
   Personal = 'personal',
+  Sms = 'sms',
   Family = 'family',
   Employment = 'employment',
   Additional = 'additional',
@@ -73,6 +74,7 @@ export enum RegistrationFormSubSteps {
 export const REGISTRATION_SUB_STEPS: Record<string, string[]> = {
   [RegistrationStepType.Form]: [
     RegistrationFormSubSteps.Personal,
+    RegistrationFormSubSteps.Sms,
     RegistrationFormSubSteps.Family,
     RegistrationFormSubSteps.Employment,
     RegistrationFormSubSteps.Additional,

@@ -96,6 +96,7 @@ export interface NavigationPaths {
   registration: string;
   registrationForm: string;
   registrationFormPersonal: string;
+  registrationFormSms: string;
   registrationFormFamily: string;
   registrationFormEmployment: string;
   registrationFormAdditional: string;
@@ -198,6 +199,7 @@ export const NAVIGATION_PATHS: NavigationPaths = {
   registrationForm: 'registration/form',
   registrationFormFamily: 'registration/form/family',
   registrationFormPersonal: 'registration/form/personal',
+  registrationFormSms: 'registration/form/sms',
   registrationFormEmployment: 'registration/form/employment',
   registrationFormAdditional: 'registration/form/additional',
   registrationData: 'registration/data',
