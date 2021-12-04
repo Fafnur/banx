@@ -1678,6 +1678,32 @@
         }
       }
     },
+    "russian-registration-form-sms-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/form/sms/page",
+      "sourceRoot": "libs/russian/registration/form/sms/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/russian/registration/form/sms/page"],
+          "options": {
+            "jestConfig": "libs/russian/registration/form/sms/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/registration/form/sms/page/src/**/*.ts",
+              "libs/russian/registration/form/sms/page/src/**/*.html"
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "russian-registration-pages": {
       "projectType": "library",
       "root": "libs/russian/registration/pages",

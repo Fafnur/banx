@@ -91,6 +91,7 @@
       "@banx/russian/registration/form/family/page": ["libs/russian/registration/form/family/page/src/index.ts"],
       "@banx/russian/registration/form/pages": ["libs/russian/registration/form/pages/src/index.ts"],
       "@banx/russian/registration/form/personal/page": ["libs/russian/registration/form/personal/page/src/index.ts"],
+      "@banx/russian/registration/form/sms/page": ["libs/russian/registration/form/sms/page/src/index.ts"],
       "@banx/russian/registration/pages": ["libs/russian/registration/pages/src/index.ts"],
       "@banx/trackers/api": ["libs/trackers/api/src/index.ts"],
       "@banx/trackers/common": ["libs/trackers/common/src/index.ts"],
