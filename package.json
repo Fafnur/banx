@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
-    "start:api": "docker-compose up -d && ng serve backend-api",
-    "stop:api": "docker-compose stop",
+    "start:api": "docker-compose -f ./apps/backend/api/docker-compose.yml up -d && ng serve backend-api",
+    "stop:api": "docker-compose -f ./apps/backend/api/docker-compose.yml stop",
     "russian-cabinet:extract-i18n": "ng extract-i18n russian-cabinet --out-file=libs/russian/localization/src/lib/source.xlf",
     "russian-cabinet:build:prod": "ng build russian-cabinet --configuration production",
     "build": "ng build",

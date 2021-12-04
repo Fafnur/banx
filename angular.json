@@ -1686,7 +1686,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/russian/registration/form/sms/page"],
           "options": {
             "jestConfig": "libs/russian/registration/form/sms/page/jest.config.js",
             "passWithNoTests": true
@@ -1701,8 +1700,7 @@
             ]
           }
         }
-      },
-      "tags": []
+      }
     },
     "russian-registration-pages": {
       "projectType": "library",
