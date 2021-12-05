@@ -20,6 +20,10 @@ const routes: Routes = [
           import('@banx/russian/registration/form/personal/page').then((modules) => modules.RegistrationFormPersonalPageModule),
       },
       {
+        path: RegistrationFormSubSteps.Sms,
+        loadChildren: () => import('@banx/russian/registration/form/sms/page').then((modules) => modules.RegistrationFormSmsPageModule),
+      },
+      {
         path: RegistrationFormSubSteps.Family,
         loadChildren: () =>
           import('@banx/russian/registration/form/family/page').then((modules) => modules.RegistrationFormFamilyPageModule),

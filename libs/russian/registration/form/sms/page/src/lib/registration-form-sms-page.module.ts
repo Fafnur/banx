@@ -1,10 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
+import { GridModule } from '@banx/ui/grid';
 
 import { RegistrationFormSmsPageComponent } from './registration-form-sms-page.component';
+import { RegistrationFormSmsPageRoutingModule } from './registration-form-sms-page-routing.module';
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    RegistrationFormSmsPageRoutingModule,
+    ReactiveFormsModule,
+    FormsSharedModule,
+    RegistrationFormCardModule,
+    GridModule,
+  ],
   declarations: [RegistrationFormSmsPageComponent],
 })
 export class RegistrationFormSmsPageModule {}

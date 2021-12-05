@@ -7,12 +7,12 @@ import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
 import { GridModule } from '@banx/ui/grid';
 
 import { RegistrationFormFamilyPageComponent } from './registration-form-family-page.component';
-import { RegistrationFormFamilyRoutingModule } from './registration-form-family-routing.module';
+import { RegistrationFormFamilyPageRoutingModule } from './registration-form-family-page-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RegistrationFormFamilyRoutingModule,
+    RegistrationFormFamilyPageRoutingModule,
     ReactiveFormsModule,
     FormsSharedModule,
     RegistrationFormCardModule,
