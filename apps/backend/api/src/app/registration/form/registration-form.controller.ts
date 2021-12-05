@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 
 import { RegistrationForm } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps, RegistrationStepType } from '@banx/registration/process/common';
 
+import { RegistrationOtpService } from '../otp/registration-otp.service';
 import { RegistrationProcessService } from '../process/registration-process.service';
 import { RegistrationFormDto } from './registration-form.dto';
 import { RegistrationFormService } from './registration-form.service';
@@ -10,6 +11,7 @@ import { RegistrationFormService } from './registration-form.service';
 @Controller()
 export class RegistrationFormController {
   constructor(
+    private readonly registrationOtpService: RegistrationOtpService,
     private readonly registrationFormService: RegistrationFormService,
     private readonly registrationProcessService: RegistrationProcessService
   ) {}
@@ -27,11 +29,17 @@ export class RegistrationFormController {
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Personal}`)
   @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Personal] }))
   async validateFormPersonal(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
-    return this.registrationFormService.saveForm(params.process, form).then();
+    return this.registrationFormService.saveForm(params.process, form).then(() => {
+      if (form.mobilePhone) {
+        return this.registrationOtpService.create(params.process, form.mobilePhone).then();
+      }
+
+      return undefined;
+    });
   }
 
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Family}`)
-  @UsePipes(new ValidationPipe({ transform: true, groups: [] }))
+  @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Family] }))
   async validateFormFamily(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
@@ -61,6 +69,9 @@ export class RegistrationFormController {
     })
   )
   async createForm(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
+    if (!(await this.registrationOtpService.valid(params.process, form.mobilePhone))) {
+      throw new BadRequestException({ message: 'The phone is not verified' });
+    }
     await this.registrationFormService.saveForm(params.process, form);
     await this.registrationProcessService.finishStep(params.process, RegistrationStepType.Form);
   }
