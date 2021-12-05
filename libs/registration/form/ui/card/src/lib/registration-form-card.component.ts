@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } 
 import { FormGroup } from '@angular/forms';
 import { take, takeUntil, tap } from 'rxjs';
 
+import { FormErrorsService } from '@banx/core/forms/errors';
 import { DestroyService } from '@banx/core/services';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationFormFacade } from '@banx/registration/form/state';
@@ -18,6 +19,7 @@ import { RegistrationProcessFacade } from '@banx/registration/process/state';
 export class RegistrationFormCardComponent implements OnInit {
   @Input() form!: FormGroup;
   @Input() step?: RegistrationFormSubSteps;
+  @Input() ids: Record<string, any> = {};
   @Input() first = false;
   @Input() last = false;
 
@@ -27,6 +29,7 @@ export class RegistrationFormCardComponent implements OnInit {
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly registrationFormFacade: RegistrationFormFacade,
     private readonly registrationProcessFacade: RegistrationProcessFacade,
+    private readonly formErrorsService: FormErrorsService,
     private readonly destroy$: DestroyService
   ) {}
 
@@ -62,8 +65,11 @@ export class RegistrationFormCardComponent implements OnInit {
 
     this.registrationFormFacade.validateFormFailure$
       .pipe(
-        tap(() => {
+        tap((error: Record<string, any>) => {
           this.submitted = false;
+          console.log(error);
+          this.formErrorsService.updateFormErrors(this.form, error);
+          this.formErrorsService.scrollToFirstError(this.form, this.ids);
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)

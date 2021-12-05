@@ -10,6 +10,16 @@ import { PlatformService } from '@banx/core/platform/service';
 export class FormErrorsService {
   constructor(private readonly platformService: PlatformService, @Inject(DOCUMENT) private readonly document: Document) {}
 
+  updateFormErrors(form: FormGroup, errors: Record<string, Record<string, string>>): void {
+    for (const errorField of Object.keys(errors)) {
+      const control = form.get(errorField);
+      if (control && control.value != null) {
+        control.setErrors(errors[errorField]);
+      }
+    }
+    form.markAllAsTouched();
+  }
+
   scrollToFirstError(form: FormGroup, ids: Record<string, string>): void {
     if (this.platformService.isBrowser && form?.controls) {
       for (const key of Object.keys(form.controls)) {

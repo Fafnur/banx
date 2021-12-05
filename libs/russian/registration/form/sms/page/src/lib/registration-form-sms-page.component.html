@@ -1,1 +1,3 @@
-<banx-registration-form-card [form]="form" [step]="step"></banx-registration-form-card>
+<banx-registration-form-card [form]="form" [step]="step">
+  <banx-registration-sms-code [control]="form | extractFormControl: fields.SmsCode"></banx-registration-sms-code>
+</banx-registration-form-card>

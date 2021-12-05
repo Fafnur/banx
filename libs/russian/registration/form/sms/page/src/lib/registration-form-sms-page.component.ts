@@ -4,6 +4,8 @@ import { FormGroup } from '@angular/forms';
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
 
+import { createForm } from './registration-form-sms-page.form';
+
 @Component({
   selector: 'banx-registration-form-sms-page',
   templateUrl: './registration-form-sms-page.component.html',
@@ -17,6 +19,6 @@ export class RegistrationFormSmsPageComponent implements OnInit {
   form!: FormGroup;
 
   ngOnInit(): void {
-    this.form = new FormGroup({});
+    this.form = createForm();
   }
 }
