@@ -1,4 +1,4 @@
-import { IsDateString, IsEmail, IsEnum, IsNotEmpty, IsOptional, Length, ValidateIf } from 'class-validator';
+import { IsBoolean, IsDateString, IsEmail, IsEnum, IsNotEmpty, IsOptional, Length, ValidateIf } from 'class-validator';
 
 import {
   RegistrationAdditionalContactType,
@@ -14,52 +14,87 @@ import { RegistrationFormSubSteps } from '@banx/registration/process/common';
 import { RussianRegistrationForm } from '@banx/russian/registration/form/common';
 
 export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm, 'smsCode'>> {
-  @IsNotEmpty()
-  @Length(1, 60, {
+  @IsNotEmpty({
+    context: { errorCode: 1000 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
+  @Length(4, 60, {
+    context: { errorCode: 1001 },
     groups: [RegistrationFormSubSteps.Personal],
   })
   firstName!: string;
 
-  @IsNotEmpty()
-  @Length(1, 60, {
+  @IsNotEmpty({
+    context: { errorCode: 1000 },
     groups: [RegistrationFormSubSteps.Personal],
+  })
+  @Length(4, 60, {
+    groups: [RegistrationFormSubSteps.Personal],
+    context: { errorCode: 1000 },
   })
   lastName!: string;
 
-  @IsOptional()
+  @IsOptional({
+    context: { errorCode: 1000 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
   @Length(1, 60, {
     groups: [RegistrationFormSubSteps.Personal],
   })
   middleName!: string;
 
   @IsNotEmpty({
+    context: { errorCode: 1000 },
     groups: [RegistrationFormSubSteps.Personal],
   })
   @IsEnum(RegistrationGender)
   gender!: RegistrationGender;
 
   @IsNotEmpty({
+    context: { errorCode: 1000 },
     groups: [RegistrationFormSubSteps.Personal],
   })
-  @IsDateString()
+  @IsDateString({
+    context: { errorCode: 1002 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
   birthdate!: string;
 
+  @IsNotEmpty({
+    context: { errorCode: 1000 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
   @Length(10, 10, {
+    context: { errorCode: 1001 },
     groups: [RegistrationFormSubSteps.Personal],
   })
   mobilePhone!: string;
 
+  @IsNotEmpty({
+    context: { errorCode: 1000 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
   @IsEmail(undefined, {
+    context: { errorCode: 1001 },
     groups: [RegistrationFormSubSteps.Personal],
   })
   email!: string;
 
   @IsNotEmpty({
+    context: { errorCode: 1000 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
+  @IsBoolean({
+    context: { errorCode: 1002 },
     groups: [RegistrationFormSubSteps.Personal],
   })
   agreement!: boolean;
 
   @IsNotEmpty({
+    context: { errorCode: 1000 },
+    groups: [RegistrationFormSubSteps.Personal],
+  })
+  @Length(11, 11, {
     groups: [RegistrationFormSubSteps.Personal],
   })
   passportSeriesNumber!: string;

@@ -6,7 +6,12 @@ import { RegistrationFormSubSteps, RegistrationStepType } from '@banx/registrati
 import { RegistrationOtpService } from '../otp/registration-otp.service';
 import { RegistrationProcessService } from '../process/registration-process.service';
 import { RegistrationFormDto } from './registration-form.dto';
+import { registrationFormExceptionFactory } from './registration-form.exception-factory';
 import { RegistrationFormService } from './registration-form.service';
+
+export interface RegistrationFormParams {
+  process: string;
+}
 
 @Controller()
 export class RegistrationFormController {
@@ -17,18 +22,24 @@ export class RegistrationFormController {
   ) {}
 
   @Get('registration/form/:process')
-  async getForm(@Param() params: { process: string }): Promise<RegistrationForm> {
+  async getForm(@Param() params: RegistrationFormParams): Promise<RegistrationForm> {
     return this.registrationFormService.getForm(params.process);
   }
 
   @Post('registration/form/:process')
-  async postForm(@Param() params: { process: string }, @Body() form: RegistrationForm): Promise<void> {
+  async postForm(@Param() params: RegistrationFormParams, @Body() form: RegistrationForm): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Personal}`)
-  @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Personal] }))
-  async validateFormPersonal(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
+  @UsePipes(
+    new ValidationPipe({
+      transform: true,
+      groups: [RegistrationFormSubSteps.Personal],
+      exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
+    })
+  )
+  async validateFormPersonal(@Param() params: RegistrationFormParams, @Body() form: RegistrationFormDto): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then(() => {
       if (form.mobilePhone) {
         return this.registrationOtpService.create(params.process, form.mobilePhone).then();
@@ -39,20 +50,38 @@ export class RegistrationFormController {
   }
 
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Family}`)
-  @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Family] }))
-  async validateFormFamily(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
+  @UsePipes(
+    new ValidationPipe({
+      transform: true,
+      groups: [RegistrationFormSubSteps.Family],
+      exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
+    })
+  )
+  async validateFormFamily(@Param() params: RegistrationFormParams, @Body() form: RegistrationFormDto): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Employment}`)
-  @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Employment] }))
-  async validateFormEmployment(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
+  @UsePipes(
+    new ValidationPipe({
+      transform: true,
+      groups: [RegistrationFormSubSteps.Employment],
+      exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
+    })
+  )
+  async validateFormEmployment(@Param() params: RegistrationFormParams, @Body() form: RegistrationFormDto): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Additional}`)
-  @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Additional] }))
-  async validateFormAdditional(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
+  @UsePipes(
+    new ValidationPipe({
+      transform: true,
+      groups: [RegistrationFormSubSteps.Additional],
+      exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
+    })
+  )
+  async validateFormAdditional(@Param() params: RegistrationFormParams, @Body() form: RegistrationFormDto): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
@@ -66,9 +95,10 @@ export class RegistrationFormController {
         RegistrationFormSubSteps.Employment,
         RegistrationFormSubSteps.Additional,
       ],
+      exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
     })
   )
-  async createForm(@Param() params: { process: string }, @Body() form: RegistrationFormDto): Promise<void> {
+  async createForm(@Param() params: RegistrationFormParams, @Body() form: RegistrationFormDto): Promise<void> {
     if (!(await this.registrationOtpService.valid(params.process, form.mobilePhone))) {
       throw new BadRequestException({ message: 'The phone is not verified' });
     }
