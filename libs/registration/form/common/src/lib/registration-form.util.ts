@@ -5,7 +5,7 @@ export function castRegistrationForm(lastForm: RegistrationForm | null, form?: R
 
   if (form) {
     for (const key of Object.keys(form)) {
-      if (form[key] != null) {
+      if (form[key] != null && form[key].length) {
         registrationForm[key] = form[key];
       }
     }
@@ -13,7 +13,7 @@ export function castRegistrationForm(lastForm: RegistrationForm | null, form?: R
 
   if (lastForm) {
     for (const key of Object.keys(lastForm)) {
-      if (lastForm[key] != null) {
+      if (lastForm[key] != null && ((typeof lastForm[key] !== 'string' && typeof lastForm[key] !== 'number') || lastForm[key].length)) {
         registrationForm[key] = lastForm[key];
       }
     }

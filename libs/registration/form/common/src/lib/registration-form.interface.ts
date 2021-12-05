@@ -2,6 +2,16 @@ export enum RegistrationFormKeys {
   Form = 'registrationForm',
 }
 
+export enum RegistrationErrorCode {
+  IsNotEmpty = 1000,
+  IsLength = 1001,
+  IsBoolean = 1002,
+  IsDateString = 1003,
+  IsEmail = 1004,
+  IsEnum = 1005,
+  IsOptional = 1006,
+}
+
 export type RegistrationForm<K extends Record<string, any> = Record<string, any>> = K;
 
 export interface RegistrationFormCreate {
@@ -20,7 +30,9 @@ export interface RegistrationFormValidate<F extends Record<string, any> = Record
   subStep?: string;
 }
 
-export type RegistrationFormValidateErrors<K extends keyof Record<string, any> = keyof Record<string, any>> = Partial<Record<K, string[]>>;
+export type RegistrationFormValidateErrors<K extends keyof Record<string, any> = keyof Record<string, any>> = Partial<
+  Record<K, Record<string, any>>
+>;
 
 export interface RegistrationFormRestore {
   form: RegistrationForm | null;

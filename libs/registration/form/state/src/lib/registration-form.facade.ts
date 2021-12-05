@@ -1,15 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { Action, select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
-import {
-  RegistrationForm,
-  RegistrationFormFieldValidate,
-  RegistrationFormValidate,
-  RegistrationFormValidateErrors,
-} from '@banx/registration/form/common';
+import { RegistrationForm, RegistrationFormFieldValidate, RegistrationFormValidate } from '@banx/registration/form/common';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { RegistrationFormPartialState } from './registration-form.reducer';
@@ -39,7 +35,7 @@ export class RegistrationFormFacade {
     map(() => undefined)
   );
 
-  createFormFailure$: Observable<RegistrationFormValidateErrors> = this.actions$.pipe(
+  createFormFailure$: Observable<HttpErrorResponse> = this.actions$.pipe(
     ofType(RegistrationFormActions.createFormFailure),
     map(({ payload }) => payload)
   );
@@ -49,7 +45,7 @@ export class RegistrationFormFacade {
     map(() => undefined)
   );
 
-  validateFormFailure$: Observable<RegistrationFormValidateErrors> = this.actions$.pipe(
+  validateFormFailure$: Observable<HttpErrorResponse> = this.actions$.pipe(
     ofType(RegistrationFormActions.validateFormFailure),
     map(({ payload }) => payload)
   );
@@ -61,11 +57,11 @@ export class RegistrationFormFacade {
       map(() => undefined)
     );
 
-  validateFormFieldFailure$ = (field: string): Observable<RegistrationFormValidateErrors> =>
+  validateFormFieldFailure$ = (field: string): Observable<HttpErrorResponse> =>
     this.actions$.pipe(
       ofType(RegistrationFormActions.validateFormFieldFailure),
       filter((action) => action.payload.field === field),
-      map(({ payload }) => payload)
+      map(({ payload }) => payload.response)
     );
 
   constructor(private readonly actions$: Actions, private readonly store: Store<RegistrationFormPartialState>) {}

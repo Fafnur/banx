@@ -10,7 +10,7 @@ import { PlatformService } from '@banx/core/platform/service';
 export class FormErrorsService {
   constructor(private readonly platformService: PlatformService, @Inject(DOCUMENT) private readonly document: Document) {}
 
-  updateFormErrors(form: FormGroup, errors: Record<string, Record<string, string>>): void {
+  updateFormErrors(form: FormGroup, errors: Record<string, Record<string, any>>): void {
     for (const errorField of Object.keys(errors)) {
       const control = form.get(errorField);
       if (control && control.value != null) {

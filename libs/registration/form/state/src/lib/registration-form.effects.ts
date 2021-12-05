@@ -110,7 +110,7 @@ export class RegistrationFormEffects implements OnInitEffects {
           this.loggerService.logEffect(
             { context: { action, error } },
             RegistrationFormActions.validateFormFieldFailure({
-              payload: { ...error, field: action.payload.field },
+              payload: { response: error, field: action.payload.field },
             })
           ),
       })

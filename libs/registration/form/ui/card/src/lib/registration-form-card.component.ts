@@ -65,10 +65,9 @@ export class RegistrationFormCardComponent implements OnInit {
 
     this.registrationFormFacade.validateFormFailure$
       .pipe(
-        tap((error: Record<string, any>) => {
+        tap((response) => {
           this.submitted = false;
-          console.log(error);
-          this.formErrorsService.updateFormErrors(this.form, error);
+          this.formErrorsService.updateFormErrors(this.form, response.error);
           this.formErrorsService.scrollToFirstError(this.form, this.ids);
           this.changeDetectorRef.markForCheck();
         }),
