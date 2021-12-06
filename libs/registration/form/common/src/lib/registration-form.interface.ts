@@ -12,6 +12,30 @@ export enum RegistrationErrorCode {
   IsOptional = 1006,
 }
 
+export enum RegistrationErrorType {
+  // Server
+  IsNotEmpty = 'isNotEmpty',
+  IsLength = 'isLength',
+  IsBoolean = 'isBoolean',
+  IsDateString = 'isDateString',
+  IsEmail = 'isEmail',
+  IsEnum = 'isEnum',
+  IsOptional = 'isOptional',
+  IsSpell = 'isSpell',
+
+  // Server unknown
+  IsServer = 'isServer',
+
+  // Front
+  Required = 'required',
+  RequiredTrue = 'requiredTrue',
+  MinLength = 'minLength',
+  MaxLength = 'maxLength',
+  Min = 'min',
+  Max = 'max',
+  Email = 'email',
+}
+
 export type RegistrationForm<K extends Record<string, any> = Record<string, any>> = K;
 
 export interface RegistrationFormCreate {

@@ -72,6 +72,7 @@
       "@banx/registration/form/shared": ["libs/registration/form/shared/src/index.ts"],
       "@banx/registration/form/state": ["libs/registration/form/state/src/index.ts"],
       "@banx/registration/form/ui/card": ["libs/registration/form/ui/card/src/index.ts"],
+      "@banx/registration/form/ui/errors": ["libs/registration/form/ui/errors/src/index.ts"],
       "@banx/registration/form/ui/layout": ["libs/registration/form/ui/layout/src/index.ts"],
       "@banx/registration/process/api": ["libs/registration/process/api/src/index.ts"],
       "@banx/registration/process/common": ["libs/registration/process/common/src/index.ts"],

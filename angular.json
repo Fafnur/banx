@@ -1168,6 +1168,27 @@
         }
       }
     },
+    "registration-form-ui-errors": {
+      "projectType": "library",
+      "root": "libs/registration/form/ui/errors",
+      "sourceRoot": "libs/registration/form/ui/errors/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/ui/errors/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/form/ui/errors/src/**/*.ts", "libs/registration/form/ui/errors/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-form-ui-layout": {
       "projectType": "library",
       "root": "libs/registration/form/ui/layout",

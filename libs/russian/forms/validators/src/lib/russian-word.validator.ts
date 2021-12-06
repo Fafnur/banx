@@ -7,7 +7,7 @@ import { AbstractControl } from '@angular/forms';
  */
 export function russianWordValidator(control: AbstractControl): Record<string, any> | null {
   return control.value != null && control.value.length && !/^[ёЁа-яА-Я .-_]{0,58}[ёЁа-яА-Я]$/.test(control.value.trim())
-    ? { russianWord: true }
+    ? { isSpell: true }
     : null;
 }
 
@@ -17,5 +17,5 @@ export function russianWordValidator(control: AbstractControl): Record<string, a
  * @param control Form control
  */
 export function russianWordExtendedValidator(control: AbstractControl): Record<string, any> | null {
-  return control.value != null && control.value.length && !/[ёЁа-яА-Я0-9 .-_]/.test(control.value.trim()) ? { russianWord: true } : null;
+  return control.value != null && control.value.length && !/[ёЁа-яА-Я0-9 .-_]/.test(control.value.trim()) ? { isSpell: true } : null;
 }
