@@ -11,6 +11,7 @@ import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationPassportIssueDateComponent } from './registration-passport-issue-date.component';
@@ -40,6 +41,7 @@ describe('RegistrationPassportIssueDateComponent', () => {
         MockModule(MatDatepickerModule),
         MockModule(MatNativeDateModule),
         MockModule(IMaskModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationPassportIssueDateComponent, WrapperComponent],
     }).compileComponents();

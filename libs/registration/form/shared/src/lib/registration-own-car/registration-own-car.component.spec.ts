@@ -7,6 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationOwnCarComponent } from './registration-own-car.component';
@@ -32,6 +33,7 @@ describe('RegistrationOwnCarComponent', () => {
         MockModule(MatRadioModule),
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationOwnCarComponent, WrapperComponent],
     }).compileComponents();

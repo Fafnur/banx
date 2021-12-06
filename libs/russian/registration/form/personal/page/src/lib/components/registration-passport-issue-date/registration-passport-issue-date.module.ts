@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { IMaskModule } from 'angular-imask';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationPassportIssueDateComponent } from './registration-passport-issue-date.component';
@@ -21,6 +22,7 @@ import { RegistrationPassportIssueDateComponent } from './registration-passport-
     FormsSharedModule,
     TrackersSharedModule,
     IMaskModule,
+    RegistrationFormErrorsModule,
   ],
   declarations: [RegistrationPassportIssueDateComponent],
   exports: [RegistrationPassportIssueDateComponent],

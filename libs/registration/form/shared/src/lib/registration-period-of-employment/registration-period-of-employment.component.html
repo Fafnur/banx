@@ -5,4 +5,7 @@
       {{ option | registrationPeriodOfEmploymentLabel }}
     </mat-option>
   </mat-select>
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
 </mat-form-field>

@@ -9,6 +9,7 @@ import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationAdditionalContactPhoneNumberComponent } from './registration-additional-contact-phone-number.component';
@@ -39,6 +40,7 @@ describe('RegistrationAdditionalContactPhoneNumberComponent', () => {
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
         MockModule(IMaskModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationAdditionalContactPhoneNumberComponent, WrapperComponent],
     }).compileComponents();

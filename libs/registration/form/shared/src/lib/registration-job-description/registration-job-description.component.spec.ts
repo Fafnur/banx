@@ -9,6 +9,7 @@ import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import { RegistrationEmploymentType, RegistrationFormField } from '@banx/registration/form/common';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationJobDescriptionComponent } from './registration-job-description.component';
@@ -25,7 +26,7 @@ class WrapperComponent {
 describe('RegistrationJobDescriptionComponent', () => {
   let pageObject: RegistrationJobDescriptionComponentPo;
   let fixture: ComponentFixture<WrapperComponent>;
-
+  RegistrationFormErrorsModule;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -36,6 +37,7 @@ describe('RegistrationJobDescriptionComponent', () => {
         MockModule(MatInputModule),
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationJobDescriptionComponent, WrapperComponent, RegistrationJobDescriptionLabelPipe],
     }).compileComponents();

@@ -29,8 +29,8 @@ export enum RegistrationErrorType {
   // Front
   Required = 'required',
   RequiredTrue = 'requiredTrue',
-  MinLength = 'minLength',
-  MaxLength = 'maxLength',
+  MinLength = 'minlength',
+  MaxLength = 'maxlength',
   Min = 'min',
   Max = 'max',
   Email = 'email',

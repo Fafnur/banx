@@ -10,6 +10,7 @@ import { MockModule } from 'ng-mocks';
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import { PATHS_STUB } from '@banx/core/navigation/common';
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationAgreementComponent } from './registration-agreement.component';
@@ -37,6 +38,7 @@ describe('RegistrationAgreementComponent', () => {
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
         MockModule(NavigationSharedModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationAgreementComponent, WrapperComponent],
       providers: [PATHS_STUB],

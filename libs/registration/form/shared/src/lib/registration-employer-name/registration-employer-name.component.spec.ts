@@ -9,6 +9,7 @@ import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import { RegistrationEmploymentType, RegistrationFormField } from '@banx/registration/form/common';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationEmployerNameComponent } from './registration-employer-name.component';
@@ -36,6 +37,7 @@ describe('RegistrationEmployerNameComponent', () => {
         MockModule(MatInputModule),
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationEmployerNameComponent, WrapperComponent, RegistrationEmployerNameLabelPipe],
     }).compileComponents();

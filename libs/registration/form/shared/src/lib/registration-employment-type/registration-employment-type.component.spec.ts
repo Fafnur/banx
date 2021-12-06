@@ -8,6 +8,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockModule, MockPipe } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationEmploymentTypeComponent } from './registration-employment-type.component';
@@ -35,6 +36,7 @@ describe('RegistrationEmploymentTypeComponent', () => {
         MockModule(MatSelectModule),
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
+        MockModule(RegistrationFormErrorsModule),
       ],
       declarations: [RegistrationEmploymentTypeComponent, WrapperComponent, MockPipe(RegistrationEmploymentTypeLabelPipe)],
     }).compileComponents();

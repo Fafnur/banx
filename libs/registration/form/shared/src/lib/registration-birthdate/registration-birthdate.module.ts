@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { IMaskModule } from 'angular-imask';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
 
 import { RegistrationBirthdateComponent } from './registration-birthdate.component';
@@ -21,6 +22,7 @@ import { RegistrationBirthdateComponent } from './registration-birthdate.compone
     FormsSharedModule,
     TrackersSharedModule,
     IMaskModule,
+    RegistrationFormErrorsModule,
   ],
   declarations: [RegistrationBirthdateComponent],
   exports: [RegistrationBirthdateComponent],

@@ -12,4 +12,7 @@
     [trackId]="id"
     [formControl]="control"
   />
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
 </mat-form-field>
