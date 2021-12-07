@@ -17,4 +17,8 @@ export class RegistrationAgreementComponent {
   readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
 
   constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
+
+  get invalid(): boolean {
+    return this.control?.touched && this.control?.invalid;
+  }
 }

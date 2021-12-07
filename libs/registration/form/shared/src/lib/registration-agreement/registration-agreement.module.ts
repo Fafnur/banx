@@ -8,6 +8,7 @@ import { FormsSharedModule } from '@banx/core/forms/shared';
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
 import { RegistrationFormErrorsModule } from '@banx/registration/form/ui/errors';
 import { TrackersSharedModule } from '@banx/trackers/shared';
+import { LinksModule } from '@banx/ui/links';
 
 import { RegistrationAgreementComponent } from './registration-agreement.component';
 
@@ -21,6 +22,7 @@ import { RegistrationAgreementComponent } from './registration-agreement.compone
     TrackersSharedModule,
     NavigationSharedModule,
     RegistrationFormErrorsModule,
+    LinksModule,
   ],
   declarations: [RegistrationAgreementComponent],
   exports: [RegistrationAgreementComponent],
