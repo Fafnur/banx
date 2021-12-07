@@ -13,6 +13,30 @@ body {
   //}
 }
 
+[banxLink],
+[banx-link] {
+  color: $color-primary;
+
+  transition: all 0.25s ease;
+
+  &.btn:focus,
+  &.btn:active,
+  &.btn:active:focus {
+    outline: none;
+  }
+  &:focus {
+    outline-color: rgba(0, 0, 0, 0.1);
+  }
+  &:visited {
+    color: darken($color-primary, 25%);
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: white;
+}
+
 [fullWidth],
 [full-width] {
   width: 100%;
@@ -57,5 +81,15 @@ body {
       flex-wrap: wrap;
       margin: 0;
     }
+  }
+}
+
+.mat-checkboxes {
+  &.is-invalid,
+  &.is-invalid .mat-checkbox-link {
+    color: $color-danger;
+  }
+  &.is-invalid .mat-checkbox-frame {
+    border-color: $color-danger;
   }
 }

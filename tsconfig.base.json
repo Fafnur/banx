@@ -105,6 +105,7 @@
       "@banx/ui/grid": ["libs/ui/grid/src/index.ts"],
       "@banx/ui/icons": ["libs/ui/icons/src/index.ts"],
       "@banx/ui/layout": ["libs/ui/layout/src/index.ts"],
+      "@banx/ui/links": ["libs/ui/links/src/index.ts"],
       "@banx/ui/nav": ["libs/ui/nav/src/index.ts"],
       "@banx/users/common": ["libs/users/common/src/index.ts"]
     }
