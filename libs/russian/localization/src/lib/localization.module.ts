@@ -1,6 +1,7 @@
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
 import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
@@ -29,6 +30,10 @@ registerLocaleData(localeRu);
     },
     {
       provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+    },
+    {
+      provide: MAT_CHECKBOX_DEFAULT_OPTIONS,
       useValue: { color: 'primary' },
     },
   ],
