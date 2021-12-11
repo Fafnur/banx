@@ -1897,6 +1897,27 @@
         }
       }
     },
+    "ui-buttons": {
+      "projectType": "library",
+      "root": "libs/ui/buttons",
+      "sourceRoot": "libs/ui/buttons/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui/buttons/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/buttons/src/**/*.ts", "libs/ui/buttons/src/**/*.html"]
+          }
+        }
+      }
+    },
     "ui-card": {
       "projectType": "library",
       "root": "libs/ui/card",
