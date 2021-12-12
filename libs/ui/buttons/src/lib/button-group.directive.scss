@@ -1,0 +1,11 @@
+[banxButtonGroup],
+[banx-button-group] {
+  [banxButtonSmall] ~ [banxButtonSmall],
+  [banx-button-small] ~ [banx-button-small],
+  [banxButtonMedium] ~ [banxButtonMedium],
+  [banx-button-medium] ~ [banx-button-medium],
+  [banxButtonLarge] ~ [banxButtonLarge],
+  [banx-button-large] ~ [banx-button-large] {
+    margin-left: 1rem;
+  }
+}
