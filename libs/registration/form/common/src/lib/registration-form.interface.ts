@@ -3,6 +3,7 @@ export enum RegistrationFormKeys {
 }
 
 export enum RegistrationErrorCode {
+  IsNotValid = 100,
   IsNotEmpty = 1000,
   IsLength = 1001,
   IsBoolean = 1002,
@@ -14,6 +15,7 @@ export enum RegistrationErrorCode {
 
 export enum RegistrationErrorType {
   // Server
+  IsNotValid = 'isNotValid',
   IsNotEmpty = 'isNotEmpty',
   IsLength = 'isLength',
   IsBoolean = 'isBoolean',

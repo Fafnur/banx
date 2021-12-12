@@ -1041,7 +1041,7 @@
         <target state="translated"> Я принимаю <x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;paths.terms | path&quot;&gt;"/>условия и положения<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/shared/src/lib/registration-agreement/registration-agreement.component.html</context>
-          <context context-type="linenumber">12,13</context>
+          <context context-type="linenumber">9,10</context>
         </context-group>
         <note priority="1" from="description">Agreement</note>
         <note priority="1" from="meaning">Registration form field</note>
@@ -1815,12 +1815,21 @@
         <note priority="1" from="description">Sms code placeholder</note>
         <note priority="1" from="meaning">Registration form field</note>
       </trans-unit>
+      <trans-unit id="6580410434562441937" datatype="html">
+        <source>Is Not Valid</source>
+        <target state="translated">Неверное значение</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="meaning">Registration Error Type</note>
+      </trans-unit>
       <trans-unit id="3995884957756821092" datatype="html">
         <source>Is Not Empty</source>
         <target state="translated">Обязательное поле</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1829,7 +1838,7 @@
         <target state="translated">Неверный формат</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1838,7 +1847,7 @@
         <target state="translated">Неверный тип данных</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1847,7 +1856,7 @@
         <target state="translated">Неверная дата</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1856,7 +1865,7 @@
         <target state="translated">Неверный электронный адрес</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">11</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1865,7 +1874,7 @@
         <target state="translated">Неверное значение</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1874,7 +1883,7 @@
         <target state="translated">Опциональное поле</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1883,7 +1892,7 @@
         <target state="translated">Неверные символы</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1892,7 +1901,7 @@
         <target state="translated">Ошибка сервера</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1901,7 +1910,7 @@
         <target state="translated">Обязательное поле</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1910,7 +1919,7 @@
         <target state="translated">Обязательное поле</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1919,7 +1928,7 @@
         <target state="translated">Слишком короткое значение</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1928,7 +1937,7 @@
         <target state="translated">Слишком длинное значение</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1937,7 +1946,7 @@
         <target state="translated">Значение меньше допустимого</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1946,7 +1955,7 @@
         <target state="translated">Значение больше допустимого</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>
@@ -1955,7 +1964,7 @@
         <target state="translated">Неверный электронный адрес</target>
         <context-group purpose="location">
           <context context-type="sourcefile">libs/registration/form/ui/errors/src/lib/registration-form-error.pipe.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="meaning">Registration Error Type</note>
       </trans-unit>

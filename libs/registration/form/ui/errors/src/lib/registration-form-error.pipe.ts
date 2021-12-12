@@ -3,6 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { RegistrationErrorType } from '@banx/registration/form/common';
 
 export const REGISTRATION_ERROR_TYPE_LABELS: Record<RegistrationErrorType, string> = {
+  [RegistrationErrorType.IsNotValid]: $localize`:Registration Error Type|:Is Not Valid`,
   [RegistrationErrorType.IsNotEmpty]: $localize`:Registration Error Type|:Is Not Empty`,
   [RegistrationErrorType.IsLength]: $localize`:Registration Error Type|:Is Length`,
   [RegistrationErrorType.IsBoolean]: $localize`:Registration Error Type|:Is Boolean`,
