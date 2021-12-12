@@ -1,1 +1,3 @@
-<banx-registration-form-card [form]="form" [step]="step"></banx-registration-form-card>
+<banx-registration-form-card [form]="form" [step]="step">
+  <banx-registration-city [control]="form | extractFormControl: fields.City"></banx-registration-city>
+</banx-registration-form-card>

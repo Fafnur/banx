@@ -2,6 +2,7 @@ export * from './lib/registration-additional-contact-name/registration-additiona
 export * from './lib/registration-additional-contact-phone-number/registration-additional-contact-phone-number.module';
 export * from './lib/registration-additional-contact-type/registration-additional-contact-type.module';
 export * from './lib/registration-additional-income-amount/registration-additional-income-amount.module';
+export * from './lib/registration-address-line/registration-address-line.module';
 export * from './lib/registration-agreement/registration-agreement.module';
 export * from './lib/registration-birthdate/registration-birthdate.module';
 export * from './lib/registration-city/registration-city.module';
