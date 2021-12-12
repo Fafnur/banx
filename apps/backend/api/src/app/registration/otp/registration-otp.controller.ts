@@ -3,6 +3,7 @@ import { Body, Controller, Param, Post, UsePipes, ValidationPipe } from '@nestjs
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
 
+import { registrationFormExceptionFactory } from '../form/registration-form.exception-factory';
 import { RegistrationOtpService } from './registration-otp.service';
 
 @Controller()
@@ -10,7 +11,13 @@ export class RegistrationOtpController {
   constructor(private readonly registrationOtpService: RegistrationOtpService) {}
 
   @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Sms}`)
-  @UsePipes(new ValidationPipe({ transform: true, groups: [RegistrationFormSubSteps.Sms] }))
+  @UsePipes(
+    new ValidationPipe({
+      transform: true,
+      groups: [RegistrationFormSubSteps.Sms],
+      exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
+    })
+  )
   async validateFormSms(
     @Param() params: { process: string },
     @Body() form: { [RegistrationFormField.SmsCode]: string; [RegistrationFormField.MobilePhone]: string }

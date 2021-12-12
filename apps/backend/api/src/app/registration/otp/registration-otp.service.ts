@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult } from 'typeorm';
 
-import { RegistrationFormField } from '@banx/registration/form/common';
+import { RegistrationErrorCode, RegistrationErrorType, RegistrationFormField } from '@banx/registration/form/common';
 
 import { RegistrationOtpEntity } from './registration-otp.entity';
 
@@ -30,7 +30,11 @@ export class RegistrationOtpService {
       (await this.registrationOtpEntityRepository.findOne({ process, phone: data[RegistrationFormField.MobilePhone] })) ?? null;
 
     if (!otpEntity || otpEntity.code !== +data[RegistrationFormField.SmsCode]) {
-      throw new BadRequestException();
+      throw new BadRequestException({
+        [RegistrationFormField.SmsCode]: {
+          [RegistrationErrorType.IsNotValid]: RegistrationErrorCode.IsNotValid,
+        },
+      });
     }
 
     return await this.registrationOtpEntityRepository.update({ id: otpEntity.id }, { finished: true });
