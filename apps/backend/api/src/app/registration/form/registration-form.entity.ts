@@ -81,6 +81,12 @@ export class RegistrationFormEntity implements Nullable<Omit<RussianRegistration
     type: 'tinytext',
     nullable: true,
   })
+  region!: string | null;
+
+  @Column({
+    type: 'tinytext',
+    nullable: true,
+  })
   city!: string | null;
 
   @Column({

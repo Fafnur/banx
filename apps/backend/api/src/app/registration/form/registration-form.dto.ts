@@ -163,6 +163,16 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
     context: { errorCode: RegistrationErrorCode.IsLength },
     groups: [RegistrationFormSubSteps.Family],
   })
+  region!: string;
+
+  @IsNotEmpty({
+    context: { errorCode: RegistrationErrorCode.IsNotEmpty },
+    groups: [RegistrationFormSubSteps.Family],
+  })
+  @Length(1, 256, {
+    context: { errorCode: RegistrationErrorCode.IsLength },
+    groups: [RegistrationFormSubSteps.Family],
+  })
   city!: string;
 
   @IsNotEmpty({
