@@ -4,6 +4,7 @@ import { RegistrationFormField } from '@banx/registration/form/common';
 
 export function createForm(): FormGroup {
   return new FormGroup({
+    [RegistrationFormField.Region]: new FormControl(null, [Validators.required]),
     [RegistrationFormField.City]: new FormControl(null, [Validators.required, Validators.minLength(2)]),
     [RegistrationFormField.AddressLine]: new FormControl(null, [Validators.required, Validators.minLength(5)]),
     [RegistrationFormField.Postcode]: new FormControl(null, [Validators.required]),

@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
@@ -13,14 +12,9 @@ import { createForm } from './registration-form-personal-page.form';
   styleUrls: ['./registration-form-personal-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationFormPersonalPageComponent implements OnInit {
+export class RegistrationFormPersonalPageComponent {
   readonly fields = RegistrationFormField;
   readonly russianFields = RussianRegistrationFormField;
   readonly step = RegistrationFormSubSteps.Personal;
-
-  form!: FormGroup;
-
-  ngOnInit(): void {
-    this.form = createForm();
-  }
+  readonly form = createForm();
 }

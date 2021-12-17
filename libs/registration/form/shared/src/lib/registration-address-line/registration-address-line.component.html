@@ -1,6 +1,6 @@
 <mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
   <mat-label automation-id="label" i18n="Registration form field|Address line">Address line</mat-label>
-  <input
+  <textarea
     automation-id="input"
     i18n-placeholder="Registration form field|Address line placeholder"
     placeholder="Your address"
@@ -10,7 +10,7 @@
     banxInputTrack
     [trackId]="id"
     [formControl]="control"
-  />
+  ></textarea>
   <mat-error *ngIf="control.errors && control.touched">
     {{ control.errors | registrationFormError }}
   </mat-error>

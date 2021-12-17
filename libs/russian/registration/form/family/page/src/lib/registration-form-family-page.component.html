@@ -1,3 +1,36 @@
 <banx-registration-form-card [form]="form" [step]="step">
+  <banx-registration-region [control]="form | extractFormControl: fields.Region"></banx-registration-region>
   <banx-registration-city [control]="form | extractFormControl: fields.City"></banx-registration-city>
+  <banx-registration-address-line [control]="form | extractFormControl: fields.AddressLine"></banx-registration-address-line>
+  <banx-registration-postcode [control]="form | extractFormControl: fields.Postcode"></banx-registration-postcode>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-home-type [control]="form | extractFormControl: fields.HomeType"></banx-registration-home-type>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-marital-status [control]="form | extractFormControl: fields.MaritalStatus"></banx-registration-marital-status>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-kids-amount [control]="form | extractFormControl: fields.KidsAmount"></banx-registration-kids-amount>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-dependents-amount
+        [control]="form | extractFormControl: fields.DependentsAmount"
+      ></banx-registration-dependents-amount>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-registration-additional-contact-name
+    [control]="form | extractFormControl: fields.AdditionalContactName"
+  ></banx-registration-additional-contact-name>
+  <banx-registration-additional-contact-phone-number
+    [control]="form | extractFormControl: fields.AdditionalContactPhoneNumber"
+  ></banx-registration-additional-contact-phone-number>
+  <banx-registration-additional-contact-type
+    [control]="form | extractFormControl: fields.AdditionalContactType"
+  ></banx-registration-additional-contact-type>
 </banx-registration-form-card>

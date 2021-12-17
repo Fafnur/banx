@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
@@ -12,13 +11,8 @@ import { createForm } from './registration-form-sms-page.form';
   styleUrls: ['./registration-form-sms-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationFormSmsPageComponent implements OnInit {
+export class RegistrationFormSmsPageComponent {
   readonly fields = RegistrationFormField;
   readonly step = RegistrationFormSubSteps.Sms;
-
-  form!: FormGroup;
-
-  ngOnInit(): void {
-    this.form = createForm();
-  }
+  readonly form = createForm();
 }
