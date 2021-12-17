@@ -1105,27 +1105,6 @@
         }
       }
     },
-    "registration-form-shared": {
-      "projectType": "library",
-      "root": "libs/registration/form/shared",
-      "sourceRoot": "libs/registration/form/shared/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/registration/form/shared/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/registration/form/shared/src/**/*.ts", "libs/registration/form/shared/src/**/*.html"]
-          }
-        }
-      }
-    },
     "registration-form-state": {
       "projectType": "library",
       "root": "libs/registration/form/state",
@@ -1185,6 +1164,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/registration/form/ui/errors/src/**/*.ts", "libs/registration/form/ui/errors/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-form-ui-fields": {
+      "projectType": "library",
+      "root": "libs/registration/form/ui/fields",
+      "sourceRoot": "libs/registration/form/ui/fields/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/ui/fields/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/form/ui/fields/src/**/*.ts", "libs/registration/form/ui/fields/src/**/*.html"]
           }
         }
       }

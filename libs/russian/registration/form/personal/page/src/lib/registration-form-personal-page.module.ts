@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
 import {
   RegistrationAgreementModule,
   RegistrationBirthdateModule,
@@ -12,8 +13,7 @@ import {
   RegistrationLastNameModule,
   RegistrationMiddleNameModule,
   RegistrationMobilePhoneModule,
-} from '@banx/registration/form/shared';
-import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
+} from '@banx/registration/form/ui/fields';
 import { GridModule } from '@banx/ui/grid';
 
 /* eslint-disable max-len */

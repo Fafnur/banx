@@ -6,6 +6,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
+import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
 import {
   RegistrationAdditionalContactNameModule,
   RegistrationAdditionalContactPhoneNumberModule,
@@ -18,8 +19,7 @@ import {
   RegistrationMaritalStatusModule,
   RegistrationPostcodeModule,
   RegistrationRegionModule,
-} from '@banx/registration/form/shared';
-import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
+} from '@banx/registration/form/ui/fields';
 import { GridModule } from '@banx/ui/grid';
 
 import { RegistrationFormFamilyPageComponent } from './registration-form-family-page.component';
