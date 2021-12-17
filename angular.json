@@ -1630,6 +1630,30 @@
         }
       }
     },
+    "russian-registration-form-employment-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/form/employment/page",
+      "sourceRoot": "libs/russian/registration/form/employment/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/form/employment/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/registration/form/employment/page/src/**/*.ts",
+              "libs/russian/registration/form/employment/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "russian-registration-form-family-page": {
       "projectType": "library",
       "root": "libs/russian/registration/form/family/page",

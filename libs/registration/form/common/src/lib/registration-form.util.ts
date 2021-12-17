@@ -19,9 +19,12 @@ export function castRegistrationForm(lastForm: RegistrationForm | null, form?: R
     }
   }
 
-  const phone = registrationForm[RegistrationFormField.MobilePhone];
-  if (phone) {
-    registrationForm[RegistrationFormField.MobilePhone] = phone.length > 10 ? phone.slice(-10) : phone;
+  const phoneTypes = [RegistrationFormField.MobilePhone, RegistrationFormField.AdditionalContactPhoneNumber];
+  for (const phoneType of phoneTypes) {
+    const phoneNumber = registrationForm[phoneType];
+    if (phoneNumber) {
+      registrationForm[phoneType] = phoneNumber.length > 10 ? phoneNumber.slice(-10) : phoneNumber;
+    }
   }
 
   return registrationForm;

@@ -19,7 +19,7 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Personal],
   })
-  @Length(6, 60, {
+  @Length(1, 60, {
     context: { errorCode: RegistrationErrorCode.IsLength },
     groups: [RegistrationFormSubSteps.Personal],
   })
@@ -29,7 +29,7 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Personal],
   })
-  @Length(6, 60, {
+  @Length(1, 60, {
     context: { errorCode: RegistrationErrorCode.IsLength },
     groups: [RegistrationFormSubSteps.Personal],
   })

@@ -1,0 +1,41 @@
+<banx-registration-form-card [form]="form" [step]="step">
+  <banx-registration-employment-type [control]="form | extractFormControl: fields.EmploymentType"></banx-registration-employment-type>
+  <banx-registration-employer-name
+    [control]="form | extractFormControl: fields.EmployerName"
+    *ngIf="employmentTypes.Student !== employmentType"
+  ></banx-registration-employer-name>
+
+  <banx-registration-job-description
+    [control]="form | extractFormControl: fields.JobDescription"
+    *ngIf="employmentTypes.Student !== employmentType"
+  ></banx-registration-job-description>
+  <banx-registration-institution-name
+    [control]="form | extractFormControl: fields.InstitutionName"
+    *ngIf="employmentTypes.Student === employmentType"
+  ></banx-registration-institution-name>
+  <banx-registration-institution-department-name
+    [control]="form | extractFormControl: fields.InstitutionDepartmentName"
+    *ngIf="employmentTypes.Student === employmentType"
+  ></banx-registration-institution-department-name>
+
+  <banx-registration-period-of-employment
+    [control]="form | extractFormControl: fields.PeriodOfEmployment"
+    *ngIf="employmentTypes.Unemployed !== employmentType && employmentTypes.Retired !== employmentType"
+  ></banx-registration-period-of-employment>
+
+  <banx-registration-period-of-unemployment
+    [control]="form | extractFormControl: fields.PeriodOfUnemployment"
+    *ngIf="employmentTypes.Unemployed === employmentType || employmentTypes.Retired === employmentType"
+  ></banx-registration-period-of-unemployment>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-monthly-income [control]="form | extractFormControl: fields.MonthlyIncome"></banx-registration-monthly-income>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-additional-income-amount
+        [control]="form | extractFormControl: fields.AdditionalIncomeAmount"
+      ></banx-registration-additional-income-amount>
+    </banx-ui-column>
+  </banx-ui-row>
+</banx-registration-form-card>

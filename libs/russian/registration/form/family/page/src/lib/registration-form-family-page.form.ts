@@ -1,6 +1,7 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
+import { russianMaskMinLengthValidator } from '@banx/russian/forms/validators';
 
 export function createForm(): FormGroup {
   return new FormGroup({
@@ -14,6 +15,6 @@ export function createForm(): FormGroup {
     [RegistrationFormField.DependentsAmount]: new FormControl(null, [Validators.required]),
     [RegistrationFormField.AdditionalContactName]: new FormControl(null, [Validators.required]),
     [RegistrationFormField.AdditionalContactType]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.AdditionalContactPhoneNumber]: new FormControl(null, [Validators.required]),
+    [RegistrationFormField.AdditionalContactPhoneNumber]: new FormControl(null, [Validators.required, russianMaskMinLengthValidator(10)]),
   });
 }
