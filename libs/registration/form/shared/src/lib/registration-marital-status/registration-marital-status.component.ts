@@ -12,7 +12,6 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_MARITAL_STATUSES, Registratio
 export class RegistrationMaritalStatusComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.MaritalStatus;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.MaritalStatus];
   readonly options = REGISTRATION_MARITAL_STATUSES;
 }

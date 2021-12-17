@@ -12,6 +12,5 @@ import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/regist
 export class RegistrationCityComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.City;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.City];
 }

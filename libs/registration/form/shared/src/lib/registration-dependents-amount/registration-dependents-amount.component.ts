@@ -12,7 +12,6 @@ import { REGISTRATION_DEPENDENTS_AMOUNTS, REGISTRATION_FORM_FIELD_IDS, Registrat
 export class RegistrationDependentsAmountComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.DependentsAmount;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.DependentsAmount];
   readonly options = REGISTRATION_DEPENDENTS_AMOUNTS;
 }

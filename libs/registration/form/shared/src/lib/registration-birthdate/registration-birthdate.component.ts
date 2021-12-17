@@ -20,8 +20,7 @@ export class RegistrationBirthdateComponent implements OnInit {
   @Input() control!: FormControl;
   readonly maskControl = new FormControl(null, [Validators.required, Validators.minLength(8)]);
 
-  readonly type = RegistrationFormField.Birthdate;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.Birthdate];
   readonly maxDate = getMaxDate(18);
   readonly minDate = getMinDate();
 

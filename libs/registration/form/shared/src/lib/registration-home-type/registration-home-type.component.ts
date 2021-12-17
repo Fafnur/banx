@@ -12,7 +12,6 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_HOME_TYPES, RegistrationFormF
 export class RegistrationHomeTypeComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.HomeType;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.HomeType];
   readonly options = REGISTRATION_HOME_TYPES;
 }

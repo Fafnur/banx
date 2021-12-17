@@ -13,8 +13,7 @@ import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/regist
 export class RegistrationAgreementComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.Agreement;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.Agreement];
 
   constructor(@Inject(PATHS) public readonly paths: NavigationPaths) {}
 

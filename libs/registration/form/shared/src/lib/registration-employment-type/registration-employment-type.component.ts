@@ -12,7 +12,6 @@ import { REGISTRATION_EMPLOYMENT_TYPES, REGISTRATION_FORM_FIELD_IDS, Registratio
 export class RegistrationEmploymentTypeComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.EmploymentType;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.EmploymentType];
   readonly options = REGISTRATION_EMPLOYMENT_TYPES;
 }

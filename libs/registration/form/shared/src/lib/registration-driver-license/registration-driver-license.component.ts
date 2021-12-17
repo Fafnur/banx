@@ -12,8 +12,7 @@ import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/regist
 export class RegistrationDriverLicenseComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.DriverLicense;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.DriverLicense];
 
   get invalid(): boolean {
     return this.control?.touched && this.control?.invalid;

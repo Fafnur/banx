@@ -23,13 +23,13 @@ import { RegistrationPassportIssueDateModule } from './components/registration-p
 import { RegistrationPassportIssueNameModule } from './components/registration-passport-issue-name/registration-passport-issue-name.module';
 import { RegistrationPassportSeriesNumberModule } from './components/registration-passport-series-number/registration-passport-series-number.module';
 import { RegistrationFormPersonalPageComponent } from './registration-form-personal-page.component';
-import { RegistrationFormPersonalRoutingModule } from './registration-form-personal-routing.module';
+import { RegistrationFormPersonalPageRoutingModule } from './registration-form-personal-page-routing.module';
 /* eslint-enable max-len */
 
 @NgModule({
   imports: [
     CommonModule,
-    RegistrationFormPersonalRoutingModule,
+    RegistrationFormPersonalPageRoutingModule,
     ReactiveFormsModule,
     FormsSharedModule,
     RegistrationLastNameModule,

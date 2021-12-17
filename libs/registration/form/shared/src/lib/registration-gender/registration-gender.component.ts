@@ -12,7 +12,6 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_GENDERS, RegistrationFormFiel
 export class RegistrationGenderComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.Gender;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.Gender];
   readonly options = REGISTRATION_GENDERS;
 }

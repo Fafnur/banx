@@ -12,7 +12,6 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_PERIOD_OF_EMPLOYMENTS, Regist
 export class RegistrationPeriodOfUnemploymentComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.PeriodOfUnemployment;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.PeriodOfUnemployment];
   readonly options = REGISTRATION_PERIOD_OF_EMPLOYMENTS;
 }

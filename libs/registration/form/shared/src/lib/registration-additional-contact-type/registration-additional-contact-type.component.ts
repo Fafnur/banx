@@ -12,7 +12,6 @@ import { REGISTRATION_ADDITIONAL_CONTACT_TYPES, REGISTRATION_FORM_FIELD_IDS, Reg
 export class RegistrationAdditionalContactTypeComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.AdditionalContactType;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.AdditionalContactType];
   readonly options = REGISTRATION_ADDITIONAL_CONTACT_TYPES;
 }

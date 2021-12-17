@@ -12,8 +12,7 @@ import { REGISTRATION_FORM_FIELD_IDS, RegistrationEmploymentType, RegistrationFo
 export class RegistrationEmployerNameComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.EmployerName;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.EmployerName];
 
   get employmentType(): RegistrationEmploymentType | null {
     return this.control?.parent?.get(RegistrationFormField.EmploymentType)?.value ?? null;

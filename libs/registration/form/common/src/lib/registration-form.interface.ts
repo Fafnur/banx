@@ -216,6 +216,7 @@ export enum RegistrationFormField {
   OwnCar = 'ownCar',
   AdditionalIncomeAmount = 'additionalIncomeAmount',
   MinimalDesiredAmount = 'minimalDesiredAmount',
+  Region = 'region',
   City = 'city',
   HomeType = 'homeType',
   Postcode = 'postcode',
@@ -233,6 +234,7 @@ export interface RegistrationFormBase {
   [RegistrationFormField.Email]: string;
   [RegistrationFormField.Agreement]: boolean;
   [RegistrationFormField.HomeType]: RegistrationHomeType;
+  [RegistrationFormField.Region]: string;
   [RegistrationFormField.City]: string;
   [RegistrationFormField.AddressLine]: string;
   [RegistrationFormField.Postcode]: number;
@@ -267,6 +269,7 @@ export const REGISTRATION_FORM_FIELD_IDS: Record<RegistrationFormField, string> 
   [RegistrationFormField.Email]: 'Email',
   [RegistrationFormField.Agreement]: 'Agreement',
   [RegistrationFormField.HomeType]: 'HomeType',
+  [RegistrationFormField.Region]: 'Region',
   [RegistrationFormField.City]: 'City',
   [RegistrationFormField.AddressLine]: 'AddressLine',
   [RegistrationFormField.Postcode]: 'Postcode',

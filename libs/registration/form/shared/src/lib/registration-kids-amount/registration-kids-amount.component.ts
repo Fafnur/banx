@@ -12,7 +12,6 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_KIDS_AMOUNTS, RegistrationFor
 export class RegistrationKidsAmountComponent {
   @Input() control!: FormControl;
 
-  readonly type = RegistrationFormField.KidsAmount;
-  readonly id = REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.KidsAmount];
   readonly options = REGISTRATION_KIDS_AMOUNTS;
 }
