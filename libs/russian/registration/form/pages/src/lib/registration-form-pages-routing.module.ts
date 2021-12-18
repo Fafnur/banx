@@ -33,6 +33,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('@banx/russian/registration/form/employment/page').then((modules) => modules.RegistrationFormEmploymentPageModule),
       },
+      {
+        path: RegistrationFormSubSteps.Additional,
+        loadChildren: () =>
+          import('@banx/russian/registration/form/additional/page').then((modules) => modules.RegistrationFormAdditionalPageModule),
+      },
     ],
   },
 ];
