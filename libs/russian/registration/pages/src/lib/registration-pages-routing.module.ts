@@ -20,6 +20,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import('@banx/russian/registration/form/pages').then((modules) => modules.RegistrationFormPagesModule),
       },
+      {
+        path: NAVIGATION_PATHS.registrationData,
+        canActivate: [AuthGuard],
+        loadChildren: () => import('@banx/russian/registration/data/page').then((modules) => modules.RegistrationDataPageModule),
+      },
     ],
   },
 ];
