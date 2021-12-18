@@ -5,7 +5,10 @@ import { MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
 import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
 
+import { FormMaskService } from '@banx/core/forms/mask';
+
 import { RussianMatDataAdapter } from './mat-data-adapter';
+import { RussianFormMaskService } from './russian-form-mask.service';
 
 registerLocaleData(localeRu);
 
@@ -35,6 +38,10 @@ registerLocaleData(localeRu);
     {
       provide: MAT_CHECKBOX_DEFAULT_OPTIONS,
       useValue: { color: 'primary' },
+    },
+    {
+      provide: FormMaskService,
+      useClass: RussianFormMaskService,
     },
   ],
 })

@@ -20,6 +20,6 @@ export class RecoveryFormPhoneComponent implements OnInit {
   constructor(private readonly formMaskService: FormMaskService) {}
 
   ngOnInit(): void {
-    this.mask = { mask: this.formMaskService.getPhoneMask() };
+    this.mask = this.formMaskService.getPhoneMask();
   }
 }

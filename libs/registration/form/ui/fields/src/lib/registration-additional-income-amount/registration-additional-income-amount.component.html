@@ -8,9 +8,11 @@
     name="data[customer][additionalIncomeAmount]"
     [id]="id"
     banxInputTrack
-    type="number"
+    type="tel"
     [trackId]="id"
     [formControl]="control"
+    [imask]="mask"
+    [unmask]="true"
   />
   <mat-error *ngIf="control.errors && control.touched">
     {{ control.errors | registrationFormError }}

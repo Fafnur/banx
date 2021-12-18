@@ -14,6 +14,7 @@ export enum RegistrationErrorCode {
   IsMin = 1007,
   IsMax = 1008,
   IsInt = 1009,
+  IsConditional = 1010,
 }
 
 export enum RegistrationErrorType {
