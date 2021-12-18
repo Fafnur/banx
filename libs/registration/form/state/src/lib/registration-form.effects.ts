@@ -11,7 +11,7 @@ import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { VisitorService } from '@banx/core/visitor/service';
 import { RegistrationFormApiService } from '@banx/registration/form/api';
-import { RegistrationForm, RegistrationFormKeys } from '@banx/registration/form/common';
+import { castRegistrationForm, RegistrationForm, RegistrationFormKeys } from '@banx/registration/form/common';
 import { loadProcess, selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationFormActions from './registration-form.actions';
@@ -63,7 +63,7 @@ export class RegistrationFormEffects implements OnInitEffects {
           this.platformService.isBrowser
             ? this.registrationFormApiService
                 .create(processId, {
-                  form,
+                  form: castRegistrationForm(form, true),
                   additional: {
                     visitor: this.visitorService.getUuid(),
                   },

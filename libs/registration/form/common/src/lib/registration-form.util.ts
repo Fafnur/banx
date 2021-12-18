@@ -1,41 +1,36 @@
 import { RegistrationForm, RegistrationFormField } from './registration-form.interface';
 
-export function castRegistrationForm(lastForm: RegistrationForm | null, form?: RegistrationForm | null): RegistrationForm {
+export function castRegistrationForm(form: RegistrationForm | RegistrationForm[] | null, mapped: boolean = false): RegistrationForm {
   const registrationForm: RegistrationForm = {};
+  const forms = Array.isArray(form) ? form : form != null ? [form] : [];
 
-  if (form) {
-    for (const key of Object.keys(form)) {
-      if (form[key] != null && ((typeof form[key] !== 'string' && typeof form[key] !== 'number') || form[key].length)) {
-        registrationForm[key] = form[key];
+  for (const formItem of forms) {
+    for (const key of Object.keys(formItem)) {
+      if (formItem[key] != null && ((typeof formItem[key] !== 'string' && typeof formItem[key] !== 'number') || formItem[key].length)) {
+        registrationForm[key] = formItem[key];
       }
     }
   }
 
-  if (lastForm) {
-    for (const key of Object.keys(lastForm)) {
-      if (lastForm[key] != null && ((typeof lastForm[key] !== 'string' && typeof lastForm[key] !== 'number') || lastForm[key].length)) {
-        registrationForm[key] = lastForm[key];
+  if (mapped) {
+    const phoneTypes = [RegistrationFormField.MobilePhone, RegistrationFormField.AdditionalContactPhoneNumber];
+    for (const phoneType of phoneTypes) {
+      const phoneNumber = registrationForm[phoneType];
+      if (phoneNumber) {
+        registrationForm[phoneType] = phoneNumber.length > 10 ? phoneNumber.slice(-10) : phoneNumber;
       }
     }
-  }
 
-  const phoneTypes = [RegistrationFormField.MobilePhone, RegistrationFormField.AdditionalContactPhoneNumber];
-  for (const phoneType of phoneTypes) {
-    const phoneNumber = registrationForm[phoneType];
-    if (phoneNumber) {
-      registrationForm[phoneType] = phoneNumber.length > 10 ? phoneNumber.slice(-10) : phoneNumber;
-    }
-  }
-
-  const fieldsToNumbers = [
-    RegistrationFormField.MonthlyIncome,
-    RegistrationFormField.AdditionalIncomeAmount,
-    RegistrationFormField.MinimalDesiredAmount,
-  ];
-  for (const key of fieldsToNumbers) {
-    const fieldValue = registrationForm[key];
-    if (fieldValue != null) {
-      registrationForm[key] = Number(fieldValue);
+    const fieldsToNumbers = [
+      RegistrationFormField.MonthlyIncome,
+      RegistrationFormField.AdditionalIncomeAmount,
+      RegistrationFormField.MinimalDesiredAmount,
+    ];
+    for (const key of fieldsToNumbers) {
+      const fieldValue = registrationForm[key];
+      if (fieldValue != null) {
+        registrationForm[key] = Number(fieldValue);
+      }
     }
   }
 

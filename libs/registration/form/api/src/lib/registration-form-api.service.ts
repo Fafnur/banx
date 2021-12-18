@@ -30,7 +30,7 @@ export class RegistrationFormApiService {
   }
 
   validate(processId: string, data: RegistrationFormValidate): Observable<void> {
-    return this.apiService.post(REGISTRATION_FORM_API_ROUTES.validate(processId, data.subStep), castRegistrationForm(data.form));
+    return this.apiService.post(REGISTRATION_FORM_API_ROUTES.validate(processId, data.subStep), castRegistrationForm(data.form, true));
   }
 
   validateUnique(processId: string, data: RegistrationFormFieldValidate): Observable<void> {

@@ -30,7 +30,7 @@ const registrationFormReducer = createReducer(
   registrationFormInitialState,
   on(RegistrationFormActions.restore, (state, { payload }) => ({
     ...state,
-    form: payload.form,
+    form: castRegistrationForm(payload.form),
   })),
   on(RegistrationFormActions.loadForm, (state) => ({
     ...state,
@@ -38,7 +38,7 @@ const registrationFormReducer = createReducer(
   })),
   on(RegistrationFormActions.loadFormSuccess, (state, { payload }) => ({
     ...state,
-    form: state.form ? { ...state.form, ...castRegistrationForm(payload, state.form) } : castRegistrationForm(payload, state.form),
+    form: castRegistrationForm([payload, state.form]),
     formLoaded: true,
     formLoading: false,
   })),
@@ -73,7 +73,7 @@ const registrationFormReducer = createReducer(
   })),
   on(RegistrationFormActions.updateForm, (state, { payload }) => ({
     ...state,
-    forml: state.form ? { ...state.form, ...castRegistrationForm(payload, state.form) } : castRegistrationForm(payload, state.form),
+    form: castRegistrationForm([state.form, payload]),
   }))
 );
 
