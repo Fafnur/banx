@@ -21,6 +21,8 @@ export class RegistrationEmployerNameLabelPipe implements PipeTransform {
       console.warn(`Unknown RegistrationEmploymentType: ${employmentType}`);
     }
 
-    return employmentType ? REGISTRATION_EMPLOYER_NAME_LABELS[employmentType] ?? employmentType : empty;
+    return employmentType
+      ? REGISTRATION_EMPLOYER_NAME_LABELS[employmentType] ?? employmentType
+      : REGISTRATION_EMPLOYER_NAME_LABELS[RegistrationEmploymentType.FullTime];
   }
 }
