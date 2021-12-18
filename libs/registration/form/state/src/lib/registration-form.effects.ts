@@ -16,7 +16,7 @@ import { selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { RegistrationFormPartialState } from './registration-form.reducer';
-import { selectForm, selectFormFull } from './registration-form.selectors';
+import * as RegistrationFormSelectors from './registration-form.selectors';
 
 @Injectable()
 export class RegistrationFormEffects implements OnInitEffects {
@@ -54,7 +54,7 @@ export class RegistrationFormEffects implements OnInitEffects {
       withLatestFrom(
         combineLatest([
           this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1)),
-          this.store.pipe(select(selectFormFull), isNotNullOrUndefined(), take(1)),
+          this.store.pipe(select(RegistrationFormSelectors.selectForm), isNotNullOrUndefined(), take(1)),
         ])
       ),
       fetch({
@@ -120,10 +120,9 @@ export class RegistrationFormEffects implements OnInitEffects {
   updateForm$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RegistrationFormActions.updateForm),
-      withLatestFrom(this.store.pipe(select(selectForm), isNotNullOrUndefined(), take(1))),
       fetch({
         id: () => 'registration-update-form',
-        run: (action, form: RegistrationForm) => this.localAsyncStorage.setItem(RegistrationFormKeys.Form, form),
+        run: (action) => this.localAsyncStorage.setItem(RegistrationFormKeys.Form, action.payload),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

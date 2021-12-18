@@ -20,6 +20,9 @@ export const REGISTRATION_ERROR_TYPE_LABELS: Record<RegistrationErrorType, strin
   [RegistrationErrorType.Min]: $localize`:Registration Error Type|:Min`,
   [RegistrationErrorType.Max]: $localize`:Registration Error Type|:Max`,
   [RegistrationErrorType.Email]: $localize`:Registration Error Type|:Email`,
+  [RegistrationErrorType.IsMin]: $localize`:Registration Error Type|:Is Min`,
+  [RegistrationErrorType.IsMax]: $localize`:Registration Error Type|:Is Max`,
+  [RegistrationErrorType.IsInt]: $localize`:Registration Error Type|:Is Int`,
 };
 
 @Pipe({

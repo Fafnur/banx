@@ -11,6 +11,9 @@ export enum RegistrationErrorCode {
   IsEmail = 1004,
   IsEnum = 1005,
   IsOptional = 1006,
+  IsMin = 1007,
+  IsMax = 1008,
+  IsInt = 1009,
 }
 
 export enum RegistrationErrorType {
@@ -24,6 +27,9 @@ export enum RegistrationErrorType {
   IsEnum = 'isEnum',
   IsOptional = 'isOptional',
   IsSpell = 'isSpell',
+  IsMin = 'isMin',
+  IsMax = 'isMax',
+  IsInt = 'isInt',
 
   // Server unknown
   IsServer = 'isServer',

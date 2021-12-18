@@ -1,12 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { take, takeUntil, tap } from 'rxjs';
+import { debounce, take, takeUntil, tap, timer } from 'rxjs';
 
 import { FormErrorsService } from '@banx/core/forms/errors';
 import { DestroyService } from '@banx/core/services';
-import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
-import { RegistrationFormKeys } from '@banx/registration/form/common';
 import { RegistrationFormFacade } from '@banx/registration/form/state';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
 import { RegistrationProcessFacade } from '@banx/registration/process/state';
@@ -33,7 +31,6 @@ export class RegistrationFormCardComponent implements OnInit {
     private readonly registrationFormFacade: RegistrationFormFacade,
     private readonly registrationProcessFacade: RegistrationProcessFacade,
     private readonly formErrorsService: FormErrorsService,
-    private readonly localAsyncStorage: LocalAsyncStorage,
     private readonly destroy$: DestroyService
   ) {}
 
@@ -41,12 +38,15 @@ export class RegistrationFormCardComponent implements OnInit {
     this.form.valueChanges
       .pipe(
         isNotNullOrUndefined(),
-        tap((formValue) => this.localAsyncStorage.setItem(RegistrationFormKeys.Form, { ...this.formAll, ...formValue })),
+        debounce(() => timer(200)),
+        tap((formValue) => {
+          this.registrationFormFacade.updateForm({ ...this.formAll, ...formValue });
+        }),
         takeUntil(this.destroy$)
       )
       .subscribe();
 
-    this.registrationFormFacade.formFull$
+    this.registrationFormFacade.form$
       .pipe(
         isNotNullOrUndefined(),
         take(1),

@@ -14,7 +14,7 @@ import { createForm } from './registration-form-employment-page.form';
 export class RegistrationFormEmploymentPageComponent {
   readonly employmentTypes = RegistrationEmploymentType;
   readonly fields = RegistrationFormField;
-  readonly step = RegistrationFormSubSteps.Family;
+  readonly step = RegistrationFormSubSteps.Employment;
   readonly form = createForm();
 
   get employmentType(): RegistrationEmploymentType | null {

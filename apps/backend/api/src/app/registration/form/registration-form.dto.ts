@@ -1,4 +1,4 @@
-import { IsBoolean, IsDateString, IsEmail, IsEnum, IsNotEmpty, IsOptional, Length, ValidateIf } from 'class-validator';
+import { IsBoolean, IsDateString, IsEmail, IsEnum, IsInt, IsNotEmpty, IsOptional, Length, Max, Min, ValidateIf } from 'class-validator';
 
 import {
   RegistrationAdditionalContactType,
@@ -311,8 +311,16 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Employment],
   })
-  @Length(1, 256, {
-    context: { errorCode: RegistrationErrorCode.IsLength },
+  @IsInt({
+    context: { errorCode: RegistrationErrorCode.IsInt },
+    groups: [RegistrationFormSubSteps.Employment],
+  })
+  @Min(1, {
+    context: { errorCode: RegistrationErrorCode.IsMin },
+    groups: [RegistrationFormSubSteps.Employment],
+  })
+  @Max(9999999, {
+    context: { errorCode: RegistrationErrorCode.IsMax },
     groups: [RegistrationFormSubSteps.Employment],
   })
   monthlyIncome!: number;
@@ -338,12 +346,16 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
   })
   periodOfUnemployment!: RegistrationPeriodOfEmployment;
 
-  @IsNotEmpty({
-    context: { errorCode: RegistrationErrorCode.IsNotEmpty },
+  @IsInt({
+    context: { errorCode: RegistrationErrorCode.IsInt },
     groups: [RegistrationFormSubSteps.Employment],
   })
-  @Length(1, 256, {
-    context: { errorCode: RegistrationErrorCode.IsLength },
+  @Min(1, {
+    context: { errorCode: RegistrationErrorCode.IsMin },
+    groups: [RegistrationFormSubSteps.Employment],
+  })
+  @Max(9999999, {
+    context: { errorCode: RegistrationErrorCode.IsMax },
     groups: [RegistrationFormSubSteps.Employment],
   })
   additionalIncomeAmount!: number;
@@ -372,9 +384,17 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Additional],
   })
-  @Length(1, 16, {
-    context: { errorCode: RegistrationErrorCode.IsLength },
-    groups: [RegistrationFormSubSteps.Employment],
+  @IsInt({
+    context: { errorCode: RegistrationErrorCode.IsInt },
+    groups: [RegistrationFormSubSteps.Additional],
+  })
+  @Min(1, {
+    context: { errorCode: RegistrationErrorCode.IsMin },
+    groups: [RegistrationFormSubSteps.Additional],
+  })
+  @Max(9999999, {
+    context: { errorCode: RegistrationErrorCode.IsMax },
+    groups: [RegistrationFormSubSteps.Additional],
   })
   minimalDesiredAmount!: number;
 }

@@ -211,6 +211,7 @@ export class RegistrationFormEntity implements Nullable<Omit<RussianRegistration
     name: 'additional_income_amount',
     type: 'int',
     nullable: true,
+    default: 0,
   })
   additionalIncomeAmount!: number | null;
 

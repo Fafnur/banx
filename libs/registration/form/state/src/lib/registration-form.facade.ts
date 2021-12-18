@@ -14,7 +14,6 @@ import * as RegistrationFormSelectors from './registration-form.selectors';
 @Injectable()
 export class RegistrationFormFacade {
   form$ = this.store.pipe(select(RegistrationFormSelectors.selectForm));
-  formFull$ = this.store.pipe(select(RegistrationFormSelectors.selectFormFull));
   formLoaded$ = this.store.pipe(select(RegistrationFormSelectors.selectFormLoaded));
   formLoading$ = this.store.pipe(select(RegistrationFormSelectors.selectFormLoading));
   formCreating$ = this.store.pipe(select(RegistrationFormSelectors.selectFormCreating));
@@ -80,6 +79,10 @@ export class RegistrationFormFacade {
 
   validateUnique(payload: RegistrationFormFieldValidate): void {
     this.dispatch(RegistrationFormActions.validateFormField({ payload }));
+  }
+
+  updateForm(payload: RegistrationForm): void {
+    this.dispatch(RegistrationFormActions.updateForm({ payload }));
   }
 
   private dispatch(action: Action): void {
