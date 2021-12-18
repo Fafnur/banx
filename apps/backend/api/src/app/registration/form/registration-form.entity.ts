@@ -23,6 +23,12 @@ export class RegistrationFormEntity implements Nullable<Omit<RussianRegistration
   process!: string;
 
   @Column({
+    length: 36,
+    nullable: true,
+  })
+  visitor!: string;
+
+  @Column({
     name: 'first_name',
     type: 'tinytext',
     nullable: true,

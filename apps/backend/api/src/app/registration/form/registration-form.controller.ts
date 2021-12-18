@@ -1,10 +1,11 @@
-import { BadRequestException, Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Param, Post, Req, UsePipes, ValidationPipe } from '@nestjs/common';
 
-import { RegistrationForm } from '@banx/registration/form/common';
+import { RegistrationForm, RegistrationFormCreate } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps, RegistrationStepType } from '@banx/registration/process/common';
 
 import { RegistrationOtpService } from '../otp/registration-otp.service';
 import { RegistrationProcessService } from '../process/registration-process.service';
+import { RegistrationCreateConverterPipe } from './registration-create-converter.pipe';
 import { RegistrationFormDto } from './registration-form.dto';
 import { registrationFormExceptionFactory } from './registration-form.exception-factory';
 import { RegistrationFormService } from './registration-form.service';
@@ -87,6 +88,7 @@ export class RegistrationFormController {
 
   @Post('registration/form/:process/create')
   @UsePipes(
+    new RegistrationCreateConverterPipe(),
     new ValidationPipe({
       transform: true,
       groups: [
@@ -98,11 +100,11 @@ export class RegistrationFormController {
       exceptionFactory: (validationErrors) => registrationFormExceptionFactory(validationErrors),
     })
   )
-  async createForm(@Param() params: RegistrationFormParams, @Body() form: RegistrationFormDto): Promise<void> {
-    if (!(await this.registrationOtpService.valid(params.process, form.mobilePhone))) {
+  async createForm(@Req() req: { params: { process: string }; body: RegistrationFormCreate }): Promise<void> {
+    if (!(await this.registrationOtpService.valid(req.params.process, req.body.form.mobilePhone))) {
       throw new BadRequestException({ message: 'The phone is not verified' });
     }
-    await this.registrationFormService.saveForm(params.process, form);
-    await this.registrationProcessService.finishStep(params.process, RegistrationStepType.Form);
+    await this.registrationFormService.saveForm(req.params.process, { ...req.body.form, ...req.body.additional });
+    await this.registrationProcessService.finishStep(req.params.process, RegistrationStepType.Form);
   }
 }

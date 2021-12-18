@@ -33,6 +33,9 @@ export class RegistrationProcessService {
   async finishStep(process: string, step: string): Promise<void> {
     const processEntity = await this.registrationProcessEntityRepository.findOne({ process });
     if (processEntity) {
+      if (!processEntity.finishedSteps) {
+        processEntity.finishedSteps = {};
+      }
       processEntity.finishedSteps[step] = {
         name: step,
         finishedAt: new Date().toISOString(),
