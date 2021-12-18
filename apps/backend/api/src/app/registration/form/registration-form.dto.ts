@@ -275,7 +275,10 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
   })
   employerName!: string;
 
-  @ValidateIf((o) => o.employmentType === RegistrationEmploymentType.Student)
+  @ValidateIf((o) => o.employmentType === RegistrationEmploymentType.Student, {
+    context: { errorCode: RegistrationErrorCode.IsConditional },
+    groups: [RegistrationFormSubSteps.Employment],
+  })
   @IsNotEmpty({
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Employment],
@@ -296,7 +299,10 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
   })
   jobDescription!: string;
 
-  @ValidateIf((o) => o.employmentType === RegistrationEmploymentType.Student)
+  @ValidateIf((o) => o.employmentType === RegistrationEmploymentType.Student, {
+    context: { errorCode: RegistrationErrorCode.IsConditional },
+    groups: [RegistrationFormSubSteps.Employment],
+  })
   @IsNotEmpty({
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Employment],
@@ -335,7 +341,10 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
   })
   periodOfEmployment!: RegistrationPeriodOfEmployment;
 
-  @ValidateIf((o) => o.employmentType === RegistrationEmploymentType.Unemployed)
+  @ValidateIf((o) => o.employmentType === RegistrationEmploymentType.Unemployed, {
+    context: { errorCode: RegistrationErrorCode.IsConditional },
+    groups: [RegistrationFormSubSteps.Employment],
+  })
   @IsNotEmpty({
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Employment],
