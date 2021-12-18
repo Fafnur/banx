@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { debounce, take, takeUntil, tap, timer } from 'rxjs';
+import { debounce, merge, take, takeUntil, tap, timer } from 'rxjs';
 
 import { FormErrorsService } from '@banx/core/forms/errors';
 import { DestroyService } from '@banx/core/services';
@@ -66,9 +66,19 @@ export class RegistrationFormCardComponent implements OnInit {
             if (this.last) {
               this.registrationFormFacade.create();
             } else {
+              this.submitted = false;
               this.onNext();
             }
           }
+          this.changeDetectorRef.markForCheck();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.registrationFormFacade.createFormSuccess$
+      .pipe(
+        tap(() => {
           this.submitted = false;
           this.changeDetectorRef.markForCheck();
         }),
@@ -76,7 +86,7 @@ export class RegistrationFormCardComponent implements OnInit {
       )
       .subscribe();
 
-    this.registrationFormFacade.validateFormFailure$
+    merge(this.registrationFormFacade.validateFormFailure$, this.registrationFormFacade.createFormFailure$)
       .pipe(
         tap((response) => {
           this.submitted = false;
@@ -104,6 +114,7 @@ export class RegistrationFormCardComponent implements OnInit {
       this.submitted = true;
       this.registrationFormFacade.validate({ form: this.form.value, subStep: this.step });
     }
+
     this.changeDetectorRef.markForCheck();
   }
 }

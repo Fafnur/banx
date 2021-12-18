@@ -4,6 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
 import { RegistrationFormCardModule } from '@banx/registration/form/ui/card';
+import {
+  RegistrationDriverLicenseModule,
+  RegistrationMinimalDesiredAmountModule,
+  RegistrationOwnCarModule,
+} from '@banx/registration/form/ui/fields';
 import { GridModule } from '@banx/ui/grid';
 
 import { RegistrationFormAdditionalPageComponent } from './registration-form-additional-page.component';
@@ -17,6 +22,9 @@ import { RegistrationFormAdditionalPageRoutingModule } from './registration-form
     FormsSharedModule,
     RegistrationFormCardModule,
     GridModule,
+    RegistrationMinimalDesiredAmountModule,
+    RegistrationOwnCarModule,
+    RegistrationDriverLicenseModule,
   ],
   declarations: [RegistrationFormAdditionalPageComponent],
 })

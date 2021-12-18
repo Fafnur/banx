@@ -12,7 +12,7 @@ import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { VisitorService } from '@banx/core/visitor/service';
 import { RegistrationFormApiService } from '@banx/registration/form/api';
 import { RegistrationForm, RegistrationFormKeys } from '@banx/registration/form/common';
-import { selectProcessId } from '@banx/registration/process/state';
+import { loadProcess, selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { RegistrationFormPartialState } from './registration-form.reducer';
@@ -72,6 +72,17 @@ export class RegistrationFormEffects implements OnInitEffects {
             : undefined,
         onError: (action, error) =>
           this.loggerService.logEffect({ context: { action, error } }, RegistrationFormActions.createFormFailure({ payload: error })),
+      })
+    )
+  );
+
+  createFormSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(RegistrationFormActions.createFormSuccess),
+      fetch({
+        id: () => 'registration-create-form-success',
+        run: () => loadProcess(),
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )
   );

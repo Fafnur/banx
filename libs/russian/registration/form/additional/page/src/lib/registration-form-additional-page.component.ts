@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+
+import { RegistrationFormField } from '@banx/registration/form/common';
+import { RegistrationFormSubSteps } from '@banx/registration/process/common';
+
+import { createForm } from './registration-form-additional-page.form';
 
 @Component({
   selector: 'banx-registration-form-additional-page',
@@ -6,8 +11,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
   styleUrls: ['./registration-form-additional-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegistrationFormAdditionalPageComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class RegistrationFormAdditionalPageComponent {
+  readonly fields = RegistrationFormField;
+  readonly step = RegistrationFormSubSteps.Additional;
+  readonly form = createForm();
 }

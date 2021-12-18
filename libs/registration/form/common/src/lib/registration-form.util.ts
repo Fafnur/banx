@@ -27,7 +27,11 @@ export function castRegistrationForm(lastForm: RegistrationForm | null, form?: R
     }
   }
 
-  const fieldsToNumbers = [RegistrationFormField.MonthlyIncome, RegistrationFormField.AdditionalIncomeAmount];
+  const fieldsToNumbers = [
+    RegistrationFormField.MonthlyIncome,
+    RegistrationFormField.AdditionalIncomeAmount,
+    RegistrationFormField.MinimalDesiredAmount,
+  ];
   for (const key of fieldsToNumbers) {
     const fieldValue = registrationForm[key];
     if (fieldValue != null) {

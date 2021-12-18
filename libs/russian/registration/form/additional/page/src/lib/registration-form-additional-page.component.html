@@ -1,1 +1,9 @@
-<p>registration-form-additional-page works!</p>
+<banx-registration-form-card [form]="form" [step]="step" [last]="true">
+  <banx-registration-minimal-desired-amount
+    [control]="form | extractFormControl: fields.MinimalDesiredAmount"
+  ></banx-registration-minimal-desired-amount>
+
+  <banx-registration-driver-license [control]="form | extractFormControl: fields.DriverLicense"></banx-registration-driver-license>
+
+  <banx-registration-own-car [control]="form | extractFormControl: fields.OwnCar"></banx-registration-own-car>
+</banx-registration-form-card>

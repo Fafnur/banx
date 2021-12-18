@@ -11,7 +11,7 @@ import {
 } from '@banx/registration/form/common';
 
 export const REGISTRATION_FORM_API_ROUTES = {
-  create: (processId: string): string => `/registration/form/${processId}`,
+  create: (processId: string): string => `/registration/form/${processId}/create`,
   load: (processId: string): string => `/registration/form/${processId}`,
   validate: (processId: string, step?: string): string => `/registration/form/${processId}/validate${step ? '/' + step : ''}`,
   validateUnique: (processId: string): string => `/registration/form/${processId}/validate-unique`,
