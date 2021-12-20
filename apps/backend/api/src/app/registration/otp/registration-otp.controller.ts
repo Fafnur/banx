@@ -10,7 +10,7 @@ import { RegistrationOtpService } from './registration-otp.service';
 export class RegistrationOtpController {
   constructor(private readonly registrationOtpService: RegistrationOtpService) {}
 
-  @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Sms}`)
+  @Post(`registration/:process/form/validate/${RegistrationFormSubSteps.Sms}`)
   @UsePipes(
     new ValidationPipe({
       transform: true,
@@ -25,7 +25,7 @@ export class RegistrationOtpController {
     return this.registrationOtpService.checkAndSave(params.process, form).then();
   }
 
-  @Post(`registration/form/:process/sms/send`)
+  @Post(`registration/:process/form/sms/send`)
   async resend(@Param() params: { process: string }, @Body() form: { [RegistrationFormField.MobilePhone]: string }): Promise<void> {
     return this.registrationOtpService.resend(params.process, form[RegistrationFormField.MobilePhone]).then();
   }

@@ -11,10 +11,10 @@ import {
 } from '@banx/registration/form/common';
 
 export const REGISTRATION_FORM_API_ROUTES = {
-  create: (processId: string): string => `/registration/form/${processId}/create`,
-  load: (processId: string): string => `/registration/form/${processId}`,
-  validate: (processId: string, step?: string): string => `/registration/form/${processId}/validate${step ? '/' + step : ''}`,
-  validateUnique: (processId: string): string => `/registration/form/${processId}/validate-unique`,
+  create: (processId: string): string => `/registration/${processId}/form/create`,
+  load: (processId: string): string => `/registration/${processId}/form`,
+  validate: (processId: string, step?: string): string => `/registration/${processId}/form/validate${step ? '/' + step : ''}`,
+  validateUnique: (processId: string): string => `/registration/${processId}/form/validate-unique`,
 };
 
 @Injectable()

@@ -8,7 +8,7 @@ import { RegistrationProcessService } from './registration-process.service';
 export class RegistrationProcessController {
   constructor(private readonly registrationProcessService: RegistrationProcessService) {}
 
-  @Get('registration/process/:processId?')
+  @Get('registration/:processId?')
   async getProcess(@Param() params: { processId?: string }): Promise<RegistrationProcessDto> {
     return this.registrationProcessService.getProcess(params?.processId);
   }

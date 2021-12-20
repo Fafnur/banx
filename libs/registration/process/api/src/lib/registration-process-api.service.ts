@@ -6,7 +6,7 @@ import { ApiService } from '@banx/core/api/service';
 import { castRegistrationProcess, RegistrationProcess, RegistrationProcessDto } from '@banx/registration/process/common';
 
 export const REGISTRATION_PROCESS_API_ROUTES = {
-  load: (processId?: string | null): string => '/registration/process' + (processId ? `/${processId}` : ''),
+  load: (processId?: string | null): string => '/registration' + (processId ? `/${processId}` : ''),
 };
 
 @Injectable()

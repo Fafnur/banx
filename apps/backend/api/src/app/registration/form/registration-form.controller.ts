@@ -22,17 +22,17 @@ export class RegistrationFormController {
     private readonly registrationProcessService: RegistrationProcessService
   ) {}
 
-  @Get('registration/form/:process')
+  @Get('registration/:process/form')
   async getForm(@Param() params: RegistrationFormParams): Promise<RegistrationForm> {
     return this.registrationFormService.getForm(params.process);
   }
 
-  @Post('registration/form/:process')
+  @Post('registration/:process/form')
   async postForm(@Param() params: RegistrationFormParams, @Body() form: RegistrationForm): Promise<void> {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
-  @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Personal}`)
+  @Post(`registration/:process/form/validate/${RegistrationFormSubSteps.Personal}`)
   @UsePipes(
     new ValidationPipe({
       transform: true,
@@ -50,7 +50,7 @@ export class RegistrationFormController {
     });
   }
 
-  @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Family}`)
+  @Post(`registration/:process/form/validate/${RegistrationFormSubSteps.Family}`)
   @UsePipes(
     new ValidationPipe({
       transform: true,
@@ -62,7 +62,7 @@ export class RegistrationFormController {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
-  @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Employment}`)
+  @Post(`registration/:process/form/validate/${RegistrationFormSubSteps.Employment}`)
   @UsePipes(
     new ValidationPipe({
       transform: true,
@@ -74,7 +74,7 @@ export class RegistrationFormController {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
-  @Post(`registration/form/:process/validate/${RegistrationFormSubSteps.Additional}`)
+  @Post(`registration/:process/form/validate/${RegistrationFormSubSteps.Additional}`)
   @UsePipes(
     new ValidationPipe({
       transform: true,
@@ -86,7 +86,7 @@ export class RegistrationFormController {
     return this.registrationFormService.saveForm(params.process, form).then();
   }
 
-  @Post('registration/form/:process/create')
+  @Post('registration/:process/form/create')
   @UsePipes(
     new RegistrationCreateConverterPipe(),
     new ValidationPipe({
