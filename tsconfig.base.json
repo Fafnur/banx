@@ -77,6 +77,7 @@
       "@banx/registration/process/api": ["libs/registration/process/api/src/index.ts"],
       "@banx/registration/process/common": ["libs/registration/process/common/src/index.ts"],
       "@banx/registration/process/state": ["libs/registration/process/state/src/index.ts"],
+      "@banx/registration/ui/card": ["libs/registration/ui/card/src/index.ts"],
       "@banx/registration/ui/layout": ["libs/registration/ui/layout/src/index.ts"],
       "@banx/russian/content/bank/credit-card/page": ["libs/russian/content/bank/credit-card/page/src/index.ts"],
       "@banx/russian/content/bank/page": ["libs/russian/content/bank/page/src/index.ts"],

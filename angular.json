@@ -1273,6 +1273,29 @@
         }
       }
     },
+    "registration-ui-card": {
+      "projectType": "library",
+      "root": "libs/registration/ui/card",
+      "sourceRoot": "libs/registration/ui/card/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/registration/ui/card"],
+          "options": {
+            "jestConfig": "libs/registration/ui/card/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/ui/card/src/**/*.ts", "libs/registration/ui/card/src/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
     "registration-ui-layout": {
       "projectType": "library",
       "root": "libs/registration/ui/layout",
