@@ -10,6 +10,9 @@ export class FingerprintGeolocationEntity {
   @Column({ type: 'tinytext' })
   visitor!: string;
 
+  @Column({ type: 'tinytext', nullable: true })
+  process!: string;
+
   @Column({ type: 'tinytext' })
   fingerprint!: string;
 

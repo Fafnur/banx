@@ -11,7 +11,7 @@ import { FingerprintFontEntity } from './fingerprint-font.entity';
 export class FingerprintFontService {
   constructor(@InjectRepository(FingerprintFontEntity) private readonly fontRepository: Repository<FingerprintFontEntity>) {}
 
-  async save({ visitor, data }: FingerprintDto<FontsFingerprint>): Promise<FingerprintFontEntity | null> {
+  async save({ visitor, data, process }: FingerprintDto<FontsFingerprint>): Promise<FingerprintFontEntity | null> {
     const fingerprint = md5(
       Object.keys(data)
         .filter((key) => data[key])
@@ -19,6 +19,6 @@ export class FingerprintFontService {
     );
     const record = await this.fontRepository.findOne({ visitor, fingerprint });
 
-    return !record ? await this.fontRepository.save(this.fontRepository.create({ visitor, fingerprint, data })) : null;
+    return !record ? await this.fontRepository.save(this.fontRepository.create({ visitor, fingerprint, data, process })) : null;
   }
 }
