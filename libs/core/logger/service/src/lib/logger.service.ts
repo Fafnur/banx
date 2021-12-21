@@ -7,7 +7,7 @@ import { ApiService } from '@banx/core/api/service';
 import { ConfigService } from '@banx/core/config/service';
 
 export interface LoggerData {
-  context: Record<string, any>;
+  context: any;
   level: string;
   message: string;
   debug: boolean;

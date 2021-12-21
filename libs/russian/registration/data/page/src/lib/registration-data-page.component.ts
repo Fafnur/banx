@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { takeUntil, tap } from 'rxjs';
+import { take, takeUntil, tap } from 'rxjs';
 
 import { DestroyService } from '@banx/core/services';
-import { FingerprintFacade } from '@banx/fingerprints/state';
-import { RegistrationProcessFacade } from '@banx/registration/process/state';
+import { RegistrationDataFacade } from '@banx/registration/data/state';
 
 @Component({
   selector: 'banx-registration-data-page',
@@ -17,16 +16,33 @@ export class RegistrationDataPageComponent implements OnInit {
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
-    private readonly fingerprintFacade: FingerprintFacade,
-    private readonly registrationProcessFacade: RegistrationProcessFacade,
+    private readonly registrationDataFacade: RegistrationDataFacade,
     private readonly destroy$: DestroyService
   ) {}
 
   ngOnInit(): void {
-    this.fingerprintFacade.finished$
+    this.registrationDataFacade.detectFinished$
+      .pipe(
+        take(1),
+        tap(() => this.registrationDataFacade.finish()),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.registrationDataFacade.dataFinishFailure$
       .pipe(
         tap(() => {
-          this.registrationProcessFacade.load();
+          this.submitted = false;
+          this.changeDetectorRef.markForCheck();
+        }),
+        takeUntil(this.destroy$)
+      )
+      .subscribe();
+
+    this.registrationDataFacade.dataFinishSuccess$
+      .pipe(
+        tap(() => {
+          this.submitted = false;
           this.changeDetectorRef.markForCheck();
         }),
         takeUntil(this.destroy$)
@@ -37,7 +53,7 @@ export class RegistrationDataPageComponent implements OnInit {
   onClick(): void {
     if (!this.submitted) {
       this.submitted = true;
-      this.fingerprintFacade.run();
+      this.registrationDataFacade.run();
     }
   }
 }

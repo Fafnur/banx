@@ -1,5 +1,6 @@
 export interface FingerprintDto<T> {
   visitor: string;
+  process?: string;
   data: T;
 }
 

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { select, Store } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
-import { map } from 'rxjs/operators';
+import { map, withLatestFrom } from 'rxjs/operators';
 
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
@@ -9,8 +10,10 @@ import { VisitorService } from '@banx/core/visitor/service';
 import { FingerprintApiService } from '@banx/fingerprints/api';
 import { CanvasFingerprint } from '@banx/fingerprints/common';
 import { CanvasDetectorService, FontDetectorService, GeolocationDetectorService } from '@banx/fingerprints/service';
+import { selectProcessId } from '@banx/registration/process/state';
 
 import * as FingerprintActions from './fingerprint.actions';
+import { FingerprintPartialState } from './fingerprint.reducer';
 
 @Injectable()
 export class FingerprintEffects {
@@ -43,13 +46,15 @@ export class FingerprintEffects {
   saveFonts$ = createEffect(() =>
     this.actions$.pipe(
       ofType(FingerprintActions.saveFonts),
+      withLatestFrom(this.store.pipe(select(selectProcessId))),
       fetch({
         id: () => 'fingerprint-save-fonts',
-        run: (action) =>
+        run: (action, process) =>
           this.platformService.isBrowser
             ? this.fingerprintApiService
                 .saveFonts({
                   visitor: this.visitorService.getUuid(),
+                  process: process ?? undefined,
                   data: action.payload,
                 })
                 .pipe(map(() => FingerprintActions.saveFontsSuccess()))
@@ -92,13 +97,15 @@ export class FingerprintEffects {
   saveCanvas$ = createEffect(() =>
     this.actions$.pipe(
       ofType(FingerprintActions.saveCanvas),
+      withLatestFrom(this.store.pipe(select(selectProcessId))),
       fetch({
         id: () => 'fingerprint-save-canvas',
-        run: (action) =>
+        run: (action, process) =>
           this.platformService.isBrowser
             ? this.fingerprintApiService
                 .saveCanvas({
                   visitor: this.visitorService.getUuid(),
+                  process: process ?? undefined,
                   data: action.payload,
                 })
                 .pipe(map(() => FingerprintActions.saveCanvasSuccess()))
@@ -141,13 +148,15 @@ export class FingerprintEffects {
   saveGeolocation$ = createEffect(() =>
     this.actions$.pipe(
       ofType(FingerprintActions.saveGeolocation),
+      withLatestFrom(this.store.pipe(select(selectProcessId))),
       fetch({
         id: () => 'fingerprint-save-geolocation',
-        run: (action) =>
+        run: (action, process) =>
           this.platformService.isBrowser
             ? this.fingerprintApiService
                 .saveGeolocation({
                   visitor: this.visitorService.getUuid(),
+                  process: process ?? undefined,
                   data: action.payload,
                 })
                 .pipe(map(() => FingerprintActions.saveGeolocationSuccess()))
@@ -160,6 +169,7 @@ export class FingerprintEffects {
 
   constructor(
     private readonly actions$: Actions,
+    private readonly store: Store<FingerprintPartialState>,
     private readonly platformService: PlatformService,
     private readonly loggerService: LoggerService,
     private readonly fontDetectorService: FontDetectorService,
