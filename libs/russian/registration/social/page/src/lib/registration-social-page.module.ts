@@ -3,27 +3,29 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { RegistrationDataStateModule } from '@banx/registration/data/state';
+import { SocialSharedModule } from '@banx/core/social/shared';
+import { RegistrationSocialStateModule } from '@banx/registration/social/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
 import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
 import { ButtonsModule } from '@banx/ui/buttons';
 import { SpinnerModule } from '@banx/ui/spinner';
 
-import { RegistrationDataPageComponent } from './registration-data-page.component';
-import { RegistrationDataPageRoutingModule } from './registration-data-page-routing.module';
+import { RegistrationSocialPageComponent } from './registration-social-page.component';
+import { RegistrationSocialPageRoutingModule } from './registration-social-page-routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    RegistrationDataPageRoutingModule,
+    RegistrationSocialPageRoutingModule,
     MatIconModule,
     MatButtonModule,
     RegistrationCardModule,
-    RegistrationDataStateModule,
+    RegistrationSocialStateModule,
     ButtonsModule,
     SpinnerModule,
     RegistrationStepErrorModule,
+    SocialSharedModule,
   ],
-  declarations: [RegistrationDataPageComponent],
+  declarations: [RegistrationSocialPageComponent],
 })
-export class RegistrationDataPageModule {}
+export class RegistrationSocialPageModule {}

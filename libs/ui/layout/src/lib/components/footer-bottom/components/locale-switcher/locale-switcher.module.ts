@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-
-import { IconsModule } from '@banx/ui/icons';
 
 import { LocaleSwitcherComponent } from './locale-switcher.component';
 
 @NgModule({
-  imports: [CommonModule, IconsModule, RouterModule],
+  imports: [CommonModule, MatIconModule, RouterModule],
   declarations: [LocaleSwitcherComponent],
   exports: [LocaleSwitcherComponent],
 })

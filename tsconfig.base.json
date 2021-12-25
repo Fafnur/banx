@@ -102,6 +102,8 @@
       "@banx/russian/registration/form/personal/page": ["libs/russian/registration/form/personal/page/src/index.ts"],
       "@banx/russian/registration/form/sms/page": ["libs/russian/registration/form/sms/page/src/index.ts"],
       "@banx/russian/registration/pages": ["libs/russian/registration/pages/src/index.ts"],
+      "@banx/russian/registration/social/page": ["libs/russian/registration/social/page/src/index.ts"],
+      "@banx/russian/registration/ui/step-error": ["libs/russian/registration/ui/step-error/src/index.ts"],
       "@banx/trackers/api": ["libs/trackers/api/src/index.ts"],
       "@banx/trackers/common": ["libs/trackers/common/src/index.ts"],
       "@banx/trackers/service": ["libs/trackers/service/src/index.ts"],

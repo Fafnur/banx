@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { MatIconModule } from '@angular/material/icon';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
-
-import { IconsModule } from '@banx/ui/icons';
 
 import { LocaleSwitcherComponent } from './locale-switcher.component';
 import { LocaleSwitcherComponentPo } from './locale-switcher.component.po';
@@ -14,7 +13,7 @@ describe('LocaleSwitcherComponent', () => {
   beforeEach(
     waitForAsync(() => {
       void TestBed.configureTestingModule({
-        imports: [RouterTestingModule, MockModule(IconsModule)],
+        imports: [RouterTestingModule, MockModule(MatIconModule)],
         declarations: [LocaleSwitcherComponent],
       }).compileComponents();
     })

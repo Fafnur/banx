@@ -1918,6 +1918,51 @@
         }
       }
     },
+    "russian-registration-social-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/social/page",
+      "sourceRoot": "libs/russian/registration/social/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/social/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/registration/social/page/src/**/*.ts", "libs/russian/registration/social/page/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "russian-registration-ui-step-error": {
+      "projectType": "library",
+      "root": "libs/russian/registration/ui/step-error",
+      "sourceRoot": "libs/russian/registration/ui/step-error/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/ui/step-error/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/registration/ui/step-error/src/**/*.ts",
+              "libs/russian/registration/ui/step-error/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "russian/cabinet-e2e": {
       "root": "apps/russian/cabinet-e2e",
       "sourceRoot": "apps/russian/cabinet-e2e/src",

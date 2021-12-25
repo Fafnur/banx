@@ -109,6 +109,7 @@ export interface NavigationPaths {
 
   // Other
   terms: string;
+  support: string;
 }
 
 export const NAVIGATION_PATHS: NavigationPaths = {
@@ -210,6 +211,7 @@ export const NAVIGATION_PATHS: NavigationPaths = {
   registrationFinish: 'registration/finish',
 
   terms: 'terms',
+  support: 'support',
 };
 
 export interface NavigationLink {

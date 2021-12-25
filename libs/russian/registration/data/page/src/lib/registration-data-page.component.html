@@ -4,6 +4,9 @@
     После нажатия на кнопку «Продолжить» будет запрошено ваше местоположение. В диалоговом окне вашего браузера нажмите «Разрешить» или
     «Сообщить местоположение».
   </banx-registration-card-content>
+  <banx-registration-card-errors *ngIf="isShowError">
+    <banx-registration-step-error></banx-registration-step-error>
+  </banx-registration-card-errors>
   <banx-registration-card-actions>
     <button mat-raised-button banx-button-medium type="button" color="primary" [disabled]="submitted" (click)="onClick()">
       Продолжить
