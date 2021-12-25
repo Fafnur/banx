@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { take, takeUntil, tap } from 'rxjs';
+import { merge, take, takeUntil, tap } from 'rxjs';
 
 import { DestroyService } from '@banx/core/services';
 import { RegistrationDataFacade } from '@banx/registration/data/state';
@@ -29,17 +29,7 @@ export class RegistrationDataPageComponent implements OnInit {
       )
       .subscribe();
 
-    this.registrationDataFacade.dataFinishFailure$
-      .pipe(
-        tap(() => {
-          this.submitted = false;
-          this.changeDetectorRef.markForCheck();
-        }),
-        takeUntil(this.destroy$)
-      )
-      .subscribe();
-
-    this.registrationDataFacade.dataFinishSuccess$
+    merge(this.registrationDataFacade.dataFinishSuccess$, this.registrationDataFacade.dataFinishFailure$)
       .pipe(
         tap(() => {
           this.submitted = false;
@@ -55,5 +45,6 @@ export class RegistrationDataPageComponent implements OnInit {
       this.submitted = true;
       this.registrationDataFacade.run();
     }
+    this.changeDetectorRef.markForCheck();
   }
 }
