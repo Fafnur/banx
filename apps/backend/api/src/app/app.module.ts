@@ -11,6 +11,7 @@ import { RegistrationDataModule } from './registration/data/registration-data.mo
 import { RegistrationFormModule } from './registration/form/registration-form.module';
 import { RegistrationOtpModule } from './registration/otp/registration-otp.module';
 import { RegistrationProcessModule } from './registration/process/registration-process.module';
+import { RegistrationSocialModule } from './registration/social/registration-social.module';
 import { TrackersModule } from './trackers/trackers.module';
 import { UsersModule } from './users/users.module';
 
@@ -33,6 +34,7 @@ import { UsersModule } from './users/users.module';
     RegistrationFormModule,
     RegistrationOtpModule,
     RegistrationDataModule,
+    RegistrationSocialModule,
   ],
   controllers: [AppController],
   providers: [AppService],
