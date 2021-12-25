@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 
+import { RegistrationSocialApiService } from './registration-social-api.service';
+
 @NgModule({
-  imports: [],
+  providers: [RegistrationSocialApiService],
 })
 export class RegistrationSocialApiModule {}
