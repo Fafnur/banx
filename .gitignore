@@ -47,4 +47,4 @@ package-lock.json
 /apps/**/.env
 /libs/**/source.xlf
 ormconfig.json
-
+dev.json
