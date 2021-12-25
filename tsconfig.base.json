@@ -114,6 +114,7 @@
       "@banx/ui/layout": ["libs/ui/layout/src/index.ts"],
       "@banx/ui/links": ["libs/ui/links/src/index.ts"],
       "@banx/ui/nav": ["libs/ui/nav/src/index.ts"],
+      "@banx/ui/spinner": ["libs/ui/spinner/src/index.ts"],
       "@banx/users/common": ["libs/users/common/src/index.ts"]
     }
   },
