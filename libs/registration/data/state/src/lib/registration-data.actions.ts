@@ -9,4 +9,4 @@ export const finishData = createAction('[RegistrationData] Finish Data');
 
 export const finishDataSuccess = createAction('[RegistrationData] Finish Data Success');
 
-export const finishDataFailure = createAction('[RegistrationData/API] Load RegistrationData Failure', payload<HttpErrorResponse>());
+export const finishDataFailure = createAction('[RegistrationData] Finish Data Failure', payload<HttpErrorResponse>());
