@@ -1315,6 +1315,48 @@
         }
       }
     },
+    "registration-social-api": {
+      "projectType": "library",
+      "root": "libs/registration/social/api",
+      "sourceRoot": "libs/registration/social/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/social/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/social/api/src/**/*.ts", "libs/registration/social/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-social-state": {
+      "projectType": "library",
+      "root": "libs/registration/social/state",
+      "sourceRoot": "libs/registration/social/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/social/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/social/state/src/**/*.ts", "libs/registration/social/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-ui-card": {
       "projectType": "library",
       "root": "libs/registration/ui/card",
