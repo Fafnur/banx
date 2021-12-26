@@ -24,7 +24,7 @@ export class RegistrationUserFacade {
 
   constructor(private readonly actions$: Actions, private readonly store: Store) {}
 
-  finish(): void {
+  createUser(): void {
     this.dispatch(RegistrationUserActions.createUser());
   }
 

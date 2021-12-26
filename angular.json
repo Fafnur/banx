@@ -2005,6 +2005,27 @@
         }
       }
     },
+    "russian-registration-user-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/user/page",
+      "sourceRoot": "libs/russian/registration/user/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/user/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/registration/user/page/src/**/*.ts", "libs/russian/registration/user/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian/cabinet-e2e": {
       "root": "apps/russian/cabinet-e2e",
       "sourceRoot": "apps/russian/cabinet-e2e/src",
