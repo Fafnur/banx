@@ -28,7 +28,6 @@ import { UsersModule } from './users/users.module';
       useFactory: typeOrmFactory,
       inject: [ConfigService],
     }),
-    PasswordsModule,
     UsersModule,
     AuthModule,
     TrackersModule,
