@@ -7,7 +7,6 @@ import { UsersModule } from '../users/users.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
-import { PasswordService } from './password.service';
 
 @Module({
   imports: [
@@ -18,7 +17,7 @@ import { PasswordService } from './password.service';
       signOptions: { expiresIn: environment.jwt.expiresIn },
     }),
   ],
-  providers: [AuthService, PasswordService, JwtStrategy],
+  providers: [AuthService, JwtStrategy],
   controllers: [AuthController],
   exports: [AuthService],
 })

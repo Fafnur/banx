@@ -7,11 +7,13 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { configurationFactory, typeOrmFactory } from './config/config';
 import { FingerprintsModule } from './fingerprints/fingerprints.module';
+import { PasswordsModule } from './passwords/passwords.module';
 import { RegistrationDataModule } from './registration/data/registration-data.module';
 import { RegistrationFormModule } from './registration/form/registration-form.module';
 import { RegistrationOtpModule } from './registration/otp/registration-otp.module';
 import { RegistrationProcessModule } from './registration/process/registration-process.module';
 import { RegistrationSocialModule } from './registration/social/registration-social.module';
+import { RegistrationUserModule } from './registration/user/registration-user.module';
 import { TrackersModule } from './trackers/trackers.module';
 import { UsersModule } from './users/users.module';
 
@@ -26,6 +28,7 @@ import { UsersModule } from './users/users.module';
       useFactory: typeOrmFactory,
       inject: [ConfigService],
     }),
+    PasswordsModule,
     UsersModule,
     AuthModule,
     TrackersModule,
@@ -35,6 +38,7 @@ import { UsersModule } from './users/users.module';
     RegistrationOtpModule,
     RegistrationDataModule,
     RegistrationSocialModule,
+    RegistrationUserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

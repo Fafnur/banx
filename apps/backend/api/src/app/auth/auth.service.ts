@@ -4,8 +4,8 @@ import { JwtService } from '@nestjs/jwt';
 
 import { User, UserAuth, UserCredentials, UserSecrets } from '@banx/users/common';
 
+import { PasswordService } from '../passwords/password.service';
 import { UserService } from '../users/user.service';
-import { PasswordService } from './password.service';
 
 @Injectable()
 export class AuthService {
@@ -57,9 +57,10 @@ export class AuthService {
     if (!user) {
       throw new BadRequestException();
     }
-    const password = (Math.random() + 1).toString(36).substring(4);
+    const password = this.passwordService.generatePassword();
     // NOTE: DON'T USE IT ON PRODUCTION.
     console.log(password);
+
     const hash = await this.passwordService.getHash(password);
 
     return await this.userService.updatePassword(user, hash).then(() => undefined);

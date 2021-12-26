@@ -11,6 +11,13 @@ export class PasswordService {
   private saltRounds = 10;
 
   /**
+   * Generating a new password
+   */
+  generatePassword(): string {
+    return (Math.random() + 1).toString(36).substring(4);
+  }
+
+  /**
    * Return hash
    *
    * @param password Plain password
