@@ -1399,6 +1399,48 @@
         }
       }
     },
+    "registration-user-api": {
+      "projectType": "library",
+      "root": "libs/registration/user/api",
+      "sourceRoot": "libs/registration/user/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/user/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/user/api/src/**/*.ts", "libs/registration/user/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-user-state": {
+      "projectType": "library",
+      "root": "libs/registration/user/state",
+      "sourceRoot": "libs/registration/user/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/user/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/user/state/src/**/*.ts", "libs/registration/user/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian-cabinet": {
       "projectType": "application",
       "root": "apps/russian/cabinet",

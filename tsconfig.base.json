@@ -83,6 +83,8 @@
       "@banx/registration/social/state": ["libs/registration/social/state/src/index.ts"],
       "@banx/registration/ui/card": ["libs/registration/ui/card/src/index.ts"],
       "@banx/registration/ui/layout": ["libs/registration/ui/layout/src/index.ts"],
+      "@banx/registration/user/api": ["libs/registration/user/api/src/index.ts"],
+      "@banx/registration/user/state": ["libs/registration/user/state/src/index.ts"],
       "@banx/russian/content/bank/credit-card/page": ["libs/russian/content/bank/credit-card/page/src/index.ts"],
       "@banx/russian/content/bank/page": ["libs/russian/content/bank/page/src/index.ts"],
       "@banx/russian/content/business/account/page": ["libs/russian/content/business/account/page/src/index.ts"],
