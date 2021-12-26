@@ -14,24 +14,24 @@ import { VisitorService } from '@banx/core/visitor/service';
 import { REGISTRATION_FORM_CREATE_STUB } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
 import { loadProcess } from '@banx/registration/process/state';
-import { RegistrationSocialApiService } from '@banx/registration/social/api';
+import { RegistrationUserApiService } from '@banx/registration/user/api';
 
-import * as RegistrationUserActions from './registration-social.actions';
-import { RegistrationSocialEffects } from './registration-social.effects';
-import { REGISTRATION_SOCIAL_FEATURE_KEY, registrationSocialInitialState, RegistrationSocialState } from './registration-social.reducer';
+import * as RegistrationUserActions from './registration-user.actions';
+import { RegistrationUserEffects } from './registration-user.effects';
+import { REGISTRATION_USER_FEATURE_KEY, registrationUserInitialState, RegistrationUserState } from './registration-user.reducer';
 
-describe('RegistrationSocialEffects', () => {
-  let setStore: (params: Partial<RegistrationSocialState>) => void;
+describe('RegistrationUserEffects', () => {
+  let setStore: (params: Partial<RegistrationUserState>) => void;
 
   let actions: Observable<Action>;
-  let effects: RegistrationSocialEffects;
+  let effects: RegistrationUserEffects;
   let store: MockStore;
-  let registrationSocialApiServiceMock: RegistrationSocialApiService;
+  let registrationUserApiServiceMock: RegistrationUserApiService;
   let loggerServiceMock: LoggerService;
   let visitorServiceMock: VisitorService;
 
   beforeEach(() => {
-    registrationSocialApiServiceMock = mock(RegistrationSocialApiService);
+    registrationUserApiServiceMock = mock(RegistrationUserApiService);
     loggerServiceMock = mock(LoggerService);
     visitorServiceMock = mock(VisitorService);
   });
@@ -41,12 +41,12 @@ describe('RegistrationSocialEffects', () => {
       void TestBed.configureTestingModule({
         imports: [],
         providers: [
-          RegistrationSocialEffects,
+          RegistrationUserEffects,
           provideMockActions(() => actions),
           provideMockStore({
             initialState: { registrationProcess: { processId: PROCESS_ID_STUB } },
           }),
-          providerOf(RegistrationSocialApiService, registrationSocialApiServiceMock),
+          providerOf(RegistrationUserApiService, registrationUserApiServiceMock),
           providerOf(LoggerService, loggerServiceMock),
           providerOf(VisitorService, visitorServiceMock),
         ],
@@ -57,46 +57,46 @@ describe('RegistrationSocialEffects', () => {
   beforeEach(() => {
     when(visitorServiceMock.getUuid()).thenReturn(REGISTRATION_FORM_CREATE_STUB.additional.visitor);
 
-    effects = TestBed.inject(RegistrationSocialEffects);
+    effects = TestBed.inject(RegistrationUserEffects);
     store = TestBed.inject(MockStore);
-    setStore = createSetMockStore(store, REGISTRATION_SOCIAL_FEATURE_KEY, registrationSocialInitialState);
+    setStore = createSetMockStore(store, REGISTRATION_USER_FEATURE_KEY, registrationUserInitialState);
   });
 
-  describe('finishSocial$', () => {
-    it('should return finishSocialSuccess', () => {
-      const action = RegistrationUserActions.finishSocial();
-      const completion = RegistrationUserActions.finishSocialSuccess();
+  describe('createUser$', () => {
+    it('should return createUserSuccess', () => {
+      const action = RegistrationUserActions.createUser();
+      const completion = RegistrationUserActions.createUserSuccess();
 
       actions = hot('-a-|', { a: action });
       const response = cold('-a|', { a: null });
       const expected = cold('--a|', { a: completion });
 
-      when(registrationSocialApiServiceMock.finish(PROCESS_ID_STUB)).thenReturn(response);
+      when(registrationUserApiServiceMock.create(PROCESS_ID_STUB)).thenReturn(response);
 
-      expect(effects.finishSocial$).toBeObservable(expected);
+      expect(effects.createUser$).toBeObservable(expected);
     });
 
-    it('should return finishSocialFailure', () => {
-      const action = RegistrationUserActions.finishSocial();
-      const completion = RegistrationUserActions.finishSocialFailure({ payload: HTTP_ERROR_STUB });
+    it('should return createUserFailure', () => {
+      const action = RegistrationUserActions.createUser();
+      const completion = RegistrationUserActions.createUserFailure({ payload: HTTP_ERROR_STUB });
 
       actions = hot('-a-|', { a: action });
       const response = cold('-#|', {}, HTTP_ERROR_STUB);
       const expected = cold('--a|', { a: completion });
 
       when(loggerServiceMock.logEffect(anything(), deepEqual(completion))).thenReturn(of(completion));
-      when(registrationSocialApiServiceMock.finish(PROCESS_ID_STUB)).thenReturn(response);
+      when(registrationUserApiServiceMock.create(PROCESS_ID_STUB)).thenReturn(response);
 
-      expect(effects.finishSocial$).toBeObservable(expected);
+      expect(effects.createUser$).toBeObservable(expected);
     });
   });
 
-  describe('finishSocialSuccess$', () => {
+  describe('createUserSuccess$', () => {
     it('should call loadProcess()', () => {
-      actions = hot('-a-|', { a: RegistrationUserActions.finishSocialSuccess() });
+      actions = hot('-a-|', { a: RegistrationUserActions.createUserSuccess() });
       const expected = hot('-a-|', { a: loadProcess() });
 
-      expect(effects.finishSocialSuccess$).toBeObservable(expected);
+      expect(effects.createUserSuccess$).toBeObservable(expected);
     });
   });
 });

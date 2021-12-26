@@ -8,34 +8,34 @@ import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { loadProcess, selectProcessId } from '@banx/registration/process/state';
-import { RegistrationSocialApiService } from '@banx/registration/social/api';
+import { RegistrationUserApiService } from '@banx/registration/user/api';
 
-import * as RegistrationSocialActions from './registration-social.actions';
-import { RegistrationSocialPartialState } from './registration-social.reducer';
+import * as RegistrationUserActions from './registration-user.actions';
+import { RegistrationUserPartialState } from './registration-user.reducer';
 
 @Injectable()
-export class RegistrationSocialEffects {
-  finishSocial$ = createEffect(() =>
+export class RegistrationUserEffects {
+  createUser$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(RegistrationSocialActions.finishSocial),
+      ofType(RegistrationUserActions.createUser),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-social-finish',
+        id: () => 'registration-user-create',
         run: (action, processId: string) =>
           this.platformService.isBrowser
-            ? this.registrationSocialApiService.finish(processId).pipe(map(() => RegistrationSocialActions.finishSocialSuccess()))
+            ? this.registrationUserApiService.create(processId).pipe(map(() => RegistrationUserActions.createUserSuccess()))
             : undefined,
         onError: (action, error) =>
-          this.loggerService.logEffect({ context: { action, error } }, RegistrationSocialActions.finishSocialFailure({ payload: error })),
+          this.loggerService.logEffect({ context: { action, error } }, RegistrationUserActions.createUserFailure({ payload: error })),
       })
     )
   );
 
-  finishSocialSuccess$ = createEffect(() =>
+  createUserSuccess$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(RegistrationSocialActions.finishSocialSuccess),
+      ofType(RegistrationUserActions.createUserSuccess),
       fetch({
-        id: () => 'registration-social-finish-success',
+        id: () => 'registration-user-create-success',
         run: () => loadProcess(),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
@@ -44,8 +44,8 @@ export class RegistrationSocialEffects {
 
   constructor(
     private readonly actions$: Actions,
-    private readonly store: Store<RegistrationSocialPartialState>,
-    private readonly registrationSocialApiService: RegistrationSocialApiService,
+    private readonly store: Store<RegistrationUserPartialState>,
+    private readonly registrationUserApiService: RegistrationUserApiService,
     private readonly platformService: PlatformService,
     private readonly loggerService: LoggerService
   ) {}
