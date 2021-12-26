@@ -16,7 +16,7 @@ export class RegistrationProcessEntity {
   process!: string;
 
   @Column({ type: 'tinytext', nullable: true })
-  user!: number;
+  user!: number | null;
 
   @Column({ type: 'json', nullable: true, name: 'finished_steps' })
   finishedSteps!: Record<string, FinishedStep>;

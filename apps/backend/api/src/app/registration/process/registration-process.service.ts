@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 import { uuidv4 } from '@banx/core/utils';
-import { REGISTRATION_STEPS, RegistrationProcessDto, RegistrationStepDto } from '@banx/registration/process/common';
+import { REGISTRATION_STEPS, RegistrationProcessDto, RegistrationStepDto, RegistrationStepType } from '@banx/registration/process/common';
 
 import { RegistrationProcessEntity } from './registration-process.entity';
 
@@ -30,7 +30,7 @@ export class RegistrationProcessService {
     };
   }
 
-  async finishStep(process: string, step: string): Promise<void> {
+  async finishStep(process: string, step: string, user?: number): Promise<void> {
     const processEntity = await this.registrationProcessEntityRepository.findOne({ process });
     if (processEntity) {
       if (!processEntity.finishedSteps) {
@@ -40,6 +40,11 @@ export class RegistrationProcessService {
         name: step,
         finishedAt: new Date().toISOString(),
       };
+
+      if (step === RegistrationStepType.User) {
+        processEntity.user = user ?? null;
+      }
+
       await this.registrationProcessEntityRepository.save(processEntity);
     }
   }

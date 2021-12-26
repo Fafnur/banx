@@ -14,8 +14,8 @@ export class RegistrationUserController {
 
   @Post(`registration/:process/user`)
   async resend(@Param() params: { process: string }): Promise<void> {
-    await this.registrationUserService.registerUser(params.process);
+    const user = await this.registrationUserService.registerUser(params.process);
 
-    return this.registrationProcessService.finishStep(params.process, RegistrationStepType.User).then();
+    return this.registrationProcessService.finishStep(params.process, RegistrationStepType.User, user.id).then();
   }
 }
