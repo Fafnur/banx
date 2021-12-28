@@ -1,3 +1,11 @@
+export enum UserStatus {
+  Created = 'created',
+  Registered = 'registered',
+  Verified = 'verified',
+  Rejected = 'rejected',
+  Removed = 'removed',
+}
+
 export interface User {
   id: number;
   username: string;
@@ -6,6 +14,7 @@ export interface User {
   birthdate: string;
   createdAt: string;
   updatedAt: string;
+  status: UserStatus;
 }
 
 export enum UserField {
