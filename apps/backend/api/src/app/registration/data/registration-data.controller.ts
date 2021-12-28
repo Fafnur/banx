@@ -9,7 +9,7 @@ export class RegistrationDataController {
   constructor(private readonly registrationProcessService: RegistrationProcessService) {}
 
   @Post('registration/:process/data')
-  async resend(@Param() params: { process: string }): Promise<void> {
+  async finishData(@Param() params: { process: string }): Promise<void> {
     return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Data).then();
   }
 }

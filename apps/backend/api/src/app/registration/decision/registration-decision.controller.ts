@@ -13,7 +13,7 @@ export class RegistrationDecisionController {
   ) {}
 
   @Post('registration/:process/decision')
-  async resend(@Param() params: { process: string }): Promise<void> {
+  async makeDecision(@Param() params: { process: string }): Promise<void> {
     await this.registrationDecisionService.decision(params.process);
 
     return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Decision).then();
