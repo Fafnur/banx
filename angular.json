@@ -1063,6 +1063,48 @@
         }
       }
     },
+    "registration-conversion-api": {
+      "projectType": "library",
+      "root": "libs/registration/conversion/api",
+      "sourceRoot": "libs/registration/conversion/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/conversion/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/conversion/api/src/**/*.ts", "libs/registration/conversion/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-conversion-state": {
+      "projectType": "library",
+      "root": "libs/registration/conversion/state",
+      "sourceRoot": "libs/registration/conversion/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/conversion/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/conversion/state/src/**/*.ts", "libs/registration/conversion/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-data-api": {
       "projectType": "library",
       "root": "libs/registration/data/api",
