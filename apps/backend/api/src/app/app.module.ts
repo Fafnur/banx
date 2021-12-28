@@ -7,8 +7,8 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { configurationFactory, typeOrmFactory } from './config/config';
 import { FingerprintsModule } from './fingerprints/fingerprints.module';
-import { PasswordsModule } from './passwords/passwords.module';
 import { RegistrationDataModule } from './registration/data/registration-data.module';
+import { RegistrationDecisionModule } from './registration/decision/registration-decision.module';
 import { RegistrationFormModule } from './registration/form/registration-form.module';
 import { RegistrationOtpModule } from './registration/otp/registration-otp.module';
 import { RegistrationProcessModule } from './registration/process/registration-process.module';
@@ -38,6 +38,7 @@ import { UsersModule } from './users/users.module';
     RegistrationDataModule,
     RegistrationSocialModule,
     RegistrationUserModule,
+    RegistrationDecisionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
