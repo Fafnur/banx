@@ -35,6 +35,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         loadChildren: () => import('@banx/russian/registration/user/page').then((modules) => modules.RegistrationUserPageModule),
       },
+      {
+        path: NAVIGATION_PATHS.registrationDecision,
+        canActivate: [AuthGuard],
+        loadChildren: () => import('@banx/russian/registration/decision/page').then((modules) => modules.RegistrationDecisionPageModule),
+      },
     ],
   },
 ];
