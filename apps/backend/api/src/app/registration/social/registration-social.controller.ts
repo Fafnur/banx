@@ -8,7 +8,7 @@ import { RegistrationProcessService } from '../process/registration-process.serv
 export class RegistrationSocialController {
   constructor(private readonly registrationProcessService: RegistrationProcessService) {}
 
-  @Post(`registration/:process/social`)
+  @Post('registration/:process/social')
   async resend(@Param() params: { process: string }): Promise<void> {
     return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Social).then();
   }

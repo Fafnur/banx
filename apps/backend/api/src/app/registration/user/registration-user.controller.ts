@@ -12,7 +12,7 @@ export class RegistrationUserController {
     private readonly registrationUserService: RegistrationUserService
   ) {}
 
-  @Post(`registration/:process/user`)
+  @Post('registration/:process/user')
   async resend(@Param() params: { process: string }): Promise<void> {
     const user = await this.registrationUserService.registerUser(params.process);
 

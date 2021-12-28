@@ -12,7 +12,7 @@ export class RegistrationDecisionController {
     private readonly registrationDecisionService: RegistrationDecisionService
   ) {}
 
-  @Post(`registration/:process/user`)
+  @Post('registration/:process/decision')
   async resend(@Param() params: { process: string }): Promise<void> {
     await this.registrationDecisionService.decision(params.process);
 

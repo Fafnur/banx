@@ -25,7 +25,7 @@ export class RegistrationOtpController {
     return this.registrationOtpService.checkAndSave(params.process, form).then();
   }
 
-  @Post(`registration/:process/form/sms/send`)
+  @Post('registration/:process/form/sms/send')
   async resend(@Param() params: { process: string }, @Body() form: { [RegistrationFormField.MobilePhone]: string }): Promise<void> {
     return this.registrationOtpService.resend(params.process, form[RegistrationFormField.MobilePhone]).then();
   }

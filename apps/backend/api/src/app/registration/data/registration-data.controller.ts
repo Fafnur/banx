@@ -8,7 +8,7 @@ import { RegistrationProcessService } from '../process/registration-process.serv
 export class RegistrationDataController {
   constructor(private readonly registrationProcessService: RegistrationProcessService) {}
 
-  @Post(`registration/:process/data`)
+  @Post('registration/:process/data')
   async resend(@Param() params: { process: string }): Promise<void> {
     return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Data).then();
   }
