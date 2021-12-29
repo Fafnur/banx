@@ -14,7 +14,7 @@ export class RegistrationConversionApiService {
   constructor(private readonly apiService: ApiService) {}
 
   load(processId: string): Observable<RegistrationConversion> {
-    return this.apiService.post(REGISTRATION_CONVERSION_API_ROUTES.load(processId));
+    return this.apiService.get(REGISTRATION_CONVERSION_API_ROUTES.load(processId));
   }
 
   complete(processId: string): Observable<void> {

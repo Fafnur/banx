@@ -35,7 +35,7 @@ describe('RegistrationConversionApiService', () => {
         next: (data) => expect(data).toEqual(REGISTRATION_CONVERSION_STUB),
       });
       const req = httpTestingController.expectOne(REGISTRATION_CONVERSION_API_ROUTES.load(PROCESS_ID_STUB));
-      expect(req.request.method).toEqual('POST');
+      expect(req.request.method).toEqual('GET');
 
       req.flush(REGISTRATION_CONVERSION_STUB);
     });
