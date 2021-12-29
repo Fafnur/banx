@@ -1084,6 +1084,27 @@
         }
       }
     },
+    "registration-conversion-common": {
+      "projectType": "library",
+      "root": "libs/registration/conversion/common",
+      "sourceRoot": "libs/registration/conversion/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/conversion/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/conversion/common/src/**/*.ts", "libs/registration/conversion/common/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-conversion-state": {
       "projectType": "library",
       "root": "libs/registration/conversion/state",

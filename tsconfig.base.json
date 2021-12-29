@@ -68,6 +68,7 @@
       "@banx/numbers-to-words/common": ["libs/numbers-to-words/common/src/index.ts"],
       "@banx/numbers-to-words/shared": ["libs/numbers-to-words/shared/src/index.ts"],
       "@banx/registration/conversion/api": ["libs/registration/conversion/api/src/index.ts"],
+      "@banx/registration/conversion/common": ["libs/registration/conversion/common/src/index.ts"],
       "@banx/registration/conversion/state": ["libs/registration/conversion/state/src/index.ts"],
       "@banx/registration/data/api": ["libs/registration/data/api/src/index.ts"],
       "@banx/registration/data/state": ["libs/registration/data/state/src/index.ts"],
