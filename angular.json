@@ -1861,6 +1861,30 @@
         }
       }
     },
+    "russian-registration-conversion-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/conversion/page",
+      "sourceRoot": "libs/russian/registration/conversion/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/conversion/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/russian/registration/conversion/page/src/**/*.ts",
+              "libs/russian/registration/conversion/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "russian-registration-data-page": {
       "projectType": "library",
       "root": "libs/russian/registration/data/page",

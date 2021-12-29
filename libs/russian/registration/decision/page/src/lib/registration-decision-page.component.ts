@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { takeUntil, tap } from 'rxjs';
 
 import { DestroyService } from '@banx/core/services';
-import { SocialType } from '@banx/core/social/common';
 import { RegistrationDecisionFacade } from '@banx/registration/decision/state';
 
 @Component({
-  selector: 'banx-registration-user-page',
+  selector: 'banx-registration-decision-page',
   templateUrl: './registration-decision-page.component.html',
   styleUrls: ['./registration-decision-page.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -15,8 +14,6 @@ import { RegistrationDecisionFacade } from '@banx/registration/decision/state';
 export class RegistrationDecisionPageComponent implements OnInit {
   submitted = false;
   isShowError = false;
-
-  readonly socials = [SocialType.Github, SocialType.Facebook, SocialType.Telegram];
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,

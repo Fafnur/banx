@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { takeUntil, tap } from 'rxjs';
 
 import { DestroyService } from '@banx/core/services';
-import { SocialType } from '@banx/core/social/common';
 import { RegistrationUserFacade } from '@banx/registration/user/state';
 
 @Component({
@@ -15,8 +14,6 @@ import { RegistrationUserFacade } from '@banx/registration/user/state';
 export class RegistrationUserPageComponent implements OnInit {
   submitted = false;
   isShowError = false;
-
-  readonly socials = [SocialType.Github, SocialType.Facebook, SocialType.Telegram];
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
