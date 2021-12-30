@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: NAVIGATION_PATHS.registration,
-        redirectTo: NAVIGATION_PATHS.registrationForm,
+        redirectTo: NAVIGATION_PATHS.registrationFormPersonal,
         pathMatch: 'full',
       },
       {
@@ -39,6 +39,12 @@ const routes: Routes = [
         path: NAVIGATION_PATHS.registrationDecision,
         canActivate: [AuthGuard],
         loadChildren: () => import('@banx/russian/registration/decision/page').then((modules) => modules.RegistrationDecisionPageModule),
+      },
+      {
+        path: NAVIGATION_PATHS.registrationConversion,
+        canActivate: [AuthGuard],
+        loadChildren: () =>
+          import('@banx/russian/registration/conversion/page').then((modules) => modules.RegistrationConversionPageModule),
       },
     ],
   },
