@@ -16,6 +16,7 @@ import { RegistrationSocialModule } from './registration/social/registration-soc
 import { RegistrationUserModule } from './registration/user/registration-user.module';
 import { TrackersModule } from './trackers/trackers.module';
 import { UsersModule } from './users/users.module';
+import { RegistrationConversionModule } from './registration/conversion/registration-conversion.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { UsersModule } from './users/users.module';
     RegistrationSocialModule,
     RegistrationUserModule,
     RegistrationDecisionModule,
+    RegistrationConversionModule,
   ],
   controllers: [AppController],
   providers: [AppService],
