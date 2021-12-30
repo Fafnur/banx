@@ -22,6 +22,7 @@ export const REGISTRATION_PROCESS_DTO_STUB: RegistrationProcessDto = {
   processId: PROCESS_ID_STUB,
   finished: false,
   steps: [REGISTRATION_STEP_DTO_STUB],
+  user: null,
 };
 
 export const REGISTRATION_PROCESS_STUB: RegistrationProcess = REGISTRATION_PROCESS_DTO_STUB;

@@ -27,6 +27,7 @@ export class RegistrationProcessService {
       processId: process.process,
       finished: !!process?.finishedAt,
       steps: this.getSteps(process),
+      user: process.user ?? null,
     };
   }
 
@@ -43,6 +44,8 @@ export class RegistrationProcessService {
 
       if (step === RegistrationStepType.User) {
         processEntity.user = user ?? null;
+      } else if (step === RegistrationStepType.Finish) {
+        processEntity.finishedAt = new Date().toISOString();
       }
 
       await this.registrationProcessEntityRepository.save(processEntity);

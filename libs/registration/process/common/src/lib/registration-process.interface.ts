@@ -31,6 +31,7 @@ export interface RegistrationProcessDto<T extends string = string> {
   readonly processId: string;
   readonly finished: boolean;
   readonly steps: RegistrationStepDto<T>[];
+  readonly user: number | null;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
