@@ -14,7 +14,7 @@ export class RegistrationFinishService {
     private readonly registrationConversionService: RegistrationConversionService
   ) {}
 
-  async finish(process: string): Promise<void> {
+  async finish(process: string): Promise<UserStatus> {
     const processEntity = await this.registrationProcessService.getProcess(process);
     const conversionEntity = await this.registrationConversionService.conversion(process);
 
@@ -28,6 +28,6 @@ export class RegistrationFinishService {
         ? UserStatus.Registered
         : UserStatus.Rejected;
 
-    return this.userService.update(processEntity.user, { status });
+    return this.userService.update(processEntity.user, { status }).then(() => status);
   }
 }
