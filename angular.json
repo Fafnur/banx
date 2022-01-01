@@ -1210,6 +1210,48 @@
         }
       }
     },
+    "registration-finish-api": {
+      "projectType": "library",
+      "root": "libs/registration/finish/api",
+      "sourceRoot": "libs/registration/finish/api/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/finish/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/finish/api/src/**/*.ts", "libs/registration/finish/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-finish-state": {
+      "projectType": "library",
+      "root": "libs/registration/finish/state",
+      "sourceRoot": "libs/registration/finish/state/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/finish/state/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/finish/state/src/**/*.ts", "libs/registration/finish/state/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-form-api": {
       "projectType": "library",
       "root": "libs/registration/form/api",
