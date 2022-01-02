@@ -14,9 +14,9 @@ export class RegistrationFinishController {
   ) {}
 
   @Post('registration/:process/finish')
-  async createUser(@Param() params: { process: string }): Promise<UserStatus> {
+  async createUser(@Param() params: { process: string }): Promise<{ status: UserStatus }> {
     const status = await this.registrationUserService.finish(params.process);
 
-    return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Finish).then(() => status);
+    return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Finish).then(() => ({ status }));
   }
 }

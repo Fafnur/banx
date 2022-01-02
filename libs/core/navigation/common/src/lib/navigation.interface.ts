@@ -92,6 +92,9 @@ export interface NavigationPaths {
   user: string;
   userProfile: string;
 
+  userApproved: string;
+  userRejected: string;
+
   // Registration
   registration: string;
   registrationForm: string;
@@ -195,6 +198,8 @@ export const NAVIGATION_PATHS: NavigationPaths = {
 
   user: 'user',
   userProfile: 'user/profile',
+  userApproved: 'user/approved',
+  userRejected: 'user/rejected',
 
   registration: 'registration',
   registrationForm: 'registration/form',

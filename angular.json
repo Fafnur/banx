@@ -1972,6 +1972,27 @@
         }
       }
     },
+    "russian-registration-finish-page": {
+      "projectType": "library",
+      "root": "libs/russian/registration/finish/page",
+      "sourceRoot": "libs/russian/registration/finish/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/russian/registration/finish/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/russian/registration/finish/page/src/**/*.ts", "libs/russian/registration/finish/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "russian-registration-form-additional-page": {
       "projectType": "library",
       "root": "libs/russian/registration/form/additional/page",

@@ -46,6 +46,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('@banx/russian/registration/conversion/page').then((modules) => modules.RegistrationConversionPageModule),
       },
+      {
+        path: NAVIGATION_PATHS.registrationFinish,
+        canActivate: [AuthGuard],
+        loadChildren: () => import('@banx/russian/registration/finish/page').then((modules) => modules.RegistrationFinishPageModule),
+      },
     ],
   },
 ];

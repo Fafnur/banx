@@ -23,7 +23,9 @@ export class RegistrationFinishEffects {
         id: () => 'registration-finish',
         run: (action, processId: string) =>
           this.platformService.isBrowser
-            ? this.registrationFinishApiService.finish(processId).pipe(map(() => RegistrationFinishActions.finishRegistrationSuccess()))
+            ? this.registrationFinishApiService
+                .finish(processId)
+                .pipe(map((payload) => RegistrationFinishActions.finishRegistrationSuccess({ payload })))
             : undefined,
         onError: (action, error) =>
           this.loggerService.logEffect(

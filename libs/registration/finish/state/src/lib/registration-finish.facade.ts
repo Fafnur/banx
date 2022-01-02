@@ -5,6 +5,8 @@ import { Action, select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { UserStatus } from '@banx/users/common';
+
 import * as RegistrationUserActions from './registration-finish.actions';
 import * as RegistrationUserSelectors from './registration-finish.selectors';
 
@@ -17,9 +19,9 @@ export class RegistrationFinishFacade {
     map(({ payload }) => payload)
   );
 
-  finishRegistrationSuccess$: Observable<void> = this.actions$.pipe(
+  finishRegistrationSuccess$: Observable<{ status: UserStatus }> = this.actions$.pipe(
     ofType(RegistrationUserActions.finishRegistrationSuccess),
-    map(() => undefined)
+    map(({ payload }) => payload)
   );
 
   constructor(private readonly actions$: Actions, private readonly store: Store) {}

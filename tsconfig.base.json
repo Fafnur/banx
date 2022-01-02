@@ -105,6 +105,7 @@
       "@banx/russian/registration/conversion/page": ["libs/russian/registration/conversion/page/src/index.ts"],
       "@banx/russian/registration/data/page": ["libs/russian/registration/data/page/src/index.ts"],
       "@banx/russian/registration/decision/page": ["libs/russian/registration/decision/page/src/index.ts"],
+      "@banx/russian/registration/finish/page": ["libs/russian/registration/finish/page/src/index.ts"],
       "@banx/russian/registration/form/additional/page": ["libs/russian/registration/form/additional/page/src/index.ts"],
       "@banx/russian/registration/form/common": ["libs/russian/registration/form/common/src/index.ts"],
       "@banx/russian/registration/form/employment/page": ["libs/russian/registration/form/employment/page/src/index.ts"],

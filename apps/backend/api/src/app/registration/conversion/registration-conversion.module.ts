@@ -10,5 +10,6 @@ import { RegistrationConversionService } from './registration-conversion.service
   controllers: [RegistrationConversionController],
   imports: [TypeOrmModule.forFeature([RegistrationConversionEntity]), RegistrationProcessModule],
   providers: [RegistrationConversionService],
+  exports: [RegistrationConversionService],
 })
 export class RegistrationConversionModule {}
