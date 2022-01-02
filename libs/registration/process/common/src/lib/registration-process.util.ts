@@ -16,6 +16,7 @@ export function castRegistrationProcess(payload: RegistrationProcessDto): Regist
     processId: payload.processId,
     finished: payload.finished,
     steps: Object.values(payload.steps).map((step) => ({ ...step, subStep: null })),
+    user: payload.user,
   };
 }
 

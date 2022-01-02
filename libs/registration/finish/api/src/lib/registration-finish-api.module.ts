@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { RegistrationFinishApiService } from './registration-finish-api.service';
+
 @NgModule({
-  imports: [CommonModule],
+  providers: [RegistrationFinishApiService],
 })
 export class RegistrationFinishApiModule {}
