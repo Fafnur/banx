@@ -10,7 +10,7 @@ import { mock, when } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { RegistrationConversion } from '@banx/registration/conversion/common';
-import { RegistrationConversionFacade, RegistrationConversionStateModule } from '@banx/registration/conversion/state';
+import { RegistrationConversionFacade } from '@banx/registration/conversion/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
 import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
@@ -42,7 +42,6 @@ describe('RegistrationConversionComponent', () => {
         SpinnerModule,
         MockModule(MatButtonModule),
         MockModule(RegistrationCardModule),
-        MockModule(RegistrationConversionStateModule),
         MockModule(RegistrationStepErrorModule),
       ],
       declarations: [RegistrationConversionPageComponent],
