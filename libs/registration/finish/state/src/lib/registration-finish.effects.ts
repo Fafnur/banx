@@ -7,8 +7,11 @@ import { map, take, withLatestFrom } from 'rxjs/operators';
 import { loginSuccess } from '@banx/auth/state';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
+import { LocalAsyncStorage } from '@banx/core/storage/local';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationFinishApiService } from '@banx/registration/finish/api';
+import { RegistrationFormKeys } from '@banx/registration/form/common';
+import { RegistrationProcessKeys } from '@banx/registration/process/common';
 import { selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationFinishActions from './registration-finish.actions';
@@ -42,7 +45,14 @@ export class RegistrationFinishEffects {
       ofType(RegistrationFinishActions.finishRegistrationSuccess),
       fetch({
         id: () => 'registration-finish-success',
-        run: ({ payload }) => loginSuccess({ payload }),
+        run: ({ payload }) => {
+          this.localAsyncStorage.removeItem(RegistrationProcessKeys.ProcessId);
+          this.localAsyncStorage.removeItem(RegistrationProcessKeys.SelectedStepId);
+          this.localAsyncStorage.removeItem(RegistrationProcessKeys.SelectedSubStep);
+          this.localAsyncStorage.removeItem(RegistrationFormKeys.Form);
+
+          return loginSuccess({ payload });
+        },
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )
@@ -53,6 +63,7 @@ export class RegistrationFinishEffects {
     private readonly store: Store<RegistrationFinishPartialState>,
     private readonly registrationFinishApiService: RegistrationFinishApiService,
     private readonly platformService: PlatformService,
-    private readonly loggerService: LoggerService
+    private readonly loggerService: LoggerService,
+    private readonly localAsyncStorage: LocalAsyncStorage
   ) {}
 }

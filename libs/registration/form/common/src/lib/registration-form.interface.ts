@@ -251,7 +251,7 @@ export interface RegistrationFormBase {
   [RegistrationFormField.AdditionalContactName]: string;
   [RegistrationFormField.AdditionalContactType]: RegistrationAdditionalContactType;
   [RegistrationFormField.AdditionalContactPhoneNumber]?: string | null;
-  [RegistrationFormField.SmsCode]: number;
+  [RegistrationFormField.SmsCode]: string;
   [RegistrationFormField.EmploymentType]: RegistrationEmploymentType;
   [RegistrationFormField.EmployerName]: string;
   [RegistrationFormField.InstitutionName]: string;

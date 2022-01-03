@@ -32,10 +32,9 @@ export function castRegistrationForm(form: RegistrationForm | RegistrationForm[]
         registrationForm[key] = Number(fieldValue);
       }
     }
-
-    if (registrationForm[RegistrationFormField.SmsCode]) {
-      delete registrationForm[RegistrationFormField.SmsCode];
-    }
+    // if (registrationForm[RegistrationFormField.SmsCode]) {
+    //   delete registrationForm[RegistrationFormField.SmsCode];
+    // }
   }
 
   return registrationForm;

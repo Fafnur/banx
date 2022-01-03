@@ -79,6 +79,7 @@ export function selectStepContinue(
 
 export function getRegistrationPath(payload: RegistrationStepSelected, paths: NavigationPaths): string {
   let path = paths.registration;
+
   switch (payload.step.name) {
     case RegistrationStepType.Data:
       path = paths.registrationData;
@@ -96,6 +97,7 @@ export function getRegistrationPath(payload: RegistrationStepSelected, paths: Na
       path = paths.registrationConversion;
       break;
     case RegistrationStepType.Finish:
+    case 'finished':
       path = paths.registrationFinish;
       break;
     case RegistrationStepType.Form:
