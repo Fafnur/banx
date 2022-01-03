@@ -1,7 +1,7 @@
 import { Controller, Param, Post } from '@nestjs/common';
 
+import { RegistrationFinishResponse } from '@banx/registration/finish/common';
 import { RegistrationStepType } from '@banx/registration/process/common';
-import { UserStatus } from '@banx/users/common';
 
 import { RegistrationProcessService } from '../process/registration-process.service';
 import { RegistrationFinishService } from './registration-finish.service';
@@ -14,9 +14,9 @@ export class RegistrationFinishController {
   ) {}
 
   @Post('registration/:process/finish')
-  async createUser(@Param() params: { process: string }): Promise<{ status: UserStatus }> {
-    const status = await this.registrationUserService.finish(params.process);
+  async createUser(@Param() params: { process: string }): Promise<RegistrationFinishResponse> {
+    const result = await this.registrationUserService.finish(params.process);
 
-    return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Finish).then(() => ({ status }));
+    return this.registrationProcessService.finishStep(params.process, RegistrationStepType.Finish).then(() => result);
   }
 }

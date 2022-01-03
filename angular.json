@@ -1231,6 +1231,29 @@
         }
       }
     },
+    "registration-finish-common": {
+      "projectType": "library",
+      "root": "libs/registration/finish/common",
+      "sourceRoot": "libs/registration/finish/common/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/registration/finish/common"],
+          "options": {
+            "jestConfig": "libs/registration/finish/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/finish/common/src/**/*.ts", "libs/registration/finish/common/src/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
     "registration-finish-state": {
       "projectType": "library",
       "root": "libs/registration/finish/state",

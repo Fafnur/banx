@@ -2,7 +2,7 @@ import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
-import { User, UserAuth, UserCredentials, UserSecrets } from '@banx/users/common';
+import { User, UserAuth, UserCredentials, UserSecrets, UserStatus } from '@banx/users/common';
 
 import { PasswordService } from '../passwords/password.service';
 import { UserService } from '../users/user.service';
@@ -40,7 +40,7 @@ export class AuthService {
   async login(credentials: UserCredentials): Promise<UserAuth> {
     const user = await this.validateUser(credentials);
 
-    if (!user) {
+    if (!user || user.status === UserStatus.Created) {
       throw new UnauthorizedException();
     }
 
