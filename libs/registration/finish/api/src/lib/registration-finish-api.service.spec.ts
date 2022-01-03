@@ -2,6 +2,7 @@ import { HttpTestingController } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 
 import { API_ERROR_RESPONSE_STUB, API_ERROR_STUB, CoreApiTestingModule } from '@banx/core/api/service';
+import { REGISTRATION_FINISH_RESPONSE_STUB } from '@banx/registration/finish/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
 
 import { REGISTRATION_FINISH_API_ROUTES, RegistrationFinishApiService } from './registration-finish-api.service';
@@ -31,12 +32,12 @@ describe('RegistrationFinishApiService', () => {
   describe('finish()', () => {
     it('should return finish success', () => {
       service.finish(PROCESS_ID_STUB).subscribe({
-        next: (data) => expect(data).toBeNull(),
+        next: (data) => expect(data).toEqual(REGISTRATION_FINISH_RESPONSE_STUB),
       });
       const req = httpTestingController.expectOne(REGISTRATION_FINISH_API_ROUTES.finish(PROCESS_ID_STUB));
       expect(req.request.method).toEqual('POST');
 
-      req.flush(null);
+      req.flush(REGISTRATION_FINISH_RESPONSE_STUB);
     });
 
     it('should return finish error', () => {

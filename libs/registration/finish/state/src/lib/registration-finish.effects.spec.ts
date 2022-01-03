@@ -6,15 +6,16 @@ import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
 import { anything, deepEqual, mock, when } from 'ts-mockito';
 
+import { loginSuccess } from '@banx/auth/state';
 import { HTTP_ERROR_STUB } from '@banx/core/api/service';
 import { LoggerService } from '@banx/core/logger/service';
 import { createSetMockStore } from '@banx/core/store/utils';
 import { providerOf } from '@banx/core/testing';
 import { VisitorService } from '@banx/core/visitor/service';
 import { RegistrationFinishApiService } from '@banx/registration/finish/api';
+import { REGISTRATION_FINISH_RESPONSE_STUB } from '@banx/registration/finish/common';
 import { REGISTRATION_FORM_CREATE_STUB } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
-import { loadProcess } from '@banx/registration/process/state';
 
 import * as RegistrationUserActions from './registration-finish.actions';
 import { RegistrationFinishEffects } from './registration-finish.effects';
@@ -65,10 +66,10 @@ describe('RegistrationFinishEffects', () => {
   describe('finishRegistration$', () => {
     it('should return finishRegistrationSuccess', () => {
       const action = RegistrationUserActions.finishRegistration();
-      const completion = RegistrationUserActions.finishRegistrationSuccess();
+      const completion = RegistrationUserActions.finishRegistrationSuccess({ payload: REGISTRATION_FINISH_RESPONSE_STUB });
 
       actions = hot('-a-|', { a: action });
-      const response = cold('-a|', { a: null });
+      const response = cold('-a|', { a: REGISTRATION_FINISH_RESPONSE_STUB });
       const expected = cold('--a|', { a: completion });
 
       when(registrationFinishApiServiceMock.finish(PROCESS_ID_STUB)).thenReturn(response);
@@ -92,9 +93,9 @@ describe('RegistrationFinishEffects', () => {
   });
 
   describe('finishRegistrationSuccess$', () => {
-    it('should call loadProcess()', () => {
-      actions = hot('-a-|', { a: RegistrationUserActions.finishRegistrationSuccess() });
-      const expected = hot('-a-|', { a: loadProcess() });
+    it('should call loginSuccess()', () => {
+      actions = hot('-a-|', { a: RegistrationUserActions.finishRegistrationSuccess({ payload: REGISTRATION_FINISH_RESPONSE_STUB }) });
+      const expected = hot('-a-|', { a: loginSuccess({ payload: REGISTRATION_FINISH_RESPONSE_STUB }) });
 
       expect(effects.finishRegistrationSuccess$).toBeObservable(expected);
     });

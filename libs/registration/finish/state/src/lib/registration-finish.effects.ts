@@ -4,11 +4,12 @@ import { select, Store } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
 import { map, take, withLatestFrom } from 'rxjs/operators';
 
+import { loginSuccess } from '@banx/auth/state';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationFinishApiService } from '@banx/registration/finish/api';
-import { loadProcess, selectProcessId } from '@banx/registration/process/state';
+import { selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationFinishActions from './registration-finish.actions';
 import { RegistrationFinishPartialState } from './registration-finish.reducer';
@@ -41,7 +42,7 @@ export class RegistrationFinishEffects {
       ofType(RegistrationFinishActions.finishRegistrationSuccess),
       fetch({
         id: () => 'registration-finish-success',
-        run: () => loadProcess(),
+        run: ({ payload }) => loginSuccess({ payload }),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )
