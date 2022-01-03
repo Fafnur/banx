@@ -1,13 +1,21 @@
-<banx-registration-card>
-  <banx-registration-card-title>Обработка данных</banx-registration-card-title>
-  <banx-registration-card-content>Пожалуйста, подождите ...</banx-registration-card-content>
-  <banx-registration-card-errors *ngIf="isShowError">
+<banx-registration-card automation-id="card">
+  <banx-registration-card-title automation-id="title">Обработка данных</banx-registration-card-title>
+  <banx-registration-card-content automation-id="content">Пожалуйста, подождите ...</banx-registration-card-content>
+  <banx-registration-card-errors automation-id="error" *ngIf="isShowError">
     <banx-registration-step-error></banx-registration-step-error>
   </banx-registration-card-errors>
-  <banx-registration-card-actions *ngIf="!submitted">
-    <button mat-raised-button banx-button-medium type="button" color="primary" [disabled]="submitted" (click)="onClick()">
+  <banx-registration-card-actions automation-id="actions" *ngIf="!submitted">
+    <button
+      automation-id="submit"
+      mat-raised-button
+      banx-button-medium
+      type="button"
+      color="primary"
+      [disabled]="submitted"
+      (click)="onClick()"
+    >
       Продолжить
     </button>
   </banx-registration-card-actions>
-  <banx-spinner *ngIf="submitted"></banx-spinner>
+  <banx-spinner automation-id="spinner" *ngIf="submitted"></banx-spinner>
 </banx-registration-card>
