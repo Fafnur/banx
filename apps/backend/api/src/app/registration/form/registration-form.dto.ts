@@ -14,7 +14,7 @@ import {
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
 import { RussianRegistrationForm } from '@banx/russian/registration/form/common';
 
-export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm, 'smsCode'>> {
+export class RegistrationFormDto implements Partial<RussianRegistrationForm> {
   @IsNotEmpty({
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },
     groups: [RegistrationFormSubSteps.Personal],
@@ -144,6 +144,12 @@ export class RegistrationFormDto implements Partial<Omit<RussianRegistrationForm
     groups: [RegistrationFormSubSteps.Personal],
   })
   passportBirthplace!: string;
+
+  @IsOptional({
+    context: { errorCode: RegistrationErrorCode.IsOptional },
+    groups: [RegistrationFormSubSteps.Sms],
+  })
+  smsCode!: string;
 
   @IsNotEmpty({
     context: { errorCode: RegistrationErrorCode.IsNotEmpty },

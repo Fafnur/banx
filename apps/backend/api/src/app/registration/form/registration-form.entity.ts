@@ -16,7 +16,7 @@ import { RussianRegistrationForm } from '@banx/russian/registration/form/common'
 @Entity({
   name: 'registration_form',
 })
-export class RegistrationFormEntity implements Nullable<Omit<RussianRegistrationForm, 'smsCode'>> {
+export class RegistrationFormEntity implements Nullable<RussianRegistrationForm> {
   @PrimaryColumn({
     length: 36,
   })
@@ -282,6 +282,13 @@ export class RegistrationFormEntity implements Nullable<Omit<RussianRegistration
     nullable: true,
   })
   passportBirthplace!: string | null;
+
+  @Column({
+    name: 'sms_code',
+    type: 'tinytext',
+    nullable: true,
+  })
+  smsCode!: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt!: string;
