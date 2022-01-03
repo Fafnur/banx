@@ -9,7 +9,6 @@ import {
   RegistrationMinimalDesiredAmountModule,
   RegistrationOwnCarModule,
 } from '@banx/registration/form/ui/fields';
-import { GridModule } from '@banx/ui/grid';
 
 import { RegistrationFormAdditionalPageComponent } from './registration-form-additional-page.component';
 import { RegistrationFormAdditionalPageRoutingModule } from './registration-form-additional-page-routing.module';
@@ -21,7 +20,6 @@ import { RegistrationFormAdditionalPageRoutingModule } from './registration-form
     ReactiveFormsModule,
     FormsSharedModule,
     RegistrationFormCardModule,
-    GridModule,
     RegistrationMinimalDesiredAmountModule,
     RegistrationOwnCarModule,
     RegistrationDriverLicenseModule,

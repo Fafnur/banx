@@ -20,8 +20,7 @@ export class RegistrationPassportIssueDateComponent implements OnInit {
   @Input() control!: FormControl;
   readonly maskControl = new FormControl(null, [Validators.required, Validators.minLength(8)]);
 
-  readonly type = RussianRegistrationFormField.PassportIssueDate;
-  readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[RussianRegistrationFormField.PassportIssueDate];
   readonly maxDate = getMaxDate();
   readonly minDate = getMinDate();
 

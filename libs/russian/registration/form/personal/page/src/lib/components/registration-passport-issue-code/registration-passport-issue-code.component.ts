@@ -12,6 +12,5 @@ import { RUSSIAN_REGISTRATION_FORM_FIELD_IDS, RussianRegistrationFormField } fro
 export class RegistrationPassportIssueCodeComponent {
   @Input() control!: FormControl;
 
-  readonly type = RussianRegistrationFormField.PassportIssueCode;
-  readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[this.type];
+  readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[RussianRegistrationFormField.PassportIssueCode];
 }
