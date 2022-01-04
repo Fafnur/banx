@@ -2,12 +2,14 @@ import { CommonModule } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
 import { ReplaySubject } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
+import { SocialSharedModule } from '@banx/core/social/shared';
 import { providerOf } from '@banx/core/testing';
 import { RegistrationSocialFacade } from '@banx/registration/social/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
@@ -35,9 +37,11 @@ describe('RegistrationSocialPageComponent', () => {
         NoopAnimationsModule,
         RouterTestingModule,
         SpinnerModule,
+        MockModule(MatIconModule),
         MockModule(MatButtonModule),
         MockModule(RegistrationCardModule),
         MockModule(RegistrationStepErrorModule),
+        MockModule(SocialSharedModule),
       ],
       declarations: [RegistrationSocialPageComponent],
       providers: [providerOf(RegistrationSocialFacade, registrationSocialFacadeMock)],
@@ -60,8 +64,11 @@ describe('RegistrationSocialPageComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.titleText).toBe('Обработка данных');
-    expect(pageObject.contentText).toBe('Пожалуйста, подождите ...');
+    expect(pageObject.titleText).toBe('Социальные сети и сервисы');
+    expect(pageObject.contentText).toBe(
+      // eslint-disable-next-line max-len
+      'Привяжите профили одной или нескольких социальных сетей. Этим вы увеличиваете шанс одобрения займа и его максимальную сумму. Мы рекомендуем привязать как можно больше профилей.'
+    );
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.actions).toBeTruthy();
     expect(pageObject.submit).toBeTruthy();

@@ -63,8 +63,11 @@ describe('RegistrationDataPageComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.titleText).toBe('Обработка данных');
-    expect(pageObject.contentText).toBe('Пожалуйста, подождите ...');
+    expect(pageObject.titleText).toBe('Местоположение');
+    expect(pageObject.contentText).toBe(
+      // eslint-disable-next-line max-len
+      'После нажатия на кнопку «Продолжить» будет запрошено ваше местоположение. В диалоговом окне вашего браузера нажмите «Разрешить» или «Сообщить местоположение».'
+    );
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.actions).toBeTruthy();
     expect(pageObject.submit).toBeTruthy();

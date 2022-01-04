@@ -37,10 +37,11 @@ describe('RegistrationFormAdditionalPageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(RegistrationFormAdditionalPageComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
+
     expect(component).toBeTruthy();
   });
 });

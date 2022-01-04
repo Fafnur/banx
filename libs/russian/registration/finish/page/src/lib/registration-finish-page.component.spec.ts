@@ -8,7 +8,11 @@ import { MockModule } from 'ng-mocks';
 import { ReplaySubject } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
+import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
+import { NavigationService } from '@banx/core/navigation/service';
+import { NavigationSharedModule } from '@banx/core/navigation/shared';
 import { providerOf } from '@banx/core/testing';
+import { RegistrationFinishResponse } from '@banx/registration/finish/common';
 import { RegistrationFinishFacade } from '@banx/registration/finish/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
 import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
@@ -22,10 +26,14 @@ describe('RegistrationFinishPageComponent', () => {
   let fixture: ComponentFixture<RegistrationFinishPageComponent>;
   let registrationFinishFacadeMock: RegistrationFinishFacade;
   let finishRegistrationFailure$: ReplaySubject<HttpErrorResponse>;
+  let finishRegistrationSuccess$: ReplaySubject<RegistrationFinishResponse>;
+  let navigationServiceMock: NavigationService;
 
   beforeEach(() => {
     registrationFinishFacadeMock = mock(RegistrationFinishFacade);
+    navigationServiceMock = mock(NavigationService);
     finishRegistrationFailure$ = new ReplaySubject<HttpErrorResponse>(1);
+    finishRegistrationSuccess$ = new ReplaySubject<RegistrationFinishResponse>(1);
   });
 
   beforeEach(async () => {
@@ -38,14 +46,17 @@ describe('RegistrationFinishPageComponent', () => {
         MockModule(MatButtonModule),
         MockModule(RegistrationCardModule),
         MockModule(RegistrationStepErrorModule),
+        MockModule(NavigationSharedModule),
       ],
       declarations: [RegistrationFinishPageComponent],
-      providers: [providerOf(RegistrationFinishFacade, registrationFinishFacadeMock)],
+      providers: [providerOf(RegistrationFinishFacade, registrationFinishFacadeMock), providerOf(NavigationService, navigationServiceMock)],
     }).compileComponents();
   });
 
   beforeEach(() => {
+    when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
     when(registrationFinishFacadeMock.finishRegistrationFailure$).thenReturn(finishRegistrationFailure$);
+    when(registrationFinishFacadeMock.finishRegistrationSuccess$).thenReturn(finishRegistrationSuccess$);
 
     fixture = TestBed.createComponent(RegistrationFinishPageComponent);
     pageObject = new RegistrationFinishPageComponentPo(fixture);
@@ -63,8 +74,8 @@ describe('RegistrationFinishPageComponent', () => {
     expect(pageObject.titleText).toBe('Обработка данных');
     expect(pageObject.contentText).toBe('Пожалуйста, подождите ...');
     expect(pageObject.card).toBeTruthy();
-    expect(pageObject.actions).toBeTruthy();
-    expect(pageObject.submit).toBeTruthy();
-    expect(pageObject.spinner).toBeNull();
+    expect(pageObject.actions).toBeNull();
+    expect(pageObject.submit).toBeNull();
+    expect(pageObject.spinner).toBeTruthy();
   });
 });

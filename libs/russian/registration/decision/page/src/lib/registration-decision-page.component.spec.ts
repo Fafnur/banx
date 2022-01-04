@@ -63,8 +63,8 @@ describe('RegistrationDecisionPageComponent', () => {
     expect(pageObject.titleText).toBe('Обработка данных');
     expect(pageObject.contentText).toBe('Пожалуйста, подождите ...');
     expect(pageObject.card).toBeTruthy();
-    expect(pageObject.actions).toBeTruthy();
-    expect(pageObject.submit).toBeTruthy();
-    expect(pageObject.spinner).toBeNull();
+    expect(pageObject.actions).toBeNull();
+    expect(pageObject.submit).toBeNull();
+    expect(pageObject.spinner).toBeTruthy();
   });
 });
