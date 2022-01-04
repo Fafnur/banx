@@ -5,9 +5,11 @@ export function castRegistrationForm(form: RegistrationForm | RegistrationForm[]
   const forms = Array.isArray(form) ? form : form != null ? [form] : [];
 
   for (const formItem of forms) {
-    for (const key of Object.keys(formItem)) {
-      if (formItem[key] != null && ((typeof formItem[key] !== 'string' && typeof formItem[key] !== 'number') || formItem[key].length)) {
-        registrationForm[key] = formItem[key];
+    if (formItem) {
+      for (const key of Object.keys(formItem)) {
+        if (formItem[key] != null && ((typeof formItem[key] !== 'string' && typeof formItem[key] !== 'number') || formItem[key].length)) {
+          registrationForm[key] = formItem[key];
+        }
       }
     }
   }

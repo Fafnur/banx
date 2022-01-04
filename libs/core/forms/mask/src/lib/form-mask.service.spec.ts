@@ -20,6 +20,6 @@ describe('FormMaskService', () => {
   });
 
   it('should return mask', () => {
-    expect(service.getPhoneMask()).toBe('+{7} 000 000-00-00');
+    expect(service.getPhoneMask()).toEqual({ mask: '+0 000 000 0000' });
   });
 });

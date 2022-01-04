@@ -15,7 +15,7 @@ import { RegistrationRegionComponent } from './registration-region.component';
 import { RegistrationRegionComponentPo } from './registration-region.component.po';
 
 @Component({
-  template: `<banx-registration-city automation-id="form" [control]="control"></banx-registration-city>`,
+  template: `<banx-registration-region automation-id="form" [control]="control"></banx-registration-region>`,
 })
 class WrapperComponent {
   control = new FormControl(null, [Validators.required]);
@@ -55,8 +55,8 @@ describe('RegistrationRegionComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.idText).toBe('City');
-    expect(pageObject.labelText).toBe('City');
+    expect(pageObject.idText).toBe('Region');
+    expect(pageObject.labelText).toBe('Region');
     expect(pageObject.formField).toBeTruthy();
     expect(pageObject.control).toBeTruthy();
     expect(pageObject.hasInputTrackAttr).toBeTruthy();

@@ -1,7 +1,8 @@
 import { Action } from '@ngrx/store';
 
+import { HTTP_ERROR_STUB } from '@banx/core/api/service';
 import { createStateMock } from '@banx/core/store/utils';
-import { REGISTRATION_FORM_STUB } from '@banx/registration/form/common';
+import { REGISTRATION_FORM_STUB, REGISTRATION_FORM_VALIDATE_STUB } from '@banx/registration/form/common';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { reducer, registrationFormInitialState, RegistrationFormState } from './registration-form.reducer';
@@ -31,7 +32,7 @@ describe('RegistrationForm Reducer', () => {
   });
 
   it('loadFormFailure() should set formLoading false', () => {
-    const action = RegistrationFormActions.loadFormFailure({ payload: {} });
+    const action = RegistrationFormActions.loadFormFailure({ payload: HTTP_ERROR_STUB });
     const result = reducer(state, action);
 
     expect(result.formLoaded).toBeTruthy();
@@ -39,7 +40,7 @@ describe('RegistrationForm Reducer', () => {
   });
 
   it('createForm() should set formCreating true', () => {
-    const action = RegistrationFormActions.createForm({ payload: REGISTRATION_FORM_STUB });
+    const action = RegistrationFormActions.createForm();
     const result = reducer(state, action);
 
     expect(result.formCreating).toBeTruthy();
@@ -53,14 +54,14 @@ describe('RegistrationForm Reducer', () => {
   });
 
   it('createFormFailure() should set formCreating false', () => {
-    const action = RegistrationFormActions.createFormFailure({ payload: {} });
+    const action = RegistrationFormActions.createFormFailure({ payload: HTTP_ERROR_STUB });
     const result = reducer(state, action);
 
     expect(result.formCreating).toBeFalsy();
   });
 
   it('validateForm() should set formCreating true', () => {
-    const action = RegistrationFormActions.validateForm({ payload: REGISTRATION_FORM_STUB });
+    const action = RegistrationFormActions.validateForm({ payload: REGISTRATION_FORM_VALIDATE_STUB });
     const result = reducer(state, action);
 
     expect(result.formValidating).toBeTruthy();
@@ -74,7 +75,7 @@ describe('RegistrationForm Reducer', () => {
   });
 
   it('validateFormFailure() should set formCreating false', () => {
-    const action = RegistrationFormActions.validateFormFailure({ payload: {} });
+    const action = RegistrationFormActions.validateFormFailure({ payload: HTTP_ERROR_STUB });
     const result = reducer(state, action);
 
     expect(result.formValidating).toBeFalsy();

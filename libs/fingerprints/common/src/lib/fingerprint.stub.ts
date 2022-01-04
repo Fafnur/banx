@@ -7,6 +7,7 @@ export const FONTS_FINGERPRINT_STUB: FontsFingerprint = {
 export const FONTS_FINGERPRINT_DTO_STUB: FingerprintDto<any> = {
   visitor: '123456',
   data: FONTS_FINGERPRINT_STUB,
+  process: '123456',
 };
 
 export const CANVAS_FINGERPRINT_STUB: CanvasFingerprint = {
@@ -18,6 +19,7 @@ export const CANVAS_FINGERPRINT_STUB: CanvasFingerprint = {
 export const CANVAS_FINGERPRINT_DTO_STUB: FingerprintDto<CanvasFingerprint> = {
   visitor: '123456',
   data: CANVAS_FINGERPRINT_STUB,
+  process: '123456',
 };
 
 export const GEOLOCATION_COORDINATES_STUB: GeolocationCoordinates = {
@@ -33,4 +35,5 @@ export const GEOLOCATION_COORDINATES_STUB: GeolocationCoordinates = {
 export const GEOLOCATION_FINGERPRINT_DTO_STUB: FingerprintDto<GeolocationCoordinates> = {
   visitor: '123456',
   data: GEOLOCATION_COORDINATES_STUB,
+  process: '123456',
 };

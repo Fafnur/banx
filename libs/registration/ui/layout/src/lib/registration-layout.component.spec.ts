@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 import { anything, mock, when } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
+import { RegistrationProcessFacade } from '@banx/registration/process/state';
 import { ContainerModule } from '@banx/ui/container';
 import { GridModule, GridService } from '@banx/ui/grid';
 
@@ -15,10 +16,12 @@ import { RegistrationLayoutComponentPo } from './registration-layout.component.p
 describe('RegistrationLayoutComponent', () => {
   let pageObject: RegistrationLayoutComponentPo;
   let fixture: ComponentFixture<RegistrationLayoutComponent>;
+  let registrationProcessFacadeMock: RegistrationProcessFacade;
   let gridServiceMock: GridService;
   let up$: BehaviorSubject<boolean>;
 
   beforeEach(() => {
+    registrationProcessFacadeMock = mock(RegistrationProcessFacade);
     gridServiceMock = mock(GridService);
 
     up$ = new BehaviorSubject<boolean>(false);
@@ -29,7 +32,7 @@ describe('RegistrationLayoutComponent', () => {
       void TestBed.configureTestingModule({
         imports: [CommonModule, RouterTestingModule, MockModule(GridModule), MockModule(ContainerModule)],
         declarations: [RegistrationLayoutComponent],
-        providers: [providerOf(GridService, gridServiceMock)],
+        providers: [providerOf(GridService, gridServiceMock), providerOf(RegistrationProcessFacade, registrationProcessFacadeMock)],
       }).compileComponents();
     })
   );

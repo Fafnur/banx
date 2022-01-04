@@ -71,7 +71,10 @@ export class RegistrationFormEffects implements OnInitEffects {
                 .pipe(map(() => RegistrationFormActions.createFormSuccess()))
             : undefined,
         onError: (action, error) =>
-          this.loggerService.logEffect({ context: { action, error } }, RegistrationFormActions.createFormFailure({ payload: error })),
+          this.loggerService.logEffect(
+            { context: { action, error }, debug: true },
+            RegistrationFormActions.createFormFailure({ payload: error })
+          ),
       })
     )
   );

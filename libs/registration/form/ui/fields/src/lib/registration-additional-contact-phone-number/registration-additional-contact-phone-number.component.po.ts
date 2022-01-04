@@ -28,6 +28,6 @@ export class RegistrationAdditionalContactPhoneNumberComponentPo extends PageObj
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
   }
 }

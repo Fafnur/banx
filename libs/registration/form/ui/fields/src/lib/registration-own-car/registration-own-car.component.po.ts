@@ -38,10 +38,10 @@ export class RegistrationOwnCarComponentPo extends PageObject {
   }
 
   get hasYesTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.RadioYes)?.attributes?.banxRadioTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.RadioYes)?.attributes?.banxRadioTrack != null ?? false;
   }
 
   get hasNoTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.RadioNo)?.attributes?.banxRadioTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.RadioNo)?.attributes?.banxRadioTrack != null ?? false;
   }
 }

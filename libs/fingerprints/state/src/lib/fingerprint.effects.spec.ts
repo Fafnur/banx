@@ -1,6 +1,7 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action } from '@ngrx/store';
+import { provideMockStore } from '@ngrx/store/testing';
 import { NxModule } from '@nrwl/angular';
 import { cold, hot } from 'jasmine-marbles';
 import { Observable, of } from 'rxjs';
@@ -20,6 +21,7 @@ import {
   GEOLOCATION_FINGERPRINT_DTO_STUB,
 } from '@banx/fingerprints/common';
 import { CanvasDetectorService, FontDetectorService, GeolocationDetectorService } from '@banx/fingerprints/service';
+import { PROCESS_ID_STUB } from '@banx/registration/process/common';
 
 import * as FingerprintActions from './fingerprint.actions';
 import { FingerprintEffects } from './fingerprint.effects';
@@ -50,6 +52,9 @@ describe('FingerprintEffects', () => {
         providers: [
           FingerprintEffects,
           provideMockActions(() => actions$),
+          provideMockStore({
+            initialState: { registrationProcess: { processId: PROCESS_ID_STUB } },
+          }),
           providerOf(FingerprintApiService, fingerprintApiServiceMock),
           providerOf(FontDetectorService, fontDetectorServiceMock),
           providerOf(LoggerService, loggerServiceMock),

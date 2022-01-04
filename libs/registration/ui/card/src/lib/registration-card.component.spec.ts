@@ -8,9 +8,9 @@ describe('RegistrationCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RegistrationCardComponent ]
-    })
-    .compileComponents();
+      imports: [],
+      declarations: [RegistrationCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

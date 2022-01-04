@@ -7,27 +7,27 @@ import { map } from 'rxjs/operators';
 
 import { UserStatus } from '@banx/users/common';
 
-import * as RegistrationUserActions from './registration-finish.actions';
-import * as RegistrationUserSelectors from './registration-finish.selectors';
+import * as RegistrationFinishActions from './registration-finish.actions';
+import * as RegistrationFinishSelectors from './registration-finish.selectors';
 
 @Injectable()
 export class RegistrationFinishFacade {
-  registrationFinishing$ = this.store.pipe(select(RegistrationUserSelectors.selectRegistrationFinishing));
+  registrationFinishing$ = this.store.pipe(select(RegistrationFinishSelectors.selectRegistrationFinishing));
 
   finishRegistrationFailure$: Observable<HttpErrorResponse> = this.actions$.pipe(
-    ofType(RegistrationUserActions.finishRegistrationFailure),
+    ofType(RegistrationFinishActions.finishRegistrationFailure),
     map(({ payload }) => payload)
   );
 
   finishRegistrationSuccess$: Observable<{ status: UserStatus }> = this.actions$.pipe(
-    ofType(RegistrationUserActions.finishRegistrationSuccess),
+    ofType(RegistrationFinishActions.finishRegistrationSuccess),
     map(({ payload }) => payload)
   );
 
   constructor(private readonly actions$: Actions, private readonly store: Store) {}
 
   finish(): void {
-    this.dispatch(RegistrationUserActions.finishRegistration());
+    this.dispatch(RegistrationFinishActions.finishRegistration());
   }
 
   private dispatch(action: Action): void {

@@ -3,7 +3,7 @@ import {
   RegistrationFormCreate,
   RegistrationFormFieldValidate,
   RegistrationFormValidate,
-} from '@banx/registration/form/common';
+} from './registration-form.interface';
 
 export const REGISTRATION_FORM_STUB: RegistrationForm = {
   firstName: 'Ivan',

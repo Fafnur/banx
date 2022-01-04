@@ -55,8 +55,8 @@ describe('RegistrationAddressLineComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.idText).toBe('Address line');
-    expect(pageObject.labelText).toBe('Your address');
+    expect(pageObject.idText).toBe('AddressLine');
+    expect(pageObject.labelText).toBe('Address line');
     expect(pageObject.formField).toBeTruthy();
     expect(pageObject.control).toBeTruthy();
     expect(pageObject.hasInputTrackAttr).toBeTruthy();

@@ -6,7 +6,7 @@ import {
   RegistrationFinishPartialState,
   RegistrationFinishState,
 } from './registration-finish.reducer';
-import * as RegistratioFinishSelectors from './registration-finish.selectors';
+import * as RegistrationFinishSelectors from './registration-finish.selectors';
 
 describe('RegistrationFinish Selectors', () => {
   const getStore = createStoreMock<RegistrationFinishState, RegistrationFinishPartialState>(
@@ -17,7 +17,7 @@ describe('RegistrationFinish Selectors', () => {
 
   it('selectUserCreating() should return userCreating', () => {
     store = getStore({ registrationFinishing: true });
-    const results = RegistratioFinishSelectors.selectRegistrationFinishing(store);
+    const results = RegistrationFinishSelectors.selectRegistrationFinishing(store);
 
     expect(results).toBeTruthy();
   });

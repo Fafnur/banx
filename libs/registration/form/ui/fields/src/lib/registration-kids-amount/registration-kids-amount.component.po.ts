@@ -28,6 +28,6 @@ export class RegistrationKidsAmountComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.Select)?.attributes?.banxSelectTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Select)?.attributes?.banxSelectTrack != null ?? false;
   }
 }

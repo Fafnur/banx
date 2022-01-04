@@ -30,7 +30,7 @@ import {
   RegistrationProcessState,
 } from './registration-process.reducer';
 
-describe('RegistrationStepEffects', () => {
+describe('RegistrationProcessEffects', () => {
   let setStore: (params: Partial<RegistrationProcessState>) => void;
 
   let actions: Observable<any>;
@@ -148,7 +148,7 @@ describe('RegistrationStepEffects', () => {
       setStore({ ...createEntityState([REGISTRATION_STEP_DTO_STUB]), subStep: 'personal' });
       const action = RegistrationProcessActions.selectSubStep({ payload: 'next' });
       const completion = RegistrationProcessActions.selectSubStepSuccess({
-        payload: { step: REGISTRATION_STEP_STUB, subStep: 'family' },
+        payload: { step: REGISTRATION_STEP_STUB, subStep: 'sms' },
       });
 
       actions = hot('-a-|', { a: action });

@@ -85,7 +85,9 @@ describe('RegistrationFormApiService', () => {
           expect(data).toBeNull();
         },
       });
-      const req = httpTestingController.expectOne(REGISTRATION_FORM_API_ROUTES.validate(PROCESS_ID_STUB));
+      const req = httpTestingController.expectOne(
+        REGISTRATION_FORM_API_ROUTES.validate(PROCESS_ID_STUB, REGISTRATION_FORM_VALIDATE_STUB.subStep)
+      );
       expect(req.request.method).toEqual('POST');
 
       req.flush(null);
@@ -95,7 +97,9 @@ describe('RegistrationFormApiService', () => {
       service.validate(PROCESS_ID_STUB, REGISTRATION_FORM_VALIDATE_STUB).subscribe({
         error: (data) => expect(data.error).toEqual(API_ERROR_STUB),
       });
-      const req = httpTestingController.expectOne(REGISTRATION_FORM_API_ROUTES.validate(PROCESS_ID_STUB));
+      const req = httpTestingController.expectOne(
+        REGISTRATION_FORM_API_ROUTES.validate(PROCESS_ID_STUB, REGISTRATION_FORM_VALIDATE_STUB.subStep)
+      );
       req.flush(API_ERROR_STUB, API_ERROR_RESPONSE_STUB);
     });
   });

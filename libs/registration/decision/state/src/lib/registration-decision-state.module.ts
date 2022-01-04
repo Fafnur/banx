@@ -6,12 +6,12 @@ import { RegistrationDecisionApiModule } from '@banx/registration/decision/api';
 
 import { RegistrationDecisionEffects } from './registration-decision.effects';
 import { RegistrationDecisionFacade } from './registration-decision.facade';
-import * as fromRegistrationData from './registration-decision.reducer';
+import { reducer, REGISTRATION_DECISION_FEATURE_KEY } from './registration-decision.reducer';
 
 @NgModule({
   imports: [
     RegistrationDecisionApiModule,
-    StoreModule.forFeature(fromRegistrationData.REGISTRATION_DECISION_FEATURE_KEY, fromRegistrationData.reducer),
+    StoreModule.forFeature(REGISTRATION_DECISION_FEATURE_KEY, reducer),
     EffectsModule.forFeature([RegistrationDecisionEffects]),
   ],
   providers: [RegistrationDecisionFacade],

@@ -5,6 +5,7 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { IMaskModule } from 'angular-imask';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
@@ -36,6 +37,7 @@ describe('RegistrationMonthlyIncomeComponent', () => {
         MockModule(FormsSharedModule),
         MockModule(TrackersSharedModule),
         MockModule(RegistrationFormErrorsModule),
+        MockModule(IMaskModule),
       ],
       declarations: [RegistrationMonthlyIncomeComponent, WrapperComponent],
     }).compileComponents();

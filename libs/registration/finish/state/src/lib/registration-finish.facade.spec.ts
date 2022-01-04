@@ -15,7 +15,7 @@ import { RegistrationFinishEffects } from './registration-finish.effects';
 import { RegistrationFinishFacade } from './registration-finish.facade';
 import { reducer, REGISTRATION_FINISH_FEATURE_KEY } from './registration-finish.reducer';
 
-describe('RegistrationDataFacade', () => {
+describe('RegistrationFinishFacade', () => {
   let facade: RegistrationFinishFacade;
   let registrationFinishApiServiceMock: RegistrationFinishApiService;
   let loggerServiceMock: LoggerService;

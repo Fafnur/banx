@@ -50,9 +50,7 @@ describe('RegistrationFormFacade', () => {
         imports: [
           StoreModule.forRoot(
             {
-              registrationProcess: () => ({
-                processId: PROCESS_ID_STUB,
-              }),
+              registrationProcess: reducer as any,
             },
             {
               initialState: {
@@ -83,7 +81,7 @@ describe('RegistrationFormFacade', () => {
       let form = await readFirst(facade.form$);
       let formLoaded = await readFirst(facade.formLoaded$);
 
-      expect(form).toBeNull();
+      expect(form).toEqual({});
       expect(formLoaded).toBeFalsy();
 
       facade.load();

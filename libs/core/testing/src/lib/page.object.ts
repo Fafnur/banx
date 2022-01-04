@@ -12,8 +12,8 @@ export class PageObject<T = any> {
     this.fixture = fixture;
   }
 
-  protected getByAutomationId(automationId: string): DebugElement | null {
-    return this.fixture.debugElement.query(By.css(`[automation-id="${automationId}"]`)) ?? null;
+  protected getByAutomationId<R extends Record<string, any> = Record<string, any>>(automationId: string): (DebugElement & R) | null {
+    return (this.fixture.debugElement.query(By.css(`[automation-id="${automationId}"]`)) as DebugElement & R) ?? null;
   }
 
   protected getByAutomationIdNative(automationId: string): Node | null {
