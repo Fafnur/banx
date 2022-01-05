@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: NAVIGATION_PATHS.registration,
-        redirectTo: NAVIGATION_PATHS.registrationFormPersonal,
+        redirectTo: NAVIGATION_PATHS.registrationForm,
         pathMatch: 'full',
       },
       {

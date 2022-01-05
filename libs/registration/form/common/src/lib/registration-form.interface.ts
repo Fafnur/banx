@@ -1,3 +1,5 @@
+import { RegistrationFormSubSteps } from '@banx/registration/process/common';
+
 export enum RegistrationFormKeys {
   Form = 'registrationForm',
 }
@@ -299,4 +301,37 @@ export const REGISTRATION_FORM_FIELD_IDS: Record<RegistrationFormField, string> 
   [RegistrationFormField.DriverLicense]: 'DriverLicense',
   [RegistrationFormField.OwnCar]: 'OwnCar',
   [RegistrationFormField.MinimalDesiredAmount]: 'MinimalDesiredAmount',
+};
+
+export const REGISTRATION_FIELDS_FOR_COMPLETE: Record<RegistrationFormSubSteps, RegistrationFormField[]> = {
+  [RegistrationFormSubSteps.Personal]: [],
+  [RegistrationFormSubSteps.Sms]: [
+    RegistrationFormField.LastName,
+    RegistrationFormField.FirstName,
+    RegistrationFormField.MiddleName,
+    RegistrationFormField.Gender,
+    RegistrationFormField.Birthdate,
+    RegistrationFormField.Email,
+    RegistrationFormField.MobilePhone,
+    RegistrationFormField.Agreement,
+  ],
+  [RegistrationFormSubSteps.Family]: [RegistrationFormField.SmsCode],
+  [RegistrationFormSubSteps.Employment]: [
+    RegistrationFormField.Region,
+    RegistrationFormField.City,
+    RegistrationFormField.AddressLine,
+    RegistrationFormField.Postcode,
+    RegistrationFormField.HomeType,
+    RegistrationFormField.MaritalStatus,
+    RegistrationFormField.KidsAmount,
+    RegistrationFormField.DependentsAmount,
+    RegistrationFormField.AdditionalContactName,
+    RegistrationFormField.AdditionalContactType,
+    RegistrationFormField.AdditionalContactPhoneNumber,
+  ],
+  [RegistrationFormSubSteps.Additional]: [
+    RegistrationFormField.EmploymentType,
+    RegistrationFormField.EmployerName,
+    RegistrationFormField.MonthlyIncome,
+  ],
 };

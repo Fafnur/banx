@@ -1239,7 +1239,6 @@
       "architect": {
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/registration/finish/common"],
           "options": {
             "jestConfig": "libs/registration/finish/common/jest.config.js",
             "passWithNoTests": true
@@ -1251,8 +1250,7 @@
             "lintFilePatterns": ["libs/registration/finish/common/src/**/*.ts", "libs/registration/finish/common/src/**/*.html"]
           }
         }
-      },
-      "tags": []
+      }
     },
     "registration-finish-state": {
       "projectType": "library",
@@ -1313,6 +1311,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/registration/form/common/src/**/*.ts", "libs/registration/form/common/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-form-guards": {
+      "projectType": "library",
+      "root": "libs/registration/form/guards",
+      "sourceRoot": "libs/registration/form/guards/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/guards/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/form/guards/src/**/*.ts", "libs/registration/form/guards/src/**/*.html"]
           }
         }
       }
