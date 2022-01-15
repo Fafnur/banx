@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'russian-registration-form-family-page',
-  preset: '../../../../../../jest.preset.js',
+  displayName: 'registration-form-family-page',
+  preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../../../coverage/libs/russian/registration/form/family/page',
+  coverageDirectory: '../../../../../coverage/libs/registration/form/family/page',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
