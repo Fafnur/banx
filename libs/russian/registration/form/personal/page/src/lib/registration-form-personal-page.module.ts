@@ -14,17 +14,17 @@ import {
   RegistrationMiddleNameModule,
   RegistrationMobilePhoneModule,
 } from '@banx/registration/form/ui/fields';
+import {
+  RegistrationPassportBirthplaceModule,
+  RegistrationPassportIssueCodeModule,
+  RegistrationPassportIssueDateModule,
+  RegistrationPassportIssueNameModule,
+  RegistrationPassportSeriesNumberModule,
+} from '@banx/russian/registration/form/ui/fields';
 import { GridModule } from '@banx/ui/grid';
 
-/* eslint-disable max-len */
-import { RegistrationPassportBirthplaceModule } from './components/registration-passport-birthplace/registration-passport-birthplace.module';
-import { RegistrationPassportIssueCodeModule } from './components/registration-passport-issue-code/registration-passport-issue-code.module';
-import { RegistrationPassportIssueDateModule } from './components/registration-passport-issue-date/registration-passport-issue-date.module';
-import { RegistrationPassportIssueNameModule } from './components/registration-passport-issue-name/registration-passport-issue-name.module';
-import { RegistrationPassportSeriesNumberModule } from './components/registration-passport-series-number/registration-passport-series-number.module';
 import { RegistrationFormPersonalPageComponent } from './registration-form-personal-page.component';
 import { RegistrationFormPersonalPageRoutingModule } from './registration-form-personal-page-routing.module';
-/* eslint-enable max-len */
 
 @NgModule({
   imports: [

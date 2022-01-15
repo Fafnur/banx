@@ -21,8 +21,8 @@ export class RegistrationPassportIssueDateComponent implements OnInit {
   readonly maskControl = new FormControl(null, [Validators.required, Validators.minLength(8)]);
 
   readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[RussianRegistrationFormField.PassportIssueDate];
-  readonly maxDate = getMaxDate();
-  readonly minDate = getMinDate();
+  readonly maxDate: any = getMaxDate();
+  readonly minDate: any = getMinDate();
 
   readonly mask: AnyMaskedOptions = {
     mask: Date,

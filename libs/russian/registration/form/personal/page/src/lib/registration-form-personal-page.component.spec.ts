@@ -20,11 +20,11 @@ import {
 import { GridModule } from '@banx/ui/grid';
 
 /* eslint-disable max-len */
-import { RegistrationPassportBirthplaceModule } from './components/registration-passport-birthplace/registration-passport-birthplace.module';
-import { RegistrationPassportIssueCodeModule } from './components/registration-passport-issue-code/registration-passport-issue-code.module';
-import { RegistrationPassportIssueDateModule } from './components/registration-passport-issue-date/registration-passport-issue-date.module';
-import { RegistrationPassportIssueNameModule } from './components/registration-passport-issue-name/registration-passport-issue-name.module';
-import { RegistrationPassportSeriesNumberModule } from './components/registration-passport-series-number/registration-passport-series-number.module';
+import { RegistrationPassportBirthplaceModule } from '../../../../ui/fields/src/lib/registration-passport-birthplace/registration-passport-birthplace.module';
+import { RegistrationPassportIssueCodeModule } from '../../../../ui/fields/src/lib/registration-passport-issue-code/registration-passport-issue-code.module';
+import { RegistrationPassportIssueDateModule } from '../../../../ui/fields/src/lib/registration-passport-issue-date/registration-passport-issue-date.module';
+import { RegistrationPassportIssueNameModule } from '../../../../ui/fields/src/lib/registration-passport-issue-name/registration-passport-issue-name.module';
+import { RegistrationPassportSeriesNumberModule } from '../../../../ui/fields/src/lib/registration-passport-series-number/registration-passport-series-number.module';
 import { RegistrationFormPersonalPageComponent } from './registration-form-personal-page.component';
 /* eslint-enable max-len */
 
