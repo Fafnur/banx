@@ -1525,6 +1525,27 @@
         }
       }
     },
+    "registration-restart-page": {
+      "projectType": "library",
+      "root": "libs/registration/restart/page",
+      "sourceRoot": "libs/registration/restart/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/restart/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/restart/page/src/**/*.ts", "libs/registration/restart/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-social-api": {
       "projectType": "library",
       "root": "libs/registration/social/api",

@@ -34,6 +34,14 @@ const registrationProcessReducer = createReducer(
   on(RegistrationProcessActions.restore, (state, { payload }) => ({
     ...state,
     ...payload,
+    loaded: false,
+  })),
+  on(RegistrationProcessActions.restartProcess, (state) => ({
+    ...state,
+    processId: null,
+    subStep: null,
+    selected: null,
+    loaded: false,
   })),
   on(RegistrationProcessActions.loadProcess, (state) => ({
     ...state,

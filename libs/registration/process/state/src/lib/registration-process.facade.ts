@@ -51,6 +51,10 @@ export class RegistrationProcessFacade {
     this.dispatch(RegistrationProcessActions.loadProcess());
   }
 
+  restart(): void {
+    this.dispatch(RegistrationProcessActions.restartProcess());
+  }
+
   selectSubStep(payload: 'next' | 'prev' = 'next'): void {
     this.dispatch(RegistrationProcessActions.selectSubStep({ payload }));
   }
