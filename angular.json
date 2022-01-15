@@ -1210,6 +1210,27 @@
         }
       }
     },
+    "registration-decision-page": {
+      "projectType": "library",
+      "root": "libs/registration/decision/page",
+      "sourceRoot": "libs/registration/decision/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/decision/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/decision/page/src/**/*.ts", "libs/registration/decision/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-decision-state": {
       "projectType": "library",
       "root": "libs/registration/decision/state",
@@ -1584,6 +1605,27 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/registration/social/api/src/**/*.ts", "libs/registration/social/api/src/**/*.html"]
+          }
+        }
+      }
+    },
+    "registration-social-page": {
+      "projectType": "library",
+      "root": "libs/registration/social/page",
+      "sourceRoot": "libs/registration/social/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/social/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/social/page/src/**/*.ts", "libs/registration/social/page/src/**/*.html"]
           }
         }
       }
@@ -2050,30 +2092,6 @@
         }
       }
     },
-    "russian-registration-decision-page": {
-      "projectType": "library",
-      "root": "libs/russian/registration/decision/page",
-      "sourceRoot": "libs/russian/registration/decision/page/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/decision/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/russian/registration/decision/page/src/**/*.ts",
-              "libs/russian/registration/decision/page/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "russian-registration-finish-page": {
       "projectType": "library",
       "root": "libs/russian/registration/finish/page",
@@ -2274,27 +2292,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/registration/pages/src/**/*.ts", "libs/russian/registration/pages/src/**/*.html"]
-          }
-        }
-      }
-    },
-    "russian-registration-social-page": {
-      "projectType": "library",
-      "root": "libs/russian/registration/social/page",
-      "sourceRoot": "libs/russian/registration/social/page/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/social/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/registration/social/page/src/**/*.ts", "libs/russian/registration/social/page/src/**/*.html"]
           }
         }
       }

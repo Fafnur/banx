@@ -41,7 +41,7 @@ const routes: Routes = [
         data: {
           step: RegistrationStepType.Social,
         },
-        loadChildren: () => import('@banx/russian/registration/social/page').then((modules) => modules.RegistrationSocialPageModule),
+        loadChildren: () => import('@banx/registration/social/page').then((modules) => modules.RegistrationSocialPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationUser,
@@ -57,7 +57,7 @@ const routes: Routes = [
         data: {
           step: RegistrationStepType.Decision,
         },
-        loadChildren: () => import('@banx/russian/registration/decision/page').then((modules) => modules.RegistrationDecisionPageModule),
+        loadChildren: () => import('@banx/registration/decision/page').then((modules) => modules.RegistrationDecisionPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationConversion,
