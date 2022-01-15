@@ -33,7 +33,7 @@ const routes: Routes = [
         data: {
           step: RegistrationStepType.Data,
         },
-        loadChildren: () => import('@banx/russian/registration/data/page').then((modules) => modules.RegistrationDataPageModule),
+        loadChildren: () => import('@banx/registration/data/page').then((modules) => modules.RegistrationDataPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationSocial,

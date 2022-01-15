@@ -1,11 +1,16 @@
 <banx-registration-card automation-id="card">
-  <banx-registration-card-title automation-id="title">Местоположение</banx-registration-card-title>
-  <banx-registration-card-content automation-id="content">
-    После нажатия на кнопку «Продолжить» будет запрошено ваше местоположение. В диалоговом окне вашего браузера нажмите «Разрешить» или
-    «Сообщить местоположение».
+  <banx-registration-card-title automation-id="title" i18n="Registration step title|Registration location">
+    Location
+  </banx-registration-card-title>
+  <banx-registration-card-content automation-id="content" i18n="Registration step description|Registration location description">
+    After clicking on the «Continue» button, your location will be requested. In the dialog box of your browser, click «Allow».
   </banx-registration-card-content>
-  <banx-registration-card-content automation-id="content-loading" *ngIf="!isShowError && submitted">
-    Пожалуйста, подождите ...
+  <banx-registration-card-content
+    automation-id="content-loading"
+    i18n="Registration step content|Registration please wait"
+    *ngIf="!isShowError && submitted"
+  >
+    Please wait ...
   </banx-registration-card-content>
   <banx-registration-card-errors automation-id="errors" *ngIf="isShowError">
     <banx-registration-step-error></banx-registration-step-error>
@@ -17,10 +22,11 @@
       banx-button-medium
       type="button"
       color="primary"
+      i18n="Registration step action|Registration continue"
       [disabled]="submitted"
       (click)="onSubmit()"
     >
-      Продолжить
+      Continue
     </button>
   </banx-registration-card-actions>
   <banx-spinner automation-id="spinner" *ngIf="submitted"></banx-spinner>

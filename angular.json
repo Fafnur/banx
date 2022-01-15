@@ -1168,6 +1168,27 @@
         }
       }
     },
+    "registration-data-page": {
+      "projectType": "library",
+      "root": "libs/registration/data/page",
+      "sourceRoot": "libs/registration/data/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/data/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/data/page/src/**/*.ts", "libs/registration/data/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-data-state": {
       "projectType": "library",
       "root": "libs/registration/data/state",
@@ -2067,27 +2088,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/numerals/shared/src/**/*.ts", "libs/russian/numerals/shared/src/**/*.html"]
-          }
-        }
-      }
-    },
-    "russian-registration-data-page": {
-      "projectType": "library",
-      "root": "libs/russian/registration/data/page",
-      "sourceRoot": "libs/russian/registration/data/page/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/data/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/russian/registration/data/page/src/**/*.ts", "libs/russian/registration/data/page/src/**/*.html"]
           }
         }
       }
