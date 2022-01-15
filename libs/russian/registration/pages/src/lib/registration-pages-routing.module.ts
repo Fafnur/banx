@@ -73,7 +73,7 @@ const routes: Routes = [
         data: {
           step: RegistrationStepType.Finish,
         },
-        loadChildren: () => import('@banx/russian/registration/finish/page').then((modules) => modules.RegistrationFinishPageModule),
+        loadChildren: () => import('@banx/registration/finish/page').then((modules) => modules.RegistrationFinishPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationRestart,
