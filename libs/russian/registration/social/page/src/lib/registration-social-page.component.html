@@ -11,6 +11,9 @@
       </a>
     </div>
   </banx-registration-card-content>
+  <banx-registration-card-content automation-id="content" *ngIf="!isShowError && submitted"
+    >Пожалуйста, подождите ...</banx-registration-card-content
+  >
   <banx-registration-card-errors automation-id="errors" *ngIf="isShowError">
     <banx-registration-step-error></banx-registration-step-error>
   </banx-registration-card-errors>
@@ -22,7 +25,7 @@
       type="button"
       color="primary"
       [disabled]="submitted"
-      (click)="onClick()"
+      (click)="onSubmit()"
     >
       Продолжить
     </button>

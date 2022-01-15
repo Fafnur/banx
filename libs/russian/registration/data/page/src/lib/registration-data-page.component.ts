@@ -42,7 +42,7 @@ export class RegistrationDataPageComponent implements OnInit {
       .subscribe();
   }
 
-  onClick(): void {
+  onSubmit(): void {
     if (!this.submitted) {
       this.submitted = true;
       this.isShowError = false;

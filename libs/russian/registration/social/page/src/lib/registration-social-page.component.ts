@@ -37,7 +37,7 @@ export class RegistrationSocialPageComponent implements OnInit {
       .subscribe();
   }
 
-  onClick(): void {
+  onSubmit(): void {
     if (!this.submitted) {
       this.submitted = true;
       this.isShowError = false;

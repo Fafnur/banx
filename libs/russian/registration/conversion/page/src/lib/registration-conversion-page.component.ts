@@ -42,14 +42,14 @@ export class RegistrationConversionPageComponent implements OnInit {
           if (!(result instanceof HttpErrorResponse)) {
             // TODO: Send google analytics
           }
-          this.onClick();
+          this.onSubmit();
         }),
         takeUntil(this.destroy$)
       )
       .subscribe();
   }
 
-  onClick(): void {
+  onSubmit(): void {
     if (!this.submitted) {
       this.submitted = true;
       this.registrationConversionFacade.complete();

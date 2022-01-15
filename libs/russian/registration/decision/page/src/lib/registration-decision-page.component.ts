@@ -33,10 +33,10 @@ export class RegistrationDecisionPageComponent implements OnInit {
       )
       .subscribe();
 
-    this.onClick();
+    this.onSubmit();
   }
 
-  onClick(): void {
+  onSubmit(): void {
     if (!this.submitted) {
       this.submitted = true;
       this.registrationDecisionFacade.makeDecision();
