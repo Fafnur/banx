@@ -12,11 +12,6 @@ const routes: Routes = [
     path: '',
     component: RegistrationFormLayoutComponent,
     children: [
-      // {
-      //   path: '',
-      //   redirectTo: RegistrationFormSubSteps.Personal,
-      //   pathMatch: 'full',
-      // },
       {
         path: RegistrationFormSubSteps.Personal,
         loadChildren: () =>

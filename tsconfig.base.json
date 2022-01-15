@@ -87,6 +87,7 @@
       "@banx/registration/form/employment/page": ["libs/registration/form/employment/page/src/index.ts"],
       "@banx/registration/form/family/page": ["libs/registration/form/family/page/src/index.ts"],
       "@banx/registration/form/guards": ["libs/registration/form/guards/src/index.ts"],
+      "@banx/registration/form/personal/page": ["libs/registration/form/personal/page/src/index.ts"],
       "@banx/registration/form/sms/page": ["libs/registration/form/sms/page/src/index.ts"],
       "@banx/registration/form/state": ["libs/registration/form/state/src/index.ts"],
       "@banx/registration/form/ui/card": ["libs/registration/form/ui/card/src/index.ts"],

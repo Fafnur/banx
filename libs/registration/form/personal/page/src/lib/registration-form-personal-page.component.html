@@ -1,0 +1,25 @@
+<banx-registration-form-card [first]="true" [form]="form" [step]="step">
+  <banx-registration-last-name [control]="form | extractFormControl: fields.LastName"></banx-registration-last-name>
+  <banx-registration-first-name [control]="form | extractFormControl: fields.FirstName"></banx-registration-first-name>
+  <banx-registration-middle-name [control]="form | extractFormControl: fields.MiddleName"></banx-registration-middle-name>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-birthdate [control]="form | extractFormControl: fields.Birthdate"></banx-registration-birthdate>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-gender [control]="form | extractFormControl: fields.Gender"></banx-registration-gender>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-email [control]="form | extractFormControl: fields.Email"></banx-registration-email>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-mobile-phone [control]="form | extractFormControl: fields.MobilePhone"></banx-registration-mobile-phone>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-registration-agreement [control]="form | extractFormControl: fields.Agreement"></banx-registration-agreement>
+</banx-registration-form-card>
