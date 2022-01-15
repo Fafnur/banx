@@ -4,6 +4,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
 
 import { FormsSharedModule } from '@banx/core/forms/shared';
@@ -29,6 +30,7 @@ describe('RegistrationDriverLicenseComponent', () => {
       imports: [
         NoopAnimationsModule,
         CommonModule,
+        RouterTestingModule,
         ReactiveFormsModule,
         MockModule(MatRadioModule),
         MockModule(FormsSharedModule),

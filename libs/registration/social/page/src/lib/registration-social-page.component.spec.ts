@@ -64,10 +64,10 @@ describe('RegistrationSocialPageComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.titleText).toBe('Социальные сети и сервисы');
+    expect(pageObject.titleText).toBe('Social networks and services');
     expect(pageObject.contentText).toBe(
       // eslint-disable-next-line max-len
-      'Привяжите профили одной или нескольких социальных сетей. Этим вы увеличиваете шанс одобрения займа и его максимальную сумму. Мы рекомендуем привязать как можно больше профилей.'
+      'Link profiles of one or more social networks. This increases the chance of loan approval and its maximum amount. We recommend linking as many profiles as possible.'
     );
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.actions).toBeTruthy();

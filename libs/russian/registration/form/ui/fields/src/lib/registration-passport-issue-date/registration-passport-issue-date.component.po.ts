@@ -41,15 +41,15 @@ export class RegistrationPassportIssueDateComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
+    return this.getByAutomationId(Automation.Input)?.attributes['banxInputTrack'] != null ?? false;
   }
 
   get hasHiddenInputTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.InputHidden)?.attributes?.banxDatepickerTrack != null ?? false;
+    return this.getByAutomationId(Automation.InputHidden)?.attributes['banxDatepickerTrack'] != null ?? false;
   }
 
   get hasDatepickerTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.Datepicker)?.attributes?.banxDatepickerTrack != null ?? false;
+    return this.getByAutomationId(Automation.Datepicker)?.attributes['banxDatepickerTrack'] != null ?? false;
   }
 
   patchControlValue(value: string): void {

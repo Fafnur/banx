@@ -28,6 +28,6 @@ export class RegistrationPassportIssueNameComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
+    return this.getByAutomationId(Automation.Input)?.attributes['banxInputTrack'] != null ?? false;
   }
 }

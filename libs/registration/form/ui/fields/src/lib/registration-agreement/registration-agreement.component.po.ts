@@ -26,6 +26,6 @@ export class RegistrationAgreementComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId<any>(Automation.Checkbox)?.attributes?.banxCheckboxTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Checkbox)?.attributes['banxCheckboxTrack'] != null ?? false;
   }
 }

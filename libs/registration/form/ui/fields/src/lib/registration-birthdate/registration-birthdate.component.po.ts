@@ -41,15 +41,15 @@ export class RegistrationBirthdateComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId<any>(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Input)?.attributes['banxInputTrack'] != null ?? false;
   }
 
   get hasHiddenInputTrackAttr(): boolean {
-    return this.getByAutomationId<any>(Automation.InputHidden)?.attributes?.banxDatepickerTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.InputHidden)?.attributes['banxDatepickerTrack'] != null ?? false;
   }
 
   get hasDatepickerTrackAttr(): boolean {
-    return this.getByAutomationId<any>(Automation.Datepicker)?.attributes?.banxDatepickerTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Datepicker)?.attributes['banxDatepickerTrack'] != null ?? false;
   }
 
   patchControlValue(value: string): void {

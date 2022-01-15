@@ -71,8 +71,8 @@ describe('RegistrationFinishPageComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.titleText).toBe('Обработка данных');
-    expect(pageObject.contentText).toBe('Пожалуйста, подождите ...');
+    expect(pageObject.titleText).toBe('Data processing');
+    expect(pageObject.contentText).toBe('Please wait ...');
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.actions).toBeNull();
     expect(pageObject.submit).toBeNull();

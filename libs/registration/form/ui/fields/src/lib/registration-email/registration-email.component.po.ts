@@ -28,6 +28,6 @@ export class RegistrationEmailComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId<any>(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Input)?.attributes['banxInputTrack'] != null ?? false;
   }
 }

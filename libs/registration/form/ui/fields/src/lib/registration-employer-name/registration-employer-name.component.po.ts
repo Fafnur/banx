@@ -28,7 +28,7 @@ export class RegistrationEmployerNameComponentPo extends PageObject {
   }
 
   get hasInputTrackAttr(): boolean {
-    return this.getByAutomationId<any>(Automation.Input)?.attributes?.banxInputTrack != null ?? false;
+    return this.getByAutomationId<any>(Automation.Input)?.attributes['banxInputTrack'] != null ?? false;
   }
 
   setParent(control: FormGroup): void {
