@@ -7,7 +7,7 @@ import { map, take, withLatestFrom } from 'rxjs/operators';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
-import { loadProcess, selectProcessId } from '@banx/registration/process/state';
+import { navigateToNextStep, selectProcessId } from '@banx/registration/process/state';
 import { RegistrationSocialApiService } from '@banx/registration/social/api';
 
 import * as RegistrationSocialActions from './registration-social.actions';
@@ -36,7 +36,7 @@ export class RegistrationSocialEffects {
       ofType(RegistrationSocialActions.finishSocialSuccess),
       fetch({
         id: () => 'registration-social-finish-success',
-        run: () => loadProcess(),
+        run: () => navigateToNextStep(),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

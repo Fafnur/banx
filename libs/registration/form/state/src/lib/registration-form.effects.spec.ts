@@ -20,6 +20,7 @@ import {
   RegistrationFormKeys,
 } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
+import { navigateToNextStep } from '@banx/registration/process/state';
 
 import * as RegistrationFormActions from './registration-form.actions';
 import { RegistrationFormEffects } from './registration-form.effects';
@@ -224,6 +225,15 @@ describe('RegistrationFormEffects', () => {
 
       expect(effects.updateForm$).toBeObservable(expected);
       verify(localAsyncStorageMock.setItem(RegistrationFormKeys.Form, deepEqual(REGISTRATION_FORM_STUB))).once();
+    });
+  });
+
+  describe('createFormSuccess$', () => {
+    it('should call navigateToNextStep()', () => {
+      actions = hot('-a-|', { a: RegistrationFormActions.createFormSuccess() });
+      const expected = hot('-a-|', { a: navigateToNextStep() });
+
+      expect(effects.createFormSuccess$).toBeObservable(expected);
     });
   });
 });

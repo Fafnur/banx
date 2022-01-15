@@ -24,3 +24,5 @@ export const selectSubStep = createAction('[RegistrationProcess] Select SubStep 
 export const selectSubStepSuccess = createAction('[RegistrationProcess] Select SubStep Next Success', payload<RegistrationStepSelected>());
 
 export const selectSubStepFailure = createAction('[RegistrationProcess] Select Step Failure', payload<string>());
+
+export const navigateToNextStep = createAction('[RegistrationProcess] Navigate To Next Step');

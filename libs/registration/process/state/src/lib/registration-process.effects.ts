@@ -24,6 +24,8 @@ import * as RegistrationProcessSelectors from './registration-process.selectors'
 
 @Injectable()
 export class RegistrationProcessEffects implements OnInitEffects {
+  private needToNavigate = false;
+
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RegistrationProcessActions.init),
@@ -43,6 +45,22 @@ export class RegistrationProcessEffects implements OnInitEffects {
             },
           }),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
+      })
+    )
+  );
+
+  navigateToNextStep$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(RegistrationProcessActions.navigateToNextStep),
+      fetch({
+        id: () => 'registration-navigate-to-next-step',
+        run: () => {
+          this.needToNavigate = true;
+
+          return RegistrationProcessActions.loadProcess();
+        },
+        onError: (action, error) =>
+          this.loggerService.logEffect({ context: { action, error } }, RegistrationProcessActions.loadProcessFailure({ payload: error })),
       })
     )
   );
@@ -111,8 +129,11 @@ export class RegistrationProcessEffects implements OnInitEffects {
             [RegistrationProcessKeys.SelectedStepId]: action.payload.step.id,
             [RegistrationProcessKeys.SelectedSubStep]: action.payload.subStep,
           });
-          const path = getRegistrationPath(action.payload, this.navigationService.getPaths());
-          void this.navigationService.navigateByUrl(path);
+          if (this.needToNavigate) {
+            this.needToNavigate = false;
+            const path = getRegistrationPath(action.payload, this.navigationService.getPaths());
+            void this.navigationService.navigateByUrl(path);
+          }
         },
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })

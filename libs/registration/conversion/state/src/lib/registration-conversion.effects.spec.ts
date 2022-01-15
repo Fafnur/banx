@@ -15,7 +15,7 @@ import { RegistrationConversionApiService } from '@banx/registration/conversion/
 import { REGISTRATION_CONVERSION_STUB } from '@banx/registration/conversion/common';
 import { REGISTRATION_FORM_CREATE_STUB } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
-import { loadProcess } from '@banx/registration/process/state';
+import { navigateToNextStep } from '@banx/registration/process/state';
 
 import * as RegistrationConversionActions from './registration-conversion.actions';
 import { RegistrationConversionEffects } from './registration-conversion.effects';
@@ -128,7 +128,7 @@ describe('RegistrationConversionEffects', () => {
   describe('completeConversionSuccess$', () => {
     it('should call loadProcess()', () => {
       actions = hot('-a-|', { a: RegistrationConversionActions.completeConversionSuccess() });
-      const expected = hot('-a-|', { a: loadProcess() });
+      const expected = hot('-a-|', { a: navigateToNextStep() });
 
       expect(effects.completeConversionSuccess$).toBeObservable(expected);
     });

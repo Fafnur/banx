@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { NavigationService } from '@banx/core/navigation/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
-import { RegistrationStepType } from '@banx/registration/process/common';
+import { getRegistrationPath } from '@banx/registration/process/common';
 import { RegistrationProcessFacade } from '@banx/registration/process/state';
 
 @Injectable()
@@ -22,13 +22,20 @@ export class RegistrationProcessGuard implements CanActivate {
       return of(true);
     }
 
-    const step = route.data['step'] ?? RegistrationStepType.Form;
+    const step = route.data['step'] ?? null;
 
-    return this.registrationProcessFacade.step$.pipe(
+    return this.registrationProcessFacade.stepWithSubStep$.pipe(
       isNotNullOrUndefined(),
-      map(
-        (selectedStep) => selectedStep.name === step || this.navigationService.createUrlTree(this.navigationService.getPaths().registration)
-      )
+      map((loadedStep) => {
+        if (step && loadedStep.step?.name === step) {
+          return true;
+        }
+
+        const paths = this.navigationService.getPaths();
+        const path = loadedStep.step != null ? getRegistrationPath(loadedStep, paths) : paths.home;
+
+        return this.navigationService.createUrlTree(path);
+      })
     );
   }
 }

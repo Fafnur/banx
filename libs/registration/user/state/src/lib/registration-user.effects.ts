@@ -7,7 +7,7 @@ import { map, take, withLatestFrom } from 'rxjs/operators';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
-import { loadProcess, selectProcessId } from '@banx/registration/process/state';
+import { navigateToNextStep, selectProcessId } from '@banx/registration/process/state';
 import { RegistrationUserApiService } from '@banx/registration/user/api';
 
 import * as RegistrationUserActions from './registration-user.actions';
@@ -36,7 +36,7 @@ export class RegistrationUserEffects {
       ofType(RegistrationUserActions.createUserSuccess),
       fetch({
         id: () => 'registration-user-create-success',
-        run: () => loadProcess(),
+        run: () => navigateToNextStep(),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

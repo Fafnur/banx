@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { Action } from '@ngrx/store/src/models';
-import { Observable } from 'rxjs';
+import { filter, Observable, switchMap } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { RegistrationStep } from '@banx/registration/process/common';
+import { RegistrationStep, RegistrationStepSelected } from '@banx/registration/process/common';
 
 import * as RegistrationProcessActions from './registration-process.actions';
 import { RegistrationProcessPartialState } from './registration-process.reducer';
@@ -22,13 +23,26 @@ export class RegistrationProcessFacade {
 
   step$ = this.store.pipe(select(RegistrationProcessSelectors.selectSelectedStep));
 
+  stepWithSubStep$: Observable<RegistrationStepSelected> = this.store.pipe(
+    select(RegistrationProcessSelectors.selectSelectedStepWithSubStep),
+    filter((result) => result.step !== null),
+    map((result) => result as RegistrationStepSelected)
+  );
+
   finished$ = this.store.pipe(select(RegistrationProcessSelectors.selectFinished));
 
-  /**
-   * ???
-   */
   selectStepSuccess$: Observable<RegistrationStep> = this.actions.pipe(
     ofType(RegistrationProcessActions.selectStepSuccess, RegistrationProcessActions.selectSubStepSuccess)
+  );
+
+  selectStepAfterLoad$: Observable<RegistrationStepSelected> = this.actions.pipe(
+    ofType(RegistrationProcessActions.loadProcessSuccess),
+    switchMap(() =>
+      this.actions.pipe(
+        ofType(RegistrationProcessActions.selectStepSuccess),
+        map(({ payload }) => payload)
+      )
+    )
   );
 
   constructor(private readonly actions: Actions, private readonly store: Store<RegistrationProcessPartialState>) {}

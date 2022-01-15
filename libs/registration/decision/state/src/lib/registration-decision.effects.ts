@@ -8,7 +8,7 @@ import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationDecisionApiService } from '@banx/registration/decision/api';
-import { loadProcess, selectProcessId } from '@banx/registration/process/state';
+import { navigateToNextStep, selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationDecisionActions from './registration-decision.actions';
 import { RegistrationDecisionPartialState } from './registration-decision.reducer';
@@ -36,7 +36,7 @@ export class RegistrationDecisionEffects {
       ofType(RegistrationDecisionActions.makeDecisionSuccess),
       fetch({
         id: () => 'registration-make-decision-success',
-        run: () => loadProcess(),
+        run: () => navigateToNextStep(),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

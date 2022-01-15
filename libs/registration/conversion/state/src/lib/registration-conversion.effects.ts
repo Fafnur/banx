@@ -8,7 +8,7 @@ import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationConversionApiService } from '@banx/registration/conversion/api';
-import { loadProcess, selectProcessId } from '@banx/registration/process/state';
+import { navigateToNextStep, selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationConversionActions from './registration-conversion.actions';
 import { RegistrationConversionPartialState } from './registration-conversion.reducer';
@@ -62,7 +62,7 @@ export class RegistrationConversionEffects {
       ofType(RegistrationConversionActions.completeConversionSuccess),
       fetch({
         id: () => 'registration-conversion-complete-success',
-        run: () => loadProcess(),
+        run: () => navigateToNextStep(),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

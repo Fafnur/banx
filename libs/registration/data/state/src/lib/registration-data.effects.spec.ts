@@ -14,7 +14,7 @@ import { VisitorService } from '@banx/core/visitor/service';
 import { RegistrationDataApiService } from '@banx/registration/data/api';
 import { REGISTRATION_FORM_CREATE_STUB } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
-import { loadProcess } from '@banx/registration/process/state';
+import { navigateToNextStep } from '@banx/registration/process/state';
 
 import * as RegistrationDataActions from './registration-data.actions';
 import { RegistrationDataEffects } from './registration-data.effects';
@@ -94,7 +94,7 @@ describe('RegistrationDataEffects', () => {
   describe('finishDataSuccess$', () => {
     it('should call loadProcess()', () => {
       actions = hot('-a-|', { a: RegistrationDataActions.finishDataSuccess() });
-      const expected = hot('-a-|', { a: loadProcess() });
+      const expected = hot('-a-|', { a: navigateToNextStep() });
 
       expect(effects.finishDataSuccess$).toBeObservable(expected);
     });

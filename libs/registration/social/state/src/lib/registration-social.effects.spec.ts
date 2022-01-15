@@ -13,7 +13,7 @@ import { providerOf } from '@banx/core/testing';
 import { VisitorService } from '@banx/core/visitor/service';
 import { REGISTRATION_FORM_CREATE_STUB } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
-import { loadProcess } from '@banx/registration/process/state';
+import { navigateToNextStep } from '@banx/registration/process/state';
 import { RegistrationSocialApiService } from '@banx/registration/social/api';
 
 import * as RegistrationUserActions from './registration-social.actions';
@@ -94,7 +94,7 @@ describe('RegistrationSocialEffects', () => {
   describe('finishSocialSuccess$', () => {
     it('should call loadProcess()', () => {
       actions = hot('-a-|', { a: RegistrationUserActions.finishSocialSuccess() });
-      const expected = hot('-a-|', { a: loadProcess() });
+      const expected = hot('-a-|', { a: navigateToNextStep() });
 
       expect(effects.finishSocialSuccess$).toBeObservable(expected);
     });

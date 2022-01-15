@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard, AuthGuardsModule } from '@banx/auth/guards';
 import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
+import { RegistrationStepType } from '@banx/registration/process/common';
+import { RegistrationProcessGuard, RegistrationProcessGuardsModule, RegistrationProcessLoadGuard } from '@banx/registration/process/guards';
+import { RegistrationProcessStateModule } from '@banx/registration/process/state';
 import { RegistrationLayoutComponent, RegistrationLayoutModule } from '@banx/registration/ui/layout';
 
 const routes: Routes = [
   {
     path: '',
     component: RegistrationLayoutComponent,
+    canActivate: [AuthGuard, RegistrationProcessLoadGuard],
     children: [
       {
         path: NAVIGATION_PATHS.registration,
@@ -17,38 +21,59 @@ const routes: Routes = [
       },
       {
         path: NAVIGATION_PATHS.registrationForm,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.Form,
+        },
         loadChildren: () => import('@banx/russian/registration/form/pages').then((modules) => modules.RegistrationFormPagesModule),
       },
       {
         path: NAVIGATION_PATHS.registrationData,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.Data,
+        },
         loadChildren: () => import('@banx/russian/registration/data/page').then((modules) => modules.RegistrationDataPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationSocial,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.Social,
+        },
         loadChildren: () => import('@banx/russian/registration/social/page').then((modules) => modules.RegistrationSocialPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationUser,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.User,
+        },
         loadChildren: () => import('@banx/russian/registration/user/page').then((modules) => modules.RegistrationUserPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationDecision,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.Decision,
+        },
         loadChildren: () => import('@banx/russian/registration/decision/page').then((modules) => modules.RegistrationDecisionPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationConversion,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.Conversion,
+        },
         loadChildren: () =>
           import('@banx/russian/registration/conversion/page').then((modules) => modules.RegistrationConversionPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationFinish,
-        canActivate: [AuthGuard],
+        canActivate: [RegistrationProcessGuard],
+        data: {
+          step: RegistrationStepType.Finish,
+        },
         loadChildren: () => import('@banx/russian/registration/finish/page').then((modules) => modules.RegistrationFinishPageModule),
       },
     ],
@@ -56,7 +81,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes), AuthGuardsModule, RegistrationLayoutModule],
+  imports: [
+    RouterModule.forChild(routes),
+    AuthGuardsModule,
+    RegistrationProcessStateModule,
+    RegistrationProcessGuardsModule,
+    RegistrationLayoutModule,
+  ],
   exports: [RouterModule],
 })
 export class RegistrationPagesRoutingModule {}

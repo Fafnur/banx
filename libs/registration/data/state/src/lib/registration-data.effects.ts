@@ -8,7 +8,7 @@ import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationDataApiService } from '@banx/registration/data/api';
-import { loadProcess, selectProcessId } from '@banx/registration/process/state';
+import { navigateToNextStep, selectProcessId } from '@banx/registration/process/state';
 
 import * as RegistrationDataActions from './registration-data.actions';
 import { RegistrationDataPartialState } from './registration-data.reducer';
@@ -36,7 +36,7 @@ export class RegistrationDataEffects {
       ofType(RegistrationDataActions.finishDataSuccess),
       fetch({
         id: () => 'registration-data-finish-success',
-        run: () => loadProcess(),
+        run: () => navigateToNextStep(),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

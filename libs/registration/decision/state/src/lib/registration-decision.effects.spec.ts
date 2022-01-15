@@ -14,7 +14,7 @@ import { VisitorService } from '@banx/core/visitor/service';
 import { RegistrationDecisionApiService } from '@banx/registration/decision/api';
 import { REGISTRATION_FORM_CREATE_STUB } from '@banx/registration/form/common';
 import { PROCESS_ID_STUB } from '@banx/registration/process/common';
-import { loadProcess } from '@banx/registration/process/state';
+import { navigateToNextStep } from '@banx/registration/process/state';
 
 import * as RegistrationDecisionActions from './registration-decision.actions';
 import { RegistrationDecisionEffects } from './registration-decision.effects';
@@ -98,7 +98,7 @@ describe('RegistrationDecisionEffects', () => {
   describe('makeDecisionSuccess$', () => {
     it('should call loadProcess()', () => {
       actions = hot('-a-|', { a: RegistrationDecisionActions.makeDecisionSuccess() });
-      const expected = hot('-a-|', { a: loadProcess() });
+      const expected = hot('-a-|', { a: navigateToNextStep() });
 
       expect(effects.makeDecisionSuccess$).toBeObservable(expected);
     });

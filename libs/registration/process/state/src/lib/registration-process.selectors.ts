@@ -24,5 +24,10 @@ export const selectSelectedStep = createSelector(selectStepsEntities, selectSele
   selected ? entities[selected] ?? null : null
 );
 
+export const selectSelectedStepWithSubStep = createSelector(selectSelectedStep, selectSubStep, (step, subStep) => ({
+  step,
+  subStep,
+}));
+
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const selectStep = (id: number) => createSelector(selectStepsEntities, (dictionary) => dictionary[id] ?? null);
