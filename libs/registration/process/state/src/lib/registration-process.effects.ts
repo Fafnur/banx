@@ -161,6 +161,22 @@ export class RegistrationProcessEffects implements OnInitEffects {
     )
   );
 
+  restartProcess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(RegistrationProcessActions.restartProcess),
+      fetch({
+        id: () => 'registration-process-restart',
+        run: () => {
+          // Remove all data
+          this.localAsyncStorage.clear();
+
+          return RegistrationProcessActions.navigateToNextStep();
+        },
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
+      })
+    )
+  );
+
   constructor(
     private readonly actions$: Actions,
     private readonly store: Store<RegistrationProcessPartialState>,

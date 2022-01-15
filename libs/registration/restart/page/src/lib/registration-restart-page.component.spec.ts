@@ -4,10 +4,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
-import { mock, when } from 'ts-mockito';
+import { mock } from 'ts-mockito';
 
-import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
-import { NavigationService } from '@banx/core/navigation/service';
+import { PATHS_STUB } from '@banx/core/navigation/common';
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
 import { providerOf } from '@banx/core/testing';
 import { RegistrationProcessFacade } from '@banx/registration/process/state';
@@ -19,12 +18,10 @@ import { RegistrationRestartPageComponentPo } from './registration-restart-page.
 describe('RegistrationRestartPageComponent', () => {
   let pageObject: RegistrationRestartPageComponentPo;
   let fixture: ComponentFixture<RegistrationRestartPageComponent>;
-  let navigationServiceMock: NavigationService;
   let registrationProcessFacadeMock: RegistrationProcessFacade;
 
   beforeEach(() => {
     registrationProcessFacadeMock = mock(RegistrationProcessFacade);
-    navigationServiceMock = mock(NavigationService);
   });
 
   beforeEach(async () => {
@@ -38,17 +35,11 @@ describe('RegistrationRestartPageComponent', () => {
         MockModule(NavigationSharedModule),
       ],
       declarations: [RegistrationRestartPageComponent],
-      providers: [
-        PATHS_STUB,
-        providerOf(NavigationService, navigationServiceMock),
-        providerOf(RegistrationProcessFacade, registrationProcessFacadeMock),
-      ],
+      providers: [PATHS_STUB, providerOf(RegistrationProcessFacade, registrationProcessFacadeMock)],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
-
     fixture = TestBed.createComponent(RegistrationRestartPageComponent);
     pageObject = new RegistrationRestartPageComponentPo(fixture);
   });
@@ -62,7 +53,7 @@ describe('RegistrationRestartPageComponent', () => {
   it('should show', () => {
     fixture.detectChanges();
 
-    expect(pageObject.titleText).toBe('Reset registration');
+    expect(pageObject.titleText).toBe('Restart registration');
     expect(pageObject.contentText).toBe('Are you sure you want to start registering again?');
     expect(pageObject.card).toBeTruthy();
     expect(pageObject.actions).toBeTruthy();

@@ -1,6 +1,7 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
 import { castRegistrationForm, RegistrationForm } from '@banx/registration/form/common';
+import { restartProcess } from '@banx/registration/process/state';
 
 import * as RegistrationFormActions from './registration-form.actions';
 
@@ -74,6 +75,10 @@ const registrationFormReducer = createReducer(
   on(RegistrationFormActions.updateForm, (state, { payload }) => ({
     ...state,
     form: castRegistrationForm([state.form, payload]),
+  })),
+  on(restartProcess, (state) => ({
+    ...state,
+    form: null,
   }))
 );
 
