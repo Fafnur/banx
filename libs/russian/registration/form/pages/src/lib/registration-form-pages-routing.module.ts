@@ -62,7 +62,7 @@ const routes: Routes = [
           subStep: RegistrationFormSubSteps.Additional,
         },
         loadChildren: () =>
-          import('@banx/russian/registration/form/additional/page').then((modules) => modules.RegistrationFormAdditionalPageModule),
+          import('@banx/registration/form/additional/page').then((modules) => modules.RegistrationFormAdditionalPageModule),
       },
     ],
   },

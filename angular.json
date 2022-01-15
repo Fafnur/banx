@@ -1357,6 +1357,30 @@
         }
       }
     },
+    "registration-form-additional-page": {
+      "projectType": "library",
+      "root": "libs/registration/form/additional/page",
+      "sourceRoot": "libs/registration/form/additional/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/additional/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/registration/form/additional/page/src/**/*.ts",
+              "libs/registration/form/additional/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "registration-form-api": {
       "projectType": "library",
       "root": "libs/registration/form/api",
@@ -2130,30 +2154,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/numerals/shared/src/**/*.ts", "libs/russian/numerals/shared/src/**/*.html"]
-          }
-        }
-      }
-    },
-    "russian-registration-form-additional-page": {
-      "projectType": "library",
-      "root": "libs/russian/registration/form/additional/page",
-      "sourceRoot": "libs/russian/registration/form/additional/page/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/form/additional/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/russian/registration/form/additional/page/src/**/*.ts",
-              "libs/russian/registration/form/additional/page/src/**/*.html"
-            ]
           }
         }
       }
