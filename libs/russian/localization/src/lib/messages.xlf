@@ -923,6 +923,108 @@
         </context-group>
         <note priority="1" from="description">Home page</note>
       </trans-unit>
+      <trans-unit id="2236820358877071011" datatype="html">
+        <source> Data processing </source>
+        <target state="translated">Обработка данных</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/conversion/page/src/lib/registration-conversion-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/decision/page/src/lib/registration-decision-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/finish/page/src/lib/registration-finish-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/user/page/src/lib/registration-user-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">Registration data processing</note>
+        <note priority="1" from="meaning">Registration step title</note>
+      </trans-unit>
+      <trans-unit id="2810786392477909411" datatype="html">
+        <source> Please wait ... </source>
+        <target state="translated">Пожалуйста, подождите</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/conversion/page/src/lib/registration-conversion-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/data/page/src/lib/registration-data-page.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/decision/page/src/lib/registration-decision-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/finish/page/src/lib/registration-finish-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/social/page/src/lib/registration-social-page.component.html</context>
+          <context context-type="linenumber">25,27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/user/page/src/lib/registration-user-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">Registration please wait</note>
+        <note priority="1" from="meaning">Registration step content</note>
+      </trans-unit>
+      <trans-unit id="1142995469804034521" datatype="html">
+        <source> Continue </source>
+        <target state="translated">Продолжить</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/conversion/page/src/lib/registration-conversion-page.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/data/page/src/lib/registration-data-page.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/decision/page/src/lib/registration-decision-page.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/finish/page/src/lib/registration-finish-page.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/social/page/src/lib/registration-social-page.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/user/page/src/lib/registration-user-page.component.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+        <note priority="1" from="description">Registration continue</note>
+        <note priority="1" from="meaning">Registration step action</note>
+      </trans-unit>
+      <trans-unit id="6578094207303155941" datatype="html">
+        <source> Location </source>
+        <target state="translated">Местоположение</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/data/page/src/lib/registration-data-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">Registration location</note>
+        <note priority="1" from="meaning">Registration step title</note>
+      </trans-unit>
+      <trans-unit id="886110289696583014" datatype="html">
+        <source> After clicking on the «Continue» button, your location will be requested. In the dialog box of your browser, click «Allow». </source>
+        <target state="translated">После нажатия на кнопку «Продолжить» будет запрошено ваше местоположение. В диалоговом окне вашего браузера нажмите «Разрешить» или «Сообщить местоположение».</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/data/page/src/lib/registration-data-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">Registration location description</note>
+        <note priority="1" from="meaning">Registration step description</note>
+      </trans-unit>
       <trans-unit id="2258867807006918995" datatype="html">
         <source> Back </source>
         <target state="translated">Назад</target>
@@ -2055,6 +2157,76 @@
         </context-group>
         <note priority="1" from="description">Sms code placeholder</note>
         <note priority="1" from="meaning">Registration form field</note>
+      </trans-unit>
+      <trans-unit id="5879048593232446005" datatype="html">
+        <source> Restart registration </source>
+        <target state="translated">Начать регистрацию заново</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/restart/page/src/lib/registration-restart-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">Registration restart title</note>
+        <note priority="1" from="meaning">Registration restart page</note>
+      </trans-unit>
+      <trans-unit id="5175302524289428643" datatype="html">
+        <source> Вы уверены, что хотите снова начать регистрацию? </source>
+        <target state="translated">Начать регистрацию заново</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/restart/page/src/lib/registration-restart-page.component.html</context>
+          <context context-type="linenumber">5,7</context>
+        </context-group>
+        <note priority="1" from="description">Registration restart description</note>
+        <note priority="1" from="meaning">Registration restart page</note>
+      </trans-unit>
+      <trans-unit id="8666554953213620421" datatype="html">
+        <source> Restart </source>
+        <target state="translated"> Начать заново </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/restart/page/src/lib/registration-restart-page.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
+        <note priority="1" from="description">Registration restart reset</note>
+        <note priority="1" from="meaning">Registration restart page</note>
+      </trans-unit>
+      <trans-unit id="2308120813822182228" datatype="html">
+        <source> Continue </source>
+        <target state="translated"> Продолжить регистрацию </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/restart/page/src/lib/registration-restart-page.component.html</context>
+          <context context-type="linenumber">28,30</context>
+        </context-group>
+        <note priority="1" from="description">Registration restart continue</note>
+        <note priority="1" from="meaning">Registration restart page</note>
+      </trans-unit>
+      <trans-unit id="4701402969671832903" datatype="html">
+        <source> Social networks and services </source>
+        <target state="translated"> Социальные сети и сервисы </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/social/page/src/lib/registration-social-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+        <note priority="1" from="description">Registration social networks and services</note>
+        <note priority="1" from="meaning">Registration step title</note>
+      </trans-unit>
+      <trans-unit id="7553471331330294390" datatype="html">
+        <source> Link profiles of one or more social networks. This increases the chance of loan approval and its maximum amount. We recommend linking as many profiles as possible. </source>
+        <target state="translated"> Привяжите профили одной или нескольких социальных сетей. Этим вы увеличиваете шанс одобрения займа и его максимальную сумму. Мы рекомендуем привязать как можно больше профилей. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/social/page/src/lib/registration-social-page.component.html</context>
+          <context context-type="linenumber">5,8</context>
+        </context-group>
+        <note priority="1" from="description">Registration social descrition</note>
+        <note priority="1" from="meaning">Registration step descrition</note>
+      </trans-unit>
+      <trans-unit id="1969193614205901003" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;social-icon&quot; [svgIcon]=&quot;social | socialIcon&quot;&gt;"/><x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/>Link <x id="INTERPOLATION" equiv-text="{{ social }}"/> </source>
+        <target state="translated"><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;social-icon&quot; [svgIcon]=&quot;social | socialIcon&quot;&gt;"/><x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/>Привязать <x id="INTERPOLATION" equiv-text="{{ social }}"/> </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">libs/registration/social/page/src/lib/registration-social-page.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+        <note priority="1" from="description">Registration social link</note>
+        <note priority="1" from="meaning">Registration step link</note>
       </trans-unit>
       <trans-unit id="4030347628819272688" datatype="html">
         <source>©<x id="INTERPOLATION" equiv-text="{{ year }}"/>. <x id="INTERPOLATION_1" equiv-text="{{ brand }}"/>. All rights reserved.</source>
