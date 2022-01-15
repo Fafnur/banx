@@ -1483,6 +1483,27 @@
         }
       }
     },
+    "registration-process-guards": {
+      "projectType": "library",
+      "root": "libs/registration/process/guards",
+      "sourceRoot": "libs/registration/process/guards/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/process/guards/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/process/guards/src/**/*.ts", "libs/registration/process/guards/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-process-state": {
       "projectType": "library",
       "root": "libs/registration/process/state",

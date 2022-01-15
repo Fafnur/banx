@@ -87,6 +87,7 @@
       "@banx/registration/form/ui/layout": ["libs/registration/form/ui/layout/src/index.ts"],
       "@banx/registration/process/api": ["libs/registration/process/api/src/index.ts"],
       "@banx/registration/process/common": ["libs/registration/process/common/src/index.ts"],
+      "@banx/registration/process/guards": ["libs/registration/process/guards/src/index.ts"],
       "@banx/registration/process/state": ["libs/registration/process/state/src/index.ts"],
       "@banx/registration/social/api": ["libs/registration/social/api/src/index.ts"],
       "@banx/registration/social/state": ["libs/registration/social/state/src/index.ts"],
