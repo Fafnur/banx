@@ -1,9 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
-
-import { createForm } from './registration-form-sms-page.form';
 
 @Component({
   selector: 'banx-registration-form-sms-page',
@@ -14,5 +13,8 @@ import { createForm } from './registration-form-sms-page.form';
 export class RegistrationFormSmsPageComponent {
   readonly fields = RegistrationFormField;
   readonly step = RegistrationFormSubSteps.Sms;
-  readonly form = createForm();
+  readonly form = new FormGroup({
+    [RegistrationFormField.SmsCode]: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    [RegistrationFormField.MobilePhone]: new FormControl(null),
+  });
 }
