@@ -15,7 +15,7 @@ import { providerOf } from '@banx/core/testing';
 import { RegistrationFinishResponse } from '@banx/registration/finish/common';
 import { RegistrationFinishFacade } from '@banx/registration/finish/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
-import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
+import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
 
 import { RegistrationFinishPageComponent } from './registration-finish-page.component';

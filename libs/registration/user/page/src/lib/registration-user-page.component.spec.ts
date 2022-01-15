@@ -10,8 +10,8 @@ import { mock, when } from 'ts-mockito';
 
 import { providerOf } from '@banx/core/testing';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
+import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { RegistrationUserFacade } from '@banx/registration/user/state';
-import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
 
 import { RegistrationUserPageComponent } from './registration-user-page.component';

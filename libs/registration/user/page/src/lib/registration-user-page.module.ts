@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { RegistrationCardModule } from '@banx/registration/ui/card';
+import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { RegistrationUserStateModule } from '@banx/registration/user/state';
-import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
 
 import { RegistrationUserPageComponent } from './registration-user-page.component';

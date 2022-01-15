@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'russian-registration-ui-step-error',
-  preset: '../../../../../jest.preset.js',
+  displayName: 'registration-ui-step-error',
+  preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -8,7 +8,7 @@ module.exports = {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../../coverage/libs/russian/registration/ui/step-error',
+  coverageDirectory: '../../../../coverage/libs/registration/ui/step-error',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

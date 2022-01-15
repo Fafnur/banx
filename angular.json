@@ -1825,6 +1825,27 @@
         }
       }
     },
+    "registration-ui-step-error": {
+      "projectType": "library",
+      "root": "libs/registration/ui/step-error",
+      "sourceRoot": "libs/registration/ui/step-error/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/ui/step-error/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/ui/step-error/src/**/*.ts", "libs/registration/ui/step-error/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-user-api": {
       "projectType": "library",
       "root": "libs/registration/user/api",
@@ -2286,30 +2307,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/registration/pages/src/**/*.ts", "libs/russian/registration/pages/src/**/*.html"]
-          }
-        }
-      }
-    },
-    "russian-registration-ui-step-error": {
-      "projectType": "library",
-      "root": "libs/russian/registration/ui/step-error",
-      "sourceRoot": "libs/russian/registration/ui/step-error/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/ui/step-error/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/russian/registration/ui/step-error/src/**/*.ts",
-              "libs/russian/registration/ui/step-error/src/**/*.html"
-            ]
           }
         }
       }

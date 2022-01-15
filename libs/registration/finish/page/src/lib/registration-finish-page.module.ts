@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { RegistrationFinishStateModule } from '@banx/registration/finish/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
-import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
+import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
 
 import { RegistrationFinishPageComponent } from './registration-finish-page.component';

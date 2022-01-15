@@ -12,7 +12,7 @@ import { providerOf } from '@banx/core/testing';
 import { RegistrationConversion } from '@banx/registration/conversion/common';
 import { RegistrationConversionFacade } from '@banx/registration/conversion/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
-import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
+import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
 
 import { RegistrationConversionPageComponent } from './registration-conversion-page.component';

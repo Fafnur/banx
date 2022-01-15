@@ -11,7 +11,7 @@ import { mock, when } from 'ts-mockito';
 import { providerOf } from '@banx/core/testing';
 import { RegistrationDataFacade } from '@banx/registration/data/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
-import { RegistrationStepErrorModule } from '@banx/russian/registration/ui/step-error';
+import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
 
 import { RegistrationDataPageComponent } from './registration-data-page.component';
