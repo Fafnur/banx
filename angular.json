@@ -1465,6 +1465,27 @@
         }
       }
     },
+    "registration-form-sms-page": {
+      "projectType": "library",
+      "root": "libs/registration/form/sms/page",
+      "sourceRoot": "libs/registration/form/sms/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/sms/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/registration/form/sms/page/src/**/*.ts", "libs/registration/form/sms/page/src/**/*.html"]
+          }
+        }
+      }
+    },
     "registration-form-state": {
       "projectType": "library",
       "root": "libs/registration/form/state",
@@ -2243,30 +2264,6 @@
             "lintFilePatterns": [
               "libs/russian/registration/form/personal/page/src/**/*.ts",
               "libs/russian/registration/form/personal/page/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "russian-registration-form-sms-page": {
-      "projectType": "library",
-      "root": "libs/russian/registration/form/sms/page",
-      "sourceRoot": "libs/russian/registration/form/sms/page/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/form/sms/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/russian/registration/form/sms/page/src/**/*.ts",
-              "libs/russian/registration/form/sms/page/src/**/*.html"
             ]
           }
         }

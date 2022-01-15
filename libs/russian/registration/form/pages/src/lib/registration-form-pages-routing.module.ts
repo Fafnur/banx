@@ -36,7 +36,7 @@ const routes: Routes = [
               RussianRegistrationFormField.PassportBirthplace,
             ].every((field) => form[field] != null),
         },
-        loadChildren: () => import('@banx/russian/registration/form/sms/page').then((modules) => modules.RegistrationFormSmsPageModule),
+        loadChildren: () => import('@banx/registration/form/sms/page').then((modules) => modules.RegistrationFormSmsPageModule),
       },
       {
         path: RegistrationFormSubSteps.Family,
