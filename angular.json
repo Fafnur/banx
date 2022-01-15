@@ -1423,6 +1423,30 @@
         }
       }
     },
+    "registration-form-employment-page": {
+      "projectType": "library",
+      "root": "libs/registration/form/employment/page",
+      "sourceRoot": "libs/registration/form/employment/page/src",
+      "prefix": "banx",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration/form/employment/page/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/registration/form/employment/page/src/**/*.ts",
+              "libs/registration/form/employment/page/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "registration-form-family-page": {
       "projectType": "library",
       "root": "libs/registration/form/family/page",
@@ -2196,30 +2220,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/russian/registration/form/common/src/**/*.ts", "libs/russian/registration/form/common/src/**/*.html"]
-          }
-        }
-      }
-    },
-    "russian-registration-form-employment-page": {
-      "projectType": "library",
-      "root": "libs/russian/registration/form/employment/page",
-      "sourceRoot": "libs/russian/registration/form/employment/page/src",
-      "prefix": "banx",
-      "architect": {
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/russian/registration/form/employment/page/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/russian/registration/form/employment/page/src/**/*.ts",
-              "libs/russian/registration/form/employment/page/src/**/*.html"
-            ]
           }
         }
       }

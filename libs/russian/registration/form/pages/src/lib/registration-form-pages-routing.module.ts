@@ -53,7 +53,7 @@ const routes: Routes = [
           subStep: RegistrationFormSubSteps.Employment,
         },
         loadChildren: () =>
-          import('@banx/russian/registration/form/employment/page').then((modules) => modules.RegistrationFormEmploymentPageModule),
+          import('@banx/registration/form/employment/page').then((modules) => modules.RegistrationFormEmploymentPageModule),
       },
       {
         path: RegistrationFormSubSteps.Additional,
