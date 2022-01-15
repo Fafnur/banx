@@ -49,7 +49,7 @@ const routes: Routes = [
         data: {
           step: RegistrationStepType.User,
         },
-        loadChildren: () => import('@banx/russian/registration/user/page').then((modules) => modules.RegistrationUserPageModule),
+        loadChildren: () => import('@banx/registration/user/page').then((modules) => modules.RegistrationUserPageModule),
       },
       {
         path: NAVIGATION_PATHS.registrationDecision,
