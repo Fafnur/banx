@@ -1,7 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { RegistrationProcessGuard } from './registration-process.guard';
+
 @NgModule({
-  imports: [CommonModule],
+  providers: [RegistrationProcessGuard],
 })
 export class RegistrationProcessGuardsModule {}
