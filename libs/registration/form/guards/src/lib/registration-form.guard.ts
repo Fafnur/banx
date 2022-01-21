@@ -30,7 +30,7 @@ export class RegistrationFormGuard implements CanActivate {
                   (form &&
                     REGISTRATION_FIELDS_FOR_COMPLETE[subStep].every((fieldName) => form[fieldName] != null) &&
                     (!check || check(form))) ||
-                  this.navigationService.createUrlTree(this.navigationService.getPaths().registration)
+                  this.navigationService.createUrlTree(this.navigationService.getPaths().registrationFormPersonal)
               )
             )
           )
