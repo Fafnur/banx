@@ -28,3 +28,5 @@ export const selectSubStepFailure = createAction('[RegistrationProcess] Select S
 export const navigateToNextStep = createAction('[RegistrationProcess] Navigate To Next Step');
 
 export const restartProcess = createAction('[RegistrationProcess] Restart Process');
+
+export const setSubStep = createAction('[RegistrationProcess] Set Sub Step', payload<string | null>());

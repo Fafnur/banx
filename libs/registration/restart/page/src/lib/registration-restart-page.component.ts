@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 
 import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
+import { NavigationService } from '@banx/core/navigation/service';
 import { RegistrationProcessFacade } from '@banx/registration/process/state';
 
 @Component({
@@ -12,10 +13,12 @@ import { RegistrationProcessFacade } from '@banx/registration/process/state';
 export class RegistrationRestartPageComponent {
   constructor(
     private readonly registrationProcessFacade: RegistrationProcessFacade,
+    private readonly navigationService: NavigationService,
     @Inject(PATHS) public readonly paths: NavigationPaths
   ) {}
 
   onRestart(): void {
     this.registrationProcessFacade.restart();
+    void this.navigationService.navigateByUrl(this.navigationService.getPaths().registration);
   }
 }

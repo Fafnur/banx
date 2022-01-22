@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, ofType } from '@ngrx/effects';
 import { select, Store } from '@ngrx/store';
 import { Action } from '@ngrx/store/src/models';
-import { filter, Observable, switchMap } from 'rxjs';
+import { filter, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { RegistrationStep, RegistrationStepSelected } from '@banx/registration/process/common';
@@ -35,20 +35,14 @@ export class RegistrationProcessFacade {
     ofType(RegistrationProcessActions.selectStepSuccess, RegistrationProcessActions.selectSubStepSuccess)
   );
 
-  selectStepAfterLoad$: Observable<RegistrationStepSelected> = this.actions.pipe(
-    ofType(RegistrationProcessActions.loadProcessSuccess),
-    switchMap(() =>
-      this.actions.pipe(
-        ofType(RegistrationProcessActions.selectStepSuccess),
-        map(({ payload }) => payload)
-      )
-    )
-  );
-
   constructor(private readonly actions: Actions, private readonly store: Store<RegistrationProcessPartialState>) {}
 
   load(): void {
     this.dispatch(RegistrationProcessActions.loadProcess());
+  }
+
+  selectStep(): void {
+    this.dispatch(RegistrationProcessActions.selectStep());
   }
 
   restart(): void {
@@ -57,6 +51,10 @@ export class RegistrationProcessFacade {
 
   selectSubStep(payload: 'next' | 'prev' = 'next'): void {
     this.dispatch(RegistrationProcessActions.selectSubStep({ payload }));
+  }
+
+  setSubStep(payload: string | null): void {
+    this.dispatch(RegistrationProcessActions.setSubStep({ payload }));
   }
 
   private dispatch(action: Action): void {

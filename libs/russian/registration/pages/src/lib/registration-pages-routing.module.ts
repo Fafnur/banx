@@ -75,11 +75,11 @@ const routes: Routes = [
         },
         loadChildren: () => import('@banx/registration/finish/page').then((modules) => modules.RegistrationFinishPageModule),
       },
-      {
-        path: NAVIGATION_PATHS.registrationRestart,
-        loadChildren: () => import('@banx/registration/restart/page').then((modules) => modules.RegistrationRestartPageModule),
-      },
     ],
+  },
+  {
+    path: NAVIGATION_PATHS.registrationRestart,
+    loadChildren: () => import('@banx/registration/restart/page').then((modules) => modules.RegistrationRestartPageModule),
   },
 ];
 

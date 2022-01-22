@@ -11,6 +11,7 @@ import { NavigationSharedModule } from '@banx/core/navigation/shared';
 import { providerOf } from '@banx/core/testing';
 import { RegistrationProcessFacade } from '@banx/registration/process/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
+import { ContainerModule } from '@banx/ui/container';
 
 import { RegistrationRestartPageComponent } from './registration-restart-page.component';
 import { RegistrationRestartPageComponentPo } from './registration-restart-page.component.po';
@@ -33,6 +34,7 @@ describe('RegistrationRestartPageComponent', () => {
         MockModule(MatButtonModule),
         MockModule(RegistrationCardModule),
         MockModule(NavigationSharedModule),
+        MockModule(ContainerModule),
       ],
       declarations: [RegistrationRestartPageComponent],
       providers: [PATHS_STUB, providerOf(RegistrationProcessFacade, registrationProcessFacadeMock)],

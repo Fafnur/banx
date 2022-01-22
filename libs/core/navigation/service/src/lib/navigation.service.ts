@@ -9,6 +9,10 @@ import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 export class NavigationService {
   constructor(private readonly router: Router, @Inject(PATHS) private readonly paths: NavigationPaths) {}
 
+  get url(): string {
+    return this.router.url;
+  }
+
   getPaths(): NavigationPaths {
     return this.paths;
   }

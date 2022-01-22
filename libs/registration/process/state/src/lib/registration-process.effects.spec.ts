@@ -119,12 +119,13 @@ describe('RegistrationProcessEffects', () => {
   describe('loadStepsSuccess$', () => {
     it('should return selectStep', () => {
       const action = RegistrationProcessActions.loadProcessSuccess({ payload: REGISTRATION_PROCESS_STUB });
-      const completion = RegistrationProcessActions.selectStep();
 
       actions = hot('-a-|', { a: action });
+      const completion = RegistrationProcessActions.selectStep();
       const expected = cold('-a-|', { a: completion });
 
       expect(effects.loadProcessSuccess$).toBeObservable(expected);
+      verify(localAsyncStorageMock.setItem(RegistrationProcessKeys.ProcessId, action.payload.processId)).once();
     });
   });
 

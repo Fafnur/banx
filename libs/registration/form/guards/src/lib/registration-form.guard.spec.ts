@@ -5,6 +5,7 @@ import { mock } from 'ts-mockito';
 import { NavigationService } from '@banx/core/navigation/service';
 import { providerOf } from '@banx/core/testing';
 import { RegistrationFormFacade } from '@banx/registration/form/state';
+import { RegistrationProcessFacade } from '@banx/registration/process/state';
 
 import { RegistrationFormGuard } from './registration-form.guard';
 
@@ -13,10 +14,12 @@ describe('RegistrationFormGuard', () => {
   let guard: RegistrationFormGuard;
   let registrationFormFacadeMock: RegistrationFormFacade;
   let navigationServiceMock: NavigationService;
+  let registrationProcessFacadeMock: RegistrationProcessFacade;
 
   beforeEach(() => {
     registrationFormFacadeMock = mock(RegistrationFormFacade);
     navigationServiceMock = mock(NavigationService);
+    registrationProcessFacadeMock = mock(RegistrationProcessFacade);
   });
 
   beforeEach(
@@ -27,6 +30,7 @@ describe('RegistrationFormGuard', () => {
           RegistrationFormGuard,
           providerOf(RegistrationFormFacade, registrationFormFacadeMock),
           providerOf(NavigationService, navigationServiceMock),
+          providerOf(RegistrationProcessFacade, registrationProcessFacadeMock),
         ],
       }).compileComponents();
     })

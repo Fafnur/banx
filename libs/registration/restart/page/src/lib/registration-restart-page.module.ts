@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
+import { ContainerModule } from '@banx/ui/container';
 
 import { RegistrationRestartPageComponent } from './registration-restart-page.component';
 import { RegistrationRestartPageRoutingModule } from './registration-restart-page-routing.module';
@@ -17,6 +18,7 @@ import { RegistrationRestartPageRoutingModule } from './registration-restart-pag
     MatButtonModule,
     RegistrationCardModule,
     NavigationSharedModule,
+    ContainerModule,
   ],
   declarations: [RegistrationRestartPageComponent],
 })

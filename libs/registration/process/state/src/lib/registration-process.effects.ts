@@ -24,8 +24,6 @@ import * as RegistrationProcessSelectors from './registration-process.selectors'
 
 @Injectable()
 export class RegistrationProcessEffects implements OnInitEffects {
-  private needToNavigate = false;
-
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(RegistrationProcessActions.init),
@@ -54,11 +52,7 @@ export class RegistrationProcessEffects implements OnInitEffects {
       ofType(RegistrationProcessActions.navigateToNextStep),
       fetch({
         id: () => 'registration-navigate-to-next-step',
-        run: () => {
-          this.needToNavigate = true;
-
-          return RegistrationProcessActions.loadProcess();
-        },
+        run: () => RegistrationProcessActions.loadProcess(),
         onError: (action, error) =>
           this.loggerService.logEffect({ context: { action, error } }, RegistrationProcessActions.loadProcessFailure({ payload: error })),
       })
@@ -129,9 +123,9 @@ export class RegistrationProcessEffects implements OnInitEffects {
             [RegistrationProcessKeys.SelectedStepId]: action.payload.step.id,
             [RegistrationProcessKeys.SelectedSubStep]: action.payload.subStep,
           });
-          if (this.needToNavigate) {
-            this.needToNavigate = false;
-            const path = getRegistrationPath(action.payload, this.navigationService.getPaths());
+
+          const path = getRegistrationPath(action.payload, this.navigationService.getPaths());
+          if (this.navigationService.url !== `/${path}`) {
             void this.navigationService.navigateByUrl(path);
           }
         },
@@ -171,6 +165,22 @@ export class RegistrationProcessEffects implements OnInitEffects {
           this.localAsyncStorage.clear();
 
           return RegistrationProcessActions.navigateToNextStep();
+        },
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
+      })
+    )
+  );
+
+  setSubStep$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(RegistrationProcessActions.setSubStep),
+      withLatestFrom(this.store.select(RegistrationProcessSelectors.selectSteps)),
+      fetch({
+        id: () => 'registration-process-restart',
+        run: (action, steps: RegistrationStep[]) => {
+          return RegistrationProcessActions.selectSubStepSuccess({
+            payload: selectStep(steps, action.payload),
+          });
         },
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
