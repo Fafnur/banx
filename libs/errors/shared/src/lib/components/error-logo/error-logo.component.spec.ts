@@ -39,6 +39,6 @@ describe('ErrorLogoComponent', () => {
 
     expect(pageObject.link).toBeTruthy();
     expect(pageObject.linkText).toBe(ENVIRONMENTS_DEFAULT.brand);
-    expect(pageObject.linkHref).toBe('/');
+    expect(pageObject.linkHref).toBe('');
   });
 });

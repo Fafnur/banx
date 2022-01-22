@@ -1,0 +1,12 @@
+<div class="mat-form-field-wrapper mat-checkboxes" extractTouched [control]="control" [class.is-invalid]="invalid">
+  <mat-checkbox
+    automation-id="checkbox"
+    [id]="id"
+    banxCheckboxTrack
+    [trackId]="id"
+    [formControl]="control"
+    i18n="Registration form field|Agreement"
+  >
+    I agree with <a class="mat-checkbox-link" banx-link [routerLink]="paths.terms | path">terms and conditions</a>
+  </mat-checkbox>
+</div>

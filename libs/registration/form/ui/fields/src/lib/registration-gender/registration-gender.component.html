@@ -1,0 +1,11 @@
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label" i18n="Registration form field|Gender">Gender</mat-label>
+  <mat-select automation-id="select" [id]="id" banxSelectTrack [trackId]="id" [formControl]="control">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{ option | registrationGenderLabel }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
+</mat-form-field>

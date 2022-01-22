@@ -13,6 +13,7 @@ import { RootStoreModule } from '@banx/core/store/root';
 import { LocalizationModule } from '@banx/russian/localization';
 import { RUSSIAN_NAVIGATION_PATHS } from '@banx/russian/navigation/common';
 import { TrackerStateModule } from '@banx/trackers/state';
+import { IconsModule } from '@banx/ui/icons';
 import { LayoutModule } from '@banx/ui/layout';
 
 import { environment } from '../environments/environment';
@@ -25,6 +26,7 @@ import { environment } from '../environments/environment';
     AuthStateModule,
     ApiContentTypeModule,
     ApiWithCredentialsModule,
+    IconsModule,
     RootStoreModule,
     TrackerStateModule,
     !environment.production ? StoreDevtoolsModule.instrument({ logOnly: environment.production }) : [],

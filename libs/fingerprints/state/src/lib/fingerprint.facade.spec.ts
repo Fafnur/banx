@@ -9,6 +9,7 @@ import { providerOf } from '@banx/core/testing';
 import { VisitorService } from '@banx/core/visitor/service';
 import { FingerprintApiService } from '@banx/fingerprints/api';
 import { CanvasDetectorService, FontDetectorService, GeolocationDetectorService } from '@banx/fingerprints/service';
+import { PROCESS_ID_STUB } from '@banx/registration/process/common';
 
 import { FingerprintEffects } from './fingerprint.effects';
 import { FingerprintFacade } from './fingerprint.facade';
@@ -49,7 +50,13 @@ describe('FingerprintFacade', () => {
       class CustomFeatureModule {}
 
       @NgModule({
-        imports: [StoreModule.forRoot({}), EffectsModule.forRoot([]), CustomFeatureModule],
+        imports: [
+          StoreModule.forRoot({ registrationProcess: (s: any) => s } as any, {
+            initialState: { registrationProcess: { processId: PROCESS_ID_STUB } },
+          }),
+          EffectsModule.forRoot([]),
+          CustomFeatureModule,
+        ],
       })
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
@@ -60,16 +67,5 @@ describe('FingerprintFacade', () => {
     it('should create', async () => {
       expect(facade).toBeTruthy();
     });
-
-    // it('run() should return call finished', async () => {
-    //   when(fontDetectorServiceMock.detect()).thenReturn(of(FINGERPRINT_FONTS_DETECTED_STUB));
-    //   when(fingerprintApiServiceMock.saveFonts(deepEqual(FINGERPRINT_DTO_STUB))).thenReturn(of(undefined));
-    //
-    //   facade.run();
-    //
-    //   const finished = await readFirst(facade.finished$);
-    //
-    //   expect(finished?.length).toBe(1);
-    // });
   });
 });

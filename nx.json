@@ -26,214 +26,29 @@
       }
     ]
   },
-  "projects": {
-    "auth-api": {
-      "tags": []
-    },
-    "auth-guards": {
-      "tags": []
-    },
-    "auth-login-page": {
-      "tags": []
-    },
-    "auth-pages": {
-      "tags": []
-    },
-    "auth-recovery-page": {
-      "tags": []
-    },
-    "auth-shared": {
-      "tags": []
-    },
-    "auth-state": {
-      "tags": []
-    },
-    "backend-api": {
-      "tags": []
-    },
-    "core-api-interceptors-content-type": {
-      "tags": []
-    },
-    "core-api-interceptors-with-credentials": {
-      "tags": []
-    },
-    "core-api-service": {
-      "tags": []
-    },
-    "core-config-service": {
-      "tags": []
-    },
-    "core-cookie-service": {
-      "tags": []
-    },
-    "core-environments-service": {
-      "tags": []
-    },
-    "core-forms-errors": {
-      "tags": []
-    },
-    "core-forms-shared": {
-      "tags": []
-    },
-    "core-forms-utils": {
-      "tags": []
-    },
-    "core-logger-service": {
-      "tags": []
-    },
-    "core-menu-common": {
-      "tags": []
-    },
-    "core-navigation-common": {
-      "tags": []
-    },
-    "core-navigation-service": {
-      "tags": []
-    },
-    "core-navigation-shared": {
-      "tags": []
-    },
-    "core-platform-service": {
-      "tags": []
-    },
-    "core-social-common": {
-      "tags": []
-    },
-    "core-social-shared": {
-      "tags": []
-    },
-    "core-storage-common": {
-      "tags": []
-    },
-    "core-storage-local": {
-      "tags": []
-    },
-    "core-storage-memory": {
-      "tags": []
-    },
-    "core-storage-session": {
-      "tags": []
-    },
-    "core-store-root": {
-      "tags": []
-    },
-    "core-store-utils": {
-      "tags": []
-    },
-    "core-testing": {
-      "tags": []
-    },
-    "core-utils": {
-      "tags": []
-    },
-    "core-visitor-service": {
-      "tags": []
-    },
-    "core-window-service": {
-      "tags": []
-    },
-    "errors-not-found-page": {
-      "tags": []
-    },
-    "errors-pages": {
-      "tags": []
-    },
-    "errors-permission-denied-page": {
-      "tags": []
-    },
-    "errors-server-error-page": {
-      "tags": []
-    },
-    "errors-shared": {
-      "tags": []
-    },
-    "fingerprints-api": {
-      "tags": []
-    },
-    "fingerprints-common": {
-      "tags": []
-    },
-    "fingerprints-service": {
-      "tags": []
-    },
-    "fingerprints-state": {
-      "tags": []
-    },
-    "numbers-to-words-common": {
-      "tags": []
-    },
-    "numbers-to-words-shared": {
-      "tags": []
-    },
-    "russian-cabinet": {
-      "tags": []
-    },
-    "russian-content-bank-credit-card-page": {
-      "tags": []
-    },
-    "russian-content-bank-page": {
-      "tags": []
-    },
-    "russian-content-business-account-page": {
-      "tags": []
-    },
-    "russian-content-business-page": {
-      "tags": []
-    },
-    "russian-content-pages": {
-      "tags": []
-    },
-    "russian-localization": {
-      "tags": []
-    },
-    "russian-navigation-common": {
-      "tags": []
-    },
-    "russian-numerals-common": {
-      "tags": []
-    },
-    "russian-numerals-shared": {
-      "tags": []
-    },
-    "russian/cabinet-e2e": {
-      "tags": [],
-      "implicitDependencies": ["russian-cabinet"]
-    },
-    "trackers-api": {
-      "tags": []
-    },
-    "trackers-common": {
-      "tags": []
-    },
-    "trackers-service": {
-      "tags": []
-    },
-    "trackers-shared": {
-      "tags": []
-    },
-    "trackers-state": {
-      "tags": []
-    },
-    "ui-accordion": {
-      "tags": []
-    },
-    "ui-container": {
-      "tags": []
-    },
-    "ui-grid": {
-      "tags": []
-    },
-    "ui-icons": {
-      "tags": []
-    },
-    "ui-layout": {
-      "tags": []
-    },
-    "ui-nav": {
-      "tags": []
-    },
-    "users-common": {
-      "tags": []
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "packageManager": "yarn"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush"
+    },
+    "@schematics/angular:component": {
+      "style": "scss",
+      "changeDetection": "OnPush"
     }
-  }
+  },
+  "defaultProject": "russian-cabinet"
 }

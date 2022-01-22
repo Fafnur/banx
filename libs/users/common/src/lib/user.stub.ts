@@ -1,7 +1,8 @@
-import { User, UserAuth, UserCredentials, UserSecrets } from './user.interface';
+import { User, UserAuth, UserCredentials, UserSecrets, UserStatus } from './user.interface';
 
 export const USER_STUB: User = {
   id: 1,
+  status: UserStatus.Registered,
   username: 'alex',
   phone: '9002002233',
   email: 'alex@alex.ru',

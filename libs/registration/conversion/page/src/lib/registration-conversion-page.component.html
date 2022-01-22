@@ -1,0 +1,26 @@
+<banx-registration-card automation-id="card">
+  <banx-registration-card-title automation-id="title" i18n="Registration step title|Registration data processing">
+    Data processing
+  </banx-registration-card-title>
+  <banx-registration-card-content automation-id="content" i18n="Registration step content|Registration please wait" *ngIf="!isShowError">
+    Please wait ...
+  </banx-registration-card-content>
+  <banx-registration-card-errors automation-id="error" *ngIf="isShowError">
+    <banx-registration-step-error></banx-registration-step-error>
+  </banx-registration-card-errors>
+  <banx-registration-card-actions automation-id="actions" *ngIf="!submitted">
+    <button
+      automation-id="submit"
+      mat-raised-button
+      banx-button-medium
+      type="button"
+      color="primary"
+      i18n="Registration step action|Registration continue"
+      [disabled]="submitted"
+      (click)="onSubmit()"
+    >
+      Continue
+    </button>
+  </banx-registration-card-actions>
+  <banx-spinner automation-id="spinner" *ngIf="submitted"></banx-spinner>
+</banx-registration-card>

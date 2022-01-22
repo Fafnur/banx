@@ -30,7 +30,7 @@ export function isSpecialKeys(event: KeyboardEvent): boolean {
   return event != null && !!event.key && SPECIAL_CODES.includes(event.key);
 }
 
-export function extractKeysFromKeyboardEvent(event: KeyboardEvent, password?: boolean): string {
+export function extractKeysFromKeyboardEvent(event: KeyboardEvent, hideValue?: boolean): string {
   if (SHIFT_CTRL_ALT_CODES.includes(event?.key)) {
     return '';
   }
@@ -39,7 +39,7 @@ export function extractKeysFromKeyboardEvent(event: KeyboardEvent, password?: bo
   if (event.altKey || event.ctrlKey || event.shiftKey) {
     keys.push(event.key);
   }
-  if (!password) {
+  if (!hideValue) {
     keys.push(event.key);
   }
 
@@ -52,7 +52,7 @@ export function extractKeysFromKeyboardEvent(event: KeyboardEvent, password?: bo
 export class InputTrackDirective {
   @Input() trackId!: string;
   @Input() trackValue!: string;
-  @Input() password?: boolean;
+  @Input() hideValue?: boolean;
 
   constructor(@Optional() private readonly trackerService: TrackerService, @Optional() @Self() public ngControl: NgControl) {}
 
@@ -69,9 +69,9 @@ export class InputTrackDirective {
   @HostListener('keydown', ['$event'])
   onInput(event: KeyboardEvent): void {
     if (isSpecialKeys(event)) {
-      this.track(TrackerEventType.Press, extractKeysFromKeyboardEvent(event, this.password));
+      this.track(TrackerEventType.Press, extractKeysFromKeyboardEvent(event, this.hideValue));
     } else {
-      this.track(TrackerEventType.Change, extractKeysFromKeyboardEvent(event, this.password));
+      this.track(TrackerEventType.Change, extractKeysFromKeyboardEvent(event, this.hideValue));
     }
   }
 
@@ -79,7 +79,7 @@ export class InputTrackDirective {
     this.trackerService.add({
       type,
       keys,
-      value: this.password ? '' : this.trackValue ?? this.ngControl?.value ?? '',
+      value: this.hideValue ? '' : this.trackValue ?? this.ngControl?.value ?? '',
       time: new Date().toISOString(),
       element: this.trackId,
     });

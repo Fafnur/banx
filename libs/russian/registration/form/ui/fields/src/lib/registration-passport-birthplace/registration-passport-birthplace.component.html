@@ -1,0 +1,16 @@
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">Место рождения</mat-label>
+  <input
+    automation-id="input"
+    placeholder="Место рождения"
+    name="data[customer][passportBirthplace]"
+    [id]="id"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+  />
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
+</mat-form-field>

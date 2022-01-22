@@ -1,4 +1,4 @@
-<mat-form-field appearance="fill" fullWidth>
+<mat-form-field appearance="fill" fullWidth extractTouched [control]="control">
   <mat-label automation-id="label" i18n="Login form|Mobile phone">Mobile phone</mat-label>
   <div>
     <input
@@ -7,13 +7,13 @@
       type="tel"
       i18n-placeholder="Login form|Mobile phone"
       placeholder="Mobile phone"
-      id="AuthUsername"
+      [id]="id"
       name="username"
       autocomplete="username"
       banxInputTrack
-      trackId="AuthUsername"
+      [trackId]="id"
       [formControl]="control"
-      [imask]="{ mask: '+{7} 000 000-00-00' }"
+      [imask]="mask"
       [unmask]="true"
     />
   </div>

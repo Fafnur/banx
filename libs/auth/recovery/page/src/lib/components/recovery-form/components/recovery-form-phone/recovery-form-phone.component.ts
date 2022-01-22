@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Subject } from 'rxjs';
-import { takeUntil, tap } from 'rxjs/operators';
+import { AnyMaskedOptions } from 'imask';
 
-import { extractTouchedChanges } from '@banx/core/forms/utils';
+import { FormMaskService } from '@banx/core/forms/mask';
 
 @Component({
   selector: 'banx-auth-recovery-form-phone',
@@ -11,24 +10,16 @@ import { extractTouchedChanges } from '@banx/core/forms/utils';
   styleUrls: ['./recovery-form-phone.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RecoveryFormPhoneComponent implements OnInit, OnDestroy {
+export class RecoveryFormPhoneComponent implements OnInit {
   @Input() control!: FormControl;
 
-  private readonly destroy$ = new Subject<void>();
+  readonly id = 'AuthRecoveryPhone';
 
-  constructor(private readonly changeDetectorRef: ChangeDetectorRef) {}
+  mask!: AnyMaskedOptions;
+
+  constructor(private readonly formMaskService: FormMaskService) {}
 
   ngOnInit(): void {
-    extractTouchedChanges(this.control)
-      .pipe(
-        tap(() => this.changeDetectorRef.markForCheck()),
-        takeUntil(this.destroy$)
-      )
-      .subscribe();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
+    this.mask = this.formMaskService.getPhoneMask();
   }
 }

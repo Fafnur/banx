@@ -15,8 +15,8 @@ export class ConfigService {
 
   constructor() {
     this.config = {
-      apiHost: process.env.API_HOST ?? CONFIG_DEFAULT.apiHost,
-      version: process.env.VERSION ?? CONFIG_DEFAULT.version,
+      apiHost: process.env['API_HOST'] ?? CONFIG_DEFAULT.apiHost,
+      version: process.env['VERSION'] ?? CONFIG_DEFAULT.version,
     };
   }
 

@@ -48,5 +48,8 @@ describe('LoginComponent', () => {
     expect(pageObject.login).toBeTruthy();
     expect(pageObject.label).toBe('Sign in');
     expect(pageObject.icon).toBe('login');
+
+    expect(pageObject.registration).toBeTruthy();
+    expect(pageObject.registrationLabel).toBe('Sign up');
   });
 });

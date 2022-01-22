@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { ApiService } from '@banx/core/api/service';
 import { CONFIG_DEFAULT } from '@banx/core/config/service';
-import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
+import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
 
 import { NavigationExternalPathPipe } from './navigation-external-path.pipe';
@@ -18,6 +18,7 @@ describe('NavigationExternalPathPipe', () => {
     waitForAsync(() => {
       void TestBed.configureTestingModule({
         imports: [HttpClientTestingModule, RouterTestingModule],
+        providers: [PATHS_STUB],
       }).compileComponents();
     })
   );

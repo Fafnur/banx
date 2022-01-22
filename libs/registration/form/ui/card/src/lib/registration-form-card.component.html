@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ng-content></ng-content>
+
+  <div banx-button-group>
+    <button
+      type="button"
+      mat-raised-button
+      banx-button-medium
+      [disabled]="submitted"
+      (click)="onPrev()"
+      *ngIf="!first"
+      i18n="Registration form card|Back"
+    >
+      Back
+    </button>
+    <button
+      type="submit"
+      mat-raised-button
+      banx-button-medium
+      color="primary"
+      [disabled]="submitted"
+      *ngIf="!last"
+      i18n="Registration form card|Next"
+    >
+      Next
+    </button>
+    <button
+      type="submit"
+      mat-raised-button
+      banx-button-medium
+      color="primary"
+      [disabled]="submitted"
+      *ngIf="last"
+      i18n="Registration form card|Finish"
+    >
+      Finish
+    </button>
+  </div>
+</form>

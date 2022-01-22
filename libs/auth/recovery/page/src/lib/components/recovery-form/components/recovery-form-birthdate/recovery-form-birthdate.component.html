@@ -3,17 +3,19 @@
   <input
     automation-id="control"
     matInput
-    name="data[customer][birthdate]"
-    id="AuthRecoveryBirthdate"
+    name="data[auth][birthdate]"
+    [id]="id"
     banxInputTrack
-    trackId="AuthRecoveryBirthdate"
+    [trackId]="id"
     [min]="minDate"
     [max]="maxDate"
     [formControl]="maskControl"
-    [imask]="maskOptions"
+    [imask]="mask"
   />
   <input
     type="hidden"
+    banxDatepickerTrack
+    [trackId]="id"
     [formControl]="control"
     [matDatepicker]="birthdatePicker"
     [min]="minDate"
@@ -23,9 +25,9 @@
   <mat-datepicker-toggle matSuffix [for]="birthdatePicker"></mat-datepicker-toggle>
   <mat-datepicker
     #birthdatePicker
-    [touchUi]="!isDesktopScreen"
+    [touchUi]="(isDesktopScreen$ | async) === false"
     banxDatepickerTrack
-    trackId="AuthRecoveryBirthdate"
+    [trackId]="id"
     [trackValue]="control?.value"
   ></mat-datepicker>
 </mat-form-field>

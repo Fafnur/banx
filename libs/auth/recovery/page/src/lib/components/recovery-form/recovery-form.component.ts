@@ -1,12 +1,12 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
 import { AuthFacade } from '@banx/auth/state';
-import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
+import { DestroyService } from '@banx/core/services';
+import { getBackendDate } from '@banx/core/utils';
 import { UserField, UserSecrets } from '@banx/users/common';
 
 import { RecoverySuccessDialogComponent } from './components/recovery-success-dialog/recovery-success-dialog.component';
@@ -16,20 +16,20 @@ import { RecoverySuccessDialogComponent } from './components/recovery-success-di
   templateUrl: './recovery-form.component.html',
   styleUrls: ['./recovery-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DestroyService],
 })
-export class RecoveryFormComponent implements OnInit, OnDestroy {
+export class RecoveryFormComponent implements OnInit {
   readonly fields = UserField;
+
   form!: FormGroup;
   recoveryError!: Record<string, any> | null;
-
-  private readonly destroy$ = new Subject<void>();
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly authFacade: AuthFacade,
     private readonly matDialog: MatDialog,
-    private readonly navigationService: NavigationService,
-    @Inject(PATHS) private readonly paths: NavigationPaths
+    private readonly destroy$: DestroyService,
+    private readonly navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -64,16 +64,11 @@ export class RecoveryFormComponent implements OnInit, OnDestroy {
       .pipe(
         tap(() => {
           void this.matDialog.open(RecoverySuccessDialogComponent, { data: this.getRecovery().phone });
-          void this.navigationService.navigateByUrl(this.paths.authLogin);
+          void this.navigationService.navigateByUrl(this.navigationService.getPaths().authLogin);
         }),
         takeUntil(this.destroy$)
       )
       .subscribe();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   onReset(): void {
@@ -88,18 +83,11 @@ export class RecoveryFormComponent implements OnInit, OnDestroy {
 
   private getRecovery(): UserSecrets {
     const data = this.form.value;
-    const date = new Date(data[UserField.Birthdate]);
-    const res = {
-      day: date.getDate(),
-      month: date.getMonth() + 1,
-      year: date.getFullYear(),
-    };
-    const secret = `${res.year}-${res.month.toString().padStart(2, '0')}-${res.day.toString().padStart(2, '0')}`;
 
-    // TODO: Russian only
+    // TODO: Phone without code
     return {
       [UserField.Phone]: data[UserField.Phone].slice(-10),
-      [UserField.Birthdate]: secret,
+      [UserField.Birthdate]: getBackendDate(data[UserField.Birthdate]),
     };
   }
 }

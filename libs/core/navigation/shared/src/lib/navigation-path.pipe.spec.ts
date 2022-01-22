@@ -2,7 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
+import { NAVIGATION_PATHS, PATHS_STUB } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
 
 import { NavigationPathPipe } from './navigation-path.pipe';
@@ -14,6 +14,7 @@ describe('NavigationPathPipe', () => {
     waitForAsync(() => {
       void TestBed.configureTestingModule({
         imports: [HttpClientTestingModule, RouterTestingModule],
+        providers: [PATHS_STUB],
       }).compileComponents();
     })
   );

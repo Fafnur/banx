@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: block;
+  padding: 1rem;
+  box-shadow: 1px 7px 24px -2px rgba(0, 0, 0, 0.4);
+
+  @include media-breakpoint-up(md) {
+    padding: 2rem;
+  }
+}
+
+.card {
+  &-primary {
+    border-top: 2px solid $color-lite;
+  }
+  &-accent {
+    border-top: 2px solid $color-accent;
+  }
+}

@@ -1,0 +1,35 @@
+<banx-ui-container>
+  <banx-registration-card automation-id="card">
+    <banx-registration-card-title automation-id="title" i18n="Registration restart page|Registration restart title">
+      Restart registration
+    </banx-registration-card-title>
+    <banx-registration-card-content automation-id="content" i18n="Registration restart page|Registration restart description">
+      Are you sure you want to start registering again?
+    </banx-registration-card-content>
+    <banx-registration-card-actions automation-id="actions">
+      <div banx-button-group>
+        <button
+          automation-id="reset"
+          mat-raised-button
+          banx-button-medium
+          type="button"
+          color="warn"
+          i18n="Registration restart page|Registration restart reset"
+          (click)="onRestart()"
+        >
+          Restart
+        </button>
+        <a
+          automation-id="continue"
+          mat-raised-button
+          banx-button-medium
+          type="button"
+          i18n="Registration restart page|Registration restart continue"
+          [routerLink]="paths.registration | path"
+        >
+          Continue
+        </a>
+      </div>
+    </banx-registration-card-actions>
+  </banx-registration-card>
+</banx-ui-container>

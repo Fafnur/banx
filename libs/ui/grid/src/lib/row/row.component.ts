@@ -11,7 +11,7 @@ import { GridBreakpointName } from '../grid.util';
 export class RowComponent implements OnInit {
   @Input() noPadding = false;
 
-  @Input() set mode(mode: string | GridBreakpointName | null) {
+  @Input() set mode(mode: string | GridBreakpointName) {
     this.update(mode ?? GridBreakpointName.Xs);
   }
 

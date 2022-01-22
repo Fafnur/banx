@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MockModule } from 'ng-mocks';
 
 import { SOCIAL_GROUPS, SocialGroup, SocialType } from '@banx/core/social/common';
 import { SocialSharedModule } from '@banx/core/social/shared';
-import { IconsModule } from '@banx/ui/icons';
 
 import { SocialGroupsComponent } from './social-groups.component';
 import { SocialGroupsComponentPo } from './social-groups.component.po';
@@ -22,7 +22,7 @@ describe('SocialGroupsComponent', () => {
           RouterTestingModule,
           NoopAnimationsModule,
           MockModule(SocialSharedModule),
-          MockModule(IconsModule),
+          MockModule(MatIconModule),
           MockModule(MatButtonModule),
         ],
         declarations: [SocialGroupsComponent],

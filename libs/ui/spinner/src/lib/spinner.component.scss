@@ -1,0 +1,10 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  display: flex;
+  margin: 1rem;
+}
+
+.spinner {
+  margin: auto;
+}

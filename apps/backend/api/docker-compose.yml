@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb:latest
+    restart: 'no'
+    environment:
+      - MARIADB_DATABASE=${DATABASE_NAME}
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_USER=${DATABASE_USER}
+      - MARIADB_PASSWORD=${DATABASE_PASSWORD}
+    ports:
+      - ${DATABASE_PORT}:3306

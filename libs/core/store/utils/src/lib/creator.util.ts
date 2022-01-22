@@ -39,10 +39,19 @@ export function createEntityState<S extends { id: number } = any>(data: S[]): En
   };
 }
 
-export function setMockStore<S = Record<string, any>>(store: Store, key: string, initialState: S, params: Partial<S> = {}): void {
+export function setMockStore<S = Record<string, any>>(
+  store: Store | MockStore,
+  key: string,
+  initialState: S,
+  params: Partial<S> = {}
+): void {
   (store as MockStore).setState(createStore(key, initialState, params));
 }
 
-export function createSetMockStore<S = Record<string, any>>(store: Store, key: string, initialState: S): (params?: Partial<S>) => void {
+export function createSetMockStore<S = Record<string, any>>(
+  store: Store | MockStore,
+  key: string,
+  initialState: S
+): (params?: Partial<S>) => void {
   return (params?: Partial<S>): void => setMockStore(store, key, initialState, params);
 }

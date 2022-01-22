@@ -36,10 +36,10 @@ describe('ErrorLinksComponent', () => {
     expect(pageObject.links).toBeTruthy();
     expect(pageObject.home).toBeTruthy();
     expect(pageObject.creditCardText).toBe('Credit cards');
-    expect(pageObject.creditCardLink).toBe(`/${NAVIGATION_PATHS.bankCreditCards}`);
+    expect(pageObject.creditCardLink).toBe(`http://localhost/${NAVIGATION_PATHS.bankCreditCards}`);
     expect(pageObject.debitCardText).toBe('Debit cards');
-    expect(pageObject.debitCardLink).toBe(`/${NAVIGATION_PATHS.bankDebitCards}`);
+    expect(pageObject.debitCardLink).toBe(`http://localhost/${NAVIGATION_PATHS.bankDebitCards}`);
     expect(pageObject.depositText).toBe('Deposits');
-    expect(pageObject.depositLink).toBe(`/${NAVIGATION_PATHS.bankDeposits}`);
+    expect(pageObject.depositLink).toBe(`http://localhost/${NAVIGATION_PATHS.bankDeposits}`);
   });
 });

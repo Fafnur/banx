@@ -1,0 +1,9 @@
+@import 'libs/ui/stylesheets/utils';
+
+:host {
+  color: $color-danger;
+
+  .link {
+    color: $color-danger;
+  }
+}

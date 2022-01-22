@@ -1,0 +1,55 @@
+<banx-registration-form-card [first]="true" [form]="form" [step]="step">
+  <banx-registration-last-name [control]="form | extractFormControl: fields.LastName"></banx-registration-last-name>
+  <banx-registration-first-name [control]="form | extractFormControl: fields.FirstName"></banx-registration-first-name>
+  <banx-registration-middle-name [control]="form | extractFormControl: fields.MiddleName"></banx-registration-middle-name>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-birthdate [control]="form | extractFormControl: fields.Birthdate"></banx-registration-birthdate>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-gender [control]="form | extractFormControl: fields.Gender"></banx-registration-gender>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-passport-series-number
+        [control]="form | extractFormControl: russianFields.PassportSeriesNumber"
+      ></banx-registration-passport-series-number>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-passport-issue-code
+        [control]="form | extractFormControl: russianFields.PassportIssueCode"
+      ></banx-registration-passport-issue-code>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-passport-issue-date
+        [control]="form | extractFormControl: russianFields.PassportIssueDate"
+      ></banx-registration-passport-issue-date>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-passport-birthplace
+        [control]="form | extractFormControl: russianFields.PassportBirthplace"
+      ></banx-registration-passport-birthplace>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-registration-passport-issue-name
+    [control]="form | extractFormControl: russianFields.PassportIssueName"
+  ></banx-registration-passport-issue-name>
+
+  <banx-ui-row mode="sm">
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-email [control]="form | extractFormControl: fields.Email"></banx-registration-email>
+    </banx-ui-column>
+    <banx-ui-column [modes]="{ sm: 6 }">
+      <banx-registration-mobile-phone [control]="form | extractFormControl: fields.MobilePhone"></banx-registration-mobile-phone>
+    </banx-ui-column>
+  </banx-ui-row>
+
+  <banx-registration-agreement [control]="form | extractFormControl: fields.Agreement"></banx-registration-agreement>
+</banx-registration-form-card>

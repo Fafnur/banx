@@ -2,7 +2,11 @@
 
 :host {
   display: block;
-  margin: auto 1rem auto auto;
+  margin: auto 0 auto auto;
+
+  @include media-breakpoint-up(im) {
+    margin: auto 1rem auto auto;
+  }
 
   @include media-breakpoint-up(md) {
     margin: auto 0.5rem auto auto;

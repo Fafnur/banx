@@ -13,9 +13,9 @@ export class RadioTrackDirective {
 
   constructor(@Optional() private readonly trackerService: TrackerService) {}
 
-  @HostListener('change', ['$event'])
-  onChange(event: MatRadioChange): void {
-    this.track(TrackerEventType.Change, event.value);
+  @HostListener('focusin')
+  onFocus(): void {
+    this.track(TrackerEventType.Focus);
   }
 
   @HostListener('focusout')
@@ -23,9 +23,9 @@ export class RadioTrackDirective {
     this.track(TrackerEventType.Blur);
   }
 
-  @HostListener('focusin')
-  onFocus(): void {
-    this.track(TrackerEventType.Focus);
+  @HostListener('change', ['$event'])
+  onChanged(event: MatRadioChange): void {
+    this.track(TrackerEventType.Change, event.value);
   }
 
   private track(type: TrackerEventType, value?: string): void {

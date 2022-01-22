@@ -10,8 +10,9 @@ module.exports = {
   },
   coverageDirectory: '../../../coverage/libs/trackers/state',
   transform: {
-    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
+    '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
+  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
   // transformIgnorePatterns: ['../../../node_modules/(?!variables/.*)'],
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',

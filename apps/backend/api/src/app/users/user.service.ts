@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
+import { User } from '@banx/users/common';
+
 import { UserEntity } from './user.entity';
 
 @Injectable()
@@ -42,5 +44,9 @@ export class UserService {
 
   async updatePassword(user: Partial<UserEntity>, password: string): Promise<void> {
     return await this.userRepository.update({ id: user.id }, { password }).then();
+  }
+
+  async update(id: number, data: Partial<User>): Promise<void> {
+    return await this.userRepository.update({ id }, data).then();
   }
 }

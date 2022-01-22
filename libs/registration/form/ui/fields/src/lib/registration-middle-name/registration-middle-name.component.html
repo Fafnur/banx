@@ -1,0 +1,17 @@
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label" i18n="Registration form field|Middle name">Middle name</mat-label>
+  <input
+    automation-id="input"
+    i18n-placeholder="Registration form field|Middle name placeholder"
+    placeholder="Gray"
+    name="data[customer][middleName]"
+    [id]="id"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+  />
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
+</mat-form-field>

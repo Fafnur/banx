@@ -1,13 +1,19 @@
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
-import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_CHECKBOX_DEFAULT_OPTIONS } from '@angular/material/checkbox';
+import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { MAT_RADIO_DEFAULT_OPTIONS } from '@angular/material/radio';
+
+import { FormMaskService } from '@banx/core/forms/mask';
 
 import { RussianMatDataAdapter } from './mat-data-adapter';
+import { RussianFormMaskService } from './russian-form-mask.service';
 
 registerLocaleData(localeRu);
 
 @NgModule({
+  imports: [MatNativeDateModule],
   providers: [
     {
       provide: LOCALE_ID,
@@ -24,6 +30,18 @@ registerLocaleData(localeRu);
     {
       provide: DateAdapter,
       useClass: RussianMatDataAdapter,
+    },
+    {
+      provide: MAT_RADIO_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+    },
+    {
+      provide: MAT_CHECKBOX_DEFAULT_OPTIONS,
+      useValue: { color: 'primary' },
+    },
+    {
+      provide: FormMaskService,
+      useClass: RussianFormMaskService,
     },
   ],
 })

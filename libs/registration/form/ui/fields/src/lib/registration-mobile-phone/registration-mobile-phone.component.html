@@ -1,0 +1,19 @@
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label" i18n="Registration form field|Mobile phone">Mobile phone</mat-label>
+  <input
+    automation-id="input"
+    i18n-placeholder="Registration form field|Mobile phone placeholder"
+    placeholder="+XX XXXX XXXXXX"
+    name="data[customer][mobilePhone]"
+    [id]="id"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+    [imask]="mask"
+    [unmask]="true"
+  />
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
+</mat-form-field>

@@ -11,7 +11,7 @@ export interface ApiRequestOptions {
 
 export function getApiRequestOptions(options?: Partial<ApiRequestOptions>): Partial<ApiRequestOptions> | undefined {
   if (options) {
-    let params: Record<string, any> = {};
+    let params: Record<string, any> | HttpParams = {};
     let headers: Record<string, any> = {};
     if (options.headers) {
       headers = !(options?.headers instanceof HttpHeaders) ? new HttpHeaders(options.headers) : options.headers;

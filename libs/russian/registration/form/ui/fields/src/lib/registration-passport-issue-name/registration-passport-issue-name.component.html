@@ -1,0 +1,16 @@
+<mat-form-field automation-id="form-field" appearance="fill" fullWidth extractTouched [control]="control">
+  <mat-label automation-id="label">Кем выдан</mat-label>
+  <textarea
+    automation-id="input"
+    placeholder="Кем выдан"
+    name="data[customer][passportIssueName]"
+    [id]="id"
+    matInput
+    banxInputTrack
+    [trackId]="id"
+    [formControl]="control"
+  ></textarea>
+  <mat-error *ngIf="control.errors && control.touched">
+    {{ control.errors | registrationFormError }}
+  </mat-error>
+</mat-form-field>

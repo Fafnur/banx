@@ -1,0 +1,9 @@
+### Get process
+GET http://localhost:3000/registration/process
+Content-Type: application/json
+Accept: application/json
+
+### Get process with process
+GET http://localhost:3000/registration/process/f46a708b-6953-4272-bc3c-eb4001dc82d0
+Content-Type: application/json
+Accept: application/json

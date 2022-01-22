@@ -10,8 +10,9 @@ module.exports = {
   },
   coverageDirectory: '../../../../coverage/libs/core/social/common',
   transform: {
-    '^.+\\.(ts|js|html)$': 'jest-preset-angular',
+    '^.+.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
+  transformIgnorePatterns: ['node_modules/(?!.*.mjs$)'],
   testRunner: 'jest-jasmine2',
   snapshotSerializers: [
     'jest-preset-angular/build/serializers/no-ng-attributes',

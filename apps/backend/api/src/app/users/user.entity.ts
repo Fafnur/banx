@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
-import { User } from '@banx/users/common';
+import { User, UserStatus } from '@banx/users/common';
 
 @Entity({
   name: 'users',
@@ -8,6 +8,13 @@ import { User } from '@banx/users/common';
 export class UserEntity implements User {
   @PrimaryGeneratedColumn()
   id!: number;
+
+  @Column({
+    type: 'enum',
+    enum: UserStatus,
+    default: UserStatus.Created,
+  })
+  status!: UserStatus;
 
   @Column()
   email!: string;
@@ -24,9 +31,9 @@ export class UserEntity implements User {
   @Column({ length: 50, unique: true })
   username!: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt!: string;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn({ nullable: true, name: 'updated_at' })
   updatedAt!: string;
 }

@@ -7,7 +7,7 @@ import { ApiService } from '@banx/core/api/service';
 import { ConfigService } from '@banx/core/config/service';
 
 export interface LoggerData {
-  context: Record<string, any>;
+  context: any;
   level: string;
   message: string;
   debug: boolean;
@@ -54,7 +54,10 @@ export class LoggerService {
     return this.apiService.post(LOGGER_API_ROUTES.log, body);
   }
 
-  logEffect(payload: Partial<LoggerEffectData>, action?: Action): Observable<void | Action> {
+  /**
+   * TODO: Rename to LogEffectAndDispatch()
+   */
+  logEffect(payload: Partial<LoggerEffectData>, action: Action = { type: '[Logger] Unknown action' }): Observable<void | Action> {
     return payload.force || (payload.context?.error?.status !== 0 && payload.context?.error?.isTrusted === true && !payload.skip)
       ? this.log(payload).pipe(switchMap(() => of(action)))
       : of(action);

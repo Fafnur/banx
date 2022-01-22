@@ -1,0 +1,15 @@
+### Get process
+GET http://localhost:3000/registration/f46a708b-6953-4272-bc3c-eb4001dc82d0
+Content-Type: application/json
+Accept: application/json
+
+### Get process with process
+POST http://localhost:3000/registration/f46a708b-6953-4272-bc3c-eb4001dc82d0/form/validate/personal
+Content-Type: application/json
+Accept: application/json
+
+{
+  "lastName": "Ivan",
+  "middleName": "Ivanovich",
+  "birthdate": "2021-11-04T08:14:38.000Z"
+}

@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
 import { takeUntil, tap } from 'rxjs/operators';
 
 import { AuthFacade } from '@banx/auth/state';
-import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
+import { DestroyService } from '@banx/core/services';
 import { UserField } from '@banx/users/common';
 
 @Component({
@@ -13,19 +12,18 @@ import { UserField } from '@banx/users/common';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DestroyService],
 })
-export class LoginFormComponent implements OnInit, OnDestroy {
+export class LoginFormComponent implements OnInit {
   readonly fields = UserField;
   form!: FormGroup;
   loginError!: Record<string, any> | null;
-
-  private readonly destroy$ = new Subject<void>();
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly authFacade: AuthFacade,
     private readonly navigationService: NavigationService,
-    @Inject(PATHS) private readonly paths: NavigationPaths
+    private readonly destroy$: DestroyService
   ) {}
 
   ngOnInit(): void {
@@ -59,15 +57,10 @@ export class LoginFormComponent implements OnInit, OnDestroy {
     this.authFacade.loginSuccess$
       .pipe(
         // TODO: After created customer space need to add redirect to profile
-        tap(() => void this.navigationService.navigateByUrl(this.paths.home)),
+        tap(() => void this.navigationService.navigateByUrl(this.navigationService.getPaths().home)),
         takeUntil(this.destroy$)
       )
       .subscribe();
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
   }
 
   onLogin(): void {

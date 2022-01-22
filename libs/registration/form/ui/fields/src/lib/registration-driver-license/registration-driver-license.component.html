@@ -1,0 +1,31 @@
+<div automation-id="form-field" class="mat-radios inline" extractTouched [control]="control">
+  <label automation-id="label" [class.is-invalid]="invalid" i18n="Registration form field|Do you have a driver license">
+    Do you have a driver’s license?
+  </label>
+  <mat-radio-group automation-id="radio-group" [formControl]="control" fullWidth [class.is-invalid]="invalid">
+    <mat-radio-button
+      automation-id="radio-yes"
+      [value]="true"
+      [id]="id"
+      banxRadioTrack
+      [trackId]="id"
+      trackValue="yes"
+      i18n="Registration form field|Yes"
+    >
+      Yes
+    </mat-radio-button>
+    <mat-radio-button
+      automation-id="radio-no"
+      [value]="false"
+      banxRadioTrack
+      [trackId]="id"
+      trackValue="no"
+      i18n="Registration form field|No"
+    >
+      No
+    </mat-radio-button>
+  </mat-radio-group>
+  <!--  <mat-error *ngIf="control.errors && control.touched">-->
+  <!--    {{ control.errors | registrationFormError }}-->
+  <!--  </mat-error>-->
+</div>

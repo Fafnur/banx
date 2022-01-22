@@ -1,0 +1,13 @@
+@import 'libs/ui/stylesheets/utils';
+
+@import 'libs/ui/buttons/styles';
+
+.social-link {
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.social-icon {
+  margin-right: 1rem;
+}
