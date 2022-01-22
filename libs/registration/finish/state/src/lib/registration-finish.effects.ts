@@ -8,6 +8,7 @@ import { loginSuccess } from '@banx/auth/state';
 import { LoggerService } from '@banx/core/logger/service';
 import { PlatformService } from '@banx/core/platform/service';
 import { LocalAsyncStorage } from '@banx/core/storage/local';
+import { SessionSyncStorage } from '@banx/core/storage/session';
 import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { RegistrationFinishApiService } from '@banx/registration/finish/api';
 import { RegistrationFormKeys } from '@banx/registration/form/common';
@@ -27,9 +28,11 @@ export class RegistrationFinishEffects {
         id: () => 'registration-finish',
         run: (action, processId: string) =>
           this.platformService.isBrowser
-            ? this.registrationFinishApiService
-                .finish(processId)
-                .pipe(map((payload) => RegistrationFinishActions.finishRegistrationSuccess({ payload })))
+            ? this.registrationFinishApiService.finish(processId).pipe(
+                map((payload) => {
+                  return RegistrationFinishActions.finishRegistrationSuccess({ payload });
+                })
+              )
             : undefined,
         onError: (action, error) =>
           this.loggerService.logEffect(
@@ -64,6 +67,7 @@ export class RegistrationFinishEffects {
     private readonly registrationFinishApiService: RegistrationFinishApiService,
     private readonly platformService: PlatformService,
     private readonly loggerService: LoggerService,
+    private readonly sessionSyncStorage: SessionSyncStorage,
     private readonly localAsyncStorage: LocalAsyncStorage
   ) {}
 }

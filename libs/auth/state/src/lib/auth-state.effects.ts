@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType, OnInitEffects } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { fetch } from '@nrwl/angular';
-import { map, take, withLatestFrom } from 'rxjs/operators';
+import { map, withLatestFrom } from 'rxjs/operators';
 
 import { AuthApiService } from '@banx/auth/api';
 import { LoggerService } from '@banx/core/logger/service';
@@ -16,7 +16,7 @@ export class AuthStateEffects implements OnInitEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.init),
-      withLatestFrom(this.sessionAsyncStorage.getItem(UserStorageKeys.AuthToken).pipe(take(1))),
+      withLatestFrom(this.sessionAsyncStorage.getItem(UserStorageKeys.AuthToken)),
       fetch({
         run: (action, authToken) => AuthActions.restore({ payload: { logged: !!authToken } }),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
@@ -46,11 +46,28 @@ export class AuthStateEffects implements OnInitEffects {
     )
   );
 
+  loginSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.loginSuccess),
+      fetch({
+        run: ({ payload }) => {
+          // TODO: Need to refactor
+          this.sessionAsyncStorage.setItems({
+            [UserStorageKeys.Id]: payload.id,
+            [UserStorageKeys.AuthToken]: payload.accessToken,
+            [UserStorageKeys.Username]: payload.username,
+          });
+        },
+        onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
+      })
+    )
+  );
+
   logout$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.logout),
       fetch({
-        run: () => this.sessionAsyncStorage.removeItems([UserStorageKeys.AuthToken]),
+        run: () => this.sessionAsyncStorage.removeItems([UserStorageKeys.AuthToken, UserStorageKeys.Id, UserStorageKeys.Username]),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
     )

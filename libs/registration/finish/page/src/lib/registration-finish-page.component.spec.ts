@@ -8,6 +8,7 @@ import { MockModule } from 'ng-mocks';
 import { ReplaySubject } from 'rxjs';
 import { mock, when } from 'ts-mockito';
 
+import { AuthFacade } from '@banx/auth/state';
 import { NAVIGATION_PATHS } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
 import { NavigationSharedModule } from '@banx/core/navigation/shared';
@@ -17,6 +18,7 @@ import { RegistrationFinishFacade } from '@banx/registration/finish/state';
 import { RegistrationCardModule } from '@banx/registration/ui/card';
 import { RegistrationStepErrorModule } from '@banx/registration/ui/step-error';
 import { SpinnerModule } from '@banx/ui/spinner';
+import { UserAuth } from '@banx/users/common';
 
 import { RegistrationFinishPageComponent } from './registration-finish-page.component';
 import { RegistrationFinishPageComponentPo } from './registration-finish-page.component.po';
@@ -28,12 +30,16 @@ describe('RegistrationFinishPageComponent', () => {
   let finishRegistrationFailure$: ReplaySubject<HttpErrorResponse>;
   let finishRegistrationSuccess$: ReplaySubject<RegistrationFinishResponse>;
   let navigationServiceMock: NavigationService;
+  let authFacadeMock: AuthFacade;
+  let loginSuccess$: ReplaySubject<UserAuth>;
 
   beforeEach(() => {
     registrationFinishFacadeMock = mock(RegistrationFinishFacade);
     navigationServiceMock = mock(NavigationService);
+    authFacadeMock = mock(AuthFacade);
     finishRegistrationFailure$ = new ReplaySubject<HttpErrorResponse>(1);
     finishRegistrationSuccess$ = new ReplaySubject<RegistrationFinishResponse>(1);
+    loginSuccess$ = new ReplaySubject<UserAuth>(1);
   });
 
   beforeEach(async () => {
@@ -49,12 +55,17 @@ describe('RegistrationFinishPageComponent', () => {
         MockModule(NavigationSharedModule),
       ],
       declarations: [RegistrationFinishPageComponent],
-      providers: [providerOf(RegistrationFinishFacade, registrationFinishFacadeMock), providerOf(NavigationService, navigationServiceMock)],
+      providers: [
+        providerOf(RegistrationFinishFacade, registrationFinishFacadeMock),
+        providerOf(NavigationService, navigationServiceMock),
+        providerOf(AuthFacade, authFacadeMock),
+      ],
     }).compileComponents();
   });
 
   beforeEach(() => {
     when(navigationServiceMock.getPaths()).thenReturn(NAVIGATION_PATHS);
+    when(authFacadeMock.loginSuccess$).thenReturn(loginSuccess$);
     when(registrationFinishFacadeMock.finishRegistrationFailure$).thenReturn(finishRegistrationFailure$);
     when(registrationFinishFacadeMock.finishRegistrationSuccess$).thenReturn(finishRegistrationSuccess$);
 

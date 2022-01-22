@@ -199,8 +199,8 @@ export const NAVIGATION_PATHS: NavigationPaths = {
 
   user: 'user',
   userProfile: 'user/profile',
-  userApproved: 'user/approved',
-  userRejected: 'user/rejected',
+  userApproved: 'user/approve',
+  userRejected: 'user/reject',
 
   registration: 'registration',
   registrationForm: 'registration/form',

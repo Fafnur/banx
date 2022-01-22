@@ -4,6 +4,7 @@ import { Action, select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { isNotNullOrUndefined } from '@banx/core/store/utils';
 import { UserAuth, UserCredentials, UserSecrets } from '@banx/users/common';
 
 import * as AuthActions from './auth-state.actions';
@@ -12,7 +13,7 @@ import * as AuthSelectors from './auth-state.selectors';
 
 @Injectable()
 export class AuthFacade {
-  logged$ = this.store.pipe(select(AuthSelectors.selectLogged));
+  logged$ = this.store.pipe(select(AuthSelectors.selectLogged)).pipe(isNotNullOrUndefined());
 
   loginSuccess$: Observable<UserAuth> = this.actions$.pipe(
     ofType(AuthActions.loginSuccess),

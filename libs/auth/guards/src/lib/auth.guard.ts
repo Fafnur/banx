@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { CanActivate, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, take } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { NavigationPaths, PATHS } from '@banx/core/navigation/common';
 import { NavigationService } from '@banx/core/navigation/service';
@@ -17,9 +17,8 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(): Observable<boolean | UrlTree> {
-    return this.sessionAsyncStorage.getItem(UserStorageKeys.AuthToken).pipe(
-      take(1),
-      map((authToken) => !authToken || this.navigationService.createUrlTree(this.paths.user))
-    );
+    return this.sessionAsyncStorage
+      .getItem(UserStorageKeys.AuthToken)
+      .pipe(map((authToken) => !authToken || this.navigationService.createUrlTree(this.paths.user)));
   }
 }

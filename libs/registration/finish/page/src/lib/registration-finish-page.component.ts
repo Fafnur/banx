@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { takeUntil, tap } from 'rxjs';
+import { combineLatest, takeUntil, tap } from 'rxjs';
 
+import { AuthFacade } from '@banx/auth/state';
 import { NavigationService } from '@banx/core/navigation/service';
 import { DestroyService } from '@banx/core/services';
 import { RegistrationFinishFacade } from '@banx/registration/finish/state';
@@ -20,6 +21,7 @@ export class RegistrationFinishPageComponent implements OnInit {
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,
     private readonly registrationFinishFacade: RegistrationFinishFacade,
+    private readonly authFacade: AuthFacade,
     private readonly navigationService: NavigationService,
     private readonly destroy$: DestroyService
   ) {}
@@ -36,9 +38,9 @@ export class RegistrationFinishPageComponent implements OnInit {
       )
       .subscribe();
 
-    this.registrationFinishFacade.finishRegistrationSuccess$
+    combineLatest([this.registrationFinishFacade.finishRegistrationSuccess$, this.authFacade.loginSuccess$])
       .pipe(
-        tap((result) => {
+        tap(([result]) => {
           const approved = [UserStatus.Registered, UserStatus.Verified].includes(result.status);
           const paths = this.navigationService.getPaths();
           void this.navigationService.navigateByUrl(approved ? paths.userApproved : paths.userRejected);

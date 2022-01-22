@@ -138,7 +138,12 @@
       "@banx/ui/links": ["libs/ui/links/src/index.ts"],
       "@banx/ui/nav": ["libs/ui/nav/src/index.ts"],
       "@banx/ui/spinner": ["libs/ui/spinner/src/index.ts"],
-      "@banx/users/common": ["libs/users/common/src/index.ts"]
+      "@banx/users/approve/page": ["libs/users/approve/page/src/index.ts"],
+      "@banx/users/common": ["libs/users/common/src/index.ts"],
+      "@banx/users/guards": ["libs/users/guards/src/index.ts"],
+      "@banx/users/pages": ["libs/users/pages/src/index.ts"],
+      "@banx/users/reject/page": ["libs/users/reject/page/src/index.ts"],
+      "@banx/users/ui/layout": ["libs/users/ui/layout/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"],

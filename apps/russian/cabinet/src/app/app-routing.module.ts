@@ -40,6 +40,10 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('@banx/russian/registration/pages').then((modules) => modules.RegistrationPagesModule),
       },
+      {
+        path: '',
+        loadChildren: () => import('@banx/users/pages').then((modules) => modules.UserPagesModule),
+      },
     ],
   },
   {

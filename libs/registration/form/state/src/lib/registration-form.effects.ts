@@ -53,8 +53,8 @@ export class RegistrationFormEffects implements OnInitEffects {
       ofType(RegistrationFormActions.createForm),
       withLatestFrom(
         combineLatest([
-          this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1)),
-          this.store.pipe(select(RegistrationFormSelectors.selectForm), isNotNullOrUndefined(), take(1)),
+          this.store.pipe(select(selectProcessId), isNotNullOrUndefined()),
+          this.store.pipe(select(RegistrationFormSelectors.selectForm), isNotNullOrUndefined()),
         ])
       ),
       fetch({
