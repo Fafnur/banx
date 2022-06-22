@@ -18,7 +18,7 @@ export class FingerprintGeolocationService {
     // Here we are using coordinates as a fingerprint, but this is not correct.
     // You need to use this data to determine the country and subject.
     const fingerprint = md5(data ? `${data.latitude?.toFixed(4)}${data.longitude?.toFixed(4)}` : 'decline');
-    const record = await this.geolocationEntityRepository.findOne({ visitor, fingerprint });
+    const record = await this.geolocationEntityRepository.findOneBy({ visitor, fingerprint });
 
     return !record
       ? await this.geolocationEntityRepository.save(

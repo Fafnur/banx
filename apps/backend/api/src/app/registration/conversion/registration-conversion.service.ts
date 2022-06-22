@@ -12,7 +12,7 @@ export class RegistrationConversionService {
   ) {}
 
   async conversion(process: string): Promise<{ conversion: number }> {
-    const conversionEntity = (await this.registrationConversionEntityRepository.findOne({ process })) ?? null;
+    const conversionEntity = (await this.registrationConversionEntityRepository.findOneBy({ process })) ?? null;
     const conversion = conversionEntity?.conversion ?? Math.random() * 1000;
 
     if (!conversionEntity) {

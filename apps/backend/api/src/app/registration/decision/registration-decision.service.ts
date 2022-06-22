@@ -12,7 +12,7 @@ export class RegistrationDecisionService {
   ) {}
 
   async decision(process: string): Promise<RegistrationDecisionEntity> {
-    let decisionEntity = (await this.registrationDecisionEntityRepository.findOne({ process })) ?? null;
+    let decisionEntity = (await this.registrationDecisionEntityRepository.findOneBy({ process })) ?? null;
 
     const score = Math.random();
 

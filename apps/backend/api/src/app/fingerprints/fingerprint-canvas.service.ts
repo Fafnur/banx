@@ -13,7 +13,7 @@ export class FingerprintCanvasService {
 
   async save({ visitor, data, process }: FingerprintDto<CanvasFingerprint>): Promise<FingerprintCanvasEntity | null> {
     const fingerprint = md5(data.text);
-    const record = await this.canvasRepository.findOne({ visitor, fingerprint });
+    const record = await this.canvasRepository.findOneBy({ visitor, fingerprint });
 
     return !record ? await this.canvasRepository.save(this.canvasRepository.create({ visitor, fingerprint, data, process })) : null;
   }

@@ -17,7 +17,7 @@ export class FingerprintFontService {
         .filter((key) => data[key])
         .join(',')
     );
-    const record = await this.fontRepository.findOne({ visitor, fingerprint });
+    const record = await this.fontRepository.findOneBy({ visitor, fingerprint });
 
     return !record ? await this.fontRepository.save(this.fontRepository.create({ visitor, fingerprint, data, process })) : null;
   }

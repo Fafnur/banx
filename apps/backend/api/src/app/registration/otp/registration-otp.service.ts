@@ -17,7 +17,7 @@ export class RegistrationOtpService {
   ) {}
 
   async valid(process: string, phone: string): Promise<boolean> {
-    const otpEntity = (await this.registrationOtpEntityRepository.findOne({ process, phone })) ?? null;
+    const otpEntity = (await this.registrationOtpEntityRepository.findOneBy({ process, phone })) ?? null;
 
     return otpEntity ? !!otpEntity.finished : false;
   }
@@ -27,7 +27,7 @@ export class RegistrationOtpService {
     data: { [RegistrationFormField.SmsCode]: string; [RegistrationFormField.MobilePhone]: string }
   ): Promise<UpdateResult> {
     const otpEntity =
-      (await this.registrationOtpEntityRepository.findOne({ process, phone: data[RegistrationFormField.MobilePhone] })) ?? null;
+      (await this.registrationOtpEntityRepository.findOneBy({ process, phone: data[RegistrationFormField.MobilePhone] })) ?? null;
 
     if (!otpEntity || otpEntity.code !== +data[RegistrationFormField.SmsCode]) {
       throw new BadRequestException({
@@ -41,7 +41,7 @@ export class RegistrationOtpService {
   }
 
   async create(process: string, phone: string): Promise<RegistrationOtpEntity> {
-    const otpEntity = (await this.registrationOtpEntityRepository.findOne({ process, phone })) ?? null;
+    const otpEntity = (await this.registrationOtpEntityRepository.findOneBy({ process, phone })) ?? null;
     if (!otpEntity) {
       const code = getCode();
 
@@ -52,12 +52,12 @@ export class RegistrationOtpService {
   }
 
   async resend(process: string, phone: string): Promise<RegistrationOtpEntity | null> {
-    const otpEntity = (await this.registrationOtpEntityRepository.findOne({ process, phone })) ?? null;
+    const otpEntity = (await this.registrationOtpEntityRepository.findOneBy({ process, phone })) ?? null;
     if (otpEntity) {
       const code = getCode();
       await this.registrationOtpEntityRepository.update({ id: otpEntity.id }, { code });
 
-      return (await this.registrationOtpEntityRepository.findOne({ id: otpEntity.id })) as RegistrationOtpEntity;
+      return (await this.registrationOtpEntityRepository.findOneBy({ id: otpEntity.id })) as RegistrationOtpEntity;
     }
 
     return null;

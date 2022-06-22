@@ -14,8 +14,8 @@ export class RegistrationProcessService {
   ) {}
 
   async getProcess(processId?: string): Promise<RegistrationProcessDto> {
-    const processPrevious: RegistrationProcessEntity | undefined = processId
-      ? await this.registrationProcessEntityRepository.findOne({ process: processId })
+    const processPrevious: RegistrationProcessEntity | undefined | null = processId
+      ? await this.registrationProcessEntityRepository.findOneBy({ process: processId })
       : undefined;
 
     const process =
@@ -32,7 +32,7 @@ export class RegistrationProcessService {
   }
 
   async finishStep(process: string, step: string, user?: number): Promise<void> {
-    const processEntity = await this.registrationProcessEntityRepository.findOne({ process });
+    const processEntity = await this.registrationProcessEntityRepository.findOneBy({ process });
     if (processEntity) {
       if (!processEntity.finishedSteps) {
         processEntity.finishedSteps = {};

@@ -13,18 +13,18 @@ export class RegistrationFormService {
   ) {}
 
   async getForm(process: string): Promise<RegistrationForm> {
-    return (await this.registrationFormEntityRepository.findOne({ process })) ?? {};
+    return (await this.registrationFormEntityRepository.findOneBy({ process })) ?? {};
   }
 
   async saveForm(process: string, form: RegistrationForm): Promise<RegistrationFormEntity> {
-    const formEntity = (await this.registrationFormEntityRepository.findOne({ process })) ?? null;
+    const formEntity = (await this.registrationFormEntityRepository.findOneBy({ process })) ?? null;
 
     if (!formEntity) {
       return await this.registrationFormEntityRepository.save(this.registrationFormEntityRepository.create({ process, ...form }));
     } else {
       await this.registrationFormEntityRepository.update({ process }, form);
 
-      return (await this.registrationFormEntityRepository.findOne({ process })) as RegistrationFormEntity;
+      return (await this.registrationFormEntityRepository.findOneBy({ process })) as RegistrationFormEntity;
     }
   }
 }
