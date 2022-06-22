@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/registration/social/state/src",
+  "prefix": "banx",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/registration/social/state/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/registration/social/state/src/**/*.ts", "libs/registration/social/state/src/**/*.html"]
+      }
+    }
+  }
+}

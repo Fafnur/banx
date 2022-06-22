@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/ui/container/src",
+  "prefix": "banx",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/ui/container/src/**/*.ts", "libs/ui/container/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/ui/container/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

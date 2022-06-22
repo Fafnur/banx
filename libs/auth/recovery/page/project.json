@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/auth/recovery/page/src",
+  "prefix": "banx",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/auth/recovery/page/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/auth/recovery/page/src/**/*.ts", "libs/auth/recovery/page/src/**/*.html"]
+      }
+    }
+  }
+}

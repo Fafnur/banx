@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/core/forms/validators/src",
+  "prefix": "banx",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/core/forms/validators/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/core/forms/validators/src/**/*.ts", "libs/core/forms/validators/src/**/*.html"]
+      }
+    }
+  }
+}

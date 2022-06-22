@@ -1,0 +1,21 @@
+{
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/errors/server-error/page/src",
+  "prefix": "banx",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/errors/server-error/page/src/**/*.ts", "libs/errors/server-error/page/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/errors/server-error/page/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

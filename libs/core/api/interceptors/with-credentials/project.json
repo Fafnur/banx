@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/core/api/interceptors/with-credentials/src",
+  "prefix": "banx",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/core/api/interceptors/with-credentials/src/**/*.ts",
+          "libs/core/api/interceptors/with-credentials/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/core/api/interceptors/with-credentials/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/russian/cabinet/src",
+  "prefix": "banx",
+  "i18n": {
+    "sourceLocale": "en-US",
+    "locales": {
+      "ru-RU": {
+        "translation": "libs/russian/localization/src/lib/messages.xlf",
+        "baseHref": ""
+      }
+    }
+  },
+  "targets": {
+    "build": {
+      "executor": "@angular-builders/custom-webpack:browser",
+      "options": {
+        "customWebpackConfig": {
+          "path": "apps/russian/cabinet/webpack-dev.config.ts"
+        },
+        "outputPath": "dist/apps/russian/cabinet",
+        "index": "apps/russian/cabinet/src/index.html",
+        "main": "apps/russian/cabinet/src/main.ts",
+        "polyfills": "apps/russian/cabinet/src/polyfills.ts",
+        "tsConfig": "apps/russian/cabinet/tsconfig.app.json",
+        "localize": ["ru-RU"],
+        "aot": true,
+        "optimization": false,
+        "buildOptimizer": false,
+        "assets": ["apps/russian/cabinet/src/favicon.ico", "apps/russian/cabinet/src/assets"],
+        "styles": ["apps/russian/cabinet/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "customWebpackConfig": {
+            "path": "apps/russian/cabinet/webpack-prod.config.ts"
+          },
+          "fileReplacements": [
+            {
+              "replace": "apps/russian/cabinet/src/environments/environment.ts",
+              "with": "apps/russian/cabinet/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false,
+          "buildOptimizer": true,
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
+            }
+          ]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@angular-builders/custom-webpack:dev-server",
+      "options": {
+        "browserTarget": "russian-cabinet:build"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "russian-cabinet:build:production"
+        }
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "russian-cabinet:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/russian/cabinet/src/**/*.ts", "apps/russian/cabinet/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/russian/cabinet/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

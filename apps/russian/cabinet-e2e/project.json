@@ -1,0 +1,27 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/russian/cabinet-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/russian/cabinet-e2e/cypress.json",
+        "tsConfig": "apps/russian/cabinet-e2e/tsconfig.e2e.json",
+        "devServerTarget": "russian-cabinet:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "russian-cabinet:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/russian/cabinet-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "implicitDependencies": ["russian-cabinet"]
+}
