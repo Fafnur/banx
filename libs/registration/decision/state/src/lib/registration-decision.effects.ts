@@ -20,7 +20,7 @@ export class RegistrationDecisionEffects {
       ofType(RegistrationDecisionActions.makeDecision),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-make-decision',
+        id: (action, data) => 'registration-make-decision',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationDecisionApiService.makeDecision(processId).pipe(map(() => RegistrationDecisionActions.makeDecisionSuccess()))

@@ -25,7 +25,7 @@ export class RegistrationFinishEffects {
       ofType(RegistrationFinishActions.finishRegistration),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-finish',
+        id: (action, data) => 'registration-finish',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationFinishApiService.finish(processId).pipe(

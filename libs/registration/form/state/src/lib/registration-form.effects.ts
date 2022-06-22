@@ -25,7 +25,7 @@ export class RegistrationFormEffects implements OnInitEffects {
       ofType(RegistrationFormActions.init),
       withLatestFrom(this.localAsyncStorage.getItem<RegistrationForm | null>(RegistrationFormKeys.Form).pipe(take(1))),
       fetch({
-        id: () => 'registration-form-init',
+        id: (action, data) => 'registration-form-init',
         run: (action, form: RegistrationForm | null) => RegistrationFormActions.restore({ payload: { form } }),
         onError: (action, error) => this.loggerService.logEffect({ context: { action, error } }),
       })
@@ -37,7 +37,7 @@ export class RegistrationFormEffects implements OnInitEffects {
       ofType(RegistrationFormActions.loadForm),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-form-load',
+        id: (action, data) => 'registration-form-load',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationFormApiService.load(processId).pipe(map((payload) => RegistrationFormActions.loadFormSuccess({ payload })))
@@ -58,7 +58,7 @@ export class RegistrationFormEffects implements OnInitEffects {
         ])
       ),
       fetch({
-        id: () => 'registration-create-form',
+        id: (action, data) => 'registration-create-form',
         run: (action, [processId, form]: [string, RegistrationForm]) =>
           this.platformService.isBrowser
             ? this.registrationFormApiService
@@ -95,7 +95,7 @@ export class RegistrationFormEffects implements OnInitEffects {
       ofType(RegistrationFormActions.validateForm),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-validate-form',
+        id: (action, data) => 'registration-validate-form',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationFormApiService
@@ -113,7 +113,7 @@ export class RegistrationFormEffects implements OnInitEffects {
       ofType(RegistrationFormActions.validateFormField),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: (action) => `registration-validate-form-field-${JSON.stringify(action.payload)}`,
+        id: (action, data) => `registration-validate-form-field-${JSON.stringify(action.payload)}`,
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationFormApiService

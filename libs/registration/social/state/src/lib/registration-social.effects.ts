@@ -20,7 +20,7 @@ export class RegistrationSocialEffects {
       ofType(RegistrationSocialActions.finishSocial),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-social-finish',
+        id: (action, data) => 'registration-social-finish',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationSocialApiService.finish(processId).pipe(map(() => RegistrationSocialActions.finishSocialSuccess()))

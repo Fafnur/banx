@@ -48,7 +48,7 @@ export class FingerprintEffects {
       ofType(FingerprintActions.saveFonts),
       withLatestFrom(this.store.pipe(select(selectProcessId))),
       fetch({
-        id: () => 'fingerprint-save-fonts',
+        id: (action, data) => 'fingerprint-save-fonts',
         run: (action, process) =>
           this.platformService.isBrowser
             ? this.fingerprintApiService
@@ -99,7 +99,7 @@ export class FingerprintEffects {
       ofType(FingerprintActions.saveCanvas),
       withLatestFrom(this.store.pipe(select(selectProcessId))),
       fetch({
-        id: () => 'fingerprint-save-canvas',
+        id: (action, data) => 'fingerprint-save-canvas',
         run: (action, process) =>
           this.platformService.isBrowser
             ? this.fingerprintApiService
@@ -150,7 +150,7 @@ export class FingerprintEffects {
       ofType(FingerprintActions.saveGeolocation),
       withLatestFrom(this.store.pipe(select(selectProcessId))),
       fetch({
-        id: () => 'fingerprint-save-geolocation',
+        id: (action, data) => 'fingerprint-save-geolocation',
         run: (action, process) =>
           this.platformService.isBrowser
             ? this.fingerprintApiService

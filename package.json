@@ -56,6 +56,7 @@
     "@ngrx/store": "14.0.0",
     "@ngrx/store-devtools": "^14.0.0",
     "angular-imask": "^6.4.2",
+    "nx": "^14.3.6",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.5.0",
     "tslib": "^2.4.0",
@@ -108,6 +109,7 @@
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsdoc": "^39.3.3",
+    "eslint-plugin-ngrx": "^2.1.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
@@ -143,4 +145,3 @@
     }
   }
 }
-

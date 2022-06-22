@@ -20,7 +20,7 @@ export class RegistrationUserEffects {
       ofType(RegistrationUserActions.createUser),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-user-create',
+        id: (action, data) => 'registration-user-create',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationUserApiService.create(processId).pipe(map(() => RegistrationUserActions.createUserSuccess()))

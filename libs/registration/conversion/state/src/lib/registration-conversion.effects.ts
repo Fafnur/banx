@@ -20,7 +20,7 @@ export class RegistrationConversionEffects {
       ofType(RegistrationConversionActions.loadConversion),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-load-conversion',
+        id: (action, data) => 'registration-load-conversion',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationConversionApiService
@@ -41,7 +41,7 @@ export class RegistrationConversionEffects {
       ofType(RegistrationConversionActions.completeConversion),
       withLatestFrom(this.store.pipe(select(selectProcessId), isNotNullOrUndefined(), take(1))),
       fetch({
-        id: () => 'registration-complete-conversion',
+        id: (action, data) => 'registration-complete-conversion',
         run: (action, processId: string) =>
           this.platformService.isBrowser
             ? this.registrationConversionApiService

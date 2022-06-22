@@ -33,7 +33,7 @@ export class RegistrationProcessEffects implements OnInitEffects {
           .pipe(take(1))
       ),
       fetch({
-        id: () => 'registration-process-init',
+        id: (action, data) => 'registration-process-init',
         run: (action, [processId, selected, subStep]) =>
           RegistrationProcessActions.restore({
             payload: {
@@ -64,7 +64,7 @@ export class RegistrationProcessEffects implements OnInitEffects {
       ofType(RegistrationProcessActions.loadProcess),
       withLatestFrom(this.store.pipe(select(RegistrationProcessSelectors.selectProcessId))),
       fetch({
-        id: () => 'registration-process-load',
+        id: (action, data) => 'registration-process-load',
         run: (action, processId: string | null) =>
           this.platformService.isBrowser
             ? this.registrationProcessApiService
@@ -102,7 +102,7 @@ export class RegistrationProcessEffects implements OnInitEffects {
         ])
       ),
       fetch({
-        id: () => 'registration-process-select-step',
+        id: (action, data) => 'registration-process-select-step',
         run: (action, [steps, subStep]: [RegistrationStep[], string | null]) =>
           RegistrationProcessActions.selectStepSuccess({
             payload: selectStep(steps, subStep),
@@ -144,7 +144,7 @@ export class RegistrationProcessEffects implements OnInitEffects {
         ])
       ),
       fetch({
-        id: () => 'registration-process-select-sub-step',
+        id: (action, data) => 'registration-process-select-sub-step',
         run: (action, [steps, subStep]: [RegistrationStep[], string | null]) =>
           RegistrationProcessActions.selectSubStepSuccess({
             payload: selectStepContinue(steps, subStep, action.payload),
@@ -176,7 +176,7 @@ export class RegistrationProcessEffects implements OnInitEffects {
       ofType(RegistrationProcessActions.setSubStep),
       withLatestFrom(this.store.select(RegistrationProcessSelectors.selectSteps)),
       fetch({
-        id: () => 'registration-process-restart',
+        id: (action, data) => 'registration-process-restart',
         run: (action, steps: RegistrationStep[]) => {
           return RegistrationProcessActions.selectSubStepSuccess({
             payload: selectStep(steps, action.payload),
