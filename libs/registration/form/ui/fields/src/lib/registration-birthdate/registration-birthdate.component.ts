@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { AnyMaskedOptions } from 'imask';
 import { Observable, takeUntil, tap } from 'rxjs';
 
@@ -17,8 +17,8 @@ import { GridBreakpointType, GridService } from '@banx/ui/grid';
   providers: [DestroyService],
 })
 export class RegistrationBirthdateComponent implements OnInit {
-  @Input() control!: FormControl;
-  readonly maskControl = new FormControl(null, [Validators.required, Validators.minLength(8)]);
+  @Input() control!: UntypedFormControl;
+  readonly maskControl = new UntypedFormControl(null, [Validators.required, Validators.minLength(8)]);
 
   readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.Birthdate];
   readonly maxDate = getMaxDate(18);

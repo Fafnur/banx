@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 import { REGISTRATION_DEPENDENTS_AMOUNTS, REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/registration/form/common';
 
@@ -10,7 +10,7 @@ import { REGISTRATION_DEPENDENTS_AMOUNTS, REGISTRATION_FORM_FIELD_IDS, Registrat
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationDependentsAmountComponent {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.DependentsAmount];
   readonly options = REGISTRATION_DEPENDENTS_AMOUNTS;

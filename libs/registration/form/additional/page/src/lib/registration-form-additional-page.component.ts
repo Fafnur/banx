@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
@@ -14,9 +14,9 @@ export class RegistrationFormAdditionalPageComponent {
   readonly fields = RegistrationFormField;
   readonly step = RegistrationFormSubSteps.Additional;
 
-  readonly form = new FormGroup({
-    [RegistrationFormField.MinimalDesiredAmount]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.DriverLicense]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.OwnCar]: new FormControl(null, [Validators.required]),
+  readonly form = new UntypedFormGroup({
+    [RegistrationFormField.MinimalDesiredAmount]: new UntypedFormControl(null, [Validators.required]),
+    [RegistrationFormField.DriverLicense]: new UntypedFormControl(null, [Validators.required]),
+    [RegistrationFormField.OwnCar]: new UntypedFormControl(null, [Validators.required]),
   });
 }

@@ -18,16 +18,7 @@
       }
     }
   },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
   "cli": {
-    "defaultCollection": "@nrwl/angular",
     "packageManager": "yarn"
   },
   "generators": {
@@ -50,5 +41,11 @@
       "changeDetection": "OnPush"
     }
   },
-  "defaultProject": "russian-cabinet"
+  "defaultProject": "russian-cabinet",
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"]
+    }
+  }
 }

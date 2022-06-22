@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_MARITAL_STATUSES, RegistrationFormField } from '@banx/registration/form/common';
 
@@ -10,7 +10,7 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_MARITAL_STATUSES, Registratio
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationMaritalStatusComponent {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.MaritalStatus];
   readonly options = REGISTRATION_MARITAL_STATUSES;

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { RegistrationEmploymentType, RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
@@ -14,16 +14,16 @@ export class RegistrationFormEmploymentPageComponent {
   readonly employmentTypes = RegistrationEmploymentType;
   readonly fields = RegistrationFormField;
   readonly step = RegistrationFormSubSteps.Employment;
-  readonly form = new FormGroup({
-    [RegistrationFormField.EmploymentType]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.EmployerName]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.InstitutionName]: new FormControl(null, []),
-    [RegistrationFormField.JobDescription]: new FormControl(null, []),
-    [RegistrationFormField.InstitutionDepartmentName]: new FormControl(null, []),
-    [RegistrationFormField.MonthlyIncome]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.AdditionalIncomeAmount]: new FormControl(null, []),
-    [RegistrationFormField.PeriodOfEmployment]: new FormControl(null, []),
-    [RegistrationFormField.PeriodOfUnemployment]: new FormControl(null, []),
+  readonly form = new UntypedFormGroup({
+    [RegistrationFormField.EmploymentType]: new UntypedFormControl(null, [Validators.required]),
+    [RegistrationFormField.EmployerName]: new UntypedFormControl(null, [Validators.required]),
+    [RegistrationFormField.InstitutionName]: new UntypedFormControl(null, []),
+    [RegistrationFormField.JobDescription]: new UntypedFormControl(null, []),
+    [RegistrationFormField.InstitutionDepartmentName]: new UntypedFormControl(null, []),
+    [RegistrationFormField.MonthlyIncome]: new UntypedFormControl(null, [Validators.required]),
+    [RegistrationFormField.AdditionalIncomeAmount]: new UntypedFormControl(null, []),
+    [RegistrationFormField.PeriodOfEmployment]: new UntypedFormControl(null, []),
+    [RegistrationFormField.PeriodOfUnemployment]: new UntypedFormControl(null, []),
   });
 
   get employmentType(): RegistrationEmploymentType | null {

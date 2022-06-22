@@ -2,6 +2,7 @@
   "version": 1,
   "projects": {
     "auth-api": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/api",
       "sourceRoot": "libs/auth/api/src",
@@ -10,7 +11,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/api/jest.config.js",
+            "jestConfig": "libs/auth/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -23,6 +24,7 @@
       }
     },
     "auth-guards": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/guards",
       "sourceRoot": "libs/auth/guards/src",
@@ -31,7 +33,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/guards/jest.config.js",
+            "jestConfig": "libs/auth/guards/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -44,6 +46,7 @@
       }
     },
     "auth-login-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/login/page",
       "sourceRoot": "libs/auth/login/page/src",
@@ -52,7 +55,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/login/page/jest.config.js",
+            "jestConfig": "libs/auth/login/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -65,6 +68,7 @@
       }
     },
     "auth-pages": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/pages",
       "sourceRoot": "libs/auth/pages/src",
@@ -73,7 +77,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/pages/jest.config.js",
+            "jestConfig": "libs/auth/pages/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -86,6 +90,7 @@
       }
     },
     "auth-recovery-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/recovery/page",
       "sourceRoot": "libs/auth/recovery/page/src",
@@ -94,7 +99,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/recovery/page/jest.config.js",
+            "jestConfig": "libs/auth/recovery/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -107,6 +112,7 @@
       }
     },
     "auth-shared": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/shared",
       "sourceRoot": "libs/auth/shared/src",
@@ -115,7 +121,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/shared/jest.config.js",
+            "jestConfig": "libs/auth/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -128,6 +134,7 @@
       }
     },
     "auth-state": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/auth/state",
       "sourceRoot": "libs/auth/state/src",
@@ -136,7 +143,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/auth/state/jest.config.js",
+            "jestConfig": "libs/auth/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -149,12 +156,13 @@
       }
     },
     "backend-api": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/backend/api",
       "sourceRoot": "apps/backend/api/src",
       "projectType": "application",
       "architect": {
         "build": {
-          "builder": "@nrwl/node:build",
+          "builder": "@nrwl/node:webpack",
           "options": {
             "outputPath": "dist/apps/backend/api",
             "main": "apps/backend/api/src/main.ts",
@@ -176,7 +184,7 @@
           }
         },
         "serve": {
-          "builder": "@nrwl/node:execute",
+          "builder": "@nrwl/node:node",
           "options": {
             "buildTarget": "backend-api:build"
           }
@@ -190,13 +198,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/backend/api/jest.config.js",
+            "jestConfig": "apps/backend/api/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-api-interceptors-content-type": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/api/interceptors/content-type",
       "sourceRoot": "libs/core/api/interceptors/content-type/src",
@@ -214,13 +223,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/api/interceptors/content-type/jest.config.js",
+            "jestConfig": "libs/core/api/interceptors/content-type/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-api-interceptors-with-credentials": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/api/interceptors/with-credentials",
       "sourceRoot": "libs/core/api/interceptors/with-credentials/src",
@@ -238,13 +248,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/api/interceptors/with-credentials/jest.config.js",
+            "jestConfig": "libs/core/api/interceptors/with-credentials/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-api-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/api/service",
       "sourceRoot": "libs/core/api/service/src",
@@ -259,13 +270,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/api/service/jest.config.js",
+            "jestConfig": "libs/core/api/service/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-config-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/config/service",
       "sourceRoot": "libs/core/config/service/src",
@@ -280,13 +292,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/config/service/jest.config.js",
+            "jestConfig": "libs/core/config/service/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-cookie-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/cookie/service",
       "sourceRoot": "libs/core/cookie/service/src",
@@ -301,13 +314,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/cookie/service/jest.config.js",
+            "jestConfig": "libs/core/cookie/service/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-environments-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/environments/service",
       "sourceRoot": "libs/core/environments/service/src",
@@ -322,13 +336,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/environments/service/jest.config.js",
+            "jestConfig": "libs/core/environments/service/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-forms-errors": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/forms/errors",
       "sourceRoot": "libs/core/forms/errors/src",
@@ -337,7 +352,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/forms/errors/jest.config.js",
+            "jestConfig": "libs/core/forms/errors/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -350,6 +365,7 @@
       }
     },
     "core-forms-mask": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/forms/mask",
       "sourceRoot": "libs/core/forms/mask/src",
@@ -358,7 +374,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/forms/mask/jest.config.js",
+            "jestConfig": "libs/core/forms/mask/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -371,6 +387,7 @@
       }
     },
     "core-forms-shared": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/forms/shared",
       "sourceRoot": "libs/core/forms/shared/src",
@@ -379,7 +396,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/forms/shared/jest.config.js",
+            "jestConfig": "libs/core/forms/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -392,6 +409,7 @@
       }
     },
     "core-forms-utils": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/forms/utils",
       "sourceRoot": "libs/core/forms/utils/src",
@@ -400,7 +418,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/forms/utils/jest.config.js",
+            "jestConfig": "libs/core/forms/utils/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -413,6 +431,7 @@
       }
     },
     "core-forms-validators": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/forms/validators",
       "sourceRoot": "libs/core/forms/validators/src",
@@ -421,7 +440,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/forms/validators/jest.config.js",
+            "jestConfig": "libs/core/forms/validators/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -434,6 +453,7 @@
       }
     },
     "core-logger-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/logger/service",
       "sourceRoot": "libs/core/logger/service/src",
@@ -442,7 +462,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/logger/service/jest.config.js",
+            "jestConfig": "libs/core/logger/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -455,6 +475,7 @@
       }
     },
     "core-menu-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/menu/common",
       "sourceRoot": "libs/core/menu/common/src",
@@ -463,7 +484,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/menu/common/jest.config.js",
+            "jestConfig": "libs/core/menu/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -476,6 +497,7 @@
       }
     },
     "core-navigation-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/navigation/common",
       "sourceRoot": "libs/core/navigation/common/src",
@@ -484,7 +506,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/navigation/common/jest.config.js",
+            "jestConfig": "libs/core/navigation/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -497,6 +519,7 @@
       }
     },
     "core-navigation-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/navigation/service",
       "sourceRoot": "libs/core/navigation/service/src",
@@ -505,7 +528,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/navigation/service/jest.config.js",
+            "jestConfig": "libs/core/navigation/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -518,6 +541,7 @@
       }
     },
     "core-navigation-shared": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/navigation/shared",
       "sourceRoot": "libs/core/navigation/shared/src",
@@ -526,7 +550,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/navigation/shared/jest.config.js",
+            "jestConfig": "libs/core/navigation/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -539,6 +563,7 @@
       }
     },
     "core-platform-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/platform/service",
       "sourceRoot": "libs/core/platform/service/src",
@@ -547,7 +572,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/platform/service/jest.config.js",
+            "jestConfig": "libs/core/platform/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -560,6 +585,7 @@
       }
     },
     "core-services": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/services",
       "sourceRoot": "libs/core/services/src",
@@ -568,7 +594,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/services/jest.config.js",
+            "jestConfig": "libs/core/services/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -581,6 +607,7 @@
       }
     },
     "core-social-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/social/common",
       "sourceRoot": "libs/core/social/common/src",
@@ -589,7 +616,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/social/common/jest.config.js",
+            "jestConfig": "libs/core/social/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -602,6 +629,7 @@
       }
     },
     "core-social-shared": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/social/shared",
       "sourceRoot": "libs/core/social/shared/src",
@@ -610,7 +638,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/social/shared/jest.config.js",
+            "jestConfig": "libs/core/social/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -623,6 +651,7 @@
       }
     },
     "core-storage-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/storage/common",
       "sourceRoot": "libs/core/storage/common/src",
@@ -637,13 +666,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/storage/common/jest.config.js",
+            "jestConfig": "libs/core/storage/common/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-storage-local": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/storage/local",
       "sourceRoot": "libs/core/storage/local/src",
@@ -658,13 +688,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/storage/local/jest.config.js",
+            "jestConfig": "libs/core/storage/local/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-storage-memory": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/storage/memory",
       "sourceRoot": "libs/core/storage/memory/src",
@@ -679,13 +710,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/storage/memory/jest.config.js",
+            "jestConfig": "libs/core/storage/memory/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-storage-session": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/storage/session",
       "sourceRoot": "libs/core/storage/session/src",
@@ -700,13 +732,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/storage/session/jest.config.js",
+            "jestConfig": "libs/core/storage/session/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-store-root": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/store/root",
       "sourceRoot": "libs/core/store/root/src",
@@ -721,13 +754,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/store/root/jest.config.js",
+            "jestConfig": "libs/core/store/root/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-store-utils": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/store/utils",
       "sourceRoot": "libs/core/store/utils/src",
@@ -742,13 +776,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/store/utils/jest.config.js",
+            "jestConfig": "libs/core/store/utils/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "core-testing": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/testing",
       "sourceRoot": "libs/core/testing/src",
@@ -757,7 +792,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/testing/jest.config.js",
+            "jestConfig": "libs/core/testing/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -770,6 +805,7 @@
       }
     },
     "core-utils": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/utils",
       "sourceRoot": "libs/core/utils/src",
@@ -778,7 +814,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/utils/jest.config.js",
+            "jestConfig": "libs/core/utils/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -791,6 +827,7 @@
       }
     },
     "core-visitor-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/visitor/service",
       "sourceRoot": "libs/core/visitor/service/src",
@@ -799,7 +836,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/visitor/service/jest.config.js",
+            "jestConfig": "libs/core/visitor/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -812,6 +849,7 @@
       }
     },
     "core-window-service": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/core/window/service",
       "sourceRoot": "libs/core/window/service/src",
@@ -820,7 +858,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/core/window/service/jest.config.js",
+            "jestConfig": "libs/core/window/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -833,6 +871,7 @@
       }
     },
     "errors-not-found-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/errors/not-found/page",
       "sourceRoot": "libs/errors/not-found/page/src",
@@ -847,13 +886,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/errors/not-found/page/jest.config.js",
+            "jestConfig": "libs/errors/not-found/page/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "errors-pages": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/errors/pages",
       "sourceRoot": "libs/errors/pages/src",
@@ -862,7 +902,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/errors/pages/jest.config.js",
+            "jestConfig": "libs/errors/pages/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -875,6 +915,7 @@
       }
     },
     "errors-permission-denied-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/errors/permission-denied/page",
       "sourceRoot": "libs/errors/permission-denied/page/src",
@@ -889,13 +930,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/errors/permission-denied/page/jest.config.js",
+            "jestConfig": "libs/errors/permission-denied/page/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "errors-server-error-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/errors/server-error/page",
       "sourceRoot": "libs/errors/server-error/page/src",
@@ -910,13 +952,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/errors/server-error/page/jest.config.js",
+            "jestConfig": "libs/errors/server-error/page/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "errors-shared": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/errors/shared",
       "sourceRoot": "libs/errors/shared/src",
@@ -931,13 +974,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/errors/shared/jest.config.js",
+            "jestConfig": "libs/errors/shared/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "fingerprints-api": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/fingerprints/api",
       "sourceRoot": "libs/fingerprints/api/src",
@@ -946,7 +990,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/fingerprints/api/jest.config.js",
+            "jestConfig": "libs/fingerprints/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -959,6 +1003,7 @@
       }
     },
     "fingerprints-common": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/fingerprints/common",
       "sourceRoot": "libs/fingerprints/common/src",
@@ -967,7 +1012,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/fingerprints/common/jest.config.js",
+            "jestConfig": "libs/fingerprints/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -980,6 +1025,7 @@
       }
     },
     "fingerprints-service": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/fingerprints/service",
       "sourceRoot": "libs/fingerprints/service/src",
@@ -988,7 +1034,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/fingerprints/service/jest.config.js",
+            "jestConfig": "libs/fingerprints/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1001,6 +1047,7 @@
       }
     },
     "fingerprints-state": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/fingerprints/state",
       "sourceRoot": "libs/fingerprints/state/src",
@@ -1009,7 +1056,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/fingerprints/state/jest.config.js",
+            "jestConfig": "libs/fingerprints/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1022,6 +1069,7 @@
       }
     },
     "numbers-to-words-common": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/numbers-to-words/common",
       "sourceRoot": "libs/numbers-to-words/common/src",
@@ -1030,7 +1078,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/numbers-to-words/common/jest.config.js",
+            "jestConfig": "libs/numbers-to-words/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1043,6 +1091,7 @@
       }
     },
     "numbers-to-words-shared": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/numbers-to-words/shared",
       "sourceRoot": "libs/numbers-to-words/shared/src",
@@ -1051,7 +1100,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/numbers-to-words/shared/jest.config.js",
+            "jestConfig": "libs/numbers-to-words/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1064,6 +1113,7 @@
       }
     },
     "registration-conversion-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/conversion/api",
       "sourceRoot": "libs/registration/conversion/api/src",
@@ -1072,7 +1122,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/conversion/api/jest.config.js",
+            "jestConfig": "libs/registration/conversion/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1085,6 +1135,7 @@
       }
     },
     "registration-conversion-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/conversion/common",
       "sourceRoot": "libs/registration/conversion/common/src",
@@ -1093,7 +1144,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/conversion/common/jest.config.js",
+            "jestConfig": "libs/registration/conversion/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1106,6 +1157,7 @@
       }
     },
     "registration-conversion-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/conversion/page",
       "sourceRoot": "libs/registration/conversion/page/src",
@@ -1114,7 +1166,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/conversion/page/jest.config.js",
+            "jestConfig": "libs/registration/conversion/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1127,6 +1179,7 @@
       }
     },
     "registration-conversion-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/conversion/state",
       "sourceRoot": "libs/registration/conversion/state/src",
@@ -1135,7 +1188,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/conversion/state/jest.config.js",
+            "jestConfig": "libs/registration/conversion/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1148,6 +1201,7 @@
       }
     },
     "registration-data-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/data/api",
       "sourceRoot": "libs/registration/data/api/src",
@@ -1156,7 +1210,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/data/api/jest.config.js",
+            "jestConfig": "libs/registration/data/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1169,6 +1223,7 @@
       }
     },
     "registration-data-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/data/page",
       "sourceRoot": "libs/registration/data/page/src",
@@ -1177,7 +1232,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/data/page/jest.config.js",
+            "jestConfig": "libs/registration/data/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1190,6 +1245,7 @@
       }
     },
     "registration-data-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/data/state",
       "sourceRoot": "libs/registration/data/state/src",
@@ -1198,7 +1254,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/data/state/jest.config.js",
+            "jestConfig": "libs/registration/data/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1211,6 +1267,7 @@
       }
     },
     "registration-decision-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/decision/api",
       "sourceRoot": "libs/registration/decision/api/src",
@@ -1219,7 +1276,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/decision/api/jest.config.js",
+            "jestConfig": "libs/registration/decision/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1232,6 +1289,7 @@
       }
     },
     "registration-decision-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/decision/page",
       "sourceRoot": "libs/registration/decision/page/src",
@@ -1240,7 +1298,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/decision/page/jest.config.js",
+            "jestConfig": "libs/registration/decision/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1253,6 +1311,7 @@
       }
     },
     "registration-decision-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/decision/state",
       "sourceRoot": "libs/registration/decision/state/src",
@@ -1261,7 +1320,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/decision/state/jest.config.js",
+            "jestConfig": "libs/registration/decision/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1274,6 +1333,7 @@
       }
     },
     "registration-finish-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/finish/api",
       "sourceRoot": "libs/registration/finish/api/src",
@@ -1282,7 +1342,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/finish/api/jest.config.js",
+            "jestConfig": "libs/registration/finish/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1295,6 +1355,7 @@
       }
     },
     "registration-finish-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/finish/common",
       "sourceRoot": "libs/registration/finish/common/src",
@@ -1303,7 +1364,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/finish/common/jest.config.js",
+            "jestConfig": "libs/registration/finish/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1316,6 +1377,7 @@
       }
     },
     "registration-finish-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/finish/page",
       "sourceRoot": "libs/registration/finish/page/src",
@@ -1324,7 +1386,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/finish/page/jest.config.js",
+            "jestConfig": "libs/registration/finish/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1337,6 +1399,7 @@
       }
     },
     "registration-finish-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/finish/state",
       "sourceRoot": "libs/registration/finish/state/src",
@@ -1345,7 +1408,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/finish/state/jest.config.js",
+            "jestConfig": "libs/registration/finish/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1358,6 +1421,7 @@
       }
     },
     "registration-form-additional-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/additional/page",
       "sourceRoot": "libs/registration/form/additional/page/src",
@@ -1366,7 +1430,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/additional/page/jest.config.js",
+            "jestConfig": "libs/registration/form/additional/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1382,6 +1446,7 @@
       }
     },
     "registration-form-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/api",
       "sourceRoot": "libs/registration/form/api/src",
@@ -1390,7 +1455,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/api/jest.config.js",
+            "jestConfig": "libs/registration/form/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1403,6 +1468,7 @@
       }
     },
     "registration-form-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/common",
       "sourceRoot": "libs/registration/form/common/src",
@@ -1411,7 +1477,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/common/jest.config.js",
+            "jestConfig": "libs/registration/form/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1424,6 +1490,7 @@
       }
     },
     "registration-form-employment-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/employment/page",
       "sourceRoot": "libs/registration/form/employment/page/src",
@@ -1432,7 +1499,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/employment/page/jest.config.js",
+            "jestConfig": "libs/registration/form/employment/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1448,6 +1515,7 @@
       }
     },
     "registration-form-family-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/family/page",
       "sourceRoot": "libs/registration/form/family/page/src",
@@ -1456,7 +1524,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/family/page/jest.config.js",
+            "jestConfig": "libs/registration/form/family/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1469,6 +1537,7 @@
       }
     },
     "registration-form-guards": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/guards",
       "sourceRoot": "libs/registration/form/guards/src",
@@ -1477,7 +1546,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/guards/jest.config.js",
+            "jestConfig": "libs/registration/form/guards/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1490,6 +1559,7 @@
       }
     },
     "registration-form-personal-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/personal/page",
       "sourceRoot": "libs/registration/form/personal/page/src",
@@ -1498,7 +1568,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/personal/page/jest.config.js",
+            "jestConfig": "libs/registration/form/personal/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1511,6 +1581,7 @@
       }
     },
     "registration-form-sms-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/sms/page",
       "sourceRoot": "libs/registration/form/sms/page/src",
@@ -1519,7 +1590,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/sms/page/jest.config.js",
+            "jestConfig": "libs/registration/form/sms/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1532,6 +1603,7 @@
       }
     },
     "registration-form-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/state",
       "sourceRoot": "libs/registration/form/state/src",
@@ -1540,7 +1612,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/state/jest.config.js",
+            "jestConfig": "libs/registration/form/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1553,6 +1625,7 @@
       }
     },
     "registration-form-ui-card": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/ui/card",
       "sourceRoot": "libs/registration/form/ui/card/src",
@@ -1561,7 +1634,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/ui/card/jest.config.js",
+            "jestConfig": "libs/registration/form/ui/card/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1574,6 +1647,7 @@
       }
     },
     "registration-form-ui-errors": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/ui/errors",
       "sourceRoot": "libs/registration/form/ui/errors/src",
@@ -1582,7 +1656,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/ui/errors/jest.config.js",
+            "jestConfig": "libs/registration/form/ui/errors/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1595,6 +1669,7 @@
       }
     },
     "registration-form-ui-fields": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/ui/fields",
       "sourceRoot": "libs/registration/form/ui/fields/src",
@@ -1603,7 +1678,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/ui/fields/jest.config.js",
+            "jestConfig": "libs/registration/form/ui/fields/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1616,6 +1691,7 @@
       }
     },
     "registration-form-ui-layout": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/form/ui/layout",
       "sourceRoot": "libs/registration/form/ui/layout/src",
@@ -1624,7 +1700,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/form/ui/layout/jest.config.js",
+            "jestConfig": "libs/registration/form/ui/layout/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1637,6 +1713,7 @@
       }
     },
     "registration-process-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/process/api",
       "sourceRoot": "libs/registration/process/api/src",
@@ -1645,7 +1722,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/process/api/jest.config.js",
+            "jestConfig": "libs/registration/process/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1658,6 +1735,7 @@
       }
     },
     "registration-process-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/process/common",
       "sourceRoot": "libs/registration/process/common/src",
@@ -1666,7 +1744,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/process/common/jest.config.js",
+            "jestConfig": "libs/registration/process/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1679,6 +1757,7 @@
       }
     },
     "registration-process-guards": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/process/guards",
       "sourceRoot": "libs/registration/process/guards/src",
@@ -1687,7 +1766,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/process/guards/jest.config.js",
+            "jestConfig": "libs/registration/process/guards/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1700,6 +1779,7 @@
       }
     },
     "registration-process-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/process/state",
       "sourceRoot": "libs/registration/process/state/src",
@@ -1708,7 +1788,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/process/state/jest.config.js",
+            "jestConfig": "libs/registration/process/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1721,6 +1801,7 @@
       }
     },
     "registration-restart-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/restart/page",
       "sourceRoot": "libs/registration/restart/page/src",
@@ -1729,7 +1810,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/restart/page/jest.config.js",
+            "jestConfig": "libs/registration/restart/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1742,6 +1823,7 @@
       }
     },
     "registration-social-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/social/api",
       "sourceRoot": "libs/registration/social/api/src",
@@ -1750,7 +1832,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/social/api/jest.config.js",
+            "jestConfig": "libs/registration/social/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1763,6 +1845,7 @@
       }
     },
     "registration-social-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/social/page",
       "sourceRoot": "libs/registration/social/page/src",
@@ -1771,7 +1854,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/social/page/jest.config.js",
+            "jestConfig": "libs/registration/social/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1784,6 +1867,7 @@
       }
     },
     "registration-social-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/social/state",
       "sourceRoot": "libs/registration/social/state/src",
@@ -1792,7 +1876,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/social/state/jest.config.js",
+            "jestConfig": "libs/registration/social/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1805,6 +1889,7 @@
       }
     },
     "registration-ui-card": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/ui/card",
       "sourceRoot": "libs/registration/ui/card/src",
@@ -1813,7 +1898,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/ui/card/jest.config.js",
+            "jestConfig": "libs/registration/ui/card/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1826,6 +1911,7 @@
       }
     },
     "registration-ui-layout": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/ui/layout",
       "sourceRoot": "libs/registration/ui/layout/src",
@@ -1834,7 +1920,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/ui/layout/jest.config.js",
+            "jestConfig": "libs/registration/ui/layout/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1847,6 +1933,7 @@
       }
     },
     "registration-ui-step-error": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/ui/step-error",
       "sourceRoot": "libs/registration/ui/step-error/src",
@@ -1855,7 +1942,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/ui/step-error/jest.config.js",
+            "jestConfig": "libs/registration/ui/step-error/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1868,6 +1955,7 @@
       }
     },
     "registration-user-api": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/user/api",
       "sourceRoot": "libs/registration/user/api/src",
@@ -1876,7 +1964,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/user/api/jest.config.js",
+            "jestConfig": "libs/registration/user/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1889,6 +1977,7 @@
       }
     },
     "registration-user-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/user/page",
       "sourceRoot": "libs/registration/user/page/src",
@@ -1897,7 +1986,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/user/page/jest.config.js",
+            "jestConfig": "libs/registration/user/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1910,6 +1999,7 @@
       }
     },
     "registration-user-state": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/registration/user/state",
       "sourceRoot": "libs/registration/user/state/src",
@@ -1918,7 +2008,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/registration/user/state/jest.config.js",
+            "jestConfig": "libs/registration/user/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -1931,6 +2021,7 @@
       }
     },
     "russian-cabinet": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "application",
       "root": "apps/russian/cabinet",
       "sourceRoot": "apps/russian/cabinet/src",
@@ -2023,13 +2114,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/russian/cabinet/jest.config.js",
+            "jestConfig": "apps/russian/cabinet/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "russian-content-bank-credit-card-page": {
+      "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/content/bank/credit-card/page",
       "sourceRoot": "libs/russian/content/bank/credit-card/page/src",
@@ -2038,7 +2130,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/bank/credit-card/page/jest.config.js",
+            "jestConfig": "libs/russian/content/bank/credit-card/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2054,6 +2146,7 @@
       }
     },
     "russian-content-bank-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/content/bank/page",
       "sourceRoot": "libs/russian/content/bank/page/src",
@@ -2068,13 +2161,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/bank/page/jest.config.js",
+            "jestConfig": "libs/russian/content/bank/page/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "russian-content-business-account-page": {
+      "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/content/business/account/page",
       "sourceRoot": "libs/russian/content/business/account/page/src",
@@ -2083,7 +2177,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/business/account/page/jest.config.js",
+            "jestConfig": "libs/russian/content/business/account/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2099,6 +2193,7 @@
       }
     },
     "russian-content-business-page": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/content/business/page",
       "sourceRoot": "libs/russian/content/business/page/src",
@@ -2107,7 +2202,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/business/page/jest.config.js",
+            "jestConfig": "libs/russian/content/business/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2120,6 +2215,7 @@
       }
     },
     "russian-content-pages": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/content/pages",
       "sourceRoot": "libs/russian/content/pages/src",
@@ -2128,7 +2224,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/content/pages/jest.config.js",
+            "jestConfig": "libs/russian/content/pages/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2141,6 +2237,7 @@
       }
     },
     "russian-forms-validators": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/forms/validators",
       "sourceRoot": "libs/russian/forms/validators/src",
@@ -2149,7 +2246,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/forms/validators/jest.config.js",
+            "jestConfig": "libs/russian/forms/validators/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2162,6 +2259,7 @@
       }
     },
     "russian-localization": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/localization",
       "sourceRoot": "libs/russian/localization/src",
@@ -2170,7 +2268,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/localization/jest.config.js",
+            "jestConfig": "libs/russian/localization/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2183,6 +2281,7 @@
       }
     },
     "russian-navigation-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/navigation/common",
       "sourceRoot": "libs/russian/navigation/common/src",
@@ -2191,7 +2290,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/navigation/common/jest.config.js",
+            "jestConfig": "libs/russian/navigation/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2204,6 +2303,7 @@
       }
     },
     "russian-numerals-common": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/numerals/common",
       "sourceRoot": "libs/russian/numerals/common/src",
@@ -2212,7 +2312,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/numerals/common/jest.config.js",
+            "jestConfig": "libs/russian/numerals/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2225,6 +2325,7 @@
       }
     },
     "russian-numerals-shared": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/numerals/shared",
       "sourceRoot": "libs/russian/numerals/shared/src",
@@ -2233,7 +2334,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/numerals/shared/jest.config.js",
+            "jestConfig": "libs/russian/numerals/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2246,6 +2347,7 @@
       }
     },
     "russian-registration-form-common": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/registration/form/common",
       "sourceRoot": "libs/russian/registration/form/common/src",
@@ -2254,7 +2356,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/registration/form/common/jest.config.js",
+            "jestConfig": "libs/russian/registration/form/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2267,6 +2369,7 @@
       }
     },
     "russian-registration-form-pages": {
+      "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/registration/form/pages",
       "sourceRoot": "libs/russian/registration/form/pages/src",
@@ -2275,7 +2378,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/registration/form/pages/jest.config.js",
+            "jestConfig": "libs/russian/registration/form/pages/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2288,6 +2391,7 @@
       }
     },
     "russian-registration-form-personal-page": {
+      "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/registration/form/personal/page",
       "sourceRoot": "libs/russian/registration/form/personal/page/src",
@@ -2296,7 +2400,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/registration/form/personal/page/jest.config.js",
+            "jestConfig": "libs/russian/registration/form/personal/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2312,6 +2416,7 @@
       }
     },
     "russian-registration-form-ui-fields": {
+      "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/registration/form/ui/fields",
       "sourceRoot": "libs/russian/registration/form/ui/fields/src",
@@ -2320,7 +2425,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/registration/form/ui/fields/jest.config.js",
+            "jestConfig": "libs/russian/registration/form/ui/fields/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2336,6 +2441,7 @@
       }
     },
     "russian-registration-pages": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/russian/registration/pages",
       "sourceRoot": "libs/russian/registration/pages/src",
@@ -2344,7 +2450,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/russian/registration/pages/jest.config.js",
+            "jestConfig": "libs/russian/registration/pages/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2357,6 +2463,7 @@
       }
     },
     "russian/cabinet-e2e": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "root": "apps/russian/cabinet-e2e",
       "sourceRoot": "apps/russian/cabinet-e2e/src",
       "projectType": "application",
@@ -2384,6 +2491,7 @@
       "implicitDependencies": ["russian-cabinet"]
     },
     "trackers-api": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/trackers/api",
       "sourceRoot": "libs/trackers/api/src",
@@ -2392,7 +2500,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/trackers/api/jest.config.js",
+            "jestConfig": "libs/trackers/api/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2405,6 +2513,7 @@
       }
     },
     "trackers-common": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/trackers/common",
       "sourceRoot": "libs/trackers/common/src",
@@ -2413,7 +2522,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/trackers/common/jest.config.js",
+            "jestConfig": "libs/trackers/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2426,6 +2535,7 @@
       }
     },
     "trackers-service": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/trackers/service",
       "sourceRoot": "libs/trackers/service/src",
@@ -2434,7 +2544,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/trackers/service/jest.config.js",
+            "jestConfig": "libs/trackers/service/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2447,6 +2557,7 @@
       }
     },
     "trackers-shared": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/trackers/shared",
       "sourceRoot": "libs/trackers/shared/src",
@@ -2455,7 +2566,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/trackers/shared/jest.config.js",
+            "jestConfig": "libs/trackers/shared/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2468,6 +2579,7 @@
       }
     },
     "trackers-state": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/trackers/state",
       "sourceRoot": "libs/trackers/state/src",
@@ -2476,7 +2588,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/trackers/state/jest.config.js",
+            "jestConfig": "libs/trackers/state/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2489,6 +2601,7 @@
       }
     },
     "ui-accordion": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/accordion",
       "sourceRoot": "libs/ui/accordion/src",
@@ -2497,7 +2610,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/accordion/jest.config.js",
+            "jestConfig": "libs/ui/accordion/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2510,6 +2623,7 @@
       }
     },
     "ui-buttons": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/buttons",
       "sourceRoot": "libs/ui/buttons/src",
@@ -2518,7 +2632,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/buttons/jest.config.js",
+            "jestConfig": "libs/ui/buttons/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2531,6 +2645,7 @@
       }
     },
     "ui-card": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/card",
       "sourceRoot": "libs/ui/card/src",
@@ -2539,7 +2654,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/card/jest.config.js",
+            "jestConfig": "libs/ui/card/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2552,6 +2667,7 @@
       }
     },
     "ui-container": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/container",
       "sourceRoot": "libs/ui/container/src",
@@ -2566,13 +2682,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/container/jest.config.js",
+            "jestConfig": "libs/ui/container/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "ui-grid": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/grid",
       "sourceRoot": "libs/ui/grid/src",
@@ -2581,7 +2698,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/grid/jest.config.js",
+            "jestConfig": "libs/ui/grid/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2594,6 +2711,7 @@
       }
     },
     "ui-icons": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/icons",
       "sourceRoot": "libs/ui/icons/src",
@@ -2602,7 +2720,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/icons/jest.config.js",
+            "jestConfig": "libs/ui/icons/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2615,6 +2733,7 @@
       }
     },
     "ui-layout": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/layout",
       "sourceRoot": "libs/ui/layout/src",
@@ -2629,13 +2748,14 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/layout/jest.config.js",
+            "jestConfig": "libs/ui/layout/jest.config.ts",
             "passWithNoTests": true
           }
         }
       }
     },
     "ui-links": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/links",
       "sourceRoot": "libs/ui/links/src",
@@ -2644,7 +2764,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/links/jest.config.js",
+            "jestConfig": "libs/ui/links/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2657,6 +2777,7 @@
       }
     },
     "ui-nav": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/nav",
       "sourceRoot": "libs/ui/nav/src",
@@ -2665,7 +2786,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/nav/jest.config.js",
+            "jestConfig": "libs/ui/nav/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2678,6 +2799,7 @@
       }
     },
     "ui-spinner": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/ui/spinner",
       "sourceRoot": "libs/ui/spinner/src",
@@ -2686,7 +2808,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/ui/spinner/jest.config.js",
+            "jestConfig": "libs/ui/spinner/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2699,6 +2821,7 @@
       }
     },
     "users-approve-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/users/approve/page",
       "sourceRoot": "libs/users/approve/page/src",
@@ -2707,7 +2830,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/users/approve/page/jest.config.js",
+            "jestConfig": "libs/users/approve/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2720,6 +2843,7 @@
       }
     },
     "users-common": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/users/common",
       "sourceRoot": "libs/users/common/src",
@@ -2728,7 +2852,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/users/common/jest.config.js",
+            "jestConfig": "libs/users/common/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2741,6 +2865,7 @@
       }
     },
     "users-guards": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/users/guards",
       "sourceRoot": "libs/users/guards/src",
@@ -2749,7 +2874,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/users/guards/jest.config.js",
+            "jestConfig": "libs/users/guards/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2762,6 +2887,7 @@
       }
     },
     "users-pages": {
+      "$schema": "../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/users/pages",
       "sourceRoot": "libs/users/pages/src",
@@ -2770,7 +2896,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/users/pages/jest.config.js",
+            "jestConfig": "libs/users/pages/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2783,6 +2909,7 @@
       }
     },
     "users-reject-page": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/users/reject/page",
       "sourceRoot": "libs/users/reject/page/src",
@@ -2791,7 +2918,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/users/reject/page/jest.config.js",
+            "jestConfig": "libs/users/reject/page/jest.config.ts",
             "passWithNoTests": true
           }
         },
@@ -2804,6 +2931,7 @@
       }
     },
     "users-ui-layout": {
+      "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
       "projectType": "library",
       "root": "libs/users/ui/layout",
       "sourceRoot": "libs/users/ui/layout/src",
@@ -2812,7 +2940,7 @@
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/users/ui/layout/jest.config.js",
+            "jestConfig": "libs/users/ui/layout/jest.config.ts",
             "passWithNoTests": true
           }
         },

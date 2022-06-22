@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 @Component({
   selector: 'banx-auth-login-form-password',
@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormPasswordComponent {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = 'AuthPassword';
 }

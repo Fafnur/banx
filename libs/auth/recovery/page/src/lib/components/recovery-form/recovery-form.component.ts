@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { takeUntil, tap } from 'rxjs/operators';
 
@@ -21,7 +21,7 @@ import { RecoverySuccessDialogComponent } from './components/recovery-success-di
 export class RecoveryFormComponent implements OnInit {
   readonly fields = UserField;
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   recoveryError!: Record<string, any> | null;
 
   constructor(
@@ -33,9 +33,9 @@ export class RecoveryFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      [UserField.Phone]: new FormControl(null, [Validators.required]),
-      [UserField.Birthdate]: new FormControl(null, [Validators.required]),
+    this.form = new UntypedFormGroup({
+      [UserField.Phone]: new UntypedFormControl(null, [Validators.required]),
+      [UserField.Birthdate]: new UntypedFormControl(null, [Validators.required]),
     });
 
     this.form.valueChanges

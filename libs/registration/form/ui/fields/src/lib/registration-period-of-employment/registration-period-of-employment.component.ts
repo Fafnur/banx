@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_PERIOD_OF_EMPLOYMENTS, RegistrationFormField } from '@banx/registration/form/common';
 
@@ -10,7 +10,7 @@ import { REGISTRATION_FORM_FIELD_IDS, REGISTRATION_PERIOD_OF_EMPLOYMENTS, Regist
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationPeriodOfEmploymentComponent {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.PeriodOfEmployment];
   readonly options = REGISTRATION_PERIOD_OF_EMPLOYMENTS;

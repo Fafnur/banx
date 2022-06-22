@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 import { RegistrationFormField } from '@banx/registration/form/common';
 import { RegistrationFormSubSteps } from '@banx/registration/process/common';
@@ -16,19 +16,19 @@ export class RegistrationFormPersonalPageComponent {
   readonly fields = RegistrationFormField;
   readonly russianFields = RussianRegistrationFormField;
   readonly step = RegistrationFormSubSteps.Personal;
-  readonly form = new FormGroup({
-    [RegistrationFormField.LastName]: new FormControl(null, [Validators.required, russianWordValidator]),
-    [RegistrationFormField.FirstName]: new FormControl(null, [Validators.required, russianWordValidator]),
-    [RegistrationFormField.MiddleName]: new FormControl(null, [russianWordValidator]),
-    [RegistrationFormField.Gender]: new FormControl(null, [Validators.required]),
-    [RegistrationFormField.Birthdate]: new FormControl(null, [Validators.required]),
-    [RussianRegistrationFormField.PassportSeriesNumber]: new FormControl(null, [Validators.required, russianMaskMinLengthValidator(10)]),
-    [RussianRegistrationFormField.PassportIssueCode]: new FormControl(null, [Validators.required, russianMaskMinLengthValidator(6)]),
-    [RussianRegistrationFormField.PassportIssueName]: new FormControl(null, [Validators.required, russianMaskMinLengthValidator(5)]),
-    [RussianRegistrationFormField.PassportIssueDate]: new FormControl(null, [Validators.required]),
-    [RussianRegistrationFormField.PassportBirthplace]: new FormControl(null, [Validators.required, russianMaskMinLengthValidator(2)]),
-    [RegistrationFormField.Email]: new FormControl(null, [Validators.required, Validators.email, russianEmailValidator]),
-    [RegistrationFormField.MobilePhone]: new FormControl(null, [Validators.required, russianMaskMinLengthValidator(10)]),
-    [RegistrationFormField.Agreement]: new FormControl(null, [Validators.required, Validators.requiredTrue]),
+  readonly form = new UntypedFormGroup({
+    [RegistrationFormField.LastName]: new UntypedFormControl(null, [Validators.required, russianWordValidator]),
+    [RegistrationFormField.FirstName]: new UntypedFormControl(null, [Validators.required, russianWordValidator]),
+    [RegistrationFormField.MiddleName]: new UntypedFormControl(null, [russianWordValidator]),
+    [RegistrationFormField.Gender]: new UntypedFormControl(null, [Validators.required]),
+    [RegistrationFormField.Birthdate]: new UntypedFormControl(null, [Validators.required]),
+    [RussianRegistrationFormField.PassportSeriesNumber]: new UntypedFormControl(null, [Validators.required, russianMaskMinLengthValidator(10)]),
+    [RussianRegistrationFormField.PassportIssueCode]: new UntypedFormControl(null, [Validators.required, russianMaskMinLengthValidator(6)]),
+    [RussianRegistrationFormField.PassportIssueName]: new UntypedFormControl(null, [Validators.required, russianMaskMinLengthValidator(5)]),
+    [RussianRegistrationFormField.PassportIssueDate]: new UntypedFormControl(null, [Validators.required]),
+    [RussianRegistrationFormField.PassportBirthplace]: new UntypedFormControl(null, [Validators.required, russianMaskMinLengthValidator(2)]),
+    [RegistrationFormField.Email]: new UntypedFormControl(null, [Validators.required, Validators.email, russianEmailValidator]),
+    [RegistrationFormField.MobilePhone]: new UntypedFormControl(null, [Validators.required, russianMaskMinLengthValidator(10)]),
+    [RegistrationFormField.Agreement]: new UntypedFormControl(null, [Validators.required, Validators.requiredTrue]),
   });
 }

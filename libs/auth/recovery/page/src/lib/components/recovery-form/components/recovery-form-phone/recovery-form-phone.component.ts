@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { AnyMaskedOptions } from 'imask';
 
 import { FormMaskService } from '@banx/core/forms/mask';
@@ -11,7 +11,7 @@ import { FormMaskService } from '@banx/core/forms/mask';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecoveryFormPhoneComponent implements OnInit {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = 'AuthRecoveryPhone';
 

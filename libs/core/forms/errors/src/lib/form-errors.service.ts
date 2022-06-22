@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 import { PlatformService } from '@banx/core/platform/service';
 
@@ -10,7 +10,7 @@ import { PlatformService } from '@banx/core/platform/service';
 export class FormErrorsService {
   constructor(private readonly platformService: PlatformService, @Inject(DOCUMENT) private readonly document: Document) {}
 
-  updateFormErrors(form: FormGroup, errors: Record<string, Record<string, any>>): void {
+  updateFormErrors(form: UntypedFormGroup, errors: Record<string, Record<string, any>>): void {
     for (const errorField of Object.keys(errors)) {
       const control = form.get(errorField);
       if (control && control.value != null) {
@@ -20,7 +20,7 @@ export class FormErrorsService {
     form.markAllAsTouched();
   }
 
-  scrollToFirstError(form: FormGroup, ids: Record<string, string>): void {
+  scrollToFirstError(form: UntypedFormGroup, ids: Record<string, string>): void {
     if (this.platformService.isBrowser && form?.controls) {
       for (const key of Object.keys(form.controls)) {
         const control = form.get(key);

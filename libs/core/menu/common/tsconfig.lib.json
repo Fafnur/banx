@@ -9,9 +9,6 @@
     "types": ["../../../../node_modules/@angular/localize/init"],
     "lib": ["dom", "es2018"]
   },
-  "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
-  "include": [
-    "**/*.ts",
-    "../../../../node_modules/@angular/localize/init/index.d.ts"
-  ]
+  "exclude": ["src/test-setup.ts", "**/*.spec.ts", "jest.config.ts"],
+  "include": ["**/*.ts", "../../../../node_modules/@angular/localize/init/index.d.ts"]
 }

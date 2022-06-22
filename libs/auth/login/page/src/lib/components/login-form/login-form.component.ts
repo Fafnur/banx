@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs/operators';
 
 import { AuthFacade } from '@banx/auth/state';
@@ -16,7 +16,7 @@ import { UserField } from '@banx/users/common';
 })
 export class LoginFormComponent implements OnInit {
   readonly fields = UserField;
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   loginError!: Record<string, any> | null;
 
   constructor(
@@ -27,9 +27,9 @@ export class LoginFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      [UserField.Phone]: new FormControl(null, [Validators.required]),
-      [UserField.Password]: new FormControl(null, [Validators.required]),
+    this.form = new UntypedFormGroup({
+      [UserField.Phone]: new UntypedFormControl(null, [Validators.required]),
+      [UserField.Password]: new UntypedFormControl(null, [Validators.required]),
     });
 
     this.form.valueChanges

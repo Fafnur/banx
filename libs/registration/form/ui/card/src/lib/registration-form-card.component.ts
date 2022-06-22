@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { debounce, merge, take, takeUntil, tap, timer } from 'rxjs';
 
 import { FormErrorsService } from '@banx/core/forms/errors';
@@ -17,7 +17,7 @@ import { RegistrationProcessFacade } from '@banx/registration/process/state';
   providers: [DestroyService],
 })
 export class RegistrationFormCardComponent implements OnInit {
-  @Input() form!: FormGroup;
+  @Input() form!: UntypedFormGroup;
   @Input() step?: RegistrationFormSubSteps;
   @Input() ids: Record<string, any> = {};
   @Input() first = false;

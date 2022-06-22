@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormControl, Validators } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs';
 
 import { DestroyService } from '@banx/core/services';
@@ -18,7 +18,7 @@ import {
   providers: [DestroyService],
 })
 export class RegistrationEmploymentTypeComponent implements OnInit {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.EmploymentType];
   readonly options = REGISTRATION_EMPLOYMENT_TYPES;

@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 
 import { RUSSIAN_REGISTRATION_FORM_FIELD_IDS, RussianRegistrationFormField } from '@banx/russian/registration/form/common';
 
@@ -10,7 +10,7 @@ import { RUSSIAN_REGISTRATION_FORM_FIELD_IDS, RussianRegistrationFormField } fro
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationPassportSeriesNumberComponent {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = RUSSIAN_REGISTRATION_FORM_FIELD_IDS[RussianRegistrationFormField.PassportSeriesNumber];
 }

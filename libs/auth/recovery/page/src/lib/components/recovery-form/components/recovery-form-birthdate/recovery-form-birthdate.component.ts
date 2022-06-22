@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { UntypedFormControl, Validators } from '@angular/forms';
 import { AnyMaskedOptions } from 'imask';
 import { Observable } from 'rxjs';
 import { filter, take, takeUntil, tap } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { GridBreakpointType, GridService } from '@banx/ui/grid';
   providers: [DestroyService],
 })
 export class RecoveryFormBirthdateComponent implements OnInit {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly maxDate = getMaxDate();
   readonly minDate = getMinDate();
@@ -31,7 +31,7 @@ export class RecoveryFormBirthdateComponent implements OnInit {
 
   isDesktopScreen$!: Observable<boolean>;
 
-  readonly maskControl = new FormControl(null, [Validators.required]);
+  readonly maskControl = new UntypedFormControl(null, [Validators.required]);
 
   constructor(
     private readonly changeDetectorRef: ChangeDetectorRef,

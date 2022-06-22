@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { AnyMaskedOptions } from 'imask';
 
 import { FormMaskService } from '@banx/core/forms/mask';
@@ -12,7 +12,7 @@ import { REGISTRATION_FORM_FIELD_IDS, RegistrationFormField } from '@banx/regist
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegistrationAdditionalContactPhoneNumberComponent implements OnInit {
-  @Input() control!: FormControl;
+  @Input() control!: UntypedFormControl;
 
   readonly id = REGISTRATION_FORM_FIELD_IDS[RegistrationFormField.AdditionalContactPhoneNumber];
 
